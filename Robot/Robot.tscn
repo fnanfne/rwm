@@ -99,6 +99,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("18_upxp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7vueg")
 }],
 "loop": true,
 "name": &"Launch",
