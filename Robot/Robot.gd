@@ -16,7 +16,7 @@ var is_falling = false
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 
 func _physics_process(delta):
-	print(is_falling)
+	#print(Game.GUN)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -55,10 +55,18 @@ func _physics_process(delta):
 			is_launching = false
 			is_falling = true
 			if is_falling == true:
+				#velocity.y = JUMP_VELOCITY + 5 # This is working bus causing mid-air launching
 				pass
 			else:
-				velocity.y = JUMP_VELOCITY
+				velocity.y = JUMP_VELOCITY * 0.00001 # This is apparently not doing anything
 				anim.play("Fall")
+				
+	# Handle Shooting.
+	#if Game.GUN:
+	#	if is_on_floor():
+	if Input.is_action_pressed("shoot"):
+		print("SHOOTING!!!!")
+		anim.play("Shoot")
 			
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
