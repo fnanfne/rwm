@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dquo45htw4sae"]
+[gd_scene load_steps=33 format=3 uid="uid://dquo45htw4sae"]
 
 [ext_resource type="Script" path="res://Robot/Robot.gd" id="1_4udve"]
 [ext_resource type="Texture2D" uid="uid://dbv1f4lhbt8hr" path="res://Assets/Robot/Without helmet/Fall/robot_fall.png" id="2_7vueg"]
@@ -25,14 +25,79 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymhil"]
 height = 38.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1bk3k"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yl30p"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_7vueg")
 }],
 "loop": true,
 "name": &"Fall",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"HelmetDeath",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"HelmetFall",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"HelmetIdle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"HelmetJump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"HelmetLaunch",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"HelmetPull",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"HelmetPush",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"HelmetRun",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"HelmetShoot",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"HelmetWallbounce",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"HelmetWallslide",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"HelmetZoom",
 "speed": 5.0
 }, {
 "frames": [{
@@ -99,12 +164,19 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("18_upxp7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_7vueg")
 }],
 "loop": true,
 "name": &"Launch",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Pull",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Push",
 "speed": 5.0
 }, {
 "frames": [{
@@ -123,11 +195,138 @@ animations = [{
 "loop": true,
 "name": &"Run",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Shoot",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Wallbounce",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Wallslide",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Zoom",
+"speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_rmcoq"]
+[sub_resource type="Animation" id="Animation_0b1p8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Launch"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_rf7ma"]
+resource_name = "Launch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Launch"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
+[sub_resource type="Animation" id="Animation_k0ur1"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_u1adl"]
+resource_name = "Run"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_mbieh"]
 resource_name = "Fall"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -153,38 +352,8 @@ tracks/1/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_3xbiy"]
-resource_name = "Idle"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_f8m42"]
+[sub_resource type="Animation" id="Animation_slugb"]
 resource_name = "Jump"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -210,57 +379,14 @@ tracks/1/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_0b1p8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_kqrjt"]
-resource_name = "Run"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Run"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fjoex"]
 _data = {
-"Fall": SubResource("Animation_rmcoq"),
-"Idle": SubResource("Animation_3xbiy"),
-"Jump": SubResource("Animation_f8m42"),
+"Fall": SubResource("Animation_mbieh"),
+"Idle": SubResource("Animation_k0ur1"),
+"Jump": SubResource("Animation_slugb"),
+"Launch": SubResource("Animation_rf7ma"),
 "RESET": SubResource("Animation_0b1p8"),
-"Run": SubResource("Animation_kqrjt")
+"Run": SubResource("Animation_u1adl")
 }
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_f1j0a"]
@@ -275,8 +401,7 @@ position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_ymhil")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4, -2)
-sprite_frames = SubResource("SpriteFrames_1bk3k")
+sprite_frames = SubResource("SpriteFrames_yl30p")
 animation = &"Launch"
 frame = 1
 
