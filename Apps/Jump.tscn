@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://cj3pq1aree5vn"]
+
+[ext_resource type="Texture2D" uid="uid://y07m11h7iyo2" path="res://Assets/Apps/Jump/jump0.png" id="1_xxrlv"]
+[ext_resource type="Texture2D" uid="uid://ddtd7uqorr8bk" path="res://Assets/Apps/Jump/jump1.png" id="2_amgey"]
+[ext_resource type="Texture2D" uid="uid://b67q2tgrivnnk" path="res://Assets/Apps/Jump/jump2.png" id="3_kd4su"]
+[ext_resource type="Texture2D" uid="uid://dghb8putt5b1u" path="res://Assets/Apps/Jump/jump3.png" id="4_rl7mm"]
+[ext_resource type="Texture2D" uid="uid://bn6ioil0cgfsq" path="res://Assets/Apps/Jump/jump4.png" id="5_q8w11"]
+[ext_resource type="Texture2D" uid="uid://bw16ybjygy8pn" path="res://Assets/Apps/Jump/jump5.png" id="6_owcwd"]
+
+[sub_resource type="GDScript" id="GDScript_dh4jr"]
+script/source = "extends Area2D
+
+
+func _on_body_entered(body):
+	if body.name == \"Robot\":
+		Game.JUMP = true
+		var tween1 = get_tree().create_tween()
+		var tween2 = get_tree().create_tween()
+		tween1.tween_property(self, \"position\", position - Vector2(0,35), 0.3)
+		tween2.tween_property(self, \"modulate:a\", 0, 0.3)
+		tween1.tween_callback(queue_free)
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_08b1g"]
+radius = 20.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8xs0r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xxrlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_amgey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kd4su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rl7mm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q8w11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_owcwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q8w11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rl7mm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kd4su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_amgey")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 12.0
+}]
+
+[node name="Jump" type="Area2D"]
+script = SubResource("GDScript_dh4jr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_08b1g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8xs0r")
+animation = &"Idle"
+autoplay = "Idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

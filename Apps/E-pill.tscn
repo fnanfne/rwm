@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://ccr2x1uxo2d0w"]
+
+[ext_resource type="Texture2D" uid="uid://dl4cjqe4bfci3" path="res://Assets/Apps/E-pill/e-pill0.png" id="1_me77d"]
+[ext_resource type="Texture2D" uid="uid://ckavydi7io5dj" path="res://Assets/Apps/E-pill/e-pill1.png" id="2_5swi4"]
+[ext_resource type="Texture2D" uid="uid://bjtarjwlmhtpk" path="res://Assets/Apps/E-pill/e-pill2.png" id="3_sr8u2"]
+[ext_resource type="Texture2D" uid="uid://bn6dmhr4w1x10" path="res://Assets/Apps/E-pill/e-pill3.png" id="4_b470j"]
+[ext_resource type="Texture2D" uid="uid://kot80mj6pr3f" path="res://Assets/Apps/E-pill/e-pill4.png" id="5_gl41g"]
+[ext_resource type="Texture2D" uid="uid://br1eitlb03oui" path="res://Assets/Apps/E-pill/e-pill5.png" id="6_67l7d"]
+
+[sub_resource type="GDScript" id="GDScript_xlwg2"]
+script/source = "extends Area2D
+
+
+
+
+func _on_body_entered(body):
+	pass # Replace with function body.
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdeqh"]
+radius = 14.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6e66"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_me77d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5swi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sr8u2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b470j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gl41g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_67l7d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="E-pill" type="Area2D"]
+script = SubResource("GDScript_xlwg2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kdeqh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k6e66")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
