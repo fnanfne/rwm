@@ -32,6 +32,7 @@ func _physics_process(delta):
 			#created custom input keys
 			#if Input.is_action_just_pressed("ui_accept"):
 			if Input.is_action_just_pressed("jump"):
+				$SoundJump.play()
 				velocity.y = JUMP_VELOCITY
 				anim.play("Jump")
 		elif not has_double_jumped:
@@ -40,6 +41,7 @@ func _physics_process(delta):
 				#created custom input keys
 				#if Input.is_action_just_pressed("ui_accept"):
 				if Input.is_action_just_pressed("jump"):
+					$SoundJump.play()
 					velocity.y = DOUBLE_JUMP_VELOCITY
 					anim.play("Jump")
 					has_double_jumped = true
@@ -63,14 +65,14 @@ func _physics_process(delta):
 				anim.play("Fall")
 				
 	# Handle Shooting.
-	#if Game.GUN:
-	if Input.is_action_pressed("shoot"):
-		if is_on_floor():
-			print("SHOOTING!!!!")
-			is_shooting = true
-			anim.play("Shoot")
-		else:
-			pass
+	if Game.GUN:
+		if Input.is_action_pressed("shoot"):
+			if is_on_floor():
+				print("SHOOTING!!!!")
+				is_shooting = true
+				anim.play("Shoot")
+			else:
+				pass
 	else:
 		is_shooting = false
 	# Get the input direction and handle the movement/deceleration.
@@ -89,7 +91,7 @@ func _physics_process(delta):
 			velocity.x = direction * SPEED / 5
 		else:
 			velocity.x = direction * SPEED
-			if velocity.y == 0:
+			if velocity.y == 0 and is_shooting != true:
 				anim.play("Run")
 	else:
 		if velocity.y == 0 and is_shooting != true:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ccr2x1uxo2d0w"]
+[gd_scene load_steps=11 format=3 uid="uid://ccr2x1uxo2d0w"]
 
 [ext_resource type="Texture2D" uid="uid://dl4cjqe4bfci3" path="res://Assets/Apps/E-pill/e-pill0.png" id="1_me77d"]
 [ext_resource type="Texture2D" uid="uid://ckavydi7io5dj" path="res://Assets/Apps/E-pill/e-pill1.png" id="2_5swi4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bn6dmhr4w1x10" path="res://Assets/Apps/E-pill/e-pill3.png" id="4_b470j"]
 [ext_resource type="Texture2D" uid="uid://kot80mj6pr3f" path="res://Assets/Apps/E-pill/e-pill4.png" id="5_gl41g"]
 [ext_resource type="Texture2D" uid="uid://br1eitlb03oui" path="res://Assets/Apps/E-pill/e-pill5.png" id="6_67l7d"]
+[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="7_lmlgd"]
 
 [sub_resource type="GDScript" id="GDScript_xlwg2"]
 script/source = "extends Area2D
@@ -54,5 +55,9 @@ shape = SubResource("CircleShape2D_kdeqh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k6e66")
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_lmlgd")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

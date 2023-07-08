@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://3dek8cpmjetb"]
+[gd_scene load_steps=11 format=3 uid="uid://3dek8cpmjetb"]
 
 [ext_resource type="Texture2D" uid="uid://b5dpjfx068a8x" path="res://Assets/Apps/DoubleJump/doublejump0.png" id="1_3h314"]
 [ext_resource type="Texture2D" uid="uid://hn3y4jousm0p" path="res://Assets/Apps/DoubleJump/doublejump1.png" id="2_ujikd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://co6rv30n2ymql" path="res://Assets/Apps/DoubleJump/doublejump3.png" id="4_gfldi"]
 [ext_resource type="Texture2D" uid="uid://bqm55afgi60ue" path="res://Assets/Apps/DoubleJump/doublejump4.png" id="5_gbqrf"]
 [ext_resource type="Texture2D" uid="uid://cr861fi6nbq6o" path="res://Assets/Apps/DoubleJump/doublejump5.png" id="6_oa77o"]
+[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="7_fh1jn"]
 
 [sub_resource type="GDScript" id="GDScript_dh4jr"]
 script/source = "extends Area2D
@@ -14,10 +15,11 @@ script/source = "extends Area2D
 func _on_body_entered(body):
 	if body.name == \"Robot\":
 		Game.DOUBLEJUMP = true
+		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
 		var tween2 = get_tree().create_tween()
-		tween1.tween_property(self, \"position\", position - Vector2(0,35), 0.3)
-		tween2.tween_property(self, \"modulate:a\", 0, 0.3)
+		tween1.tween_property(self, \"position\", position - Vector2(0,42), 0.5)
+		tween2.tween_property(self, \"modulate:a\", 0, 0.5)
 		tween1.tween_callback(queue_free)
 "
 
@@ -72,5 +74,9 @@ shape = SubResource("CircleShape2D_08b1g")
 sprite_frames = SubResource("SpriteFrames_8xs0r")
 animation = &"Idle"
 autoplay = "Idle"
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_fh1jn")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
