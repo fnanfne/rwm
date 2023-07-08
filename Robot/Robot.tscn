@@ -473,3 +473,9 @@ one_shot = true
 [node name="SoundJump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_16o6n")
 volume_db = -10.0
+
+[node name="SoundShoot" type="AudioStreamPlayer" parent="."]
+
+[node name="SoundLaunch" type="AudioStreamPlayer" parent="."]
+
+[node name="SoundRun" type="AudioStreamPlayer" parent="."]
