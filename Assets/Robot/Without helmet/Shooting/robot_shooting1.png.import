@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qa1swhfoap2o"
-path="res://.godot/imported/robot_fire4.png-4f14113741ec4ee1127ae75e5e8ecff5.ctex"
+uid="uid://cmebfhul7rs5d"
+path="res://.godot/imported/robot_shooting1.png-e66b6f7eb3a887c1b9a517a9c8c4de14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Robot/Without helmet/Shooting/robot_fire4.png"
-dest_files=["res://.godot/imported/robot_fire4.png-4f14113741ec4ee1127ae75e5e8ecff5.ctex"]
+source_file="res://Assets/Robot/Without helmet/Shooting/robot_shooting1.png"
+dest_files=["res://.godot/imported/robot_shooting1.png-e66b6f7eb3a887c1b9a517a9c8c4de14.ctex"]
 
 [params]
 

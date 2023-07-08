@@ -11,6 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var has_double_jumped = false
 var is_launching = false
 var is_falling = false
+var is_shooting = false
 
 @onready var anim = get_node("AnimationPlayer")
 @onready var coyote_jump_timer = $CoyoteJumpTimer
@@ -63,27 +64,35 @@ func _physics_process(delta):
 				
 	# Handle Shooting.
 	#if Game.GUN:
-	#	if is_on_floor():
 	if Input.is_action_pressed("shoot"):
-		print("SHOOTING!!!!")
-		anim.play("Shoot")
-			
+		if is_on_floor():
+			print("SHOOTING!!!!")
+			is_shooting = true
+			anim.play("Shoot")
+		else:
+			pass
+	else:
+		is_shooting = false
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	#created custom input keys
 	#var direction = Input.get_axis("ui_left", "ui_right") 
 	var direction = Input.get_axis("left", "right")
 	
+	# Handle movement.
 	if direction == -1:
 		get_node("AnimatedSprite2D").flip_h = true
 	elif direction == 1:
 		get_node("AnimatedSprite2D").flip_h = false
 	if direction:
-		velocity.x = direction * SPEED
-		if velocity.y == 0:
-			anim.play("Run")
+		if is_launching:
+			velocity.x = direction * SPEED / 5
+		else:
+			velocity.x = direction * SPEED
+			if velocity.y == 0:
+				anim.play("Run")
 	else:
-		if velocity.y == 0:
+		if velocity.y == 0 and is_shooting != true:
 			anim.play("Idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if velocity.y > 0:
