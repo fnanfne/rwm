@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cch1ikcufljkw"]
+[gd_scene load_steps=16 format=3 uid="uid://cch1ikcufljkw"]
 
 [ext_resource type="Texture2D" uid="uid://b4hkaqaushw81" path="res://Assets/paint__TILESET/IMG_001.png" id="1_d8a48"]
 [ext_resource type="PackedScene" uid="uid://dquo45htw4sae" path="res://Robot/Robot.tscn" id="1_u6aup"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://3dek8cpmjetb" path="res://Apps/DoubleJump.tscn" id="7_prlcu"]
 [ext_resource type="PackedScene" uid="uid://c21qrbylx8yd" path="res://Apps/Launch.tscn" id="8_2qiln"]
 [ext_resource type="PackedScene" uid="uid://ccr2x1uxo2d0w" path="res://Apps/E-pill.tscn" id="9_5o7m1"]
+[ext_resource type="PackedScene" uid="uid://chjddn28u1r6g" path="res://Apps/Crystal.tscn" id="10_8shsn"]
+[ext_resource type="PackedScene" uid="uid://brcwldjc05d0t" path="res://Apps/Gun.tscn" id="11_5fibj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_owbl8"]
 texture = ExtResource("1_d8a48")
@@ -605,3 +607,9 @@ position = Vector2(550, 490)
 
 [node name="E-pill" parent="." instance=ExtResource("9_5o7m1")]
 position = Vector2(740, 450)
+
+[node name="Crystal" parent="." instance=ExtResource("10_8shsn")]
+position = Vector2(690, 490)
+
+[node name="Gun" parent="." instance=ExtResource("11_5fibj")]
+position = Vector2(640, 490)

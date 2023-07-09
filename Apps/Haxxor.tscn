@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj3pq1aree5vn"]
+[gd_scene load_steps=7 format=3 uid="uid://ck0xsb7gqo0y7"]
 
-[ext_resource type="Texture2D" uid="uid://y07m11h7iyo2" path="res://Assets/Apps/Jump/jump0.png" id="1_xxrlv"]
-[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="7_peeq5"]
+[ext_resource type="Texture2D" uid="uid://byvm182anm2le" path="res://Assets/Apps/Haxxor/haxxor_app_01.png" id="1_iw4mb"]
+[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="2_erffs"]
+[ext_resource type="Texture2D" uid="uid://m26vya8ie383" path="res://Assets/Apps/Haxxor/haxxor_app_02.png" id="2_ojrtj"]
 
 [sub_resource type="GDScript" id="GDScript_dh4jr"]
 script/source = "extends Area2D
@@ -39,7 +40,7 @@ func _grow(amount):
 
 func _on_body_entered(body):
 	if body.name == \"Robot\":
-		Game.JUMP = true
+		#Game.LAUNCH = true
 		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
 		var tween2 = get_tree().create_tween()
@@ -51,29 +52,51 @@ func _on_body_entered(body):
 [sub_resource type="CircleShape2D" id="CircleShape2D_08b1g"]
 radius = 20.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_p3eax"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_guafh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_xxrlv")
+"texture": ExtResource("1_iw4mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ojrtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_iw4mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ojrtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_iw4mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ojrtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_iw4mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ojrtj")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 12.0
 }]
 
-[node name="Jump" type="Area2D"]
+[node name="Haxxor" type="Area2D"]
 script = SubResource("GDScript_dh4jr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_08b1g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_p3eax")
+sprite_frames = SubResource("SpriteFrames_guafh")
 animation = &"Idle"
+frame_progress = 0.57798
 
 [node name="SoundPickup" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_peeq5")
+stream = ExtResource("2_erffs")
 volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

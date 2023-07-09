@@ -433,7 +433,7 @@ _data = {
 }
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_f1j0a"]
-graph_offset = Vector2(-25.6698, 0)
+graph_offset = Vector2(63.0109, -65.9228)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_l8biw"]
 
