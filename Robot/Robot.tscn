@@ -119,9 +119,6 @@ animations = [{
 }, {
 "duration": 0.5,
 "texture": ExtResource("5_f4ky4")
-}, {
-"duration": 0.5,
-"texture": ExtResource("4_gcw58")
 }],
 "loop": true,
 "name": &"Idle",
@@ -270,10 +267,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0, 1, 2, 3, 4]
+"values": [0, 1, 2, 3]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -450,7 +447,6 @@ shape = SubResource("CapsuleShape2D_ymhil")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yl30p")
 animation = &"Launch"
-frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.6, 1.6)
