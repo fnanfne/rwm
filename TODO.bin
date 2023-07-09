@@ -1,0 +1,84 @@
+- Sprites
+   -Robot (no helmet)
+      -idle
+      -run
+      -jump
+      -shoot
+      -zoom
+      -launch
+      -push/pull
+      -wallbounce
+   -Robot (with helmet)
+      -idle
+      -run
+      -jump
+      -shoot
+      -zoom
+      -launch
+      -push/pull
+      -wallbounce
+   -Kitty
+      -idle
+   -Redguy
+      -idle
+      -walk
+      -die
+   -Eyeguy
+      -idle
+      -fly
+      -die
+   -Drip
+      -idle
+      -shoot
+      -die
+   -Pinkfly
+      -idle
+      -fly
+      -die
+   -Eye Boss
+      -idle
+      -shoot
+      -walk
+      -die
+   -Red Boss
+      -idle
+      -shoot
+      -walk
+      -die
+   -Drip Boss
+      -idle
+      -shoot
+      -fly
+      -die
+
+- Apps/Powerups
+   -jump (and remove-jump)
+   -double jump (and remove-double jump)
+   -helmet (and remove-helmet)
+   -launch (and remove-launch)
+   -zoom (and remove-zoom)
+   -heart (and remove-heart)
+   -explozors (and remove-explozors)
+   -timesaver
+   -gun (and remove-gun)
+   -annihilate (and remove-annihilate)
+   -velcro (and remove-velcro)
+   -bounce (and remove-bounce)
+   -push/pull (and remove-push/pull)
+   -red key
+   -blue key
+   -green key
+   -yellow key
+   -haxxor (and haxxor)
+
+- Enemy Damage System
+- Heart/Health System
+- Pull/Push Block
+- Mini Map
+- Music System
+   -all sounds in-game
+   -beepbox music of all artists
+
+- Timer
+- Level Save/Load
+- Unlocks
