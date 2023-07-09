@@ -1,16 +1,41 @@
-[gd_scene load_steps=11 format=3 uid="uid://3dek8cpmjetb"]
+[gd_scene load_steps=6 format=3 uid="uid://3dek8cpmjetb"]
 
 [ext_resource type="Texture2D" uid="uid://b5dpjfx068a8x" path="res://Assets/Apps/DoubleJump/doublejump0.png" id="1_3h314"]
-[ext_resource type="Texture2D" uid="uid://hn3y4jousm0p" path="res://Assets/Apps/DoubleJump/doublejump1.png" id="2_ujikd"]
-[ext_resource type="Texture2D" uid="uid://bbj83381qmq3i" path="res://Assets/Apps/DoubleJump/doublejump2.png" id="3_otc8k"]
-[ext_resource type="Texture2D" uid="uid://co6rv30n2ymql" path="res://Assets/Apps/DoubleJump/doublejump3.png" id="4_gfldi"]
-[ext_resource type="Texture2D" uid="uid://bqm55afgi60ue" path="res://Assets/Apps/DoubleJump/doublejump4.png" id="5_gbqrf"]
-[ext_resource type="Texture2D" uid="uid://cr861fi6nbq6o" path="res://Assets/Apps/DoubleJump/doublejump5.png" id="6_oa77o"]
 [ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="7_fh1jn"]
 
 [sub_resource type="GDScript" id="GDScript_dh4jr"]
 script/source = "extends Area2D
 
+var size_min = 1
+var size_max = 1.1
+var should_shrink = true
+var rate = 0.005
+
+func _ready():
+	$AnimatedSprite2D.scale.x = 1
+	$AnimatedSprite2D.scale.y = 1
+	#var tween0 = get_tree().create_tween()
+	#tween0.tween_property($AnimatedSprite2D, \"scale\", Vector2(1,1), Vector2(2,2),5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT, 1.5)
+	#tween0.interpolate_property($AnimatedSprite2D, \"scale\", Vector2(1,1), Vector2(2,2),5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT, 1.5)
+
+func _process(delta):
+	if should_shrink:
+		_shrink(rate)
+		if $AnimatedSprite2D.scale.x <= size_min:
+			should_shrink = false
+			
+	if not should_shrink:
+		_grow(rate)
+		if $AnimatedSprite2D.scale.x >= size_max:
+			should_shrink = true
+
+func _shrink(amount):
+	$AnimatedSprite2D.scale.x -= amount
+	$AnimatedSprite2D.scale.y -= amount
+	
+func _grow(amount):
+		$AnimatedSprite2D.scale.x += amount
+		$AnimatedSprite2D.scale.y += amount
 
 func _on_body_entered(body):
 	if body.name == \"Robot\":
@@ -26,42 +51,15 @@ func _on_body_entered(body):
 [sub_resource type="CircleShape2D" id="CircleShape2D_08b1g"]
 radius = 20.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8xs0r"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rpo5x"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_3h314")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ujikd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_otc8k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_gfldi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_gbqrf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_oa77o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_gbqrf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_otc8k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_gfldi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ujikd")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 12.0
+"speed": 5.0
 }]
 
 [node name="DoubleJump" type="Area2D"]
@@ -71,9 +69,8 @@ script = SubResource("GDScript_dh4jr")
 shape = SubResource("CircleShape2D_08b1g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_8xs0r")
+sprite_frames = SubResource("SpriteFrames_rpo5x")
 animation = &"Idle"
-autoplay = "Idle"
 
 [node name="SoundPickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_fh1jn")
