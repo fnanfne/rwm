@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmebfhul7rs5d"
-path="res://.godot/imported/robot_shooting1.png-e66b6f7eb3a887c1b9a517a9c8c4de14.ctex"
+uid="uid://crgj4liv73oj8"
+path="res://.godot/imported/robot_idleshoot3.png-1fbbc3cd04b79c4c1605306f2922ae60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Robot/Without helmet/Shooting/robot_shooting1.png"
-dest_files=["res://.godot/imported/robot_shooting1.png-e66b6f7eb3a887c1b9a517a9c8c4de14.ctex"]
+source_file="res://Assets/Robot/Without helmet/Shooting/robot_idleshoot3.png"
+dest_files=["res://.godot/imported/robot_idleshoot3.png-1fbbc3cd04b79c4c1605306f2922ae60.ctex"]
 
 [params]
 
