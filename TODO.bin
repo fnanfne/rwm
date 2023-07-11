@@ -1,11 +1,11 @@
 - Sprites
    -Robot (no helmet)
-      -idle
-      -run
-      -jump
+      -idle (DONE)
+      -run (DONE)
+      -jump (DONE)
       -shoot
       -zoom
-      -launch
+      -launch (DONE)
       -push/pull
       -wallbounce
    -Robot (with helmet)
@@ -21,8 +21,8 @@
       -idle
    -Redguy
       -idle
-      -walk
-      -die
+      -walk (DONE)
+      -die (DONE)
    -Eyeguy
       -idle
       -fly
