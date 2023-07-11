@@ -1,10 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://cch1ikcufljkw"]
+[gd_scene load_steps=20 format=3 uid="uid://cch1ikcufljkw"]
 
 [ext_resource type="Texture2D" uid="uid://b4hkaqaushw81" path="res://Assets/paint__TILESET/IMG_001.png" id="1_d8a48"]
 [ext_resource type="PackedScene" uid="uid://dquo45htw4sae" path="res://Robot/Robot.tscn" id="1_u6aup"]
 [ext_resource type="Texture2D" uid="uid://bmsjdtjji8375" path="res://Assets/Background/0.png" id="3_k0ymb"]
 [ext_resource type="Script" path="res://BG.gd" id="3_xx87h"]
 [ext_resource type="PackedScene" uid="uid://bcf6q86fpumhy" path="res://Redguy/Redguy.tscn" id="5_phxxk"]
+[ext_resource type="PackedScene" uid="uid://cj3pq1aree5vn" path="res://Apps/Jump.tscn" id="6_m33bm"]
+[ext_resource type="FontFile" uid="uid://cqrlwb7covlpt" path="res://Assets/Fonts/digital-7.ttf" id="6_v2fqc"]
+[ext_resource type="Script" path="res://HUD.gd" id="6_yfqfn"]
+[ext_resource type="PackedScene" uid="uid://3dek8cpmjetb" path="res://Apps/DoubleJump.tscn" id="7_prlcu"]
+[ext_resource type="Texture2D" uid="uid://cpenvmpij6dwl" path="res://Assets/Apps/Bitcoin/btc0.png" id="7_qvdgo"]
+[ext_resource type="PackedScene" uid="uid://c21qrbylx8yd" path="res://Apps/Launch.tscn" id="8_2qiln"]
+[ext_resource type="Texture2D" uid="uid://ftbn2xsfmbek" path="res://Assets/Apps/Heart/heart0.png" id="8_cef3m"]
+[ext_resource type="PackedScene" uid="uid://dx3sfu2vncedd" path="res://Apps/Bitcoin.tscn" id="10_hjrrp"]
+[ext_resource type="PackedScene" uid="uid://brcwldjc05d0t" path="res://Apps/Gun.tscn" id="11_5fibj"]
+[ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="15_jca0p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_owbl8"]
 texture = ExtResource("1_d8a48")
@@ -473,6 +483,13 @@ tile_size = Vector2i(40, 40)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_owbl8")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ggnt"]
+bg_color = Color(0.470588, 0.470588, 0.470588, 0.564706)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="GDScript" id="GDScript_o2l82"]
 script/source = "extends Label
 
@@ -486,21 +503,6 @@ func _ready():
 func _process(_delta):
 	#text = \"HP: \" + str(get_node(\"../../Robot/Robot\").health)
 	text = \"HP: \" + str(Game.robotHP)
-"
-
-[sub_resource type="GDScript" id="GDScript_w1dlx"]
-script/source = "extends Label
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	#text = \"HP: \" + str(get_node(\"../../Robot/Robot\").health)
-	text = \"BTC: \" + str(Game.BTC)
 "
 
 [node name="World" type="Node2D"]
@@ -567,25 +569,82 @@ position = Vector2(1460, 420)
 [node name="Redguy6" parent="Mobs" instance=ExtResource("5_phxxk")]
 position = Vector2(1700, 420)
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("6_yfqfn")
 
-[node name="HP" type="Label" parent="UI"]
-offset_left = 10.0
-offset_right = 320.0
+[node name="Panel" type="Panel" parent="HUD"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 200.0
+offset_bottom = 110.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ggnt")
+
+[node name="HP" type="Label" parent="HUD/Panel"]
+visible = false
+layout_mode = 0
+offset_right = 170.0
 offset_bottom = 38.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "HP"
 script = SubResource("GDScript_o2l82")
 
-[node name="BTC" type="Label" parent="UI"]
-offset_left = 10.0
-offset_top = 40.0
-offset_right = 320.0
-offset_bottom = 78.0
+[node name="Label" type="Label" parent="HUD/Panel"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 90.0
+offset_bottom = 84.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 25
-text = "BTC"
-script = SubResource("GDScript_w1dlx")
+theme_override_fonts/font = ExtResource("6_v2fqc")
+theme_override_font_sizes/font_size = 34
+text = "x"
+vertical_alignment = 1
+
+[node name="BTC" type="Label" parent="HUD/Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 140.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("6_v2fqc")
+theme_override_font_sizes/font_size = 34
+text = "####"
+vertical_alignment = 1
+
+[node name="Bitcoin" type="TextureRect" parent="HUD"]
+offset_left = 30.0
+offset_top = 70.0
+offset_right = 60.0
+offset_bottom = 100.0
+texture = ExtResource("7_qvdgo")
+
+[node name="Heart" type="TextureRect" parent="HUD"]
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("8_cef3m")
 
 [node name="Apps" type="Node2D" parent="."]
+
+[node name="Bitcoin" parent="Apps" instance=ExtResource("10_hjrrp")]
+position = Vector2(300, 500)
+
+[node name="Jump" parent="Apps" instance=ExtResource("6_m33bm")]
+position = Vector2(220, 500)
+
+[node name="Gun" parent="." instance=ExtResource("11_5fibj")]
+position = Vector2(220, 300)
+
+[node name="DoubleJump" parent="." instance=ExtResource("7_prlcu")]
+position = Vector2(780, 460)
+
+[node name="Launch" parent="." instance=ExtResource("8_2qiln")]
+position = Vector2(700, 500)
+
+[node name="Heart" parent="." instance=ExtResource("15_jca0p")]
+position = Vector2(420, 500)
+
+[connection signal="btc_collected" from="Apps/Bitcoin" to="HUD" method="_on_btc_collected"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6mmucb4ip1vq"
-path="res://.godot/imported/New RwK Logo_.png-9f5493806316f4f14e7559d01f0deaad.ctex"
+uid="uid://0wmg68mohiy0"
+path="res://.godot/imported/Kitty.png-01bf96a06a3d258449263e7ab9157300.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/New RwK Logo_.png"
-dest_files=["res://.godot/imported/New RwK Logo_.png-9f5493806316f4f14e7559d01f0deaad.ctex"]
+source_file="res://Assets/Pics/Kitty.png"
+dest_files=["res://.godot/imported/Kitty.png-01bf96a06a3d258449263e7ab9157300.ctex"]
 
 [params]
 

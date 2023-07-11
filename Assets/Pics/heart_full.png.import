@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm462owjogp1m"
-path="res://.godot/imported/robot_arm.png-0b8f784c5883aa6ac847d9aadc3484bd.ctex"
+uid="uid://bnvfah7n2q3u7"
+path="res://.godot/imported/heart_full.png-b08f2f7ff417e6602b554068e34300b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/robot_arm.png"
-dest_files=["res://.godot/imported/robot_arm.png-0b8f784c5883aa6ac847d9aadc3484bd.ctex"]
+source_file="res://Assets/Pics/heart_full.png"
+dest_files=["res://.godot/imported/heart_full.png-b08f2f7ff417e6602b554068e34300b4.ctex"]
 
 [params]
 

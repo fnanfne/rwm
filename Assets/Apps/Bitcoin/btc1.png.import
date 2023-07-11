@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0wmg68mohiy0"
-path="res://.godot/imported/Kitty.png-bb6e74b99206717589d722f7efb53d02.ctex"
+uid="uid://ceroluym8rva0"
+path="res://.godot/imported/btc1.png-12a61a6e737fd5aeed699affe9d64225.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Kitty.png"
-dest_files=["res://.godot/imported/Kitty.png-bb6e74b99206717589d722f7efb53d02.ctex"]
+source_file="res://Assets/Apps/Bitcoin/btc1.png"
+dest_files=["res://.godot/imported/btc1.png-12a61a6e737fd5aeed699affe9d64225.ctex"]
 
 [params]
 

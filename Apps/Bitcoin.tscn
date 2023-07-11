@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://dx3sfu2vncedd"]
+
+[ext_resource type="Texture2D" uid="uid://cpenvmpij6dwl" path="res://Assets/Apps/Bitcoin/btc0.png" id="1_84hhi"]
+[ext_resource type="Texture2D" uid="uid://ceroluym8rva0" path="res://Assets/Apps/Bitcoin/btc1.png" id="2_ml2da"]
+[ext_resource type="Texture2D" uid="uid://b5irj7slb3byh" path="res://Assets/Apps/Bitcoin/btc2.png" id="3_1fqsj"]
+[ext_resource type="Texture2D" uid="uid://ck1n2lju11yor" path="res://Assets/Apps/Bitcoin/btc3.png" id="4_ivu64"]
+[ext_resource type="AudioStream" uid="uid://cnwnqdwnf8tt6" path="res://Assets/Audio/Sounds/gotcoin.ogg" id="5_g7s77"]
+
+[sub_resource type="GDScript" id="GDScript_dh4jr"]
+script/source = "extends Area2D
+
+var size_min = 1
+var size_max = 1.1
+var should_shrink = true
+var rate = 0.005
+
+signal btc_collected
+
+@onready var anim = get_node(\"AnimatedSprite2D\")
+
+func _ready():
+	anim.play(\"Idle\")
+#	$AnimatedSprite2D.scale.x = 1
+#	$AnimatedSprite2D.scale.y = 1
+	#var tween0 = get_tree().create_tween()
+	#tween0.tween_property($AnimatedSprite2D, \"scale\", Vector2(1,1), Vector2(2,2),5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT, 1.5)
+	#tween0.interpolate_property($AnimatedSprite2D, \"scale\", Vector2(1,1), Vector2(2,2),5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT, 1.5)
+
+#func _process(_delta):
+#	if should_shrink:
+#		_shrink(rate)
+#		if $AnimatedSprite2D.scale.x <= size_min:
+#			should_shrink = false
+			
+#	if not should_shrink:
+#		_grow(rate)
+#		if $AnimatedSprite2D.scale.x >= size_max:
+#			should_shrink = true
+
+#func _shrink(amount):
+#	$AnimatedSprite2D.scale.x -= amount
+#	$AnimatedSprite2D.scale.y -= amount
+	
+#func _grow(amount):
+#		$AnimatedSprite2D.scale.x += amount
+#		$AnimatedSprite2D.scale.y += amount
+
+func _on_body_entered(body):
+	if body.name == \"Robot\":
+		#Game.GUN = true
+		emit_signal(\"btc_collected\")
+		$SoundPickup.play()
+		var tween1 = get_tree().create_tween()
+		var tween2 = get_tree().create_tween()
+		tween1.tween_property(self, \"position\", position - Vector2(0,42), 0.5)
+		tween2.tween_property(self, \"modulate:a\", 0, 0.5)
+		tween1.tween_callback(queue_free)
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_08b1g"]
+radius = 20.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mb627"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_84hhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ml2da")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1fqsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ivu64")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 12.0
+}]
+
+[node name="Bitcoin" type="Area2D"]
+script = SubResource("GDScript_dh4jr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.8, 0.8)
+shape = SubResource("CircleShape2D_08b1g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mb627")
+animation = &"Idle"
+frame_progress = 0.589127
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_g7s77")
+volume_db = -10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

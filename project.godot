@@ -13,8 +13,8 @@ config_version=5
 config/name="Robot Wants Music"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
-boot_splash/image="res://Assets/New RwK Logo_.png"
-config/icon="res://Assets/Kitty.png"
+boot_splash/image="res://Assets/Pics/New RwK Logo_.png"
+config/icon="res://Assets/Pics/Kitty.png"
 
 [autoload]
 
@@ -23,7 +23,7 @@ Utils="*res://Global/Utils.gd"
 
 [display]
 
-mouse_cursor/custom_image="res://Assets/robot_arm.png"
+mouse_cursor/custom_image="res://Assets/Pics/robot_arm.png"
 
 [editor]
 
