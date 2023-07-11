@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://nq13g51yd2t3"]
+
+[ext_resource type="Script" path="res://debug_window.gd" id="1_2meks"]
+[ext_resource type="Script" path="res://Label.gd" id="2_ijeka"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usvcf"]
+bg_color = Color(0.00392157, 0.105882, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="DebugWindow" type="CanvasLayer"]
+script = ExtResource("1_2meks")
+
+[node name="TextboxContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -79.5
+offset_top = 20.0
+offset_right = 79.5
+offset_bottom = 268.0
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_usvcf")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_usvcf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextboxContainer/MarginContainer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="TextboxContainer/MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "gdfdfdgfdgfdgfgdf"
+script = ExtResource("2_ijeka")
+
+[node name="Label2" type="Label" parent="TextboxContainer/MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "velocity.y: "
+
+[node name="Label3" type="Label" parent="TextboxContainer/MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "gravity: "
+
+[node name="Label4" type="Label" parent="TextboxContainer/MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="TextboxContainer/MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="TextboxContainer/MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="gui_input" from="TextboxContainer" to="." method="_on_textbox_container_gui_input"]

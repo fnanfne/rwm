@@ -2,12 +2,12 @@ extends Node
 
 var robotHP = 10
 var BTC = 0
-var JUMP = false
-var DOUBLEJUMP = false
+var JUMP = true
+var DOUBLEJUMP = true
 var HAXXOR = false
 var HEMLET = false
-var GUN = false
-var LAUNCH = false
+var GUN = true
+var LAUNCH = true
 var ZOOM = false
 var ANNIHILATE = false
 var EXPLOZORZ = false

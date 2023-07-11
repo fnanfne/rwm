@@ -11,6 +11,8 @@ var size_max = 1.1
 var should_shrink = true
 var rate = 0.005
 
+
+
 func _ready():
 	$AnimatedSprite2D.scale.x = 1
 	$AnimatedSprite2D.scale.y = 1
@@ -18,7 +20,7 @@ func _ready():
 	#tween0.tween_property($AnimatedSprite2D, \"scale\", Vector2(1,1), Vector2(2,2),5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT, 1.5)
 	#tween0.interpolate_property($AnimatedSprite2D, \"scale\", Vector2(1,1), Vector2(2,2),5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT, 1.5)
 
-func _process(delta):
+func _process(_delta):
 	if should_shrink:
 		_shrink(rate)
 		if $AnimatedSprite2D.scale.x <= size_min:

@@ -12,15 +12,18 @@ var has_double_jumped = false
 var is_launching = false
 var is_falling = false
 var is_shooting = false
+var normal_modulation = Color(1, 1, 1)
+var red_modulation = Color(0.81960785388947, 0.10196078568697, 0)
 
 @onready var anim = get_node("AnimationPlayer")
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 
 func _physics_process(delta):
-	#print(Game.GUN)
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
 	else:
 		has_double_jumped = false
 		is_launching = false
@@ -67,14 +70,16 @@ func _physics_process(delta):
 	# Handle Shooting.
 	if Game.GUN:
 		if Input.is_action_pressed("shoot"):
-			if is_on_floor():
-				print("SHOOTING!!!!")
-				is_shooting = true
-				anim.play("Shoot")
-			else:
-				pass
-	else:
-		is_shooting = false
+			#if is_on_floor():
+			print("SHOOTING!!!!")
+			is_shooting = true
+			anim.play("Shoot")
+			#else:
+			#	pass
+		else:
+			is_shooting = false
+	#else:
+		#is_shooting = false
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	#created custom input keys
@@ -96,9 +101,11 @@ func _physics_process(delta):
 	else:
 		if velocity.y == 0 and is_shooting != true:
 			anim.play("Idle")
+			modulate = Color(1, 1, 1)
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if velocity.y > 0:
 		anim.play("Fall")
+		modulate = Color(0.81960785388947, 0.10196078568697, 0)
 	var was_on_floor = is_on_floor()
 	move_and_slide()
 	var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
@@ -109,3 +116,9 @@ func _physics_process(delta):
 	if Game.robotHP <= 0:
 		queue_free()
 		get_tree().change_scene_to_file("res://main.tscn")
+
+func damage_modulation():
+	$AnimatedSprite2D.modulate = Color(0.81960785388947, 0.10196078568697, 0)
+	await get_tree().create_timer(0.1).timeout
+	$AnimatedSprite2D.modulate = Color(0.81960785388947, 0.10196078568697, 0)
+
