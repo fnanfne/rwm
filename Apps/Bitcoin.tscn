@@ -20,35 +20,12 @@ signal btc_collected
 
 func _ready():
 	anim.play(\"Idle\")
-#	$AnimatedSprite2D.scale.x = 1
-#	$AnimatedSprite2D.scale.y = 1
-	#var tween0 = get_tree().create_tween()
-	#tween0.tween_property($AnimatedSprite2D, \"scale\", Vector2(1,1), Vector2(2,2),5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT, 1.5)
-	#tween0.interpolate_property($AnimatedSprite2D, \"scale\", Vector2(1,1), Vector2(2,2),5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT, 1.5)
 
-#func _process(_delta):
-#	if should_shrink:
-#		_shrink(rate)
-#		if $AnimatedSprite2D.scale.x <= size_min:
-#			should_shrink = false
-			
-#	if not should_shrink:
-#		_grow(rate)
-#		if $AnimatedSprite2D.scale.x >= size_max:
-#			should_shrink = true
-
-#func _shrink(amount):
-#	$AnimatedSprite2D.scale.x -= amount
-#	$AnimatedSprite2D.scale.y -= amount
-	
-#func _grow(amount):
-#		$AnimatedSprite2D.scale.x += amount
-#		$AnimatedSprite2D.scale.y += amount
 
 func _on_body_entered(body):
 	if body.name == \"Robot\":
-		#Game.GUN = true
 		emit_signal(\"btc_collected\")
+		#set_collision_mask_value(0,false) #supposed to prevent a double pickup, but giving an error
 		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
 		var tween2 = get_tree().create_tween()
@@ -90,7 +67,7 @@ shape = SubResource("CircleShape2D_08b1g")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mb627")
 animation = &"Idle"
-frame_progress = 0.589127
+frame_progress = 0.636096
 
 [node name="SoundPickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_g7s77")

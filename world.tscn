@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cch1ikcufljkw"]
+[gd_scene load_steps=21 format=3 uid="uid://cch1ikcufljkw"]
 
 [ext_resource type="Texture2D" uid="uid://b4hkaqaushw81" path="res://Assets/paint__TILESET/IMG_001.png" id="1_d8a48"]
 [ext_resource type="PackedScene" uid="uid://dquo45htw4sae" path="res://Robot/Robot.tscn" id="1_u6aup"]
@@ -11,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://3dek8cpmjetb" path="res://Apps/DoubleJump.tscn" id="7_prlcu"]
 [ext_resource type="Texture2D" uid="uid://cpenvmpij6dwl" path="res://Assets/Apps/Bitcoin/btc0.png" id="7_qvdgo"]
 [ext_resource type="PackedScene" uid="uid://c21qrbylx8yd" path="res://Apps/Launch.tscn" id="8_2qiln"]
-[ext_resource type="Texture2D" uid="uid://ftbn2xsfmbek" path="res://Assets/Apps/Heart/heart0.png" id="8_cef3m"]
+[ext_resource type="Texture2D" uid="uid://cynu337bsj6ws" path="res://Assets/Pics/heart_full2.png" id="9_bbhmm"]
 [ext_resource type="PackedScene" uid="uid://dx3sfu2vncedd" path="res://Apps/Bitcoin.tscn" id="10_hjrrp"]
+[ext_resource type="Texture2D" uid="uid://duu6ico1o7ju2" path="res://Assets/Pics/heart_empty2.png" id="10_oulen"]
 [ext_resource type="PackedScene" uid="uid://brcwldjc05d0t" path="res://Apps/Gun.tscn" id="11_5fibj"]
 [ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="15_jca0p"]
 
@@ -484,7 +485,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_owbl8")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ggnt"]
-bg_color = Color(0.470588, 0.470588, 0.470588, 0.564706)
+bg_color = Color(0.470588, 0.470588, 0.470588, 0)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -575,7 +576,7 @@ script = ExtResource("6_yfqfn")
 [node name="Panel" type="Panel" parent="HUD"]
 offset_left = 20.0
 offset_top = 20.0
-offset_right = 200.0
+offset_right = 305.0
 offset_bottom = 110.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_6ggnt")
 
@@ -591,13 +592,13 @@ script = SubResource("GDScript_o2l82")
 
 [node name="Label" type="Label" parent="HUD/Panel"]
 layout_mode = 0
-offset_left = 50.0
+offset_left = 70.0
 offset_top = 50.0
 offset_right = 90.0
 offset_bottom = 84.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("6_v2fqc")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 20
 text = "x"
 vertical_alignment = 1
 
@@ -613,19 +614,33 @@ theme_override_font_sizes/font_size = 34
 text = "####"
 vertical_alignment = 1
 
-[node name="Bitcoin" type="TextureRect" parent="HUD"]
-offset_left = 30.0
-offset_top = 70.0
-offset_right = 60.0
-offset_bottom = 100.0
+[node name="Bitcoin" type="TextureRect" parent="HUD/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 44.0
+offset_bottom = 84.0
 texture = ExtResource("7_qvdgo")
 
-[node name="Heart" type="TextureRect" parent="HUD"]
-offset_left = 30.0
-offset_top = 30.0
-offset_right = 64.0
-offset_bottom = 64.0
-texture = ExtResource("8_cef3m")
+[node name="HeartEmpty" type="TextureRect" parent="HUD/Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 220.0
+offset_bottom = 37.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("10_oulen")
+stretch_mode = 1
+
+[node name="HeartFull" type="TextureRect" parent="HUD/Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 220.0
+offset_bottom = 37.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("9_bbhmm")
+stretch_mode = 1
 
 [node name="Apps" type="Node2D" parent="."]
 

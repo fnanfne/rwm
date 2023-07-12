@@ -122,3 +122,10 @@ func damage_modulation():
 	await get_tree().create_timer(0.1).timeout
 	$AnimatedSprite2D.modulate = Color(0.81960785388947, 0.10196078568697, 0)
 
+func damaged():
+	Game.lose_life()
+	set_modulate(Color(1,0.3,0.3,0.3))
+	$DamageTimer.start()
+	
+func _on_Timer_timeout():
+	set_modulate(Color(1,1,1,1))

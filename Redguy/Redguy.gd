@@ -46,7 +46,8 @@ func _on_player_death_body_entered(body):
 func _on_player_collision_body_entered(body):
 	if body.name == "Robot":
 		#body.health -= 3 # not needed anymore as it's now in the global Game script
-		Game.robotHP -= 3
+		#Game.robotHP -= 3
+		Game.lose_life()
 		#chase = false #made a function instead (death) below
 		#get_node("AnimatedSprite2D").play("Death") #made a function instead below
 		#await get_node("AnimatedSprite2D").animation_finished #made a function instead below

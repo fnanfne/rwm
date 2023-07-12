@@ -422,3 +422,7 @@ volume_db = -10.0
 [node name="SoundLaunch" type="AudioStreamPlayer" parent="."]
 
 [node name="SoundRun" type="AudioStreamPlayer" parent="."]
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
