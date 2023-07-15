@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://4e8b67apmqlt" path="res://Assets/Pics/hud_heartEmpty.png" id="10_plbgi"]
 [ext_resource type="Texture2D" uid="uid://hh6lyvpwwnve" path="res://Assets/Pics/hud_heartFull.png" id="12_3etdl"]
 [ext_resource type="PackedScene" uid="uid://chmx8jmeo00ra" path="res://Robot/Robot_Modular.tscn" id="13_jjxcv"]
-[ext_resource type="PackedScene" uid="uid://clj4n37kqnsbt" path="res://Redguy/Redguy2.tscn" id="14_tea8a"]
+[ext_resource type="PackedScene" uid="uid://bm3g0a78ol6i" path="res://Redguy/Redguy3.tscn" id="14_j14r4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_owbl8"]
 texture = ExtResource("1_d8a48")
@@ -665,5 +665,5 @@ stretch_mode = 1
 [node name="RobotModular" parent="." instance=ExtResource("13_jjxcv")]
 position = Vector2(703, 493)
 
-[node name="Redguy2" parent="." instance=ExtResource("14_tea8a")]
-position = Vector2(342, 498)
+[node name="Redguy3" parent="." instance=ExtResource("14_j14r4")]
+position = Vector2(302, 497)

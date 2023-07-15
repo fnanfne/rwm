@@ -14,17 +14,17 @@ func _physics_process(delta):
 	if chase == true:
 		#if get_node("AnimationPlayer").animation != "Death":
 		#	get_node("AnimationPlayer").play("Walking")
-		robot = get_node("../../Robot/Robot")
+		robot = get_node("../Robot/Robot")
 		var direction = (robot.position - self.position).normalized()
 		if direction.x > 0:
-			get_node("AnimationPlayer").flip_h = false
+			get_node("BodySprite").flip_h = false
 		else:
-			get_node("AnimationPlayer").flip_h = true
+			get_node("BodySprite").flip_h = true
 		velocity.x = direction.x * SPEED
-	#else:
-	#	if get_node("AnimationPlayer").animation != "Death":
-	#		get_node("AnimationPlayer").play("Walking")
-	#	velocity.x = 0
+	else:
+		#if get_node("AnimationPlayer").animation != "Death":
+		#	get_node("AnimationPlayer").play("Idle")
+		velocity.x = 0
 	move_and_slide()
 
 func _on_player_detection_body_entered(body):
@@ -62,4 +62,3 @@ func death():
 	get_node("AnimationPlayer").play("Death")
 	await get_node("AnimationPlayer").animation_finished
 	self.queue_free()
-

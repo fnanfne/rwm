@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://clj4n37kqnsbt"]
+[gd_scene load_steps=21 format=3 uid="uid://clj4n37kqnsbt"]
 
 [ext_resource type="Texture2D" uid="uid://cqpw1oamii6bg" path="res://Assets/Redguy/From John/jaw.png" id="1_7nnos"]
 [ext_resource type="Script" path="res://Redguy/Redguy2.gd" id="1_8h451"]
@@ -313,10 +313,16 @@ _data = {
 "Walking": SubResource("Animation_gll3c")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qh62q"]
+radius = 120.067
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikcpi"]
+
 [node name="Redguy2" type="CharacterBody2D"]
 script = ExtResource("1_8h451")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-4, -2)
 shape = SubResource("CapsuleShape2D_a6138")
 
@@ -352,3 +358,27 @@ speed_scale = 5.0
 libraries = {
 "": SubResource("AnimationLibrary_v8gft")
 }
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_qh62q")
+
+[node name="PlayerCollision" type="Area2D" parent="."]
+position = Vector2(-3, 0)
+scale = Vector2(1.72, 1.84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
+shape = SubResource("RectangleShape2D_ikcpi")
+
+[node name="PlayerDeath" type="Area2D" parent="."]
+position = Vector2(-4, 0)
+scale = Vector2(1, 1.76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeath"]
+shape = SubResource("RectangleShape2D_ikcpi")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]
+[connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered"]
