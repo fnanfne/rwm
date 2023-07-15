@@ -1,6 +1,6 @@
 extends Node
 
-var max_lives = 9
+var max_lives = 1
 var robotHP = 0
 var BTC = 0
 var hud

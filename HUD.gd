@@ -17,4 +17,5 @@ func load_hearts():
 	$Panel/HeartFull.size.x = Game.robotHP * 36
 	#$Panel/HeartEmpty.size.x = Game.robotHP * 36
 	$Panel/HeartEmpty.size.x = (Game.max_lives - Game.robotHP) * 36
-	$Panel/HeartEmpty.position.x = $Panel/HeartFull.position.x + $Panel/HeartFull.size.x * $Panel/HeartFull.scale.x
+	#$Panel/HeartEmpty.position.x = $Panel/HeartFull.position.x + $Panel/HeartFull.size.x * $Panel/HeartFull.scale.x
+	$Panel/HeartEmpty.position.x = $Panel/HeartFull.position.x

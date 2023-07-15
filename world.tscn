@@ -1,21 +1,17 @@
-[gd_scene load_steps=21 format=3 uid="uid://cch1ikcufljkw"]
+[gd_scene load_steps=17 format=3 uid="uid://cch1ikcufljkw"]
 
 [ext_resource type="Texture2D" uid="uid://b4hkaqaushw81" path="res://Assets/paint__TILESET/IMG_001.png" id="1_d8a48"]
 [ext_resource type="PackedScene" uid="uid://dquo45htw4sae" path="res://Robot/Robot.tscn" id="1_u6aup"]
 [ext_resource type="Texture2D" uid="uid://bmsjdtjji8375" path="res://Assets/Background/0.png" id="3_k0ymb"]
 [ext_resource type="Script" path="res://BG.gd" id="3_xx87h"]
 [ext_resource type="PackedScene" uid="uid://bcf6q86fpumhy" path="res://Redguy/Redguy.tscn" id="5_phxxk"]
-[ext_resource type="PackedScene" uid="uid://cj3pq1aree5vn" path="res://Apps/Jump.tscn" id="6_m33bm"]
 [ext_resource type="FontFile" uid="uid://cqrlwb7covlpt" path="res://Assets/Fonts/digital-7.ttf" id="6_v2fqc"]
 [ext_resource type="Script" path="res://HUD.gd" id="6_yfqfn"]
-[ext_resource type="PackedScene" uid="uid://3dek8cpmjetb" path="res://Apps/DoubleJump.tscn" id="7_prlcu"]
 [ext_resource type="Texture2D" uid="uid://cpenvmpij6dwl" path="res://Assets/Apps/Bitcoin/btc0.png" id="7_qvdgo"]
-[ext_resource type="PackedScene" uid="uid://c21qrbylx8yd" path="res://Apps/Launch.tscn" id="8_2qiln"]
 [ext_resource type="Texture2D" uid="uid://cynu337bsj6ws" path="res://Assets/Pics/heart_full2.png" id="9_bbhmm"]
-[ext_resource type="PackedScene" uid="uid://dx3sfu2vncedd" path="res://Apps/Bitcoin.tscn" id="10_hjrrp"]
 [ext_resource type="Texture2D" uid="uid://duu6ico1o7ju2" path="res://Assets/Pics/heart_empty2.png" id="10_oulen"]
-[ext_resource type="PackedScene" uid="uid://brcwldjc05d0t" path="res://Apps/Gun.tscn" id="11_5fibj"]
-[ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="15_jca0p"]
+[ext_resource type="Texture2D" uid="uid://4e8b67apmqlt" path="res://Assets/Pics/hud_heartEmpty.png" id="10_plbgi"]
+[ext_resource type="Texture2D" uid="uid://hh6lyvpwwnve" path="res://Assets/Pics/hud_heartFull.png" id="12_3etdl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_owbl8"]
 texture = ExtResource("1_d8a48")
@@ -485,7 +481,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_owbl8")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ggnt"]
-bg_color = Color(0.470588, 0.470588, 0.470588, 0)
+bg_color = Color(0.6, 0.6, 0.6, 0)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -577,7 +573,7 @@ script = ExtResource("6_yfqfn")
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 305.0
-offset_bottom = 110.0
+offset_bottom = 190.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_6ggnt")
 
 [node name="HP" type="Label" parent="HUD/Panel"]
@@ -642,24 +638,23 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("9_bbhmm")
 stretch_mode = 1
 
+[node name="HeartFull2" type="TextureRect" parent="HUD/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 120.0
+offset_right = 63.0
+offset_bottom = 165.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_3etdl")
+stretch_mode = 1
+
+[node name="HeartEmpty2" type="TextureRect" parent="HUD/Panel"]
+offset_left = 10.0
+offset_top = 120.0
+offset_right = 63.0
+offset_bottom = 165.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_plbgi")
+stretch_mode = 1
+
 [node name="Apps" type="Node2D" parent="."]
-
-[node name="Bitcoin" parent="Apps" instance=ExtResource("10_hjrrp")]
-position = Vector2(300, 500)
-
-[node name="Jump" parent="Apps" instance=ExtResource("6_m33bm")]
-position = Vector2(220, 500)
-
-[node name="Gun" parent="." instance=ExtResource("11_5fibj")]
-position = Vector2(220, 300)
-
-[node name="DoubleJump" parent="." instance=ExtResource("7_prlcu")]
-position = Vector2(780, 460)
-
-[node name="Launch" parent="." instance=ExtResource("8_2qiln")]
-position = Vector2(700, 500)
-
-[node name="Heart" parent="." instance=ExtResource("15_jca0p")]
-position = Vector2(420, 500)
-
-[connection signal="btc_collected" from="Apps/Bitcoin" to="HUD" method="_on_btc_collected"]

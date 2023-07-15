@@ -39,7 +39,7 @@ func _grow(amount):
 
 func _on_body_entered(body):
 	if body.name == \"Robot\":
-		Game.robotHP += 1
+		Game.robotHP += 5
 		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
 		var tween2 = get_tree().create_tween()

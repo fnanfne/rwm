@@ -113,9 +113,9 @@ func _physics_process(delta):
 		coyote_jump_timer.start()
 		
 	#if health <= 0: # not needed anymore as it's now in the global Game script
-	if Game.robotHP <= 0:
-		queue_free()
-		get_tree().change_scene_to_file("res://main.tscn")
+	#if Game.robotHP <= 0:
+	#	queue_free()
+	#	get_tree().change_scene_to_file("res://main.tscn")
 
 func damage_modulation():
 	$AnimatedSprite2D.modulate = Color(0.81960785388947, 0.10196078568697, 0)
