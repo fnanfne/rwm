@@ -266,7 +266,7 @@ shape = SubResource("RectangleShape2D_wo5yj")
 position = Vector2(0, -3)
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_4fegu")
-animation = &"Walking"
+animation = &"Death"
 frame = 1
 
 [node name="PlayerDetection" type="Area2D" parent="."]

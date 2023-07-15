@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dl3agjki6riws"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_0utcd"]
-[ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://bg.tscn" id="2_huy54"]
+[ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="2_huy54"]
 [ext_resource type="AudioStream" uid="uid://bfbb04e1fn4gl" path="res://Assets/Audio/Sounds/music_title__STREAM.ogg" id="3_hyhs7"]
 
 [node name="Main" type="Node2D"]
