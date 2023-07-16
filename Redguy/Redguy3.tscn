@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bm3g0a78ol6i"]
+[gd_scene load_steps=18 format=3 uid="uid://bm3g0a78ol6i"]
 
 [ext_resource type="Script" path="res://Redguy/Redguy3.gd" id="1_l25fg"]
 [ext_resource type="Texture2D" uid="uid://cm2wcrq8vldst" path="res://Assets/Redguy/From John/right_leg.png" id="2_rfanc"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://528nlbfffcsk" path="res://Assets/Redguy/From John/right_antenna.png" id="7_w0ee5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wo5yj"]
-size = Vector2(32, 46.25)
+size = Vector2(35, 38)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t6vxu"]
 
@@ -149,23 +149,16 @@ _data = {
 "Walking": SubResource("Animation_gbqq4")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_31wfx"]
-radius = 165.027
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7qse"]
-size = Vector2(37, 39)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrhp5"]
-size = Vector2(28, 53)
-
 [node name="Redguy3" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_l25fg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2(-4.5, 2)
 shape = SubResource("RectangleShape2D_wo5yj")
 
 [node name="BodySprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_t6vxu")
 
 [node name="Right_Leg" type="AnimatedSprite2D" parent="BodySprite"]
@@ -195,30 +188,11 @@ animation = &"Right_Antenna"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Walking"
+speed_scale = 5.0
 libraries = {
 "": SubResource("AnimationLibrary_0fmng")
 }
 
-[node name="PlayerDetection" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-shape = SubResource("CircleShape2D_31wfx")
-
-[node name="PlayerCollision" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
-position = Vector2(-0.5, 1.5)
-shape = SubResource("RectangleShape2D_w7qse")
-
-[node name="PlayerDeath" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeath"]
-position = Vector2(0, -1.5)
-shape = SubResource("RectangleShape2D_qrhp5")
-
-[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
-[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
-[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]
-[connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered"]
+[node name="EdgeCheck" type="RayCast2D" parent="."]
+position = Vector2(13, 20)
+target_position = Vector2(0, 10)

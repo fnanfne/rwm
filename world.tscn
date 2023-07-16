@@ -480,6 +480,7 @@ texture_region_size = Vector2i(40, 40)
 [sub_resource type="TileSet" id="TileSet_3uxj8"]
 tile_size = Vector2i(40, 40)
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_owbl8")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ggnt"]
@@ -546,7 +547,7 @@ texture = ExtResource("3_k0ymb")
 [node name="Robot" type="Node" parent="."]
 
 [node name="Robot" parent="Robot" instance=ExtResource("1_u6aup")]
-position = Vector2(600, 270)
+position = Vector2(740, 443)
 
 [node name="Mobs" type="Node" parent="."]
 
@@ -663,7 +664,10 @@ stretch_mode = 1
 [node name="Apps" type="Node2D" parent="."]
 
 [node name="RobotModular" parent="." instance=ExtResource("13_jjxcv")]
-position = Vector2(703, 493)
+position = Vector2(422, 362)
 
 [node name="Redguy3" parent="." instance=ExtResource("14_j14r4")]
-position = Vector2(302, 497)
+position = Vector2(826, 418)
+
+[node name="Redguy4" parent="." instance=ExtResource("14_j14r4")]
+position = Vector2(435, 497)
