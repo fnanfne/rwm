@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2eimcy00uq7d"]
+[gd_scene load_steps=6 format=3 uid="uid://b2eimcy00uq7d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x8r63"]
 
@@ -7,6 +7,8 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_dkwxk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wbkev"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nfpbp"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
@@ -21,3 +23,6 @@ sprite_frames = SubResource("SpriteFrames_dkwxk")
 
 [node name="Eyeguy_Blink" type="AnimatedSprite2D" parent="BodySprite"]
 sprite_frames = SubResource("SpriteFrames_wbkev")
+
+[node name="Eyeguy_Body" type="AnimatedSprite2D" parent="BodySprite"]
+sprite_frames = SubResource("SpriteFrames_nfpbp")

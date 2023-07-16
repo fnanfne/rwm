@@ -1,12 +1,12 @@
 [gd_scene load_steps=18 format=3 uid="uid://bm3g0a78ol6i"]
 
 [ext_resource type="Script" path="res://Redguy/Redguy3.gd" id="1_l25fg"]
-[ext_resource type="Texture2D" uid="uid://cm2wcrq8vldst" path="res://Assets/Redguy/From John/right_leg.png" id="2_rfanc"]
-[ext_resource type="Texture2D" uid="uid://cqpw1oamii6bg" path="res://Assets/Redguy/From John/jaw.png" id="3_l0ws0"]
-[ext_resource type="Texture2D" uid="uid://b6cie3ow2kh3g" path="res://Assets/Redguy/From John/face.png" id="4_phlrp"]
-[ext_resource type="Texture2D" uid="uid://heyjd6070dku" path="res://Assets/Redguy/From John/left_leg.png" id="5_howqg"]
-[ext_resource type="Texture2D" uid="uid://d3but7ifqi15e" path="res://Assets/Redguy/From John/left_antenna.png" id="6_o0hw2"]
-[ext_resource type="Texture2D" uid="uid://528nlbfffcsk" path="res://Assets/Redguy/From John/right_antenna.png" id="7_w0ee5"]
+[ext_resource type="Texture2D" uid="uid://cm2wcrq8vldst" path="res://Assets/Enemies/Redguy/From John/right_leg.png" id="2_gbjop"]
+[ext_resource type="Texture2D" uid="uid://cqpw1oamii6bg" path="res://Assets/Enemies/Redguy/From John/jaw.png" id="3_i8seb"]
+[ext_resource type="Texture2D" uid="uid://b6cie3ow2kh3g" path="res://Assets/Enemies/Redguy/From John/face.png" id="4_rnegp"]
+[ext_resource type="Texture2D" uid="uid://heyjd6070dku" path="res://Assets/Enemies/Redguy/From John/left_leg.png" id="5_0s171"]
+[ext_resource type="Texture2D" uid="uid://d3but7ifqi15e" path="res://Assets/Enemies/Redguy/From John/left_antenna.png" id="6_rdadh"]
+[ext_resource type="Texture2D" uid="uid://528nlbfffcsk" path="res://Assets/Enemies/Redguy/From John/right_antenna.png" id="7_3n0w1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wo5yj"]
 size = Vector2(35, 38)
@@ -17,7 +17,7 @@ size = Vector2(35, 38)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rfanc")
+"texture": ExtResource("2_gbjop")
 }],
 "loop": true,
 "name": &"Right_Leg",
@@ -28,7 +28,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_l0ws0")
+"texture": ExtResource("3_i8seb")
 }],
 "loop": true,
 "name": &"Jaw",
@@ -39,7 +39,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_phlrp")
+"texture": ExtResource("4_rnegp")
 }],
 "loop": true,
 "name": &"Face",
@@ -50,7 +50,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_howqg")
+"texture": ExtResource("5_0s171")
 }],
 "loop": true,
 "name": &"Left_Leg",
@@ -61,7 +61,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_o0hw2")
+"texture": ExtResource("6_rdadh")
 }],
 "loop": true,
 "name": &"Left_Antenna",
@@ -72,7 +72,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_w0ee5")
+"texture": ExtResource("7_3n0w1")
 }],
 "loop": true,
 "name": &"Right_Antenna",
