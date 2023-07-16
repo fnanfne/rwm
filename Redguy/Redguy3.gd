@@ -12,7 +12,7 @@ func _ready():
 	get_node("AnimationPlayer").play("Walking")
 
 func _physics_process(delta):
-	print(get_node("EdgeCheck").position.x)
+	#print(get_node("EdgeCheck").position.x)
 	var found_wall = is_on_wall()
 	var found_edge = not edgeCheck.is_colliding()
 	if found_wall or found_edge:

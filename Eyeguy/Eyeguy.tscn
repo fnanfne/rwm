@@ -1,28 +1,174 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2eimcy00uq7d"]
+[gd_scene load_steps=17 format=3 uid="uid://b2eimcy00uq7d"]
+
+[ext_resource type="Texture2D" uid="uid://81nawtp0ep66" path="res://Assets/Enemies/Eyeguy/From John/3.png" id="1_qtr05"]
+[ext_resource type="Script" path="res://Eyeguy/Eyeguy.gd" id="1_ux4qg"]
+[ext_resource type="Texture2D" uid="uid://cxbfsi8ym1p6k" path="res://Assets/Enemies/Eyeguy/From John/4.png" id="2_qgmrv"]
+[ext_resource type="Texture2D" uid="uid://cda2l35iwngfh" path="res://Assets/Enemies/Eyeguy/From John/0.png" id="3_cajys"]
+[ext_resource type="Texture2D" uid="uid://cqhdnchvtv80q" path="res://Assets/Enemies/Eyeguy/From John/1.png" id="4_nbkf7"]
+[ext_resource type="Texture2D" uid="uid://d0c1rxk26y8aw" path="res://Assets/Enemies/Eyeguy/From John/2.png" id="5_y88yl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x8r63"]
+height = 38.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_44f1r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cajys")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_nbkf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y88yl")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_nbkf7")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dkwxk"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yljj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qtr05")
+}],
+"loop": true,
+"name": &"Pupil",
+"speed": 5.0
+}]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wbkev"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5qfm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qgmrv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nfpbp"]
+[sub_resource type="Animation" id="Animation_qj0hd"]
+resource_name = "Idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eyeguy_Pupil:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 0), Vector2(2, 0), Vector2(3, 0), Vector2(4, 0), Vector2(4, -1), Vector2(4, -2), Vector2(4, -3), Vector2(3, -3), Vector2(2, -3), Vector2(1, -3), Vector2(0, -3), Vector2(0, -4), Vector2(0, -3), Vector2(0, -2), Vector2(0, -1), Vector2(0, 0), Vector2(0, 1), Vector2(0, 2), Vector2(0, 3), Vector2(0, 4), Vector2(0, 3), Vector2(0, 2), Vector2(0, 1), Vector2(0, 0), Vector2(-1, 0), Vector2(-2, 0), Vector2(-3, 0), Vector2(-4, 0), Vector2(-4, -1), Vector2(-4, -2), Vector2(-4, -3), Vector2(-3, -3), Vector2(-2, -3), Vector2(-1, -3), Vector2(0, -3), Vector2(1, -3), Vector2(0, -3), Vector2(-1, -3), Vector2(0, -3), Vector2(0, -2), Vector2(0, -1), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(1, 0), Vector2(2, 0), Vector2(3, 0), Vector2(2, 0), Vector2(1, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hi536"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eyeguy_Pupil:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j2gf4"]
+_data = {
+"Idle": SubResource("Animation_qj0hd"),
+"RESET": SubResource("Animation_hi536")
+}
+
+[sub_resource type="Animation" id="Animation_nskn7"]
+resource_name = "Idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eyeguy_Blink:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eyeguy_Blink:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, true, false, false, false, false, false, false, true, true, true, false, false, false]
+}
+
+[sub_resource type="Animation" id="Animation_xmo33"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eyeguy_Blink:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iletp"]
+_data = {
+"Idle": SubResource("Animation_nskn7"),
+"RESET": SubResource("Animation_xmo33")
+}
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_ux4qg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_x8r63")
 
-[node name="BodySprite" type="AnimatedSprite2D" parent="."]
+[node name="Eyeguy_Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_44f1r")
+animation = &"Idle"
+frame = 3
 
-[node name="Eyeguy_Pupil" type="AnimatedSprite2D" parent="BodySprite"]
-sprite_frames = SubResource("SpriteFrames_dkwxk")
+[node name="Eyeguy_Pupil" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yljj3")
+animation = &"Pupil"
 
-[node name="Eyeguy_Blink" type="AnimatedSprite2D" parent="BodySprite"]
-sprite_frames = SubResource("SpriteFrames_wbkev")
+[node name="Eyeguy_Blink" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r5qfm")
 
-[node name="Eyeguy_Body" type="AnimatedSprite2D" parent="BodySprite"]
-sprite_frames = SubResource("SpriteFrames_nfpbp")
+[node name="PupilAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j2gf4")
+}
+
+[node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iletp")
+}
+
+[node name="CeilingFloorCheck" type="RayCast2D" parent="."]
+position = Vector2(0, 20)
+target_position = Vector2(0, 10)
