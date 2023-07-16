@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2ckbklaeo8qs"]
+
+[ext_resource type="Script" path="res://Scenes/Pinkfly/pinkfly.gd" id="1_8uh7v"]
+[ext_resource type="Texture2D" uid="uid://b7j3pca84ogmg" path="res://Assets/Enemies/Buzzoid/From John/0.png" id="1_kivkn"]
+[ext_resource type="Texture2D" uid="uid://cpmfokmhhj4lc" path="res://Assets/Enemies/Buzzoid/From John/1.png" id="2_7o5me"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dyla"]
+size = Vector2(32, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hydom"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kivkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7o5me")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kivkn")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Pinkfly" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_8uh7v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -8.5)
+shape = SubResource("RectangleShape2D_7dyla")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hydom")
+animation = &"Fly"
+
+[node name="WallCheck" type="RayCast2D" parent="."]
+position = Vector2(17, 0)
+target_position = Vector2(0, 10)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

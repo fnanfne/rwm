@@ -10,7 +10,7 @@ func _ready():
 	get_node("Eyeguy_Body").play("Idle")
 	get_node("BlinkAnimationPlayer").play("Idle")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var found_ceiling = is_on_ceiling()
 	var found_floor = is_on_floor()
 	if found_ceiling or found_floor:
