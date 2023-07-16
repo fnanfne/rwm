@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2eimcy00uq7d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x8r63"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_44f1r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkwxk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbkev"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_x8r63")
+
+[node name="BodySprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_44f1r")
+
+[node name="Eyeguy_Pupil" type="AnimatedSprite2D" parent="BodySprite"]
+sprite_frames = SubResource("SpriteFrames_dkwxk")
+
+[node name="Eyeguy_Blink" type="AnimatedSprite2D" parent="BodySprite"]
+sprite_frames = SubResource("SpriteFrames_wbkev")
