@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var SPEED = 50
+var SPEED = 60
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = 1
 

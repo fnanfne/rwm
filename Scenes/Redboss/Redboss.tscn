@@ -1,0 +1,137 @@
+[gd_scene load_steps=19 format=3 uid="uid://ds02qr33layf5"]
+
+[ext_resource type="Texture2D" uid="uid://cvdcgheojey4y" path="res://Assets/Enemies/Redboss/From John/5.png" id="1_o66gy"]
+[ext_resource type="Texture2D" uid="uid://d1vwr4ew4vlis" path="res://Assets/Enemies/Redboss/From John/3.png" id="2_snyup"]
+[ext_resource type="Texture2D" uid="uid://c2luwoneuuana" path="res://Assets/Enemies/Redboss/From John/0.png" id="3_vrqjv"]
+[ext_resource type="Texture2D" uid="uid://b0uaqmyvrauuw" path="res://Assets/Enemies/Redboss/From John/1.png" id="4_5ehvb"]
+[ext_resource type="Texture2D" uid="uid://cs2dvkkjb0eny" path="res://Assets/Enemies/Redboss/From John/4.png" id="5_lndkk"]
+[ext_resource type="Texture2D" uid="uid://tuu3quynhhbq" path="res://Assets/Enemies/Redboss/From John/2.png" id="6_dgw05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyxm3"]
+size = Vector2(112, 98)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jyvr8"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ib4vc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o66gy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ohhp1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_snyup")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yubx2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vrqjv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_egb8t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5ehvb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xkje8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lndkk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u4yod"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2b0s7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aopqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_dgw05")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ew3hv"]
+resource_name = "Idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ed6sn"]
+_data = {
+"Idle": SubResource("Animation_ew3hv")
+}
+
+[node name="Redboss" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -39)
+shape = SubResource("RectangleShape2D_fyxm3")
+
+[node name="BodySprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jyvr8")
+animation = &"Idle"
+
+[node name="Face" type="AnimatedSprite2D" parent="BodySprite"]
+sprite_frames = SubResource("SpriteFrames_ib4vc")
+
+[node name="Jaw" type="AnimatedSprite2D" parent="BodySprite"]
+sprite_frames = SubResource("SpriteFrames_ohhp1")
+
+[node name="Right_Antenna" type="AnimatedSprite2D" parent="BodySprite"]
+sprite_frames = SubResource("SpriteFrames_yubx2")
+
+[node name="Left_Antenna" type="AnimatedSprite2D" parent="BodySprite"]
+sprite_frames = SubResource("SpriteFrames_egb8t")
+
+[node name="Leg_1" type="AnimatedSprite2D" parent="BodySprite"]
+sprite_frames = SubResource("SpriteFrames_xkje8")
+
+[node name="Leg_2" type="AnimatedSprite2D" parent="BodySprite"]
+sprite_frames = SubResource("SpriteFrames_u4yod")
+
+[node name="Leg_3" type="AnimatedSprite2D" parent="BodySprite"]
+sprite_frames = SubResource("SpriteFrames_2b0s7")
+
+[node name="Blink" type="AnimatedSprite2D" parent="BodySprite"]
+sprite_frames = SubResource("SpriteFrames_aopqy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+libraries = {
+"": SubResource("AnimationLibrary_ed6sn")
+}

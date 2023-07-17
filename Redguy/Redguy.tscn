@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://528nlbfffcsk" path="res://Assets/Enemies/Redguy/From John/right_antenna.png" id="7_awjh4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wo5yj"]
-size = Vector2(31.5, 40.5)
+size = Vector2(31.5, 38.0625)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t6vxu"]
 
@@ -154,6 +154,7 @@ collision_layer = 2
 script = ExtResource("1_67hgr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_wo5yj")
 
 [node name="BodySprite" type="AnimatedSprite2D" parent="."]

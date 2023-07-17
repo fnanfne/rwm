@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cch1ikcufljkw"]
+[gd_scene load_steps=23 format=3 uid="uid://cch1ikcufljkw"]
 
 [ext_resource type="Texture2D" uid="uid://b4hkaqaushw81" path="res://Assets/paint__TILESET/IMG_001.png" id="1_d8a48"]
 [ext_resource type="PackedScene" uid="uid://dquo45htw4sae" path="res://Robot/Robot.tscn" id="1_u6aup"]
@@ -14,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://hh6lyvpwwnve" path="res://Assets/Pics/hud_heartFull.png" id="12_3etdl"]
 [ext_resource type="PackedScene" uid="uid://chmx8jmeo00ra" path="res://Robot/Robot_Modular.tscn" id="13_jjxcv"]
 [ext_resource type="PackedScene" uid="uid://b2eimcy00uq7d" path="res://Eyeguy/Eyeguy.tscn" id="15_lpxs6"]
-[ext_resource type="PackedScene" uid="uid://bcf6q86fpumhy" path="res://Redguy/Redguy_old.tscn" id="15_u1gmb"]
 [ext_resource type="PackedScene" uid="uid://b2ckbklaeo8qs" path="res://Scenes/Pinkfly/pinkfly.tscn" id="16_buhmo"]
+[ext_resource type="PackedScene" uid="uid://cj13fi0jbnlf5" path="res://Scenes/Dripguy/Dripguy.tscn" id="17_643yq"]
+[ext_resource type="PackedScene" uid="uid://ds02qr33layf5" path="res://Scenes/Redboss/Redboss.tscn" id="17_tql8t"]
+[ext_resource type="PackedScene" uid="uid://dtqo2uvytrhsr" path="res://Scenes/Dripboss/Dripboss.tscn" id="18_fgggc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_owbl8"]
 texture = ExtResource("1_d8a48")
@@ -549,7 +551,7 @@ texture = ExtResource("3_k0ymb")
 [node name="Robot" type="Node" parent="."]
 
 [node name="Robot" parent="Robot" instance=ExtResource("1_u6aup")]
-position = Vector2(740, 443)
+position = Vector2(902, 410)
 
 [node name="Mobs" type="Node" parent="."]
 
@@ -650,9 +652,6 @@ stretch_mode = 1
 [node name="RobotModular" parent="." instance=ExtResource("13_jjxcv")]
 position = Vector2(422, 362)
 
-[node name="Redguy_old" parent="." instance=ExtResource("15_u1gmb")]
-position = Vector2(983, 489)
-
 [node name="Redguy" parent="." instance=ExtResource("5_phxxk")]
 position = Vector2(462, 475)
 
@@ -661,3 +660,12 @@ position = Vector2(620, 472)
 
 [node name="Pinkfly" parent="." instance=ExtResource("16_buhmo")]
 position = Vector2(548, 387)
+
+[node name="Dripguy" parent="." instance=ExtResource("17_643yq")]
+position = Vector2(500, 423)
+
+[node name="Redboss" parent="." instance=ExtResource("17_tql8t")]
+position = Vector2(1152, 505)
+
+[node name="Dripboss" parent="." instance=ExtResource("18_fgggc")]
+position = Vector2(1026, 312)
