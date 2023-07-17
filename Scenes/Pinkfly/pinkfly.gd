@@ -9,7 +9,6 @@ func _ready():
 	get_node("AnimatedSprite2D").play("Fly")
 
 func _physics_process(delta):
-	print(delta)
 	var found_wall = is_on_wall()
 	if found_wall:
 		direction *= -1
