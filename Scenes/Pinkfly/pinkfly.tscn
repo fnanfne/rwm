@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cpmfokmhhj4lc" path="res://Assets/Enemies/Buzzoid/From John/1.png" id="2_7o5me"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dyla"]
-size = Vector2(32, 27)
+size = Vector2(34, 27)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hydom"]
 animations = [{
@@ -34,7 +34,7 @@ collision_layer = 2
 script = ExtResource("1_8uh7v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -8.5)
+position = Vector2(1, -8.5)
 shape = SubResource("RectangleShape2D_7dyla")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

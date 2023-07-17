@@ -551,7 +551,7 @@ texture = ExtResource("3_k0ymb")
 [node name="Robot" type="Node" parent="."]
 
 [node name="Robot" parent="Robot" instance=ExtResource("1_u6aup")]
-position = Vector2(902, 410)
+position = Vector2(818, 410)
 
 [node name="Mobs" type="Node" parent="."]
 
