@@ -178,6 +178,7 @@ sprite_frames = SubResource("SpriteFrames_67c5q")
 animation = &"Left_Leg"
 
 [node name="Left_Antenna" type="AnimatedSprite2D" parent="BodySprite"]
+position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_m0ht3")
 animation = &"Left_Antenna"
 
