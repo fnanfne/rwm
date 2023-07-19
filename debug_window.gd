@@ -6,8 +6,8 @@ extends CanvasLayer
 @onready var gravity_label = $TextboxContainer/MarginContainer/Panel/VBoxContainer/Label3
 
 func _ready():
-	#hide_debug_window()
-	#show_debug_window()
+	hide_debug_window()
+	show_debug_window()
 	
 func hide_debug_window():
 	textbox_container.hide()
