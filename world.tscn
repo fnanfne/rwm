@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cch1ikcufljkw"]
+[gd_scene load_steps=26 format=3 uid="uid://cch1ikcufljkw"]
 
 [ext_resource type="Texture2D" uid="uid://b4hkaqaushw81" path="res://Assets/paint__TILESET/IMG_001.png" id="1_d8a48"]
 [ext_resource type="PackedScene" uid="uid://dquo45htw4sae" path="res://Robot/Robot.tscn" id="1_u6aup"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://ds02qr33layf5" path="res://Scenes/Redboss/Redboss.tscn" id="17_tql8t"]
 [ext_resource type="PackedScene" uid="uid://dtqo2uvytrhsr" path="res://Scenes/Dripboss/Dripboss.tscn" id="18_fgggc"]
 [ext_resource type="PackedScene" uid="uid://bfhrsaiuxhr78" path="res://Scenes/Eyeboss/Eyeboss.tscn" id="19_xy3h1"]
+[ext_resource type="PackedScene" uid="uid://bob7grqiomo4v" path="res://Scenes/Keys/RedKey/red_key.tscn" id="20_66xal"]
+[ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="22_eur8d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_owbl8"]
 texture = ExtResource("1_d8a48")
@@ -673,3 +675,9 @@ position = Vector2(1026, 312)
 
 [node name="Eyeboss" parent="." instance=ExtResource("19_xy3h1")]
 position = Vector2(1002, 481)
+
+[node name="RedKey" parent="." instance=ExtResource("20_66xal")]
+position = Vector2(901, 420)
+
+[node name="Heart" parent="." instance=ExtResource("22_eur8d")]
+position = Vector2(862, 336)

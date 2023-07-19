@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dm6wvis73ta13"]
+
+[ext_resource type="Script" path="res://Scenes/Doors/RedDoor/red_door_top.gd" id="1_kyfrr"]
+[ext_resource type="Texture2D" uid="uid://bxu0sxqnkp24v" path="res://Assets/Apps/Doors/door_red_t.png" id="1_shlmh"]
+[ext_resource type="AudioStream" uid="uid://dufxgowdppv4h" path="res://Assets/Audio/Sounds/opendoor.ogg" id="2_nm525"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7qkh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_30k1a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_shlmh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u52aa"]
+
+[node name="RedDoorTop" type="StaticBody2D"]
+script = ExtResource("1_kyfrr")
+
+[node name="DoorZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorZone"]
+position = Vector2(0, 20)
+scale = Vector2(2.03, 3.95)
+shape = SubResource("RectangleShape2D_o7qkh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_30k1a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_u52aa")
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nm525")
+volume_db = -10.0
+
+[connection signal="body_entered" from="DoorZone" to="." method="_on_door_zone_body_entered"]

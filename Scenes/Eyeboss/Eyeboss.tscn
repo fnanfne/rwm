@@ -1035,6 +1035,7 @@ _data = {
 }
 
 [node name="Eyeboss" type="CharacterBody2D"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_aeoeu")
@@ -1133,9 +1134,10 @@ sprite_frames = SubResource("SpriteFrames_cump5")
 sprite_frames = SubResource("SpriteFrames_0q8ih")
 animation = &"Mouth"
 autoplay = "Mouth"
-frame_progress = 0.332521
+frame_progress = 0.245648
 
 [node name="Eyeboss_trail" type="Node2D" parent="Complete_Sprite"]
+visible = false
 
 [node name="trail" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_trail"]
 position = Vector2(0, 38)

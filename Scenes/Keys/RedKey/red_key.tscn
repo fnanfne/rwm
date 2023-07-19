@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bob7grqiomo4v"]
+
+[ext_resource type="Texture2D" uid="uid://dml4t4u5nfwml" path="res://Assets/Apps/Keys/key_red.png" id="1_c2ewt"]
+[ext_resource type="Script" path="res://Scenes/Keys/RedKey/red_key.gd" id="1_lkqd0"]
+[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="3_hyayd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ki0ca"]
+radius = 13.0306
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_una4u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c2ewt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RedKey" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_lkqd0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1.12)
+shape = SubResource("CircleShape2D_ki0ca")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_una4u")
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hyayd")
+volume_db = -10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -36,6 +36,9 @@ func _physics_process(delta):
 			#if Input.is_action_just_pressed("ui_accept"):
 			if Input.is_action_just_pressed("jump"):
 				$SoundJump.play()
+				var tween1 = get_tree().create_tween()
+				tween1.tween_property(self, "modulate:a", 0, 0.5)
+
 				velocity.y = JUMP_VELOCITY
 				anim.play("Jump")
 		elif not has_double_jumped:

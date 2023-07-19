@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://tuu3quynhhbq" path="res://Assets/Enemies/Redboss/From John/2.png" id="6_dgw05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fyxm3"]
-size = Vector2(112, 85)
+size = Vector2(112, 80.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jyvr8"]
 animations = [{
@@ -517,9 +517,10 @@ _data = {
 }
 
 [node name="Redboss" type="CharacterBody2D"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -26.5)
+position = Vector2(0, -25.75)
 shape = SubResource("RectangleShape2D_fyxm3")
 
 [node name="BodySprite" type="AnimatedSprite2D" parent="."]

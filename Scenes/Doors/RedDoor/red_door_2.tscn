@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkdl7qvwrupiw"]
+
+[ext_resource type="Texture2D" uid="uid://bxu0sxqnkp24v" path="res://Assets/Apps/Doors/door_red_t.png" id="1_dn31c"]
+[ext_resource type="Script" path="res://Scenes/Doors/RedDoor/red_door_2.gd" id="1_grweo"]
+[ext_resource type="Texture2D" uid="uid://chgm17oa2oj6x" path="res://Assets/Apps/Doors/door_red_b.png" id="2_uek8o"]
+[ext_resource type="AudioStream" uid="uid://dufxgowdppv4h" path="res://Assets/Audio/Sounds/opendoor.ogg" id="4_fmfm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_teu8v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kryi8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dn31c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oy5b4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uek8o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m234m"]
+
+[node name="RedDoor2" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_grweo")
+
+[node name="DoorZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorZone"]
+scale = Vector2(2.04, 3.92)
+shape = SubResource("RectangleShape2D_teu8v")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Top" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(0, -20)
+sprite_frames = SubResource("SpriteFrames_kryi8")
+
+[node name="Bottom" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(0, 20)
+sprite_frames = SubResource("SpriteFrames_oy5b4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.96, 3.92)
+shape = SubResource("RectangleShape2D_m234m")
+disabled = true
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fmfm2")
+volume_db = -10.0
+
+[connection signal="body_entered" from="DoorZone" to="." method="_on_door_zone_body_entered"]
