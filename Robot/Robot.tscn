@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dquo45htw4sae"]
+[gd_scene load_steps=41 format=3 uid="uid://dquo45htw4sae"]
 
 [ext_resource type="Script" path="res://Robot/Robot.gd" id="1_4udve"]
 [ext_resource type="Texture2D" uid="uid://dbv1f4lhbt8hr" path="res://Assets/Robot/Without helmet/Fall/robot_fall.png" id="2_7vueg"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://crgj4liv73oj8" path="res://Assets/Robot/Without helmet/Shooting/robot_idleshoot3.png" id="25_3uiy6"]
 [ext_resource type="AudioStream" uid="uid://rhfhcmwh4wlm" path="res://Assets/Audio/Sounds/jump.ogg" id="25_16o6n"]
 [ext_resource type="Texture2D" uid="uid://b3vrphp27j0yk" path="res://Assets/Robot/Without helmet/Shooting/robot_idleshoot4.png" id="26_0mf1h"]
+[ext_resource type="Texture2D" uid="uid://dvil1ccstb3oi" path="res://Assets/Robot/From John/jumpburst.png" id="28_84ev3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymhil"]
 height = 38.0
@@ -427,3 +428,9 @@ volume_db = -10.0
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 30)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("28_84ev3")

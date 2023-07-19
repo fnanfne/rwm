@@ -14,12 +14,13 @@ var is_falling = false
 var is_shooting = false
 var normal_modulation = Color(1, 1, 1)
 var red_modulation = Color(0.81960785388947, 0.10196078568697, 0)
+#var jumpburst = $Sprite2D.visible
 
 @onready var anim = get_node("AnimationPlayer")
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 
 func _physics_process(delta):
-	
+	print($Robot.position)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -36,9 +37,6 @@ func _physics_process(delta):
 			#if Input.is_action_just_pressed("ui_accept"):
 			if Input.is_action_just_pressed("jump"):
 				$SoundJump.play()
-				var tween1 = get_tree().create_tween()
-				tween1.tween_property(self, "modulate:a", 0, 0.5)
-
 				velocity.y = JUMP_VELOCITY
 				anim.play("Jump")
 		elif not has_double_jumped:
@@ -48,6 +46,12 @@ func _physics_process(delta):
 				#if Input.is_action_just_pressed("ui_accept"):
 				if Input.is_action_just_pressed("jump"):
 					$SoundJump.play()
+					var tween1 = get_tree().create_tween()
+					#tween1.tween_interval(5)
+					tween1.tween_property($Sprite2D, "visible", true, 0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+					#tween1.tween_property($Sprite2D, "position", position - $Robot.get_node(position.x), 0.8)
+					tween1.tween_interval(0.25)
+					tween1.tween_property($Sprite2D, "visible", false, 0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 					velocity.y = DOUBLE_JUMP_VELOCITY
 					anim.play("Jump")
 					has_double_jumped = true
