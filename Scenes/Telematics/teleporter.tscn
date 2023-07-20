@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0wrlwbpbvbjo"]
+[gd_scene load_steps=26 format=3 uid="uid://d0wrlwbpbvbjo"]
 
 [ext_resource type="Script" path="res://Scenes/Telematics/teleporter.gd" id="1_6y7rb"]
 [ext_resource type="Texture2D" uid="uid://btfui0i4lahrq" path="res://Assets/Telepads/Off/IMG_001.png" id="1_jbba4"]
@@ -102,6 +102,26 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_pubcl"]
+resource_name = "left"
+
+[sub_resource type="Animation" id="Animation_1ljth"]
+resource_name = "right"
+
+[sub_resource type="Animation" id="Animation_qytrt"]
+resource_name = "top"
+
+[sub_resource type="Animation" id="Animation_jcch5"]
+resource_name = "bottom"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6ks2"]
+_data = {
+"bottom": SubResource("Animation_jcch5"),
+"left": SubResource("Animation_pubcl"),
+"right": SubResource("Animation_1ljth"),
+"top": SubResource("Animation_qytrt")
+}
+
 [node name="Teleporter" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_6y7rb")
@@ -136,6 +156,9 @@ sprite_frames = SubResource("SpriteFrames_rv2xy")
 sprite_frames = SubResource("SpriteFrames_rmmy5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q6ks2")
+}
 
 [node name="Teleport" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_c0pwl")
