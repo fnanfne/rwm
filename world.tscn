@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cch1ikcufljkw"]
+[gd_scene load_steps=27 format=3 uid="uid://cch1ikcufljkw"]
 
 [ext_resource type="Texture2D" uid="uid://b4hkaqaushw81" path="res://Assets/paint__TILESET/IMG_001.png" id="1_d8a48"]
 [ext_resource type="PackedScene" uid="uid://dquo45htw4sae" path="res://Robot/Robot.tscn" id="1_u6aup"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bfhrsaiuxhr78" path="res://Scenes/Eyeboss/Eyeboss.tscn" id="19_xy3h1"]
 [ext_resource type="PackedScene" uid="uid://bob7grqiomo4v" path="res://Scenes/Keys/RedKey/red_key.tscn" id="20_66xal"]
 [ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="22_eur8d"]
+[ext_resource type="PackedScene" uid="uid://d0wrlwbpbvbjo" path="res://Scenes/Telematics/teleporter.tscn" id="22_ltyl0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_owbl8"]
 texture = ExtResource("1_d8a48")
@@ -681,3 +682,13 @@ position = Vector2(901, 420)
 
 [node name="Heart" parent="." instance=ExtResource("22_eur8d")]
 position = Vector2(862, 336)
+
+[node name="Teleporters" type="Node2D" parent="."]
+
+[node name="Teleporter1_1" parent="Teleporters" node_paths=PackedStringArray("target") instance=ExtResource("22_ltyl0")]
+position = Vector2(859, 423)
+target = NodePath("../Teleporter2_2")
+
+[node name="Teleporter2_2" parent="Teleporters" node_paths=PackedStringArray("target") instance=ExtResource("22_ltyl0")]
+position = Vector2(620, 217)
+target = NodePath("../Teleporter1_1")

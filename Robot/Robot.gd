@@ -20,7 +20,7 @@ var red_modulation = Color(0.81960785388947, 0.10196078568697, 0)
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 
 func _physics_process(delta):
-	print(velocity.x)
+	#print(velocity.x)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -104,10 +104,10 @@ func _physics_process(delta):
 	# Handle movement.
 	if direction == -1:
 		get_node("AnimatedSprite2D").flip_h = true
-		$RobotPoof.position.x = 27
+		$RobotPoof.position.x = 25
 	elif direction == 1:
 		get_node("AnimatedSprite2D").flip_h = false
-		$RobotPoof.position.x = -30
+		$RobotPoof.position.x = -25
 	if direction:
 		if is_launching:
 			velocity.x = direction * SPEED / 5
