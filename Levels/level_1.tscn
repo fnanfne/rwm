@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1d18i5iturxx"]
+
+[ext_resource type="PackedScene" uid="uid://ds02qr33layf5" path="res://Scenes/Redboss/Redboss.tscn" id="1_yy7yu"]
+
+[node name="Level1" type="Node2D"]
+process_mode = 1
+
+[node name="Redboss" parent="." instance=ExtResource("1_yy7yu")]

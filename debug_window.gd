@@ -10,7 +10,7 @@ func _ready():
 	show_debug_window()
 	
 func hide_debug_window():
-	textbox_container.hide()
+		textbox_container.hide()
 	
 func show_debug_window():
 	if Input.is_action_pressed("debug_window"):

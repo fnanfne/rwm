@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bm3g0a78ol6i"]
+[gd_scene load_steps=22 format=3 uid="uid://bm3g0a78ol6i"]
 
 [ext_resource type="Script" path="res://Redguy/Redguy.gd" id="1_67hgr"]
 [ext_resource type="Texture2D" uid="uid://cm2wcrq8vldst" path="res://Assets/Enemies/Redguy/From John/right_leg.png" id="2_d66gv"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://heyjd6070dku" path="res://Assets/Enemies/Redguy/From John/left_leg.png" id="5_qnjro"]
 [ext_resource type="Texture2D" uid="uid://d3but7ifqi15e" path="res://Assets/Enemies/Redguy/From John/left_antenna.png" id="6_0r5cb"]
 [ext_resource type="Texture2D" uid="uid://528nlbfffcsk" path="res://Assets/Enemies/Redguy/From John/right_antenna.png" id="7_awjh4"]
+[ext_resource type="Texture2D" uid="uid://dei5lo3a1lkbj" path="res://Assets/Enemies/Redguy/From John/left_eyelid.png" id="8_rq6e5"]
+[ext_resource type="Texture2D" uid="uid://c12t4arfo34k0" path="res://Assets/Enemies/Redguy/From John/right_eyelid.png" id="9_8vem2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wo5yj"]
 size = Vector2(31.5, 38.0625)
@@ -43,6 +45,28 @@ animations = [{
 }],
 "loop": true,
 "name": &"Face",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q2sof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_rq6e5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u6b5l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8vem2")
+}],
+"loop": true,
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -172,6 +196,12 @@ animation = &"Jaw"
 [node name="Face" type="AnimatedSprite2D" parent="BodySprite"]
 sprite_frames = SubResource("SpriteFrames_gb57e")
 animation = &"Face"
+
+[node name="Left_Eyelid" type="AnimatedSprite2D" parent="BodySprite/Face"]
+sprite_frames = SubResource("SpriteFrames_q2sof")
+
+[node name="Right_Eyelid" type="AnimatedSprite2D" parent="BodySprite/Face"]
+sprite_frames = SubResource("SpriteFrames_u6b5l")
 
 [node name="Left_Leg" type="AnimatedSprite2D" parent="BodySprite"]
 sprite_frames = SubResource("SpriteFrames_67c5q")
