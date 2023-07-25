@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bfhrsaiuxhr78" path="res://Scenes/Eyeboss/Eyeboss.tscn" id="19_xy3h1"]
 [ext_resource type="PackedScene" uid="uid://bob7grqiomo4v" path="res://Scenes/Keys/RedKey/red_key.tscn" id="20_66xal"]
 [ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="22_eur8d"]
-[ext_resource type="PackedScene" uid="uid://d0wrlwbpbvbjo" path="res://Scenes/Telematics/teleporter.tscn" id="22_ltyl0"]
+[ext_resource type="PackedScene" uid="uid://d0wrlwbpbvbjo" path="res://Scenes/Telematics/right_teleporter.tscn" id="22_ltyl0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_owbl8"]
 texture = ExtResource("1_d8a48")
