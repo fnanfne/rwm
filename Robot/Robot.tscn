@@ -1,7 +1,9 @@
-[gd_scene load_steps=42 format=3 uid="uid://dquo45htw4sae"]
+[gd_scene load_steps=44 format=3 uid="uid://dquo45htw4sae"]
 
 [ext_resource type="Script" path="res://Robot/Robot.gd" id="1_4udve"]
 [ext_resource type="Texture2D" uid="uid://dbv1f4lhbt8hr" path="res://Assets/Robot/Without helmet/Fall/robot_fall.png" id="2_7vueg"]
+[ext_resource type="Texture2D" uid="uid://ddvrp2lbj7u1d" path="res://Assets/Robot/From John/robot_idle_no_wheel.png" id="2_564vk"]
+[ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="3_ll2kp"]
 [ext_resource type="Texture2D" uid="uid://cu6p38ylnrdma" path="res://Assets/Robot/Without helmet/Idle/robot_idle000.png" id="3_om1ty"]
 [ext_resource type="Texture2D" uid="uid://cfxtndnpqv67m" path="res://Assets/Robot/Without helmet/Idle/robot_idle001.png" id="4_gcw58"]
 [ext_resource type="Texture2D" uid="uid://bmym5i5jr6clj" path="res://Assets/Robot/Without helmet/Idle/robot_idle002.png" id="5_f4ky4"]
@@ -393,6 +395,32 @@ script = ExtResource("1_4udve")
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_ymhil")
 
+[node name="RobotBody" type="Node2D" parent="."]
+visible = false
+
+[node name="Wheel" type="Sprite2D" parent="RobotBody"]
+texture = ExtResource("3_ll2kp")
+
+[node name="Body" type="Sprite2D" parent="RobotBody"]
+texture = ExtResource("2_564vk")
+
+[node name="RobotPoof" type="CPUParticles2D" parent="RobotBody"]
+position = Vector2(8, 26)
+amount = 3
+lifetime = 0.8
+speed_scale = 1.5
+randomness = 1.0
+lifetime_randomness = 1.0
+texture = ExtResource("29_7oomh")
+emission_shape = 3
+emission_rect_extents = Vector2(0, 0)
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+angle_max = 45.0
+scale_amount_min = 0.4
+scale_amount_max = 0.9
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6peuo")
 animation = &"Idle"
@@ -400,6 +428,8 @@ frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.6, 1.6)
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"

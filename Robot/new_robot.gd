@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-#var health = 10 # not needed anymore as it's now in the global Game script
 const SPEED = 200.0
 const JUMP_VELOCITY = -450.0
 const DOUBLE_JUMP_VELOCITY = -450.0
@@ -17,7 +16,7 @@ var red_modulation = Color(0.81960785388947, 0.10196078568697, 0)
 #var jumpburst = $Sprite2D.visible
 
 @onready var anim = get_node("AnimationPlayer")
-@onready var coyote_jump_timer = $CoyoteJumpTimer
+#@onready var coyote_jump_timer = $CoyoteJumpTimer
 
 func _physics_process(delta):
 	#print(velocity.x)
@@ -32,22 +31,23 @@ func _physics_process(delta):
 
 	# Handle Jump.
 	if Game.JUMP:
-		if is_on_floor() or coyote_jump_timer.time_left > 0.0:
+		#if is_on_floor() or coyote_jump_timer.time_left > 0.0:
+		if is_on_floor():
 			#created custom input keys
 			#if Input.is_action_just_pressed("ui_accept"):
 			if Input.is_action_just_pressed("jump"):
-				$SoundJump.play()
+				$Sounds/SoundJump.play()
 				velocity.y = JUMP_VELOCITY
 				anim.play("Jump")
-				$RobotPoof.emitting = false
+				#$RobotPoof.emitting = false
 		elif not has_double_jumped:
 			#Do a double jump
 			if Game.DOUBLEJUMP:
 				#created custom input keys
 				#if Input.is_action_just_pressed("ui_accept"):
 				if Input.is_action_just_pressed("jump"):
-					$SoundJump.play()
-					$RobotPoof.emitting = false
+					$Sounds/SoundJump.play()
+					#$RobotPoof.emitting = false
 					#var TW1 = get_tree().create_tween()
 					#TW1.tween_interval(5)
 					#TW1.tween_property($Sprite2D, "visible", 
@@ -70,7 +70,7 @@ func _physics_process(delta):
 			if not is_falling:
 				velocity.y = LAUNCH_VELOCITY
 				anim.play("Launch")
-				$RobotPoof.emitting = false
+				#$RobotPoof.emitting = false
 		if Input.is_action_just_released("launch"):
 			is_launching = false
 			is_falling = true
@@ -80,15 +80,15 @@ func _physics_process(delta):
 			else:
 				velocity.y = JUMP_VELOCITY * 0.00001 # This is apparently not doing anything
 				anim.play("Fall")
-				$RobotPoof.emitting = false
+				#$RobotPoof.emitting = false
 				
 	# Handle Shooting.
 	if Game.GUN:
 		if Input.is_action_pressed("shoot"):
 			#if is_on_floor():
-			print("SHOOTING!!!!")
 			is_shooting = true
-			anim.play("Shoot")
+			anim.play("IdleShoot")
+			$Sounds/SoundShoot.play()
 			#else:
 			#	pass
 		else:
@@ -102,12 +102,14 @@ func _physics_process(delta):
 	var direction = Input.get_axis("left", "right")
 	
 	# Handle movement.
-	if direction == -1:
-		get_node("AnimatedSprite2D").flip_h = true
-		$RobotPoof.position.x = 25
-	elif direction == 1:
-		get_node("AnimatedSprite2D").flip_h = false
-		$RobotPoof.position.x = -25
+	if direction == 1:
+		get_node("Sprite/Idle").flip_h = true
+		get_node("Sprite/Wheel").flip_h = true
+		#$RobotPoof.position.x = 25
+	elif direction == -1:
+		get_node("Sprite/Idle").flip_h = false
+		get_node("Sprite/Wheel").flip_h = false
+		#$RobotPoof.position.x = -25
 	if direction:
 		if is_launching:
 			velocity.x = direction * SPEED / 5
@@ -115,25 +117,27 @@ func _physics_process(delta):
 			velocity.x = direction * SPEED
 			if velocity.y == 0 and is_shooting != true:
 				anim.play("Run")
-				$RobotPoof.emitting = true
+				#$RobotPoof.emitting = true
 	else:
 		if velocity.y == 0 and is_shooting != true:
 			anim.play("Idle")
-			$RobotPoof.emitting = false
+			#$RobotPoof.emitting = false
 			modulate = Color(1, 1, 1)
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if velocity.y > 0:
 		anim.play("Fall")
 		modulate = Color(0.81960785388947, 0.10196078568697, 0)
-		$RobotPoof.emitting = false
+		#$RobotPoof.emitting = false
 	var was_on_floor = is_on_floor()
 	move_and_slide()
 	var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
 	if just_left_ledge:
-		coyote_jump_timer.start()
+		#coyote_jump_timer.start()
+		pass
 	
 	if velocity.x == 0:
-		$RobotPoof.emitting = false
+		pass
+		#$RobotPoof.emitting = false
 	#if health <= 0: # not needed anymore as it's now in the global Game script
 	#if Game.robotHP <= 0:
 	#	queue_free()

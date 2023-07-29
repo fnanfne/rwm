@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://darp77k02b3uw"]
+
+[ext_resource type="Texture2D" uid="uid://chmitt1l4mutf" path="res://Assets/paint__TILESET/IMG_002.png" id="1_exh7m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vp8na"]
+size = Vector2(40, 40)
+
+[node name="physicsblock1" type="RigidBody2D"]
+position = Vector2(620, 50)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_exh7m")
+region_enabled = true
+region_rect = Rect2(1240, 40, 40, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vp8na")
