@@ -20,11 +20,10 @@ var red_modulation = Color(0.81960785388947, 0.10196078568697, 0)
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 
 func _physics_process(delta):
-	#print(velocity.x)
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		
 	else:
 		has_double_jumped = false
 		is_launching = false
@@ -61,7 +60,7 @@ func _physics_process(delta):
 					velocity.y = DOUBLE_JUMP_VELOCITY
 					anim.play("Jump")
 					has_double_jumped = true
-					
+
 	# Handle Launching.
 	if Game.LAUNCH:
 		if Input.is_action_pressed("launch"):
@@ -81,7 +80,7 @@ func _physics_process(delta):
 				velocity.y = JUMP_VELOCITY * 0.00001 # This is apparently not doing anything
 				anim.play("Fall")
 				$RobotPoof.emitting = false
-				
+
 	# Handle Shooting.
 	if Game.GUN:
 		if Input.is_action_pressed("shoot"):
@@ -93,8 +92,7 @@ func _physics_process(delta):
 			#	pass
 		else:
 			is_shooting = false
-	#else:
-		#is_shooting = false
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	#created custom input keys

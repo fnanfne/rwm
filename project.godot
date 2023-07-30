@@ -24,6 +24,8 @@ Utils="*res://Global/Utils.gd"
 
 [display]
 
+window/size/resizable=false
+window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://Assets/Pics/robot_arm.png"
 
 [editor]
