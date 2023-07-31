@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://yg103a66ifo2"]
+[gd_scene load_steps=51 format=3 uid="uid://yg103a66ifo2"]
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cnjy2vs88520j" path="res://Assets/Robot/From John/robot_jump.png" id="7_61e0x"]
 [ext_resource type="AudioStream" uid="uid://rhfhcmwh4wlm" path="res://Assets/Audio/Sounds/jump.ogg" id="7_g3llx"]
 [ext_resource type="AudioStream" uid="uid://bfeemk4p127p0" path="res://Assets/Audio/Sounds/laser.ogg" id="8_1wjxa"]
+[ext_resource type="Texture2D" uid="uid://bsxc44hs4q3s1" path="res://Assets/Robot/From John/robot_rocketup.png" id="8_pesar"]
+[ext_resource type="Texture2D" uid="uid://b6qhjwishdu8n" path="res://Assets/Robot/From John/rocketfireup.png" id="9_4hak7"]
+[ext_resource type="Texture2D" uid="uid://d3qw38c7macsm" path="res://Assets/Robot/From John/robot_jumpshoot.png" id="10_0slvw"]
 [ext_resource type="Texture2D" uid="uid://b7afupjgfqmvi" path="res://Assets/Robot/From John/dust.png" id="10_wg5u4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c2rdk"]
@@ -79,6 +82,55 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_sjldk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_pesar")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7lhve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_4hak7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ft2sf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_0slvw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_vgu6b"]
+resource_name = "Fall"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AllSprites/Fall:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_el21v"]
 resource_name = "Idle"
 length = 0.4
@@ -106,6 +158,22 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 1), Vector2(0, 2), Vector2(0, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2xep0"]
+resource_name = "Jump"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AllSprites/Jump:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_vadqx"]
@@ -176,38 +244,6 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, 1), Vector2(0, 2), Vector2(0, 1), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_vgu6b"]
-resource_name = "Fall"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AllSprites/Fall:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2xep0"]
-resource_name = "Jump"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AllSprites/Jump:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_va2yt"]
 resource_name = "Shoot"
 length = 0.1
@@ -224,11 +260,16 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_elnnb"]
+resource_name = "Launch"
+loop_mode = 1
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uy7lk"]
 _data = {
 "Fall": SubResource("Animation_vgu6b"),
 "Idle": SubResource("Animation_el21v"),
 "Jump": SubResource("Animation_2xep0"),
+"Launch": SubResource("Animation_elnnb"),
 "RESET": SubResource("Animation_vadqx"),
 "Run": SubResource("Animation_tnd6v"),
 "Shoot": SubResource("Animation_va2yt")
@@ -280,7 +321,33 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_p853d"]
 
+[sub_resource type="Gradient" id="Gradient_dqysd"]
+offsets = PackedFloat32Array(0.476395, 0.987124)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lra5s"]
+gradient = SubResource("Gradient_dqysd")
+
+[sub_resource type="Curve" id="Curve_eix5n"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_43tff"]
+curve = SubResource("Curve_eix5n")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sn1ei"]
+particle_flag_disable_z = true
+spread = 10.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 500.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_43tff")
+color_ramp = SubResource("GradientTexture1D_lra5s")
+
 [node name="NewRobot" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_h7mvx")
 
 [node name="AllSprites" type="AnimatedSprite2D" parent="."]
@@ -295,20 +362,36 @@ sprite_frames = SubResource("SpriteFrames_ka1hq")
 animation = &"idle"
 
 [node name="Jump" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_rhln5")
 animation = &"jump"
 
 [node name="Fall" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_aut7n")
 animation = &"fall"
 
 [node name="Run" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_2iixr")
 animation = &"run"
 
 [node name="Shoot" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_icoeh")
 animation = &"shoot"
+
+[node name="Launch" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_sjldk")
+
+[node name="LaunchFire" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_7lhve")
+
+[node name="AirShoot" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ft2sf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
@@ -350,7 +433,7 @@ wait_time = 0.1
 one_shot = true
 
 [node name="RobotPoof" type="CPUParticles2D" parent="."]
-position = Vector2(-18, 27)
+position = Vector2(-18, 24)
 amount = 3
 lifetime = 0.8
 speed_scale = 1.5
@@ -365,3 +448,12 @@ initial_velocity_max = 5.0
 angle_max = 45.0
 scale_amount_min = 0.4
 scale_amount_max = 0.9
+
+[node name="RobotSparks" type="GPUParticles2D" parent="."]
+self_modulate = Color(1, 0.435294, 0, 1)
+position = Vector2(7, 25)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_sn1ei")
+lifetime = 0.2
+speed_scale = 1.73
+explosiveness = 1.0

@@ -1,7 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://dtqo2uvytrhsr"]
+[gd_scene load_steps=26 format=3 uid="uid://dtqo2uvytrhsr"]
 
 [ext_resource type="Texture2D" uid="uid://cvehiyje8r2le" path="res://Assets/Enemies/Dripboss/From John/0.png" id="1_88xww"]
+[ext_resource type="Script" path="res://Scenes/Dripboss/Dripboss.gd" id="1_cpdeo"]
 [ext_resource type="Texture2D" uid="uid://btvy678eqgtmc" path="res://Assets/Enemies/Dripboss/From John/eyes+pupil/3.png" id="2_40t7f"]
+[ext_resource type="PackedScene" uid="uid://dbkfurlf5s8aj" path="res://Scenes/enemy_death_animation.tscn" id="2_orm23"]
 [ext_resource type="Texture2D" uid="uid://bv3djgg6qctry" path="res://Assets/Enemies/Dripboss/From John/eyes+pupil/4.png" id="3_r530o"]
 [ext_resource type="Texture2D" uid="uid://7o45t110fm3d" path="res://Assets/Enemies/Dripboss/From John/eyes+pupil/5.png" id="4_35fcj"]
 [ext_resource type="Texture2D" uid="uid://b0b8q5udqx8e2" path="res://Assets/Enemies/Dripboss/From John/eyes+pupil/6.png" id="5_hj1bn"]
@@ -12,6 +14,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l70ea"]
 radius = 52.0096
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5q2r"]
+size = Vector2(20, 32.377)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ov5wi"]
 animations = [{
@@ -355,10 +360,23 @@ _data = {
 }
 
 [node name="Dripboss" type="CharacterBody2D"]
-collision_layer = 2
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_cpdeo")
+enemy_death_effect = ExtResource("2_orm23")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_l70ea")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(-0.0400002, 15.64)
+collision_layer = 4
+collision_mask = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.575448)
+scale = Vector2(22.32, 0.31202)
+shape = SubResource("RectangleShape2D_x5q2r")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ov5wi")
@@ -402,3 +420,5 @@ autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_t8ect")
 }
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
