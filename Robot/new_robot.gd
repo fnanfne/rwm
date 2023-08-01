@@ -10,6 +10,7 @@ const JUMP_VELOCITY = -450.0
 const DOUBLE_JUMP_VELOCITY = -450.0
 const LAUNCH_VELOCITY = -800.0
 const PLASMABALL = preload("res://Scenes/plasmaball.tscn")
+const LAZOR = preload("res://Scenes/lazor.tscn")
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -21,6 +22,7 @@ var is_jumping = false
 
 @onready var anim = get_node("AnimationPlayer")
 @onready var coyote_jump_timer = $CoyoteJumpTimer
+@onready var shooting_cooldown_timer = $ShootingCooldownTimer
 
 @onready var anim_wheel = get_node("AllSprites/Wheel")
 @onready var anim_idle = get_node("AllSprites/Idle")
@@ -34,7 +36,7 @@ var is_jumping = false
 
 func _physics_process(delta):
 
-	#print(velocity.y)
+	#print(anim_idle.flip_h)
 
 	# Coyote Jump
 	var was_on_floor = is_on_floor()
@@ -62,7 +64,7 @@ func _physics_process(delta):
 				$RobotPoof.emitting = false
 				$RobotSparks.emitting = false
 
-			# Add Gravity.
+			# GRAVITY
 			if not is_on_floor():
 				velocity.y += gravity * delta
 			else:
@@ -71,7 +73,7 @@ func _physics_process(delta):
 				is_falling = false
 				is_jumping = false
 
-			# Handle Direction:
+			# HANDLE DIRECTION:
 			if direction == -1:
 				anim_air_shoot.visible = false
 				anim_shoot.visible = false
@@ -113,7 +115,7 @@ func _physics_process(delta):
 				anim_shoot.flip_h = true
 				#$RobotPoof.position.x = -10
 
-			# Handle Double Jump
+			# DOUBLE JUMP
 			if Game.JUMP:
 				if coyote_jump_timer.time_left > 0.0:
 					if Input.is_action_just_pressed("jump"):
@@ -142,7 +144,7 @@ func _physics_process(delta):
 							####anim.play("Jump") # Not needed anymore because of all the booleans?
 							has_double_jumped = true
 
-			# Handle Left/Right Movement
+			# LEFT/RIGHT MOVEMENT
 			if direction:
 				if is_launching:
 					velocity.x = direction * SPEED / 5
@@ -169,7 +171,8 @@ func _physics_process(delta):
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 
 			# SHOOTING
-			shoot()
+			shoot_plasmaball()
+			shoot_lazor()
 
 			move_and_slide()
 
@@ -285,7 +288,8 @@ func _physics_process(delta):
 						$RobotSparks.emitting = false
 
 			# SHOOTING
-			shoot()
+			shoot_plasmaball()
+			shoot_lazor()
 
 			# LEFT/RIGHT MOVEMENT
 			if direction:
@@ -319,15 +323,17 @@ func _physics_process(delta):
 
 ### STATE MACHINE ABOVE ###
 
-func shoot():
+func shoot_plasmaball():
 	if Game.GUN:
-		if Input.is_action_pressed("shoot"):
+		if Input.is_action_pressed("shoot2") and shooting_cooldown_timer.is_stopped():
 			var direction = -1 if anim_idle.flip_h else 1
 			var f = PLASMABALL.instantiate()
 			f.direction = direction * -1
 			get_parent().add_child(f)
 			f.position.y = position.y - 5
 			f.position.x = position.x - 30 * direction
+			$Sounds/GunFire.play()
+			#$Sounds/PlasmaExplode.play()
 			is_shooting = true
 			# Checking if in the air
 			if velocity.y != 0:
@@ -343,6 +349,7 @@ func shoot():
 			anim_idle.visible = false
 			anim_fall.visible = false
 			anim_jump.visible = false
+			shooting_cooldown_timer.start()
 		else:
 			anim_air_shoot.visible = false
 			is_shooting = false
@@ -354,3 +361,33 @@ func taking_damage():
 	Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	TW1.tween_property($AllSprites, "modulate", 
 	Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+func shoot_lazor():
+	if LAZOR:
+		if Input.is_action_pressed("shoot") and shooting_cooldown_timer.is_stopped():
+			var direction = -1 if anim_idle.flip_h else 1
+			var f = LAZOR.instantiate()
+			f.direction = direction * -1
+			get_parent().add_child(f)
+			f.position.y = position.y - 5
+			f.position.x = position.x - 30 * direction
+			$Sounds/GunFire.play()
+			is_shooting = true
+			# Checking if in the air
+			if velocity.y != 0:
+				anim_air_shoot.visible = true
+				anim_shoot.visible = false
+			else:
+				anim_air_shoot.visible = false
+				# Checking if running on the ground
+				if velocity.y == 0 and velocity.x != 0:
+					pass
+				else:
+					anim_shoot.visible = true
+			anim_idle.visible = false
+			anim_fall.visible = false
+			anim_jump.visible = false
+			shooting_cooldown_timer.start()
+		else:
+			anim_air_shoot.visible = false
+			is_shooting = false

@@ -3,14 +3,13 @@ extends CharacterBody2D
 var SPEED = 60
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = 1
+@export var health :int
 
 @onready var edgeCheck = $EdgeCheck
 @export var enemy_death_effect : PackedScene
 
-#var edgecheckposition = get_node("EdgeCheck").position.x
-
 func _ready():
-	get_node("AnimationPlayer").play("Walking")
+	get_node("AnimationPlayer").play("Idle")
 
 func _physics_process(delta):
 	#print(get_node("EdgeCheck").position.x)
@@ -38,12 +37,23 @@ func _on_area_2d_body_entered(body):
 		#Game.lose_life()
 	#elif body.get_collision_layer_value(16): Not fucking working!!
 	elif body.name == "Plasmaball":
-		var effect_instance : GPUParticles2D = enemy_death_effect.instantiate()
-		var TW1 = get_tree().create_tween()
-		TW1.set_loops(1)
-		TW1.tween_property(effect_instance, "modulate",Color.RED,1)
-		effect_instance.position = position
-		effect_instance.emitting = true
-		get_parent().add_child(effect_instance)
-		body.queue_free()
-		queue_free()
+		if health > 0:
+			health -= 1
+			var TW2 = get_tree().create_tween()
+			TW2.set_loops(1)
+			TW2.tween_property($Complete_Sprite, "modulate",
+			Color(25500,25500,25500),0.05)
+			TW2.tween_property($Complete_Sprite, "modulate",Color.WHITE,0)
+			body.queue_free()
+			$ProjectileHit.play()
+		else:
+			var effect_instance : GPUParticles2D = enemy_death_effect.instantiate()
+			var TW1 = get_tree().create_tween()
+			TW1.set_loops(1)
+			TW1.tween_property(effect_instance, "modulate",Color.RED,1)
+			effect_instance.position = position
+			effect_instance.emitting = true
+			get_parent().add_child(effect_instance)
+			body.queue_free()
+			queue_free()
+			$ProjectileHit.play()

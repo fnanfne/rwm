@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2ckbklaeo8qs"]
+[gd_scene load_steps=8 format=3 uid="uid://b2ckbklaeo8qs"]
 
 [ext_resource type="Script" path="res://Scenes/Pinkfly/pinkfly.gd" id="1_8uh7v"]
 [ext_resource type="Texture2D" uid="uid://b7j3pca84ogmg" path="res://Assets/Enemies/Buzzoid/From John/0.png" id="1_kivkn"]
+[ext_resource type="PackedScene" uid="uid://dbkfurlf5s8aj" path="res://Scenes/enemy_death_animation.tscn" id="2_3vc3g"]
 [ext_resource type="Texture2D" uid="uid://cpmfokmhhj4lc" path="res://Assets/Enemies/Buzzoid/From John/1.png" id="2_7o5me"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dyla"]
 size = Vector2(34, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le84d"]
+size = Vector2(20, 32.377)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hydom"]
 animations = [{
@@ -30,12 +34,24 @@ animations = [{
 }]
 
 [node name="Pinkfly" type="CharacterBody2D"]
-collision_layer = 2
+collision_layer = 0
 script = ExtResource("1_8uh7v")
+enemy_death_effect = ExtResource("2_3vc3g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -8.5)
 shape = SubResource("RectangleShape2D_7dyla")
+
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.0400002, -15.64)
+collision_layer = 4
+collision_mask = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.575448)
+scale = Vector2(22.32, 0.31202)
+shape = SubResource("RectangleShape2D_le84d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hydom")
@@ -50,5 +66,6 @@ one_shot = true
 
 [node name="Timer2" type="Timer" parent="."]
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

@@ -1,14 +1,20 @@
-[gd_scene load_steps=20 format=3 uid="uid://ds02qr33layf5"]
+[gd_scene load_steps=24 format=3 uid="uid://ds02qr33layf5"]
 
+[ext_resource type="Script" path="res://Scenes/Redboss/Redboss.gd" id="1_3cvuy"]
 [ext_resource type="Texture2D" uid="uid://cvdcgheojey4y" path="res://Assets/Enemies/Redboss/From John/5.png" id="1_o66gy"]
 [ext_resource type="Texture2D" uid="uid://d1vwr4ew4vlis" path="res://Assets/Enemies/Redboss/From John/3.png" id="2_snyup"]
+[ext_resource type="PackedScene" uid="uid://dbkfurlf5s8aj" path="res://Scenes/enemy_death_animation.tscn" id="2_w4dbu"]
 [ext_resource type="Texture2D" uid="uid://c2luwoneuuana" path="res://Assets/Enemies/Redboss/From John/0.png" id="3_vrqjv"]
 [ext_resource type="Texture2D" uid="uid://b0uaqmyvrauuw" path="res://Assets/Enemies/Redboss/From John/1.png" id="4_5ehvb"]
 [ext_resource type="Texture2D" uid="uid://cs2dvkkjb0eny" path="res://Assets/Enemies/Redboss/From John/4.png" id="5_lndkk"]
 [ext_resource type="Texture2D" uid="uid://tuu3quynhhbq" path="res://Assets/Enemies/Redboss/From John/2.png" id="6_dgw05"]
+[ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="9_fit3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fyxm3"]
-size = Vector2(112, 80.5)
+size = Vector2(98, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvw43"]
+size = Vector2(112.007, 17.2131)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jyvr8"]
 animations = [{
@@ -517,14 +523,29 @@ _data = {
 }
 
 [node name="Redboss" type="CharacterBody2D"]
-collision_layer = 2
+position = Vector2(-1, 23)
+collision_layer = 0
+script = ExtResource("1_3cvuy")
+health = 10
+enemy_death_effect = ExtResource("2_w4dbu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -25.75)
+position = Vector2(1, -22)
 shape = SubResource("RectangleShape2D_fyxm3")
 
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.0400002, -15.64)
+collision_layer = 4
+collision_mask = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-24.9999, -1.79028)
+scale = Vector2(22.32, 0.31202)
+shape = SubResource("RectangleShape2D_xvw43")
+
 [node name="BodySprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 15)
+position = Vector2(0, 20)
 sprite_frames = SubResource("SpriteFrames_jyvr8")
 animation = &"Idle"
 
@@ -561,3 +582,12 @@ speed_scale = 3.5
 libraries = {
 "": SubResource("AnimationLibrary_ed6sn")
 }
+
+[node name="EdgeCheck" type="RayCast2D" parent="."]
+position = Vector2(49, 24)
+target_position = Vector2(0, 10)
+
+[node name="ProjectileHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_fit3l")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

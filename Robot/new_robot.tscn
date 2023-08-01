@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://yg103a66ifo2"]
+[gd_scene load_steps=54 format=3 uid="uid://yg103a66ifo2"]
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://b6qhjwishdu8n" path="res://Assets/Robot/From John/rocketfireup.png" id="9_4hak7"]
 [ext_resource type="Texture2D" uid="uid://d3qw38c7macsm" path="res://Assets/Robot/From John/robot_jumpshoot.png" id="10_0slvw"]
 [ext_resource type="Texture2D" uid="uid://b7afupjgfqmvi" path="res://Assets/Robot/From John/dust.png" id="10_wg5u4"]
+[ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="13_5017s"]
+[ext_resource type="Texture2D" uid="uid://cvjbkdg633lpl" path="res://Assets/Pics/lazorglint.png" id="14_qopyi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c2rdk"]
 
@@ -176,6 +178,10 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_elnnb"]
+resource_name = "Launch"
+loop_mode = 1
+
 [sub_resource type="Animation" id="Animation_vadqx"]
 length = 0.001
 tracks/0/type = "value"
@@ -213,6 +219,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GunFlash:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.523599]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GunFlash2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.523599]
 }
 
 [sub_resource type="Animation" id="Animation_tnd6v"]
@@ -260,13 +290,62 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_elnnb"]
-resource_name = "Launch"
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_6ybfw"]
+resource_name = "GunFlash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GunFlash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GunFlash2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GunFlash:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.523599, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GunFlash2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.523599, 0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uy7lk"]
 _data = {
 "Fall": SubResource("Animation_vgu6b"),
+"GunFlash": SubResource("Animation_6ybfw"),
 "Idle": SubResource("Animation_el21v"),
 "Jump": SubResource("Animation_2xep0"),
 "Launch": SubResource("Animation_elnnb"),
@@ -420,6 +499,12 @@ stream = ExtResource("8_1wjxa")
 
 [node name="SoundRun" type="AudioStreamPlayer" parent="Sounds"]
 
+[node name="GunFire" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("8_1wjxa")
+
+[node name="PlasmaExplode" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("13_5017s")
+
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_fgghk")
 anim_player = NodePath("../AnimationPlayer")
@@ -457,3 +542,19 @@ process_material = SubResource("ParticleProcessMaterial_sn1ei")
 lifetime = 0.2
 speed_scale = 1.73
 explosiveness = 1.0
+
+[node name="ShootingCooldownTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="GunFlash" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-29, -7)
+rotation = -0.523599
+texture = ExtResource("14_qopyi")
+
+[node name="GunFlash2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-10, -7)
+rotation = -0.523599
+texture = ExtResource("14_qopyi")

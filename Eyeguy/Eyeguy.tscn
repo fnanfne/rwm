@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2eimcy00uq7d"]
+[gd_scene load_steps=19 format=3 uid="uid://b2eimcy00uq7d"]
 
 [ext_resource type="Texture2D" uid="uid://81nawtp0ep66" path="res://Assets/Enemies/Eyeguy/From John/3.png" id="1_qtr05"]
 [ext_resource type="Script" path="res://Eyeguy/Eyeguy.gd" id="1_ux4qg"]
+[ext_resource type="PackedScene" uid="uid://dbkfurlf5s8aj" path="res://Scenes/enemy_death_animation.tscn" id="2_d1a0l"]
 [ext_resource type="Texture2D" uid="uid://cxbfsi8ym1p6k" path="res://Assets/Enemies/Eyeguy/From John/4.png" id="2_qgmrv"]
 [ext_resource type="Texture2D" uid="uid://cda2l35iwngfh" path="res://Assets/Enemies/Eyeguy/From John/0.png" id="3_cajys"]
 [ext_resource type="Texture2D" uid="uid://cqhdnchvtv80q" path="res://Assets/Enemies/Eyeguy/From John/1.png" id="4_nbkf7"]
@@ -10,6 +11,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x8r63"]
 radius = 16.0
 height = 40.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3bh1"]
+size = Vector2(20, 32.377)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_44f1r"]
 animations = [{
@@ -142,12 +146,24 @@ _data = {
 }
 
 [node name="Eyeguy" type="CharacterBody2D"]
-collision_layer = 2
+collision_layer = 0
 script = ExtResource("1_ux4qg")
+enemy_death_effect = ExtResource("2_d1a0l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_x8r63")
+
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.0400002, -15.64)
+collision_layer = 4
+collision_mask = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.575448)
+scale = Vector2(22.32, 0.31202)
+shape = SubResource("RectangleShape2D_h3bh1")
 
 [node name="Eyeguy_Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_44f1r")
@@ -174,3 +190,5 @@ libraries = {
 [node name="CeilingFloorCheck" type="RayCast2D" parent="."]
 position = Vector2(0, 20)
 target_position = Vector2(0, 10)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

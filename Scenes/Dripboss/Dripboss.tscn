@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dtqo2uvytrhsr"]
+[gd_scene load_steps=29 format=3 uid="uid://dtqo2uvytrhsr"]
 
 [ext_resource type="Texture2D" uid="uid://cvehiyje8r2le" path="res://Assets/Enemies/Dripboss/From John/0.png" id="1_88xww"]
 [ext_resource type="Script" path="res://Scenes/Dripboss/Dripboss.gd" id="1_cpdeo"]
@@ -11,12 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://d2aqmffquan4i" path="res://Assets/Enemies/Dripboss/From John/eyes+pupil/8.png" id="7_kqaay"]
 [ext_resource type="Texture2D" uid="uid://bi6ndupprgdw0" path="res://Assets/Enemies/Dripboss/From John/eyes+pupil/9.png" id="8_7t1g6"]
 [ext_resource type="Texture2D" uid="uid://r8vvweimavgu" path="res://Assets/Enemies/Dripboss/From John/blink.png" id="9_14ytu"]
+[ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="12_ny0tq"]
+[ext_resource type="AudioStream" uid="uid://dd33u5llxkov1" path="res://Assets/Audio/Sounds/critterscreech.ogg" id="13_kfqfe"]
+[ext_resource type="AudioStream" uid="uid://bm5iaqamy47dv" path="res://Assets/Audio/Sounds/killboss.ogg" id="14_bojty"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l70ea"]
 radius = 52.0096
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5q2r"]
-size = Vector2(20, 32.377)
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gtcq"]
+radius = 38.0132
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ov5wi"]
 animations = [{
@@ -364,19 +367,17 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_cpdeo")
 enemy_death_effect = ExtResource("2_orm23")
+health = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_l70ea")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(-0.0400002, 15.64)
 collision_layer = 4
 collision_mask = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -0.575448)
-scale = Vector2(22.32, 0.31202)
-shape = SubResource("RectangleShape2D_x5q2r")
+shape = SubResource("CircleShape2D_4gtcq")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ov5wi")
@@ -421,4 +422,24 @@ libraries = {
 "": SubResource("AnimationLibrary_t8ect")
 }
 
+[node name="ProjectileHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ny0tq")
+
+[node name="Screetch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_kfqfe")
+volume_db = -10.0
+
+[node name="Die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_bojty")
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

@@ -26,6 +26,7 @@ scale_max = 1.5
 color_ramp = SubResource("GradientTexture1D_hw4t8")
 
 [node name="EnemyDeathAnimation" type="GPUParticles2D"]
+emitting = false
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_54b0t")
 texture = ExtResource("1_vqyoh")

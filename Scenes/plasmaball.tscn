@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://beow5k8fa88as"]
+[gd_scene load_steps=6 format=3 uid="uid://beow5k8fa88as"]
 
 [ext_resource type="Script" path="res://Scenes/plasmaball.gd" id="1_6b4mx"]
 [ext_resource type="Texture2D" uid="uid://bp84eei4l7i2v" path="res://Assets/Pics/plasmaball.png" id="1_yo08g"]
-[ext_resource type="AudioStream" uid="uid://bfeemk4p127p0" path="res://Assets/Audio/Sounds/laser.ogg" id="3_exq5o"]
+[ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="4_do75l"]
+[ext_resource type="AudioStream" uid="uid://dg2vm23jcbces" path="res://Assets/Audio/Sounds/wake.ogg" id="4_qdcwj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rd7v2"]
 
-[node name="Plasmaball" type="CharacterBody2D"]
+[node name="Plasmaball" type="CharacterBody2D" groups=["Plasmaball"]]
 collision_layer = 16
 collision_mask = 5
 floor_constant_speed = true
@@ -22,14 +23,16 @@ texture = ExtResource("1_yo08g")
 
 [node name="ScreenExit" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.05
-one_shot = true
-autostart = true
+[node name="PlasmaExplode" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_do75l")
 
-[node name="PlasmaSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_exq5o")
-volume_db = -10.0
+[node name="PlasmaBounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qdcwj")
+volume_db = -20.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
 
 [connection signal="screen_exited" from="ScreenExit" to="." method="_on_screen_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
