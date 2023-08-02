@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://yg103a66ifo2"]
+[gd_scene load_steps=71 format=3 uid="uid://yg103a66ifo2"]
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
@@ -131,6 +131,58 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6ybfw"]
+resource_name = "GunFlash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GunFlash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GunFlash2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GunFlash:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.523599, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GunFlash2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.523599, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_el21v"]
@@ -290,58 +342,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_6ybfw"]
-resource_name = "GunFlash"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GunFlash:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("GunFlash2:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("GunFlash:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0001, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, -0.523599, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("GunFlash2:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, -0.523599, 0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uy7lk"]
 _data = {
 "Fall": SubResource("Animation_vgu6b"),
@@ -357,46 +357,107 @@ _data = {
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nhof0"]
 height = 38.0
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_erdo8"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d4huh"]
+animation = &"Fall"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_sifgi"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dt0fn"]
+animation = &"GunFlash"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_5tbfq"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3qdvi"]
+animation = &"Idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h3e7h"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_av4to"]
+animation = &"Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_meeo1"]
+animation = &"Launch"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c7adc"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k1hkf"]
+animation = &"Shoot"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ehuhc"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ap0rt"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_seau4"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mpg67"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nttjk"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n3wbv"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7rgw7"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dny40"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xct26"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u4gbj"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nmpbp"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2n0hk"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4qtfh"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gg0vj"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_23i3o"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fgghk"]
-states/End/position = Vector2(1087, 175)
-states/Idle/node = SubResource("AnimationNodeBlendSpace2D_erdo8")
-states/Idle/position = Vector2(355, 175)
-states/Jump/node = SubResource("AnimationNodeBlendSpace2D_sifgi")
-states/Jump/position = Vector2(753, 175)
-states/Run/node = SubResource("AnimationNodeBlendSpace2D_5tbfq")
-states/Run/position = Vector2(546, 36)
-states/Start/position = Vector2(83, 175)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_h3e7h"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_ap0rt"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_mpg67"), "Jump", "End", SubResource("AnimationNodeStateMachineTransition_n3wbv"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_dny40"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_u4gbj"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_2n0hk"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_gg0vj")]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_00i64"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2whfi"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wobyn"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a8p20"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t4awd"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n0fy4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wyx4w"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_joiua"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0hfvt"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2sv27"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6gylo"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yb0fg"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jet6n"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_epvy5"]
+states/Fall/node = SubResource("AnimationNodeAnimation_d4huh")
+states/Fall/position = Vector2(374, 287)
+states/GunFlash/node = SubResource("AnimationNodeAnimation_dt0fn")
+states/GunFlash/position = Vector2(651, 42)
+states/Idle/node = SubResource("AnimationNodeAnimation_3qdvi")
+states/Idle/position = Vector2(240, 123)
+states/Jump/node = SubResource("AnimationNodeAnimation_av4to")
+states/Jump/position = Vector2(454, 34)
+states/Launch/node = SubResource("AnimationNodeAnimation_meeo1")
+states/Launch/position = Vector2(787, 42)
+states/Run/node = SubResource("AnimationNodeAnimation_c7adc")
+states/Run/position = Vector2(434, 152)
+states/Shoot/node = SubResource("AnimationNodeAnimation_k1hkf")
+states/Shoot/position = Vector2(621, 131)
+states/Start/position = Vector2(110, 152)
+transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_ehuhc"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_seau4"), "Idle", "Fall", SubResource("AnimationNodeStateMachineTransition_nttjk"), "Fall", "Idle", SubResource("AnimationNodeStateMachineTransition_7rgw7"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_xct26"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_nmpbp"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_4qtfh"), "Jump", "Shoot", SubResource("AnimationNodeStateMachineTransition_23i3o"), "Shoot", "Jump", SubResource("AnimationNodeStateMachineTransition_00i64"), "Run", "Shoot", SubResource("AnimationNodeStateMachineTransition_2whfi"), "Shoot", "Run", SubResource("AnimationNodeStateMachineTransition_wobyn"), "Fall", "Shoot", SubResource("AnimationNodeStateMachineTransition_a8p20"), "Shoot", "Fall", SubResource("AnimationNodeStateMachineTransition_t4awd"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_n0fy4"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_wyx4w"), "Run", "Fall", SubResource("AnimationNodeStateMachineTransition_joiua"), "Fall", "Run", SubResource("AnimationNodeStateMachineTransition_0hfvt"), "Idle", "Shoot", SubResource("AnimationNodeStateMachineTransition_2sv27"), "Shoot", "Idle", SubResource("AnimationNodeStateMachineTransition_6gylo"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_yb0fg"), "Fall", "Jump", SubResource("AnimationNodeStateMachineTransition_jet6n")]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_p853d"]
 
@@ -506,12 +567,9 @@ stream = ExtResource("8_1wjxa")
 stream = ExtResource("13_5017s")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_fgghk")
+tree_root = SubResource("AnimationNodeStateMachine_epvy5")
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_p853d")
-parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Jump/blend_position = Vector2(0, 0)
-parameters/Run/blend_position = Vector2(0, 0)
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.1

@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var health :int
 
 func _physics_process(_delta):
-	print(health)
+	pass
 
 func _on_area_2d_body_entered(body):
 	if body.name == "NewRobot":
@@ -17,7 +17,7 @@ func _on_area_2d_body_entered(body):
 			var TW1 = get_tree().create_tween()
 			TW1.set_loops(1)
 			TW1.tween_property($Body, "modulate",
-			Color(2550,2550,2550),0.05)
+			Color(1000,1000,1000),0.05)
 			TW1.tween_property($Body, "modulate",Color.WHITE,0)
 			body.queue_free()
 		else:
@@ -27,8 +27,7 @@ func _on_area_2d_body_entered(body):
 			var TW2 = get_tree().create_tween()
 			TW2.set_loops(1)
 			TW2.tween_property($Body, "modulate",
-			Color(2550,2550,2550),15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-			#TW2.tween_property($Body, "modulate",Color.WHITE,0)
+			Color(10000,10000,10000),15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 			# 	DEATH STARS
 			body.queue_free()
 			$Timer.start()

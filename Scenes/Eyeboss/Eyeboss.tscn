@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bfhrsaiuxhr78"]
+[gd_scene load_steps=63 format=3 uid="uid://bfhrsaiuxhr78"]
 
 [ext_resource type="Texture2D" uid="uid://ddjblc4lt3t1g" path="res://Assets/Enemies/Eyeboss/From John/0.png" id="1_bu3ew"]
 [ext_resource type="Script" path="res://Scenes/Eyeboss/Eyeboss.gd" id="1_necy5"]
@@ -30,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://c7sj45yryvedc" path="res://Assets/Enemies/Eyeboss/From John/7.png" id="15_wgkhg"]
 [ext_resource type="Texture2D" uid="uid://cae3x4soc0l8b" path="res://Assets/Enemies/Eyeboss/From John/4.png" id="16_5x84p"]
 [ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="30_aflgd"]
+[ext_resource type="AudioStream" uid="uid://dd33u5llxkov1" path="res://Assets/Audio/Sounds/critterscreech.ogg" id="31_5lbbf"]
+[ext_resource type="AudioStream" uid="uid://bm5iaqamy47dv" path="res://Assets/Audio/Sounds/killboss.ogg" id="32_2ei5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aeoeu"]
 size = Vector2(127, 74.75)
@@ -1043,7 +1045,7 @@ _data = {
 [node name="Eyeboss" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_necy5")
-health = 1000
+health = 5
 enemy_death_effect = ExtResource("2_luyfy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -1178,5 +1180,22 @@ target_position = Vector2(0, 12)
 [node name="ProjectileHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("30_aflgd")
 
+[node name="Screetch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_5lbbf")
+volume_db = -10.0
+
+[node name="Die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("32_2ei5u")
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

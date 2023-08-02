@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8eerl57ap6te"]
+[gd_scene load_steps=8 format=3 uid="uid://c8eerl57ap6te"]
 
 [ext_resource type="Texture2D" uid="uid://dpeoegvah1ao8" path="res://Assets/Pics/lazor.png" id="1_cmk1b"]
 [ext_resource type="Script" path="res://Lazor.gd" id="1_wwjyj"]
 [ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="3_4fjjh"]
 [ext_resource type="Texture2D" uid="uid://cvjbkdg633lpl" path="res://Assets/Pics/lazorglint.png" id="3_v50ig"]
 [ext_resource type="AudioStream" uid="uid://dg2vm23jcbces" path="res://Assets/Audio/Sounds/wake.ogg" id="4_l3j6r"]
+[ext_resource type="Texture2D" uid="uid://dkycijoucdk1p" path="res://Assets/Pics/explode2.png" id="4_wf1ax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5y56"]
 size = Vector2(13.0373, 19.3963)
@@ -20,12 +21,15 @@ position = Vector2(4.51031, 0.50505)
 scale = Vector2(1, -0.360001)
 shape = SubResource("RectangleShape2D_l5y56")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Lazor" type="Sprite2D" parent="."]
 texture = ExtResource("1_cmk1b")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-scale = Vector2(1, 1)
+[node name="Glint" type="Sprite2D" parent="."]
 texture = ExtResource("3_v50ig")
+
+[node name="Explode" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_wf1ax")
 
 [node name="ScreenExit" type="VisibleOnScreenNotifier2D" parent="."]
 
@@ -37,10 +41,6 @@ stream = ExtResource("4_l3j6r")
 volume_db = -20.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-
-[node name="Timer2" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 

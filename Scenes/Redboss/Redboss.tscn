@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ds02qr33layf5"]
+[gd_scene load_steps=26 format=3 uid="uid://ds02qr33layf5"]
 
 [ext_resource type="Script" path="res://Scenes/Redboss/Redboss.gd" id="1_3cvuy"]
 [ext_resource type="Texture2D" uid="uid://cvdcgheojey4y" path="res://Assets/Enemies/Redboss/From John/5.png" id="1_o66gy"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cs2dvkkjb0eny" path="res://Assets/Enemies/Redboss/From John/4.png" id="5_lndkk"]
 [ext_resource type="Texture2D" uid="uid://tuu3quynhhbq" path="res://Assets/Enemies/Redboss/From John/2.png" id="6_dgw05"]
 [ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="9_fit3l"]
+[ext_resource type="AudioStream" uid="uid://dd33u5llxkov1" path="res://Assets/Audio/Sounds/critterscreech.ogg" id="10_n0ql1"]
+[ext_resource type="AudioStream" uid="uid://bm5iaqamy47dv" path="res://Assets/Audio/Sounds/killboss.ogg" id="11_lh7aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fyxm3"]
 size = Vector2(98, 84)
@@ -526,7 +528,7 @@ _data = {
 position = Vector2(-1, 23)
 collision_layer = 0
 script = ExtResource("1_3cvuy")
-health = 10
+health = 2
 enemy_death_effect = ExtResource("2_w4dbu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -590,4 +592,21 @@ target_position = Vector2(0, 10)
 [node name="ProjectileHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_fit3l")
 
+[node name="Screetch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_n0ql1")
+volume_db = -10.0
+
+[node name="Die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_lh7aa")
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
