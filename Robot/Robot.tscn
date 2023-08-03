@@ -385,7 +385,7 @@ height = 38.0
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_kqs35"]
 
-[node name="Robot" type="CharacterBody2D"]
+[node name="Robot" type="CharacterBody2D" groups=["Robots"]]
 collision_layer = 2
 script = ExtResource("1_4udve")
 

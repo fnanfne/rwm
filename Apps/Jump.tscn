@@ -34,11 +34,12 @@ func _shrink(amount):
 	$AnimatedSprite2D.scale.y -= amount
 	
 func _grow(amount):
-		$AnimatedSprite2D.scale.x += amount
-		$AnimatedSprite2D.scale.y += amount
+	$AnimatedSprite2D.scale.x += amount
+	$AnimatedSprite2D.scale.y += amount
 
 func _on_body_entered(body):
-	if body.name == \"Robot\":
+	#if body.name == \"Robot\":
+	if body.is_in_group(\"Robots\"):
 		Game.JUMP = true
 		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
@@ -63,6 +64,8 @@ animations = [{
 }]
 
 [node name="Jump" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
 script = SubResource("GDScript_dh4jr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

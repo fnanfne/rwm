@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bm3g0a78ol6i"]
+[gd_scene load_steps=27 format=3 uid="uid://bm3g0a78ol6i"]
 
 [ext_resource type="Script" path="res://Redguy/Redguy.gd" id="1_67hgr"]
 [ext_resource type="PackedScene" uid="uid://dbkfurlf5s8aj" path="res://Scenes/enemy_death_animation.tscn" id="2_0fbvp"]
@@ -10,12 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://528nlbfffcsk" path="res://Assets/Enemies/Redguy/From John/right_antenna.png" id="7_awjh4"]
 [ext_resource type="Texture2D" uid="uid://dei5lo3a1lkbj" path="res://Assets/Enemies/Redguy/From John/left_eyelid.png" id="8_rq6e5"]
 [ext_resource type="Texture2D" uid="uid://c12t4arfo34k0" path="res://Assets/Enemies/Redguy/From John/right_eyelid.png" id="9_8vem2"]
+[ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="11_2w3rq"]
+[ext_resource type="AudioStream" uid="uid://dd33u5llxkov1" path="res://Assets/Audio/Sounds/critterscreech.ogg" id="12_7bsux"]
+[ext_resource type="AudioStream" uid="uid://bm5iaqamy47dv" path="res://Assets/Audio/Sounds/killboss.ogg" id="13_1b7q6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wo5yj"]
 size = Vector2(31.5, 38.0625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvm1s"]
-size = Vector2(20, 32.377)
+size = Vector2(33.602, 7.99182)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t6vxu"]
 
@@ -181,6 +184,7 @@ _data = {
 collision_layer = 0
 script = ExtResource("1_67hgr")
 enemy_death_effect = ExtResource("2_0fbvp")
+health = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -193,7 +197,7 @@ collision_layer = 4
 collision_mask = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -0.575448)
+position = Vector2(49.9997, 0.0319693)
 scale = Vector2(22.32, 0.31202)
 shape = SubResource("RectangleShape2D_uvm1s")
 
@@ -242,4 +246,24 @@ libraries = {
 position = Vector2(13, 20)
 target_position = Vector2(0, 10)
 
+[node name="ProjectileHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_2w3rq")
+
+[node name="Screetch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_7bsux")
+volume_db = -10.0
+
+[node name="Die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_1b7q6")
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

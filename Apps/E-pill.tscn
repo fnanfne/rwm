@@ -11,8 +11,6 @@ var size_max = 1.1
 var should_shrink = true
 var rate = 0.005
 
-
-
 func _ready():
 	$AnimatedSprite2D.scale.x = 1
 	$AnimatedSprite2D.scale.y = 1
@@ -40,7 +38,8 @@ func _grow(amount):
 	$AnimatedSprite2D.scale.y += amount
 
 func _on_body_entered(body):
-	if body.name == \"Robot\":
+	#if body.name == \"Robot\":
+	if body.is_in_group(\"Robots\"):
 		#Game.JUMP = true
 		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
@@ -51,7 +50,7 @@ func _on_body_entered(body):
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kdeqh"]
-radius = 14.0
+radius = 11.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yldqk"]
 animations = [{
@@ -65,6 +64,8 @@ animations = [{
 }]
 
 [node name="E-pill" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
 script = SubResource("GDScript_xlwg2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -79,4 +80,3 @@ stream = ExtResource("7_lmlgd")
 volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="ready" from="." to="." method="_on_ready"]

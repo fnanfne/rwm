@@ -13,6 +13,7 @@ func _ready():
 	var TW1 = get_tree().create_tween()
 	var TW2 = get_tree().create_tween()
 	if TW1:
+		##########################TW1.is_valid()
 		TW1.set_loops(0)
 		TW1.tween_property($Explode, "modulate:a", 
 		0.1, 0.5) #.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)

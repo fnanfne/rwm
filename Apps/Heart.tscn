@@ -38,7 +38,8 @@ func _grow(amount):
 		$AnimatedSprite2D.scale.y += amount
 
 func _on_body_entered(body):
-	if body.name == \"Robot\":
+	#if body.name == \"Robot\":
+	if body.is_in_group(\"Robots\"):
 		Game.robotHP += 5
 		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
@@ -49,7 +50,7 @@ func _on_body_entered(body):
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08b1g"]
-radius = 20.0
+radius = 17.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mowy6"]
 animations = [{
@@ -63,7 +64,7 @@ animations = [{
 }]
 
 [node name="Heart" type="Area2D"]
-collision_layer = 0
+collision_layer = 8
 collision_mask = 2
 script = SubResource("GDScript_dh4jr")
 

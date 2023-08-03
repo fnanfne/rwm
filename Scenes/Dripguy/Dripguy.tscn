@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cj13fi0jbnlf5"]
+[gd_scene load_steps=20 format=3 uid="uid://cj13fi0jbnlf5"]
 
 [ext_resource type="Script" path="res://Scenes/Dripguy/Dripguy.gd" id="1_6nr7v"]
 [ext_resource type="Texture2D" uid="uid://0bsufvh0amq7" path="res://Assets/Enemies/Dripguy/From John/0.png" id="1_njvxq"]
@@ -7,13 +7,17 @@
 [ext_resource type="Texture2D" uid="uid://d1t5od0law2tj" path="res://Assets/Enemies/Dripguy/From John/2.png" id="3_nts8h"]
 [ext_resource type="Texture2D" uid="uid://bpkwcmyswayhn" path="res://Assets/Enemies/Dripguy/From John/3.png" id="4_mxrre"]
 [ext_resource type="Texture2D" uid="uid://d06bkw66cwrca" path="res://Assets/Enemies/Dripguy/From John/4.png" id="5_l0etj"]
+[ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="8_lh8gl"]
+[ext_resource type="AudioStream" uid="uid://dd33u5llxkov1" path="res://Assets/Audio/Sounds/critterscreech.ogg" id="9_75vyj"]
+[ext_resource type="AudioStream" uid="uid://bm5iaqamy47dv" path="res://Assets/Audio/Sounds/killboss.ogg" id="10_wknv2"]
+[ext_resource type="AudioStream" uid="uid://c1wjcqv52q0r5" path="res://Assets/Audio/Sounds/drip.ogg" id="11_200tg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_30fwt"]
 radius = 13.0
 height = 54.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvmah"]
-size = Vector2(20, 32.377)
+size = Vector2(22.4013, 9.83608)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_76ysc"]
 animations = [{
@@ -47,10 +51,118 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_if75y"]
+resource_name = "DripGuySpriteScript"
+script/source = "extends AnimatedSprite2D
+
+signal frame_change(frame: int)
+
+@export var event_frames: Array[int]
+
+func _ready():
+	frame_changed.connect(_on_animation_change)
+
+func _on_animation_change():
+	if event_frames.has(frame):
+		frame_change.emit(frame)
+"
+
+[sub_resource type="Animation" id="Animation_jpp7e"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_7nrai"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_oru3k"]
+resource_name = "Run"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a55mp"]
+_data = {
+"Idle": SubResource("Animation_jpp7e"),
+"RESET": SubResource("Animation_7nrai"),
+"Run": SubResource("Animation_oru3k")
+}
+
 [node name="Dripguy" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_6nr7v")
 enemy_death_effect = ExtResource("2_kmmoa")
+health = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_30fwt")
@@ -62,7 +174,7 @@ collision_layer = 4
 collision_mask = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -0.575448)
+position = Vector2(-2.18556e-06, 0.0639386)
 scale = Vector2(22.32, 0.31202)
 shape = SubResource("RectangleShape2D_tvmah")
 
@@ -70,6 +182,40 @@ shape = SubResource("RectangleShape2D_tvmah")
 sprite_frames = SubResource("SpriteFrames_76ysc")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.627155
+script = SubResource("GDScript_if75y")
+event_frames = Array[int]([0, 1, 2, 3, 4])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+speed_scale = 0.5
+libraries = {
+"": SubResource("AnimationLibrary_a55mp")
+}
+
+[node name="ProjectileHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_lh8gl")
+
+[node name="Screetch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_75vyj")
+volume_db = -10.0
+
+[node name="Die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_wknv2")
+volume_db = -10.0
+
+[node name="SlimeDrip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_200tg")
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="frame_change" from="AnimatedSprite2D" to="." method="_on_animation_change"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_change"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

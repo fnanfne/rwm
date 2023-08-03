@@ -110,6 +110,7 @@ shoot2={
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Apps"
 2d_physics/layer_5="Projectiles"
+2d_physics/layer_6="Enemy_Projectiles"
 
 [rendering]
 

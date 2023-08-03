@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://ea2kqsb34jm3"]
+
+[ext_resource type="Script" path="res://Scenes/slime_projectile.gd" id="1_1blu2"]
+[ext_resource type="Texture2D" uid="uid://lv7vgcm4e7ca" path="res://Assets/Pics/acid.png" id="2_mv32r"]
+[ext_resource type="Texture2D" uid="uid://dn3qt2pnrc2mt" path="res://Assets/Pics/aciddot.png" id="3_84o78"]
+[ext_resource type="AudioStream" uid="uid://bjvvs6a2yi11o" path="res://Assets/Audio/Sounds/plop.ogg" id="3_k35yp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_adkvo"]
+radius = 7.0
+height = 20.0
+
+[node name="SlimeProjectile" type="CharacterBody2D" groups=["EnemyProjectiles"]]
+z_index = 1
+position = Vector2(310, 20)
+scale = Vector2(0.9, 0.9)
+collision_layer = 32
+collision_mask = 3
+script = ExtResource("1_1blu2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_adkvo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mv32r")
+
+[node name="ScreenExit" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="SlimeSplat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k35yp")
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="AcidTrail" type="CPUParticles2D" parent="."]
+lifetime = 0.2
+randomness = 1.0
+lifetime_randomness = 1.0
+texture = ExtResource("3_84o78")
+emission_shape = 1
+emission_sphere_radius = 8.0
+gravity = Vector2(0, 200)
+scale_amount_min = 0.2
+scale_amount_max = 0.7
+
+[connection signal="screen_exited" from="ScreenExit" to="." method="on_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

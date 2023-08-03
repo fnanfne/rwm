@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c21qrbylx8yd"]
+[gd_scene load_steps=6 format=3 uid="uid://bpy6be58hevdo"]
 
-[ext_resource type="Texture2D" uid="uid://br6qyhfvk5lbb" path="res://Assets/Apps/Launch/launch0.png" id="1_dumbj"]
-[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="7_w5son"]
+[ext_resource type="Texture2D" uid="uid://cd3h2n7qnpq50" path="res://Assets/Apps/Annihilator/annihilate0.png" id="1_c570t"]
+[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="1_kryrq"]
 
-[sub_resource type="GDScript" id="GDScript_dh4jr"]
+[sub_resource type="GDScript" id="GDScript_3hlut"]
+resource_name = "annihilator"
 script/source = "extends Area2D
 
 var size_min = 1
@@ -38,9 +39,10 @@ func _grow(amount):
 		$AnimatedSprite2D.scale.y += amount
 
 func _on_body_entered(body):
-	#if body.name == \"Robot\":
 	if body.is_in_group(\"Robots\"):
-		Game.LAUNCH = true
+	#if body.name == \"NewRobot\":
+		print(\"PICKEDUPP!!!!\")
+		Game.ANNIHILATE = true
 		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
 		var tween2 = get_tree().create_tween()
@@ -49,34 +51,33 @@ func _on_body_entered(body):
 		tween1.tween_callback(queue_free)
 "
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_08b1g"]
-radius = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppsxa"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dlvla"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kll6w"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dumbj")
+"texture": ExtResource("1_c570t")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"default",
 "speed": 5.0
 }]
 
-[node name="Launch" type="Area2D"]
+[node name="Annihilator" type="Area2D"]
 collision_layer = 8
 collision_mask = 2
-script = SubResource("GDScript_dh4jr")
+script = SubResource("GDScript_3hlut")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_08b1g")
+scale = Vector2(1.52, 1.6)
+shape = SubResource("RectangleShape2D_ppsxa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_dlvla")
-animation = &"Idle"
+sprite_frames = SubResource("SpriteFrames_kll6w")
 
 [node name="SoundPickup" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_w5son")
+stream = ExtResource("1_kryrq")
 volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

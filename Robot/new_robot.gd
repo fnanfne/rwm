@@ -19,10 +19,12 @@ var is_launching = false
 var is_falling = false
 var is_shooting = false
 var is_jumping = false
+var invincibility = false
 
 @onready var anim = get_node("AnimationPlayer")
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var shooting_cooldown_timer = $ShootingCooldownTimer
+@onready var damage_cooldown_timer = $DamageCooldownTimer
 
 @onready var anim_wheel = get_node("AllSprites/Wheel")
 @onready var anim_idle = get_node("AllSprites/Idle")
@@ -35,8 +37,9 @@ var is_jumping = false
 @onready var anim_launchfire = get_node("AllSprites/LaunchFire")
 
 func _physics_process(delta):
-
-	#print(anim_idle.flip_h)
+	
+	#print($DamageCooldownTimer.time_left)
+	print(invincibility)
 
 	# Coyote Jump
 	var was_on_floor = is_on_floor()
@@ -59,7 +62,10 @@ func _physics_process(delta):
 				anim_shoot.visible = false
 				anim_idle.visible = false
 				anim_run.visible = false
-				anim_fall.visible = true
+				if is_shooting:
+					anim_air_shoot.visible = true
+				else:
+					anim_fall.visible = true
 				is_jumping = false
 				$RobotPoof.emitting = false
 				$RobotSparks.emitting = false
@@ -171,7 +177,6 @@ func _physics_process(delta):
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 
 			# SHOOTING
-			shoot_plasmaball()
 			shoot_lazor()
 
 			move_and_slide()
@@ -256,7 +261,10 @@ func _physics_process(delta):
 						anim_run.visible = false
 						anim_idle.visible = false
 						anim_wheel.visible = false
-						anim_jump.visible = true
+						if is_shooting:
+							anim_air_shoot.visible = true
+						else:
+							anim_jump.visible = true
 						$RobotPoof.emitting = false
 						$RobotSparks.emitting = false
 
@@ -288,7 +296,6 @@ func _physics_process(delta):
 						$RobotSparks.emitting = false
 
 			# SHOOTING
-			shoot_plasmaball()
 			shoot_lazor()
 
 			# LEFT/RIGHT MOVEMENT
@@ -323,47 +330,38 @@ func _physics_process(delta):
 
 ### STATE MACHINE ABOVE ###
 
-func shoot_plasmaball():
-	if Game.GUN:
-		if Input.is_action_pressed("shoot2") and shooting_cooldown_timer.is_stopped():
-			var direction = -1 if anim_idle.flip_h else 1
-			var f = PLASMABALL.instantiate()
-			f.direction = direction * -1
-			get_parent().add_child(f)
-			f.position.y = position.y - 5
-			f.position.x = position.x - 30 * direction
-			$Sounds/GunFire.play()
-			#$Sounds/PlasmaExplode.play()
-			is_shooting = true
-			# Checking if in the air
-			if velocity.y != 0:
-				anim_air_shoot.visible = true
-				anim_shoot.visible = false
-			else:
-				anim_air_shoot.visible = false
-				# Checking if running on the ground
-				if velocity.y == 0 and velocity.x != 0:
-					pass
-				else:
-					anim_shoot.visible = true
-			anim_idle.visible = false
-			anim_fall.visible = false
-			anim_jump.visible = false
-			shooting_cooldown_timer.start()
-		else:
-			anim_air_shoot.visible = false
-			is_shooting = false
-
 func taking_damage():
-	var TW1 = get_tree().create_tween()
-	TW1.set_loops(10)
-	TW1.tween_property($AllSprites, "modulate", 
-	Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-	TW1.tween_property($AllSprites, "modulate", 
-	Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	if $DamageCooldownTimer.is_stopped():
+		$DamageCooldownTimer.start()
+		if invincibility == false:
+			invincibility = true
+			# Add losing a life/heart
+			$Sounds/TakingDamage.play()
+			var TW1 = get_tree().create_tween()
+			TW1.set_loops(10)
+			TW1.tween_property($AllSprites, "modulate", 
+			Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+			TW1.tween_property($AllSprites, "modulate", 
+			Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	else:
+		if invincibility == false:
+			invincibility = true
+			# Add losing a life/heart
+			$Sounds/TakingDamage.play()
+			var TW1 = get_tree().create_tween()
+			TW1.set_loops(10)
+			TW1.tween_property($AllSprites, "modulate", 
+			Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+			TW1.tween_property($AllSprites, "modulate", 
+			Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 func shoot_lazor():
-	if LAZOR:
+	#if LAZOR:
+	if Game.GUN:
+		if Game.ANNIHILATE:
+			$ShootingCooldownTimer.wait_time = 0.1
+		else:
+			$ShootingCooldownTimer.wait_time = 0.4
 		if Input.is_action_pressed("shoot") and shooting_cooldown_timer.is_stopped():
 			var direction = -1 if anim_idle.flip_h else 1
 			var f = LAZOR.instantiate()
@@ -371,23 +369,43 @@ func shoot_lazor():
 			get_parent().add_child(f)
 			f.position.y = position.y - 5
 			f.position.x = position.x - 30 * direction
-			$Sounds/GunFire.play()
-			is_shooting = true
-			# Checking if in the air
-			if velocity.y != 0:
-				anim_air_shoot.visible = true
-				anim_shoot.visible = false
-			else:
-				anim_air_shoot.visible = false
-				# Checking if running on the ground
-				if velocity.y == 0 and velocity.x != 0:
-					pass
-				else:
-					anim_shoot.visible = true
-			anim_idle.visible = false
-			anim_fall.visible = false
-			anim_jump.visible = false
-			shooting_cooldown_timer.start()
+			fire_logic()
+		elif Input.is_action_pressed("shoot2") and shooting_cooldown_timer.is_stopped():
+			var direction = -1 if anim_idle.flip_h else 1
+			var f = PLASMABALL.instantiate()
+			f.direction = direction * -1
+			get_parent().add_child(f)
+			f.position.y = position.y - 5
+			f.position.x = position.x - 30 * direction
+			fire_logic()
 		else:
 			anim_air_shoot.visible = false
 			is_shooting = false
+
+func fire_logic():
+	$Sounds/GunFire.play()
+	is_shooting = true
+	# Checking if in the air
+	if velocity.y != 0:
+		anim_air_shoot.visible = true
+	else:
+		anim_air_shoot.visible = false
+		anim_shoot.visible = true
+		# Checking if running on the ground
+		if velocity.y == 0 and velocity.x != 0:
+			anim_idle.visible = false
+		else:
+			pass
+			#anim_run.visible = true
+	anim_idle.visible = false
+	anim_fall.visible = false
+	shooting_cooldown_timer.start()
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("EnemyProjectiles"):
+		body.queue_free()
+		taking_damage()
+
+func _on_damage_cooldown_timer_timeout():
+	invincibility = false

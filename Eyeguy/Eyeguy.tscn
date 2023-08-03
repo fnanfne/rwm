@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b2eimcy00uq7d"]
+[gd_scene load_steps=22 format=3 uid="uid://b2eimcy00uq7d"]
 
 [ext_resource type="Texture2D" uid="uid://81nawtp0ep66" path="res://Assets/Enemies/Eyeguy/From John/3.png" id="1_qtr05"]
 [ext_resource type="Script" path="res://Eyeguy/Eyeguy.gd" id="1_ux4qg"]
@@ -7,13 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://cda2l35iwngfh" path="res://Assets/Enemies/Eyeguy/From John/0.png" id="3_cajys"]
 [ext_resource type="Texture2D" uid="uid://cqhdnchvtv80q" path="res://Assets/Enemies/Eyeguy/From John/1.png" id="4_nbkf7"]
 [ext_resource type="Texture2D" uid="uid://d0c1rxk26y8aw" path="res://Assets/Enemies/Eyeguy/From John/2.png" id="5_y88yl"]
+[ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="8_iuoho"]
+[ext_resource type="AudioStream" uid="uid://dd33u5llxkov1" path="res://Assets/Audio/Sounds/critterscreech.ogg" id="9_e18kk"]
+[ext_resource type="AudioStream" uid="uid://bm5iaqamy47dv" path="res://Assets/Audio/Sounds/killboss.ogg" id="10_3y1eu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x8r63"]
 radius = 16.0
 height = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3bh1"]
-size = Vector2(20, 32.377)
+size = Vector2(31.3619, 7.99181)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_44f1r"]
 animations = [{
@@ -149,6 +152,7 @@ _data = {
 collision_layer = 0
 script = ExtResource("1_ux4qg")
 enemy_death_effect = ExtResource("2_d1a0l")
+health = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -161,7 +165,7 @@ collision_layer = 4
 collision_mask = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -0.575448)
+position = Vector2(6.1194e-05, 0.159847)
 scale = Vector2(22.32, 0.31202)
 shape = SubResource("RectangleShape2D_h3bh1")
 
@@ -191,4 +195,24 @@ libraries = {
 position = Vector2(0, 20)
 target_position = Vector2(0, 10)
 
+[node name="ProjectileHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_iuoho")
+
+[node name="Screetch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_e18kk")
+volume_db = -10.0
+
+[node name="Die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_3y1eu")
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

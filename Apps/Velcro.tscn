@@ -38,8 +38,9 @@ func _grow(amount):
 		$AnimatedSprite2D.scale.y += amount
 
 func _on_body_entered(body):
-	if body.name == \"Robot\":
-		#Game.LAUNCH = true
+	#if body.name == \"Robot\":
+	if body.is_in_group(\"Robots\"):
+		Game.VELCRO = true
 		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
 		var tween2 = get_tree().create_tween()
@@ -63,6 +64,8 @@ animations = [{
 }]
 
 [node name="Velcro" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
 script = SubResource("GDScript_dh4jr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

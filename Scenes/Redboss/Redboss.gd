@@ -32,7 +32,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_area_2d_body_entered(body):
-	if body.name == "NewRobot":
+	#if body.name == "NewRobot":
+	if body.is_in_group("Robots"):
 		body.taking_damage()
 		#Game.lose_life()
 	elif body.is_in_group("Lazor") or body.is_in_group("Plasmaball"):
@@ -51,6 +52,8 @@ func _on_area_2d_body_entered(body):
 			TW4.tween_property($BodySprite/Jaw, "modulate",Color.WHITE,0)
 			body.queue_free()
 		else:
+			get_node("BodySprite").play("Idle")
+			set_physics_process(false)
 			$Area2D/CollisionShape2D.queue_free()
 			$Screetch.play()
 			# DEATH WHITE-OUT
@@ -63,6 +66,7 @@ func _on_area_2d_body_entered(body):
 			$Timer.start()
 
 func _on_timer_timeout():
+	get_node("BodySprite").play("Idle")
 	$Die.play()
 	var effect_instance : GPUParticles2D = enemy_death_effect.instantiate()
 	var TW3 = get_tree().create_tween()
@@ -75,4 +79,5 @@ func _on_timer_timeout():
 	$Timer2.start()
 
 func _on_timer_2_timeout():
+	get_node("BodySprite").play("Idle")
 	queue_free()

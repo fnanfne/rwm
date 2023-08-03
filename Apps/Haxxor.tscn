@@ -39,8 +39,9 @@ func _grow(amount):
 		$AnimatedSprite2D.scale.y += amount
 
 func _on_body_entered(body):
-	if body.name == \"Robot\":
-		#Game.LAUNCH = true
+	#if body.name == \"Robot\":
+	if body.is_in_group(\"Robots\"):
+		Game.HAXXOR = true
 		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
 		var tween2 = get_tree().create_tween()
@@ -50,7 +51,7 @@ func _on_body_entered(body):
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08b1g"]
-radius = 20.0
+radius = 19.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_guafh"]
 animations = [{
@@ -85,6 +86,8 @@ animations = [{
 }]
 
 [node name="Haxxor" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
 script = SubResource("GDScript_dh4jr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

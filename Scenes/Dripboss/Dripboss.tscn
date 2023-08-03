@@ -362,12 +362,12 @@ _data = {
 "RESET": SubResource("Animation_uk8m3")
 }
 
-[node name="Dripboss" type="CharacterBody2D"]
+[node name="Dripboss" type="CharacterBody2D" groups=["Enemies"]]
+z_index = 1
 collision_layer = 0
-collision_mask = 0
 script = ExtResource("1_cpdeo")
 enemy_death_effect = ExtResource("2_orm23")
-health = 5
+health = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_l70ea")
@@ -412,12 +412,12 @@ sprite_frames = SubResource("SpriteFrames_61ln7")
 animation = &"eye_7"
 
 [node name="Blink" type="AnimatedSprite2D" parent="Body"]
-visible = false
 sprite_frames = SubResource("SpriteFrames_scjch")
 animation = &"blink"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
+speed_scale = 0.5
 libraries = {
 "": SubResource("AnimationLibrary_t8ect")
 }
@@ -439,6 +439,22 @@ one_shot = true
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="CeilingFloorCheck" type="RayCast2D" parent="."]
+position = Vector2(0, 47)
+target_position = Vector2(0, 10)
+
+[node name="WallsCheck" type="RayCast2D" parent="."]
+position = Vector2(40, 0)
+target_position = Vector2(11, 0)
+
+[node name="TopCornersCheck" type="RayCast2D" parent="."]
+position = Vector2(25, -30)
+target_position = Vector2(11, 0)
+
+[node name="BottomCornersCheck" type="RayCast2D" parent="."]
+position = Vector2(25, 30)
+target_position = Vector2(11, 0)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

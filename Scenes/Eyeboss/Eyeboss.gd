@@ -96,6 +96,7 @@ func _on_area_2d_body_entered(body):
 			TW1.tween_property($Complete_Sprite, "modulate",Color.WHITE,0)
 			body.queue_free()
 		else:
+			set_physics_process(false)
 			$Area2D/CollisionShape2D.queue_free()
 			$Screetch.play()
 			# DEATH WHITE-OUT
