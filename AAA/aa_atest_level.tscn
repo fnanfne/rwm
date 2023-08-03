@@ -676,7 +676,7 @@ position = Vector2(1550, 180)
 position = Vector2(1600, 180)
 
 [node name="Dripguy" parent="." instance=ExtResource("4_8py7d")]
-position = Vector2(342, -177)
+position = Vector2(1259, -97)
 
 [node name="Dripguy2" parent="." instance=ExtResource("4_8py7d")]
 position = Vector2(1300, -97)

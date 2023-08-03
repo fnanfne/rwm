@@ -39,7 +39,7 @@ var invincibility = false
 func _physics_process(delta):
 	
 	#print($DamageCooldownTimer.time_left)
-	print(invincibility)
+	#print(invincibility)
 
 	# Coyote Jump
 	var was_on_floor = is_on_floor()
@@ -369,6 +369,8 @@ func shoot_lazor():
 			get_parent().add_child(f)
 			f.position.y = position.y - 5
 			f.position.x = position.x - 30 * direction
+			# NEW TWEENING CODE BELOW MOVED FROM THE PROJECTILE ITSELF TO ADDRESS CONSOLE ERRORS
+			# NEW TWEENING CODE ABOVE MOVED FROM THE PROJECTILE ITSELF TO ADDRESS CONSOLE ERRORS
 			fire_logic()
 		elif Input.is_action_pressed("shoot2") and shooting_cooldown_timer.is_stopped():
 			var direction = -1 if anim_idle.flip_h else 1
@@ -377,6 +379,8 @@ func shoot_lazor():
 			get_parent().add_child(f)
 			f.position.y = position.y - 5
 			f.position.x = position.x - 30 * direction
+			# NEW TWEENING CODE BELOW MOVED FROM THE PROJECTILE ITSELF TO ADDRESS CONSOLE ERRORS
+			# NEW TWEENING CODE ABOVE MOVED FROM THE PROJECTILE ITSELF TO ADDRESS CONSOLE ERRORS
 			fire_logic()
 		else:
 			anim_air_shoot.visible = false

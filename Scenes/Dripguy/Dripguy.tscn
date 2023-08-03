@@ -203,9 +203,8 @@ volume_db = -10.0
 stream = ExtResource("10_wknv2")
 volume_db = -10.0
 
-[node name="SlimeDrip" type="AudioStreamPlayer" parent="."]
+[node name="SlimeDrip" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_200tg")
-volume_db = -10.0
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

@@ -3,16 +3,11 @@ extends CharacterBody2D
 @export var enemy_death_effect : PackedScene
 @export var health :int
 const ACID = preload("res://Scenes/slime_projectile.tscn")
-@onready var shooting_cooldown_timer = $ShootingCooldownTimer
-#@onready var anim = get_node("AnimatedSprite2D")
-#@onready var anim = get_node("AnimationPlayer")
 
 func _ready():
-	pass
-	#shoot_acid()
-
+	play_randomized("Idle")
+	
 func _physics_process(_delta):
-	#shoot_acid()
 	pass
 
 func _on_area_2d_body_entered(body):
@@ -70,3 +65,15 @@ func _on_animation_change(frame: int):
 		f.position.y = position.y + 10
 		f.position.x = position.x
 		$SlimeDrip.play()
+		var TW1 = f.create_tween()
+		TW1.set_loops(0)
+		TW1.tween_property(f, "rotation", 
+		0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		TW1.tween_property(f, "rotation", 
+		-0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+func play_randomized(Idle : String):
+	randomize()
+	$AnimationPlayer.play(Idle)
+	var offset : float = randf_range(0, $AnimationPlayer.current_animation_length)
+	$AnimationPlayer.advance(offset)
