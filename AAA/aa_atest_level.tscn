@@ -640,7 +640,7 @@ sources/0 = SubResource("TileSetAtlasSource_1ekfe")
 
 [node name="AAAtestLevel" type="Node2D"]
 
-[node name="TestLevelTileMap" type="TileMap" parent="."]
+[node name="TestLevelTileMap" type="TileMap" parent="." groups=["World"]]
 tile_set = SubResource("TileSet_ujrtq")
 cell_quadrant_size = 40
 format = 2
@@ -676,10 +676,7 @@ position = Vector2(1550, 180)
 position = Vector2(1600, 180)
 
 [node name="Dripguy" parent="." instance=ExtResource("4_8py7d")]
-position = Vector2(1259, -97)
-
-[node name="Dripguy2" parent="." instance=ExtResource("4_8py7d")]
-position = Vector2(1300, -97)
+position = Vector2(1337, 25)
 
 [node name="Eyeboss" parent="." instance=ExtResource("5_eki66")]
 position = Vector2(715, 172)
@@ -717,4 +714,4 @@ position = Vector2(539, 49)
 position = Vector2(980, 80)
 
 [node name="Dripboss" parent="." instance=ExtResource("3_eidcn")]
-position = Vector2(1570, 40)
+position = Vector2(1571, 37)

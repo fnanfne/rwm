@@ -1,0 +1,185 @@
+[gd_scene load_steps=19 format=3 uid="uid://sdccjm6x5ywa"]
+
+[ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="1_p45t5"]
+[ext_resource type="Script" path="res://Scenes/Dripboss/Dripboss2.gd" id="1_uic67"]
+[ext_resource type="Texture2D" uid="uid://isn2f4t4untm" path="res://Assets/Enemies/Dripboss/Unmodular/0.png" id="2_d0rgr"]
+[ext_resource type="PackedScene" uid="uid://dbkfurlf5s8aj" path="res://Scenes/enemy_death_animation.tscn" id="2_qt0xd"]
+[ext_resource type="AudioStream" uid="uid://dd33u5llxkov1" path="res://Assets/Audio/Sounds/critterscreech.ogg" id="2_vsvgl"]
+[ext_resource type="AudioStream" uid="uid://bm5iaqamy47dv" path="res://Assets/Audio/Sounds/killboss.ogg" id="3_c1ime"]
+[ext_resource type="Texture2D" uid="uid://de1v7uhjsaoa8" path="res://Assets/Enemies/Dripboss/Unmodular/1.png" id="3_ejdjd"]
+[ext_resource type="AudioStream" uid="uid://c1wjcqv52q0r5" path="res://Assets/Audio/Sounds/drip.ogg" id="4_jhmb6"]
+[ext_resource type="Texture2D" uid="uid://din7oq561c1iu" path="res://Assets/Enemies/Dripboss/Unmodular/2.png" id="4_ub0nr"]
+[ext_resource type="Texture2D" uid="uid://b7frikyqtybap" path="res://Assets/Enemies/Dripboss/Unmodular/3.png" id="5_axlsu"]
+[ext_resource type="Texture2D" uid="uid://bw8iaahw7cwrf" path="res://Assets/Enemies/Dripboss/Unmodular/4.png" id="6_uifbd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3lvfp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bspvu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qbqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d0rgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ejdjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ub0nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_axlsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uifbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d0rgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ub0nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_axlsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uifbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d0rgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ub0nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_axlsu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uifbd")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qtmaa"]
+resource_name = "Idle"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_yw8p6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4qikf"]
+_data = {
+"Idle": SubResource("Animation_qtmaa"),
+"RESET": SubResource("Animation_yw8p6")
+}
+
+[sub_resource type="GDScript" id="GDScript_651ka"]
+resource_name = "DripBoss2AnimationPlayerScript"
+script/source = "extends AnimationPlayer
+
+signal frame_change(frame: int)
+
+@export var event_frames: Array[int]
+
+#func _ready():
+	#frame_changed.connect(_on_frame_changed)
+
+#func _on_animation_change():
+#	if event_frames.has(frame):
+#		frame_change.emit(frame)
+
+#func _on_frame_changed():
+#	print(\"WHTWHAT?\")
+#	if event_frames.has(frame):
+#		frame_change.emit(frame)
+"
+
+[node name="DripBoss2" type="CharacterBody2D"]
+script = ExtResource("1_uic67")
+enemy_death_effect = ExtResource("2_qt0xd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3lvfp")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bspvu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1qbqt")
+animation = &"Idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+libraries = {
+"": SubResource("AnimationLibrary_4qikf")
+}
+script = SubResource("GDScript_651ka")
+
+[node name="ProjectileHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_p45t5")
+
+[node name="Screetch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vsvgl")
+volume_db = -10.0
+
+[node name="Die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_c1ime")
+volume_db = -10.0
+
+[node name="SlimeDrip" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jhmb6")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="CeilingFloorCheck" type="RayCast2D" parent="."]
+position = Vector2(0, 47)
+target_position = Vector2(0, 10)
+
+[node name="WallsCheck" type="RayCast2D" parent="."]
+position = Vector2(40, 0)
+target_position = Vector2(11, 0)
+
+[node name="TopCornersCheck" type="RayCast2D" parent="."]
+position = Vector2(25, -30)
+target_position = Vector2(11, 0)
+
+[node name="BottomCornersCheck" type="RayCast2D" parent="."]
+position = Vector2(25, 30)
+target_position = Vector2(11, 0)

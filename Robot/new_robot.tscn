@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://yg103a66ifo2"]
+[gd_scene load_steps=74 format=3 uid="uid://yg103a66ifo2"]
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
@@ -19,6 +19,9 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_86lg5"]
 height = 44.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xh3rd"]
+size = Vector2(39, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c2rdk"]
 
@@ -496,12 +499,19 @@ collision_layer = 2
 script = ExtResource("1_h7mvx")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 6)
 scale = Vector2(1.04, 0.88)
 shape = SubResource("CapsuleShape2D_86lg5")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-5.5, 0)
+shape = SubResource("RectangleShape2D_xh3rd")
 
 [node name="AllSprites" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c2rdk")
@@ -554,6 +564,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_nhof0")
 
@@ -638,4 +649,6 @@ rotation = -0.523599
 texture = ExtResource("14_qopyi")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
 [connection signal="timeout" from="DamageCooldownTimer" to="." method="_on_damage_cooldown_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dtqo2uvytrhsr"]
+[gd_scene load_steps=44 format=3 uid="uid://dtqo2uvytrhsr"]
 
 [ext_resource type="Texture2D" uid="uid://cvehiyje8r2le" path="res://Assets/Enemies/Dripboss/From John/0.png" id="1_88xww"]
 [ext_resource type="Script" path="res://Scenes/Dripboss/Dripboss.gd" id="1_cpdeo"]
@@ -11,9 +11,20 @@
 [ext_resource type="Texture2D" uid="uid://d2aqmffquan4i" path="res://Assets/Enemies/Dripboss/From John/eyes+pupil/8.png" id="7_kqaay"]
 [ext_resource type="Texture2D" uid="uid://bi6ndupprgdw0" path="res://Assets/Enemies/Dripboss/From John/eyes+pupil/9.png" id="8_7t1g6"]
 [ext_resource type="Texture2D" uid="uid://r8vvweimavgu" path="res://Assets/Enemies/Dripboss/From John/blink.png" id="9_14ytu"]
+[ext_resource type="Texture2D" uid="uid://braienyyg373r" path="res://Assets/Enemies/Dripboss/From John/1.png" id="12_4rlc5"]
 [ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="12_ny0tq"]
+[ext_resource type="Texture2D" uid="uid://bj7j721r53v3t" path="res://Assets/Enemies/Dripboss/From John/2.png" id="13_64w0d"]
 [ext_resource type="AudioStream" uid="uid://dd33u5llxkov1" path="res://Assets/Audio/Sounds/critterscreech.ogg" id="13_kfqfe"]
 [ext_resource type="AudioStream" uid="uid://bm5iaqamy47dv" path="res://Assets/Audio/Sounds/killboss.ogg" id="14_bojty"]
+[ext_resource type="Texture2D" uid="uid://cse8n0mxmfe55" path="res://Assets/Enemies/Dripboss/From John/3.png" id="14_ocrk6"]
+[ext_resource type="Texture2D" uid="uid://cs08sgv60cy3i" path="res://Assets/Enemies/Dripboss/From John/4.png" id="15_l0qkx"]
+[ext_resource type="AudioStream" uid="uid://c1wjcqv52q0r5" path="res://Assets/Audio/Sounds/drip.ogg" id="15_l8lqm"]
+[ext_resource type="Texture2D" uid="uid://bp3v5os3ve0w8" path="res://Assets/Enemies/Dripboss/From John/5.png" id="16_ywl8t"]
+[ext_resource type="Texture2D" uid="uid://c4whj3h7rojd5" path="res://Assets/Enemies/Dripboss/From John/6.png" id="17_2tqed"]
+[ext_resource type="Texture2D" uid="uid://dtieims28h61e" path="res://Assets/Enemies/Dripboss/From John/7.png" id="18_rvn4x"]
+[ext_resource type="Texture2D" uid="uid://1pjcl3tkkage" path="res://Assets/Enemies/Dripboss/From John/8.png" id="19_ub2yy"]
+[ext_resource type="Texture2D" uid="uid://cyvorg7ht8xx6" path="res://Assets/Enemies/Dripboss/From John/9.png" id="20_dcv1s"]
+[ext_resource type="Texture2D" uid="uid://cmxi7ou7gnm8u" path="res://Assets/Enemies/Dripboss/From John/10.png" id="21_yrpac"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l70ea"]
 radius = 52.0096
@@ -26,11 +37,59 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_88xww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_88xww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_88xww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_88xww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_88xww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_88xww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_88xww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_88xww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_88xww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_88xww")
 }],
 "loop": true,
 "name": &"body",
 "speed": 5.0
 }]
+
+[sub_resource type="GDScript" id="GDScript_cr5ic"]
+resource_name = "DripBossSpriteScript"
+script/source = "extends AnimatedSprite2D
+
+#signal frame_change(frame: int)
+
+#@export var event_frames: Array[int]
+
+#func _ready():
+#	frame_changed.connect(_on_frame_changed)
+
+#func _on_animation_change():
+#	if event_frames.has(frame):
+#		frame_change.emit(frame)
+
+#func _on_frame_changed():
+#	print(\"WHTWHAT?\")
+#	if event_frames.has(frame):
+#		frame_change.emit(frame)
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s8dxp"]
 animations = [{
@@ -119,6 +178,26 @@ animations = [{
 "name": &"blink",
 "speed": 5.0
 }]
+
+[sub_resource type="GDScript" id="GDScript_wbp1p"]
+resource_name = "DripBossOtherSpriteScript"
+script/source = "extends AnimatedSprite2D
+
+signal frame_change(frame: int)
+
+@export var event_frames: Array[int]
+
+func _ready():
+	frame_changed.connect(_on_animation_change)
+
+func _on_animation_change():
+	if event_frames.has(frame):
+		frame_change.emit(frame)
+
+
+func _on_frame_changed():
+	pass # Replace with function body.
+"
 
 [sub_resource type="Animation" id="Animation_hl8lu"]
 resource_name = "Idle"
@@ -362,6 +441,93 @@ _data = {
 "RESET": SubResource("Animation_uk8m3")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3uy2v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_4rlc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_64w0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ocrk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_l0qkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ywl8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2tqed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rvn4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ub2yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_dcv1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_yrpac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4rlc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_64w0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ocrk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_l0qkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ywl8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_yrpac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_14ytu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2tqed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rvn4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ub2yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_dcv1s")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_u2s8r"]
+resource_name = "DBsecondAnimatedScript"
+script/source = "extends AnimatedSprite2D
+
+signal frame_change(frame: int)
+
+@export var event_frames: Array[int]
+
+func _ready():
+	frame_changed.connect(_on_animation_change)
+
+func _on_animation_change():
+	if event_frames.has(frame):
+		frame_change.emit(frame)
+"
+
 [node name="Dripboss" type="CharacterBody2D" groups=["Enemies"]]
 z_index = 1
 collision_layer = 0
@@ -382,6 +548,7 @@ shape = SubResource("CircleShape2D_4gtcq")
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ov5wi")
 animation = &"body"
+script = SubResource("GDScript_cr5ic")
 
 [node name="Eye_1" type="AnimatedSprite2D" parent="Body"]
 sprite_frames = SubResource("SpriteFrames_s8dxp")
@@ -414,6 +581,7 @@ animation = &"eye_7"
 [node name="Blink" type="AnimatedSprite2D" parent="Body"]
 sprite_frames = SubResource("SpriteFrames_scjch")
 animation = &"blink"
+script = SubResource("GDScript_wbp1p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
@@ -421,6 +589,18 @@ speed_scale = 0.5
 libraries = {
 "": SubResource("AnimationLibrary_t8ect")
 }
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_3uy2v")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.469885
+speed_scale = 0.5
+script = SubResource("GDScript_u2s8r")
+event_frames = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 
 [node name="ProjectileHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_ny0tq")
@@ -432,6 +612,9 @@ volume_db = -10.0
 [node name="Die" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_bojty")
 volume_db = -10.0
+
+[node name="SlimeDrip" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_l8lqm")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -457,5 +640,8 @@ position = Vector2(25, 30)
 target_position = Vector2(11, 0)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="frame_changed" from="Body/Blink" to="Body/Blink" method="_on_frame_changed"]
+[connection signal="frame_change" from="AnimatedSprite2D2" to="." method="_on_animated_sprite_2d_2_frame_change"]
+[connection signal="frame_changed" from="AnimatedSprite2D2" to="AnimatedSprite2D2" method="_on_animation_change"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

@@ -20,6 +20,7 @@ var is_falling = false
 var is_shooting = false
 var is_jumping = false
 var invincibility = false
+var neuter_shooting = false
 
 @onready var anim = get_node("AnimationPlayer")
 @onready var coyote_jump_timer = $CoyoteJumpTimer
@@ -218,6 +219,7 @@ func _physics_process(delta):
 				$RobotSparks.position.x = 7
 				$RobotSparks.rotation = 50
 				$RobotPoof.position.x = 10
+				$Area2D2.rotation = 0
 			elif direction == 1:
 				anim_air_shoot.visible = false
 				anim_shoot.visible = false
@@ -241,6 +243,7 @@ func _physics_process(delta):
 				$RobotSparks.position.x = -7
 				$RobotSparks.rotation = 60 # 60 works nice
 				$RobotPoof.position.x = -10
+				$Area2D2.rotation = 3.1415
 
 			# STANDING STILL
 			if velocity.x == 0:
@@ -362,7 +365,7 @@ func shoot_lazor():
 			$ShootingCooldownTimer.wait_time = 0.1
 		else:
 			$ShootingCooldownTimer.wait_time = 0.4
-		if Input.is_action_pressed("shoot") and shooting_cooldown_timer.is_stopped():
+		if Input.is_action_pressed("shoot") and shooting_cooldown_timer.is_stopped() and not is_on_wall():
 			var direction = -1 if anim_idle.flip_h else 1
 			var f = LAZOR.instantiate()
 			f.direction = direction * -1
@@ -372,7 +375,7 @@ func shoot_lazor():
 			# NEW TWEENING CODE BELOW MOVED FROM THE PROJECTILE ITSELF TO ADDRESS CONSOLE ERRORS
 			# NEW TWEENING CODE ABOVE MOVED FROM THE PROJECTILE ITSELF TO ADDRESS CONSOLE ERRORS
 			fire_logic()
-		elif Input.is_action_pressed("shoot2") and shooting_cooldown_timer.is_stopped():
+		elif Input.is_action_pressed("shoot2") and shooting_cooldown_timer.is_stopped() and not is_on_wall():
 			var direction = -1 if anim_idle.flip_h else 1
 			var f = PLASMABALL.instantiate()
 			f.direction = direction * -1
@@ -405,7 +408,6 @@ func fire_logic():
 	anim_fall.visible = false
 	shooting_cooldown_timer.start()
 
-
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("EnemyProjectiles"):
 		body.queue_free()
@@ -413,3 +415,16 @@ func _on_area_2d_body_entered(body):
 
 func _on_damage_cooldown_timer_timeout():
 	invincibility = false
+
+func _on_area_2d_2_body_entered(body):
+	if Game.GUN == true:
+		if body.is_in_group("World"):
+			print("HELOJKHDHD")
+			neuter_shooting = true
+			Game.GUN = false
+
+func _on_area_2d_2_body_exited(body):
+	if neuter_shooting == true:
+		if body.is_in_group("World"):
+			Game.GUN = true
+			neuter_shooting = false

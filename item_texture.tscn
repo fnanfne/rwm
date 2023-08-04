@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl8hpcdit5cv6"]
+
+[ext_resource type="Script" path="res://item_texture.gd" id="1_lgm46"]
+
+[node name="Item_texture" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_lgm46")

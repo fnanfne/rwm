@@ -4,6 +4,7 @@ var SPEED = 60
 #var direction = Vector2(-1,1)
 var vertical_direction = 1
 var horizontal_direction = 1
+const ACID = preload("res://Scenes/slime_projectile.tscn")
 
 @onready var ceilingfloorCheck = $CeilingFloorCheck
 @onready var wallsCheck = $WallsCheck
@@ -86,3 +87,113 @@ func _on_timer_timeout():
 func _on_timer_2_timeout():
 	get_node("Body").play("Idle")
 	queue_free()
+
+func _on_body_frame_change(frame: int):
+	print('frame: ', frame)
+	if frame == 0:
+		var f = ACID.instantiate()
+		get_parent().add_child(f)
+		f.position.y = position.y + 10
+		f.position.x = position.x
+		$SlimeDrip.play()
+		var TW1 = f.create_tween()
+		TW1.set_loops(0)
+		TW1.tween_property(f, "rotation", 
+		0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		TW1.tween_property(f, "rotation", 
+		-0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+func _on_animated_sprite_2d_2_frame_change(frame: int):
+	#print('frame: ', frame)
+	if frame == 15:
+		var f = ACID.instantiate()
+		get_parent().add_child(f)
+		f.position.y = position.y + 10
+		f.position.x = position.x
+		$SlimeDrip.play()
+		var TW1 = f.create_tween()
+		TW1.set_loops(0)
+		TW1.tween_property(f, "rotation", 
+		0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		TW1.tween_property(f, "rotation", 
+		-0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	if frame == 9:
+		var f = ACID.instantiate()
+		get_parent().add_child(f)
+		f.position.y = position.y + 10
+		f.position.x = position.x + 50
+		$SlimeDrip.play()
+		var TW2 = f.create_tween()
+		TW2.set_loops(0)
+		TW2.tween_property(f, "rotation", 
+		0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		TW2.tween_property(f, "rotation", 
+		-0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		var f2 = ACID.instantiate()
+		get_parent().add_child(f2)
+		f2.position.y = position.y - 40
+		f2.position.x = position.x - 50
+		$SlimeDrip.play()
+		var TW3 = f2.create_tween()
+		TW3.set_loops(0)
+		TW3.tween_property(f, "rotation", 
+		0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		TW2.tween_property(f, "rotation", 
+		-0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	if frame == 13:
+		var f = ACID.instantiate()
+		get_parent().add_child(f)
+		f.position.y = position.y - 40
+		f.position.x = position.x + 50
+		$SlimeDrip.play()
+		var TW1 = f.create_tween()
+		TW1.set_loops(0)
+		TW1.tween_property(f, "rotation", 
+		0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		TW1.tween_property(f, "rotation", 
+		-0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	if frame == 4:
+		var f = ACID.instantiate()
+		get_parent().add_child(f)
+		f.position.y = position.y + 40
+		f.position.x = position.x - 40
+		$SlimeDrip.play()
+		var TW1 = f.create_tween()
+		TW1.set_loops(0)
+		TW1.tween_property(f, "rotation", 
+		0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		TW1.tween_property(f, "rotation", 
+		-0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		var f2 = ACID.instantiate()
+		get_parent().add_child(f2)
+		f2.position.y = position.y - 40
+		f2.position.x = position.x + 50
+		$SlimeDrip.play()
+		var TW2 = f2.create_tween()
+		TW2.set_loops(0)
+		TW2.tween_property(f2, "rotation", 
+		0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		TW2.tween_property(f2, "rotation", 
+		-0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		var f3 = ACID.instantiate()
+		get_parent().add_child(f3)
+		f3.position.y = position.y - 40
+		f3.position.x = position.x -20
+		$SlimeDrip.play()
+		var TW3 = f3.create_tween()
+		TW3.set_loops(0)
+		TW3.tween_property(f3, "rotation", 
+		0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		TW3.tween_property(f3, "rotation", 
+		-0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		var f4 = ACID.instantiate()
+		get_parent().add_child(f4)
+		f4.position.y = position.y + 20
+		f4.position.x = position.x + 15
+		$SlimeDrip.play()
+		var TW4 = f4.create_tween()
+		TW4.set_loops(0)
+		TW4.tween_property(f4, "rotation", 
+		0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		TW4.tween_property(f4, "rotation", 
+		-0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
