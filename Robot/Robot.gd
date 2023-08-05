@@ -14,7 +14,7 @@ var is_falling = false
 var is_shooting = false
 var normal_modulation = Color(1, 1, 1)
 var red_modulation = Color(0.81960785388947, 0.10196078568697, 0)
-#var jumpburst = $Sprite2D.visible
+var invincibility = false
 
 @onready var anim = get_node("AnimationPlayer")
 @onready var coyote_jump_timer = $CoyoteJumpTimer
@@ -142,10 +142,32 @@ func damage_modulation():
 	await get_tree().create_timer(0.1).timeout
 	$AnimatedSprite2D.modulate = Color(0.81960785388947, 0.10196078568697, 0)
 
-func damaged():
-	Game.lose_life()
-	set_modulate(Color(1,0.3,0.3,0.3))
-	$DamageTimer.start()
+func taking_damage():
+	if $DamageCooldownTimddder.is_stopped():
+		$DamageCooldownTimer.start()
+		if invincibility == false:
+			invincibility = true
+			# Add losing a life/heart
+			Game.robotHP -= 1
+			$Sounds/TakingDamage.play()
+			var TW1 = get_tree().create_tween()
+			TW1.set_loops(10)
+			TW1.tween_property($AllSprites, "modulate", 
+			Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+			TW1.tween_property($AllSprites, "modulate", 
+			Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	else:
+		if invincibility == false:
+			invincibility = true
+			# Add losing a life/heart
+			Game.robotHP -= 1
+			$Sounds/TakingDamage.play()
+			var TW1 = get_tree().create_tween()
+			TW1.set_loops(10)
+			TW1.tween_property($AllSprites, "modulate", 
+			Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+			TW1.tween_property($AllSprites, "modulate", 
+			Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	
 func _on_Timer_timeout():
 	set_modulate(Color(1,1,1,1))

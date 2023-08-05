@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dtqo2uvytrhsr"]
+[gd_scene load_steps=43 format=3 uid="uid://dtqo2uvytrhsr"]
 
 [ext_resource type="Texture2D" uid="uid://cvehiyje8r2le" path="res://Assets/Enemies/Dripboss/From John/0.png" id="1_88xww"]
 [ext_resource type="Script" path="res://Scenes/Dripboss/Dripboss.gd" id="1_cpdeo"]
@@ -69,27 +69,6 @@ animations = [{
 "name": &"body",
 "speed": 5.0
 }]
-
-[sub_resource type="GDScript" id="GDScript_cr5ic"]
-resource_name = "DripBossSpriteScript"
-script/source = "extends AnimatedSprite2D
-
-#signal frame_change(frame: int)
-
-#@export var event_frames: Array[int]
-
-#func _ready():
-#	frame_changed.connect(_on_frame_changed)
-
-#func _on_animation_change():
-#	if event_frames.has(frame):
-#		frame_change.emit(frame)
-
-#func _on_frame_changed():
-#	print(\"WHTWHAT?\")
-#	if event_frames.has(frame):
-#		frame_change.emit(frame)
-"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s8dxp"]
 animations = [{
@@ -521,7 +500,8 @@ signal frame_change(frame: int)
 @export var event_frames: Array[int]
 
 func _ready():
-	frame_changed.connect(_on_animation_change)
+	#frame_changed.connect(_on_animation_change) # This throws an error in the log
+	_on_animation_change()
 
 func _on_animation_change():
 	if event_frames.has(frame):
@@ -548,7 +528,6 @@ shape = SubResource("CircleShape2D_4gtcq")
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ov5wi")
 animation = &"body"
-script = SubResource("GDScript_cr5ic")
 
 [node name="Eye_1" type="AnimatedSprite2D" parent="Body"]
 sprite_frames = SubResource("SpriteFrames_s8dxp")
@@ -599,8 +578,6 @@ frame_progress = 0.469885
 speed_scale = 0.5
 script = SubResource("GDScript_u2s8r")
 event_frames = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 
 [node name="ProjectileHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_ny0tq")

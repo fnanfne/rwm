@@ -60,7 +60,8 @@ signal frame_change(frame: int)
 @export var event_frames: Array[int]
 
 func _ready():
-	frame_changed.connect(_on_animation_change)
+	frame_changed.connect(_on_animation_change) # This throws an error in the log
+	#_on_animation_change()
 
 func _on_animation_change():
 	if event_frames.has(frame):

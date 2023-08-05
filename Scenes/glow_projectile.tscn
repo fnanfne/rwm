@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://xnlcsq5le6se"]
+
+[ext_resource type="Script" path="res://Scenes/glow_projectile.gd" id="1_8njnq"]
+[ext_resource type="AudioStream" uid="uid://cry7hnph5xl5h" path="res://Assets/Audio/Sounds/bossshoot.ogg" id="2_i8rs1"]
+[ext_resource type="Texture2D" uid="uid://ddnglia8ghfgk" path="res://Assets/Pics/boltglow.png" id="4_j7p1i"]
+[ext_resource type="Texture2D" uid="uid://dew1hkmn47tu1" path="res://Assets/Pics/glow.png" id="5_8w8we"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7askl"]
+radius = 8.0
+
+[node name="GlowProjectile" type="CharacterBody2D" groups=["EnemyProjectiles"]]
+collision_layer = 32
+collision_mask = 3
+script = ExtResource("1_8njnq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7askl")
+
+[node name="ScreenExit" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="GlowShoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_i8rs1")
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.580392, 1, 0.545098)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_8w8we")
+
+[node name="Sprite2D1" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_j7p1i")
+
+[connection signal="screen_exited" from="ScreenExit" to="." method="_on_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -41,6 +41,7 @@ func _physics_process(delta):
 	
 	#print($DamageCooldownTimer.time_left)
 	#print(invincibility)
+	print(Game.robotHP)
 
 	# Coyote Jump
 	var was_on_floor = is_on_floor()
@@ -339,6 +340,7 @@ func taking_damage():
 		if invincibility == false:
 			invincibility = true
 			# Add losing a life/heart
+			Game.robotHP -= 1
 			$Sounds/TakingDamage.play()
 			var TW1 = get_tree().create_tween()
 			TW1.set_loops(10)
@@ -350,6 +352,7 @@ func taking_damage():
 		if invincibility == false:
 			invincibility = true
 			# Add losing a life/heart
+			Game.robotHP -= 1
 			$Sounds/TakingDamage.play()
 			var TW1 = get_tree().create_tween()
 			TW1.set_loops(10)

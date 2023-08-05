@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
-var SPEED = 60
+var SPEED = 70
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = 1
-@export var health :int
+const GLOW = preload("res://Scenes/glow_projectile.tscn")
 
+@export var health :int
 @onready var edgeCheck = $EdgeCheck
 @export var enemy_death_effect : PackedScene
 
@@ -82,7 +83,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_area_2d_body_entered(body):
-	if body.name == "NewRobot":
+	#if body.name == "NewRobot":
+	if body.is_in_group("Robots"):
 		body.taking_damage()
 		#Game.lose_life()
 	elif body.is_in_group("Lazor") or body.is_in_group("Plasmaball"):
@@ -122,3 +124,18 @@ func _on_timer_timeout():
 
 func _on_timer_2_timeout():
 	queue_free()
+
+func _on_animated_sprite_2d_frame_change(frame: int):
+	#print('frame: ', frame)
+	if frame == 15 or frame == 5 or frame == 10 or frame == 20:
+		# PROJECTILE #1 - RIGHT
+		var f1 = GLOW.instantiate()
+		get_parent().add_child(f1)
+		f1.position.y = position.y - 50
+		f1.position.x = position.x + 40
+		# PROJECTILE #2 - LEFT
+		var f2 = GLOW.instantiate()
+		get_parent().add_child(f2)
+		f2.position.y = position.y - 50
+		f2.position.x = position.x - 40
+		f2.velocity.x = 220 * -1

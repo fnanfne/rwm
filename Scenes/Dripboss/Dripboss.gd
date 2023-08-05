@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var SPEED = 60
-#var direction = Vector2(-1,1)
 var vertical_direction = 1
 var horizontal_direction = 1
 const ACID = preload("res://Scenes/slime_projectile.tscn")
@@ -14,12 +13,14 @@ const ACID = preload("res://Scenes/slime_projectile.tscn")
 @export var health :int
 
 func _physics_process(_delta):
-	if velocity.x == 0 and velocity.y == 0:
-		vertical_direction *= -1 #randf_range(-1, 1)
-		horizontal_direction *= -1 #randf_range(-1, 1)
+	# VARIABLES
 	var found_ceiling = is_on_ceiling()
 	var found_floor = is_on_floor()
 	var found_wall = is_on_wall()
+	# MOVEMENT
+	if velocity.x == 0 and velocity.y == 0:
+		vertical_direction *= -1 #randf_range(-1, 1)
+		horizontal_direction *= -1 #randf_range(-1, 1)
 	# CHECKING FOR FLOOR/CEILING
 	if found_ceiling or found_floor:
 		vertical_direction *= -1
@@ -87,21 +88,6 @@ func _on_timer_timeout():
 func _on_timer_2_timeout():
 	get_node("Body").play("Idle")
 	queue_free()
-
-func _on_body_frame_change(frame: int):
-	print('frame: ', frame)
-	if frame == 0:
-		var f = ACID.instantiate()
-		get_parent().add_child(f)
-		f.position.y = position.y + 10
-		f.position.x = position.x
-		$SlimeDrip.play()
-		var TW1 = f.create_tween()
-		TW1.set_loops(0)
-		TW1.tween_property(f, "rotation", 
-		0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-		TW1.tween_property(f, "rotation", 
-		-0.18, 0.15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 func _on_animated_sprite_2d_2_frame_change(frame: int):
 	#print('frame: ', frame)
