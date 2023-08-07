@@ -87,8 +87,6 @@ func _ready():
 	#		#
 	#		$TimerTeleport.stop()
 	#teleportState += 1
-	
-
 
 func _on_timer_teleport_2_timeout():
 	player.position = target.position

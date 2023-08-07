@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Robot
 enum States {FALL = 1, FLOOR, LAUNCH, ZOOM, SHOOT} # default numbering from 0, making air = 1 starts the numbering from one
 var state = States.FALL
 
@@ -21,6 +21,9 @@ var is_shooting = false
 var is_jumping = false
 var invincibility = false
 var neuter_shooting = false
+var is_alive = true
+
+@export var robot_death_effect : PackedScene
 
 @onready var anim = get_node("AnimationPlayer")
 @onready var coyote_jump_timer = $CoyoteJumpTimer
@@ -37,10 +40,15 @@ var neuter_shooting = false
 @onready var anim_launch = get_node("AllSprites/Launch")
 @onready var anim_launchfire = get_node("AllSprites/LaunchFire")
 
+func _ready():
+	Game.Robot = self
+
 func _physics_process(delta):
 	
 	#print($DamageCooldownTimer.time_left)
 	#print(invincibility)
+	#print(Game.healthContainers)
+	#print(Game.current_checkpoint)
 	print(Game.robotHP)
 
 	# Coyote Jump
@@ -124,7 +132,7 @@ func _physics_process(delta):
 				#$RobotPoof.position.x = -10
 
 			# DOUBLE JUMP
-			if Game.JUMP:
+			if Game.JUMP and is_alive == true:
 				if coyote_jump_timer.time_left > 0.0:
 					if Input.is_action_just_pressed("jump"):
 						$Sounds/SoundJump.play()
@@ -138,7 +146,7 @@ func _physics_process(delta):
 						$RobotPoof.emitting = false
 				elif not has_double_jumped:
 					#Do a double jump
-					if Game.DOUBLEJUMP:
+					if Game.DOUBLEJUMP and is_alive == true:
 						if Input.is_action_just_pressed("jump"):
 							#state = States.FALL # Should change to States.JUMP?
 							$Sounds/SoundJump.play()
@@ -153,7 +161,7 @@ func _physics_process(delta):
 							has_double_jumped = true
 
 			# LEFT/RIGHT MOVEMENT
-			if direction:
+			if direction and is_alive == true:
 				if is_launching:
 					velocity.x = direction * SPEED / 5
 				else:
@@ -255,7 +263,7 @@ func _physics_process(delta):
 				anim.play("Idle")
 
 			# JUMPING
-			if Game.JUMP:
+			if Game.JUMP and is_alive == true:
 				if not has_double_jumped or coyote_jump_timer.time_left > 0.0:
 					if Input.is_action_just_pressed("jump"):
 						is_jumping = true
@@ -273,7 +281,7 @@ func _physics_process(delta):
 						$RobotSparks.emitting = false
 
 			# LAUNCHING
-			if Game.LAUNCH:
+			if Game.LAUNCH and is_alive == true:
 				if Input.is_action_pressed("launch"):
 					#if is_on_floor():
 					is_launching = true
@@ -303,7 +311,7 @@ func _physics_process(delta):
 			shoot_lazor()
 
 			# LEFT/RIGHT MOVEMENT
-			if direction:
+			if direction and is_alive == true:
 				if is_launching:
 					velocity.x = direction * SPEED / 5
 				else:
@@ -335,31 +343,58 @@ func _physics_process(delta):
 ### STATE MACHINE ABOVE ###
 
 func taking_damage():
-	if $DamageCooldownTimer.is_stopped():
-		$DamageCooldownTimer.start()
-		if invincibility == false:
-			invincibility = true
-			# Add losing a life/heart
-			Game.robotHP -= 1
-			$Sounds/TakingDamage.play()
-			var TW1 = get_tree().create_tween()
-			TW1.set_loops(10)
-			TW1.tween_property($AllSprites, "modulate", 
-			Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-			TW1.tween_property($AllSprites, "modulate", 
-			Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	if Game.robotHP == 0:
+		#Game.respawn()
+		respawn()
 	else:
-		if invincibility == false:
-			invincibility = true
-			# Add losing a life/heart
-			Game.robotHP -= 1
-			$Sounds/TakingDamage.play()
-			var TW1 = get_tree().create_tween()
-			TW1.set_loops(10)
-			TW1.tween_property($AllSprites, "modulate", 
-			Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-			TW1.tween_property($AllSprites, "modulate", 
-			Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		if $DamageCooldownTimer.is_stopped():
+			$DamageCooldownTimer.start()
+			if invincibility == false:
+				invincibility = true
+				# Add losing a life/heart
+				Game.robotHP -= 1
+				$Sounds/TakingDamage.play()
+				var TW1 = get_tree().create_tween()
+				TW1.set_loops(10)
+				TW1.tween_property($AllSprites, "modulate", 
+				Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+				TW1.tween_property($AllSprites, "modulate", 
+				Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		else:
+			if invincibility == false:
+				invincibility = true
+				# Add losing a life/heart
+				Game.robotHP -= 1
+				$Sounds/TakingDamage.play()
+				var TW1 = get_tree().create_tween()
+				TW1.set_loops(10)
+				TW1.tween_property($AllSprites, "modulate", 
+				Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+				TW1.tween_property($AllSprites, "modulate", 
+				Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+func respawn():
+	get_node("Area2D/CollisionShape2D").set_deferred("disabled", true)
+	$".".hide()
+	var effect_instance : GPUParticles2D = robot_death_effect.instantiate()
+	effect_instance.position = position
+	effect_instance.emitting = true
+	get_parent().add_child(effect_instance)
+	is_alive = false
+	#set_physics_process(false)
+	#set_process_input(false)
+	$RespawnTimer.start()
+	$Sounds/Die.play()
+func _on_respawn_timer_timeout():
+	if Game.current_checkpoint != null:
+		Game.Robot.position = Game.current_checkpoint.global_position
+	else:
+		Game.Robot.position = Vector2(986,130)
+	is_alive = true
+	$".".show()
+	get_node("Area2D/CollisionShape2D").set_deferred("disabled", false)
+	#set_physics_process(true)
+	#set_process_input(true)
 
 func shoot_lazor():
 	#if LAZOR:
@@ -422,7 +457,6 @@ func _on_damage_cooldown_timer_timeout():
 func _on_area_2d_2_body_entered(body):
 	if Game.GUN == true:
 		if body.is_in_group("World"):
-			print("HELOJKHDHD")
 			neuter_shooting = true
 			Game.GUN = false
 

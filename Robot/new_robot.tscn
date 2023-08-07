@@ -1,8 +1,9 @@
-[gd_scene load_steps=74 format=3 uid="uid://yg103a66ifo2"]
+[gd_scene load_steps=76 format=3 uid="uid://yg103a66ifo2"]
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
 [ext_resource type="Texture2D" uid="uid://ddvrp2lbj7u1d" path="res://Assets/Robot/From John/robot_idle_no_wheel.png" id="2_e2mwd"]
+[ext_resource type="PackedScene" uid="uid://csbhkbhgs8xsi" path="res://Scenes/robot_death_animation.tscn" id="2_mibdf"]
 [ext_resource type="Texture2D" uid="uid://2e2o8owpco8n" path="res://Assets/Robot/From John/robot_run.png" id="3_3gyt0"]
 [ext_resource type="Texture2D" uid="uid://dtgbj6cf5nk5c" path="res://Assets/Robot/From John/robot_rocket.png" id="3_3xkgu"]
 [ext_resource type="Texture2D" uid="uid://cam2ci13qb5nv" path="res://Assets/Robot/From John/robot_idleshoot.png" id="5_8ha3o"]
@@ -16,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="13_5017s"]
 [ext_resource type="AudioStream" uid="uid://bp443yft1g8j6" path="res://Assets/Audio/Sounds/robotouch.ogg" id="14_et73s"]
 [ext_resource type="Texture2D" uid="uid://cvjbkdg633lpl" path="res://Assets/Pics/lazorglint.png" id="14_qopyi"]
+[ext_resource type="AudioStream" uid="uid://d0m7u6460aana" path="res://Assets/Audio/Sounds/die.ogg" id="15_8mmlj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_86lg5"]
 height = 44.0
@@ -497,10 +499,11 @@ color_ramp = SubResource("GradientTexture1D_lra5s")
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_h7mvx")
+robot_death_effect = ExtResource("2_mibdf")
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
-collision_mask = 33
+collision_mask = 97
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 6)
@@ -593,6 +596,10 @@ stream = ExtResource("13_5017s")
 [node name="TakingDamage" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("14_et73s")
 
+[node name="Die" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("15_8mmlj")
+volume_db = -10.0
+
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_epvy5")
 anim_player = NodePath("../AnimationPlayer")
@@ -633,7 +640,7 @@ wait_time = 0.4
 one_shot = true
 
 [node name="DamageCooldownTimer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 2.0
 one_shot = true
 
 [node name="GunFlash" type="Sprite2D" parent="."]
@@ -648,7 +655,12 @@ position = Vector2(-10, -7)
 rotation = -0.523599
 texture = ExtResource("14_qopyi")
 
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
 [connection signal="timeout" from="DamageCooldownTimer" to="." method="_on_damage_cooldown_timer_timeout"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

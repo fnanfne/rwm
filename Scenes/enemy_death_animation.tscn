@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/enemy_death_animation.gd" id="2_crcxm"]
 
 [sub_resource type="Gradient" id="Gradient_si85q"]
-offsets = PackedFloat32Array(0.00858369, 0.429185, 1)
+offsets = PackedFloat32Array(0.00858369, 0.433476, 0.991416)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_hw4t8"]

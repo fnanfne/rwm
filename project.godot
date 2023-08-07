@@ -116,6 +116,7 @@ mb_left={
 2d_physics/layer_4="Apps"
 2d_physics/layer_5="Projectiles"
 2d_physics/layer_6="Enemy_Projectiles"
+2d_physics/layer_7="Checkpoints"
 
 [rendering]
 
