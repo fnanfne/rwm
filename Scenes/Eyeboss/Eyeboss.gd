@@ -127,7 +127,7 @@ func _on_timer_2_timeout():
 
 func _on_animated_sprite_2d_frame_change(frame: int):
 	#print('frame: ', frame)
-	if frame == 15 or frame == 5 or frame == 10 or frame == 20:
+	if frame == 5 or frame == 15: # or frame == 5 or frame == 10 or frame == 20:
 		# PROJECTILE #1 - RIGHT
 		var f1 = GLOW.instantiate()
 		get_parent().add_child(f1)

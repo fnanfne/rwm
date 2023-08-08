@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c33nbodktkcn3"]
+
+[ext_resource type="Script" path="res://Scenes/lever.gd" id="1_3do14"]
+[ext_resource type="Texture2D" uid="uid://6tnf6qo65y2e" path="res://Assets/Pics/right_lever.png" id="2_6th3u"]
+[ext_resource type="AudioStream" uid="uid://cty0iu4pwmpob" path="res://Assets/Audio/Sounds/switch.ogg" id="2_t3swr"]
+[ext_resource type="Texture2D" uid="uid://0s4fup6xnxpn" path="res://Assets/Pics/left_lever.png" id="3_cmn3s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grrhp"]
+size = Vector2(24.8649, 20)
+
+[node name="Lever" type="Area2D"]
+collision_layer = 256
+collision_mask = 2
+script = ExtResource("1_3do14")
+
+[node name="Switched" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_t3swr")
+volume_db = -10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.6, 4)
+scale = Vector2(1.48, 1)
+shape = SubResource("RectangleShape2D_grrhp")
+
+[node name="Right" type="Sprite2D" parent="."]
+texture = ExtResource("2_6th3u")
+
+[node name="Left" type="Sprite2D" parent="."]
+texture = ExtResource("3_cmn3s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="lever_turned" from="." to="." method="_on_lever_turned"]

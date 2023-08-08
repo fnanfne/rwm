@@ -2,7 +2,8 @@ extends StaticBody2D
 
 func _on_door_zone_body_entered(body):
 	if Game.REDKEY == true:
-		if body.name == "Robot":
+		#if body.name == "Robot":
+		if body.is_in_group("Robots"):
 			$SoundPickup.play()
 			var tween1 = get_tree().create_tween()
 			var tween2 = get_tree().create_tween()

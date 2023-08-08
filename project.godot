@@ -117,6 +117,9 @@ mb_left={
 2d_physics/layer_5="Projectiles"
 2d_physics/layer_6="Enemy_Projectiles"
 2d_physics/layer_7="Checkpoints"
+2d_physics/layer_8="Computers"
+2d_physics/layer_9="Levers"
+2d_physics/layer_10="Conveyors"
 
 [rendering]
 

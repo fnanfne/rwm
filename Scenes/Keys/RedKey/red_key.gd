@@ -32,7 +32,8 @@ func _grow(amount):
 		$AnimatedSprite2D.scale.y += amount
 
 func _on_body_entered(body):
-	if body.name == "Robot":
+	#if body.name == "Robot":
+	if body.is_in_group("Robots"):
 		set_collision_mask_value(1,false)
 		Game.REDKEY = true
 		$SoundPickup.play()

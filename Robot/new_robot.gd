@@ -49,7 +49,7 @@ func _physics_process(delta):
 	#print(invincibility)
 	#print(Game.healthContainers)
 	#print(Game.current_checkpoint)
-	print(Game.robotHP)
+	#print(Game.robotHP)
 
 	# Coyote Jump
 	var was_on_floor = is_on_floor()
@@ -376,7 +376,7 @@ func taking_damage():
 func respawn():
 	get_node("Area2D/CollisionShape2D").set_deferred("disabled", true)
 	$".".hide()
-	var effect_instance : GPUParticles2D = robot_death_effect.instantiate()
+	var effect_instance : CPUParticles2D = robot_death_effect.instantiate()
 	effect_instance.position = position
 	effect_instance.emitting = true
 	get_parent().add_child(effect_instance)

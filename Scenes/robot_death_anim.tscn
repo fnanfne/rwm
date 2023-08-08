@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy3mgmc0p50yu"]
+
+[ext_resource type="Texture2D" uid="uid://b85fypsq8js7m" path="res://Assets/Pics/Robits/robits.png" id="1_fa0kp"]
+[ext_resource type="Script" path="res://Scenes/robot_death_anim.gd" id="1_hweip"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_up7cw"]
+particles_animation = true
+particles_anim_h_frames = 6
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_bwsrt"]
+offsets = PackedFloat32Array(0, 0.361446, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="RobotDeathAnim" type="CPUParticles2D"]
+material = SubResource("CanvasItemMaterial_up7cw")
+emitting = false
+amount = 20
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.2
+fixed_fps = 30
+texture = ExtResource("1_fa0kp")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 500.0
+angular_velocity_max = 500.0
+damping_max = 500.0
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+color_ramp = SubResource("Gradient_bwsrt")
+anim_speed_max = 1.0
+anim_offset_max = 1.0
+script = ExtResource("1_hweip")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.85
+one_shot = true
+autostart = true

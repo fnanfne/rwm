@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
+[ext_resource type="PackedScene" uid="uid://cy3mgmc0p50yu" path="res://Scenes/robot_death_anim.tscn" id="2_4sk36"]
 [ext_resource type="Texture2D" uid="uid://ddvrp2lbj7u1d" path="res://Assets/Robot/From John/robot_idle_no_wheel.png" id="2_e2mwd"]
-[ext_resource type="PackedScene" uid="uid://csbhkbhgs8xsi" path="res://Scenes/robot_death_animation.tscn" id="2_mibdf"]
 [ext_resource type="Texture2D" uid="uid://2e2o8owpco8n" path="res://Assets/Robot/From John/robot_run.png" id="3_3gyt0"]
 [ext_resource type="Texture2D" uid="uid://dtgbj6cf5nk5c" path="res://Assets/Robot/From John/robot_rocket.png" id="3_3xkgu"]
 [ext_resource type="Texture2D" uid="uid://cam2ci13qb5nv" path="res://Assets/Robot/From John/robot_idleshoot.png" id="5_8ha3o"]
@@ -499,11 +499,11 @@ color_ramp = SubResource("GradientTexture1D_lra5s")
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_h7mvx")
-robot_death_effect = ExtResource("2_mibdf")
+robot_death_effect = ExtResource("2_4sk36")
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
-collision_mask = 97
+collision_mask = 993
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 6)
@@ -656,7 +656,7 @@ rotation = -0.523599
 texture = ExtResource("14_qopyi")
 
 [node name="RespawnTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.85
 one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

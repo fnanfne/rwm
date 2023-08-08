@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://yb0jhdfx1v5s"]
+[gd_scene load_steps=27 format=3 uid="uid://yb0jhdfx1v5s"]
 
 [ext_resource type="Texture2D" uid="uid://diwgxqubss5ol" path="res://Assets/paint__TILESET/IMG_010.png" id="1_ywp0g"]
 [ext_resource type="PackedScene" uid="uid://bfhrsaiuxhr78" path="res://Scenes/Eyeboss/Eyeboss.tscn" id="5_eki66"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://fvtuuod3spmq" path="res://Scenes/hud.tscn" id="22_xq63l"]
 [ext_resource type="PackedScene" uid="uid://ekj64q2nham8" path="res://Apps/Zoom.tscn" id="23_0oy4g"]
 [ext_resource type="PackedScene" uid="uid://d3yt0wrxansxj" path="res://Scenes/checkpoint.tscn" id="23_u1vuj"]
+[ext_resource type="PackedScene" uid="uid://c33nbodktkcn3" path="res://Scenes/lever.tscn" id="24_1huxa"]
 [ext_resource type="PackedScene" uid="uid://brcwldjc05d0t" path="res://Apps/Gun.tscn" id="24_j04yc"]
 [ext_resource type="PackedScene" uid="uid://ck0xsb7gqo0y7" path="res://Apps/Haxxor.tscn" id="25_e7fcg"]
 [ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="26_gavai"]
@@ -697,7 +698,7 @@ position = Vector2(182, 60)
 position = Vector2(182, 21)
 
 [node name="NewRobot" parent="." instance=ExtResource("12_qe2d7")]
-position = Vector2(986, 130)
+position = Vector2(1427, 168)
 
 [node name="BG" parent="." instance=ExtResource("12_oujyk")]
 
@@ -715,7 +716,10 @@ position = Vector2(589, -20)
 [node name="HUD2" parent="." instance=ExtResource("22_xq63l")]
 
 [node name="Checkpoint" parent="." instance=ExtResource("23_u1vuj")]
-position = Vector2(1098, 168)
+position = Vector2(1100, 172)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("23_u1vuj")]
-position = Vector2(1210, 167)
+position = Vector2(541, 171)
+
+[node name="Lever" parent="." instance=ExtResource("24_1huxa")]
+position = Vector2(1205, 182)

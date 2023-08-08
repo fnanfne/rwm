@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://8fo113v8l2bn"]
+
+[ext_resource type="Texture2D" uid="uid://dhl00valmbwcu" path="res://Assets/Pics/Computer/computer.png" id="1_6wrn6"]
+[ext_resource type="Script" path="res://Scenes/computer.gd" id="1_48blc"]
+[ext_resource type="Texture2D" uid="uid://u5vuyyckoaa8" path="res://Assets/Pics/Computer/computer_sad.png" id="2_7cm6p"]
+[ext_resource type="Texture2D" uid="uid://ddqqg2ncsyf0m" path="res://Assets/Pics/Computer/computer_sad_blink.png" id="3_ah14k"]
+[ext_resource type="Texture2D" uid="uid://ospnfqc7v3p6" path="res://Assets/Pics/Computer/computer_happy.png" id="4_m5jsp"]
+[ext_resource type="Texture2D" uid="uid://dmx2pmduc0ihs" path="res://Assets/Pics/Computer/computer_happy_blink.png" id="5_namcc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32lv5"]
+size = Vector2(46, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_shhgf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6wrn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7cm6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ah14k")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_daejg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6wrn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m5jsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_namcc")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}]
+
+[node name="Computer" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_48blc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.16, 1)
+shape = SubResource("RectangleShape2D_32lv5")
+
+[node name="Sad" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_shhgf")
+animation = &"sad"
+
+[node name="Happy" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_daejg")
+animation = &"happy"
