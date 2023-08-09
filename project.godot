@@ -120,6 +120,7 @@ mb_left={
 2d_physics/layer_8="Computers"
 2d_physics/layer_9="Levers"
 2d_physics/layer_10="Conveyors"
+2d_physics/layer_11="Springs"
 
 [rendering]
 

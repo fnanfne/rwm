@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var speed = 100
+var speed = 30
 var direction = 1
 
 #@export var speed = 50
@@ -15,6 +15,10 @@ func _process(delta):
 	#print(size)
 	$Top.texture_repeat = 2
 	$Bottom.texture_repeat = 2
-	$Sprite2D.texture.region.position.x -= speed * direction * delta
-	$Top.texture.region.position.x -= speed * direction * delta
-	$Bottom.texture.region.position.x -= speed * direction * -1 * delta
+	$Sprite2D.texture.region.position.x -= speed * delta
+	$Top.texture.region.position.x -= speed * delta
+	$Bottom.texture.region.position.x -= speed * delta * -1
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Robots"):
+		body.is_autobot = true

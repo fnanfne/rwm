@@ -22,6 +22,7 @@ var is_jumping = false
 var invincibility = false
 var neuter_shooting = false
 var is_alive = true
+var is_autobot = false
 
 @export var robot_death_effect : PackedScene
 
@@ -50,6 +51,8 @@ func _physics_process(delta):
 	#print(Game.healthContainers)
 	#print(Game.current_checkpoint)
 	#print(Game.robotHP)
+	print(velocity.x)
+	#print(is_autobot)
 
 	# Coyote Jump
 	var was_on_floor = is_on_floor()
@@ -385,6 +388,7 @@ func respawn():
 	#set_process_input(false)
 	$RespawnTimer.start()
 	$Sounds/Die.play()
+
 func _on_respawn_timer_timeout():
 	if Game.current_checkpoint != null:
 		Game.Robot.position = Game.current_checkpoint.global_position
