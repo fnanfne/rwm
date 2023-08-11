@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2ckbklaeo8qs"]
+[gd_scene load_steps=13 format=3 uid="uid://b2ckbklaeo8qs"]
 
 [ext_resource type="Script" path="res://Scenes/Pinkfly/pinkfly.gd" id="1_8uh7v"]
 [ext_resource type="Texture2D" uid="uid://b7j3pca84ogmg" path="res://Assets/Enemies/Buzzoid/From John/0.png" id="1_kivkn"]
 [ext_resource type="PackedScene" uid="uid://dbkfurlf5s8aj" path="res://Scenes/enemy_death_animation.tscn" id="2_3vc3g"]
 [ext_resource type="Texture2D" uid="uid://cpmfokmhhj4lc" path="res://Assets/Enemies/Buzzoid/From John/1.png" id="2_7o5me"]
+[ext_resource type="Shader" path="res://Resources/WhiteOut.gdshader" id="3_tu7tj"]
 [ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="5_6sv4h"]
 [ext_resource type="AudioStream" uid="uid://dd33u5llxkov1" path="res://Assets/Audio/Sounds/critterscreech.ogg" id="6_r4vss"]
 [ext_resource type="AudioStream" uid="uid://bm5iaqamy47dv" path="res://Assets/Audio/Sounds/killboss.ogg" id="7_qfnlq"]
@@ -13,6 +14,12 @@ size = Vector2(34, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_le84d"]
 size = Vector2(34.7221, 5.32787)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_li68k"]
+resource_local_to_scene = true
+shader = ExtResource("3_tu7tj")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/flashState = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hydom"]
 animations = [{
@@ -40,7 +47,7 @@ animations = [{
 collision_layer = 0
 script = ExtResource("1_8uh7v")
 enemy_death_effect = ExtResource("2_3vc3g")
-health = 20
+health = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -8.5)
@@ -58,6 +65,7 @@ scale = Vector2(22.32, 0.31202)
 shape = SubResource("RectangleShape2D_le84d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_li68k")
 sprite_frames = SubResource("SpriteFrames_hydom")
 animation = &"Fly"
 

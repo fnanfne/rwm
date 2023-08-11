@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://yb0jhdfx1v5s"]
+[gd_scene load_steps=32 format=3 uid="uid://yb0jhdfx1v5s"]
 
 [ext_resource type="Texture2D" uid="uid://diwgxqubss5ol" path="res://Assets/paint__TILESET/IMG_010.png" id="1_ywp0g"]
 [ext_resource type="PackedScene" uid="uid://bfhrsaiuxhr78" path="res://Scenes/Eyeboss/Eyeboss.tscn" id="5_eki66"]
@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://cimlob7scg7f7" path="res://spring.tscn" id="26_ipctb"]
 [ext_resource type="PackedScene" uid="uid://bsq672nsgt2pf" path="res://Apps/Helmet.tscn" id="27_holtl"]
 [ext_resource type="PackedScene" uid="uid://darp77k02b3uw" path="res://Scenes/Physics_Block.tscn" id="27_suds7"]
+[ext_resource type="PackedScene" uid="uid://cj13fi0jbnlf5" path="res://Scenes/Dripguy/Dripguy.tscn" id="28_c6mvg"]
+[ext_resource type="PackedScene" uid="uid://dtqo2uvytrhsr" path="res://Scenes/Dripboss/Dripboss.tscn" id="29_t3uxk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ekfe"]
 texture = ExtResource("1_ywp0g")
@@ -747,3 +749,9 @@ position = Vector2(2345, 219)
 
 [node name="physicsblock1" parent="." instance=ExtResource("27_suds7")]
 position = Vector2(1644, 78)
+
+[node name="Dripguy" parent="." instance=ExtResource("28_c6mvg")]
+position = Vector2(1511, 44)
+
+[node name="Dripboss" parent="." instance=ExtResource("29_t3uxk")]
+position = Vector2(1674, -23)

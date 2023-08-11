@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck0xsb7gqo0y7"]
+[gd_scene load_steps=15 format=3 uid="uid://ck0xsb7gqo0y7"]
 
-[ext_resource type="Texture2D" uid="uid://byvm182anm2le" path="res://Assets/Apps/Haxxor/haxxor_app_01.png" id="1_iw4mb"]
+[ext_resource type="Shader" path="res://Resources/WhiteOut.gdshader" id="1_td2lr"]
 [ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="2_erffs"]
-[ext_resource type="Texture2D" uid="uid://m26vya8ie383" path="res://Assets/Apps/Haxxor/haxxor_app_02.png" id="2_ojrtj"]
+[ext_resource type="Texture2D" uid="uid://5fnlpumar6de" path="res://Assets/Apps/Haxxor/From John/haxxor.png" id="5_gkj0o"]
+[ext_resource type="Texture2D" uid="uid://bt6lkug1osrix" path="res://Assets/Apps/Haxxor/From John/haxxormask.png" id="6_4lm6y"]
 
 [sub_resource type="GDScript" id="GDScript_dh4jr"]
 script/source = "extends Area2D
@@ -15,9 +16,6 @@ var rate = 0.005
 func _ready():
 	$AnimatedSprite2D.scale.x = 1
 	$AnimatedSprite2D.scale.y = 1
-	#var tween0 = get_tree().create_tween()
-	#tween0.tween_property($AnimatedSprite2D, \"scale\", Vector2(1,1), Vector2(2,2),5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT, 1.5)
-	#tween0.interpolate_property($AnimatedSprite2D, \"scale\", Vector2(1,1), Vector2(2,2),5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT, 1.5)
 
 func _process(_delta):
 	if should_shrink:
@@ -41,6 +39,7 @@ func _grow(amount):
 func _on_body_entered(body):
 	#if body.name == \"Robot\":
 	if body.is_in_group(\"Robots\"):
+		$AnimationPlayer.play(\"Static\")
 		Game.HAXXOR = true
 		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
@@ -53,37 +52,91 @@ func _on_body_entered(body):
 [sub_resource type="CircleShape2D" id="CircleShape2D_08b1g"]
 radius = 19.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1w6v5"]
+shader = ExtResource("1_td2lr")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/flashState = 0.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_guafh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6hlin"]
+resource_local_to_scene = true
+shader = ExtResource("1_td2lr")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/flashState = 0.5
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kga0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_iw4mb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ojrtj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_iw4mb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ojrtj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_iw4mb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ojrtj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_iw4mb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ojrtj")
+"texture": ExtResource("5_gkj0o")
 }],
 "loop": true,
-"name": &"Idle",
-"speed": 12.0
+"name": &"default",
+"speed": 5.0
 }]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptup6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4lm6y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_qklyi"]
+resource_name = "Flash"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D/AnimatedSprite2D3:material:shader_parameter/flashState")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 0.1, 0.5, 0.2, 0.5, 0.3, 0.5, 0.4, 0.5, 0.4, 0.5, 0.3, 0.5, 0.2, 0.5]
+}
+
+[sub_resource type="Animation" id="Animation_lkt1r"]
+resource_name = "Static"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D/AnimatedSprite2D3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D/AnimatedSprite2D2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ycefn"]
+_data = {
+"Flash": SubResource("Animation_qklyi"),
+"Static": SubResource("Animation_lkt1r")
+}
 
 [node name="Haxxor" type="Area2D"]
 collision_layer = 8
@@ -94,12 +147,24 @@ script = SubResource("GDScript_dh4jr")
 shape = SubResource("CircleShape2D_08b1g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_1w6v5")
 sprite_frames = SubResource("SpriteFrames_guafh")
-animation = &"Idle"
-frame_progress = 0.57798
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+material = SubResource("ShaderMaterial_6hlin")
+sprite_frames = SubResource("SpriteFrames_8kga0")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ptup6")
 
 [node name="SoundPickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_erffs")
 volume_db = -10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Flash"
+libraries = {
+"": SubResource("AnimationLibrary_ycefn")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://cj13fi0jbnlf5"]
+[gd_scene load_steps=22 format=3 uid="uid://cj13fi0jbnlf5"]
 
 [ext_resource type="Script" path="res://Scenes/Dripguy/Dripguy.gd" id="1_6nr7v"]
 [ext_resource type="Texture2D" uid="uid://0bsufvh0amq7" path="res://Assets/Enemies/Dripguy/From John/0.png" id="1_njvxq"]
 [ext_resource type="PackedScene" uid="uid://dbkfurlf5s8aj" path="res://Scenes/enemy_death_animation.tscn" id="2_kmmoa"]
 [ext_resource type="Texture2D" uid="uid://cti7qp1cpjx8c" path="res://Assets/Enemies/Dripguy/From John/1.png" id="2_mrq7q"]
 [ext_resource type="Texture2D" uid="uid://d1t5od0law2tj" path="res://Assets/Enemies/Dripguy/From John/2.png" id="3_nts8h"]
+[ext_resource type="Shader" path="res://Resources/WhiteOut.gdshader" id="3_u28oa"]
 [ext_resource type="Texture2D" uid="uid://bpkwcmyswayhn" path="res://Assets/Enemies/Dripguy/From John/3.png" id="4_mxrre"]
 [ext_resource type="Texture2D" uid="uid://d06bkw66cwrca" path="res://Assets/Enemies/Dripguy/From John/4.png" id="5_l0etj"]
 [ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="8_lh8gl"]
@@ -18,6 +19,12 @@ height = 54.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvmah"]
 size = Vector2(22.4013, 9.83608)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c36xt"]
+resource_local_to_scene = true
+shader = ExtResource("3_u28oa")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/flashState = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_76ysc"]
 animations = [{
@@ -60,8 +67,9 @@ signal frame_change(frame: int)
 @export var event_frames: Array[int]
 
 func _ready():
-	frame_changed.connect(_on_animation_change) # This throws an error in the log
+	#frame_changed.connect(_on_animation_change) # This throws an error in the log
 	#_on_animation_change()
+	pass
 
 func _on_animation_change():
 	if event_frames.has(frame):
@@ -164,7 +172,7 @@ z_index = 1
 collision_layer = 0
 script = ExtResource("1_6nr7v")
 enemy_death_effect = ExtResource("2_kmmoa")
-health = 20
+health = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_30fwt")
@@ -181,6 +189,7 @@ scale = Vector2(22.32, 0.31202)
 shape = SubResource("RectangleShape2D_tvmah")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_c36xt")
 sprite_frames = SubResource("SpriteFrames_76ysc")
 animation = &"Idle"
 script = SubResource("GDScript_if75y")

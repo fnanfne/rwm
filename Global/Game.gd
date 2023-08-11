@@ -15,10 +15,10 @@ var ZOOM = true
 var ANNIHILATE = false
 var EXPLOZORZ = true
 var VELCRO = false
-var REDKEY = false
+var REDKEY = true
 var BLUEKEY = false
 var GREENKEY = false
-var YELLOWKEY = false
+var YELLOWKEY = true
 var current_checkpoint : Checkpoint
 var Robot : Robot
 var PLATFORMDIRECTION : int = 1

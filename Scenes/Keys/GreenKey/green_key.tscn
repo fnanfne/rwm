@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://clr2efv5fbggb"]
+
+[ext_resource type="Script" path="res://Scenes/Keys/GreenKey/green_key.gd" id="1_ebjm3"]
+[ext_resource type="Texture2D" uid="uid://ceaqurtxx5mkh" path="res://Assets/Apps/Keys/key_green.png" id="2_12wob"]
+[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="3_gf02a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqupk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3nqvt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_12wob")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GreenKey" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_ebjm3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cqupk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3nqvt")
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gf02a")
+volume_db = -10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=43 format=3 uid="uid://dtqo2uvytrhsr"]
+[gd_scene load_steps=45 format=3 uid="uid://dtqo2uvytrhsr"]
 
 [ext_resource type="Texture2D" uid="uid://cvehiyje8r2le" path="res://Assets/Enemies/Dripboss/From John/0.png" id="1_88xww"]
 [ext_resource type="Script" path="res://Scenes/Dripboss/Dripboss.gd" id="1_cpdeo"]
 [ext_resource type="Texture2D" uid="uid://btvy678eqgtmc" path="res://Assets/Enemies/Dripboss/From John/eyes+pupil/3.png" id="2_40t7f"]
 [ext_resource type="PackedScene" uid="uid://dbkfurlf5s8aj" path="res://Scenes/enemy_death_animation.tscn" id="2_orm23"]
 [ext_resource type="Texture2D" uid="uid://bv3djgg6qctry" path="res://Assets/Enemies/Dripboss/From John/eyes+pupil/4.png" id="3_r530o"]
+[ext_resource type="Shader" path="res://Resources/WhiteOut.gdshader" id="3_wj77t"]
 [ext_resource type="Texture2D" uid="uid://7o45t110fm3d" path="res://Assets/Enemies/Dripboss/From John/eyes+pupil/5.png" id="4_35fcj"]
 [ext_resource type="Texture2D" uid="uid://b0b8q5udqx8e2" path="res://Assets/Enemies/Dripboss/From John/eyes+pupil/6.png" id="5_hj1bn"]
 [ext_resource type="Texture2D" uid="uid://bicjrjtry2k46" path="res://Assets/Enemies/Dripboss/From John/eyes+pupil/7.png" id="6_tlswi"]
@@ -31,6 +32,12 @@ radius = 52.0096
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gtcq"]
 radius = 38.0132
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fyw1d"]
+resource_local_to_scene = true
+shader = ExtResource("3_wj77t")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/flashState = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ov5wi"]
 animations = [{
@@ -513,7 +520,7 @@ z_index = 1
 collision_layer = 0
 script = ExtResource("1_cpdeo")
 enemy_death_effect = ExtResource("2_orm23")
-health = 20
+health = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_l70ea")
@@ -526,38 +533,47 @@ collision_mask = 19
 shape = SubResource("CircleShape2D_4gtcq")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_fyw1d")
 sprite_frames = SubResource("SpriteFrames_ov5wi")
 animation = &"body"
 
 [node name="Eye_1" type="AnimatedSprite2D" parent="Body"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_s8dxp")
 animation = &"eye_1"
 
 [node name="Eye_2" type="AnimatedSprite2D" parent="Body"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_ofy4e")
 animation = &"eye_2"
 
 [node name="Eye_3" type="AnimatedSprite2D" parent="Body"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_c4qj6")
 animation = &"eye_3"
 
 [node name="Eye_4" type="AnimatedSprite2D" parent="Body"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_swg8m")
 animation = &"eye_4"
 
 [node name="Eye_5" type="AnimatedSprite2D" parent="Body"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_eo7tv")
 animation = &"eye_5"
 
 [node name="Eye_6" type="AnimatedSprite2D" parent="Body"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_qwju8")
 animation = &"eye_6"
 
 [node name="Eye_7" type="AnimatedSprite2D" parent="Body"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_61ln7")
 animation = &"eye_7"
 
 [node name="Blink" type="AnimatedSprite2D" parent="Body"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_scjch")
 animation = &"blink"
 script = SubResource("GDScript_wbp1p")

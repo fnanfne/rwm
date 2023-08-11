@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://07hvqmfq3gyv"]
+
+[ext_resource type="Texture2D" uid="uid://chmitt1l4mutf" path="res://Assets/paint__TILESET/IMG_002.png" id="1_qv8gc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6edk"]
+size = Vector2(40, 120)
+
+[node name="HaxxorDoor" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_qv8gc")
+region_enabled = true
+region_rect = Rect2(1040, 360, 120, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b6edk")

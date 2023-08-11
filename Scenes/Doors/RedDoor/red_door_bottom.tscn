@@ -21,6 +21,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgrso"]
 
 [node name="RedDoorBottom" type="StaticBody2D"]
+z_index = -1
 script = ExtResource("1_qi068")
 
 [node name="DoorZone" type="Area2D" parent="."]
@@ -37,7 +38,7 @@ shape = SubResource("RectangleShape2D_wdekx")
 sprite_frames = SubResource("SpriteFrames_7qw4r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.98, 1.98)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_hgrso")
 
 [node name="SoundPickup" type="AudioStreamPlayer" parent="."]

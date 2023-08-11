@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 func _on_door_zone_body_entered(body):
-	if Game.REDKEY == true:
+	if Game.YELLOWKEY == true:
 		#if body.name == "Robot":
 		if body.is_in_group("Robots"):
 			$SoundPickup.play()

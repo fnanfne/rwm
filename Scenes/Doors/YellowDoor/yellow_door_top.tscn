@@ -1,16 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm6wvis73ta13"]
+[gd_scene load_steps=7 format=3 uid="uid://c3euw28lsmub5"]
 
-[ext_resource type="Script" path="res://Scenes/Doors/RedDoor/red_door_top.gd" id="1_kyfrr"]
-[ext_resource type="Texture2D" uid="uid://bxu0sxqnkp24v" path="res://Assets/Apps/Doors/door_red_t.png" id="1_shlmh"]
-[ext_resource type="AudioStream" uid="uid://dufxgowdppv4h" path="res://Assets/Audio/Sounds/opendoor.ogg" id="2_nm525"]
+[ext_resource type="Script" path="res://Scenes/Doors/YellowDoor/yellow_door_top.gd" id="1_7ioa6"]
+[ext_resource type="Texture2D" uid="uid://dl3yghfady3f0" path="res://Assets/Apps/Doors/door_gold_t.png" id="2_slu23"]
+[ext_resource type="AudioStream" uid="uid://dufxgowdppv4h" path="res://Assets/Audio/Sounds/opendoor.ogg" id="3_o5soq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7qkh"]
+size = Vector2(20, 20.1266)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_30k1a"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_shlmh")
+"texture": ExtResource("2_slu23")
 }],
 "loop": true,
 "name": &"default",
@@ -19,16 +20,16 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u52aa"]
 
-[node name="RedDoorTop" type="StaticBody2D"]
+[node name="YellowDoorTop" type="StaticBody2D"]
 z_index = -1
-script = ExtResource("1_kyfrr")
+script = ExtResource("1_7ioa6")
 
 [node name="DoorZone" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorZone"]
-position = Vector2(0, 20)
+position = Vector2(0, 19.75)
 scale = Vector2(2.03, 3.95)
 shape = SubResource("RectangleShape2D_o7qkh")
 
@@ -40,7 +41,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_u52aa")
 
 [node name="SoundPickup" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_nm525")
+stream = ExtResource("3_o5soq")
 volume_db = -10.0
 
 [connection signal="body_entered" from="DoorZone" to="." method="_on_door_zone_body_entered"]

@@ -53,7 +53,8 @@ func _physics_process(delta):
 	#print(Game.robotHP)
 	#print(velocity.x)
 	#print(is_autobot)
-	print(state)
+	#print(state)
+	#print(Game.YELLOWKEY)
 
 	# Coyote Jump
 	var was_on_floor = is_on_floor()

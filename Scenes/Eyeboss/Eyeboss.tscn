@@ -1,10 +1,11 @@
-[gd_scene load_steps=69 format=3 uid="uid://bfhrsaiuxhr78"]
+[gd_scene load_steps=77 format=3 uid="uid://bfhrsaiuxhr78"]
 
 [ext_resource type="Texture2D" uid="uid://ddjblc4lt3t1g" path="res://Assets/Enemies/Eyeboss/From John/0.png" id="1_bu3ew"]
 [ext_resource type="Script" path="res://Scenes/Eyeboss/Eyeboss.gd" id="1_necy5"]
 [ext_resource type="Texture2D" uid="uid://8hhfkijqy5hj" path="res://Assets/Enemies/Eyeboss/From John/eye00.png" id="2_e2ufx"]
 [ext_resource type="PackedScene" uid="uid://dbkfurlf5s8aj" path="res://Scenes/enemy_death_animation.tscn" id="2_luyfy"]
 [ext_resource type="Texture2D" uid="uid://dg82a3wh4pc6p" path="res://Assets/Enemies/Eyeboss/From John/eyelid00.png" id="2_vwuee"]
+[ext_resource type="Shader" path="res://Resources/WhiteOut.gdshader" id="3_7npfk"]
 [ext_resource type="Texture2D" uid="uid://b880n5s0ondj6" path="res://Assets/Enemies/Eyeboss/From John/eyelid01.png" id="3_pf8nm"]
 [ext_resource type="Texture2D" uid="uid://bf460e6cj304p" path="res://Assets/Enemies/Eyeboss/From John/eye01.png" id="3_qwybh"]
 [ext_resource type="Texture2D" uid="uid://8xfgca7eygl5" path="res://Assets/Enemies/Eyeboss/From John/eye02.png" id="4_63baa"]
@@ -43,6 +44,16 @@ size = Vector2(127, 74.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ervcf"]
 size = Vector2(591.398, 30.0462)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b81m5"]
+resource_local_to_scene = true
+shader = ExtResource("3_7npfk")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/flashState = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bmrar"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wijxx"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_0khdn"]
 animations = [{
 "frames": [{
@@ -53,6 +64,8 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xfug7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q5850"]
 animations = [{
@@ -175,6 +188,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ltdv4"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_frsum"]
 animations = [{
 "frames": [{
@@ -296,6 +311,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_101j8"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_0q8ih"]
 animations = [{
 "frames": [{
@@ -312,6 +329,8 @@ animations = [{
 "name": &"Mouth",
 "speed": 5.0
 }]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjfqf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nk23l"]
 animations = [{
@@ -331,7 +350,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Complete_Sprite/Eyeboss_Body/AnimatedSprite2D:position")
+tracks/0/path = NodePath("BodySprite/Eyeboss_Body/AnimatedSprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -343,7 +362,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_00:position")
+tracks/1/path = NodePath("BodySprite/Eyeboss_eyes/Eye_00:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -355,7 +374,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_01:position")
+tracks/2/path = NodePath("BodySprite/Eyeboss_eyes/Eye_01:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -367,7 +386,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_02:position")
+tracks/3/path = NodePath("BodySprite/Eyeboss_eyes/Eye_02:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -379,7 +398,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_03:position")
+tracks/4/path = NodePath("BodySprite/Eyeboss_eyes/Eye_03:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -391,7 +410,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_04:position")
+tracks/5/path = NodePath("BodySprite/Eyeboss_eyes/Eye_04:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -403,7 +422,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_05:position")
+tracks/6/path = NodePath("BodySprite/Eyeboss_eyes/Eye_05:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -415,7 +434,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_06:position")
+tracks/7/path = NodePath("BodySprite/Eyeboss_eyes/Eye_06:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -427,7 +446,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_07:position")
+tracks/8/path = NodePath("BodySprite/Eyeboss_eyes/Eye_07:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -439,7 +458,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_08:position")
+tracks/9/path = NodePath("BodySprite/Eyeboss_eyes/Eye_08:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -451,7 +470,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_09:position")
+tracks/10/path = NodePath("BodySprite/Eyeboss_eyes/Eye_09:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -463,7 +482,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_10:position")
+tracks/11/path = NodePath("BodySprite/Eyeboss_eyes/Eye_10:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -475,7 +494,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_00:position")
+tracks/12/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_00:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -487,7 +506,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_01:position")
+tracks/13/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_01:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -499,7 +518,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_02:position")
+tracks/14/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_02:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -511,7 +530,7 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_03:position")
+tracks/15/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_03:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -523,7 +542,7 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_04:position")
+tracks/16/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_04:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -535,7 +554,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_05:position")
+tracks/17/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_05:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -547,7 +566,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_06:position")
+tracks/18/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_06:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -559,7 +578,7 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_07:position")
+tracks/19/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_07:position")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
@@ -571,7 +590,7 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_08:position")
+tracks/20/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_08:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -583,7 +602,7 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_09:position")
+tracks/21/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_09:position")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
@@ -595,7 +614,7 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_10:position")
+tracks/22/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_10:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
@@ -607,7 +626,7 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Complete_Sprite/Eyeboss_mouth/mouth:position")
+tracks/23/path = NodePath("BodySprite/Eyeboss_mouth/mouth:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -619,7 +638,7 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_00:visible")
+tracks/24/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_00:visible")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
@@ -631,7 +650,7 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_01:visible")
+tracks/25/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_01:visible")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
@@ -643,7 +662,7 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_02:visible")
+tracks/26/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_02:visible")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
@@ -655,7 +674,7 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_03:visible")
+tracks/27/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_03:visible")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
@@ -667,7 +686,7 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_04:visible")
+tracks/28/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_04:visible")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
@@ -679,7 +698,7 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_05:visible")
+tracks/29/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_05:visible")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
@@ -691,7 +710,7 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_06:visible")
+tracks/30/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_06:visible")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
@@ -703,7 +722,7 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_07:visible")
+tracks/31/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_07:visible")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
@@ -715,7 +734,7 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_08:visible")
+tracks/32/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_08:visible")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -727,7 +746,7 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_09:visible")
+tracks/33/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_09:visible")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
@@ -739,7 +758,7 @@ tracks/33/keys = {
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_10:visible")
+tracks/34/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_10:visible")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
@@ -754,7 +773,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Complete_Sprite/Eyeboss_Body/AnimatedSprite2D:position")
+tracks/0/path = NodePath("BodySprite/Eyeboss_Body/AnimatedSprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -766,7 +785,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_00:position")
+tracks/1/path = NodePath("BodySprite/Eyeboss_eyes/Eye_00:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -778,7 +797,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_01:position")
+tracks/2/path = NodePath("BodySprite/Eyeboss_eyes/Eye_01:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -790,7 +809,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_02:position")
+tracks/3/path = NodePath("BodySprite/Eyeboss_eyes/Eye_02:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -802,7 +821,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_03:position")
+tracks/4/path = NodePath("BodySprite/Eyeboss_eyes/Eye_03:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -814,7 +833,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_04:position")
+tracks/5/path = NodePath("BodySprite/Eyeboss_eyes/Eye_04:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -826,7 +845,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_05:position")
+tracks/6/path = NodePath("BodySprite/Eyeboss_eyes/Eye_05:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -838,7 +857,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_06:position")
+tracks/7/path = NodePath("BodySprite/Eyeboss_eyes/Eye_06:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -850,7 +869,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_07:position")
+tracks/8/path = NodePath("BodySprite/Eyeboss_eyes/Eye_07:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -862,7 +881,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_08:position")
+tracks/9/path = NodePath("BodySprite/Eyeboss_eyes/Eye_08:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -874,7 +893,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_09:position")
+tracks/10/path = NodePath("BodySprite/Eyeboss_eyes/Eye_09:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -886,7 +905,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Complete_Sprite/Eyeboss_eyes/Eye_10:position")
+tracks/11/path = NodePath("BodySprite/Eyeboss_eyes/Eye_10:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -898,7 +917,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_00:position")
+tracks/12/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_00:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -910,7 +929,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_01:position")
+tracks/13/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_01:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -922,7 +941,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_02:position")
+tracks/14/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_02:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -934,7 +953,7 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_03:position")
+tracks/15/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_03:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -946,7 +965,7 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_04:position")
+tracks/16/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_04:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -958,7 +977,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_05:position")
+tracks/17/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_05:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -970,7 +989,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_06:position")
+tracks/18/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_06:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -982,7 +1001,7 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_07:position")
+tracks/19/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_07:position")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
@@ -994,7 +1013,7 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_08:position")
+tracks/20/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_08:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -1006,7 +1025,7 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_09:position")
+tracks/21/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_09:position")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
@@ -1018,7 +1037,7 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Complete_Sprite/Eyeboss_eyelids/Eyelid_10:position")
+tracks/22/path = NodePath("BodySprite/Eyeboss_eyelids/Eyelid_10:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
@@ -1030,7 +1049,7 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Complete_Sprite/Eyeboss_mouth/mouth:position")
+tracks/23/path = NodePath("BodySprite/Eyeboss_mouth/mouth:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -1157,109 +1176,145 @@ position = Vector2(0.000190735, -2.58224)
 scale = Vector2(22.32, 0.31202)
 shape = SubResource("RectangleShape2D_ervcf")
 
-[node name="Complete_Sprite" type="Node2D" parent="."]
-position = Vector2(0, -20.5)
+[node name="BodySprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_b81m5")
+position = Vector2(0, -19)
+sprite_frames = SubResource("SpriteFrames_bmrar")
 
-[node name="Eyeboss_Body" type="Node2D" parent="Complete_Sprite"]
+[node name="Eyeboss_Body" type="AnimatedSprite2D" parent="BodySprite"]
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_wijxx")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_Body"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_Body"]
+use_parent_material = true
 position = Vector2(0, 36)
 sprite_frames = SubResource("SpriteFrames_0khdn")
 
-[node name="Eyeboss_eyes" type="Node2D" parent="Complete_Sprite"]
+[node name="Eyeboss_eyes" type="AnimatedSprite2D" parent="BodySprite"]
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_xfug7")
 
-[node name="Eye_00" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyes"]
+[node name="Eye_00" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyes"]
+use_parent_material = true
 scale = Vector2(1.00616, 0.993838)
 sprite_frames = SubResource("SpriteFrames_q5850")
 
-[node name="Eye_01" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyes"]
+[node name="Eye_01" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyes"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_ay116")
 
-[node name="Eye_02" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyes"]
+[node name="Eye_02" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyes"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_uiwl7")
 
-[node name="Eye_03" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyes"]
+[node name="Eye_03" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyes"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_lell1")
 
-[node name="Eye_04" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyes"]
+[node name="Eye_04" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyes"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_wrs2m")
 
-[node name="Eye_05" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyes"]
+[node name="Eye_05" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyes"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_c75ph")
 
-[node name="Eye_06" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyes"]
+[node name="Eye_06" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyes"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_cdrvm")
 
-[node name="Eye_07" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyes"]
+[node name="Eye_07" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyes"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_7ntpy")
 
-[node name="Eye_08" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyes"]
+[node name="Eye_08" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyes"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_8j42s")
 
-[node name="Eye_09" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyes"]
+[node name="Eye_09" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyes"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_3ui2i")
 
-[node name="Eye_10" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyes"]
+[node name="Eye_10" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyes"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_ge05a")
 
-[node name="Eyeboss_eyelids" type="Node2D" parent="Complete_Sprite"]
+[node name="Eyeboss_eyelids" type="AnimatedSprite2D" parent="BodySprite"]
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_ltdv4")
 
-[node name="Eyelid_00" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyelids"]
+[node name="Eyelid_00" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyelids"]
 visible = false
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_frsum")
 
-[node name="Eyelid_01" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyelids"]
+[node name="Eyelid_01" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyelids"]
 visible = false
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_x67vx")
 
-[node name="Eyelid_02" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyelids"]
+[node name="Eyelid_02" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyelids"]
 visible = false
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_m2lrv")
 
-[node name="Eyelid_03" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyelids"]
+[node name="Eyelid_03" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyelids"]
 visible = false
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_sbakc")
 
-[node name="Eyelid_04" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyelids"]
+[node name="Eyelid_04" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyelids"]
 visible = false
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_0ogxv")
 
-[node name="Eyelid_05" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyelids"]
+[node name="Eyelid_05" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyelids"]
 visible = false
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_eg6y5")
 
-[node name="Eyelid_06" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyelids"]
+[node name="Eyelid_06" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyelids"]
 visible = false
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_aoeo0")
 
-[node name="Eyelid_07" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyelids"]
+[node name="Eyelid_07" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyelids"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_8rntu")
 
-[node name="Eyelid_08" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyelids"]
+[node name="Eyelid_08" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyelids"]
 visible = false
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_5vgb1")
 
-[node name="Eyelid_09" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyelids"]
+[node name="Eyelid_09" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyelids"]
 visible = false
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_s2dep")
 
-[node name="Eyelid_10" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_eyelids"]
+[node name="Eyelid_10" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_eyelids"]
 visible = false
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_cump5")
 
-[node name="Eyeboss_mouth" type="Node2D" parent="Complete_Sprite"]
+[node name="Eyeboss_mouth" type="AnimatedSprite2D" parent="BodySprite"]
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_101j8")
 
-[node name="mouth" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_mouth"]
+[node name="mouth" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_mouth"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_0q8ih")
 animation = &"Mouth"
 autoplay = "Mouth"
 frame_progress = 0.245648
 
-[node name="Eyeboss_trail" type="Node2D" parent="Complete_Sprite"]
+[node name="Eyeboss_trail" type="AnimatedSprite2D" parent="BodySprite"]
 visible = false
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_xjfqf")
 
-[node name="trail" type="AnimatedSprite2D" parent="Complete_Sprite/Eyeboss_trail"]
-position = Vector2(0, 38)
+[node name="trail" type="AnimatedSprite2D" parent="BodySprite/Eyeboss_trail"]
+position = Vector2(0, 17.5)
 sprite_frames = SubResource("SpriteFrames_nk23l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -64,9 +64,9 @@ func _on_area_2d_body_entered(body):
 			$ProjectileHit.play()
 			var TW1 = get_tree().create_tween()
 			TW1.set_loops(1)
-			TW1.tween_property($Body, "modulate",
+			TW1.tween_property($BodySprite, "modulate",
 			Color(1000,1000,1000),0.05)
-			TW1.tween_property($Body, "modulate",Color.WHITE,0)
+			TW1.tween_property($BodySprite, "modulate",Color.WHITE,0)
 			body.queue_free()
 		else:
 			get_node("Body").play("Idle")
@@ -76,7 +76,7 @@ func _on_area_2d_body_entered(body):
 			# DEATH WHITE-OUT
 			var TW2 = get_tree().create_tween()
 			TW2.set_loops(1)
-			TW2.tween_property($Body, "modulate",
+			TW2.tween_property($BodySprite, "modulate",
 			Color(10000,10000,10000),15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 			# 	DEATH STARS
 			body.queue_free()
@@ -92,7 +92,7 @@ func _on_timer_timeout():
 	effect_instance.position = position
 	effect_instance.emitting = true
 	get_parent().add_child(effect_instance)
-	$Body.hide()
+	$BodySprite.hide()
 	$Timer2.start()
 
 func _on_timer_2_timeout():

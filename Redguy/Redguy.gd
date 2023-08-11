@@ -45,28 +45,49 @@ func _on_area_2d_body_entered(body):
 		if health > 0:
 			health -= 1
 			$ProjectileHit.play()
-			var TW1 = get_tree().create_tween()
-			TW1.set_loops(1)
-			TW1.tween_property($BodySprite, "modulate",
-			Color(1000,1000,1000),0.05)
-			TW1.tween_property($BodySprite, "modulate",Color.WHITE,0)
+
+			# NEW SHADER METHOD BELOW
+			var TW4 = get_tree().create_tween()
+			TW4.tween_property($BodySprite.material, 
+			"shader_parameter/flashState", 1.0, 0.05)
+			TW4.tween_property($BodySprite.material, 
+			"shader_parameter/flashState", 0.0, 0.05)
+			# NEW SHADER METHOD ABOVE
+
+			# OLD WHITE-OUT CODE BELOW
+			#var TW1 = get_tree().create_tween()
+			#TW1.set_loops(1)
+			#TW1.tween_property($BodySprite, "modulate",
+			#Color(1000,1000,1000),0.05)
+			#TW1.tween_property($BodySprite, "modulate",Color.WHITE,0)
+			# OLD WHITE-OUT CODE ABOVE
+
 			body.queue_free()
 		else:
-			get_node("BodySprite").play("Idle")
 			set_physics_process(false)
+			$AnimationPlayer.pause()
 			$Area2D/CollisionShape2D.queue_free()
 			$Screetch.play()
+			
+			# NEW SHADER METHOD BELOW
+			var TW5 = get_tree().create_tween()
+			TW5.tween_property($BodySprite.material, "shader_parameter/flashState", 
+			1.0, 1.0) #.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+			# NEW SHADER METHOD ABOVE
+
+			# OLD WHITE-OUT CODE BELOW
 			# DEATH WHITE-OUT
-			var TW2 = get_tree().create_tween()
-			TW2.set_loops(1)
-			TW2.tween_property($BodySprite, "modulate",
-			Color(10000,10000,10000),15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+			#var TW2 = get_tree().create_tween()
+			#TW2.set_loops(1)
+			#TW2.tween_property($BodySprite, "modulate",
+			#Color(10000,10000,10000),15).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+			# OLD WHITE-OUT CODE ABOVE
+	
 			# 	DEATH STARS
 			body.queue_free()
 			$Timer.start()
 
 func _on_timer_timeout():
-	get_node("BodySprite").play("Idle")
 	$Die.play()
 	var effect_instance : GPUParticles2D = enemy_death_effect.instantiate()
 	var TW3 = get_tree().create_tween()
@@ -79,7 +100,6 @@ func _on_timer_timeout():
 	$Timer2.start()
 
 func _on_timer_2_timeout():
-	get_node("BodySprite").play("Idle")
 	queue_free()
 	
 	# OLD KILL/DIE CODE

@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://ds02qr33layf5"]
+[gd_scene load_steps=28 format=3 uid="uid://ds02qr33layf5"]
 
 [ext_resource type="Script" path="res://Scenes/Redboss/Redboss.gd" id="1_3cvuy"]
 [ext_resource type="Texture2D" uid="uid://cvdcgheojey4y" path="res://Assets/Enemies/Redboss/From John/5.png" id="1_o66gy"]
 [ext_resource type="Texture2D" uid="uid://d1vwr4ew4vlis" path="res://Assets/Enemies/Redboss/From John/3.png" id="2_snyup"]
 [ext_resource type="PackedScene" uid="uid://dbkfurlf5s8aj" path="res://Scenes/enemy_death_animation.tscn" id="2_w4dbu"]
+[ext_resource type="Shader" path="res://Resources/WhiteOut.gdshader" id="3_j5c2q"]
 [ext_resource type="Texture2D" uid="uid://c2luwoneuuana" path="res://Assets/Enemies/Redboss/From John/0.png" id="3_vrqjv"]
 [ext_resource type="Texture2D" uid="uid://b0uaqmyvrauuw" path="res://Assets/Enemies/Redboss/From John/1.png" id="4_5ehvb"]
 [ext_resource type="Texture2D" uid="uid://cs2dvkkjb0eny" path="res://Assets/Enemies/Redboss/From John/4.png" id="5_lndkk"]
@@ -17,6 +18,12 @@ size = Vector2(98, 84)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvw43"]
 size = Vector2(112.007, 17.2131)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b0vba"]
+resource_local_to_scene = true
+shader = ExtResource("3_j5c2q")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/flashState = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jyvr8"]
 animations = [{
@@ -528,7 +535,7 @@ _data = {
 position = Vector2(-1, 23)
 collision_layer = 0
 script = ExtResource("1_3cvuy")
-health = 20
+health = 5
 enemy_death_effect = ExtResource("2_w4dbu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -547,35 +554,44 @@ scale = Vector2(22.32, 0.31202)
 shape = SubResource("RectangleShape2D_xvw43")
 
 [node name="BodySprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_b0vba")
 position = Vector2(0, 20)
 sprite_frames = SubResource("SpriteFrames_jyvr8")
 animation = &"Idle"
 
 [node name="Leg_1" type="AnimatedSprite2D" parent="BodySprite"]
+use_parent_material = true
 position = Vector2(-36, -2)
 sprite_frames = SubResource("SpriteFrames_xkje8")
 
 [node name="Jaw" type="AnimatedSprite2D" parent="BodySprite"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_ohhp1")
 
 [node name="Face" type="AnimatedSprite2D" parent="BodySprite"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_ib4vc")
 
 [node name="Right_Antenna" type="AnimatedSprite2D" parent="BodySprite"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_yubx2")
 
 [node name="Left_Antenna" type="AnimatedSprite2D" parent="BodySprite"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_egb8t")
 
 [node name="Leg_3" type="AnimatedSprite2D" parent="BodySprite"]
+use_parent_material = true
 position = Vector2(28, -2)
 sprite_frames = SubResource("SpriteFrames_2b0s7")
 
 [node name="Leg_2" type="AnimatedSprite2D" parent="BodySprite"]
+use_parent_material = true
 position = Vector2(-4, -2)
 sprite_frames = SubResource("SpriteFrames_u4yod")
 
 [node name="Blink" type="AnimatedSprite2D" parent="BodySprite"]
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_aopqy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
