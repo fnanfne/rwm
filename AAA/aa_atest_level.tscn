@@ -701,7 +701,7 @@ position = Vector2(182, 60)
 position = Vector2(182, 21)
 
 [node name="NewRobot" parent="." instance=ExtResource("12_qe2d7")]
-position = Vector2(1427, 168)
+position = Vector2(1363, 53)
 
 [node name="BG" parent="." instance=ExtResource("12_oujyk")]
 
@@ -729,6 +729,18 @@ position = Vector2(1205, 182)
 
 [node name="Conveyor" parent="." instance=ExtResource("25_dyitm")]
 position = Vector2(1476, 219)
+
+[node name="Conveyor2" parent="." instance=ExtResource("25_dyitm")]
+position = Vector2(1516, 219)
+
+[node name="Conveyor3" parent="." instance=ExtResource("25_dyitm")]
+position = Vector2(1556, 219)
+
+[node name="Conveyor4" parent="." instance=ExtResource("25_dyitm")]
+position = Vector2(1596, 219)
+
+[node name="Conveyor5" parent="." instance=ExtResource("25_dyitm")]
+position = Vector2(1635, 219)
 
 [node name="Spring" parent="." instance=ExtResource("26_ipctb")]
 position = Vector2(2345, 219)

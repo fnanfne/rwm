@@ -1,6 +1,6 @@
 extends CharacterBody2D
 class_name Robot
-enum States {FALL = 1, FLOOR, LAUNCH, ZOOM, SHOOT} # default numbering from 0, making air = 1 starts the numbering from one
+enum States {FALL = 1, FLOOR, LAUNCH, ZOOM, SHOOT, AUTO} # default numbering from 0, making air = 1 starts the numbering from one
 var state = States.FALL
 
 #var health = 10 # not needed anymore as it's now in the global Game script
@@ -51,8 +51,9 @@ func _physics_process(delta):
 	#print(Game.healthContainers)
 	#print(Game.current_checkpoint)
 	#print(Game.robotHP)
-	print(velocity.x)
+	#print(velocity.x)
 	#print(is_autobot)
+	print(state)
 
 	# Coyote Jump
 	var was_on_floor = is_on_floor()
@@ -67,7 +68,10 @@ func _physics_process(delta):
 
 			# STATE CHECKER
 			if is_on_floor():
-				state = States.FLOOR
+				if is_autobot:
+					state = States.AUTO
+				else:
+					state = States.FLOOR
 
 			if velocity.y > 0:
 				anim_jump.visible = false
@@ -343,7 +347,94 @@ func _physics_process(delta):
 
 			move_and_slide()
 
-### STATE MACHINE ABOVE ###
+		States.AUTO:
+						
+			# AUTOBOT VARIABLES
+			if  1 == 1:
+				has_double_jumped = false
+				is_launching = false
+				is_falling = false
+				is_jumping = false
+
+			# STATE CHECKER.
+			if  not is_autobot:
+				state = States.FLOOR
+
+			# HANDLE DIRECTION:
+			if direction == -1:
+				anim_air_shoot.visible = false
+				anim_shoot.visible = false
+				anim_launch.visible = false
+				anim_launchfire.visible = false
+				anim_wheel.visible = true
+				anim_idle.visible = true
+				anim_shoot.visible = false
+				anim_fall.visible = false
+				anim_run.visible = false
+				anim_idle.flip_h = false
+				anim_run.flip_h = false
+				anim_wheel.flip_h = false
+				anim_fall.flip_h = false
+				anim_shoot.flip_h = false
+				anim_jump.flip_h = false
+				anim_launch.flip_h = false
+				anim_launchfire.flip_h = false
+				anim_air_shoot.flip_h = false
+				anim_shoot.flip_h = false
+				$Area2D2.rotation = 0
+			elif direction == 1:
+				anim_air_shoot.visible = false
+				anim_shoot.visible = false
+				anim_launch.visible = false
+				anim_launchfire.visible = false
+				anim_wheel.visible = true
+				anim_idle.visible = true
+				anim_shoot.visible = false
+				anim_fall.visible = false
+				anim_run.visible = false
+				anim_idle.flip_h = true
+				anim_run.flip_h = true
+				anim_wheel.flip_h = true
+				anim_fall.flip_h = true
+				anim_shoot.flip_h = true
+				anim_jump.flip_h = true
+				anim_launch.flip_h = true
+				anim_launchfire.flip_h = true
+				anim_air_shoot.flip_h = true
+				anim_shoot.flip_h = true
+				$Area2D2.rotation = 3.1415
+
+			# STANDING STILL
+			if velocity.x == 0:
+				$AnimationPlayer.set_speed_scale(1.0)
+				$RobotPoof.emitting = false
+				anim.play("Idle")
+
+			# JUMPING
+			if Game.JUMP and is_alive == true:
+				pass
+
+			# LAUNCHING
+			if Game.LAUNCH and is_alive == true:
+				pass
+
+			# SHOOTING
+			shoot_lazor()
+
+			# LEFT/RIGHT MOVEMENT
+			if velocity.y == 0 and is_shooting != true:
+				anim_wheel.visible = true
+				anim_idle.visible = true
+				anim_shoot.visible = false
+				anim_jump.visible = false
+				anim_run.visible = false
+				anim_fall.visible = false
+				anim_launch.visible = false
+				anim_launchfire.visible = false
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			move_and_slide()
+
+### FINITE STATE MACHINE ABOVE ###
 
 func taking_damage():
 	if Game.robotHP == 0:
