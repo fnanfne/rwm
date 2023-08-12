@@ -41,7 +41,7 @@ func _grow(amount):
 func _on_body_entered(body):
 	if body.is_in_group(\"Robots\"):
 	#if body.name == \"NewRobot\":
-		print(\"PICKEDUPP!!!!\")
+		print(\"ANNIHILATOR picked up!\")
 		Game.ANNIHILATE = true
 		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
@@ -70,7 +70,7 @@ collision_mask = 2
 script = SubResource("GDScript_3hlut")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.52, 1.6)
+scale = Vector2(1.48, 1.4)
 shape = SubResource("RectangleShape2D_ppsxa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

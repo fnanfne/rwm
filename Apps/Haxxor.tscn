@@ -39,6 +39,7 @@ func _grow(amount):
 func _on_body_entered(body):
 	#if body.name == \"Robot\":
 	if body.is_in_group(\"Robots\"):
+		print(\"HAXXOR picked up!\")
 		$AnimationPlayer.stop()
 		Game.HAXXOR = true
 		$SoundPickup.play()
@@ -46,12 +47,12 @@ func _on_body_entered(body):
 		var tween2 = get_tree().create_tween()
 		tween1.tween_property(self, \"position\", position - Vector2(0,42), 0.5)
 		tween2.tween_property(self, \"modulate:a\", 0, 0.5)
-		#tween1.tween_callback(queue_free)
-		#tween2.tween_callback(queue_free)
+		tween1.tween_callback(queue_free)
+		tween2.tween_callback(queue_free)
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08b1g"]
-radius = 19.0
+radius = 17.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1w6v5"]
 shader = ExtResource("1_td2lr")
@@ -64,7 +65,7 @@ shader_parameter/flashState = 0.0
 resource_local_to_scene = true
 shader = ExtResource("1_td2lr")
 shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/flashState = 0.5
+shader_parameter/flashState = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8kga0"]
 animations = [{

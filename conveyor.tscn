@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dfrfmai0avsbk" path="res://Assets/Pics/Conveyor/ConveyorTop__TILE.png" id="2_q1rjg"]
 [ext_resource type="Texture2D" uid="uid://bhnwovvsntea4" path="res://Assets/Pics/Conveyor/ConveyorBottom__TILE.png" id="4_umc1q"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88nh5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vsba"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_hboke"]
 atlas = ExtResource("2_ctyg0")
 region = Rect2(0, 0, 40, 40)
@@ -17,24 +21,10 @@ region = Rect2(0, 0, 40, 40)
 atlas = ExtResource("2_q1rjg")
 region = Rect2(0, 0, 40, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_88nh5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vsba"]
-
 [node name="Conveyor" type="StaticBody2D"]
 collision_layer = 513
 collision_mask = 3
 script = ExtResource("1_0ew34")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_hboke")
-region_rect = Rect2(0, 0, 400, 40)
-
-[node name="Bottom" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_em7q1")
-
-[node name="Top" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_cp0h1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2.04, 2.08)
@@ -45,7 +35,17 @@ collision_layer = 513
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(7.2, 6.04)
+scale = Vector2(2.76, 2.72)
 shape = SubResource("RectangleShape2D_0vsba")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_hboke")
+region_rect = Rect2(0, 0, 400, 40)
+
+[node name="Bottom" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_em7q1")
+
+[node name="Top" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_cp0h1")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

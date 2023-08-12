@@ -4,6 +4,8 @@ var max_lives = 1
 var robotHP = clamp(0, 0, 9)
 var healthContainers = 0
 var BTC = 0
+var YELLOWKEYS = 0
+var CRYSTALS : int = 0 # same as above? 'int' not required
 var hud
 var JUMP = true
 var DOUBLEJUMP = true

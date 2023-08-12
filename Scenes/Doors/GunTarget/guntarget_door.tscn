@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbtrh2eit0f44"]
+
+[ext_resource type="Script" path="res://Scenes/Doors/GunTarget/guntarget_door.gd" id="1_u011y"]
+[ext_resource type="Texture2D" uid="uid://c2y0ekf8pecid" path="res://Assets/paint__TILESET/IMG_008.png" id="2_bfrak"]
+[ext_resource type="AudioStream" uid="uid://d3grf3xmhcdm4" path="res://Assets/Audio/Sounds/computerdoor.ogg" id="3_wr1dp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6edk"]
+size = Vector2(40, 120)
+
+[node name="GunTargetDoor" type="StaticBody2D"]
+script = ExtResource("1_u011y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_bfrak")
+region_enabled = true
+region_rect = Rect2(1240, 40, 40, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.32)
+shape = SubResource("RectangleShape2D_b6edk")
+
+[node name="DoorOpen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wr1dp")
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.4
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 1.4
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]

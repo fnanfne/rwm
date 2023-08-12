@@ -1,8 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://nq13g51yd2t3"]
+[gd_scene load_steps=12 format=3 uid="uid://nq13g51yd2t3"]
 
 [ext_resource type="Script" path="res://debug_window.gd" id="1_2meks"]
 [ext_resource type="Script" path="res://DebugStats.gd" id="2_a33ut"]
-[ext_resource type="Script" path="res://Label.gd" id="2_ijeka"]
+[ext_resource type="Script" path="res://HeartsLabel.gd" id="3_p4auj"]
+[ext_resource type="Script" path="res://HeartContainersLabel.gd" id="4_6ejyr"]
+[ext_resource type="Script" path="res://StateLabel.gd" id="5_37xua"]
+[ext_resource type="Script" path="res://Velocity_X_Label.gd" id="6_uqlpu"]
+[ext_resource type="Script" path="res://Velocity_Y_Label.gd" id="7_khtp2"]
+[ext_resource type="Script" path="res://BTCLabel.gd" id="8_tvwx8"]
+[ext_resource type="Script" path="res://CrystalsLabel.gd" id="9_xtilt"]
+[ext_resource type="Script" path="res://YellowKeysLabel.gd" id="10_4t752"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usvcf"]
 bg_color = Color(0.00392157, 0.105882, 0, 1)
@@ -15,14 +22,10 @@ border_width_bottom = 1
 script = ExtResource("1_2meks")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -79.5
-offset_top = 20.0
-offset_right = 79.5
-offset_bottom = 268.0
-grow_horizontal = 2
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 210.0
+offset_bottom = 310.0
 
 [node name="Panel" type="Panel" parent="TextboxContainer"]
 layout_mode = 2
@@ -42,29 +45,47 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_usvcf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextboxContainer/DebugStats/Panel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 182.0
+offset_bottom = 284.0
 
-[node name="Label" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
+[node name="Hearts" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
-text = "gdfdfdgfdgfdgfgdf"
-script = ExtResource("2_ijeka")
+text = "HP"
+script = ExtResource("3_p4auj")
 
-[node name="Label2" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
+[node name="HeartContainers" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
-text = "velocity.y: "
+text = "HP containers"
+script = ExtResource("4_6ejyr")
 
-[node name="Label3" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
+[node name="State" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
-text = "gravity: "
+text = "State"
+script = ExtResource("5_37xua")
 
-[node name="Label4" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
+[node name="Velocity_X" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
+text = "Velocity.X"
+script = ExtResource("6_uqlpu")
 
-[node name="Label5" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
+[node name="Velocity_Y" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
+text = "Velocity.Y"
+script = ExtResource("7_khtp2")
 
-[node name="Label6" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
+[node name="BTC" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
+text = "BTC"
+script = ExtResource("8_tvwx8")
+
+[node name="Crystals" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Crystals"
+script = ExtResource("9_xtilt")
+
+[node name="YellowKeys" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
+layout_mode = 2
+text = "YellowKeys"
+script = ExtResource("10_4t752")
 
 [connection signal="gui_input" from="TextboxContainer" to="." method="_on_textbox_container_gui_input"]

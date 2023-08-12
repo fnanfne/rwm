@@ -40,6 +40,7 @@ func _grow(amount):
 func _on_body_entered(body):
 	#if body.name == \"Robot\":
 	if body.is_in_group(\"Robots\"):
+		print(\"HELMET picked up!\")
 		Game.HEMLET = true
 		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
@@ -48,6 +49,9 @@ func _on_body_entered(body):
 		tween2.tween_property(self, \"modulate:a\", 0, 0.5)
 		tween1.tween_callback(queue_free)
 "
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_08b1g"]
+radius = 16.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kwud7"]
 animations = [{
@@ -60,20 +64,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_08b1g"]
-radius = 18.0
-
 [node name="Hemlet" type="Area2D"]
 collision_layer = 8
 collision_mask = 2
 script = SubResource("GDScript_dh4jr")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_08b1g")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kwud7")
 animation = &"Idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_08b1g")
 
 [node name="SoundPickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_pdr75")

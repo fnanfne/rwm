@@ -1,10 +1,12 @@
 extends StaticBody2D
 
 func _on_door_zone_body_entered(body):
-	if Game.YELLOWKEY == true:
+	#if Game.YELLOWKEY == true:
+	if Game.YELLOWKEYS > 0:
 		#if body.name == "Robot":
 		if body.is_in_group("Robots"):
-			$SoundPickup.play()
+			Game.YELLOWKEYS -= 1
+			$OpenDoor.play()
 			var tween1 = get_tree().create_tween()
 			#var tween2 = get_tree().create_tween()
 			tween1.tween_property(self, "position", position - Vector2(0,-42), 0.8)

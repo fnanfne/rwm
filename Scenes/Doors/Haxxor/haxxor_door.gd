@@ -5,14 +5,14 @@ extends StaticBody2D
 func _ready():
 	#get_node().connect("sad_happy", self, "open_door")
 	pass
-	
 
 func open_door():
 	queue_free()
 
 
 func _on_computer_body_entered(body):
-	$Timer.start()
+	if body.is_in_group("Robots"):
+		$Timer.start()
 
 func _on_timer_timeout():
 	$CollisionShape2D.queue_free()
@@ -24,7 +24,8 @@ func _on_timer_timeout():
 	TW1.tween_callback(queue_free)
 
 func _on_computer_2_body_entered(body):
-	$Timer2.start()
+	if body.is_in_group("Robots"):
+		$Timer2.start()
 
 func _on_timer2_timeout():
 	$CollisionShape2D.queue_free()

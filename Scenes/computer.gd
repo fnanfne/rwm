@@ -20,7 +20,6 @@ func _on_body_entered(body):
 			$AnimationPlayer.play("happy")
 			#yield($AnimationPlayer, "animation_finished")
 			$SadHappy.play()
-			#$DoorOpen.play()
 			$CollisionShape2D.queue_free()
 			emit_signal("sad_happy", link_code)
 

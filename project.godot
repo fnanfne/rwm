@@ -121,6 +121,8 @@ mb_left={
 2d_physics/layer_9="Levers"
 2d_physics/layer_10="Conveyors"
 2d_physics/layer_11="Springs"
+2d_physics/layer_12="Spikes"
+2d_physics/layer_13="LavaAcid"
 
 [rendering]
 

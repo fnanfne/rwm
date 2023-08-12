@@ -35,7 +35,8 @@ func _on_body_entered(body):
 	#if body.name == "Robot":
 	if body.is_in_group("Robots"):
 		set_collision_mask_value(1,false)
-		Game.YELLOWKEY = true
+		#Game.YELLOWKEY = true
+		Game.YELLOWKEYS += 1
 		$SoundPickup.play()
 		var tween1 = get_tree().create_tween()
 		var tween2 = get_tree().create_tween()

@@ -16,6 +16,7 @@ const LAZOR = preload("res://Scenes/lazor.tscn")
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var has_double_jumped = false
 var is_launching = false
+var is_zooming = false
 var is_falling = false
 var is_shooting = false
 var is_jumping = false
@@ -24,12 +25,14 @@ var neuter_shooting = false
 var is_alive = true
 var is_autobot = false
 
+@export var testestest : int = 7
+
 @export var robot_death_effect : PackedScene
 
 @onready var anim = get_node("AnimationPlayer")
-@onready var coyote_jump_timer = $CoyoteJumpTimer
-@onready var shooting_cooldown_timer = $ShootingCooldownTimer
-@onready var damage_cooldown_timer = $DamageCooldownTimer
+@onready var coyote_jump_timer = $Timers/CoyoteJumpTimer
+@onready var shooting_cooldown_timer = $Timers/ShootingCooldownTimer
+@onready var damage_cooldown_timer = $Timers/DamageCooldownTimer
 
 @onready var anim_wheel = get_node("AllSprites/Wheel")
 @onready var anim_idle = get_node("AllSprites/Idle")
@@ -55,6 +58,7 @@ func _physics_process(delta):
 	#print(is_autobot)
 	#print(state)
 	#print(Game.YELLOWKEY)
+	#print(is_launching)
 
 	# Coyote Jump
 	var was_on_floor = is_on_floor()
@@ -72,6 +76,8 @@ func _physics_process(delta):
 				if is_autobot:
 					state = States.AUTO
 				else:
+					$RobotLandPoofRight.emitting = true
+					$RobotLandPoofLeft.emitting = true
 					state = States.FLOOR
 
 			if velocity.y > 0:
@@ -84,9 +90,301 @@ func _physics_process(delta):
 					anim_air_shoot.visible = true
 				else:
 					anim_fall.visible = true
+					#pass
+				is_jumping = false
+				$RobotLandPoofRight.emitting = false
+				$RobotLandPoofLeft.emitting = false
+				$RobotPoof.emitting = false
+				$RobotSparks.emitting = false
+			if velocity.y < 0:
+				anim_jump.visible = true
+				anim_wheel.visible = false
+				anim_shoot.visible = false
+				anim_idle.visible = false
+				anim_run.visible = false
+				if is_shooting:
+					anim_air_shoot.visible = true
+				else:
+					anim_jump.visible = true
+				is_jumping = false
+				$RobotLandPoofRight.emitting = false
+				$RobotLandPoofLeft.emitting = false
+				$RobotPoof.emitting = false
+				$RobotSparks.emitting = false
+
+			# GRAVITY
+			if not is_on_floor():
+				velocity.y += gravity * delta
+			else:
+				has_double_jumped = false
+				is_launching = false
+				is_falling = false
+				is_jumping = false
+
+			# HANDLE DIRECTION:
+			if direction == -1:
+				anim_air_shoot.visible = false
+				anim_shoot.visible = false
+				anim_wheel.visible = false
+				anim_shoot.visible = false
+				if is_jumping == true or has_double_jumped == true and velocity.y < 0:
+					anim_fall.visible = false
+				else:
+					#anim_fall.visible = true
+					pass
+				anim_idle.visible = false
+				anim_run.visible = false
+				anim_idle.flip_h = false
+				anim_run.flip_h = false
+				anim_wheel.flip_h = false
+				anim_fall.flip_h = false
+				anim_shoot.flip_h = false
+				anim_jump.flip_h = false
+				anim_air_shoot.flip_h = false
+				anim_shoot.flip_h = false
+				#$RobotPoof.position.x = 10
+			elif direction == 1:
+				anim_air_shoot.visible = false
+				anim_shoot.visible = false
+				anim_wheel.visible = false
+				anim_shoot.visible = false
+				if is_jumping == true or has_double_jumped == true and velocity.y < 0:
+					anim_fall.visible = false
+				else:
+					#anim_fall.visible = true
+					pass
+				anim_idle.visible = false
+				anim_run.visible = false
+				anim_idle.flip_h = true
+				anim_run.flip_h = true
+				anim_wheel.flip_h = true
+				anim_fall.flip_h = true
+				anim_shoot.flip_h = true
+				anim_jump.flip_h = true
+				anim_air_shoot.flip_h = true
+				anim_shoot.flip_h = true
+				#$RobotPoof.position.x = -10
+
+			# DOUBLE JUMP
+			if Game.JUMP and is_alive == true:
+				if coyote_jump_timer.time_left > 0.0:
+					if Input.is_action_just_pressed("jump"):
+						$Sounds/SoundJump.play()
+						state = States.FALL # Should change to States.JUMP?
+						velocity.y = JUMP_VELOCITY
+						anim_run.visible = false
+						anim_idle.visible = false
+						anim_wheel.visible = false
+						anim_jump.visible = true
+						####anim.play("Jump") # Not needed anymore because of all the booleans?
+						$RobotPoof.emitting = false
+				elif not has_double_jumped:
+					#Do a double jump
+					if Game.DOUBLEJUMP and is_alive == true:
+						if Input.is_action_just_pressed("jump"):
+							#state = States.FALL # Should change to States.JUMP?
+							$Sounds/SoundJump.play()
+							$RobotPoof.emitting = false
+							velocity.y = DOUBLE_JUMP_VELOCITY
+							anim_run.visible = false
+							anim_idle.visible = false
+							anim_wheel.visible = false
+							anim_fall.visible = false
+							anim_jump.visible = true
+							####anim.play("Jump") # Not needed anymore because of all the booleans?
+							has_double_jumped = true
+
+			# LEFT/RIGHT MOVEMENT
+			if direction and is_alive == true:
+				if is_launching:
+					velocity.x = direction * SPEED / 5
+				else:
+					if Input.is_action_pressed("run"): # NEW CODE
+						$RobotSparks.emitting = true
+						velocity.x = direction * RUNSPEED # NEW CODE
+					else: # NEW CODE
+						$RobotSparks.emitting = false
+						velocity.x = direction * SPEED
+					if velocity.y == 0 and is_shooting != true:
+						anim.play("Run")
+						$RobotPoof.emitting = true
+			else:
+				if velocity.y == 0 and is_shooting != true:
+					anim_wheel.visible = true
+					anim_idle.visible = true
+					anim_shoot.visible = false
+					anim_jump.visible = false
+					anim_run.visible = false
+					anim_fall.visible = false
+					anim_launch.visible = false
+					anim_launchfire.visible = false
+				velocity.x = move_toward(velocity.x, 0, SPEED)
+
+			# SHOOTING
+			shoot_lazor()
+
+			move_and_slide()
+
+		States.FLOOR:
+			
+			# ON FLOOR VARIABLES
+			if  1 == 1:
+				has_double_jumped = false
+				is_launching = false
+				is_falling = false
+				is_jumping = false
+
+			# STATE CHECKER.
+			if  not is_on_floor():
+				if not is_launching or not is_zooming:
+					state = States.FALL
+
+			# HANDLE DIRECTION:
+			if direction == -1:
+				anim_air_shoot.visible = false
+				anim_shoot.visible = false
+				anim_launch.visible = false
+				anim_launchfire.visible = false
+				anim_wheel.visible = true
+				anim_idle.visible = false
+				anim_shoot.visible = false
+				anim_fall.visible = false
+				anim_run.visible = true
+				anim_idle.flip_h = false
+				anim_run.flip_h = false
+				anim_wheel.flip_h = false
+				anim_fall.flip_h = false
+				anim_shoot.flip_h = false
+				anim_jump.flip_h = false
+				anim_launch.flip_h = false
+				anim_launchfire.flip_h = false
+				anim_air_shoot.flip_h = false
+				anim_shoot.flip_h = false
+				$RobotSparks.position.x = 7
+				$RobotSparks.rotation = 50
+				$RobotPoof.position.x = 10
+				$Area2D2.rotation = 0
+			elif direction == 1:
+				anim_air_shoot.visible = false
+				anim_shoot.visible = false
+				anim_launch.visible = false
+				anim_launchfire.visible = false
+				anim_wheel.visible = true
+				anim_idle.visible = false
+				anim_shoot.visible = false
+				anim_fall.visible = false
+				anim_run.visible = true
+				anim_idle.flip_h = true
+				anim_run.flip_h = true
+				anim_wheel.flip_h = true
+				anim_fall.flip_h = true
+				anim_shoot.flip_h = true
+				anim_jump.flip_h = true
+				anim_launch.flip_h = true
+				anim_launchfire.flip_h = true
+				anim_air_shoot.flip_h = true
+				anim_shoot.flip_h = true
+				$RobotSparks.position.x = -7
+				$RobotSparks.rotation = 60 # 60 works nice
+				$RobotPoof.position.x = -10
+				$Area2D2.rotation = 3.1415
+
+			# STANDING STILL
+			if velocity.x == 0:
+				anim_air_shoot.visible = false
+				anim_shoot.visible = false
+				$AnimationPlayer.set_speed_scale(1.0)
+				$RobotLandPoofRight.emitting = false
+				$RobotLandPoofLeft.emitting = false
+				$RobotPoof.emitting = false
+				anim.play("Idle")
+
+			# JUMPING
+			if Game.JUMP and is_alive == true:
+				if not has_double_jumped or coyote_jump_timer.time_left > 0.0:
+					if Input.is_action_just_pressed("jump"):
+						is_jumping = true
+						$Sounds/SoundJump.play()
+						state = States.FALL # Should change to States.JUMP?
+						velocity.y = JUMP_VELOCITY
+						anim_run.visible = false
+						anim_idle.visible = false
+						anim_wheel.visible = false
+						if is_shooting:
+							anim_air_shoot.visible = true
+						else:
+							anim_jump.visible = true
+						$RobotPoof.emitting = false
+						$RobotSparks.emitting = false
+
+			# LAUNCHING
+			if Game.LAUNCH and is_alive == true:
+				if Input.is_action_pressed("launch"):
+					$Timers/LaunchTimer.start()
+					$Sounds/SoundLaunch.play()
+					state = States.LAUNCH
+
+			# SHOOTING
+			shoot_lazor()
+
+			# LEFT/RIGHT MOVEMENT
+			if direction and is_alive == true:
+				if is_launching:
+					velocity.x = direction * SPEED / 5
+				else:
+					if Input.is_action_pressed("run"): # NEW CODE
+						$AnimationPlayer.set_speed_scale(3.0)
+						$RobotSparks.emitting = true
+						velocity.x = direction * RUNSPEED # NEW CODE
+					else: # NEW CODE
+						$AnimationPlayer.set_speed_scale(2.0)
+						$RobotSparks.emitting = false
+						velocity.x = direction * SPEED
+					if velocity.y == 0 and is_shooting != true:
+						anim.play("Run")
+						$RobotPoof.emitting = true
+			else:
+				if velocity.y == 0 and is_shooting != true:
+					anim_wheel.visible = true
+					anim_idle.visible = true
+					anim_shoot.visible = false
+					anim_jump.visible = false
+					anim_run.visible = false
+					anim_fall.visible = false
+					anim_launch.visible = false
+					anim_launchfire.visible = false
+				velocity.x = move_toward(velocity.x, 0, SPEED)
+
+			move_and_slide()
+
+		States.LAUNCH:
+			
+			# STATE CHECKER
+			if is_falling:
+				state = States.FALL
+			if is_on_floor():
+				state = States.FLOOR
+
+			# HANDLE WHEN FALLING
+			if velocity.y > 0:
+				anim_jump.visible = false
+				anim_wheel.visible = false
+				anim_shoot.visible = false
+				anim_idle.visible = false
+				anim_run.visible = false
+				if is_shooting:
+					anim_air_shoot.visible = true
+				else:
+					anim_fall.visible = true
+					#pass
 				is_jumping = false
 				$RobotPoof.emitting = false
 				$RobotSparks.emitting = false
+			if is_on_ceiling():
+				Input.action_release("launch")
+				$Sounds/LaunchBump.play()
+				is_launching = false
+				velocity.y = 200
 
 			# GRAVITY
 			if not is_on_floor():
@@ -194,118 +492,27 @@ func _physics_process(delta):
 					anim_launchfire.visible = false
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 
-			# SHOOTING
-			shoot_lazor()
-
-			move_and_slide()
-
-		States.FLOOR:
-			
-			# ON FLOOR VARIABLES
-			if  1 == 1:
-				has_double_jumped = false
-				is_launching = false
-				is_falling = false
-				is_jumping = false
-
-			# STATE CHECKER.
-			if  not is_on_floor():
-				state = States.FALL
-
-			# HANDLE DIRECTION:
-			if direction == -1:
-				anim_air_shoot.visible = false
-				anim_shoot.visible = false
-				anim_launch.visible = false
-				anim_launchfire.visible = false
-				anim_wheel.visible = true
-				anim_idle.visible = false
-				anim_shoot.visible = false
-				anim_fall.visible = false
-				anim_run.visible = true
-				anim_idle.flip_h = false
-				anim_run.flip_h = false
-				anim_wheel.flip_h = false
-				anim_fall.flip_h = false
-				anim_shoot.flip_h = false
-				anim_jump.flip_h = false
-				anim_launch.flip_h = false
-				anim_launchfire.flip_h = false
-				anim_air_shoot.flip_h = false
-				anim_shoot.flip_h = false
-				$RobotSparks.position.x = 7
-				$RobotSparks.rotation = 50
-				$RobotPoof.position.x = 10
-				$Area2D2.rotation = 0
-			elif direction == 1:
-				anim_air_shoot.visible = false
-				anim_shoot.visible = false
-				anim_launch.visible = false
-				anim_launchfire.visible = false
-				anim_wheel.visible = true
-				anim_idle.visible = false
-				anim_shoot.visible = false
-				anim_fall.visible = false
-				anim_run.visible = true
-				anim_idle.flip_h = true
-				anim_run.flip_h = true
-				anim_wheel.flip_h = true
-				anim_fall.flip_h = true
-				anim_shoot.flip_h = true
-				anim_jump.flip_h = true
-				anim_launch.flip_h = true
-				anim_launchfire.flip_h = true
-				anim_air_shoot.flip_h = true
-				anim_shoot.flip_h = true
-				$RobotSparks.position.x = -7
-				$RobotSparks.rotation = 60 # 60 works nice
-				$RobotPoof.position.x = -10
-				$Area2D2.rotation = 3.1415
-
-			# STANDING STILL
-			if velocity.x == 0:
-				anim_air_shoot.visible = false
-				anim_shoot.visible = false
-				$AnimationPlayer.set_speed_scale(1.0)
-				$RobotPoof.emitting = false
-				anim.play("Idle")
-
-			# JUMPING
-			if Game.JUMP and is_alive == true:
-				if not has_double_jumped or coyote_jump_timer.time_left > 0.0:
-					if Input.is_action_just_pressed("jump"):
-						is_jumping = true
-						$Sounds/SoundJump.play()
-						state = States.FALL # Should change to States.JUMP?
-						velocity.y = JUMP_VELOCITY
-						anim_run.visible = false
-						anim_idle.visible = false
-						anim_wheel.visible = false
-						if is_shooting:
-							anim_air_shoot.visible = true
-						else:
-							anim_jump.visible = true
-						$RobotPoof.emitting = false
-						$RobotSparks.emitting = false
-
-			# LAUNCHING
+			# HANDLE LAUNCHING
 			if Game.LAUNCH and is_alive == true:
 				if Input.is_action_pressed("launch"):
-					#if is_on_floor():
 					is_launching = true
+					#state = States.LAUNCH
 					if not is_falling:
 						velocity.y = LAUNCH_VELOCITY
-						
 						anim_run.visible = false
 						anim_idle.visible = false
 						anim_wheel.visible = false
 						anim_jump.visible = false
-						
+						anim_launchfire.visible = true
+						anim_launch.visible = true
 						anim.play("Launch")
 						$RobotSparks.emitting = false
 						$RobotPoof.emitting = false
 				if Input.is_action_just_released("launch"):
+					anim_launchfire.visible = false
+					anim_launch.visible = false
 					is_launching = false
+					state = States.FALL
 					is_falling = true
 					if is_falling == true:
 						pass
@@ -317,34 +524,6 @@ func _physics_process(delta):
 
 			# SHOOTING
 			shoot_lazor()
-
-			# LEFT/RIGHT MOVEMENT
-			if direction and is_alive == true:
-				if is_launching:
-					velocity.x = direction * SPEED / 5
-				else:
-					if Input.is_action_pressed("run"): # NEW CODE
-						$AnimationPlayer.set_speed_scale(3.0)
-						$RobotSparks.emitting = true
-						velocity.x = direction * RUNSPEED # NEW CODE
-					else: # NEW CODE
-						$AnimationPlayer.set_speed_scale(2.0)
-						$RobotSparks.emitting = false
-						velocity.x = direction * SPEED
-					if velocity.y == 0 and is_shooting != true:
-						anim.play("Run")
-						$RobotPoof.emitting = true
-			else:
-				if velocity.y == 0 and is_shooting != true:
-					anim_wheel.visible = true
-					anim_idle.visible = true
-					anim_shoot.visible = false
-					anim_jump.visible = false
-					anim_run.visible = false
-					anim_fall.visible = false
-					anim_launch.visible = false
-					anim_launchfire.visible = false
-				velocity.x = move_toward(velocity.x, 0, SPEED)
 
 			move_and_slide()
 
@@ -435,6 +614,7 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			move_and_slide()
 
+
 ### FINITE STATE MACHINE ABOVE ###
 
 func taking_damage():
@@ -442,8 +622,8 @@ func taking_damage():
 		#Game.respawn()
 		respawn()
 	else:
-		if $DamageCooldownTimer.is_stopped():
-			$DamageCooldownTimer.start()
+		if $Timers/DamageCooldownTimer.is_stopped():
+			$Timers/DamageCooldownTimer.start()
 			if invincibility == false:
 				invincibility = true
 				# Add losing a life/heart
@@ -478,7 +658,7 @@ func respawn():
 	is_alive = false
 	#set_physics_process(false)
 	#set_process_input(false)
-	$RespawnTimer.start()
+	$Timers/RespawnTimer.start()
 	$Sounds/Die.play()
 
 func _on_respawn_timer_timeout():
@@ -496,9 +676,9 @@ func shoot_lazor():
 	#if LAZOR:
 	if Game.GUN:
 		if Game.ANNIHILATE:
-			$ShootingCooldownTimer.wait_time = 0.1
+			$Timers/ShootingCooldownTimer.wait_time = 0.1
 		else:
-			$ShootingCooldownTimer.wait_time = 0.4
+			$Timers/ShootingCooldownTimer.wait_time = 0.4
 		if Input.is_action_pressed("shoot") and shooting_cooldown_timer.is_stopped() and not is_on_wall():
 			var direction = -1 if anim_idle.flip_h else 1
 			var f = LAZOR.instantiate()
@@ -561,3 +741,9 @@ func _on_area_2d_2_body_exited(body):
 		if body.is_in_group("World"):
 			Game.GUN = true
 			neuter_shooting = false
+
+func _on_launch_timer_timeout():
+	state = States.FALL
+	has_double_jumped = true
+	anim_launch.visible = false
+	anim_launchfire.visible = false

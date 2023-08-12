@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6qhjwishdu8n"
-path="res://.godot/imported/rocketfireup.png-e29c679dda0372b21e0e222465134b64.ctex"
+uid="uid://dxbdbqdh8822i"
+path="res://.godot/imported/GunTarget.png-1cf737ffae9f79c7232ad78d453b2d0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Robot/From John/rocketfireup.png"
-dest_files=["res://.godot/imported/rocketfireup.png-e29c679dda0372b21e0e222465134b64.ctex"]
+source_file="res://Assets/Pics/GunTarget/GunTarget.png"
+dest_files=["res://.godot/imported/GunTarget.png-1cf737ffae9f79c7232ad78d453b2d0d.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
