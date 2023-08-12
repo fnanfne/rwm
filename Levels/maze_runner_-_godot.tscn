@@ -1876,7 +1876,7 @@ layer_0/tile_data = PackedInt32Array(196608, 2031617, 1, 262144, 2031617, 1, 327
 [node name="BG" parent="Level" instance=ExtResource("5_jkr52")]
 
 [node name="NewRobot" parent="." instance=ExtResource("4_ntqmw")]
-position = Vector2(500, 60)
+position = Vector2(1100, 300)
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -2024,10 +2024,10 @@ position = Vector2(460, 770)
 [node name="Misc" type="Node2D" parent="."]
 
 [node name="Computer2" parent="Misc" instance=ExtResource("17_fpf0f")]
-position = Vector2(1340, 450)
+position = Vector2(1340, 452)
 
 [node name="Computer" parent="Misc" instance=ExtResource("17_fpf0f")]
-position = Vector2(1180, 290)
+position = Vector2(1180, 292)
 
 [node name="Lever" parent="Misc" instance=ExtResource("13_nj4h7")]
 position = Vector2(860, 540)
@@ -2069,3 +2069,6 @@ position = Vector2(1380, 980)
 
 [node name="Bitcoin12" parent="Bitcoins" instance=ExtResource("20_de8fu")]
 position = Vector2(1300, 740)
+
+[connection signal="body_entered" from="Misc/Computer2" to="Doors/HaxxorDoor2" method="_on_computer_2_body_entered"]
+[connection signal="body_entered" from="Misc/Computer" to="Doors/HaxxorDoor" method="_on_computer_body_entered"]
