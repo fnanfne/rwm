@@ -9,3 +9,5 @@ func _on_body_entered(body):
 		#$Box/Icon.hide()
 		$Activated.play()
 		emit_signal("activated", link_code)
+
+####
