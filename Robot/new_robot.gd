@@ -43,6 +43,7 @@ var is_autobot = false
 @onready var anim_air_shoot = get_node("AllSprites/AirShoot")
 @onready var anim_launch = get_node("AllSprites/Launch")
 @onready var anim_launchfire = get_node("AllSprites/LaunchFire")
+@onready var anim_idle_helmet = get_node("AllSprites/HelmetIdle")
 
 func _ready():
 	Game.Robot = self
@@ -59,6 +60,7 @@ func _physics_process(delta):
 	#print(state)
 	#print(Game.YELLOWKEY)
 	#print(is_launching)
+	print($Timers/RespawnTimer.time_left)
 
 	# Coyote Jump
 	var was_on_floor = is_on_floor()
@@ -67,6 +69,11 @@ func _physics_process(delta):
 		coyote_jump_timer.start()
 	
 	var direction = Input.get_axis("left", "right")
+
+	if Game.HEMLET:
+		$AllSprites/HelmetIdle.visible = true
+	else:
+		$AllSprites/HelmetIdle.visible = false
 
 	match state:
 		States.FALL:
@@ -142,6 +149,7 @@ func _physics_process(delta):
 				anim_jump.flip_h = false
 				anim_air_shoot.flip_h = false
 				anim_shoot.flip_h = false
+				anim_idle_helmet.flip_h = false
 				#$RobotPoof.position.x = 10
 			elif direction == 1:
 				anim_air_shoot.visible = false
@@ -163,6 +171,7 @@ func _physics_process(delta):
 				anim_jump.flip_h = true
 				anim_air_shoot.flip_h = true
 				anim_shoot.flip_h = true
+				anim_idle_helmet.flip_h = true
 				#$RobotPoof.position.x = -10
 
 			# DOUBLE JUMP
@@ -260,6 +269,7 @@ func _physics_process(delta):
 				anim_launchfire.flip_h = false
 				anim_air_shoot.flip_h = false
 				anim_shoot.flip_h = false
+				anim_idle_helmet.flip_h = false
 				$RobotSparks.position.x = 7
 				$RobotSparks.rotation = 50
 				$RobotPoof.position.x = 10
@@ -284,6 +294,7 @@ func _physics_process(delta):
 				anim_launchfire.flip_h = true
 				anim_air_shoot.flip_h = true
 				anim_shoot.flip_h = true
+				anim_idle_helmet.flip_h = true
 				$RobotSparks.position.x = -7
 				$RobotSparks.rotation = 60 # 60 works nice
 				$RobotPoof.position.x = -10
@@ -415,6 +426,7 @@ func _physics_process(delta):
 				anim_jump.flip_h = false
 				anim_air_shoot.flip_h = false
 				anim_shoot.flip_h = false
+				anim_idle_helmet.flip_h = false
 				#$RobotPoof.position.x = 10
 			elif direction == 1:
 				anim_air_shoot.visible = false
@@ -435,6 +447,7 @@ func _physics_process(delta):
 				anim_jump.flip_h = true
 				anim_air_shoot.flip_h = true
 				anim_shoot.flip_h = true
+				anim_idle_helmet.flip_h = true
 				#$RobotPoof.position.x = -10
 
 			# DOUBLE JUMP
@@ -561,6 +574,7 @@ func _physics_process(delta):
 				anim_launchfire.flip_h = false
 				anim_air_shoot.flip_h = false
 				anim_shoot.flip_h = false
+				anim_idle_helmet.flip_h = false
 				$Area2D2.rotation = 0
 			elif direction == 1:
 				anim_air_shoot.visible = false
@@ -582,6 +596,7 @@ func _physics_process(delta):
 				anim_launchfire.flip_h = true
 				anim_air_shoot.flip_h = true
 				anim_shoot.flip_h = true
+				anim_idle_helmet.flip_h = true
 				$Area2D2.rotation = 3.1415
 
 			# STANDING STILL
@@ -663,11 +678,11 @@ func respawn():
 
 func gooped():
 		$Sounds/Gooped.play()
-		$Timers/RespawnTimer.start()
 		var TW1 = get_tree().create_tween()
-		TW1.tween_property(self, "position", position - Vector2(0,-30), 0.5)
+		TW1.tween_property(self, "position", position - Vector2(0,-30), 10)
 		is_alive = false
 		await TW1.finished
+		$Timers/RespawnTimer.start()
 		#await $Sounds/Gooped.finished
 
 func _on_respawn_timer_timeout():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://ca4rsukx1vq23"]
+[gd_scene load_steps=48 format=3 uid="uid://ca4rsukx1vq23"]
 
 [ext_resource type="Texture2D" uid="uid://bx525i4xx5j5n" path="res://Assets/paint__TILESET/IMG_004.png" id="1_p6blk"]
 [ext_resource type="Texture2D" uid="uid://bjrofgh84bum" path="res://Assets/paint__TILESET/IMG_007.png" id="2_e67rv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dwua7o4erlndu" path="res://Assets/paint__TILESET/IMG_003.png" id="4_8gn45"]
 [ext_resource type="PackedScene" uid="uid://yg103a66ifo2" path="res://Robot/new_robot.tscn" id="4_ntqmw"]
 [ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="5_jkr52"]
+[ext_resource type="PackedScene" uid="uid://cbjad5andxma8" path="res://Scenes/level_timer.tscn" id="6_h77eg"]
 [ext_resource type="PackedScene" uid="uid://clj6gqiog65n4" path="res://Scenes/Doors/YellowDoor/yellow_door_bottom.tscn" id="6_jndtp"]
 [ext_resource type="PackedScene" uid="uid://cveutdjpy1dwj" path="res://Scenes/Doors/RedDoor/red_door_bottom.tscn" id="7_4nns1"]
 [ext_resource type="PackedScene" uid="uid://cj3pq1aree5vn" path="res://Apps/Jump.tscn" id="8_aaegx"]
@@ -40,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://cyrp41oqjobj7" path="res://Scenes/Doors/LeverDoor/lever_door.tscn" id="38_oh6j2"]
 [ext_resource type="PackedScene" uid="uid://bicwqmhtso0jx" path="res://Scenes/Kitty/kitty.tscn" id="39_okspd"]
 [ext_resource type="PackedScene" uid="uid://co0s8j88lnd3v" path="res://Scenes/acid.tscn" id="40_kp817"]
+[ext_resource type="PackedScene" uid="uid://vk53keegc14f" path="res://Scenes/brick.tscn" id="41_hereg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxsqm"]
 texture = ExtResource("1_p6blk")
@@ -1934,8 +1936,10 @@ layer_0/tile_data = PackedInt32Array(196608, 2031617, 1, 262144, 2031617, 1, 327
 
 [node name="BG" parent="Level" instance=ExtResource("5_jkr52")]
 
+[node name="LevelTimer" parent="Level" instance=ExtResource("6_h77eg")]
+
 [node name="NewRobot" parent="." instance=ExtResource("4_ntqmw")]
-position = Vector2(180, 460)
+position = Vector2(460, 710)
 
 [node name="Kitty" parent="." instance=ExtResource("39_okspd")]
 position = Vector2(460, 390)
@@ -2179,6 +2183,12 @@ position = Vector2(1380, 980)
 
 [node name="Bitcoin12" parent="Bitcoins" instance=ExtResource("20_de8fu")]
 position = Vector2(1300, 740)
+
+[node name="Brick" parent="." instance=ExtResource("41_hereg")]
+position = Vector2(380, 500)
+
+[node name="Hemlet" parent="." instance=ExtResource("19_xepcl")]
+position = Vector2(140, 620)
 
 [connection signal="body_entered" from="Misc/Computer2" to="Doors/HaxxorDoor2" method="_on_computer_2_body_entered"]
 [connection signal="body_entered" from="Misc/Computer" to="Doors/HaxxorDoor" method="_on_computer_body_entered"]

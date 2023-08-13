@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbjad5andxma8"]
+
+[ext_resource type="Script" path="res://Scenes/Panel.gd" id="1_xn6mp"]
+
+[node name="LevelTimer" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1010.0
+offset_right = 1150.0
+offset_bottom = 30.0
+script = ExtResource("1_xn6mp")
+metadata/_edit_group_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 30.0
+alignment = 1
+
+[node name="Hours" type="Label" parent="Panel/HBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+text = "00 :"
+horizontal_alignment = 1
+
+[node name="Minutes" type="Label" parent="Panel/HBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+text = "00 :"
+horizontal_alignment = 1
+
+[node name="Seconds" type="Label" parent="Panel/HBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+text = "00 :"
+horizontal_alignment = 1
+
+[node name="Milliseconds" type="Label" parent="Panel/HBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+text = "000"
+horizontal_alignment = 1
+
+[node name="PauseResume" type="Button" parent="."]
+visible = false
+offset_left = 1060.0
+offset_top = 50.0
+offset_right = 1115.0
+offset_bottom = 81.0
+text = "pause"
+
+[connection signal="pressed" from="PauseResume" to="Panel" method="_on_pause_resume_pressed"]

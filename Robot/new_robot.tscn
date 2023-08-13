@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://yg103a66ifo2"]
+[gd_scene load_steps=92 format=3 uid="uid://yg103a66ifo2"]
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
@@ -16,10 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://d3qw38c7macsm" path="res://Assets/Robot/From John/robot_jumpshoot.png" id="10_0slvw"]
 [ext_resource type="Texture2D" uid="uid://b7afupjgfqmvi" path="res://Assets/Robot/From John/dust.png" id="10_wg5u4"]
 [ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="13_5017s"]
+[ext_resource type="Texture2D" uid="uid://ci544w13ojxj" path="res://Assets/Robot/From John/robot_idle_helmet.png" id="13_drd5o"]
+[ext_resource type="Texture2D" uid="uid://ucmied0hgfns" path="res://Assets/Robot/From John/robot_run_helmet.png" id="14_b7ry7"]
 [ext_resource type="AudioStream" uid="uid://bp443yft1g8j6" path="res://Assets/Audio/Sounds/robotouch.ogg" id="14_et73s"]
 [ext_resource type="Texture2D" uid="uid://cvjbkdg633lpl" path="res://Assets/Pics/lazorglint.png" id="14_qopyi"]
 [ext_resource type="AudioStream" uid="uid://d0m7u6460aana" path="res://Assets/Audio/Sounds/die.ogg" id="15_8mmlj"]
 [ext_resource type="AudioStream" uid="uid://bdipn52e8qm4w" path="res://Assets/Audio/Sounds/rocket.ogg" id="15_kjgo3"]
+[ext_resource type="Texture2D" uid="uid://dotyruvosfit8" path="res://Assets/Robot/From John/robot_rocket_helmet.png" id="15_r3u1t"]
+[ext_resource type="Texture2D" uid="uid://dydoy45gy88ru" path="res://Assets/Robot/From John/robot_rocketup_helmet.png" id="16_w180x"]
 [ext_resource type="AudioStream" uid="uid://bcrdt58b6tl78" path="res://Assets/Audio/Sounds/driphelm.ogg" id="18_7ogk8"]
 [ext_resource type="AudioStream" uid="uid://dpyw64kw0cp8w" path="res://Assets/Audio/Sounds/hit_helmet.ogg" id="19_if7hf"]
 [ext_resource type="AudioStream" uid="uid://chhbv5r7x5u8h" path="res://Assets/Audio/Sounds/gooped.ogg" id="21_phfxn"]
@@ -138,6 +142,50 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjgku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_drd5o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p531h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_b7ry7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ou68"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_r3u1t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gdq2x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_w180x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Animation" id="Animation_vgu6b"]
 resource_name = "Fall"
 length = 0.1
@@ -229,6 +277,18 @@ tracks/1/path = NodePath("AllSprites/Idle:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1), Vector2(0, 2), Vector2(0, 1), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AllSprites/HelmetIdle:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
@@ -388,6 +448,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AllSprites/HelmetIdle:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_tnd6v"]
@@ -644,6 +716,18 @@ sprite_frames = SubResource("SpriteFrames_sjldk")
 [node name="AirShoot" type="AnimatedSprite2D" parent="AllSprites"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_ft2sf")
+
+[node name="HelmetIdle" type="AnimatedSprite2D" parent="AllSprites"]
+sprite_frames = SubResource("SpriteFrames_bjgku")
+
+[node name="HelmetRun" type="AnimatedSprite2D" parent="AllSprites"]
+sprite_frames = SubResource("SpriteFrames_p531h")
+
+[node name="HelmetJump" type="AnimatedSprite2D" parent="AllSprites"]
+sprite_frames = SubResource("SpriteFrames_0ou68")
+
+[node name="HelmetLaunch" type="AnimatedSprite2D" parent="AllSprites"]
+sprite_frames = SubResource("SpriteFrames_gdq2x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
