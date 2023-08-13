@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://5yqvuquoervr"]
+[gd_scene load_steps=7 format=3 uid="uid://5yqvuquoervr"]
 
 [ext_resource type="Script" path="res://conveyor_platform.gd" id="1_mwbsy"]
 [ext_resource type="Texture2D" uid="uid://fr25angxn8hm" path="res://Assets/Pics/Conveyor/conveyor00.png" id="2_ryfii"]
 [ext_resource type="Texture2D" uid="uid://bb3n3e5x83b84" path="res://Assets/Pics/Conveyor/conveyor01.png" id="3_8byhf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5vow"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahqfe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qlr0y"]
 animations = [{
@@ -20,14 +20,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="ConveyorPlatform" type="Area2D"]
-collision_layer = 512
-collision_mask = 3
-script = ExtResource("1_mwbsy")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5vow"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(2.08, 2.08)
-shape = SubResource("RectangleShape2D_h5vow")
+shape = SubResource("RectangleShape2D_ahqfe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qlr0y")
@@ -35,4 +33,15 @@ animation = &"conveyor"
 autoplay = "conveyor"
 frame_progress = 0.0459709
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="ConveyorPlatform" type="Area2D" parent="."]
+collision_layer = 512
+collision_mask = 3
+script = ExtResource("1_mwbsy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorPlatform"]
+scale = Vector2(2.08, 2.08)
+shape = SubResource("RectangleShape2D_h5vow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="body_entered" from="ConveyorPlatform" to="ConveyorPlatform" method="_on_body_entered"]

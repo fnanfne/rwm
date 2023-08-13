@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cyrp41oqjobj7"]
+
+[ext_resource type="Script" path="res://Scenes/Doors/LeverDoor/lever_door.gd" id="1_xi40x"]
+[ext_resource type="Texture2D" uid="uid://c2y0ekf8pecid" path="res://Assets/paint__TILESET/IMG_008.png" id="2_s4s7c"]
+[ext_resource type="AudioStream" uid="uid://b61u4pkbw7hvl" path="res://Assets/Audio/Sounds/evaporate.ogg" id="3_6100o"]
+[ext_resource type="AudioStream" uid="uid://dd33u5llxkov1" path="res://Assets/Audio/Sounds/critterscreech.ogg" id="4_5mq1n"]
+[ext_resource type="AudioStream" uid="uid://bm5iaqamy47dv" path="res://Assets/Audio/Sounds/killboss.ogg" id="5_t1mc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6edk"]
+size = Vector2(40, 80)
+
+[node name="LeverDoor" type="StaticBody2D"]
+z_index = -1
+script = ExtResource("1_xi40x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_s4s7c")
+region_enabled = true
+region_rect = Rect2(40, 0, 40, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b6edk")
+
+[node name="DoorOpen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6100o")
+volume_db = -10.0
+
+[node name="Screetch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5mq1n")
+volume_db = -10.0
+
+[node name="Explode" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_t1mc1")
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

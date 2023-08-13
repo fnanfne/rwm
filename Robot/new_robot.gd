@@ -661,6 +661,15 @@ func respawn():
 	$Timers/RespawnTimer.start()
 	$Sounds/Die.play()
 
+func gooped():
+		$Sounds/Gooped.play()
+		$Timers/RespawnTimer.start()
+		var TW1 = get_tree().create_tween()
+		TW1.tween_property(self, "position", position - Vector2(0,-30), 0.5)
+		is_alive = false
+		await TW1.finished
+		#await $Sounds/Gooped.finished
+
 func _on_respawn_timer_timeout():
 	if Game.current_checkpoint != null:
 		Game.Robot.position = Game.current_checkpoint.global_position

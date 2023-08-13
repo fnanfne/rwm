@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://yg103a66ifo2"]
+[gd_scene load_steps=84 format=3 uid="uid://yg103a66ifo2"]
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://bdipn52e8qm4w" path="res://Assets/Audio/Sounds/rocket.ogg" id="15_kjgo3"]
 [ext_resource type="AudioStream" uid="uid://bcrdt58b6tl78" path="res://Assets/Audio/Sounds/driphelm.ogg" id="18_7ogk8"]
 [ext_resource type="AudioStream" uid="uid://dpyw64kw0cp8w" path="res://Assets/Audio/Sounds/hit_helmet.ogg" id="19_if7hf"]
+[ext_resource type="AudioStream" uid="uid://chhbv5r7x5u8h" path="res://Assets/Audio/Sounds/gooped.ogg" id="21_phfxn"]
 [ext_resource type="Texture2D" uid="uid://cm7p0qujtx3ip" path="res://Assets/Robot/From John/landpoof.png" id="22_5bqy6"]
 [ext_resource type="Texture2D" uid="uid://biaijlkqubpix" path="res://Assets/Robot/From John/landpoof_left.png" id="23_yi3i8"]
 
@@ -586,7 +587,7 @@ robot_death_effect = ExtResource("2_4sk36")
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
-collision_mask = 8161
+collision_mask = 8163
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 6)
@@ -692,6 +693,10 @@ volume_db = -5.0
 
 [node name="Die" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("15_8mmlj")
+volume_db = -10.0
+
+[node name="Gooped" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("21_phfxn")
 volume_db = -10.0
 
 [node name="AnimationTree" type="AnimationTree" parent="."]

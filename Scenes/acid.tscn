@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://co0s8j88lnd3v"]
+
+[ext_resource type="Texture2D" uid="uid://b4kv436lje1ux" path="res://Assets/paint__TILESET/IMG_006.png" id="1_js0os"]
+[ext_resource type="Script" path="res://Scenes/acid.gd" id="1_l3r52"]
+[ext_resource type="AudioStream" uid="uid://chhbv5r7x5u8h" path="res://Assets/Audio/Sounds/gooped.ogg" id="3_13aem"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hj1pg"]
+size = Vector2(118, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1f33"]
+size = Vector2(120, 40)
+
+[node name="Acid" type="StaticBody2D"]
+z_index = -1
+script = ExtResource("1_l3r52")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hj1pg")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4097
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_e1f33")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_js0os")
+region_enabled = true
+region_rect = Rect2(1040, 360, 120, 40)
+
+[node name="Gooped" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_13aem")
+volume_db = -10.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
