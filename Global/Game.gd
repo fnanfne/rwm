@@ -23,6 +23,7 @@ var GREENKEY = false
 var YELLOWKEY = true
 var current_checkpoint : Checkpoint
 var Robot : Robot
+var TestRobotReference : TestRobot
 var PLATFORMDIRECTION : int = 1
 
 func lose_life():

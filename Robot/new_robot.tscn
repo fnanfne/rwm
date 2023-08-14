@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://yg103a66ifo2"]
+[gd_scene load_steps=101 format=3 uid="uid://yg103a66ifo2"]
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
@@ -24,7 +24,9 @@
 [ext_resource type="AudioStream" uid="uid://bdipn52e8qm4w" path="res://Assets/Audio/Sounds/rocket.ogg" id="15_kjgo3"]
 [ext_resource type="Texture2D" uid="uid://dotyruvosfit8" path="res://Assets/Robot/From John/robot_rocket_helmet.png" id="15_r3u1t"]
 [ext_resource type="Texture2D" uid="uid://dydoy45gy88ru" path="res://Assets/Robot/From John/robot_rocketup_helmet.png" id="16_w180x"]
+[ext_resource type="Texture2D" uid="uid://dmteuu8umu8dl" path="res://Assets/Robot/From John/robot_idleshoot_helmet.png" id="17_2r2qp"]
 [ext_resource type="AudioStream" uid="uid://bcrdt58b6tl78" path="res://Assets/Audio/Sounds/driphelm.ogg" id="18_7ogk8"]
+[ext_resource type="Texture2D" uid="uid://bmixt1s7k1ts4" path="res://Assets/Robot/From John/robot_jump_helmet.png" id="18_dwea2"]
 [ext_resource type="AudioStream" uid="uid://dpyw64kw0cp8w" path="res://Assets/Audio/Sounds/hit_helmet.ogg" id="19_if7hf"]
 [ext_resource type="AudioStream" uid="uid://chhbv5r7x5u8h" path="res://Assets/Audio/Sounds/gooped.ogg" id="21_phfxn"]
 [ext_resource type="Texture2D" uid="uid://cm7p0qujtx3ip" path="res://Assets/Robot/From John/landpoof.png" id="22_5bqy6"]
@@ -186,6 +188,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_cmbcw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_2r2qp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0nylu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_dwea2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Animation" id="Animation_vgu6b"]
 resource_name = "Fall"
 length = 0.1
@@ -277,18 +301,6 @@ tracks/1/path = NodePath("AllSprites/Idle:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 1), Vector2(0, 2), Vector2(0, 1), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AllSprites/HelmetIdle:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
@@ -452,14 +464,62 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("AllSprites/HelmetIdle:position")
+tracks/8/path = NodePath("AllSprites/Wheel:frame")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"update": 1,
+"values": [0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AllSprites/Run:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AllSprites/HelmetRun:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AllSprites/HelmetIdle:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AllSprites/Idle:frame")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_tnd6v"]
@@ -507,10 +567,229 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_80nqt"]
+resource_name = "Helmet_Run"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AllSprites/Wheel:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AllSprites/Run:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AllSprites/HelmetRun:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AllSprites/Run:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1), Vector2(0, 2), Vector2(0, 1), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AllSprites/HelmetRun:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1), Vector2(0, 2), Vector2(0, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_43l7s"]
+resource_name = "Helmet_Idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AllSprites/HelmetIdle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AllSprites/HelmetIdle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1), Vector2(0, 2), Vector2(0, 1), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AllSprites/Idle:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AllSprites/Idle:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1), Vector2(0, 2), Vector2(0, 1), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AllSprites/Wheel:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_x332s"]
+resource_name = "Helmet_Jump"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AllSprites/Jump:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AllSprites/HelmetJump:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lcjwn"]
+resource_name = "Helmet_Shoot"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AllSprites/Shoot:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AllSprites/HelmetIdleShoot:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_eb1mf"]
+resource_name = "Helmet_Fall"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AllSprites/Fall:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AllSprites/HelmetFall:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uy7lk"]
 _data = {
 "Fall": SubResource("Animation_vgu6b"),
 "GunFlash": SubResource("Animation_6ybfw"),
+"Helmet_Fall": SubResource("Animation_eb1mf"),
+"Helmet_Idle": SubResource("Animation_43l7s"),
+"Helmet_Jump": SubResource("Animation_x332s"),
+"Helmet_Run": SubResource("Animation_80nqt"),
+"Helmet_Shoot": SubResource("Animation_lcjwn"),
 "Idle": SubResource("Animation_el21v"),
 "Jump": SubResource("Animation_2xep0"),
 "Launch": SubResource("Animation_elnnb"),
@@ -676,10 +955,12 @@ shape = SubResource("RectangleShape2D_xh3rd")
 sprite_frames = SubResource("SpriteFrames_c2rdk")
 
 [node name="Wheel" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_cuj6r")
 animation = &"wheel"
 
 [node name="Idle" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_ka1hq")
 animation = &"idle"
 
@@ -718,16 +999,28 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_ft2sf")
 
 [node name="HelmetIdle" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_bjgku")
 
 [node name="HelmetRun" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_p531h")
 
 [node name="HelmetJump" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_0ou68")
 
 [node name="HelmetLaunch" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_gdq2x")
+
+[node name="HelmetIdleShoot" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_cmbcw")
+
+[node name="HelmetFall" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_0nylu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
@@ -742,7 +1035,7 @@ position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_nhof0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.6, 1.6)
+zoom = Vector2(1.9, 1.9)
 
 [node name="Sounds" type="Node2D" parent="."]
 

@@ -15,10 +15,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time += delta
-	milliseconds = fmod(time, 1) * 1000
+	milliseconds = fmod(time, 1) * 1000.0
 	seconds = fmod(time, 60)
-	minutes = fmod(time, 60*60) / 60
-	hours = fmod(fmod(time, 3600 * 60) / 3600,24)
+	minutes = fmod(time, 60*60) / 60.0
+	hours = fmod(fmod(time, 3600 * 60) / 3600.0,24)
 	$HBoxContainer/Hours.text = "%02d :" % hours
 	$HBoxContainer/Minutes.text = "%02d :" % minutes
 	$HBoxContainer/Seconds.text = "%02d :" % seconds

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://yb0jhdfx1v5s"]
+[gd_scene load_steps=23 format=3 uid="uid://yb0jhdfx1v5s"]
 
 [ext_resource type="Texture2D" uid="uid://diwgxqubss5ol" path="res://Assets/paint__TILESET/IMG_010.png" id="1_ywp0g"]
 [ext_resource type="PackedScene" uid="uid://bpy6be58hevdo" path="res://Apps/annihilator.tscn" id="2_gqcbr"]
@@ -13,17 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://c21qrbylx8yd" path="res://Apps/Launch.tscn" id="21_ttwb5"]
 [ext_resource type="PackedScene" uid="uid://c0fbmlre2d4bl" path="res://Apps/Velcro.tscn" id="22_nn658"]
 [ext_resource type="PackedScene" uid="uid://dgos4d0dj3wwx" path="res://Scenes/Keys/YellowKey/yellow_key.tscn" id="22_qmp43"]
-[ext_resource type="PackedScene" uid="uid://fvtuuod3spmq" path="res://Scenes/hud.tscn" id="22_xq63l"]
 [ext_resource type="PackedScene" uid="uid://ekj64q2nham8" path="res://Apps/Zoom.tscn" id="23_0oy4g"]
 [ext_resource type="PackedScene" uid="uid://c3euw28lsmub5" path="res://Scenes/Doors/YellowDoor/yellow_door_top.tscn" id="23_ia2rm"]
-[ext_resource type="PackedScene" uid="uid://d3yt0wrxansxj" path="res://Scenes/checkpoint.tscn" id="23_u1vuj"]
 [ext_resource type="PackedScene" uid="uid://brcwldjc05d0t" path="res://Apps/Gun.tscn" id="24_j04yc"]
 [ext_resource type="PackedScene" uid="uid://clj6gqiog65n4" path="res://Scenes/Doors/YellowDoor/yellow_door_bottom.tscn" id="24_safxg"]
-[ext_resource type="PackedScene" uid="uid://oqh73t7t1w0p" path="res://conveyor.tscn" id="25_dyitm"]
 [ext_resource type="PackedScene" uid="uid://ck0xsb7gqo0y7" path="res://Apps/Haxxor.tscn" id="25_e7fcg"]
 [ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="26_gavai"]
 [ext_resource type="PackedScene" uid="uid://bsq672nsgt2pf" path="res://Apps/Helmet.tscn" id="27_holtl"]
-[ext_resource type="PackedScene" uid="uid://darp77k02b3uw" path="res://Scenes/Physics_Block.tscn" id="27_suds7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ekfe"]
 texture = ExtResource("1_ywp0g")
@@ -703,38 +699,7 @@ position = Vector2(1900, 180)
 [node name="Zoom" parent="Apps" instance=ExtResource("23_0oy4g")]
 position = Vector2(1860, 180)
 
-[node name="NewRobot" parent="." instance=ExtResource("12_qe2d7")]
-position = Vector2(1780, 170)
-
 [node name="BG" parent="." instance=ExtResource("12_oujyk")]
-
-[node name="HUD" parent="." instance=ExtResource("22_xq63l")]
-
-[node name="Checkpoint" parent="." instance=ExtResource("23_u1vuj")]
-position = Vector2(1100, 172)
-
-[node name="Checkpoint2" parent="." instance=ExtResource("23_u1vuj")]
-position = Vector2(541, 171)
-
-[node name="Conveyor" parent="." instance=ExtResource("25_dyitm")]
-position = Vector2(1680, 220)
-
-[node name="Conveyor2" parent="." instance=ExtResource("25_dyitm")]
-position = Vector2(1516, 219)
-
-[node name="Conveyor3" parent="." instance=ExtResource("25_dyitm")]
-position = Vector2(1556, 219)
-
-[node name="Conveyor4" parent="." instance=ExtResource("25_dyitm")]
-position = Vector2(1596, 219)
-
-[node name="Conveyor5" parent="." instance=ExtResource("25_dyitm")]
-position = Vector2(1635, 219)
-
-[node name="physicsblock1" parent="." instance=ExtResource("27_suds7")]
-position = Vector2(1644, 78)
-
-[node name="DebugWindow" parent="." instance=ExtResource("21_tka6f")]
 
 [node name="YellowKey" parent="." instance=ExtResource("22_qmp43")]
 position = Vector2(1900, 100)
@@ -753,3 +718,7 @@ position = Vector2(1380, 180)
 
 [node name="YellowDoorBottom" parent="." instance=ExtResource("24_safxg")]
 position = Vector2(1340, 180)
+
+[node name="NewRobot" parent="." instance=ExtResource("12_qe2d7")]
+
+[node name="DebugWindow" parent="." instance=ExtResource("21_tka6f")]

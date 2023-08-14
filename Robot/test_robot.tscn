@@ -1,0 +1,355 @@
+[gd_scene load_steps=44 format=3 uid="uid://dehkxnd1wt5c8"]
+
+[ext_resource type="Texture2D" uid="uid://cnjy2vs88520j" path="res://Assets/Robot/From John/robot_jump.png" id="1_6nicv"]
+[ext_resource type="Script" path="res://Robot/test_robot.gd" id="1_7yo32"]
+[ext_resource type="Texture2D" uid="uid://bmixt1s7k1ts4" path="res://Assets/Robot/From John/robot_jump_helmet.png" id="2_vi25k"]
+[ext_resource type="Texture2D" uid="uid://ci544w13ojxj" path="res://Assets/Robot/From John/robot_idle_helmet.png" id="3_g24hu"]
+[ext_resource type="Texture2D" uid="uid://dotyruvosfit8" path="res://Assets/Robot/From John/robot_rocket_helmet.png" id="4_6fr1h"]
+[ext_resource type="Texture2D" uid="uid://ucmied0hgfns" path="res://Assets/Robot/From John/robot_run_helmet.png" id="5_skpi1"]
+[ext_resource type="Texture2D" uid="uid://dmteuu8umu8dl" path="res://Assets/Robot/From John/robot_idleshoot_helmet.png" id="6_2fy6l"]
+[ext_resource type="Texture2D" uid="uid://ddvrp2lbj7u1d" path="res://Assets/Robot/From John/robot_idle_no_wheel.png" id="7_hgw51"]
+[ext_resource type="Shader" path="res://Resources/WhiteOut.gdshader" id="8_70qgf"]
+[ext_resource type="Texture2D" uid="uid://dtgbj6cf5nk5c" path="res://Assets/Robot/From John/robot_rocket.png" id="8_qkwuu"]
+[ext_resource type="Texture2D" uid="uid://2e2o8owpco8n" path="res://Assets/Robot/From John/robot_run.png" id="9_2ve6k"]
+[ext_resource type="Texture2D" uid="uid://b6qhjwishdu8n" path="res://Assets/Robot/From John/rocketfireup.png" id="9_ct0si"]
+[ext_resource type="Texture2D" uid="uid://bsxc44hs4q3s1" path="res://Assets/Robot/From John/robot_rocketup.png" id="10_ggl74"]
+[ext_resource type="Texture2D" uid="uid://cam2ci13qb5nv" path="res://Assets/Robot/From John/robot_idleshoot.png" id="10_nj6i5"]
+[ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="11_bdpwo"]
+[ext_resource type="Texture2D" uid="uid://d3qw38c7macsm" path="res://Assets/Robot/From John/robot_jumpshoot.png" id="11_e2bi8"]
+[ext_resource type="Texture2D" uid="uid://dydoy45gy88ru" path="res://Assets/Robot/From John/robot_rocketup_helmet.png" id="15_m3o3m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e8xdo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kapbh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lfl8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wn4n5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_bdpwo")
+}],
+"loop": true,
+"name": &"wheel",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ij1f7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hgw51")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8sso5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_qkwuu")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fr50w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6nicv")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ysrah"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_2ve6k")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_egeon"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_nj6i5")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6jq30"]
+shader = ExtResource("8_70qgf")
+shader_parameter/color = Color(1, 0.768627, 0, 1)
+shader_parameter/flashState = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2u8q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ct0si")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qy8te"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ggl74")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6uv06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_e2bi8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ny64f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g24hu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ht118"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_skpi1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0npi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6fr1h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6bum"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_m3o3m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_evhmc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2fy6l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xe22a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vi25k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_c67nb"]
+resource_name = "Idle"
+length = 0.4
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_6cjts"]
+resource_name = "run"
+length = 0.4
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_6xrpl"]
+resource_name = "jump"
+length = 0.2
+
+[sub_resource type="Animation" id="Animation_jn52d"]
+resource_name = "fall"
+length = 0.2
+
+[sub_resource type="Animation" id="Animation_eqcea"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ptjuc"]
+_data = {
+"Idle": SubResource("Animation_c67nb"),
+"RESET": SubResource("Animation_eqcea"),
+"fall": SubResource("Animation_jn52d"),
+"jump": SubResource("Animation_6xrpl"),
+"run": SubResource("Animation_6cjts")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46xbk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6nicv")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_qkwuu")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_nj6i5")
+}],
+"loop": true,
+"name": &"shoot_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_e2bi8")
+}],
+"loop": true,
+"name": &"shoot_jump",
+"speed": 5.0
+}]
+
+[node name="TestRobot" type="CharacterBody2D" groups=["Robots"]]
+script = ExtResource("1_7yo32")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_e8xdo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kapbh")
+
+[node name="AllSprites" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8lfl8")
+
+[node name="Wheel" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_wn4n5")
+animation = &"wheel"
+
+[node name="Idle" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ij1f7")
+animation = &"idle"
+
+[node name="Jump" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_8sso5")
+animation = &"jump"
+
+[node name="Fall" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_fr50w")
+animation = &"fall"
+
+[node name="Run" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ysrah")
+animation = &"run"
+
+[node name="Shoot" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_egeon")
+animation = &"shoot"
+
+[node name="LaunchFire" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+material = SubResource("ShaderMaterial_6jq30")
+position = Vector2(0, 16)
+sprite_frames = SubResource("SpriteFrames_g2u8q")
+
+[node name="Launch" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_qy8te")
+
+[node name="AirShoot" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_6uv06")
+
+[node name="HelmetIdle" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ny64f")
+
+[node name="HelmetRun" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ht118")
+
+[node name="HelmetJump" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_y0npi")
+
+[node name="HelmetLaunch" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_k6bum")
+
+[node name="HelmetIdleShoot" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_evhmc")
+
+[node name="HelmetFall" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_xe22a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+libraries = {
+"": SubResource("AnimationLibrary_ptjuc")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.6, 1.6)
+
+[node name="WholeSprites" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_46xbk")
+animation = &"fall"
