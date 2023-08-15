@@ -28,6 +28,7 @@ var is_autobot = false
 var zoom_minimum = Vector2(1.5001, 1.5001)
 var zoom_maximum = Vector2(2.5001, 2.5001)
 var zoom_speed = Vector2(0.1001, 0.1001)
+var orientation = 0
 
 @export var robot_death_effect : PackedScene
 
@@ -74,6 +75,8 @@ func _physics_process(delta):
 	#print(anim.
 	#print(camera.zoom)
 	#print(is_on_wall())
+	print(orientation)
+	
 
 	## Coyote Jump
 	#var was_on_floor = is_on_floor()
@@ -196,6 +199,7 @@ func _physics_process(delta):
 
 			# HANDLE DIRECTION:
 			if direction == -1:
+				orientation = -1
 				if Game.HEMLET:
 					anim.play("Helmet_Run")
 					anim_helmet_run.visible = true
@@ -211,6 +215,7 @@ func _physics_process(delta):
 				$RobotPoof.position.x = 10
 				$Area2D2.rotation = 0
 			elif direction == 1:
+				orientation = 1
 				if Game.HEMLET:
 					anim.play("Helmet_Run")
 					anim_helmet_run.visible = true
@@ -304,7 +309,7 @@ func _physics_process(delta):
 			var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
 			if just_left_ledge:
 				coyote_jump_timer.start()
-				print("just_left_ledge_from FLOOR")
+				#print("just_left_ledge_from FLOOR")
 
 		States.LAUNCH:
 			
@@ -360,10 +365,10 @@ func _physics_process(delta):
 				state = States.FLOOR
 
 			# HANDLE DIRECTION:
-			if direction == -1:
-				make_sprites_fliph_false()
-			elif direction == 1:
-				make_sprites_fliph_true()
+			#if direction == -1:
+			#	make_sprites_fliph_false()
+			#elif direction == 1:
+			#	make_sprites_fliph_true()
 
 			# LEFT/RIGHT MOVEMENT
 			if direction and is_alive == true:
@@ -376,8 +381,8 @@ func _physics_process(delta):
 					$RobotPoof.emitting = false
 					#state = States.LAUNCH
 					if not is_falling:
-						velocity.x = ZOOM_VELOCITY
-						velocity.y = -10
+						velocity.x = ZOOM_VELOCITY * orientation
+						velocity.y = -0.5
 						make_all_sprites_invisible()
 						if Game.HEMLET:
 							anim_helmet_jump.visible = true
@@ -652,4 +657,5 @@ func _input(event: InputEvent):
 
 
 func _on_coyote_jump_timer_timeout():
-	print("Coyote Timer is up!!!")
+	#print("Coyote Timer is up!!!")
+	pass

@@ -1057,7 +1057,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="CoyoteJumpTimer" type="Timer" parent="Timers"]
-wait_time = 0.08
+wait_time = 0.1
 one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
