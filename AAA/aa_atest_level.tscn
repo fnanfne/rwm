@@ -685,7 +685,7 @@ position = Vector2(2060, 100)
 position = Vector2(2100, 100)
 
 [node name="Hemlet" parent="Apps" instance=ExtResource("27_holtl")]
-position = Vector2(2020, 180)
+position = Vector2(1660, 180)
 
 [node name="Jump" parent="Apps" instance=ExtResource("20_5hajd")]
 position = Vector2(1980, 180)
@@ -720,5 +720,6 @@ position = Vector2(1380, 180)
 position = Vector2(1340, 180)
 
 [node name="NewRobot" parent="." instance=ExtResource("12_qe2d7")]
+position = Vector2(990, 100)
 
 [node name="DebugWindow" parent="." instance=ExtResource("21_tka6f")]

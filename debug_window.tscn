@@ -1,22 +1,144 @@
-[gd_scene load_steps=12 format=3 uid="uid://nq13g51yd2t3"]
+[gd_scene load_steps=21 format=3 uid="uid://nq13g51yd2t3"]
 
 [ext_resource type="Script" path="res://debug_window.gd" id="1_2meks"]
 [ext_resource type="Script" path="res://DebugStats.gd" id="2_a33ut"]
-[ext_resource type="Script" path="res://HeartsLabel.gd" id="3_p4auj"]
-[ext_resource type="Script" path="res://HeartContainersLabel.gd" id="4_6ejyr"]
-[ext_resource type="Script" path="res://StateLabel.gd" id="5_37xua"]
-[ext_resource type="Script" path="res://Velocity_X_Label.gd" id="6_uqlpu"]
-[ext_resource type="Script" path="res://Velocity_Y_Label.gd" id="7_khtp2"]
-[ext_resource type="Script" path="res://BTCLabel.gd" id="8_tvwx8"]
-[ext_resource type="Script" path="res://CrystalsLabel.gd" id="9_xtilt"]
-[ext_resource type="Script" path="res://YellowKeysLabel.gd" id="10_4t752"]
+[ext_resource type="FontFile" uid="uid://dxd4qik0penab" path="res://Assets/Fonts/DroidSans.ttf" id="3_n2662"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usvcf"]
-bg_color = Color(0.00392157, 0.105882, 0, 1)
+bg_color = Color(0.00392157, 0.105882, 0, 0.266667)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0.466667)
+
+[sub_resource type="GDScript" id="GDScript_mssoi"]
+resource_name = "stats_label_hp"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"HP: \" + str(Game.robotHP)
+"
+
+[sub_resource type="GDScript" id="GDScript_2menr"]
+resource_name = "stats_label_hp_containers"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"HP containers: \" + str(Game.healthContainers)
+"
+
+[sub_resource type="GDScript" id="GDScript_vf8xb"]
+resource_name = "stats_label_state"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"state: \" + str(Game.Robot.state)
+"
+
+[sub_resource type="GDScript" id="GDScript_rtej5"]
+resource_name = "stats_label_velocity_x"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"vel X: \" + str(Game.Robot.velocity.x)
+"
+
+[sub_resource type="GDScript" id="GDScript_2xoim"]
+resource_name = "stats_label_velocity_y"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"vel Y: \" + str(Game.Robot.velocity.y)
+"
+
+[sub_resource type="GDScript" id="GDScript_50tfg"]
+resource_name = "stats_label_btc"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"BTC: \" + str(Game.BTC)
+"
+
+[sub_resource type="GDScript" id="GDScript_dxl0l"]
+resource_name = "stats_label_crystals"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"crystals: \" + str(Game.CRYSTALS)
+"
+
+[sub_resource type="GDScript" id="GDScript_ombie"]
+resource_name = "stats_label_yellowkeys"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"yellowKeys: \" + str(Game.YELLOWKEYS)
+"
+
+[sub_resource type="GDScript" id="GDScript_jnxyv"]
+resource_name = "stats_label_helmet"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"helmet: \" + str(Game.HEMLET)
+"
+
+[sub_resource type="GDScript" id="GDScript_mosr0"]
+resource_name = "stats_label_gun"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"gun: \" + str(Game.GUN)
+"
+
+[sub_resource type="GDScript" id="GDScript_ksu1m"]
+resource_name = "stats_label_annihilate"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"annihilate: \" + str(Game.ANNIHILATE)
+"
+
+[sub_resource type="GDScript" id="GDScript_j5eqd"]
+resource_name = "stats_label_is_shooting"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"is_shooting: \" + str(Game.Robot.is_shooting)
+"
+
+[sub_resource type="GDScript" id="GDScript_gclty"]
+resource_name = "stats_label_is_falling"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"is_falling: \" + str(Game.Robot.is_falling)
+"
+
+[sub_resource type="GDScript" id="GDScript_u6y23"]
+resource_name = "stats_label_is_alive"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"has_DD: \" + str(Game.Robot.has_double_jumped)
+"
+
+[sub_resource type="GDScript" id="GDScript_lghpc"]
+resource_name = "stats_label_animation"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"anim: \" + str(Game.Robot.anim.current_animation)
+"
+
+[sub_resource type="GDScript" id="GDScript_6idjf"]
+resource_name = "stats_label_invincibility"
+script/source = "extends Label
+
+func _process(_delta):
+	text = \"anim_helmet_idle: \" + str(Game.Robot.anim_helmet_idle.visible)
+"
 
 [node name="DebugWindow" type="CanvasLayer"]
 script = ExtResource("1_2meks")
@@ -24,8 +146,8 @@ script = ExtResource("1_2meks")
 [node name="TextboxContainer" type="MarginContainer" parent="."]
 offset_left = 5.0
 offset_top = 5.0
-offset_right = 210.0
-offset_bottom = 310.0
+offset_right = 230.0
+offset_bottom = 190.0
 
 [node name="Panel" type="Panel" parent="TextboxContainer"]
 layout_mode = 2
@@ -45,47 +167,125 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_usvcf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextboxContainer/DebugStats/Panel"]
 layout_mode = 0
-offset_right = 182.0
-offset_bottom = 284.0
+offset_right = 85.0
+offset_bottom = 165.0
 
 [node name="Hearts" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
 text = "HP"
-script = ExtResource("3_p4auj")
+script = SubResource("GDScript_mssoi")
 
 [node name="HeartContainers" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
 text = "HP containers"
-script = ExtResource("4_6ejyr")
+script = SubResource("GDScript_2menr")
 
 [node name="State" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
 text = "State"
-script = ExtResource("5_37xua")
+script = SubResource("GDScript_vf8xb")
 
 [node name="Velocity_X" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
 text = "Velocity.X"
-script = ExtResource("6_uqlpu")
+script = SubResource("GDScript_rtej5")
 
 [node name="Velocity_Y" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
 text = "Velocity.Y"
-script = ExtResource("7_khtp2")
+script = SubResource("GDScript_2xoim")
 
 [node name="BTC" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
 text = "BTC"
-script = ExtResource("8_tvwx8")
+script = SubResource("GDScript_50tfg")
 
 [node name="Crystals" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
 text = "Crystals"
-script = ExtResource("9_xtilt")
+script = SubResource("GDScript_dxl0l")
 
 [node name="YellowKeys" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
 text = "YellowKeys"
-script = ExtResource("10_4t752")
+script = SubResource("GDScript_ombie")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextboxContainer/DebugStats/Panel"]
+layout_mode = 0
+offset_left = 95.0
+offset_right = 205.0
+offset_bottom = 165.0
+
+[node name="Helmet" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
+text = "Helmet"
+script = SubResource("GDScript_jnxyv")
+
+[node name="Gun" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
+text = "Gun"
+script = SubResource("GDScript_mosr0")
+
+[node name="Annihilate" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
+text = "Annihilate"
+script = SubResource("GDScript_ksu1m")
+
+[node name="is_shooting" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
+text = "is_shooting"
+script = SubResource("GDScript_j5eqd")
+
+[node name="is_falling" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
+text = "is_falling"
+script = SubResource("GDScript_gclty")
+
+[node name="has_DD" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
+text = "has_DD"
+script = SubResource("GDScript_u6y23")
+
+[node name="anim" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
+text = "anim"
+script = SubResource("GDScript_lghpc")
+
+[node name="anim_helmet_idle" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n2662")
+theme_override_font_sizes/font_size = 10
+text = "invincibility"
+script = SubResource("GDScript_6idjf")
 
 [connection signal="gui_input" from="TextboxContainer" to="." method="_on_textbox_container_gui_input"]

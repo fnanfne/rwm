@@ -1,10 +1,10 @@
 extends Panel
 
 var time: float = 0.0
-var hours: int = 0
-var minutes: int = 0
-var seconds: int = 0
-var milliseconds: int = 0
+var hours: float = 0
+var minutes: float = 0
+var seconds: float = 0
+var milliseconds: float = 0
 
 var timer_paused = false
 
@@ -15,10 +15,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time += delta
-	milliseconds = fmod(time, 1) * 1000.0
+	milliseconds = fmod(time, 1) * 1000
 	seconds = fmod(time, 60)
-	minutes = fmod(time, 60*60) / 60.0
-	hours = fmod(fmod(time, 3600 * 60) / 3600.0,24)
+	minutes = fmod(time, 60*60) / 60
+	hours = fmod(fmod(time, 3600 * 60) / 3600,24)
 	$HBoxContainer/Hours.text = "%02d :" % hours
 	$HBoxContainer/Minutes.text = "%02d :" % minutes
 	$HBoxContainer/Seconds.text = "%02d :" % seconds

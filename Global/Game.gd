@@ -8,19 +8,19 @@ var YELLOWKEYS = 0
 var CRYSTALS : int = 0 # same as above? 'int' not required
 var hud
 var JUMP = true
-var DOUBLEJUMP = true
+var DOUBLEJUMP = false
 var HAXXOR = false
 var HEMLET = false
-var GUN = true
-var LAUNCH = true
+var GUN = false
+var LAUNCH = false
 var ZOOM = true
 var ANNIHILATE = false
-var EXPLOZORZ = true
+var EXPLOZORZ = false
 var VELCRO = false
-var REDKEY = true
+var REDKEY = false
 var BLUEKEY = false
 var GREENKEY = false
-var YELLOWKEY = true
+#var YELLOWKEY = false
 var current_checkpoint : Checkpoint
 var Robot : Robot
 var TestRobotReference : TestRobot

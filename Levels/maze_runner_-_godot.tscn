@@ -1981,6 +1981,7 @@ position = Vector2(1300, 140)
 
 [node name="BTCdoor" parent="Doors" instance=ExtResource("15_aovat")]
 position = Vector2(1340, 620)
+btc_required = 12
 
 [node name="LeverDoor" parent="Doors" instance=ExtResource("38_oh6j2")]
 position = Vector2(700, 640)
