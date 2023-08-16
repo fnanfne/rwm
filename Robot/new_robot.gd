@@ -28,9 +28,10 @@ var is_autobot = false
 var zoom_minimum = Vector2(1.5001, 1.5001)
 var zoom_maximum = Vector2(2.5001, 2.5001)
 var zoom_speed = Vector2(0.1001, 0.1001)
-var orientation = 0
+var orientation = 1
 
 @export var robot_death_effect : PackedScene
+@export var starting_position : Vector2
 
 @onready var anim = get_node("AnimationPlayer")
 @onready var coyote_jump_timer = $Timers/CoyoteJumpTimer
@@ -53,6 +54,7 @@ var orientation = 0
 @onready var anim_helmet_launch = get_node("AllSprites/HelmetLaunch")
 @onready var anim_helmet_idle_shoot = get_node("AllSprites/HelmetIdleShoot")
 @onready var anim_helmet_fall = get_node("AllSprites/HelmetFall")
+@onready var anim_zoomfire = get_node("AllSprites/ZoomFire")
 
 #@onready var all_sprites_nodes = $AllSprites.get_children() # I tried creating a function instead.
 
@@ -64,19 +66,12 @@ func _physics_process(delta):
 	#print($DamageCooldownTimer.time_left)
 	#print(invincibility)
 	#print(Game.healthContainers)
-	#print(Game.current_checkpoint)
-	#print(Game.robotHP)
-	#print(velocity.x)
-	#print(is_autobot)
-	#print(state)
-	#print(Game.YELLOWKEY)
-	#print(is_launching)
-	#print($Timers/RespawnTimer.time_left)
-	#print(anim.
-	#print(camera.zoom)
-	#print(is_on_wall())
-	print(orientation)
-	
+	#print(Game.$AllSprites/ZoomFire)
+	#print(orientation)
+	#print($AllSprites/ZoomFire.flip_h)
+	#print($Timers/LaunchTimer.time_left)
+	print($Timers/ZoomTimer.time_left)
+	#print(Game.Robot.launch_timer_remaining)
 
 	## Coyote Jump
 	#var was_on_floor = is_on_floor()
@@ -87,10 +82,17 @@ func _physics_process(delta):
 	
 	var direction = Input.get_axis("left", "right")
 
+	if anim_idle.flip_h == true:
+		orientation = 1
+		#$AllSprites/ZoomFire.flip_h = true
+	else:
+		orientation = -1
+		#$AllSprites/ZoomFire.flip_h = false
+
 	match state:
 		States.FALL:
 
-			# STATE CHECKER
+			# FALL STATE CHECKER
 			if is_on_floor():
 				if is_autobot:
 					state = States.AUTO
@@ -99,7 +101,7 @@ func _physics_process(delta):
 					$RobotLandPoofLeft.emitting = true
 					state = States.FLOOR
 
-			# FALLING
+			# FALLING FROM FALL
 			if velocity.y > 0:
 				make_all_sprites_invisible()
 				if is_shooting:
@@ -116,7 +118,7 @@ func _physics_process(delta):
 				$RobotPoof.emitting = false
 				$RobotSparks.emitting = false
 
-			# JUMPING
+			# JUMPING FROM FALL
 			if velocity.y < 0:
 				make_all_sprites_invisible()
 				if is_shooting:
@@ -133,7 +135,7 @@ func _physics_process(delta):
 				$RobotPoof.emitting = false
 				$RobotSparks.emitting = false
 
-			# GRAVITY
+			# GRAVITY FROM FALL
 			if not is_on_floor():
 				velocity.y += gravity * delta
 			else:
@@ -142,14 +144,16 @@ func _physics_process(delta):
 				is_falling = false
 				is_jumping = false
 
-			# HANDLE DIRECTION:
+			# HANDLE DIRECTION FROM FALL:
 			if direction == -1:
+				$AllSprites/ZoomFire.position.x = 10
 				make_sprites_fliph_false()
 
 			elif direction == 1:
+				$AllSprites/ZoomFire.position.x = -10
 				make_sprites_fliph_true()
 
-			# DOUBLE JUMP
+			# DOUBLE JUMP FROM FALL
 			if Game.JUMP and is_alive == true:
 				if not has_double_jumped:
 					#Do a double jump
@@ -162,7 +166,7 @@ func _physics_process(delta):
 							#print("Double Jumping UNDER FALL")
 							has_double_jumped = true
 
-			# LEFT/RIGHT MOVEMENT
+			# LEFT/RIGHT MOVEMENT FROM FALL
 			if direction and is_alive == true:
 				if is_launching:
 					velocity.x = direction * SPEED / 5
@@ -174,14 +178,21 @@ func _physics_process(delta):
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 
-			# SHOOTING
+			# ZOOMING FROM FALL
+			if Game.ZOOM and is_alive == true:# and not Input.is_action_pressed("zoom"):
+				if Input.is_action_pressed("zoom"):
+					$Timers/ZoomTimer.start()
+					$Sounds/SoundLaunch.play()
+					state = States.ZOOM
+
+			# SHOOTING FROM FALL
 			shoot_lazor()
 
 			move_and_slide()
 
 		States.FLOOR:
 
-			# ON FLOOR VARIABLES
+			# FLOOR VARIABLES
 			if  1 == 1:
 				has_double_jumped = false
 				is_launching = false
@@ -190,16 +201,15 @@ func _physics_process(delta):
 				anim_fall.visible = false
 				anim_helmet_fall.visible = false
 
-			# STATE CHECKER.
+			# STATE CHECKER FROM FLOOR
 			
 			if not is_on_floor():
 				if not is_launching or not is_zooming:
 					if coyote_jump_timer.time_left == 0.0:
 						state = States.FALL
 
-			# HANDLE DIRECTION:
+			# HANDLE DIRECTION FROM FLOOR:
 			if direction == -1:
-				orientation = -1
 				if Game.HEMLET:
 					anim.play("Helmet_Run")
 					anim_helmet_run.visible = true
@@ -210,12 +220,12 @@ func _physics_process(delta):
 				anim_run.visible = true
 				anim_wheel.visible = true
 				make_sprites_fliph_false()
+				$AllSprites/ZoomFire.position.x = 10
 				$RobotSparks.position.x = 7
 				$RobotSparks.rotation = 50
 				$RobotPoof.position.x = 10
 				$Area2D2.rotation = 0
 			elif direction == 1:
-				orientation = 1
 				if Game.HEMLET:
 					anim.play("Helmet_Run")
 					anim_helmet_run.visible = true
@@ -225,12 +235,13 @@ func _physics_process(delta):
 				anim_run.visible = true
 				anim_wheel.visible = true
 				make_sprites_fliph_true()
+				$AllSprites/ZoomFire.position.x = -10
 				$RobotSparks.position.x = -7
 				$RobotSparks.rotation = 60 # 60 works nice
 				$RobotPoof.position.x = -10
 				$Area2D2.rotation = 3.1415
 
-			# STANDING STILL
+			# STANDING STILL FROM FLOOR
 			if velocity.x == 0:
 				if is_on_wall() and direction:
 					pass
@@ -249,7 +260,7 @@ func _physics_process(delta):
 			else:
 				anim_helmet_idle.visible = false
 
-			# JUMPING
+			# JUMPING FROM FLOOR
 			if Game.JUMP and is_alive == true:
 				if not has_double_jumped or coyote_jump_timer.time_left > 0.0:
 					if Input.is_action_just_pressed("jump"):
@@ -265,24 +276,25 @@ func _physics_process(delta):
 						$RobotPoof.emitting = false
 						$RobotSparks.emitting = false
 
-			# LAUNCHING
+			# LAUNCHING FROM FLOOR
 			if Game.LAUNCH and is_alive == true:
 				if Input.is_action_pressed("launch"):
 					$Timers/LaunchTimer.start()
 					$Sounds/SoundLaunch.play()
 					state = States.LAUNCH
 
-			# ZOOMING
+			# ZOOMING FROM FLOOR
 			if Game.ZOOM and is_alive == true:
 				if Input.is_action_pressed("zoom"):
+					$Timers/ZoomTimer.start()
 					$Timers/LaunchTimer.start()
 					$Sounds/SoundLaunch.play()
 					state = States.ZOOM
 
-			# SHOOTING
+			# SHOOTING FROM FLOOR
 			shoot_lazor()
 
-			# LEFT/RIGHT MOVEMENT
+			# LEFT/RIGHT MOVEMENT FROM FLOOR
 			if direction and is_alive == true:
 				if is_launching:
 					velocity.x = direction * SPEED / 5
@@ -303,7 +315,7 @@ func _physics_process(delta):
 					anim_idle.visible = true
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 
-			# Coyote Jump
+			# Coyote Jump FROM FLOOR
 			var was_on_floor = is_on_floor()
 			move_and_slide()
 			var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
@@ -313,31 +325,31 @@ func _physics_process(delta):
 
 		States.LAUNCH:
 			
-			# STATE CHECKER
+			# STATE CHECKER FROM LAUNCHING
 			if is_falling:
 				state = States.FALL
 			if is_on_floor():
 				state = States.FLOOR
 
-			# WHEN BUMPING HEAD ON CEILING
+			# WHEN BUMPING HEAD ON CEILING FROM LAUNCHING
 			if is_on_ceiling():
 				Input.action_release("launch")
 				$Sounds/LaunchBump.play()
 				is_launching = false
 				velocity.y = 200
 
-			# HANDLE DIRECTION:
+			# HANDLE DIRECTION FROM LAUNCHING:
 			if direction == -1:
 				make_sprites_fliph_false()
 
 			elif direction == 1:
 				make_sprites_fliph_true()
 
-			# LEFT/RIGHT MOVEMENT
+			# LEFT/RIGHT MOVEMENT FROM LAUNCHING
 			if direction and is_alive == true:
 				velocity.x = direction * SPEED / 5
 
-			# HANDLE LAUNCHING
+			# HANDLE LAUNCHING FROM LAUNCHING
 			if Game.LAUNCH and is_alive == true:
 				if Input.is_action_pressed("launch"):
 					is_launching = true
@@ -358,37 +370,31 @@ func _physics_process(delta):
 
 		States.ZOOM:
 
-			# STATE CHECKER
-			if is_falling and not Input.is_action_pressed("zoom"):
-				state = States.FALL
-			if is_on_floor() and not Input.is_action_pressed("zoom"):
-				state = States.FLOOR
+######and not Input.is_action_pressed("zoom")#####
 
-			# HANDLE DIRECTION:
-			#if direction == -1:
-			#	make_sprites_fliph_false()
-			#elif direction == 1:
-			#	make_sprites_fliph_true()
+			# HANDLE DIRECTION FROM ZOOMING:
+			if direction == -1:
+				make_sprites_fliph_false()
+			elif direction == 1:
+				make_sprites_fliph_true()
 
-			# LEFT/RIGHT MOVEMENT
-			if direction and is_alive == true:
-				velocity.x = direction * ZOOM_VELOCITY
+			# LEFT/RIGHT MOVEMENT FROM ZOOMING
+			#if direction and is_alive == true:
+			#	velocity.x = direction * ZOOM_VELOCITY
 
-			# HANDLE ZOOMING
+			# HANDLE ZOOMING FROM ZOOMING
 			if Game.ZOOM and is_alive == true:
 				if Input.is_action_pressed("zoom"):
 					is_zooming = true
 					$RobotPoof.emitting = false
-					#state = States.LAUNCH
-					if not is_falling:
-						velocity.x = ZOOM_VELOCITY * orientation
-						velocity.y = -0.5
-						make_all_sprites_invisible()
-						if Game.HEMLET:
-							anim_helmet_jump.visible = true
-						anim_launchfire.visible = true
-						anim_jump.visible = true
-						anim.play("Jump")
+					velocity.x = ZOOM_VELOCITY * orientation
+					velocity.y = -0.5
+					make_all_sprites_invisible()
+					if Game.HEMLET:
+						anim_helmet_jump.visible = true
+					anim_zoomfire.visible = true
+					anim_jump.visible = true
+					anim.play("Jump")
 				if Input.is_action_just_released("zoom"):
 					state = States.FALL
 
@@ -403,11 +409,11 @@ func _physics_process(delta):
 				is_falling = false
 				is_jumping = false
 
-			# STATE CHECKER.
+			# STATE CHECKER FROM AUTO 
 			if  not is_autobot:
 				state = States.FLOOR
 
-			# HANDLE DIRECTION:
+			# HANDLE DIRECTION FROM AUTO:
 			if direction == -1:
 				make_all_sprites_invisible()
 				anim_wheel.visible = true
@@ -421,31 +427,30 @@ func _physics_process(delta):
 				make_sprites_fliph_true()
 				$Area2D2.rotation = 3.1415
 
-			# STANDING STILL
+			# STANDING STILL FROM AUTO
 			if velocity.x == 0:
 				anim.set_speed_scale(1.0)
 				$RobotPoof.emitting = false
 				anim.play("Idle")
 
-			# JUMPING
+			# JUMPING FROM AUTO
 			if Game.JUMP and is_alive == true:
 				pass
 
-			# LAUNCHING
+			# LAUNCHING FROM AUTO
 			if Game.LAUNCH and is_alive == true:
 				pass
 
-			# SHOOTING
+			# SHOOTING FROM AUTO
 			shoot_lazor()
 
-			# LEFT/RIGHT MOVEMENT
+			# LEFT/RIGHT MOVEMENT FROM AUTO
 			if velocity.y == 0 and is_shooting != true:
 				make_all_sprites_invisible()
 				anim_wheel.visible = true
 				anim_idle.visible = true
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			move_and_slide()
-
 
 ### FINITE STATE MACHINE ABOVE ###
 
@@ -495,10 +500,17 @@ func respawn():
 
 func gooped():
 		$Sounds/Gooped.play()
+		#set_process_input(false)
 		var TW1 = get_tree().create_tween()
-		TW1.tween_property(self, "position", position - Vector2(0,-30), 10)
+		var TW2 = get_tree().create_tween()
+		if States.FALL:
+			TW1.tween_property(self, "position", position - Vector2(0,20), 1)
+		else:
+			TW1.tween_property(self, "position", position - Vector2(0,-20), 1)
+		TW2.tween_property(self, "modulate", Color.RED, 1)
 		is_alive = false
 		await TW1.finished
+		$".".hide()
 		$Timers/RespawnTimer.start()
 		#await $Sounds/Gooped.finished
 
@@ -506,12 +518,11 @@ func _on_respawn_timer_timeout():
 	if Game.current_checkpoint != null:
 		Game.Robot.position = Game.current_checkpoint.global_position
 	else:
-		Game.Robot.position = Vector2(986,130)
+		Game.Robot.position = starting_position
 	is_alive = true
 	$".".show()
 	get_node("Area2D/CollisionShape2D").set_deferred("disabled", false)
-	#set_physics_process(true)
-	#set_process_input(true)
+	modulate = Color(Color.WHITE)
 
 func shoot_lazor():
 	#if LAZOR:
@@ -606,6 +617,7 @@ func make_all_sprites_invisible():
 	anim_helmet_launch.visible = false
 	anim_helmet_idle_shoot.visible = false
 	anim_helmet_fall.visible = false
+	anim_zoomfire.visible = false
 
 func make_sprites_fliph_false():
 	anim_wheel.flip_h = false
@@ -623,6 +635,7 @@ func make_sprites_fliph_false():
 	anim_helmet_launch.flip_h = false
 	anim_helmet_idle_shoot.flip_h = false
 	anim_helmet_fall.flip_h = false
+	anim_zoomfire.flip_h = false
 
 func make_sprites_fliph_true():
 	anim_wheel.flip_h = true
@@ -640,6 +653,7 @@ func make_sprites_fliph_true():
 	anim_helmet_launch.flip_h = true
 	anim_helmet_idle_shoot.flip_h = true
 	anim_helmet_fall.flip_h = true
+	anim_zoomfire.flip_h = true
 
 # ZOOM SCREEN IN / OUT WITH MOUSEWHEEL
 func _input(event: InputEvent):
@@ -654,8 +668,11 @@ func _input(event: InputEvent):
 					camera.zoom += zoom_speed
 	pass
 
-
-
 func _on_coyote_jump_timer_timeout():
 	#print("Coyote Timer is up!!!")
 	pass
+
+func _on_zoom_timer_timeout():
+	is_zooming = false
+	state = States.FALL
+	Input.action_release("zoom")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://yg103a66ifo2"]
+[gd_scene load_steps=72 format=3 uid="uid://yg103a66ifo2"]
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
@@ -25,9 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://dotyruvosfit8" path="res://Assets/Robot/From John/robot_rocket_helmet.png" id="15_r3u1t"]
 [ext_resource type="Texture2D" uid="uid://dydoy45gy88ru" path="res://Assets/Robot/From John/robot_rocketup_helmet.png" id="16_w180x"]
 [ext_resource type="Texture2D" uid="uid://dmteuu8umu8dl" path="res://Assets/Robot/From John/robot_idleshoot_helmet.png" id="17_2r2qp"]
-[ext_resource type="AudioStream" uid="uid://bcrdt58b6tl78" path="res://Assets/Audio/Sounds/driphelm.ogg" id="18_7ogk8"]
 [ext_resource type="Texture2D" uid="uid://bmixt1s7k1ts4" path="res://Assets/Robot/From John/robot_jump_helmet.png" id="18_dwea2"]
 [ext_resource type="AudioStream" uid="uid://dpyw64kw0cp8w" path="res://Assets/Audio/Sounds/hit_helmet.ogg" id="19_if7hf"]
+[ext_resource type="Texture2D" uid="uid://dmw51auxobtws" path="res://Assets/Robot/From John/rocketfire.png" id="19_jlv5r"]
 [ext_resource type="AudioStream" uid="uid://chhbv5r7x5u8h" path="res://Assets/Audio/Sounds/gooped.ogg" id="21_phfxn"]
 [ext_resource type="Texture2D" uid="uid://cm7p0qujtx3ip" path="res://Assets/Robot/From John/landpoof.png" id="22_5bqy6"]
 [ext_resource type="Texture2D" uid="uid://biaijlkqubpix" path="res://Assets/Robot/From John/landpoof_left.png" id="23_yi3i8"]
@@ -39,6 +39,17 @@ height = 44.0
 size = Vector2(39, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c2rdk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3r6q0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_jlv5r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cuj6r"]
 animations = [{
@@ -851,6 +862,11 @@ shape = SubResource("RectangleShape2D_xh3rd")
 [node name="AllSprites" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c2rdk")
 
+[node name="ZoomFire" type="AnimatedSprite2D" parent="AllSprites"]
+visible = false
+position = Vector2(10, 0)
+sprite_frames = SubResource("SpriteFrames_3r6q0")
+
 [node name="Wheel" type="AnimatedSprite2D" parent="AllSprites"]
 sprite_frames = SubResource("SpriteFrames_cuj6r")
 animation = &"wheel"
@@ -956,7 +972,8 @@ stream = ExtResource("13_5017s")
 stream = ExtResource("14_et73s")
 
 [node name="LaunchBump" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("18_7ogk8")
+stream = ExtResource("19_if7hf")
+volume_db = -10.0
 
 [node name="LaunchHelmetBump" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("19_if7hf")
@@ -1049,7 +1066,7 @@ wait_time = 0.4
 one_shot = true
 
 [node name="RespawnTimer" type="Timer" parent="Timers"]
-wait_time = 0.85
+wait_time = 0.1
 one_shot = true
 
 [node name="DamageCooldownTimer" type="Timer" parent="Timers"]
@@ -1060,6 +1077,10 @@ one_shot = true
 wait_time = 0.1
 one_shot = true
 
+[node name="ZoomTimer" type="Timer" parent="Timers"]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
@@ -1067,3 +1088,4 @@ one_shot = true
 [connection signal="timeout" from="Timers/RespawnTimer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="timeout" from="Timers/DamageCooldownTimer" to="." method="_on_damage_cooldown_timer_timeout"]
 [connection signal="timeout" from="Timers/CoyoteJumpTimer" to="." method="_on_coyote_jump_timer_timeout"]
+[connection signal="timeout" from="Timers/ZoomTimer" to="." method="_on_zoom_timer_timeout"]

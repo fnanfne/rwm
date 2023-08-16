@@ -40,7 +40,8 @@ func _grow(amount):
 func _on_body_entered(body):
 	#if body.name == \"Robot\":
 	if body.is_in_group(\"Robots\"):
-		print(\"HEART picked up!\")
+		#$CollisionShape2D.queue_free()
+		set_collision_mask_value(2,false)
 		Game.robotHP += 1
 		Game.healthContainers += 1
 		$SoundPickup.play()
@@ -49,6 +50,7 @@ func _on_body_entered(body):
 		tween1.tween_property(self, \"position\", position - Vector2(0,42), 0.5)
 		tween2.tween_property(self, \"modulate:a\", 0, 0.5)
 		tween1.tween_callback(queue_free)
+		tween2.tween_callback(queue_free)
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08b1g"]

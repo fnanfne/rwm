@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://vk53keegc14f"]
+[gd_scene load_steps=10 format=3 uid="uid://vk53keegc14f"]
 
+[ext_resource type="Script" path="res://Scenes/brick.gd" id="1_436i8"]
 [ext_resource type="Texture2D" uid="uid://c1xig6p4y2oec" path="res://Assets/Pics/Brick/brick.png" id="1_7863n"]
+[ext_resource type="PackedScene" uid="uid://dmvfdh0bhko5f" path="res://Scenes/brick_break_animation.tscn" id="2_6paud"]
 [ext_resource type="Texture2D" uid="uid://cjwuisraci2nb" path="res://Assets/Pics/Brick/brickcrack01.png" id="2_j52nw"]
 [ext_resource type="Texture2D" uid="uid://bq7vpyxhn70lu" path="res://Assets/Pics/Brick/brickcrack02.png" id="3_a5nn8"]
+[ext_resource type="AudioStream" uid="uid://d2arpthshgklf" path="res://Assets/Audio/Sounds/crumble.ogg" id="5_vro65"]
+[ext_resource type="AudioStream" uid="uid://dpyw64kw0cp8w" path="res://Assets/Audio/Sounds/hit_helmet.ogg" id="6_xoqrw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gjga"]
 size = Vector2(38, 38)
@@ -11,6 +15,9 @@ size = Vector2(38, 38)
 size = Vector2(40, 40)
 
 [node name="Brick" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_436i8")
+brick_break_effect = ExtResource("2_6paud")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5gjga")
@@ -31,3 +38,12 @@ texture = ExtResource("2_j52nw")
 [node name="Crack02" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("3_a5nn8")
+
+[node name="BrickBreak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vro65")
+
+[node name="Bump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_xoqrw")
+volume_db = -10.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

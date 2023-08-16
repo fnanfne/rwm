@@ -113,7 +113,7 @@ resource_name = "stats_label_is_falling"
 script/source = "extends Label
 
 func _process(_delta):
-	text = \"is_falling: \" + str(Game.Robot.is_falling)
+	text = \"launch_timer: \" + str(Game.Robot.is_jumping)
 "
 
 [sub_resource type="GDScript" id="GDScript_u6y23"]
@@ -121,7 +121,7 @@ resource_name = "stats_label_is_alive"
 script/source = "extends Label
 
 func _process(_delta):
-	text = \"has_DD: \" + str(Game.Robot.has_double_jumped)
+	text = \"zoom_timer: \" + str(Game.Robot.is_falling)
 "
 
 [sub_resource type="GDScript" id="GDScript_lghpc"]
@@ -260,18 +260,18 @@ theme_override_font_sizes/font_size = 10
 text = "is_shooting"
 script = SubResource("GDScript_j5eqd")
 
-[node name="is_falling" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer2"]
+[node name="launch_timer" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_n2662")
 theme_override_font_sizes/font_size = 10
-text = "is_falling"
+text = "launch_timer"
 script = SubResource("GDScript_gclty")
 
-[node name="has_DD" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer2"]
+[node name="zoom_timer" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_n2662")
 theme_override_font_sizes/font_size = 10
-text = "has_DD"
+text = "zoom_timer"
 script = SubResource("GDScript_u6y23")
 
 [node name="anim" type="Label" parent="TextboxContainer/DebugStats/Panel/VBoxContainer2"]

@@ -39,7 +39,8 @@ func _grow(amount):
 func _on_body_entered(body):
 	#if body.name == \"Robot\":
 	if body.is_in_group(\"Robots\"):
-		print(\"HAXXOR picked up!\")
+		#$CollisionShape2D.queue_free()
+		set_collision_mask_value(2,false)
 		$AnimationPlayer.stop()
 		Game.HAXXOR = true
 		$SoundPickup.play()

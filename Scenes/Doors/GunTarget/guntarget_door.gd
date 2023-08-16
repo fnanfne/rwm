@@ -18,8 +18,8 @@ func _on_gun_target_body_entered(body):
 		$Timer.start()
 
 func _on_timer_timeout():
-	$CollisionShape2D.queue_free()
-	$DoorOpen.play()
+	set_collision_mask_value(1,false)
+	$OpenDoor.play()
 	var TW1 = get_tree().create_tween()
 	var TW2 = get_tree().create_tween()
 	TW2.tween_property(self, "position", position - Vector2(0,40), 0.3)

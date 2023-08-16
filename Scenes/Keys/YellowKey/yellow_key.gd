@@ -34,7 +34,7 @@ func _grow(amount):
 func _on_body_entered(body):
 	#if body.name == "Robot":
 	if body.is_in_group("Robots"):
-		set_collision_mask_value(1,false)
+		set_collision_mask_value(2,false)
 		#Game.YELLOWKEY = true
 		Game.YELLOWKEYS += 1
 		$SoundPickup.play()

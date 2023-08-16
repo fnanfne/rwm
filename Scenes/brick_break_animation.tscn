@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmvfdh0bhko5f"]
+
+[ext_resource type="Texture2D" uid="uid://cd361jhvtou6i" path="res://Assets/Pics/Brick/brickfragment.png" id="1_k0jtt"]
+
+[sub_resource type="Gradient" id="Gradient_ypmqw"]
+offsets = PackedFloat32Array(0, 0.579399, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.815686, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mdlfn"]
+gradient = SubResource("Gradient_ypmqw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5eecc"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 180.0
+gravity = Vector3(0, 500, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 350.0
+angular_velocity_max = 500.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+scale_max = 0.8
+color_ramp = SubResource("GradientTexture1D_mdlfn")
+turbulence_noise_scale = 4.49
+
+[sub_resource type="GDScript" id="GDScript_2y0qo"]
+resource_name = "brickbreakparticles"
+script/source = "extends GPUParticles2D
+
+func _on_timer_timeout():
+	queue_free()
+"
+
+[node name="BrickBreakAnimation" type="GPUParticles2D"]
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_5eecc")
+texture = ExtResource("1_k0jtt")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+script = SubResource("GDScript_2y0qo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.85
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

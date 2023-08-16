@@ -10,5 +10,5 @@ func _on_quit_pressed():
 
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://Scenes/game_manager.tscn")
-	Game.robotHP = 1
+	Game.robotHP = 0
 	Game.BTC = 0

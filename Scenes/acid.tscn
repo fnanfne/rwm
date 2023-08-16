@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://co0s8j88lnd3v"]
+[gd_scene load_steps=10 format=3 uid="uid://co0s8j88lnd3v"]
 
 [ext_resource type="Texture2D" uid="uid://b4kv436lje1ux" path="res://Assets/paint__TILESET/IMG_006.png" id="1_js0os"]
 [ext_resource type="Script" path="res://Scenes/acid.gd" id="1_l3r52"]
 [ext_resource type="AudioStream" uid="uid://chhbv5r7x5u8h" path="res://Assets/Audio/Sounds/gooped.ogg" id="3_13aem"]
+[ext_resource type="Texture2D" uid="uid://bw7ot7xdbcwkm" path="res://Assets/Pics/AcidLavaBubbles/1.png" id="4_xyxrx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hj1pg"]
 size = Vector2(118, 38)
@@ -10,8 +11,29 @@ size = Vector2(118, 38)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1f33"]
 size = Vector2(120, 40)
 
+[sub_resource type="Gradient" id="Gradient_hbr7v"]
+offsets = PackedFloat32Array(0, 0.381974, 0.776824)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yvw8t"]
+gradient = SubResource("Gradient_hbr7v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ha7gn"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 180.0
+gravity = Vector3(0, -70, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.3
+scale_max = 0.8
+color_ramp = SubResource("GradientTexture1D_yvw8t")
+
 [node name="Acid" type="StaticBody2D"]
-z_index = -1
+z_index = 1
 script = ExtResource("1_l3r52")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -32,5 +54,45 @@ region_rect = Rect2(1040, 360, 120, 40)
 [node name="Gooped" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_13aem")
 volume_db = -10.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 15)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_ha7gn")
+texture = ExtResource("4_xyxrx")
+speed_scale = 0.8
+randomness = 1.0
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+position = Vector2(20, 15)
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_ha7gn")
+texture = ExtResource("4_xyxrx")
+speed_scale = 0.8
+randomness = 1.0
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+position = Vector2(40, 15)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_ha7gn")
+texture = ExtResource("4_xyxrx")
+speed_scale = 0.8
+randomness = 1.0
+
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="."]
+position = Vector2(-20, 15)
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_ha7gn")
+texture = ExtResource("4_xyxrx")
+speed_scale = 0.8
+randomness = 1.0
+
+[node name="GPUParticles2D5" type="GPUParticles2D" parent="."]
+position = Vector2(-40, 15)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_ha7gn")
+texture = ExtResource("4_xyxrx")
+speed_scale = 0.8
+randomness = 1.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

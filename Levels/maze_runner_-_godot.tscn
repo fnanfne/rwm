@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://ca4rsukx1vq23"]
+[gd_scene load_steps=50 format=3 uid="uid://ca4rsukx1vq23"]
 
 [ext_resource type="Texture2D" uid="uid://bx525i4xx5j5n" path="res://Assets/paint__TILESET/IMG_004.png" id="1_p6blk"]
 [ext_resource type="Texture2D" uid="uid://bjrofgh84bum" path="res://Assets/paint__TILESET/IMG_007.png" id="2_e67rv"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://c21qrbylx8yd" path="res://Apps/Launch.tscn" id="29_tfnju"]
 [ext_resource type="PackedScene" uid="uid://07hvqmfq3gyv" path="res://Scenes/Doors/Haxxor/haxxor_door.tscn" id="30_cymv7"]
 [ext_resource type="PackedScene" uid="uid://wfxdico6anc" path="res://Scenes/spikes_bottom.tscn" id="31_0gp4u"]
+[ext_resource type="PackedScene" uid="uid://bpy6be58hevdo" path="res://Apps/annihilator.tscn" id="31_pgob0"]
 [ext_resource type="PackedScene" uid="uid://c1d8oews520sh" path="res://Scenes/gun_target.tscn" id="34_35vsy"]
 [ext_resource type="PackedScene" uid="uid://ckewaetx5tp1s" path="res://Scenes/barrier_right.tscn" id="36_aj852"]
 [ext_resource type="PackedScene" uid="uid://cyrp41oqjobj7" path="res://Scenes/Doors/LeverDoor/lever_door.tscn" id="38_oh6j2"]
@@ -1943,6 +1944,7 @@ layer_0/tile_data = PackedInt32Array(196608, 2031617, 1, 262144, 2031617, 1, 327
 
 [node name="NewRobot" parent="." instance=ExtResource("4_ntqmw")]
 position = Vector2(460, 710)
+starting_position = Vector2(460, 710)
 
 [node name="Kitty" parent="." instance=ExtResource("39_okspd")]
 position = Vector2(460, 390)
@@ -2027,6 +2029,9 @@ position = Vector2(740, 1020)
 [node name="Launch" parent="Apps" instance=ExtResource("29_tfnju")]
 position = Vector2(1020, 940)
 
+[node name="Annihilator" parent="Apps" instance=ExtResource("31_pgob0")]
+position = Vector2(460, 780)
+
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Dripguy" parent="Enemies" instance=ExtResource("10_jokhy")]
@@ -2095,9 +2100,6 @@ position = Vector2(860, 210)
 position = Vector2(220, 290)
 
 [node name="Checkpoint6" parent="Checkpoints" instance=ExtResource("15_04etm")]
-position = Vector2(460, 770)
-
-[node name="Checkpoint7" parent="Checkpoints" instance=ExtResource("15_04etm")]
 position = Vector2(220, 130)
 
 [node name="Misc" type="Node2D" parent="."]
@@ -2190,9 +2192,6 @@ position = Vector2(1300, 740)
 
 [node name="Brick" parent="." instance=ExtResource("41_hereg")]
 position = Vector2(380, 500)
-
-[node name="Hemlet" parent="." instance=ExtResource("19_xepcl")]
-position = Vector2(140, 620)
 
 [connection signal="body_entered" from="Misc/Computer2" to="Doors/HaxxorDoor2" method="_on_computer_2_body_entered"]
 [connection signal="body_entered" from="Misc/Computer" to="Doors/HaxxorDoor" method="_on_computer_body_entered"]

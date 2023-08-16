@@ -16,7 +16,7 @@ func _on_timer_timeout():
 	$Explode.play()
 
 func _on_timer_2_timeout():
-	$CollisionShape2D.queue_free()
+	set_collision_mask_value(1,false)
 	$DoorOpen.play()
 	var TW1 = get_tree().create_tween()
 	var TW2 = get_tree().create_tween()

@@ -17,15 +17,19 @@ var rate = 0.005
 signal btc_collected
 
 @onready var anim = get_node(\"AnimatedSprite2D\")
+#@onready var timer: Timer = $Timer
+#@onready var area: Area2D = $\".\"
 
 func _ready():
 	anim.play(\"Idle\")
-
+	#area.body_entered.connect(_on_btc_collected)
 
 func _on_body_entered(body):
 	#if body.name == \"Robot\":
 	if body.is_in_group(\"Robots\"):
-		emit_signal(\"btc_collected\")
+		#$CollisionShape2D.queue_free()
+		set_collision_mask_value(2,false)
+		#emit_signal(\"btc_collected\")
 		Game.BTC += 1
 		#set_collision_mask_value(0,false) #supposed to prevent a double pickup, but giving an error
 		$SoundPickup.play()
@@ -34,6 +38,23 @@ func _on_body_entered(body):
 		tween1.tween_property(self, \"position\", position - Vector2(0,42), 0.5)
 		tween2.tween_property(self, \"modulate:a\", 0, 0.5)
 		tween1.tween_callback(queue_free)
+		tween2.tween_callback(queue_free)
+
+func _on_btc_collected(_body):# Node2D):
+	pass
+#	if Game.BTC == body.get_parent().btc_required:
+#		$Timer.start(body)
+#		print(\"LASTBTC!!\")
+
+func _on_timer_timeout(_body):
+	pass
+#	$CollisionShape2D.queue_free()
+#	$DoorOpen.play()
+#	var TW1 = get_tree().create_tween()
+#	var TW2 = get_tree().create_tween()
+#	TW2.tween_property(self, \"position\", position - Vector2(80,0), 0.3)
+#	TW1.tween_property(self, \"modulate:a\", 0, 1.0)
+#	TW1.tween_callback(queue_free)
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_08b1g"]
@@ -78,4 +99,10 @@ frame_progress = 0.636096
 stream = ExtResource("5_g7s77")
 volume_db = -10.0
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.4
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="btc_collected" from="." to="." method="_on_btc_collected"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

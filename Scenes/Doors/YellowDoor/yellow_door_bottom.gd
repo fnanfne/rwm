@@ -5,6 +5,7 @@ func _on_door_zone_body_entered(body):
 	if Game.YELLOWKEYS > 0:
 		#if body.name == "Robot":
 		if body.is_in_group("Robots"):
+			set_collision_mask_value(1,false)
 			Game.YELLOWKEYS -= 1
 			$OpenDoor.play()
 			var tween1 = get_tree().create_tween()

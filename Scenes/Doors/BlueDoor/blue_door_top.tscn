@@ -40,7 +40,7 @@ sprite_frames = SubResource("SpriteFrames_30k1a")
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_u52aa")
 
-[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+[node name="OpenDoor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_oos8j")
 volume_db = -10.0
 
