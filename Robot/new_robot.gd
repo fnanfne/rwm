@@ -70,8 +70,9 @@ func _physics_process(delta):
 	#print(orientation)
 	#print($AllSprites/ZoomFire.flip_h)
 	#print($Timers/LaunchTimer.time_left)
-	print($Timers/ZoomTimer.time_left)
+	#print($Timers/ZoomTimer.time_left)
 	#print(Game.Robot.launch_timer_remaining)
+	#print(gravity)
 
 	## Coyote Jump
 	#var was_on_floor = is_on_floor()
@@ -498,12 +499,14 @@ func respawn():
 	$Timers/RespawnTimer.start()
 	$Sounds/Die.play()
 
-func gooped():
+func gooped(location):
+		velocity.y = 0
+		get_node("CollisionShape2D").set_deferred("disabled", true)
 		$Sounds/Gooped.play()
 		#set_process_input(false)
 		var TW1 = get_tree().create_tween()
 		var TW2 = get_tree().create_tween()
-		if States.FALL:
+		if location == 0:
 			TW1.tween_property(self, "position", position - Vector2(0,20), 1)
 		else:
 			TW1.tween_property(self, "position", position - Vector2(0,-20), 1)
@@ -521,7 +524,7 @@ func _on_respawn_timer_timeout():
 		Game.Robot.position = starting_position
 	is_alive = true
 	$".".show()
-	get_node("Area2D/CollisionShape2D").set_deferred("disabled", false)
+	get_node("CollisionShape2D").set_deferred("disabled", false)
 	modulate = Color(Color.WHITE)
 
 func shoot_lazor():

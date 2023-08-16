@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://yb0jhdfx1v5s"]
+[gd_scene load_steps=28 format=3 uid="uid://yb0jhdfx1v5s"]
 
 [ext_resource type="Texture2D" uid="uid://diwgxqubss5ol" path="res://Assets/paint__TILESET/IMG_010.png" id="1_ywp0g"]
 [ext_resource type="PackedScene" uid="uid://bpy6be58hevdo" path="res://Apps/annihilator.tscn" id="2_gqcbr"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://vk53keegc14f" path="res://Scenes/brick.tscn" id="24_ag0le"]
 [ext_resource type="PackedScene" uid="uid://brcwldjc05d0t" path="res://Apps/Gun.tscn" id="24_j04yc"]
 [ext_resource type="PackedScene" uid="uid://clj6gqiog65n4" path="res://Scenes/Doors/YellowDoor/yellow_door_bottom.tscn" id="24_safxg"]
+[ext_resource type="PackedScene" uid="uid://ds02qr33layf5" path="res://Scenes/Redboss/Redboss.tscn" id="25_4bxx3"]
 [ext_resource type="PackedScene" uid="uid://ck0xsb7gqo0y7" path="res://Apps/Haxxor.tscn" id="25_e7fcg"]
 [ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="26_gavai"]
 [ext_resource type="PackedScene" uid="uid://bsq672nsgt2pf" path="res://Apps/Helmet.tscn" id="27_holtl"]
@@ -650,7 +651,7 @@ layer_0/tile_data = PackedInt32Array(327680, 1638400, 5, 327681, 1638400, 5, 327
 [node name="Apps" type="Node2D" parent="."]
 
 [node name="Annihilator" parent="Apps" instance=ExtResource("2_gqcbr")]
-position = Vector2(2340, 180)
+position = Vector2(580, 60)
 
 [node name="Bitcoin" parent="Apps" instance=ExtResource("3_mlt85")]
 position = Vector2(2300, 180)
@@ -674,7 +675,7 @@ position = Vector2(780, 140)
 position = Vector2(2180, 180)
 
 [node name="Gun" parent="Apps" instance=ExtResource("24_j04yc")]
-position = Vector2(2140, 180)
+position = Vector2(540, 60)
 
 [node name="Haxxor" parent="Apps" instance=ExtResource("25_e7fcg")]
 position = Vector2(2100, 180)
@@ -724,7 +725,7 @@ position = Vector2(1380, 180)
 position = Vector2(1340, 180)
 
 [node name="NewRobot" parent="." instance=ExtResource("12_qe2d7")]
-position = Vector2(1960, -550)
+position = Vector2(730, 40)
 starting_position = Vector2(700, 50)
 
 [node name="DebugWindow" parent="." instance=ExtResource("21_tka6f")]
@@ -742,14 +743,23 @@ position = Vector2(860, 180)
 [node name="Bitcoin3" parent="." instance=ExtResource("3_mlt85")]
 position = Vector2(900, 180)
 
-[node name="Bitcoin4" parent="." instance=ExtResource("3_mlt85")]
-position = Vector2(940, 180)
-
 [node name="Acid" parent="." instance=ExtResource("22_actwb")]
 position = Vector2(1100, 220)
+
+[node name="Acid2" parent="." instance=ExtResource("22_actwb")]
+position = Vector2(900, -220)
 
 [node name="Checkpoint" parent="." instance=ExtResource("23_2cfxn")]
 position = Vector2(980, 130)
 
 [node name="Brick" parent="." instance=ExtResource("24_ag0le")]
 position = Vector2(1960, -620)
+
+[node name="Brick2" parent="." instance=ExtResource("24_ag0le")]
+position = Vector2(1700, -500)
+
+[node name="Brick3" parent="." instance=ExtResource("24_ag0le")]
+position = Vector2(1660, -500)
+
+[node name="Redboss" parent="." instance=ExtResource("25_4bxx3")]
+position = Vector2(200, 50)

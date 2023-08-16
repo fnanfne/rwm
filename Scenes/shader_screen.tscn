@@ -1,0 +1,105 @@
+[gd_scene load_steps=21 format=3 uid="uid://bevsxhq1afo6m"]
+
+[ext_resource type="Shader" path="res://Scenes/water.gdshader" id="1_he6se"]
+[ext_resource type="Texture2D" uid="uid://c4lg1c1i7e1ls" path="res://Assets/Pics/OBSKGL0.png" id="2_7ddeq"]
+[ext_resource type="Shader" path="res://Scenes/colors.gdshader" id="3_o2los"]
+[ext_resource type="Texture2D" uid="uid://cxes5p5ihbmb0" path="res://Assets/Pics/Win.png" id="4_0wk0y"]
+[ext_resource type="Shader" path="res://Scenes/flashing.gdshader" id="5_yai0r"]
+[ext_resource type="Texture2D" uid="uid://bqpxr0wgu53fu" path="res://Assets/Pics/white_square.png" id="6_ndqho"]
+[ext_resource type="Shader" path="res://Scenes/win_screen_blob.gdshader" id="7_ofwot"]
+[ext_resource type="Texture2D" uid="uid://c74707yko5u4k" path="res://Assets/Pics/fire_shader2.png" id="8_ng5f4"]
+[ext_resource type="Shader" path="res://Scenes/vhs_glitch.gdshader" id="9_xviqk"]
+[ext_resource type="Shader" path="res://Scenes/moving.gdshader" id="10_heaqm"]
+[ext_resource type="Shader" path="res://Scenes/blurry.gdshader" id="11_tihkx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vb13q"]
+shader = ExtResource("1_he6se")
+shader_parameter/WATER_COL = Color(0.04, 0.38, 0.88, 1)
+shader_parameter/WATER2_COL = Color(0.04, 0.35, 0.78, 1)
+shader_parameter/FOAM_COL = Color(0.8125, 0.9609, 0.9648, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(5, 5)
+shader_parameter/wave_speed = 1.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n1aj6"]
+shader = ExtResource("3_o2los")
+shader_parameter/speed = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/amplitude = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ljsv"]
+shader = ExtResource("5_yai0r")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ehqp5"]
+noise_type = 5
+fractal_type = 0
+fractal_octaves = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3rgvk"]
+width = 256
+height = 256
+seamless_blend_skirt = 0.0
+bump_strength = 32.0
+noise = SubResource("FastNoiseLite_ehqp5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_61mm3"]
+shader = ExtResource("7_ofwot")
+shader_parameter/distortionTexture = SubResource("NoiseTexture2D_3rgvk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3s4n3"]
+shader = ExtResource("9_xviqk")
+shader_parameter/range = 0.05
+shader_parameter/noiseQuality = 250.0
+shader_parameter/noiseIntensity = 0.005
+shader_parameter/offsetIntensity = 0.03
+shader_parameter/colorOffsetIntensity = 1.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fyaxn"]
+shader = ExtResource("10_heaqm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iekpy"]
+shader = ExtResource("11_tihkx")
+shader_parameter/blur_amount = 0.0
+
+[node name="ShaderScreen" type="Node2D"]
+
+[node name="Wave" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vb13q")
+position = Vector2(578, 326)
+scale = Vector2(0.895385, 0.509231)
+texture = ExtResource("2_7ddeq")
+
+[node name="Colors" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_n1aj6")
+position = Vector2(794, 354)
+texture = ExtResource("4_0wk0y")
+
+[node name="Flashing" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1ljsv")
+position = Vector2(461, 497)
+scale = Vector2(0.11, 0.133333)
+texture = ExtResource("6_ndqho")
+
+[node name="Fire" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_61mm3")
+position = Vector2(419, 319)
+scale = Vector2(2.04356, 1.40425)
+texture = ExtResource("8_ng5f4")
+
+[node name="VHS" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3s4n3")
+position = Vector2(245, 159)
+scale = Vector2(1.01563, 1.00313)
+texture = ExtResource("4_0wk0y")
+
+[node name="Moving" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fyaxn")
+position = Vector2(550, 334)
+scale = Vector2(0.17375, 0.216667)
+texture = ExtResource("6_ndqho")
+
+[node name="Blur" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_iekpy")
+position = Vector2(861.5, 226.5)
+scale = Vector2(0.28625, 0.335)
+texture = ExtResource("6_ndqho")

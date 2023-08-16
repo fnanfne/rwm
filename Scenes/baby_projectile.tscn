@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0amhhjnnsurf"]
+
+[ext_resource type="Script" path="res://Scenes/baby_projectile.gd" id="1_pawcv"]
+[ext_resource type="Texture2D" uid="uid://blwemneeqhcxf" path="res://Assets/Enemies/Redboss/From John/7.png" id="2_nxoix"]
+[ext_resource type="AudioStream" uid="uid://dg2vm23jcbces" path="res://Assets/Audio/Sounds/wake.ogg" id="3_lds3n"]
+[ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="4_geyro"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_feedc"]
+
+[node name="BabyProjectile" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_pawcv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_feedc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nxoix")
+
+[node name="ScreenExit" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="PlasmaBounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lds3n")
+volume_db = -20.0
+
+[node name="PlasmaExplode" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_geyro")

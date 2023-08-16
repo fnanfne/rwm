@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dofaody5xrw7i"]
+[gd_scene load_steps=10 format=3 uid="uid://dofaody5xrw7i"]
 
 [ext_resource type="Shader" path="res://Scenes/zoom_animation.gdshader" id="1_cdnv6"]
 [ext_resource type="Texture2D" uid="uid://dmw51auxobtws" path="res://Assets/Robot/From John/rocketfire.png" id="1_ddgbo"]
+[ext_resource type="Script" path="res://Scenes/zoom_animation.gd" id="3_xvbmm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g2yqk"]
 shader = ExtResource("1_cdnv6")
@@ -21,6 +22,7 @@ point_count = 10
 curve = SubResource("Curve_fpce5")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nlwwh"]
+resource_local_to_scene = true
 particle_flag_disable_z = true
 spread = 0.0
 gravity = Vector3(20, 0, 0)
@@ -39,4 +41,4 @@ material = SubResource("ShaderMaterial_g2yqk")
 process_material = SubResource("ParticleProcessMaterial_nlwwh")
 texture = ExtResource("1_ddgbo")
 speed_scale = 1.5
-randomness = 0.5
+script = ExtResource("3_xvbmm")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://co0s8j88lnd3v"]
+[gd_scene load_steps=11 format=3 uid="uid://co0s8j88lnd3v"]
 
 [ext_resource type="Texture2D" uid="uid://b4kv436lje1ux" path="res://Assets/paint__TILESET/IMG_006.png" id="1_js0os"]
 [ext_resource type="Script" path="res://Scenes/acid.gd" id="1_l3r52"]
@@ -9,7 +9,10 @@
 size = Vector2(118, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1f33"]
-size = Vector2(120, 40)
+size = Vector2(120, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esxxq"]
+size = Vector2(120, 20)
 
 [sub_resource type="Gradient" id="Gradient_hbr7v"]
 offsets = PackedFloat32Array(0, 0.381974, 0.776824)
@@ -33,7 +36,7 @@ scale_max = 0.8
 color_ramp = SubResource("GradientTexture1D_yvw8t")
 
 [node name="Acid" type="StaticBody2D"]
-z_index = 1
+z_index = -1
 script = ExtResource("1_l3r52")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -44,7 +47,16 @@ collision_layer = 4097
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_e1f33")
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 4097
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_esxxq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_js0os")
@@ -96,3 +108,4 @@ speed_scale = 0.8
 randomness = 1.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

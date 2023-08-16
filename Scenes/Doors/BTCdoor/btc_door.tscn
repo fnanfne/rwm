@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6edk"]
 size = Vector2(120, 40)
 
-[node name="BTCdoor" type="StaticBody2D"]
+[node name="BTCdoor" type="StaticBody2D" groups=["BTCdoor"]]
 script = ExtResource("1_hgis6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

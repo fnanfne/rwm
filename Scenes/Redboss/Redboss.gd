@@ -1,18 +1,26 @@
 extends CharacterBody2D
 
+const PROJECTILE = preload("res://Scenes/baby_projectile.tscn")
+
 var SPEED = 60
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = 1
+var spawning_a_baby = false
+
 @export var health :int
+@export var enemy_death_effect : PackedScene
 
 @onready var edgeCheck = $EdgeCheck
-@export var enemy_death_effect : PackedScene
+@onready var Robot = get_tree().get_first_node_in_group("Robots")
 
 func _ready():
 	get_node("AnimationPlayer").play("Idle")
 
 func _physics_process(delta):
 	#print(get_node("EdgeCheck").position.x)
+	#print($Timer3.time_left)
+	#print(group_members)
+	
 	var found_wall = is_on_wall()
 	var found_edge = not edgeCheck.is_colliding()
 	if found_wall or found_edge:
@@ -40,6 +48,12 @@ func _on_area_2d_body_entered(body):
 		if health > 0:
 			health -= 1
 			$ProjectileHit.play()
+			if spawning_a_baby:
+				pass
+			else:
+				spawn_a_projectile()
+				spawning_a_baby = true
+				$Timer3.start()
 			
 			# NEW SHADER METHOD BELOW
 			var TW4 = get_tree().create_tween()
@@ -104,3 +118,21 @@ func _on_timer_timeout():
 func _on_timer_2_timeout():
 	get_node("BodySprite").play("Idle")
 	queue_free()
+	#get_tree().call_group("Babies","queue_free")
+
+func spawn_a_projectile():
+	randomize()
+	var options = [-1,1]
+	var rand_value = options[randi() % options.size()]
+	var f = PROJECTILE.instantiate()
+	f.direction = rand_value #direction * -1
+	f.add_to_group("Babies")
+	#get_parent().add_child(f) # This gives an error for some reason and I have to use the below.
+	get_parent().call_deferred("add_child",f)
+	f.position.y = position.y - 50
+	f.position.x = position.x
+	var group_members = get_tree().get_nodes_in_group("Robots")
+	print(group_members)
+
+func _on_timer_3_timeout():
+	spawning_a_baby = false
