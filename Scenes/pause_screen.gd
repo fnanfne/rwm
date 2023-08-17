@@ -9,7 +9,8 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	resume_button.pressed.connect(unpause)
-	restart_button.pressed.connect(get_tree().quit)
+	restart_button.pressed.connect(get_tree().reload_current_scene)
+	restart_button.pressed.connect(unpause)
 	menu_button.pressed.connect(get_tree().quit)
 	quit_button.pressed.connect(get_tree().quit)
 	

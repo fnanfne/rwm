@@ -73,7 +73,7 @@ func _physics_process(delta):
 	#print($Timers/ZoomTimer.time_left)
 	#print(Game.Robot.launch_timer_remaining)
 	#print(gravity)
-	print($".".get_z_index())
+	#print($".".get_z_index())
 
 	## Coyote Jump
 	#var was_on_floor = is_on_floor()
@@ -492,7 +492,7 @@ func taking_damage():
 				Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 func respawn():
-	#get_node("Area2D/CollisionShape2D").set_deferred("disabled", true)
+	get_node("Area2D/CollisionShape2D").set_deferred("disabled", true)
 	$".".hide()
 	var effect_instance : CPUParticles2D = robot_death_effect.instantiate()
 	effect_instance.position = position
@@ -522,6 +522,7 @@ func gooped(location):
 	TW2.tween_property(self, "modulate", Color.RED, 1)
 	is_alive = false
 	await TW1.finished
+	#set_physics_process(false)
 	$".".hide()
 	$Timers/RespawnTimer.start()
 	#await $Sounds/Gooped.finished
@@ -533,6 +534,7 @@ func _on_respawn_timer_timeout():
 		Game.Robot.position = starting_position
 	is_alive = true
 	$".".set_z_index(0)
+	#set_physics_process(true)
 	$".".show()
 	get_node("CollisionShape2D").set_deferred("disabled", false)
 	modulate = Color(Color.WHITE)

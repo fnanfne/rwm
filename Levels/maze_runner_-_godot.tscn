@@ -1943,6 +1943,8 @@ layer_0/tile_data = PackedInt32Array(196608, 2031617, 1, 262144, 2031617, 1, 327
 
 [node name="DebugWindow" parent="Level" instance=ExtResource("7_upfth")]
 
+[node name="PauseScreen" parent="Level" instance=ExtResource("45_qbvbg")]
+
 [node name="NewRobot" parent="." instance=ExtResource("4_ntqmw")]
 position = Vector2(460, 710)
 starting_position = Vector2(460, 710)
@@ -2193,8 +2195,6 @@ position = Vector2(1300, 740)
 
 [node name="Brick" parent="." instance=ExtResource("41_hereg")]
 position = Vector2(380, 500)
-
-[node name="PauseScreen" parent="." instance=ExtResource("45_qbvbg")]
 
 [connection signal="body_entered" from="Misc/Computer2" to="Doors/HaxxorDoor2" method="_on_computer_2_body_entered"]
 [connection signal="body_entered" from="Misc/Computer" to="Doors/HaxxorDoor" method="_on_computer_body_entered"]
