@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://ca4rsukx1vq23"]
+[gd_scene load_steps=51 format=3 uid="uid://ca4rsukx1vq23"]
 
 [ext_resource type="Texture2D" uid="uid://bx525i4xx5j5n" path="res://Assets/paint__TILESET/IMG_004.png" id="1_p6blk"]
 [ext_resource type="Texture2D" uid="uid://bjrofgh84bum" path="res://Assets/paint__TILESET/IMG_007.png" id="2_e67rv"]
@@ -44,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://bicwqmhtso0jx" path="res://Scenes/Kitty/kitty.tscn" id="39_okspd"]
 [ext_resource type="PackedScene" uid="uid://co0s8j88lnd3v" path="res://Scenes/acid.tscn" id="40_kp817"]
 [ext_resource type="PackedScene" uid="uid://vk53keegc14f" path="res://Scenes/brick.tscn" id="41_hereg"]
+[ext_resource type="PackedScene" uid="uid://gye3o6c7msib" path="res://Scenes/pause_screen.tscn" id="45_qbvbg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxsqm"]
 texture = ExtResource("1_p6blk")
@@ -2192,6 +2193,8 @@ position = Vector2(1300, 740)
 
 [node name="Brick" parent="." instance=ExtResource("41_hereg")]
 position = Vector2(380, 500)
+
+[node name="PauseScreen" parent="." instance=ExtResource("45_qbvbg")]
 
 [connection signal="body_entered" from="Misc/Computer2" to="Doors/HaxxorDoor2" method="_on_computer_2_body_entered"]
 [connection signal="body_entered" from="Misc/Computer" to="Doors/HaxxorDoor" method="_on_computer_body_entered"]

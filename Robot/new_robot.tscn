@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://yg103a66ifo2"]
+[gd_scene load_steps=73 format=3 uid="uid://yg103a66ifo2"]
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
@@ -31,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://chhbv5r7x5u8h" path="res://Assets/Audio/Sounds/gooped.ogg" id="21_phfxn"]
 [ext_resource type="Texture2D" uid="uid://cm7p0qujtx3ip" path="res://Assets/Robot/From John/landpoof.png" id="22_5bqy6"]
 [ext_resource type="Texture2D" uid="uid://biaijlkqubpix" path="res://Assets/Robot/From John/landpoof_left.png" id="23_yi3i8"]
+[ext_resource type="PackedScene" uid="uid://gye3o6c7msib" path="res://Scenes/pause_screen.tscn" id="32_v5ngu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_86lg5"]
 height = 44.0
@@ -1080,6 +1081,10 @@ one_shot = true
 [node name="ZoomTimer" type="Timer" parent="Timers"]
 wait_time = 2.0
 one_shot = true
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="PauseScreen" parent="." instance=ExtResource("32_v5ngu")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

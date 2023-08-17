@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d435usctr2o0"]
+[gd_scene load_steps=9 format=3 uid="uid://d435usctr2o0"]
 
 [ext_resource type="Shader" path="res://winscreen.gdshader" id="1_3t1f4"]
 [ext_resource type="Texture2D" uid="uid://cxes5p5ihbmb0" path="res://Assets/Pics/Win.png" id="2_fttf1"]
+[ext_resource type="FontFile" uid="uid://xs5oaxoro5f0" path="res://Assets/Fonts/Commodore_Angled_v1-1.ttf" id="4_a7ig2"]
 [ext_resource type="Shader" path="res://Scenes/vhs_glitch.gdshader" id="7_5ca50"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2o3ke"]
@@ -15,15 +16,91 @@ shader_parameter/noiseIntensity = 0.005
 shader_parameter/offsetIntensity = 0.03
 shader_parameter/colorOffsetIntensity = 1.3
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p5l5q"]
+shader = ExtResource("7_5ca50")
+shader_parameter/range = 0.05
+shader_parameter/noiseQuality = 250.0
+shader_parameter/noiseIntensity = 0.005
+shader_parameter/offsetIntensity = 0.02
+shader_parameter/colorOffsetIntensity = 1.3
+
+[sub_resource type="LabelSettings" id="LabelSettings_cxlsh"]
+font = ExtResource("4_a7ig2")
+font_size = 30
+font_color = Color(0, 1, 0, 0.662745)
+
+[node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="Win" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_2o3ke")
-position = Vector2(243, 164)
+position = Vector2(336, 164)
 texture = ExtResource("2_fttf1")
+centered = false
 
 [node name="VHS" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_s14ec")
-position = Vector2(243, 161)
+position = Vector2(1413, 165)
 scale = Vector2(1.01563, 1.00313)
 texture = ExtResource("2_fttf1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_p5l5q")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.12549)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/CenterContainer"]
+custom_minimum_size = Vector2(480, 320)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_cxlsh")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "resume level"
+
+[node name="RestartButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "restart level"
+
+[node name="MenuButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "main menu"
+
+[node name="QuitButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "quit game"

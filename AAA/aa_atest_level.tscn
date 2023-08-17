@@ -747,7 +747,7 @@ position = Vector2(900, 180)
 position = Vector2(1100, 220)
 
 [node name="Acid2" parent="." instance=ExtResource("22_actwb")]
-position = Vector2(900, -220)
+position = Vector2(980, -20)
 
 [node name="Checkpoint" parent="." instance=ExtResource("23_2cfxn")]
 position = Vector2(980, 130)

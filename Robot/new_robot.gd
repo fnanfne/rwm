@@ -73,6 +73,7 @@ func _physics_process(delta):
 	#print($Timers/ZoomTimer.time_left)
 	#print(Game.Robot.launch_timer_remaining)
 	#print(gravity)
+	print($".".get_z_index())
 
 	## Coyote Jump
 	#var was_on_floor = is_on_floor()
@@ -112,7 +113,11 @@ func _physics_process(delta):
 						anim_fall.visible = true
 						anim_helmet_fall.visible = true
 					else:
-						anim_fall.visible = true
+						if is_alive:
+							anim_fall.visible = true
+						else:
+							anim_idle.visible = true
+							anim_wheel.visible = true
 				is_jumping = false
 				$RobotLandPoofRight.emitting = false
 				$RobotLandPoofLeft.emitting = false
@@ -487,7 +492,7 @@ func taking_damage():
 				Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 func respawn():
-	get_node("Area2D/CollisionShape2D").set_deferred("disabled", true)
+	#get_node("Area2D/CollisionShape2D").set_deferred("disabled", true)
 	$".".hide()
 	var effect_instance : CPUParticles2D = robot_death_effect.instantiate()
 	effect_instance.position = position
@@ -500,22 +505,26 @@ func respawn():
 	$Sounds/Die.play()
 
 func gooped(location):
-		velocity.y = 0
-		get_node("CollisionShape2D").set_deferred("disabled", true)
-		$Sounds/Gooped.play()
-		#set_process_input(false)
-		var TW1 = get_tree().create_tween()
-		var TW2 = get_tree().create_tween()
-		if location == 0:
-			TW1.tween_property(self, "position", position - Vector2(0,20), 1)
-		else:
-			TW1.tween_property(self, "position", position - Vector2(0,-20), 1)
-		TW2.tween_property(self, "modulate", Color.RED, 1)
-		is_alive = false
-		await TW1.finished
-		$".".hide()
-		$Timers/RespawnTimer.start()
-		#await $Sounds/Gooped.finished
+	$".".set_z_index(-1)
+	#get_node("CollisionShape2D").set_deferred("disabled", true)
+	$Sounds/Gooped.play()
+	#set_process_input(false)
+	var TW1 = get_tree().create_tween()
+	var TW2 = get_tree().create_tween()
+	if location == 0:
+		TW1.tween_property(self, "position", position - Vector2(-10,-20), 1)
+	elif location == 1:
+		TW1.tween_property(self, "position", position - Vector2(-10,20), 1)
+	elif location == 2:
+		TW1.tween_property(self, "position", position - Vector2(10,-20), 1)
+	else:# location == 3:
+		TW1.tween_property(self, "position", position - Vector2(10,20), 1)
+	TW2.tween_property(self, "modulate", Color.RED, 1)
+	is_alive = false
+	await TW1.finished
+	$".".hide()
+	$Timers/RespawnTimer.start()
+	#await $Sounds/Gooped.finished
 
 func _on_respawn_timer_timeout():
 	if Game.current_checkpoint != null:
@@ -523,6 +532,7 @@ func _on_respawn_timer_timeout():
 	else:
 		Game.Robot.position = starting_position
 	is_alive = true
+	$".".set_z_index(0)
 	$".".show()
 	get_node("CollisionShape2D").set_deferred("disabled", false)
 	modulate = Color(Color.WHITE)
@@ -679,3 +689,8 @@ func _on_zoom_timer_timeout():
 	is_zooming = false
 	state = States.FALL
 	Input.action_release("zoom")
+
+# PAUSE SCREEN
+func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("ui_cancel"):
+		$PauseScreen.pause()

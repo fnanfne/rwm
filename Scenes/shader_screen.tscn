@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bevsxhq1afo6m"]
+[gd_scene load_steps=22 format=3 uid="uid://bevsxhq1afo6m"]
 
 [ext_resource type="Shader" path="res://Scenes/water.gdshader" id="1_he6se"]
 [ext_resource type="Texture2D" uid="uid://c4lg1c1i7e1ls" path="res://Assets/Pics/OBSKGL0.png" id="2_7ddeq"]
@@ -61,6 +61,12 @@ shader = ExtResource("10_heaqm")
 shader = ExtResource("11_tihkx")
 shader_parameter/blur_amount = 0.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vr377"]
+shader = ExtResource("3_o2los")
+shader_parameter/speed = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/amplitude = 0.1
+
 [node name="ShaderScreen" type="Node2D"]
 
 [node name="Wave" type="Sprite2D" parent="."]
@@ -71,7 +77,7 @@ texture = ExtResource("2_7ddeq")
 
 [node name="Colors" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_n1aj6")
-position = Vector2(794, 354)
+position = Vector2(1412, 169)
 texture = ExtResource("4_0wk0y")
 
 [node name="Flashing" type="Sprite2D" parent="."]
@@ -103,3 +109,11 @@ material = SubResource("ShaderMaterial_iekpy")
 position = Vector2(861.5, 226.5)
 scale = Vector2(0.28625, 0.335)
 texture = ExtResource("6_ndqho")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_vr377")
+offset_left = 1247.0
+offset_top = 377.0
+offset_right = 1447.0
+offset_bottom = 577.0
+color = Color(1, 1, 1, 0.505882)
