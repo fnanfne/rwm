@@ -7,13 +7,13 @@ var BTC = 0
 var YELLOWKEYS = 0
 var CRYSTALS : int = 0 # same as above? 'int' not required
 var hud
-var JUMP = true
+var JUMP = false
 var DOUBLEJUMP = false
 var HAXXOR = false
 var HEMLET = false
 var GUN = false
 var LAUNCH = false
-var ZOOM = true
+var ZOOM = false
 var ANNIHILATE = false
 var EXPLOZORZ = false
 var VELCRO = false

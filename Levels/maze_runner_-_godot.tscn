@@ -44,7 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://bicwqmhtso0jx" path="res://Scenes/Kitty/kitty.tscn" id="39_okspd"]
 [ext_resource type="PackedScene" uid="uid://co0s8j88lnd3v" path="res://Scenes/acid.tscn" id="40_kp817"]
 [ext_resource type="PackedScene" uid="uid://vk53keegc14f" path="res://Scenes/brick.tscn" id="41_hereg"]
-[ext_resource type="PackedScene" uid="uid://gye3o6c7msib" path="res://Scenes/pause_screen.tscn" id="45_qbvbg"]
+[ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="46_b1wad"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxsqm"]
 texture = ExtResource("1_p6blk")
@@ -1942,8 +1942,7 @@ layer_0/tile_data = PackedInt32Array(196608, 2031617, 1, 262144, 2031617, 1, 327
 [node name="LevelTimer" parent="Level" instance=ExtResource("6_h77eg")]
 
 [node name="DebugWindow" parent="Level" instance=ExtResource("7_upfth")]
-
-[node name="PauseScreen" parent="Level" instance=ExtResource("45_qbvbg")]
+visible = false
 
 [node name="NewRobot" parent="." instance=ExtResource("4_ntqmw")]
 position = Vector2(460, 710)
@@ -2195,6 +2194,9 @@ position = Vector2(1300, 740)
 
 [node name="Brick" parent="." instance=ExtResource("41_hereg")]
 position = Vector2(380, 500)
+
+[node name="Heart" parent="." instance=ExtResource("46_b1wad")]
+position = Vector2(180, 60)
 
 [connection signal="body_entered" from="Misc/Computer2" to="Doors/HaxxorDoor2" method="_on_computer_2_body_entered"]
 [connection signal="body_entered" from="Misc/Computer" to="Doors/HaxxorDoor" method="_on_computer_body_entered"]

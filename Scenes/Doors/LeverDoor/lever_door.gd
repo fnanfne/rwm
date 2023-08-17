@@ -23,4 +23,4 @@ func _on_timer_2_timeout():
 	TW2.tween_property(self, "position", position - Vector2(-80,0), 0.5)
 	TW1.tween_property(self, "modulate:a", 0, 1.0)
 	await $DoorOpen.finished
-	TW1.tween_callback(queue_free)
+	#TW1.tween_callback(queue_free)

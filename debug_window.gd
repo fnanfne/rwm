@@ -22,3 +22,10 @@ func hide_debug_window():
 	
 func show_debug_window():
 	textbox_container.show()
+
+
+func _on_jump_check_box_toggled(button_pressed):
+	#OS.window_fullscreen = button_pressed# ??
+	if button_pressed:
+		print("HEYHO!!ButtonPressed")
+		Game.JUMP = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://yb0jhdfx1v5s"]
+[gd_scene load_steps=27 format=3 uid="uid://yb0jhdfx1v5s"]
 
 [ext_resource type="Texture2D" uid="uid://diwgxqubss5ol" path="res://Assets/paint__TILESET/IMG_010.png" id="1_ywp0g"]
 [ext_resource type="PackedScene" uid="uid://bpy6be58hevdo" path="res://Apps/annihilator.tscn" id="2_gqcbr"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://ccr2x1uxo2d0w" path="res://Apps/E-pill.tscn" id="19_tu55m"]
 [ext_resource type="PackedScene" uid="uid://cj3pq1aree5vn" path="res://Apps/Jump.tscn" id="20_5hajd"]
 [ext_resource type="PackedScene" uid="uid://dxknabore71hs" path="res://Scenes/Doors/BTCdoor/btc_door.tscn" id="21_aqoml"]
-[ext_resource type="PackedScene" uid="uid://nq13g51yd2t3" path="res://debug_window.tscn" id="21_tka6f"]
 [ext_resource type="PackedScene" uid="uid://c21qrbylx8yd" path="res://Apps/Launch.tscn" id="21_ttwb5"]
 [ext_resource type="PackedScene" uid="uid://co0s8j88lnd3v" path="res://Scenes/acid.tscn" id="22_actwb"]
 [ext_resource type="PackedScene" uid="uid://c0fbmlre2d4bl" path="res://Apps/Velcro.tscn" id="22_nn658"]
@@ -727,8 +726,6 @@ position = Vector2(1340, 180)
 [node name="NewRobot" parent="." instance=ExtResource("12_qe2d7")]
 position = Vector2(730, 40)
 starting_position = Vector2(700, 50)
-
-[node name="DebugWindow" parent="." instance=ExtResource("21_tka6f")]
 
 [node name="BTCdoor" parent="." instance=ExtResource("21_aqoml")]
 position = Vector2(700, 100)

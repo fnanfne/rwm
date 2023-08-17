@@ -161,7 +161,7 @@ _data = {
 collision_layer = 0
 script = ExtResource("1_ux4qg")
 enemy_death_effect = ExtResource("2_d1a0l")
-health = 5
+health = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

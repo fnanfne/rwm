@@ -1,59 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://gye3o6c7msib"]
+[gd_scene load_steps=9 format=3 uid="uid://gye3o6c7msib"]
 
 [ext_resource type="Shader" path="res://Scenes/blur.gdshader" id="1_1ftfp"]
 [ext_resource type="Script" path="res://Scenes/pause_screen.gd" id="1_q1sty"]
 [ext_resource type="FontFile" uid="uid://xs5oaxoro5f0" path="res://Assets/Fonts/Commodore_Angled_v1-1.ttf" id="2_6fqid"]
-[ext_resource type="Texture2D" uid="uid://bfpy6hxdbdii3" path="res://Assets/Pics/warning_sign_s.png" id="4_8q7tg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1su2"]
 shader = ExtResource("1_1ftfp")
-shader_parameter/blur = 0.8
-shader_parameter/brightness = 0.8
+shader_parameter/blur = 0.0
+shader_parameter/brightness = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ej5rf"]
 font = ExtResource("2_6fqid")
 font_size = 30
 font_color = Color(0, 1, 0, 0.662745)
-
-[sub_resource type="Animation" id="Animation_s6hnb"]
-resource_name = "Unpause"
-length = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/blur")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:material:shader_parameter/brightness")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect/CenterContainer:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_y3y40"]
 resource_name = "Pause"
@@ -95,6 +54,46 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_s6hnb"]
+resource_name = "Unpause"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/blur")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/brightness")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/CenterContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b7f8q"]
 _data = {
 "Pause": SubResource("Animation_y3y40"),
@@ -117,6 +116,7 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0.12549)
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -156,17 +156,6 @@ text = "resume level"
 layout_mode = 2
 size_flags_vertical = 3
 text = "restart level"
-
-[node name="CheckBox" type="CheckBox" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/RestartButton"]
-layout_mode = 0
-offset_left = 65.0
-offset_top = 10.0
-offset_right = 154.0
-offset_bottom = 49.0
-toggle_mode = false
-text = "
-"
-icon = ExtResource("4_8q7tg")
 
 [node name="MenuButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -29,6 +29,7 @@ var zoom_minimum = Vector2(1.5001, 1.5001)
 var zoom_maximum = Vector2(2.5001, 2.5001)
 var zoom_speed = Vector2(0.1001, 0.1001)
 var orientation = 1
+var being_gooped = false
 
 @export var robot_death_effect : PackedScene
 @export var starting_position : Vector2
@@ -505,33 +506,38 @@ func respawn():
 	$Sounds/Die.play()
 
 func gooped(location):
-	$".".set_z_index(-1)
-	#get_node("CollisionShape2D").set_deferred("disabled", true)
-	$Sounds/Gooped.play()
-	#set_process_input(false)
-	var TW1 = get_tree().create_tween()
-	var TW2 = get_tree().create_tween()
-	if location == 0:
-		TW1.tween_property(self, "position", position - Vector2(-10,-20), 1)
-	elif location == 1:
-		TW1.tween_property(self, "position", position - Vector2(-10,20), 1)
-	elif location == 2:
-		TW1.tween_property(self, "position", position - Vector2(10,-20), 1)
-	else:# location == 3:
-		TW1.tween_property(self, "position", position - Vector2(10,20), 1)
-	TW2.tween_property(self, "modulate", Color.RED, 1)
-	is_alive = false
-	await TW1.finished
-	#set_physics_process(false)
-	$".".hide()
-	$Timers/RespawnTimer.start()
-	#await $Sounds/Gooped.finished
+	if being_gooped == true:
+		pass
+	else:
+		being_gooped = true
+		$".".set_z_index(-1)
+		#get_node("CollisionShape2D").set_deferred("disabled", true)
+		$Sounds/Gooped.play()
+		#set_process_input(false)
+		var TW1 = get_tree().create_tween()
+		var TW2 = get_tree().create_tween()
+		if location == 0:
+			TW1.tween_property(self, "position", position - Vector2(-10,-20), 1)
+		elif location == 1:
+			TW1.tween_property(self, "position", position - Vector2(-10,20), 1)
+		elif location == 2:
+			TW1.tween_property(self, "position", position - Vector2(10,-20), 1)
+		else:# location == 3:
+			TW1.tween_property(self, "position", position - Vector2(10,20), 1)
+		TW2.tween_property(self, "modulate", Color.RED, 1)
+		is_alive = false
+		await TW1.finished
+		#set_physics_process(false)
+		$".".hide()
+		$Timers/RespawnTimer.start()
+		#await $Sounds/Gooped.finished
 
 func _on_respawn_timer_timeout():
 	if Game.current_checkpoint != null:
 		Game.Robot.position = Game.current_checkpoint.global_position
 	else:
 		Game.Robot.position = starting_position
+	being_gooped = false
 	is_alive = true
 	$".".set_z_index(0)
 	#set_physics_process(true)
@@ -567,7 +573,7 @@ func shoot_lazor():
 			# NEW TWEENING CODE ABOVE MOVED FROM THE PROJECTILE ITSELF TO ADDRESS CONSOLE ERRORS
 			fire_logic()
 		else:
-			anim_air_shoot.visible = false
+			anim_air_shoot.visible = false # does this do anything?
 			is_shooting = false
 
 func fire_logic():
@@ -578,10 +584,14 @@ func fire_logic():
 		anim_air_shoot.visible = true
 	else:
 		anim_air_shoot.visible = false
-		anim_shoot.visible = true
+		if velocity.x != 0:
+			anim_shoot.visible = false
+		else:
+			anim_shoot.visible = true
 		# Checking if running on the ground
-		if velocity.y == 0 and velocity.x != 0:
-			anim_idle.visible = false
+		if velocity.x != 0:
+			pass
+			#anim_idle.visible = false
 		else:
 			pass
 			#anim_run.visible = true
@@ -693,6 +703,7 @@ func _on_zoom_timer_timeout():
 	Input.action_release("zoom")
 
 # PAUSE SCREEN
-func _unhandled_input(event: InputEvent):
-	if event.is_action_pressed("ui_cancel"):
-		$PauseScreen.pause()
+func _unhandled_input(_event: InputEvent):
+	#if event.is_action_pressed("ui_cancel"):
+	#	$PauseScreen.pause()
+	pass
