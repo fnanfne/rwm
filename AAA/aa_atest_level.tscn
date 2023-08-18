@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://yb0jhdfx1v5s"]
+[gd_scene load_steps=28 format=3 uid="uid://yb0jhdfx1v5s"]
 
 [ext_resource type="Texture2D" uid="uid://diwgxqubss5ol" path="res://Assets/paint__TILESET/IMG_010.png" id="1_ywp0g"]
 [ext_resource type="PackedScene" uid="uid://bpy6be58hevdo" path="res://Apps/annihilator.tscn" id="2_gqcbr"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://clj6gqiog65n4" path="res://Scenes/Doors/YellowDoor/yellow_door_bottom.tscn" id="24_safxg"]
 [ext_resource type="PackedScene" uid="uid://ds02qr33layf5" path="res://Scenes/Redboss/Redboss.tscn" id="25_4bxx3"]
 [ext_resource type="PackedScene" uid="uid://ck0xsb7gqo0y7" path="res://Apps/Haxxor.tscn" id="25_e7fcg"]
+[ext_resource type="PackedScene" uid="uid://c758xrqp3g151" path="res://Scenes/robot_death_anim2.tscn" id="25_uqih0"]
 [ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="26_gavai"]
 [ext_resource type="PackedScene" uid="uid://bsq672nsgt2pf" path="res://Apps/Helmet.tscn" id="27_holtl"]
 
@@ -760,3 +761,7 @@ position = Vector2(1660, -500)
 
 [node name="Redboss" parent="." instance=ExtResource("25_4bxx3")]
 position = Vector2(200, 50)
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("25_uqih0")]
+z_index = -1
+position = Vector2(600, 90)

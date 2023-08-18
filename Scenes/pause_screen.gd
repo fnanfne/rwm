@@ -28,7 +28,7 @@ func unpause():
 	get_tree().paused = false
 	
 	# FREES THE MOUSE, SO IT CAN BE USED IN THE PAUSE MENU ??
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func pause():
 	$ColorRect/CenterContainer.show()
@@ -40,7 +40,7 @@ func pause():
 
 #unc _unhandled_input(event: InputEvent) -> void:
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("menu"):
 		if get_tree().paused:
 			unpause()
 		else:

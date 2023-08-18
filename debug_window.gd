@@ -25,7 +25,35 @@ func show_debug_window():
 
 
 func _on_jump_check_box_toggled(button_pressed):
-	#OS.window_fullscreen = button_pressed# ??
-	if button_pressed:
-		print("HEYHO!!ButtonPressed")
+	if button_pressed == true:
 		Game.JUMP = true
+	else:
+		Game.JUMP = false
+
+
+func _on_d_jump_check_box_toggled(button_pressed):
+	pass # Replace with function body.
+
+
+func _on_gun_check_box_toggled(button_pressed):
+	pass # Replace with function body.
+
+
+func _on_ann_check_box_toggled(button_pressed):
+	pass # Replace with function body.
+
+
+func _on_helmet_check_box_toggled(button_pressed):
+	pass # Replace with function body.
+
+
+func _on_zoom_check_box_toggled(button_pressed):
+	pass # Replace with function body.
+
+
+func _on_launch_check_box_toggled(button_pressed):
+	pass # Replace with function body.
+
+
+func _on_option_button_toggled(button_pressed):
+	pass # Replace with function body.

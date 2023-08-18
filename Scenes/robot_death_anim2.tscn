@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://c758xrqp3g151"]
+
+[ext_resource type="Texture2D" uid="uid://b85fypsq8js7m" path="res://Assets/Pics/Robits/robits.png" id="1_riu4f"]
+
+[sub_resource type="Gradient" id="Gradient_p4q8i"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xvoo3"]
+gradient = SubResource("Gradient_p4q8i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vvaq3"]
+lifetime_randomness = 0.1
+emission_shape = 1
+emission_sphere_radius = 1.0
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 180.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 10.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 10.0
+damping_max = 100.0
+color_ramp = SubResource("GradientTexture1D_xvoo3")
+collision_mode = 1
+collision_friction = 0.21
+collision_bounce = 0.13
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_vvaq3")
+texture = ExtResource("1_riu4f")
+lifetime = 2.0
+explosiveness = 1.0
+randomness = 0.5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.85
+one_shot = true
+autostart = true

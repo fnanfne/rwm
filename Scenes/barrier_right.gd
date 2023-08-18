@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var speed = 150
+var speed = 75
 var direction = 1
 
 #@export var speed = 50

@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://yg103a66ifo2"]
+[gd_scene load_steps=72 format=3 uid="uid://yg103a66ifo2"]
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
@@ -810,10 +810,6 @@ _data = {
 "Shoot": SubResource("Animation_va2yt")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nhof0"]
-radius = 9.0
-height = 34.0
-
 [sub_resource type="Gradient" id="Gradient_dqysd"]
 offsets = PackedFloat32Array(0.476395, 0.987124)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -941,9 +937,8 @@ libraries = {
 "": SubResource("AnimationLibrary_uy7lk")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
-shape = SubResource("CapsuleShape2D_nhof0")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-7, 24, -6, -10, 0, -13, 6, -10, 8, 24)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.9, 1.9)
@@ -1045,13 +1040,11 @@ speed_scale = 1.73
 explosiveness = 1.0
 
 [node name="GunFlash" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-29, -7)
 rotation = -0.523599
 texture = ExtResource("14_qopyi")
 
 [node name="GunFlash2" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-10, -7)
 rotation = -0.523599
 texture = ExtResource("14_qopyi")

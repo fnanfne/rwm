@@ -12,7 +12,8 @@ func open_door():
 
 func _on_computer_body_entered(body):
 	if body.is_in_group("Robots"):
-		$Timer.start()
+		if Game.HAXXOR == true:
+			$Timer.start()
 
 func _on_timer_timeout():
 	set_collision_mask_value(1,false)

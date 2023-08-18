@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://ca4rsukx1vq23"]
+[gd_scene load_steps=53 format=3 uid="uid://ca4rsukx1vq23"]
 
 [ext_resource type="Texture2D" uid="uid://bx525i4xx5j5n" path="res://Assets/paint__TILESET/IMG_004.png" id="1_p6blk"]
 [ext_resource type="Texture2D" uid="uid://bjrofgh84bum" path="res://Assets/paint__TILESET/IMG_007.png" id="2_e67rv"]
@@ -9,8 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://cbjad5andxma8" path="res://Scenes/level_timer.tscn" id="6_h77eg"]
 [ext_resource type="PackedScene" uid="uid://clj6gqiog65n4" path="res://Scenes/Doors/YellowDoor/yellow_door_bottom.tscn" id="6_jndtp"]
 [ext_resource type="PackedScene" uid="uid://cveutdjpy1dwj" path="res://Scenes/Doors/RedDoor/red_door_bottom.tscn" id="7_4nns1"]
+[ext_resource type="PackedScene" uid="uid://fvtuuod3spmq" path="res://Scenes/hud.tscn" id="7_qkr6o"]
 [ext_resource type="PackedScene" uid="uid://nq13g51yd2t3" path="res://debug_window.tscn" id="7_upfth"]
 [ext_resource type="PackedScene" uid="uid://cj3pq1aree5vn" path="res://Apps/Jump.tscn" id="8_aaegx"]
+[ext_resource type="PackedScene" uid="uid://chu1sp74s581v" path="res://Scenes/main_menu.tscn" id="8_ntyg8"]
 [ext_resource type="PackedScene" uid="uid://dgos4d0dj3wwx" path="res://Scenes/Keys/YellowKey/yellow_key.tscn" id="9_xhen2"]
 [ext_resource type="PackedScene" uid="uid://cj13fi0jbnlf5" path="res://Scenes/Dripguy/Dripguy.tscn" id="10_jokhy"]
 [ext_resource type="PackedScene" uid="uid://bm3g0a78ol6i" path="res://Redguy/Redguy.tscn" id="11_piidh"]
@@ -1941,11 +1943,10 @@ layer_0/tile_data = PackedInt32Array(196608, 2031617, 1, 262144, 2031617, 1, 327
 
 [node name="LevelTimer" parent="Level" instance=ExtResource("6_h77eg")]
 
-[node name="DebugWindow" parent="Level" instance=ExtResource("7_upfth")]
-visible = false
+[node name="HUD" parent="Level" instance=ExtResource("7_qkr6o")]
 
 [node name="NewRobot" parent="." instance=ExtResource("4_ntqmw")]
-position = Vector2(460, 710)
+position = Vector2(460, 770)
 starting_position = Vector2(460, 710)
 
 [node name="Kitty" parent="." instance=ExtResource("39_okspd")]
@@ -2032,7 +2033,7 @@ position = Vector2(740, 1020)
 position = Vector2(1020, 940)
 
 [node name="Annihilator" parent="Apps" instance=ExtResource("31_pgob0")]
-position = Vector2(460, 780)
+position = Vector2(1260, 540)
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -2113,7 +2114,7 @@ position = Vector2(1340, 452)
 position = Vector2(1180, 292)
 
 [node name="Lever" parent="Misc" instance=ExtResource("13_nj4h7")]
-position = Vector2(860, 540)
+position = Vector2(864, 623)
 
 [node name="SpikesBottom" parent="Misc" instance=ExtResource("31_0gp4u")]
 position = Vector2(540, 140)
@@ -2197,6 +2198,13 @@ position = Vector2(380, 500)
 
 [node name="Heart" parent="." instance=ExtResource("46_b1wad")]
 position = Vector2(180, 60)
+
+[node name="DebugWindow" parent="." instance=ExtResource("7_upfth")]
+
+[node name="CanvasLayer4MainMenu" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" parent="CanvasLayer4MainMenu" instance=ExtResource("8_ntyg8")]
+visible = false
 
 [connection signal="body_entered" from="Misc/Computer2" to="Doors/HaxxorDoor2" method="_on_computer_2_body_entered"]
 [connection signal="body_entered" from="Misc/Computer" to="Doors/HaxxorDoor" method="_on_computer_body_entered"]

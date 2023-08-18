@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bevsxhq1afo6m"]
+[gd_scene load_steps=33 format=3 uid="uid://bevsxhq1afo6m"]
 
 [ext_resource type="Shader" path="res://Scenes/water.gdshader" id="1_he6se"]
 [ext_resource type="Texture2D" uid="uid://c4lg1c1i7e1ls" path="res://Assets/Pics/OBSKGL0.png" id="2_7ddeq"]
@@ -12,6 +12,11 @@
 [ext_resource type="Shader" path="res://Scenes/moving.gdshader" id="10_heaqm"]
 [ext_resource type="Shader" path="res://Scenes/blurry.gdshader" id="11_tihkx"]
 [ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="12_w4lp4"]
+[ext_resource type="Shader" path="res://Scenes/voronoi.gdshader" id="13_db1k6"]
+[ext_resource type="Shader" path="res://Scenes/vortex.gdshader" id="14_54q8t"]
+[ext_resource type="Shader" path="res://Scenes/ring.gdshader" id="15_km8kt"]
+[ext_resource type="Shader" path="res://Scenes/pixelated.gdshader" id="16_7f80c"]
+[ext_resource type="Texture2D" uid="uid://0wmg68mohiy0" path="res://Assets/Pics/Kitty.png" id="17_76wxl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vb13q"]
 shader = ExtResource("1_he6se")
@@ -73,7 +78,41 @@ shader = ExtResource("12_w4lp4")
 shader_parameter/speed = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/amplitude = 0.1
-shader_parameter/alpha = 0.1
+shader_parameter/alpha = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0fxaq"]
+shader = ExtResource("13_db1k6")
+shader_parameter/pixel_size = Vector2(0.001, 0.001)
+shader_parameter/voronoi_scale = 20.0
+shader_parameter/voronoi_seed = 0.0
+shader_parameter/electric_scale = 20.0
+shader_parameter/electric_speed = 1.0
+shader_parameter/electric_power = 3.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ish3"]
+shader = ExtResource("14_54q8t")
+shader_parameter/max_blend = 1.0
+shader_parameter/rotation_offset = 0.0
+shader_parameter/intensity = 0.0
+shader_parameter/invert = false
+shader_parameter/rel_rect_size = Vector2(1024, 600)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_up8w4"]
+shader = ExtResource("15_km8kt")
+shader_parameter/radius = 0.7
+shader_parameter/thickness = 0.2
+shader_parameter/color = Color(0.9, 0.4, 0.1, 1)
+shader_parameter/brightness = 5.0
+shader_parameter/angular_speed = 2.5
+shader_parameter/radial_speed = 1.4
+shader_parameter/alpha = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0udfg"]
+shader = ExtResource("16_7f80c")
+shader_parameter/zoom_center = Vector2(0, 0)
+shader_parameter/zoom_amount = 1.899
+shader_parameter/keep_within_bounds = true
+shader_parameter/texture = ExtResource("17_76wxl")
 
 [node name="ShaderScreen" type="Node2D"]
 
@@ -132,3 +171,31 @@ offset_left = 779.0
 offset_top = 403.0
 offset_right = 956.0
 offset_bottom = 562.0
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_0fxaq")
+offset_left = 838.0
+offset_top = 36.0
+offset_right = 1045.0
+offset_bottom = 243.0
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_5ish3")
+offset_left = 740.0
+offset_top = 115.0
+offset_right = 949.0
+offset_bottom = 323.0
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_up8w4")
+offset_left = 965.0
+offset_top = 32.0
+offset_right = 1189.0
+offset_bottom = 225.0
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_0udfg")
+offset_left = 546.0
+offset_top = 415.0
+offset_right = 1051.0
+offset_bottom = 792.0

@@ -1,9 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://nq13g51yd2t3"]
+[gd_scene load_steps=21 format=3 uid="uid://nq13g51yd2t3"]
 
 [ext_resource type="Script" path="res://debug_window.gd" id="1_2meks"]
 [ext_resource type="Script" path="res://DebugStats.gd" id="2_a33ut"]
 [ext_resource type="FontFile" uid="uid://dxd4qik0penab" path="res://Assets/Fonts/DroidSans.ttf" id="3_n2662"]
-[ext_resource type="Texture2D" uid="uid://bokxl45ju5jn4" path="res://Assets/Apps/Keys/key_gold.png" id="4_ii16t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usvcf"]
 bg_color = Color(0.00392157, 0.105882, 0, 0.266667)
@@ -143,26 +142,11 @@ func _process(_delta):
 	text = \"anim_helmet_idle: \" + str(Game.Robot.anim_helmet_idle.visible)
 "
 
-[sub_resource type="GDScript" id="GDScript_sqn0l"]
-resource_name = "stats_box_jump"
-script/source = "extends CheckBox
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-"
-
 [node name="DebugWindow" type="CanvasLayer"]
 script = ExtResource("1_2meks")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
-offset_right = 440.0
+offset_right = 480.0
 offset_bottom = 180.0
 
 [node name="Panel" type="Panel" parent="TextboxContainer"]
@@ -313,7 +297,6 @@ offset_bottom = 160.0
 [node name="JumpCheckBox" type="CheckBox" parent="TextboxContainer/DebugStats/Panel/VBoxContainer3"]
 layout_mode = 2
 text = "jump"
-script = SubResource("GDScript_sqn0l")
 
 [node name="dJumpCheckBox" type="CheckBox" parent="TextboxContainer/DebugStats/Panel/VBoxContainer3"]
 layout_mode = 2
@@ -335,25 +318,35 @@ offset_bottom = 160.0
 
 [node name="HelmetCheckBox" type="CheckBox" parent="TextboxContainer/DebugStats/Panel/VBoxContainer4"]
 layout_mode = 2
-text = "jump"
+text = "helmet"
 
 [node name="ZoomCheckBox" type="CheckBox" parent="TextboxContainer/DebugStats/Panel/VBoxContainer4"]
 layout_mode = 2
-text = "d-jump"
+text = "zoom"
 
 [node name="LaunchCheckBox" type="CheckBox" parent="TextboxContainer/DebugStats/Panel/VBoxContainer4"]
 layout_mode = 2
-text = "gun"
+text = "launch"
 
 [node name="OptionButton" type="OptionButton" parent="TextboxContainer/DebugStats/Panel/VBoxContainer4"]
 layout_mode = 2
-item_count = 1
-popup/item_0/text = "yellowkeys"
-popup/item_0/icon = ExtResource("4_ii16t")
+flat = true
+item_count = 4
+popup/item_0/text = "redkeys"
 popup/item_0/id = 0
-
-[node name="OptionButton2" type="OptionButton" parent="TextboxContainer/DebugStats/Panel/VBoxContainer4"]
-layout_mode = 2
+popup/item_1/text = "greenkeys"
+popup/item_1/id = 1
+popup/item_2/text = "bluekeys"
+popup/item_2/id = 2
+popup/item_3/text = "yellowkey"
+popup/item_3/id = 3
 
 [connection signal="gui_input" from="TextboxContainer" to="." method="_on_textbox_container_gui_input"]
 [connection signal="toggled" from="TextboxContainer/DebugStats/Panel/VBoxContainer3/JumpCheckBox" to="." method="_on_jump_check_box_toggled"]
+[connection signal="toggled" from="TextboxContainer/DebugStats/Panel/VBoxContainer3/dJumpCheckBox" to="." method="_on_d_jump_check_box_toggled"]
+[connection signal="toggled" from="TextboxContainer/DebugStats/Panel/VBoxContainer3/GunCheckBox" to="." method="_on_gun_check_box_toggled"]
+[connection signal="toggled" from="TextboxContainer/DebugStats/Panel/VBoxContainer3/AnnCheckBox" to="." method="_on_ann_check_box_toggled"]
+[connection signal="toggled" from="TextboxContainer/DebugStats/Panel/VBoxContainer4/HelmetCheckBox" to="." method="_on_helmet_check_box_toggled"]
+[connection signal="toggled" from="TextboxContainer/DebugStats/Panel/VBoxContainer4/ZoomCheckBox" to="." method="_on_zoom_check_box_toggled"]
+[connection signal="toggled" from="TextboxContainer/DebugStats/Panel/VBoxContainer4/LaunchCheckBox" to="." method="_on_launch_check_box_toggled"]
+[connection signal="toggled" from="TextboxContainer/DebugStats/Panel/VBoxContainer4/OptionButton" to="." method="_on_option_button_toggled"]

@@ -511,7 +511,7 @@ func gooped(location):
 	else:
 		being_gooped = true
 		$".".set_z_index(-1)
-		#get_node("CollisionShape2D").set_deferred("disabled", true)
+		#get_node("CollisionPolygon2D").set_deferred("disabled", true)
 		$Sounds/Gooped.play()
 		#set_process_input(false)
 		var TW1 = get_tree().create_tween()
@@ -542,7 +542,7 @@ func _on_respawn_timer_timeout():
 	$".".set_z_index(0)
 	#set_physics_process(true)
 	$".".show()
-	get_node("CollisionShape2D").set_deferred("disabled", false)
+	get_node("Area2D/CollisionShape2D").set_deferred("disabled", false)
 	modulate = Color(Color.WHITE)
 
 func shoot_lazor():
