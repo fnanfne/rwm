@@ -26,6 +26,7 @@ script = ExtResource("1_a53xw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_cfbch")
+layout_mode = 0
 offset_right = 1547.0
 offset_bottom = 1034.0
 size_flags_horizontal = 3

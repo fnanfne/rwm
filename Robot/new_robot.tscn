@@ -1040,11 +1040,13 @@ speed_scale = 1.73
 explosiveness = 1.0
 
 [node name="GunFlash" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-29, -7)
 rotation = -0.523599
 texture = ExtResource("14_qopyi")
 
 [node name="GunFlash2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-10, -7)
 rotation = -0.523599
 texture = ExtResource("14_qopyi")

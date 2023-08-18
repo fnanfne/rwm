@@ -1934,6 +1934,7 @@ sources/3 = SubResource("TileSetAtlasSource_eidwm")
 [node name="Level" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Level" groups=["World"]]
+z_index = -1
 tile_set = SubResource("TileSet_qiff0")
 cell_quadrant_size = 40
 format = 2
