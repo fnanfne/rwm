@@ -8,7 +8,7 @@
 size = Vector2(120, 40)
 
 [node name="BTCdoor" type="StaticBody2D" groups=["BTCdoor"]]
-z_index = -2
+z_index = -1
 script = ExtResource("1_hgis6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

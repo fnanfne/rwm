@@ -123,6 +123,7 @@ signal frame_change(frame: int)
 "
 
 [node name="DripBoss2" type="CharacterBody2D"]
+z_index = 3
 script = ExtResource("1_uic67")
 enemy_death_effect = ExtResource("2_qt0xd")
 

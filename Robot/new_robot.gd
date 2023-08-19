@@ -539,7 +539,7 @@ func _on_respawn_timer_timeout():
 		Game.Robot.position = starting_position
 	being_gooped = false
 	is_alive = true
-	$".".set_z_index(0)
+	$".".set_z_index(4)
 	#set_physics_process(true)
 	$".".show()
 	get_node("Area2D/CollisionShape2D").set_deferred("disabled", false)

@@ -836,7 +836,7 @@ scale_curve = SubResource("CurveTexture_43tff")
 color_ramp = SubResource("GradientTexture1D_lra5s")
 
 [node name="NewRobot" type="CharacterBody2D" groups=["Robots"]]
-z_index = 3
+z_index = 4
 collision_layer = 2
 script = ExtResource("1_h7mvx")
 robot_death_effect = ExtResource("2_4sk36")

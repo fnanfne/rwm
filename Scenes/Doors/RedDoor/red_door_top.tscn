@@ -20,7 +20,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u52aa"]
 
 [node name="RedDoorTop" type="StaticBody2D"]
-z_index = -2
+z_index = -1
 script = ExtResource("1_kyfrr")
 
 [node name="DoorZone" type="Area2D" parent="."]

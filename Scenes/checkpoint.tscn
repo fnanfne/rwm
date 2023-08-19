@@ -346,7 +346,7 @@ _data = {
 }
 
 [node name="Checkpoint" type="Node2D"]
-z_index = -1
+z_index = 2
 script = ExtResource("1_iqvb8")
 
 [node name="Area2D" type="Area2D" parent="."]

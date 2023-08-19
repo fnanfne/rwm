@@ -6,6 +6,7 @@ extends Control
 @onready var audio = $Audio
 @onready var music = $Music
 @onready var abcdef = $ABCDEF
+@onready var levels = $Levels
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,8 +15,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	#print($Audio/HBoxContainer/Slider/Sound.value)
 	if Input.is_action_just_pressed("menu_new"):
-		toggle()
+		#toggle()
+		pass
 
 
 func toggle():
@@ -24,8 +27,9 @@ func toggle():
 
 
 func _on_start_pressed():
-	toggle()
-	get_tree().change_scene_to_file("res://Levels/maze_runner_-_godot.tscn")
+	#toggle()
+	#get_tree().change_scene_to_file("res://Levels/maze_runner_-_godot.tscn")
+	show_and_hide(levels, menu)
 
 
 func _on_options_pressed():
@@ -78,7 +82,7 @@ func _on_back_from_video_pressed():
 	show_and_hide(options, video)
 
 
-func _on_master_value_changed(value):
+func _on_sound_value_changed(value):
 	volume(0, value)
 
 func volume(bus_index, value):
@@ -86,10 +90,6 @@ func volume(bus_index, value):
 
 func _on_music_value_changed(value):
 	volume(1, value)
-
-
-func _on_sound_fx_value_changed(value):
-	volume(2, value)
 
 
 func _on_back_from_audio_pressed():
@@ -121,3 +121,12 @@ func _on_tuvwxyz_pressed():
 
 func _on_back_from_abcdef_pressed():
 	show_and_hide(music, abcdef)
+
+
+func _on_back_from_levels_pressed():
+	show_and_hide(menu, levels)
+
+
+func _on_mazerunner__godot_pressed():
+	$AudioStreamPlayer.stop()
+	get_tree().change_scene_to_file("res://Levels/maze_runner_-_godot.tscn")

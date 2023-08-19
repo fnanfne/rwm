@@ -188,7 +188,7 @@ _data = {
 }
 
 [node name="Redguy" type="CharacterBody2D"]
-z_index = 1
+z_index = 3
 collision_layer = 0
 script = ExtResource("1_67hgr")
 enemy_death_effect = ExtResource("2_0fbvp")

@@ -44,7 +44,6 @@ scale_max = 0.8
 color_ramp = SubResource("GradientTexture1D_yvw8t")
 
 [node name="Acid" type="StaticBody2D"]
-z_index = -1
 script = ExtResource("1_l3r52")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

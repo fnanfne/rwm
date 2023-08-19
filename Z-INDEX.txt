@@ -1,0 +1,7 @@
+z-Index -1 - Doors/hazzor/btc/boss
+z-Index  0 - Level/world/environment
+z-Index  1 - Apps/Keys
+z-Index  2 - Checkpoint/Lever/Computer
+z-Index  3 - Enemies
+z-Index  4 - Robot
+z-Index  5 - Kitty

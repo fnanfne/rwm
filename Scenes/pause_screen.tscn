@@ -6,8 +6,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1su2"]
 shader = ExtResource("1_1ftfp")
-shader_parameter/blur = 0.0
-shader_parameter/brightness = 1.0
+shader_parameter/blur = 0.8
+shader_parameter/brightness = 0.8
 
 [sub_resource type="LabelSettings" id="LabelSettings_ej5rf"]
 font = ExtResource("2_6fqid")
@@ -116,7 +116,6 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0.12549)
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -167,8 +166,37 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "quit game"
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="AreYouSureLabel" type="Label" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "are you sure??"
+label_settings = SubResource("LabelSettings_ej5rf")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="CancelButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
+text = "cancel"
+
+[node name="ConfirmRestartButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
+text = "restart level"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Unpause"
 libraries = {
 "": SubResource("AnimationLibrary_b7f8q")
 }
+
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/ConfirmRestartButton" to="." method="_on_confirm_restart_button_pressed"]
