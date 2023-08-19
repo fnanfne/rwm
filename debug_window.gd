@@ -30,30 +30,50 @@ func _on_jump_check_box_toggled(button_pressed):
 	else:
 		Game.JUMP = false
 
-
 func _on_d_jump_check_box_toggled(button_pressed):
-	pass # Replace with function body.
+	if button_pressed == true:
+		Game.DOUBLEJUMP = true
+	else:
+		Game.DOUBLEJUMP = false
 
 
 func _on_gun_check_box_toggled(button_pressed):
-	pass # Replace with function body.
+	if button_pressed == true:
+		Game.GUN = true
+	else:
+		Game.GUN = false
 
 
 func _on_ann_check_box_toggled(button_pressed):
-	pass # Replace with function body.
+	if button_pressed == true:
+		Game.ANNIHILATE = true
+	else:
+		Game.ANNIHILATE = false
 
 
 func _on_helmet_check_box_toggled(button_pressed):
-	pass # Replace with function body.
+	if button_pressed == true:
+		Game.HEMLET = true
+	else:
+		Game.HEMLET = false
 
 
 func _on_zoom_check_box_toggled(button_pressed):
-	pass # Replace with function body.
+	if button_pressed == true:
+		Game.ZOOM = true
+	else:
+		Game.ZOOM = false
 
 
 func _on_launch_check_box_toggled(button_pressed):
-	pass # Replace with function body.
+	if button_pressed == true:
+		Game.LAUNCH = true
+	else:
+		Game.LAUNCH = false
 
 
 func _on_option_button_toggled(button_pressed):
-	pass # Replace with function body.
+	if button_pressed == true:
+		Game.JUMP = true
+	else:
+		Game.JUMP = false

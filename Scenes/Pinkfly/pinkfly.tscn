@@ -44,6 +44,7 @@ animations = [{
 }]
 
 [node name="Pinkfly" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 0
 script = ExtResource("1_8uh7v")
 enemy_death_effect = ExtResource("2_3vc3g")

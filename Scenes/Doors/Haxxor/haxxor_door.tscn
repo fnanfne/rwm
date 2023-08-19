@@ -8,6 +8,7 @@
 size = Vector2(40, 120)
 
 [node name="HaxxorDoor" type="StaticBody2D"]
+z_index = -2
 script = ExtResource("1_uxlua")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

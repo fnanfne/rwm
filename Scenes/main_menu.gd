@@ -4,6 +4,8 @@ extends Control
 @onready var options = $Options
 @onready var video = $Video
 @onready var audio = $Audio
+@onready var music = $Music
+@onready var abcdef = $ABCDEF
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +13,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("menu_new"):
 		toggle()
 
@@ -92,3 +94,30 @@ func _on_sound_fx_value_changed(value):
 
 func _on_back_from_audio_pressed():
 	show_and_hide(options, audio)
+
+
+func _on_music_pressed():
+	show_and_hide(music, menu)
+	
+func _on_back_from_music_pressed():
+	show_and_hide(menu, music)
+
+
+func _on_abcdef_pressed():
+	show_and_hide(abcdef, music)
+
+
+func _on_ghijkl_pressed():
+	show_and_hide(options, music)
+
+
+func _on_mnopqrs_pressed():
+	show_and_hide(options, music)
+
+
+func _on_tuvwxyz_pressed():
+	show_and_hide(options, music)
+
+
+func _on_back_from_abcdef_pressed():
+	show_and_hide(music, abcdef)

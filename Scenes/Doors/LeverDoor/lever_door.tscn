@@ -10,7 +10,7 @@
 size = Vector2(40, 80)
 
 [node name="LeverDoor" type="StaticBody2D"]
-z_index = -1
+z_index = -2
 script = ExtResource("1_xi40x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

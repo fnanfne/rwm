@@ -158,6 +158,7 @@ _data = {
 }
 
 [node name="Eyeguy" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 0
 script = ExtResource("1_ux4qg")
 enemy_death_effect = ExtResource("2_d1a0l")

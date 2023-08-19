@@ -15,34 +15,55 @@ shader_parameter/alpha = 0.1
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0utcd")
 
+[node name="BG" parent="." instance=ExtResource("2_huy54")]
+
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_me8cf")
 offset_right = 1547.0
 offset_bottom = 1034.0
 size_flags_horizontal = 3
 
-[node name="Play" type="Button" parent="."]
-offset_left = 512.0
-offset_top = 278.0
-offset_right = 571.0
-offset_bottom = 314.0
-text = "Play"
-metadata/_edit_use_anchors_ = true
-
-[node name="Quit" type="Button" parent="."]
-offset_left = 512.0
-offset_top = 328.0
-offset_right = 571.0
-offset_bottom = 364.0
-text = "Quit"
-metadata/_edit_use_anchors_ = true
-
-[node name="BG" parent="." instance=ExtResource("2_huy54")]
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hyhs7")
 volume_db = -15.0
 autoplay = true
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 672.0
+offset_top = 408.0
+offset_right = 852.0
+offset_bottom = 611.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Options"
+metadata/_edit_use_anchors_ = true
+
+[node name="Music" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Music"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Music" to="." method="_on_quit_pressed"]

@@ -8,6 +8,7 @@
 size = Vector2(40, 120)
 
 [node name="GunTargetDoor" type="StaticBody2D"]
+z_index = -1
 script = ExtResource("1_u011y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

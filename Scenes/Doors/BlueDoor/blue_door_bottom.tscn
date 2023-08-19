@@ -21,7 +21,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlvj0"]
 
 [node name="BlueDoorBottom" type="StaticBody2D"]
-z_index = -1
+z_index = -2
 script = ExtResource("1_trpyo")
 
 [node name="DoorZone" type="Area2D" parent="."]

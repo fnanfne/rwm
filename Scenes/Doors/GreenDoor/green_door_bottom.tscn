@@ -21,7 +21,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlvj0"]
 
 [node name="GreenDoorBottom" type="StaticBody2D"]
-z_index = -1
+z_index = -2
 script = ExtResource("1_qf2gq")
 
 [node name="DoorZone" type="Area2D" parent="."]

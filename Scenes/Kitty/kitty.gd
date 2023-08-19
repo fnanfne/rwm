@@ -30,4 +30,4 @@ func _on_area_2d_body_entered(body):
 		await $Meow.finished
 		$GotKitty.play()
 		await $GotKitty.finished
-		get_tree().change_scene_to_file("res://main.tscn")
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

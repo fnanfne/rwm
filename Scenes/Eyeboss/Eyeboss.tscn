@@ -1157,6 +1157,7 @@ func _on_animation_change():
 "
 
 [node name="Eyeboss" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 0
 script = ExtResource("1_necy5")
 health = 5
