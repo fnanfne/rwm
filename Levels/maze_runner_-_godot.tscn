@@ -1947,7 +1947,6 @@ layer_0/tile_data = PackedInt32Array(196608, 2031617, 1, 262144, 2031617, 1, 327
 
 [node name="NewRobot" parent="." instance=ExtResource("4_ntqmw")]
 position = Vector2(460, 770)
-starting_position = Vector2(460, 710)
 
 [node name="Kitty" parent="." instance=ExtResource("39_okspd")]
 position = Vector2(460, 390)
@@ -1986,7 +1985,7 @@ position = Vector2(1300, 140)
 
 [node name="BTCdoor" parent="Doors" instance=ExtResource("15_aovat")]
 position = Vector2(1340, 620)
-btc_required = 12
+btc_required = 11
 
 [node name="LeverDoor" parent="Doors" instance=ExtResource("38_oh6j2")]
 position = Vector2(700, 640)

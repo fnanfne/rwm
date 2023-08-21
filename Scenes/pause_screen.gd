@@ -48,6 +48,9 @@ func _unhandled_input(event):
 
 func _on_menu_button_pressed():
 	#get_tree().tree_exiting
+	#Game.xPos = Game.Robot.position.x
+	#Game.yPos = Game.Robot.position.y
+	#Game.save_data()
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 

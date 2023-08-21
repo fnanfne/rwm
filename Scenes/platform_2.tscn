@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd2f3i4ald42u"]
+
+[ext_resource type="Texture2D" uid="uid://bjrofgh84bum" path="res://Assets/paint__TILESET/IMG_007.png" id="1_it5p3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o02ny"]
+size = Vector2(80, 80)
+
+[node name="Platform2" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_it5p3")
+region_enabled = true
+region_rect = Rect2(40, 200, 80, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o02ny")

@@ -25,6 +25,7 @@ var invincibility = false
 var neuter_shooting = false
 var is_alive = true
 var is_autobot = false
+var jump_pitch = 1.0
 var zoom_minimum = Vector2(1.5001, 1.5001)
 var zoom_maximum = Vector2(2.5001, 2.5001)
 var zoom_speed = Vector2(0.1001, 0.1001)
@@ -32,13 +33,15 @@ var orientation = 1
 var being_gooped = false
 
 @export var robot_death_effect : PackedScene
-@export var starting_position : Vector2
+#@export var starting_position : = Vector2 (20,50)
+#@export var starting_position : = Vector2 Game.starting_position
 
 @onready var anim = get_node("AnimationPlayer")
 @onready var coyote_jump_timer = $Timers/CoyoteJumpTimer
 @onready var shooting_cooldown_timer = $Timers/ShootingCooldownTimer
 @onready var damage_cooldown_timer = $Timers/DamageCooldownTimer
 @onready var camera = $Camera2D
+@onready var sound_jump = $Sounds/SoundJump
 
 @onready var anim_wheel = get_node("AllSprites/Wheel")
 @onready var anim_idle = get_node("AllSprites/Idle")
@@ -61,6 +64,8 @@ var being_gooped = false
 
 func _ready():
 	Game.Robot = self
+	#position.x = Game.xPos
+	#position.y = Game.yPos
 
 func _physics_process(delta):
 	#print(anim.current_animation)
@@ -75,6 +80,7 @@ func _physics_process(delta):
 	#print(Game.Robot.launch_timer_remaining)
 	#print(gravity)
 	#print($".".get_z_index())
+	#print(jump_pitch)
 
 	## Coyote Jump
 	#var was_on_floor = is_on_floor()
@@ -167,7 +173,10 @@ func _physics_process(delta):
 					if Game.DOUBLEJUMP and is_alive == true:
 						if Input.is_action_just_pressed("jump"):
 							#state = States.FALL # Should change to States.JUMP?
-							$Sounds/SoundJump.play()
+							#sound_jump.set_pitch_scale(jump_pitch)
+							sound_jump.set_pitch_scale(1.2)
+							sound_jump.play()
+							#jump_pitch += 0.2
 							$RobotPoof.emitting = false
 							velocity.y = DOUBLE_JUMP_VELOCITY
 							#print("Double Jumping UNDER FALL")
@@ -207,6 +216,7 @@ func _physics_process(delta):
 				is_jumping = false
 				anim_fall.visible = false
 				anim_helmet_fall.visible = false
+				jump_pitch = 1.0
 
 			# STATE CHECKER FROM FLOOR
 			
@@ -272,7 +282,8 @@ func _physics_process(delta):
 				if not has_double_jumped or coyote_jump_timer.time_left > 0.0:
 					if Input.is_action_just_pressed("jump"):
 						is_jumping = true
-						$Sounds/SoundJump.play()
+						sound_jump.set_pitch_scale(1.0)
+						sound_jump.play()
 						#state = States.FALL # Should change to States.JUMP?
 						velocity.y = JUMP_VELOCITY
 						make_all_sprites_invisible()
@@ -536,7 +547,7 @@ func _on_respawn_timer_timeout():
 	if Game.current_checkpoint != null:
 		Game.Robot.position = Game.current_checkpoint.global_position
 	else:
-		Game.Robot.position = starting_position
+		Game.Robot.position = Game.starting_position
 	being_gooped = false
 	is_alive = true
 	$".".set_z_index(4)

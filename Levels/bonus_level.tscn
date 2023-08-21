@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://djxxn7ehdj2d5"]
+
+[ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="1_26ay8"]
+[ext_resource type="Script" path="res://Levels/bonus_level.gd" id="1_r7c14"]
+[ext_resource type="Shader" path="res://Scenes/vhs_glitch.gdshader" id="2_4akbi"]
+[ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="2_hkbn0"]
+[ext_resource type="PackedScene" uid="uid://q2hh43814ksm" path="res://Scenes/platform_1.tscn" id="4_51ohh"]
+[ext_resource type="PackedScene" uid="uid://b3731u6lbim06" path="res://Robot/bonus_robot.tscn" id="6_aj58l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uc3ay"]
+shader = ExtResource("2_hkbn0")
+shader_parameter/speed = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/amplitude = 0.1
+shader_parameter/alpha = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ioqi"]
+shader = ExtResource("2_4akbi")
+shader_parameter/range = 0.05
+shader_parameter/noiseQuality = 250.0
+shader_parameter/noiseIntensity = 0.0088
+shader_parameter/offsetIntensity = 0.03
+shader_parameter/colorOffsetIntensity = 1.3
+
+[node name="BonusLevel" type="Node2D"]
+script = ExtResource("1_r7c14")
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Static" type="Node2D" parent="Environment"]
+
+[node name="Platform1" parent="Environment/Static" instance=ExtResource("4_51ohh")]
+
+[node name="Moving" type="Node2D" parent="Environment"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="BG" parent="Camera2D" instance=ExtResource("1_26ay8")]
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+material = SubResource("ShaderMaterial_uc3ay")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -610.0
+offset_top = -360.0
+offset_right = 670.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect2" type="ColorRect" parent="Camera2D"]
+visible = false
+material = SubResource("ShaderMaterial_6ioqi")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -620.0
+offset_top = -360.0
+offset_right = 660.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BonusRobot" parent="." instance=ExtResource("6_aj58l")]
+position = Vector2(-150, -140)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

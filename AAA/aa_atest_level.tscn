@@ -739,7 +739,6 @@ position = Vector2(1340, 180)
 
 [node name="NewRobot" parent="." instance=ExtResource("12_qe2d7")]
 position = Vector2(1390, 50)
-starting_position = Vector2(700, 50)
 
 [node name="Checkpoint" parent="." instance=ExtResource("23_2cfxn")]
 position = Vector2(2420, 180)
