@@ -31,6 +31,7 @@ one_shot = true
 [node name="OpenDoor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_c4ng8")
 volume_db = -10.0
+bus = &"Sounds"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]

@@ -181,6 +181,30 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, -3), Vector2(0, -3), Vector2(0, -4), Vector2(0, -4), Vector2(0, -4), Vector2(0, -3), Vector2(0, -2), Vector2(0, -2), Vector2(0, -1), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BodySprite/Face/Left_Eyelid:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BodySprite/Face/Right_Eyelid:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0fmng"]
 _data = {
@@ -215,7 +239,7 @@ sprite_frames = SubResource("SpriteFrames_t6vxu")
 
 [node name="Right_Leg" type="AnimatedSprite2D" parent="BodySprite"]
 use_parent_material = true
-position = Vector2(-2, -4)
+position = Vector2(0.374867, 0)
 sprite_frames = SubResource("SpriteFrames_3h5df")
 animation = &"Right_Leg"
 
@@ -226,6 +250,7 @@ animation = &"Jaw"
 
 [node name="Face" type="AnimatedSprite2D" parent="BodySprite"]
 use_parent_material = true
+position = Vector2(0, -2.37487)
 sprite_frames = SubResource("SpriteFrames_gb57e")
 animation = &"Face"
 
@@ -239,16 +264,19 @@ sprite_frames = SubResource("SpriteFrames_u6b5l")
 
 [node name="Left_Leg" type="AnimatedSprite2D" parent="BodySprite"]
 use_parent_material = true
+position = Vector2(-0.374867, -3)
 sprite_frames = SubResource("SpriteFrames_67c5q")
 animation = &"Left_Leg"
 
 [node name="Left_Antenna" type="AnimatedSprite2D" parent="BodySprite"]
 use_parent_material = true
+position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_m0ht3")
 animation = &"Left_Antenna"
 
 [node name="Right_Antenna" type="AnimatedSprite2D" parent="BodySprite"]
 use_parent_material = true
+position = Vector2(0, -1.1246)
 sprite_frames = SubResource("SpriteFrames_qfuyq")
 animation = &"Right_Antenna"
 
@@ -265,14 +293,17 @@ target_position = Vector2(0, 10)
 
 [node name="ProjectileHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_2w3rq")
+bus = &"Sounds"
 
 [node name="Screetch" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_7bsux")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="Die" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_1b7q6")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

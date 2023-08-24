@@ -42,5 +42,6 @@ shape = SubResource("RectangleShape2D_u52aa")
 [node name="OpenDoor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_nm525")
 volume_db = -10.0
+bus = &"Sounds"
 
 [connection signal="body_entered" from="DoorZone" to="." method="_on_door_zone_body_entered"]

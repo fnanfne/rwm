@@ -43,9 +43,11 @@ texture = ExtResource("3_a5nn8")
 
 [node name="BrickBreak" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_vro65")
+bus = &"Sounds"
 
 [node name="Bump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_xoqrw")
 volume_db = -10.0
+bus = &"Sounds"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

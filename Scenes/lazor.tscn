@@ -36,10 +36,12 @@ texture = ExtResource("4_wf1ax")
 
 [node name="PlasmaExplode" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4fjjh")
+bus = &"Sounds"
 
 [node name="PlasmaBounce" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_l3j6r")
 volume_db = -20.0
+bus = &"Sounds"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

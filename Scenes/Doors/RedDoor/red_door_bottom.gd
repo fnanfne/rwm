@@ -4,7 +4,8 @@ func _on_door_zone_body_entered(body):
 	if Game.REDKEY == true:
 		#if body.name == "Robot":
 		if body.is_in_group("Robots"):
-			set_collision_mask_value(1,false)
+			#set_collision_mask_value(1,false) # NOT WORKING
+			set_collision_layer_value(1,false)
 			$OpenDoor.play()
 			var tween1 = get_tree().create_tween()
 			#var tween2 = get_tree().create_tween()

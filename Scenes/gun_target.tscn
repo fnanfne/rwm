@@ -112,6 +112,7 @@ libraries = {
 [node name="Activated" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_kvnw5")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="GunTarget" type="Node2D" parent="."]
 

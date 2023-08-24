@@ -304,5 +304,6 @@ libraries = {
 [node name="SadHappy" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_y011y")
 volume_db = -10.0
+bus = &"Sounds"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

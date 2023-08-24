@@ -227,6 +227,7 @@ func _physics_process(delta):
 
 			# HANDLE DIRECTION FROM FLOOR:
 			if direction == -1:
+				make_all_sprites_invisible()
 				if Game.HEMLET:
 					anim.play("Helmet_Run")
 					anim_helmet_run.visible = true
@@ -243,6 +244,7 @@ func _physics_process(delta):
 				$RobotPoof.position.x = 10
 				$Area2D2.rotation = 0
 			elif direction == 1:
+				make_all_sprites_invisible()
 				if Game.HEMLET:
 					anim.play("Helmet_Run")
 					anim_helmet_run.visible = true

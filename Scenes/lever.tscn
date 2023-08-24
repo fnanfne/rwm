@@ -16,6 +16,7 @@ script = ExtResource("1_3do14")
 [node name="Switched" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_t3swr")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.6, 4)

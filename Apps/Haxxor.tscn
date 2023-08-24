@@ -164,6 +164,7 @@ sprite_frames = SubResource("SpriteFrames_ptup6")
 [node name="SoundPickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_erffs")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Flash"

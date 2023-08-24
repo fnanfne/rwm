@@ -92,6 +92,7 @@ frame_progress = 0.636096
 [node name="SoundPickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_g7s77")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0

@@ -23,7 +23,8 @@ func _on_all_btc_collected():
 	pass
 
 func _on_timer_timeout():
-	set_collision_mask_value(1,false)
+	#set_collision_mask_value(1,false) # NOT WORKING
+	set_collision_layer_value(1,false)
 	$DoorOpen.play()
 	var TW1 = get_tree().create_tween()
 	var TW2 = get_tree().create_tween()

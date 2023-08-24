@@ -82,5 +82,6 @@ sprite_frames = SubResource("SpriteFrames_kll6w")
 [node name="SoundPickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_kryrq")
 volume_db = -10.0
+bus = &"Sounds"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

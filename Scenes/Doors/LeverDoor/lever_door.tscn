@@ -24,14 +24,17 @@ shape = SubResource("RectangleShape2D_b6edk")
 [node name="DoorOpen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6100o")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="Screetch" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_5mq1n")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="Explode" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_t1mc1")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5

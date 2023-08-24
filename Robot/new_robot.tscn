@@ -948,40 +948,51 @@ zoom = Vector2(1.9, 1.9)
 [node name="SoundJump" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("7_g3llx")
 volume_db = -5.0
+bus = &"Sounds"
 
 [node name="SoundShoot" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("8_1wjxa")
+bus = &"Sounds"
 
 [node name="SoundLaunch" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("15_kjgo3")
 volume_db = -5.0
+bus = &"Sounds"
 
 [node name="SoundRun" type="AudioStreamPlayer" parent="Sounds"]
+bus = &"Sounds"
 
 [node name="GunFire" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("8_1wjxa")
+bus = &"Sounds"
 
 [node name="PlasmaExplode" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("13_5017s")
+bus = &"Sounds"
 
 [node name="TakingDamage" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("14_et73s")
+bus = &"Sounds"
 
 [node name="LaunchBump" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("19_if7hf")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="LaunchHelmetBump" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("19_if7hf")
 volume_db = -5.0
+bus = &"Sounds"
 
 [node name="Die" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("15_8mmlj")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="Gooped" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("21_phfxn")
 volume_db = -10.0
+bus = &"Sounds"
 
 [node name="RobotPoof" type="CPUParticles2D" parent="."]
 position = Vector2(-18, 24)
@@ -1076,8 +1087,6 @@ one_shot = true
 [node name="ZoomTimer" type="Timer" parent="Timers"]
 wait_time = 2.0
 one_shot = true
-
-[node name="Skeleton2D" type="Skeleton2D" parent="."]
 
 [node name="PauseScreen" parent="." instance=ExtResource("32_v5ngu")]
 
