@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ds02qr33layf5"]
+[gd_scene load_steps=29 format=3 uid="uid://ds02qr33layf5"]
 
 [ext_resource type="Script" path="res://Scenes/Redboss/Redboss.gd" id="1_3cvuy"]
 [ext_resource type="Texture2D" uid="uid://cvdcgheojey4y" path="res://Assets/Enemies/Redboss/From John/5.png" id="1_o66gy"]
@@ -17,7 +17,10 @@
 size = Vector2(98, 84)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvw43"]
-size = Vector2(112.007, 17.2131)
+size = Vector2(50, 250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6crap"]
+size = Vector2(50, 80)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b0vba"]
 resource_local_to_scene = true
@@ -544,15 +547,23 @@ position = Vector2(1, -22)
 shape = SubResource("RectangleShape2D_fyxm3")
 
 [node name="Area2D" type="Area2D" parent="."]
-rotation = 3.14159
-scale = Vector2(0.0400002, -15.64)
+position = Vector2(1, -23)
 collision_layer = 4
 collision_mask = 19
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-24.9999, -1.79028)
-scale = Vector2(22.32, 0.31202)
+[node name="Right" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(25, 0)
+scale = Vector2(1, 0.320001)
 shape = SubResource("RectangleShape2D_xvw43")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(1, -23)
+collision_layer = 4
+collision_mask = 19
+
+[node name="Left" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-25, 0)
+shape = SubResource("RectangleShape2D_6crap")
 
 [node name="BodySprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_b0vba")
@@ -629,6 +640,7 @@ wait_time = 1.8
 one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

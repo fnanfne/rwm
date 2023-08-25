@@ -100,7 +100,7 @@ func _on_video_button_pressed():
 
 func _on_back_from_audio_pressed():
 	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Audio.hide()
-	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu.show()
+	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Options.show()
 
 
 func _on_back_from_options_pressed():
@@ -110,7 +110,7 @@ func _on_back_from_options_pressed():
 
 func _on_back_from_video_pressed():
 	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Video.hide()
-	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu.show()
+	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Options.show()
 
 
 func _on_volume_down_pressed():
@@ -139,3 +139,24 @@ func _on_music_volume_up_pressed():
 	SoundManager.set_music_volume(next_volume)
 	music_volume_label.text = "%d%%" % [round(next_volume * 100)]
 	SoundManager.play_sound(music_sample)
+
+
+func _on_full_screen_toggled(button_pressed):
+	if button_pressed == true:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_borderless_toggled(button_pressed):
+	if button_pressed == true:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_vsync_toggled(button_pressed):
+	if button_pressed == true:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+	else:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)

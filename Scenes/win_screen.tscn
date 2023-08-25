@@ -25,7 +25,8 @@ font_color = Color(0, 1, 0, 0.662745)
 
 [node name="Win" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_2o3ke")
-position = Vector2(336, 164)
+position = Vector2(120, 10)
+scale = Vector2(2.2, 2.2)
 texture = ExtResource("2_fttf1")
 centered = false
 
@@ -49,6 +50,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="ColorRect/CenterContainer"]
+visible = false
 custom_minimum_size = Vector2(480, 320)
 layout_mode = 2
 

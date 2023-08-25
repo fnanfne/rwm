@@ -26,6 +26,7 @@ var Robot : Robot
 var TestRobotReference : TestRobot
 var PLATFORMDIRECTION : int = 1
 var starting_position : = Vector2 (460,710)
+var camera : Camera2D
 
 # SAVE SYSTEM
 #var starting_position : = Vector2 (460,710)

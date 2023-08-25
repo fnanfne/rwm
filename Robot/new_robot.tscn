@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://yg103a66ifo2"]
+[gd_scene load_steps=73 format=3 uid="uid://yg103a66ifo2"]
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://bmixt1s7k1ts4" path="res://Assets/Robot/From John/robot_jump_helmet.png" id="18_dwea2"]
 [ext_resource type="AudioStream" uid="uid://dpyw64kw0cp8w" path="res://Assets/Audio/Sounds/hit_helmet.ogg" id="19_if7hf"]
 [ext_resource type="Texture2D" uid="uid://dmw51auxobtws" path="res://Assets/Robot/From John/rocketfire.png" id="19_jlv5r"]
+[ext_resource type="Script" path="res://Robot/Camera2D.gd" id="20_saxxs"]
 [ext_resource type="AudioStream" uid="uid://chhbv5r7x5u8h" path="res://Assets/Audio/Sounds/gooped.ogg" id="21_phfxn"]
 [ext_resource type="Texture2D" uid="uid://cm7p0qujtx3ip" path="res://Assets/Robot/From John/landpoof.png" id="22_5bqy6"]
 [ext_resource type="Texture2D" uid="uid://biaijlkqubpix" path="res://Assets/Robot/From John/landpoof_left.png" id="23_yi3i8"]
@@ -942,6 +943,9 @@ polygon = PackedVector2Array(-7, 24, -6, -10, 0, -13, 6, -10, 8, 24)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.9, 1.9)
+script = ExtResource("20_saxxs")
+
+[node name="Timer" type="Timer" parent="Camera2D"]
 
 [node name="Sounds" type="Node2D" parent="."]
 
@@ -1073,7 +1077,7 @@ wait_time = 0.4
 one_shot = true
 
 [node name="RespawnTimer" type="Timer" parent="Timers"]
-wait_time = 0.1
+wait_time = 0.8
 one_shot = true
 
 [node name="DamageCooldownTimer" type="Timer" parent="Timers"]
@@ -1088,13 +1092,23 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
+[node name="MoveAfterRespawnTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
+one_shot = true
+
+[node name="SmoothingCameraTimer" type="Timer" parent="Timers"]
+one_shot = true
+
 [node name="PauseScreen" parent="." instance=ExtResource("32_v5ngu")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
+[connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timers/LaunchTimer" to="." method="_on_launch_timer_timeout"]
 [connection signal="timeout" from="Timers/RespawnTimer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="timeout" from="Timers/DamageCooldownTimer" to="." method="_on_damage_cooldown_timer_timeout"]
 [connection signal="timeout" from="Timers/CoyoteJumpTimer" to="." method="_on_coyote_jump_timer_timeout"]
 [connection signal="timeout" from="Timers/ZoomTimer" to="." method="_on_zoom_timer_timeout"]
+[connection signal="timeout" from="Timers/MoveAfterRespawnTimer" to="." method="_on_move_after_respawn_timer_timeout"]
+[connection signal="timeout" from="Timers/SmoothingCameraTimer" to="." method="_on_smoothing_camera_timer_timeout"]

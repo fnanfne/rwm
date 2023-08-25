@@ -45,6 +45,7 @@ func _on_area_2d_body_entered(body):
 		if health > 0:
 			health -= 1
 			$ProjectileHit.play()
+			direction *= -1
 
 			# NEW SHADER METHOD BELOW
 			var TW4 = get_tree().create_tween()

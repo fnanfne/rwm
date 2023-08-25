@@ -81,6 +81,7 @@ func _physics_process(delta):
 	#print(gravity)
 	#print($".".get_z_index())
 	#print(jump_pitch)
+	print(Game.camera.position_smoothing_enabled)
 
 	## Coyote Jump
 	#var was_on_floor = is_on_floor()
@@ -506,6 +507,9 @@ func taking_damage():
 				Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 func respawn():
+	Game.camera.position_smoothing_enabled = true
+	Game.camera.position_smoothing_speed = 5
+	Game.camera.shake(0.5, 10)
 	get_node("Area2D/CollisionShape2D").set_deferred("disabled", true)
 	$".".hide()
 	var effect_instance : CPUParticles2D = robot_death_effect.instantiate()
@@ -551,12 +555,22 @@ func _on_respawn_timer_timeout():
 	else:
 		Game.Robot.position = Game.starting_position
 	being_gooped = false
-	is_alive = true
+	$Timers/MoveAfterRespawnTimer.start()
+	#is_alive = true
 	$".".set_z_index(4)
 	#set_physics_process(true)
 	$".".show()
 	get_node("Area2D/CollisionShape2D").set_deferred("disabled", false)
 	modulate = Color(Color.WHITE)
+
+
+func _on_move_after_respawn_timer_timeout():
+	is_alive = true
+	$Timers/SmoothingCameraTimer.start()
+
+func _on_smoothing_camera_timer_timeout():
+	Game.camera.position_smoothing_enabled = false
+
 
 func shoot_lazor():
 	#if LAZOR:
