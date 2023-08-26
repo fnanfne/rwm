@@ -18,7 +18,7 @@ func _ready():
 
 
 func _process(_delta):
-	print($Timer.time_left)
+	#print($Timer.time_left)
 	# Spawn a new platform
 	if Time.get_ticks_msec() > next_spawn_time:
 		_spawn_next_platform()

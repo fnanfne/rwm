@@ -1685,7 +1685,7 @@ position = Vector2(1300, 140)
 
 [node name="BTCdoor" parent="Doors" instance=ExtResource("15_aovat")]
 position = Vector2(1340, 620)
-btc_required = 11
+btc_required = 5
 
 [node name="LeverDoor" parent="Doors" instance=ExtResource("38_oh6j2")]
 position = Vector2(700, 640)
@@ -1859,29 +1859,11 @@ position = Vector2(260, 660)
 
 [node name="Bitcoins" type="Node2D" parent="."]
 
-[node name="Bitcoin" parent="Bitcoins" instance=ExtResource("20_de8fu")]
-position = Vector2(540, 740)
-
-[node name="Bitcoin2" parent="Bitcoins" instance=ExtResource("20_de8fu")]
-position = Vector2(540, 780)
-
-[node name="Bitcoin3" parent="Bitcoins" instance=ExtResource("20_de8fu")]
-position = Vector2(540, 820)
-
 [node name="Bitcoin4" parent="Bitcoins" instance=ExtResource("20_de8fu")]
 position = Vector2(540, 700)
 
 [node name="Bitcoin5" parent="Bitcoins" instance=ExtResource("20_de8fu")]
 position = Vector2(860, 700)
-
-[node name="Bitcoin6" parent="Bitcoins" instance=ExtResource("20_de8fu")]
-position = Vector2(900, 700)
-
-[node name="Bitcoin7" parent="Bitcoins" instance=ExtResource("20_de8fu")]
-position = Vector2(940, 700)
-
-[node name="Bitcoin8" parent="Bitcoins" instance=ExtResource("20_de8fu")]
-position = Vector2(980, 700)
 
 [node name="Bitcoin9" parent="Bitcoins" instance=ExtResource("20_de8fu")]
 position = Vector2(1140, 660)

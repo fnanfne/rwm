@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+#@onready var win_screen : CanvasLayer = find_child("WinScreen")
+#@onready var win_screen = $WinScreen
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -30,4 +33,8 @@ func _on_area_2d_body_entered(body):
 		await $Meow.finished
 		$GotKitty.play()
 		await $GotKitty.finished
-		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		#win_screen.visible = true
+		#$MenuSong.play()
+		#get_tree().AudioStreamPlayer.stop()
+		#get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")

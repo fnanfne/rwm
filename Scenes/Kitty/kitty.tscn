@@ -13,6 +13,7 @@
 size = Vector2(27, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bkxbl"]
+radius = 14.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jaace"]
 animations = [{

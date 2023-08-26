@@ -128,5 +128,5 @@ func _on_back_from_levels_pressed():
 
 
 func _on_mazerunner__godot_pressed():
-	$AudioStreamPlayer.stop()
+	$MenuSong.stop()
 	get_tree().change_scene_to_file("res://Levels/maze_runner_-_godot.tscn")

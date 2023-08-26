@@ -939,7 +939,7 @@ libraries = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-7, 24, -6, -10, 0, -13, 6, -10, 8, 24)
+polygon = PackedVector2Array(-6, 24, -6, -10, 0, -13, 6, -10, 6, 24)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.9, 1.9)
