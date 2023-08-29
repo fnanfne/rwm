@@ -81,7 +81,7 @@ func _physics_process(delta):
 	#print(gravity)
 	#print($".".get_z_index())
 	#print(jump_pitch)
-	print(Game.camera.position_smoothing_enabled)
+	#print(Game.camera.position_smoothing_enabled)
 
 	## Coyote Jump
 	#var was_on_floor = is_on_floor()

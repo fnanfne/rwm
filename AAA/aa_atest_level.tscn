@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://yb0jhdfx1v5s"]
+[gd_scene load_steps=34 format=3 uid="uid://yb0jhdfx1v5s"]
 
 [ext_resource type="Texture2D" uid="uid://diwgxqubss5ol" path="res://Assets/paint__TILESET/IMG_010.png" id="1_ywp0g"]
 [ext_resource type="PackedScene" uid="uid://bpy6be58hevdo" path="res://Apps/annihilator.tscn" id="2_gqcbr"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://bob7grqiomo4v" path="res://Scenes/Keys/RedKey/red_key.tscn" id="28_abtj6"]
 [ext_resource type="PackedScene" uid="uid://8fo113v8l2bn" path="res://Scenes/computer.tscn" id="29_27xhl"]
 [ext_resource type="PackedScene" uid="uid://bm3g0a78ol6i" path="res://Redguy/Redguy.tscn" id="30_p2co1"]
+[ext_resource type="PackedScene" uid="uid://cmk7q085ni4op" path="res://Scenes/push_block.tscn" id="31_0tgwn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ekfe"]
 texture = ExtResource("1_ywp0g")
@@ -739,7 +740,7 @@ position = Vector2(1380, 180)
 position = Vector2(1340, 180)
 
 [node name="NewRobot" parent="." instance=ExtResource("12_qe2d7")]
-position = Vector2(1390, 50)
+position = Vector2(1380, -230)
 
 [node name="Checkpoint" parent="." instance=ExtResource("23_2cfxn")]
 position = Vector2(2420, 180)
@@ -780,3 +781,6 @@ position = Vector2(1550, -20)
 
 [node name="Redguy2" parent="." instance=ExtResource("30_p2co1")]
 position = Vector2(1620, -20)
+
+[node name="PushBlock" parent="." instance=ExtResource("31_0tgwn")]
+position = Vector2(1080, -380)
