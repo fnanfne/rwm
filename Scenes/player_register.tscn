@@ -1,0 +1,279 @@
+[gd_scene load_steps=11 format=3 uid="uid://cw7jsibo8ai1q"]
+
+[ext_resource type="Script" path="res://Scenes/player_register.gd" id="1_yuhor"]
+[ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="2_e0wn3"]
+[ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="3_7hfg3"]
+[ext_resource type="Texture2D" uid="uid://cdg7ti7ra3dks" path="res://Assets/Icons/icons8-info-32.png" id="4_wqpdr"]
+[ext_resource type="Theme" uid="uid://d2eakbmaefnt6" path="res://addons/silent_wolf/assets/themes/sw_theme.tres" id="5_oxfcy"]
+[ext_resource type="Shader" path="res://Scenes/vhs_glitch.gdshader" id="6_bf3jt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u7sn7"]
+shader = ExtResource("3_7hfg3")
+shader_parameter/speed = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/amplitude = 0.1
+shader_parameter/alpha = 0.1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2w3o3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_du3fi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gdt1d"]
+shader = ExtResource("6_bf3jt")
+shader_parameter/range = 0.05
+shader_parameter/noiseQuality = 250.0
+shader_parameter/noiseIntensity = 0.001
+shader_parameter/offsetIntensity = 0.03
+shader_parameter/colorOffsetIntensity = 1.3
+
+[node name="PlayerRegister" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yuhor")
+
+[node name="BG" parent="." instance=ExtResource("2_e0wn3")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_u7sn7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -90.0
+offset_right = 228.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 21
+
+[node name="UsernameBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Username" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer/UsernameBox"]
+layout_mode = 2
+text = "USERNAME"
+
+[node name="EmailBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Email" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer/EmailBox"]
+layout_mode = 2
+text = "EMAIL"
+
+[node name="PasswordBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Password" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer/PasswordBox"]
+layout_mode = 2
+text = "PASSWORD"
+
+[node name="PasswordConfirmBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="PasswordConfirm" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer/PasswordConfirmBox"]
+layout_mode = 2
+text = "CONFIRM"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="UsernameBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="PlayerName" type="LineEdit" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
+[node name="EmailBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Email" type="LineEdit" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/EmailBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
+[node name="PasswordBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Password" type="LineEdit" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/PasswordBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+secret = true
+caret_blink = true
+
+[node name="PasswordConfirmBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="ConfirmPassword" type="LineEdit" parent="VBoxContainer/HBoxContainer2/VBoxContainer2/PasswordConfirmBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+secret = true
+caret_blink = true
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 7
+
+[node name="UsernameInfoButton" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2w3o3")
+icon = ExtResource("4_wqpdr")
+flat = true
+
+[node name="DummyButton1" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+icon = ExtResource("4_wqpdr")
+flat = true
+
+[node name="PasswordInfoButton" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_du3fi")
+icon = ExtResource("4_wqpdr")
+flat = true
+
+[node name="DummyButton2" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+icon = ExtResource("4_wqpdr")
+flat = true
+
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.5
+offset_top = 168.0
+offset_right = 72.5
+offset_bottom = 194.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "NEW USER SIGNUP"
+
+[node name="InfoBox" type="Label" parent="."]
+visible = false
+modulate = Color(0, 1, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+offset_left = 874.0
+offset_top = 280.0
+offset_right = 1096.0
+offset_bottom = 417.0
+theme_override_font_sizes/font_size = 15
+text = "Password should contain at least 8 characters including uppercase and lowercase letters, numbers and (optionally) special characters."
+autowrap_mode = 2
+
+[node name="ErrorMessage" type="Label" parent="."]
+visible = false
+modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(36, 0)
+offset_left = 525.0
+offset_top = 577.0
+offset_right = 788.0
+offset_bottom = 615.0
+theme = ExtResource("5_oxfcy")
+theme_override_colors/font_color = Color(0.92549, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ProcessingLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_top = 550.0
+offset_right = 107.0
+offset_bottom = 576.0
+grow_horizontal = 2
+text = "Processing..."
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_gdt1d")
+layout_mode = 0
+offset_left = 596.0
+offset_top = 553.0
+offset_right = 703.0
+offset_bottom = 574.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -233.0
+offset_right = 100.0
+offset_bottom = -193.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 37
+alignment = 1
+
+[node name="SubmitButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SUBMIT"
+
+[node name="BackButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CANCEL"
+
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/VBoxContainer3/UsernameInfoButton" to="." method="_on_username_info_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer2/VBoxContainer3/UsernameInfoButton" to="." method="_on_username_info_button_mouse_exited"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/VBoxContainer3/PasswordInfoButton" to="." method="_on_password_info_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer2/VBoxContainer3/PasswordInfoButton" to="." method="_on_password_info_button_mouse_exited"]
+[connection signal="pressed" from="HBoxContainer/SubmitButton" to="." method="_on_submit_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

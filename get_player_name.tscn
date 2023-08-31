@@ -1,0 +1,226 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3b6w33dkv2dr"]
+
+[ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="1_ir7m8"]
+[ext_resource type="Script" path="res://get_player_name.gd" id="1_ju221"]
+[ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="2_25xph"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8l8q8"]
+shader = ExtResource("2_25xph")
+shader_parameter/speed = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/amplitude = 0.1
+shader_parameter/alpha = 0.1
+
+[node name="PlayerName" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ju221")
+
+[node name="BG" parent="." instance=ExtResource("1_ir7m8")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_8l8q8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.5
+offset_top = -30.5
+offset_right = 131.5
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="UsernameBox" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Username" type="Label" parent="HBoxContainer/VBoxContainer/UsernameBox"]
+layout_mode = 2
+text = "USERNAME"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/UsernameBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
+[node name="EmailBox" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Email" type="Label" parent="HBoxContainer/VBoxContainer/EmailBox"]
+layout_mode = 2
+text = "EMAIL"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/EmailBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
+[node name="PasswordBox" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Password" type="Label" parent="HBoxContainer/VBoxContainer/PasswordBox"]
+layout_mode = 2
+text = "PASSWORD"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/PasswordBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+secret = true
+caret_blink = true
+
+[node name="PasswordConfirmBox" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PasswordConfirm" type="Label" parent="HBoxContainer/VBoxContainer/PasswordConfirmBox"]
+layout_mode = 2
+text = "CONFIRM"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/PasswordConfirmBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+secret = true
+caret_blink = true
+
+[node name="SubmitButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "SUBMIT"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 183.0
+offset_top = -87.0
+offset_right = 446.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 9
+
+[node name="UsernameBox" type="HBoxContainer" parent="HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Username" type="Label" parent="HBoxContainer2/VBoxContainer/UsernameBox"]
+layout_mode = 2
+text = "USERNAME"
+
+[node name="EmailBox" type="HBoxContainer" parent="HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Email" type="Label" parent="HBoxContainer2/VBoxContainer/EmailBox"]
+layout_mode = 2
+text = "EMAIL"
+
+[node name="PasswordBox" type="HBoxContainer" parent="HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Password" type="Label" parent="HBoxContainer2/VBoxContainer/PasswordBox"]
+layout_mode = 2
+text = "PASSWORD"
+
+[node name="PasswordConfirmBox" type="HBoxContainer" parent="HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="PasswordConfirm" type="Label" parent="HBoxContainer2/VBoxContainer/PasswordConfirmBox"]
+layout_mode = 2
+text = "CONFIRM"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="UsernameBox" type="HBoxContainer" parent="HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer2/VBoxContainer2/UsernameBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
+[node name="EmailBox" type="HBoxContainer" parent="HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer2/VBoxContainer2/EmailBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
+[node name="PasswordBox" type="HBoxContainer" parent="HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer2/VBoxContainer2/PasswordBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+secret = true
+caret_blink = true
+
+[node name="PasswordConfirmBox" type="HBoxContainer" parent="HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer2/VBoxContainer2/PasswordConfirmBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+secret = true
+caret_blink = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.5
+offset_top = 168.0
+offset_right = 72.5
+offset_bottom = 194.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "NEW USER SIGNUP"
+
+[node name="Notification" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.5
+offset_top = 457.0
+offset_right = 72.5
+offset_bottom = 483.0
+grow_horizontal = 2
+
+[node name="SubmitButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 832.0
+offset_top = 422.0
+offset_right = 964.0
+offset_bottom = 464.0
+text = "SUBMIT"
+
+[connection signal="text_submitted" from="HBoxContainer/VBoxContainer/UsernameBox/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="HBoxContainer/SubmitButton" to="." method="_on_submit_button_pressed"]
+[connection signal="text_submitted" from="HBoxContainer2/VBoxContainer2/UsernameBox/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]

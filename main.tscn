@@ -63,7 +63,47 @@ layout_mode = 2
 text = "Music"
 metadata/_edit_use_anchors_ = true
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+offset_left = 615.0
+offset_top = 247.0
+offset_right = 910.0
+offset_bottom = 389.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "SCORE:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 11
+
+[node name="Increase" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "INCREASE"
+
+[node name="Decrease" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "DECREASE"
+
+[node name="Submit" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "SUBMIT"
+
+[node name="Leaderboard" type="Button" parent="."]
+offset_left = 702.0
+offset_top = 177.0
+offset_right = 825.0
+offset_bottom = 208.0
+text = "LEADERBOARD"
+
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="VBoxContainer/Music" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Increase" to="." method="_on_increase_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Decrease" to="." method="_on_decrease_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="Leaderboard" to="." method="_on_leaderboard_pressed"]

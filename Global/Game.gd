@@ -20,13 +20,18 @@ var VELCRO = false
 var REDKEY = false
 var BLUEKEY = false
 var GREENKEY = false
-#var YELLOWKEY = false
 var current_checkpoint : Checkpoint
 var Robot : Robot
 var TestRobotReference : TestRobot
 var PLATFORMDIRECTION : int = 1
 var starting_position : = Vector2 (460,710)
 var camera : Camera2D
+var close_menu = false
+var score = 0
+var player_name = ""
+var player_email = ""
+var player_list = []
+
 
 # SAVE SYSTEM
 #var starting_position : = Vector2 (460,710)
@@ -64,13 +69,41 @@ var camera : Camera2D
 #	file = null
 #
 
+
+# I HAVE MOVED THE BELOW TO ROBOT INSTEAD
+#func respawn():
+#	if current_checkpoint != null:
+#		Robot.position = current_checkpoint.global_position
+#	else:
+#		Robot.position = Vector2(986,130)
+
+
 func lose_life():
 	robotHP -= 1
 	hud.load_hearts()
 
-# I HAVE MOVED THE BELOW TO ROBOT INSTEAD
-func respawn():
-	if current_checkpoint != null:
-		Robot.position = current_checkpoint.global_position
-	else:
-		Robot.position = Vector2(986,130)
+
+# SILENTWOLF --> ONLINE LEADERBOARD
+func _ready():
+	SilentWolf.configure({
+		"api_key": "udPADbqpQV23AnuiKHQ8A6GdQyvPc1ht8oC6th99",
+		"game_id": "robotwantskitty",
+		"game_version": "1",
+		"log_level": 1
+	})
+	
+	SilentWolf.configure_scores({
+		"open_scene_on_close": "res://main.tscn"
+		#"open_scene_on_close": "res://Scenes/main_menu.tscn"
+	})
+
+
+# SILENTWOLF --> ONLINE LEADERBOARD
+func _physics_process(delta):
+	leaderboard()
+
+
+# SILENTWOLF --> ONLINE LEADERBOARD
+func leaderboard():
+	for score in Game.score:
+		Game.player_list.append(Game.player_name)

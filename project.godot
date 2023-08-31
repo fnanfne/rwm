@@ -22,6 +22,7 @@ config/windows_native_icon="res://Assets/Icons/kitty.ico"
 Game="*res://Global/Game.gd"
 Utils="*res://Global/Utils.gd"
 SoundManager="*res://addons/sound_manager/sound_manager.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
