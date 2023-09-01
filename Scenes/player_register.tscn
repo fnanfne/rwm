@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cw7jsibo8ai1q"]
+[gd_scene load_steps=12 format=3 uid="uid://cw7jsibo8ai1q"]
 
 [ext_resource type="Script" path="res://Scenes/player_register.gd" id="1_yuhor"]
 [ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="2_e0wn3"]
@@ -25,6 +25,8 @@ shader_parameter/noiseQuality = 250.0
 shader_parameter/noiseIntensity = 0.001
 shader_parameter/offsetIntensity = 0.03
 shader_parameter/colorOffsetIntensity = 1.3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kx76j"]
 
 [node name="PlayerRegister" type="Control"]
 layout_mode = 3
@@ -264,13 +266,16 @@ alignment = 1
 [node name="SubmitButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kx76j")
 text = "SUBMIT"
 
 [node name="BackButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kx76j")
 text = "CANCEL"
 
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName" to="." method="_on_player_name_text_changed"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/VBoxContainer3/UsernameInfoButton" to="." method="_on_username_info_button_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/HBoxContainer2/VBoxContainer3/UsernameInfoButton" to="." method="_on_username_info_button_mouse_exited"]
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer2/VBoxContainer3/PasswordInfoButton" to="." method="_on_password_info_button_mouse_entered"]

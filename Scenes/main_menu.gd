@@ -1,6 +1,6 @@
 extends Control
 
-@onready var menu = $Menu
+@onready var menu = $VBoxContainer
 @onready var options = $Options
 @onready var video = $Video
 @onready var audio = $Audio

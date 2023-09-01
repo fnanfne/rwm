@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl3agjki6riws"]
+[gd_scene load_steps=9 format=3 uid="uid://dl3agjki6riws"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_0utcd"]
 [ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="2_huy54"]
 [ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="2_werql"]
 [ext_resource type="AudioStream" uid="uid://bfbb04e1fn4gl" path="res://Assets/Audio/Sounds/music_title__STREAM.ogg" id="3_hyhs7"]
+[ext_resource type="Texture2D" uid="uid://cy1svfkrfmif5" path="res://Assets/UI/play.png" id="5_yvspc"]
+[ext_resource type="Texture2D" uid="uid://7uve831i3rda" path="res://Assets/UI/setup.png" id="6_0ipfd"]
+[ext_resource type="Texture2D" uid="uid://bg7ewo3h6376e" path="res://Assets/UI/MakerMall.png" id="7_bv8oq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_me8cf"]
 shader = ExtResource("2_werql")
@@ -63,34 +66,23 @@ layout_mode = 2
 text = "Music"
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-offset_left = 615.0
-offset_top = 247.0
-offset_right = 910.0
-offset_bottom = 389.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
-layout_mode = 2
-
-[node name="ScoreLabel" type="Label" parent="VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-text = "SCORE:"
-
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 11
+[node name="VBoxContainer2" type="HBoxContainer" parent="."]
+offset_left = 941.0
+offset_top = 239.0
+offset_right = 1236.0
+offset_bottom = 446.0
 
 [node name="Increase" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
-text = "INCREASE"
+icon = ExtResource("5_yvspc")
 
 [node name="Decrease" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
-text = "DECREASE"
+icon = ExtResource("6_0ipfd")
 
 [node name="Submit" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
-text = "SUBMIT"
+icon = ExtResource("7_bv8oq")
 
 [node name="Leaderboard" type="Button" parent="."]
 offset_left = 702.0

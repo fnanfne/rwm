@@ -2,11 +2,41 @@ extends Control
 
 const SWLogger = preload("res://addons/silent_wolf/utils/SWLogger.gd")
 
+const EXCEPTIONS = [" ", "!",'"',"£","$","%","^","&","*","(",")",
+"`","¬","[","]","{","}","-","+","=",";",":","'","@","#","~",",","<",".",
+">","/","?","_","|"]
+
+var username : LineEdit
+var submit_button : Button
+
 
 func _ready():
 	SilentWolf.check_auth_ready()
 	SilentWolf.Auth.sw_registration_complete.connect(_on_registration_complete)
 	SilentWolf.Auth.sw_registration_user_pwd_complete.connect(_on_registration_user_pwd_complete)
+	username = $"VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName"
+	submit_button = $"HBoxContainer/SubmitButton"
+
+	#username.connect("text_changed", self, "_on_username_text_changed")
+	#username.connect("text_changed", _on_username_text_changed)
+	username.connect("text_changed", _on_player_name_text_changed)
+
+#func _on_username_text_changed(new_text):
+#	for exception in EXCEPTIONS:
+#		if new_text.find(exception) != -1:
+#			submit_button.disabled = true
+#			return
+#			
+#	submit_button.disabled = false
+
+
+func _on_player_name_text_changed(new_text):
+	for exception in EXCEPTIONS:
+		if new_text.find(exception) != -1:
+			submit_button.disabled = true
+			return
+			
+	submit_button.disabled = false
 
 
 func _on_RegisterUPButton_pressed() -> void:
@@ -95,3 +125,6 @@ func _on_submit_button_pressed() -> void:
 	var confirm_password = $"VBoxContainer/HBoxContainer2/VBoxContainer2/PasswordConfirmBox/ConfirmPassword".text
 	SilentWolf.Auth.register_player(player_name, email, password, confirm_password)
 	show_processing_label()
+
+
+

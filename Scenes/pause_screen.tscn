@@ -146,6 +146,7 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="Menu" type="VBoxContainer" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu"]
