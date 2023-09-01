@@ -303,6 +303,7 @@ icon = ExtResource("5_0m4to")
 flat = true
 
 [node name="Audio" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -733,7 +734,6 @@ icon = ExtResource("5_0m4to")
 flat = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
