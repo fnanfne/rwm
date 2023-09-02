@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://chu1sp74s581v"]
+[gd_scene load_steps=33 format=3 uid="uid://chu1sp74s581v"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_a53xw"]
 [ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="2_0bbfi"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bg7ewo3h6376e" path="res://Assets/UI/MakerMall.png" id="7_kt85d"]
 [ext_resource type="Texture2D" uid="uid://b8nrybk7ohgnc" path="res://Assets/UI/volume_gfx.png" id="8_neoxt"]
 [ext_resource type="Texture2D" uid="uid://dmchrsbveq1as" path="res://Assets/UI/RWK.png" id="10_4clif"]
+[ext_resource type="Texture2D" uid="uid://dyjsw2kutwjcq" path="res://Assets/UI/login_txt.png" id="10_c4bvg"]
+[ext_resource type="Texture2D" uid="uid://tpmka8p7qf3h" path="res://Assets/UI/signup_txt.png" id="12_jtm5r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cfbch"]
 shader = ExtResource("2_0bbfi")
@@ -57,6 +59,12 @@ content_margin_left = 5.0
 content_margin_top = 5.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ipqjk"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aojp5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3avb"]
 content_margin_left = 5.0
@@ -782,7 +790,15 @@ theme_override_constants/separation = 24
 
 [node name="Menu2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 alignment = 1
+
+[node name="Login" type="Button" parent="VBoxContainer/Menu2"]
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ipqjk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aojp5")
+icon = ExtResource("10_c4bvg")
+flat = true
 
 [node name="Music" type="Button" parent="VBoxContainer/Menu2"]
 layout_mode = 2
@@ -790,6 +806,13 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_t3avb")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_golja")
 icon = ExtResource("8_neoxt")
+flat = true
+
+[node name="Register" type="Button" parent="VBoxContainer/Menu2"]
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ipqjk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aojp5")
+icon = ExtResource("12_jtm5r")
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -806,6 +829,10 @@ texture = ExtResource("10_4clif")
 [connection signal="value_changed" from="Audio_OLD/HBoxContainer/Slider/Sound" to="." method="_on_sound_value_changed"]
 [connection signal="value_changed" from="Audio_OLD/HBoxContainer/Slider/Music" to="." method="_on_music_value_changed"]
 [connection signal="pressed" from="Audio_OLD/BackFromAudio" to="." method="_on_back_from_audio_pressed"]
+[connection signal="pressed" from="Audio/Sound/VolumeDown" to="." method="_on_volume_down_pressed"]
+[connection signal="pressed" from="Audio/Sound/VolumeUp" to="." method="_on_volume_up_pressed"]
+[connection signal="pressed" from="Audio/Music/MusicVolumeDown" to="." method="_on_music_volume_down_pressed"]
+[connection signal="pressed" from="Audio/Music/MusicVolumeUp" to="." method="_on_music_volume_up_pressed"]
 [connection signal="pressed" from="Audio/BackFromAudio" to="." method="_on_back_from_audio_pressed"]
 [connection signal="pressed" from="Music/VBoxContainer/abcdef" to="." method="_on_abcdef_pressed"]
 [connection signal="pressed" from="Music/VBoxContainer/ghijkl" to="." method="_on_ghijkl_pressed"]
@@ -817,4 +844,6 @@ texture = ExtResource("10_4clif")
 [connection signal="pressed" from="Levels/BackFromLevels" to="." method="_on_back_from_levels_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu2/Login" to="." method="_on_login_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu2/Music" to="." method="_on_music_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu2/Register" to="." method="_on_register_pressed"]

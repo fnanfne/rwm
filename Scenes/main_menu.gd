@@ -7,10 +7,18 @@ extends Control
 @onready var music = $Music
 @onready var abcdef = $ABCDEF
 @onready var levels = $Levels
+@onready var sound_volume_label: Label = $Audio/Sound/SoundVolume
+@onready var music_volume_label: Label = $Audio/Music/MusicVolume
+
+@export var sound_sample: AudioStream
+@export var music_sample: AudioStream
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	SoundManager.set_sound_volume(0.5)
+	sound_volume_label.text = "50%"
+	SoundManager.set_music_volume(0.5)
+	music_volume_label.text = "50%"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -130,3 +138,42 @@ func _on_back_from_levels_pressed():
 func _on_mazerunner__godot_pressed():
 	$MenuSong.stop()
 	get_tree().change_scene_to_file("res://Levels/maze_runner_-_godot.tscn")
+
+
+func _on_volume_down_pressed():
+	var next_volume: float = clamp(SoundManager.get_sound_volume() - 0.1, 0, 1)
+	SoundManager.set_sound_volume(next_volume)
+	sound_volume_label.text = "%d%%" % [round(next_volume * 100)]
+	SoundManager.play_sound(sound_sample)
+
+
+func _on_volume_up_pressed():
+	var next_volume: float = clamp(SoundManager.get_sound_volume() + 0.1, 0, 1)
+	SoundManager.set_sound_volume(next_volume)
+	sound_volume_label.text = "%d%%" % [round(next_volume * 100)]
+	SoundManager.play_sound(sound_sample)
+
+
+func _on_music_volume_down_pressed():
+	var next_volume: float = clamp(SoundManager.get_music_volume() - 0.1, 0, 1)
+	SoundManager.set_music_volume(next_volume)
+	music_volume_label.text = "%d%%" % [round(next_volume * 100)]
+	SoundManager.play_sound(music_sample)
+
+
+func _on_music_volume_up_pressed():
+	var next_volume: float = clamp(SoundManager.get_music_volume() + 0.1, 0, 1)
+	SoundManager.set_music_volume(next_volume)
+	music_volume_label.text = "%d%%" % [round(next_volume * 100)]
+	SoundManager.play_sound(music_sample)
+
+
+func _on_login_pressed():
+	pass
+	#show_and_hide(login, menu)
+
+func _on_register_pressed():
+	#show_and_hide(register, menu)
+	get_tree().change_scene_to_file("res://Scenes/player_register.tscn")
+	#res://Scenes/player_register.tscn
+	#pass

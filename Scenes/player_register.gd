@@ -8,7 +8,11 @@ const EXCEPTIONS = [" ", "!",'"',"£","$","%","^","&","*","(",")",
 
 var username : LineEdit
 var submit_button : Button
+@onready var username_length_check = $VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName.text
 
+
+func _physics_process(_delta):
+	print(username_length_check)
 
 func _ready():
 	SilentWolf.check_auth_ready()
@@ -16,10 +20,11 @@ func _ready():
 	SilentWolf.Auth.sw_registration_user_pwd_complete.connect(_on_registration_user_pwd_complete)
 	username = $"VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName"
 	submit_button = $"HBoxContainer/SubmitButton"
+	submit_button.disabled = true
 
 	#username.connect("text_changed", self, "_on_username_text_changed")
 	#username.connect("text_changed", _on_username_text_changed)
-	username.connect("text_changed", _on_player_name_text_changed)
+	#username.connect("text_changed", _on_player_name_text_changed)
 
 #func _on_username_text_changed(new_text):
 #	for exception in EXCEPTIONS:
@@ -31,11 +36,23 @@ func _ready():
 
 
 func _on_player_name_text_changed(new_text):
+	#if len($VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName.text) >= 2:
+	#	# Enable the BUTTON_A
+	#	submit_button.disabled = true
+	#else:
+#		# Disable the BUTTON_A
+#		#submit_button.disabled = true
 	for exception in EXCEPTIONS:
-		if new_text.find(exception) != -1:
+		if new_text.find(exception) != -1 or len($VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName.text) <= 2:
 			submit_button.disabled = true
 			return
 			
+	if len($VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName.text) >= 2:
+		# Enable the BUTTON_A
+		submit_button.disabled = true
+	else:
+		#Disable the BUTTON_A
+		submit_button.disabled = true
 	submit_button.disabled = false
 
 
@@ -87,7 +104,8 @@ func registration_failure(error: String) -> void:
 
 
 func _on_back_button_pressed():
-	get_tree().change_scene_to_file(SilentWolf.auth_config.redirect_to_scene)
+	#get_tree().change_scene_to_file(SilentWolf.auth_config.redirect_to_scene)
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 
 func show_processing_label() -> void:
@@ -101,7 +119,7 @@ func hide_processing_label() -> void:
 
 
 func _on_username_info_button_mouse_entered() -> void:
-	$"InfoBox".text = "Username should contain at least 6 characters (letters or numbers) and no spaces."
+	$"InfoBox".text = "Username should contain at least 3 characters (letters or numbers) and no spaces."
 	$"InfoBox".show()
 
 

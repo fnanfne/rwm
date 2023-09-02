@@ -99,7 +99,7 @@ func _ready():
 
 
 # SILENTWOLF --> ONLINE LEADERBOARD
-func _physics_process(delta):
+func _physics_process(_delta):
 	leaderboard()
 
 
