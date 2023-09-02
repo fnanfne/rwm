@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj2bphal1h1wr"]
+
+[ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="1_bj84v"]
+[ext_resource type="Script" path="res://Scenes/confirm_email.gd" id="1_qgcmr"]
+[ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="2_gl5nb"]
+[ext_resource type="Texture2D" uid="uid://dmchrsbveq1as" path="res://Assets/UI/RWK.png" id="3_oqysy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8n6ik"]
+shader = ExtResource("2_gl5nb")
+shader_parameter/speed = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/amplitude = 0.1
+shader_parameter/alpha = 0.1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jhvv3"]
+
+[node name="ConfirmEmail" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qgcmr")
+
+[node name="BG" parent="." instance=ExtResource("1_bj84v")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_8n6ik")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FormContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -69.0
+offset_right = 186.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="FormContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Confirm your email address"
+horizontal_alignment = 1
+
+[node name="CodeContainer" type="HBoxContainer" parent="FormContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="FormContainer/CodeContainer"]
+layout_mode = 2
+text = "CODE  "
+
+[node name="VerifCode" type="LineEdit" parent="FormContainer/CodeContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_length = 10
+
+[node name="ErrorMessage" type="Label" parent="FormContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+autowrap_mode = 1
+
+[node name="ConfirmButton" type="Button" parent="FormContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jhvv3")
+text = "CONFIRM"
+
+[node name="ResendConfCodeButton" type="Button" parent="FormContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jhvv3")
+text = "RESEND CODE"
+
+[node name="ProcessingLabel" type="Label" parent="FormContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640, 177)
+texture = ExtResource("3_oqysy")
+
+[connection signal="pressed" from="FormContainer/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
+[connection signal="pressed" from="FormContainer/ResendConfCodeButton" to="." method="_on_ResendConfCodeButton_pressed"]

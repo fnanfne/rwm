@@ -1,0 +1,140 @@
+[gd_scene load_steps=12 format=3 uid="uid://d300mnc2kw16n"]
+
+[ext_resource type="Script" path="res://Scenes/login.gd" id="1_4mwd0"]
+[ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="2_bdeln"]
+[ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="3_g3obo"]
+[ext_resource type="Texture2D" uid="uid://dbx6lj6vwpjid" path="res://Assets/Pics/checkbox_checked.png" id="4_3cj53"]
+[ext_resource type="Texture2D" uid="uid://dmchrsbveq1as" path="res://Assets/UI/RWK.png" id="4_ew8nc"]
+[ext_resource type="Texture2D" uid="uid://dft3g5vd51ef2" path="res://Assets/UI/back.png" id="4_v0ix1"]
+[ext_resource type="Texture2D" uid="uid://dn6phcsxwrmlo" path="res://Assets/Pics/checkbox_unchecked.png" id="5_1yy2k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pfj7v"]
+shader = ExtResource("3_g3obo")
+shader_parameter/speed = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/amplitude = 0.1
+shader_parameter/alpha = 0.1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62385"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ew0h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ettx0"]
+
+[node name="Login" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4mwd0")
+
+[node name="BG" parent="." instance=ExtResource("2_bdeln")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_pfj7v")
+offset_right = 1547.0
+offset_bottom = 1034.0
+size_flags_horizontal = 3
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -106.0
+offset_right = 42.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxFlat_62385")
+icon = ExtResource("4_v0ix1")
+flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 597.0
+offset_top = 300.5
+offset_right = 683.0
+offset_bottom = 345.5
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Log in"
+horizontal_alignment = 1
+
+[node name="FormContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = 10.0
+offset_right = 158.0
+offset_bottom = 253.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="UsernameContainer" type="HBoxContainer" parent="FormContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FormContainer/UsernameContainer"]
+layout_mode = 2
+text = "Username:     "
+
+[node name="Username" type="LineEdit" parent="FormContainer/UsernameContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="PasswordContainer" type="HBoxContainer" parent="FormContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FormContainer/PasswordContainer"]
+layout_mode = 2
+text = "Password:      "
+
+[node name="Password" type="LineEdit" parent="FormContainer/PasswordContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+secret = true
+
+[node name="LinkButton" type="LinkButton" parent="FormContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 0
+text = "Forgot Password?"
+
+[node name="RememberMeCheckBox" type="CheckBox" parent="FormContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_icons/checked = ExtResource("4_3cj53")
+theme_override_icons/unchecked = ExtResource("5_1yy2k")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2ew0h")
+text = "Stay signed in for 30 days"
+expand_icon = true
+
+[node name="ErrorMessage" type="Label" parent="FormContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+autowrap_mode = 1
+
+[node name="LoginButton" type="Button" parent="FormContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/focus = SubResource("StyleBoxFlat_ettx0")
+text = "Submit"
+
+[node name="ProcessingLabel" type="Label" parent="FormContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640, 177)
+texture = ExtResource("4_ew8nc")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

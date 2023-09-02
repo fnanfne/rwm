@@ -13,6 +13,24 @@ extends Control
 @export var sound_sample: AudioStream
 @export var music_sample: AudioStream
 
+# PLAYER REGISTER SCENE BELOW
+@onready var register = $Register
+
+const SWLogger = preload("res://addons/silent_wolf/utils/SWLogger.gd")
+
+const EXCEPTIONS = [" ", "!",'"',"£","$","%","^","&","*","(",")",
+"`","¬","[","]","{","}","-","+","=",";",":","'","@","#","~",",","<",".",
+">","/","?","_","|"]
+
+var username : LineEdit
+var submit_button : Button
+@onready var username_length_check = $Register/VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName.text
+# PLAYER REGISTER SCENE ABOVE
+
+# PLAYER LOGIN SCENE BELOW
+@onready var login = $Login
+# PLAYER LOGIN SCENE ABOVE
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SoundManager.set_sound_volume(0.5)
@@ -20,6 +38,177 @@ func _ready():
 	SoundManager.set_music_volume(0.5)
 	music_volume_label.text = "50%"
 
+####### PLAYER REGISTER SCENE BELOW #######
+	SilentWolf.check_auth_ready()
+	SilentWolf.Auth.sw_registration_complete.connect(_on_registration_complete)
+	SilentWolf.Auth.sw_registration_user_pwd_complete.connect(_on_registration_user_pwd_complete)
+	username = $"Register/VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName"
+	submit_button = $"Register/HBoxContainer/SubmitButton"
+	submit_button.disabled = true
+####### PLAYER REGISTER SCENE ABOVE #######
+
+####### PLAYER LOGIN SCENE BELOW #######
+	SilentWolf.Auth.sw_login_complete.connect(_on_login_complete)
+####### PLAYER LOGIN SCENE ABOVE #######
+
+####### PLAYER REGISTER SCENE BELOW #######
+func _on_player_name_text_changed(new_text):
+	for exception in EXCEPTIONS:
+		if new_text.find(exception) != -1 or len($Register/VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName.text) <= 2:
+			submit_button.disabled = true
+			return
+			
+	if len($Register/VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName.text) >= 2:
+		# Enable the BUTTON_A
+		submit_button.disabled = true
+	else:
+		#Disable the BUTTON_A
+		submit_button.disabled = true
+	submit_button.disabled = false
+
+
+func _on_RegisterUPButton_pressed() -> void:
+	var player_name = $"FormContainer/MainFormContainer/FormInputFields/PlayerName".text
+	var password = $"FormContainer/MainFormContainer/FormInputFields/Password".text
+	var confirm_password = $"FormContainer/MainFormContainer/FormInputFields/ConfirmPassword".text
+	SilentWolf.Auth.register_player_user_password(player_name, password, confirm_password)
+	show_processing_label()
+
+
+func _on_registration_complete(sw_result: Dictionary) -> void:
+	if sw_result.success:
+		registration_success()
+	else:
+		registration_failure(sw_result.error)
+
+
+func _on_registration_user_pwd_complete(sw_result: Dictionary) -> void:
+	if sw_result.success:
+		registration_user_pwd_success()
+	else:
+		registration_failure(sw_result.error)
+
+
+func registration_success() -> void:
+	# redirect to configured scene (user is logged in after registration)
+	var scene_name = SilentWolf.auth_config.redirect_to_scene
+	# if doing email verification, open scene to confirm email address
+	if ("email_confirmation_scene" in SilentWolf.auth_config) and (SilentWolf.auth_config.email_confirmation_scene) != "":
+		SWLogger.info("registration succeeded, waiting for email verification...")
+		scene_name = SilentWolf.auth_config.email_confirmation_scene
+	else:
+		SWLogger.info("registration succeeded, logged in player: " + str(SilentWolf.Auth.logged_in_player))
+	get_tree().change_scene_to_file(scene_name)
+
+
+func registration_user_pwd_success() -> void:
+	var scene_name = SilentWolf.auth_config.redirect_to_scene
+	get_tree().change_scene_to_file(scene_name)
+
+
+func registration_failure(error: String) -> void:
+	hide_processing_label()
+	#$"FormContainer/ErrorMessage".text = error
+	#$"FormContainer/ErrorMessage".show()
+	$"Register/ErrorMessage".text = error
+	$"Register/ErrorMessage".show()
+
+
+func _on_back_button_pressed():
+	#get_tree().change_scene_to_file(SilentWolf.auth_config.redirect_to_scene)
+	#get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	show_and_hide(menu, register)
+
+
+func show_processing_label() -> void:
+	$"Register/ProcessingLabel".show()
+	$"Register/ColorRect2".show()
+	$"Login/ProcessingLabel".show()
+	$"Login/ProcessingLabel".show()
+
+
+func hide_processing_label() -> void:
+	$"Register/ProcessingLabel".hide()
+	$"Register/ColorRect2".hide()
+	$"Login/ProcessingLabel".hide()
+
+
+func _on_username_info_button_mouse_entered() -> void:
+	$"Register/InfoBox".text = "Username should contain at least 3 characters (letters or numbers) and no spaces."
+	$"Register/InfoBox".show()
+
+
+func _on_username_info_button_mouse_exited() -> void:
+	$"Register/InfoBox".hide()
+
+
+func _on_password_info_button_mouse_entered() -> void:
+	$"Register/InfoBox".text = "Password should contain at least 8 characters including uppercase and lowercase letters, numbers and (optionally) special characters."
+	$"Register/InfoBox".show()
+
+
+func _on_password_info_button_mouse_exited() -> void:
+	$"Register/InfoBox".hide()
+
+
+func _on_submit_button_pressed() -> void:
+	var player_name = $"Register/VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName".text
+	var email = $"Register/VBoxContainer/HBoxContainer2/VBoxContainer2/EmailBox/Email".text
+	var password = $"Register/VBoxContainer/HBoxContainer2/VBoxContainer2/PasswordBox/Password".text
+	var confirm_password = $"Register/VBoxContainer/HBoxContainer2/VBoxContainer2/PasswordConfirmBox/ConfirmPassword".text
+	SilentWolf.Auth.register_player(player_name, email, password, confirm_password)
+	show_processing_label()
+####### PLAYER REGISTER SCENE ABOVE #######
+
+####### PLAYER LOGIN SCENE BELOW #######
+func _on_LoginButton_pressed() -> void:
+	var username = $"FormContainer/UsernameContainer/Username".text
+	var password = $"FormContainer/PasswordContainer/Password".text
+	var remember_me = $"FormContainer/RememberMeCheckBox".is_pressed()
+	SWLogger.debug("Login form submitted, remember_me: " + str(remember_me))
+	SilentWolf.Auth.login_player(username, password, remember_me)
+	show_processing_label()
+
+
+func _on_login_complete(sw_result: Dictionary) -> void:
+	if sw_result.success:
+		login_success()
+	else:
+		login_failure(sw_result.error)
+
+
+func login_success() -> void:
+	var scene_name = SilentWolf.auth_config.redirect_to_scene
+	SWLogger.info("logged in as: " + str(SilentWolf.Auth.logged_in_player))
+	get_tree().change_scene_to_file(scene_name)
+
+
+func login_failure(error: String) -> void:
+	hide_processing_label()
+	SWLogger.info("log in failed: " + str(error))
+	$"FormContainer/ErrorMessage".text = error
+	$"FormContainer/ErrorMessage".show()
+
+#### ADDED THE BELOW TO THE FIRST FUNCTION CALLED show_processing_label...
+#func show_processing_label() -> void:
+#	$"FormContainer/ProcessingLabel".show()
+#	$"FormContainer/ProcessingLabel".show()
+
+#### ADDED THE BELOW TO THE FIRST FUNCTION CALLED hide_processing_label...
+#func hide_processing_label() -> void:
+#	$"FormContainer/ProcessingLabel".hide()
+
+
+func _on_LinkButton_pressed() -> void:
+	get_tree().change_scene_to_file(SilentWolf.auth_config.reset_password_scene)
+
+
+func _on_login_back_button_pressed():
+	#print("Back button pressed")
+	#get_tree().change_scene_to_file(SilentWolf.auth_config.redirect_to_scene)
+	#get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	show_and_hide(menu, login)
+####### PLAYER LOGIN SCENE ABOVE #######
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -169,11 +358,11 @@ func _on_music_volume_up_pressed():
 
 
 func _on_login_pressed():
-	pass
-	#show_and_hide(login, menu)
+	#get_tree().change_scene_to_file("res://Scenes/login.tscn")
+	show_and_hide(login, menu)
 
 func _on_register_pressed():
-	#show_and_hide(register, menu)
-	get_tree().change_scene_to_file("res://Scenes/player_register.tscn")
+	show_and_hide(register, menu)
+	#get_tree().change_scene_to_file("res://Scenes/player_register.tscn")
 	#res://Scenes/player_register.tscn
 	#pass

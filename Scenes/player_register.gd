@@ -12,7 +12,8 @@ var submit_button : Button
 
 
 func _physics_process(_delta):
-	print(username_length_check)
+	#print(username_length_check)
+	pass
 
 func _ready():
 	SilentWolf.check_auth_ready()

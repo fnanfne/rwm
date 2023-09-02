@@ -41,7 +41,8 @@ var auth_config = {
 	#"redirect_to_scene": "res://scenes/Splash.tscn",
 	"redirect_to_scene": "res://Scenes/main_menu.tscn",
 	"login_scene": "res://addons/silent_wolf/Auth/Login.tscn",
-	"email_confirmation_scene": "res://addons/silent_wolf/Auth/ConfirmEmail.tscn",
+	#"email_confirmation_scene": "res://addons/silent_wolf/Auth/ConfirmEmail.tscn",
+	"email_confirmation_scene": "res://Scenes/confirm_email.tscn",
 	"reset_password_scene": "res://addons/silent_wolf/Auth/ResetPassword.tscn",
 	"session_duration_seconds": 0,
 	"saved_session_expiration_days": 30

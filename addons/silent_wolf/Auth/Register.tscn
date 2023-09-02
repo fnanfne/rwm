@@ -183,6 +183,7 @@ text = "Processing..."
 [node name="ErrorMessage" type="Label" parent="."]
 modulate = Color(1, 0, 0, 1)
 custom_minimum_size = Vector2(36, 0)
+layout_mode = 0
 offset_left = 169.0
 offset_top = 512.0
 offset_right = 432.0
@@ -196,6 +197,7 @@ autowrap_mode = 2
 [node name="InfoBox" type="Label" parent="."]
 visible = false
 modulate = Color(0, 1, 0, 1)
+layout_mode = 0
 offset_left = 962.0
 offset_top = 148.0
 offset_right = 1232.0

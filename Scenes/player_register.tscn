@@ -215,6 +215,7 @@ autowrap_mode = 2
 visible = false
 modulate = Color(1, 0, 0, 1)
 custom_minimum_size = Vector2(36, 0)
+layout_mode = 0
 offset_left = 525.0
 offset_top = 577.0
 offset_right = 788.0
