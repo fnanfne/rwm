@@ -9,6 +9,7 @@ extends Control
 @onready var levels = $Levels
 @onready var sound_volume_label: Label = $Audio/Sound/SoundVolume
 @onready var music_volume_label: Label = $Audio/Music/MusicVolume
+@onready var greeting = $Greeting
 
 @export var sound_sample: AudioStream
 @export var music_sample: AudioStream
@@ -123,14 +124,13 @@ func _on_back_button_pressed():
 func show_processing_label() -> void:
 	$"Register/ProcessingLabel".show()
 	$"Register/ColorRect2".show()
-	$"Login/ProcessingLabel".show()
-	$"Login/ProcessingLabel".show()
+	$"Login/FormContainer/ProcessingLabel".show()
 
 
 func hide_processing_label() -> void:
 	$"Register/ProcessingLabel".hide()
 	$"Register/ColorRect2".hide()
-	$"Login/ProcessingLabel".hide()
+	$"Login/FormContainer/ProcessingLabel".hide()
 
 
 func _on_username_info_button_mouse_entered() -> void:
@@ -186,8 +186,8 @@ func login_success() -> void:
 func login_failure(error: String) -> void:
 	hide_processing_label()
 	SWLogger.info("log in failed: " + str(error))
-	$"FormContainer/ErrorMessage".text = error
-	$"FormContainer/ErrorMessage".show()
+	$"Login/FormContainer/ErrorMessage".text = error
+	$"Login/FormContainer/ErrorMessage".show()
 
 #### ADDED THE BELOW TO THE FIRST FUNCTION CALLED show_processing_label...
 #func show_processing_label() -> void:
@@ -212,7 +212,15 @@ func _on_login_back_button_pressed():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if SilentWolf.Auth.logged_in_player == null:
+		pass
+	else:
+		greeting.text = "Hello " + str(SilentWolf.Auth.logged_in_player) + "!"
+		$VBoxContainer/Menu2/Login.hide()
+		$VBoxContainer/Menu2/Register.disabled = true
+		$VBoxContainer/Menu2/Logout.show()
 	#print($Audio/HBoxContainer/Slider/Sound.value)
+	#print(SilentWolf.Auth.logged_in_player)
 	if Input.is_action_just_pressed("menu_new"):
 		#toggle()
 		pass
@@ -366,3 +374,17 @@ func _on_register_pressed():
 	#get_tree().change_scene_to_file("res://Scenes/player_register.tscn")
 	#res://Scenes/player_register.tscn
 	#pass
+
+
+func _on_login_button_pressed():
+	var username = $"Login/FormContainer/UsernameContainer/Username".text
+	var password = $"Login/FormContainer/PasswordContainer/Password".text
+	var remember_me = $"Login/FormContainer/RememberMeCheckBox".is_pressed()
+	SWLogger.debug("Login form submitted, remember_me: " + str(remember_me))
+	SilentWolf.Auth.login_player(username, password, remember_me)
+	show_processing_label()
+
+
+func _on_logout_pressed():
+	SilentWolf.Auth.logout_player()
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

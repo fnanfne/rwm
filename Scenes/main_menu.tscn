@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://chu1sp74s581v"]
+[gd_scene load_steps=51 format=3 uid="uid://chu1sp74s581v"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_a53xw"]
 [ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="2_0bbfi"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dyjsw2kutwjcq" path="res://Assets/UI/login_txt.png" id="10_c4bvg"]
 [ext_resource type="Texture2D" uid="uid://dbx6lj6vwpjid" path="res://Assets/Pics/checkbox_checked.png" id="10_gb6fc"]
 [ext_resource type="Texture2D" uid="uid://dn6phcsxwrmlo" path="res://Assets/Pics/checkbox_unchecked.png" id="11_f1tiw"]
+[ext_resource type="Texture2D" uid="uid://c5rwxfait420k" path="res://Assets/UI/logout_txt.png" id="16_mpkj7"]
 [ext_resource type="Texture2D" uid="uid://cw5fibhn0rglg" path="res://Assets/UI/signup2.png" id="17_osfi7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cfbch"]
@@ -69,7 +70,7 @@ shader_parameter/colorOffsetIntensity = 1.3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_si5ae"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oubys"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grpni"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gh0x"]
 
@@ -96,6 +97,12 @@ content_margin_left = 5.0
 content_margin_top = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aojp5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pae01"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3rk7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3avb"]
 content_margin_left = 5.0
@@ -922,6 +929,7 @@ layout_mode = 2
 visible = false
 modulate = Color(0, 1, 0, 1)
 custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
 offset_left = 874.0
 offset_top = 280.0
 offset_right = 1096.0
@@ -934,6 +942,7 @@ autowrap_mode = 2
 visible = false
 modulate = Color(1, 0, 0, 1)
 custom_minimum_size = Vector2(36, 0)
+layout_mode = 0
 offset_left = 525.0
 offset_top = 577.0
 offset_right = 788.0
@@ -960,6 +969,7 @@ text = "Processing..."
 [node name="ColorRect2" type="ColorRect" parent="Register"]
 visible = false
 material = SubResource("ShaderMaterial_tkon0")
+layout_mode = 0
 offset_left = 596.0
 offset_top = 553.0
 offset_right = 703.0
@@ -1015,12 +1025,14 @@ offset_right = 42.0
 offset_bottom = -62.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_mode = 0
 theme_override_styles/pressed = SubResource("StyleBoxFlat_si5ae")
-theme_override_styles/focus = SubResource("StyleBoxFlat_oubys")
+theme_override_styles/focus = SubResource("StyleBoxFlat_grpni")
 icon = ExtResource("5_0m4to")
 flat = true
 
 [node name="Label" type="Label" parent="Login"]
+layout_mode = 0
 offset_left = 597.0
 offset_top = 300.5
 offset_right = 683.0
@@ -1077,6 +1089,7 @@ text = "Forgot Password?"
 [node name="RememberMeCheckBox" type="CheckBox" parent="Login/FormContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 theme_override_icons/checked = ExtResource("10_gb6fc")
 theme_override_icons/unchecked = ExtResource("11_f1tiw")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4gh0x")
@@ -1092,6 +1105,7 @@ autowrap_mode = 1
 [node name="LoginButton" type="Button" parent="Login/FormContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2xtdb")
 theme_override_styles/focus = SubResource("StyleBoxFlat_4vvhm")
 text = "Submit"
@@ -1158,6 +1172,15 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_aojp5")
 icon = ExtResource("10_c4bvg")
 flat = true
 
+[node name="Logout" type="Button" parent="VBoxContainer/Menu2"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pae01")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h3rk7")
+icon = ExtResource("16_mpkj7")
+flat = true
+
 [node name="Music" type="Button" parent="VBoxContainer/Menu2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
@@ -1176,6 +1199,18 @@ flat = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(640, 177)
 texture = ExtResource("10_4clif")
+
+[node name="Greeting" type="Label" parent="."]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 27.0
+offset_right = 20.0
+offset_bottom = 50.0
+grow_horizontal = 2
 
 [connection signal="pressed" from="Options/VBoxContainer/Video" to="." method="_on_video_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer/Audio" to="." method="_on_audio_pressed"]
@@ -1208,8 +1243,11 @@ texture = ExtResource("10_4clif")
 [connection signal="pressed" from="Register/HBoxContainer/SubmitButton" to="." method="_on_submit_button_pressed"]
 [connection signal="pressed" from="Register/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Login/BackButton" to="." method="_on_login_back_button_pressed"]
+[connection signal="pressed" from="Login/FormContainer/LinkButton" to="." method="_on_LinkButton_pressed"]
+[connection signal="pressed" from="Login/FormContainer/LoginButton" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu2/Login" to="." method="_on_login_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu2/Logout" to="." method="_on_logout_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu2/Music" to="." method="_on_music_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu2/Register" to="." method="_on_register_pressed"]
