@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://chu1sp74s581v"]
+[gd_scene load_steps=50 format=3 uid="uid://chu1sp74s581v"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_a53xw"]
 [ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="2_0bbfi"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cy1svfkrfmif5" path="res://Assets/UI/play.png" id="5_lydwu"]
 [ext_resource type="Texture2D" uid="uid://7uve831i3rda" path="res://Assets/UI/setup.png" id="6_aopmp"]
 [ext_resource type="FontFile" uid="uid://xs5oaxoro5f0" path="res://Assets/Fonts/Commodore_Angled_v1-1.ttf" id="6_asstf"]
+[ext_resource type="StyleBox" uid="uid://bkc61ibnl0kuu" path="res://Resources/smallRIM.tres" id="6_f7ngy"]
 [ext_resource type="Texture2D" uid="uid://cdg7ti7ra3dks" path="res://Assets/Icons/icons8-info-32.png" id="7_08lli"]
 [ext_resource type="Texture2D" uid="uid://bg7ewo3h6376e" path="res://Assets/UI/MakerMall.png" id="7_kt85d"]
 [ext_resource type="Texture2D" uid="uid://b8nrybk7ohgnc" path="res://Assets/UI/volume_gfx.png" id="8_neoxt"]
@@ -72,11 +73,7 @@ shader_parameter/colorOffsetIntensity = 1.3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grpni"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gh0x"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgiww"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xtdb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vvhm"]
 
@@ -160,13 +157,20 @@ grow_vertical = 2
 
 [node name="Video" type="Button" parent="Options/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.278431, 1, 0.254902, 1)
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("6_f7ngy")
+theme_override_styles/hover = ExtResource("6_f7ngy")
+theme_override_styles/pressed = ExtResource("6_f7ngy")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0ewwt")
 text = "Video"
 
 [node name="Audio" type="Button" parent="Options/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("6_f7ngy")
+theme_override_styles/hover = ExtResource("6_f7ngy")
+theme_override_styles/pressed = ExtResource("6_f7ngy")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0ewwt")
 text = "Audio"
 
@@ -1019,10 +1023,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -50.0
-offset_top = -106.0
-offset_right = 42.0
-offset_bottom = -62.0
+offset_left = -66.0
+offset_top = -103.0
+offset_right = 58.0
+offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 0
@@ -1033,10 +1037,10 @@ flat = true
 
 [node name="Label" type="Label" parent="Login"]
 layout_mode = 0
-offset_left = 597.0
-offset_top = 300.5
-offset_right = 683.0
-offset_bottom = 345.5
+offset_left = 575.0
+offset_top = 289.0
+offset_right = 713.0
+offset_bottom = 334.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
 text = "Log in"
@@ -1067,6 +1071,7 @@ text = "Username:     "
 [node name="Username" type="LineEdit" parent="Login/FormContainer/UsernameContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="PasswordContainer" type="HBoxContainer" parent="Login/FormContainer"]
 layout_mode = 2
@@ -1078,6 +1083,7 @@ text = "Password:      "
 [node name="Password" type="LineEdit" parent="Login/FormContainer/PasswordContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 secret = true
 
 [node name="LinkButton" type="LinkButton" parent="Login/FormContainer"]
@@ -1086,13 +1092,15 @@ size_flags_horizontal = 4
 theme_override_constants/outline_size = 0
 text = "Forgot Password?"
 
+[node name="Label" type="Label" parent="Login/FormContainer"]
+layout_mode = 2
+
 [node name="RememberMeCheckBox" type="CheckBox" parent="Login/FormContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
 theme_override_icons/checked = ExtResource("10_gb6fc")
 theme_override_icons/unchecked = ExtResource("11_f1tiw")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4gh0x")
 theme_override_styles/focus = SubResource("StyleBoxFlat_rgiww")
 text = "Stay signed in for 30 days"
 expand_icon = true
@@ -1100,13 +1108,13 @@ expand_icon = true
 [node name="ErrorMessage" type="Label" parent="Login/FormContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
 autowrap_mode = 1
 
 [node name="LoginButton" type="Button" parent="Login/FormContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2xtdb")
 theme_override_styles/focus = SubResource("StyleBoxFlat_4vvhm")
 text = "Submit"
 

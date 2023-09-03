@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bicwqmhtso0jx"]
+[gd_scene load_steps=19 format=3 uid="uid://bicwqmhtso0jx"]
 
 [ext_resource type="Script" path="res://Scenes/Kitty/kitty.gd" id="1_bjiog"]
 [ext_resource type="Texture2D" uid="uid://cwdcjvdjlome3" path="res://Assets/Kitty/kitty_body.png" id="1_wdqjp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d2ke58r2s61xu" path="res://Assets/Kitty/kitty_blink.png" id="5_sov2t"]
 [ext_resource type="AudioStream" uid="uid://br82nqdp3ohh8" path="res://Assets/Audio/Sounds/meow.ogg" id="7_ktkbw"]
 [ext_resource type="AudioStream" uid="uid://c8jpfutm0qv2w" path="res://Assets/Audio/Sounds/win.ogg" id="8_jcpc0"]
+[ext_resource type="Script" path="res://Scenes/Kitty/LevelTimer.gd" id="9_0ok7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icy81"]
 size = Vector2(27, 20)
@@ -152,6 +153,8 @@ _data = {
 "RESET": SubResource("Animation_k6ruh")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wavsd"]
+
 [node name="Kitty" type="CharacterBody2D"]
 z_index = 5
 collision_layer = 2
@@ -192,5 +195,68 @@ stream = ExtResource("7_ktkbw")
 [node name="GotKitty" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_jcpc0")
 volume_db = -10.0
+
+[node name="LevelTimer" type="CanvasLayer" parent="."]
+
+[node name="LevelTimer" type="Panel" parent="LevelTimer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wavsd")
+script = ExtResource("9_0ok7r")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelTimer/LevelTimer"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -215.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Hours" type="Label" parent="LevelTimer/LevelTimer/HBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "00"
+
+[node name="hmLabel" type="Label" parent="LevelTimer/LevelTimer/HBoxContainer"]
+modulate = Color(0, 1, 0, 0.486275)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = ":"
+
+[node name="Minutes" type="Label" parent="LevelTimer/LevelTimer/HBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "00"
+
+[node name="msLabel" type="Label" parent="LevelTimer/LevelTimer/HBoxContainer"]
+modulate = Color(0, 1, 0, 0.486275)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = ":"
+
+[node name="Seconds" type="Label" parent="LevelTimer/LevelTimer/HBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "00"
+
+[node name="smLabel" type="Label" parent="LevelTimer/LevelTimer/HBoxContainer"]
+modulate = Color(0, 1, 0, 0.486275)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = ":"
+
+[node name="Milliseconds" type="Label" parent="LevelTimer/LevelTimer/HBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "000"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

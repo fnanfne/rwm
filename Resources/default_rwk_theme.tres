@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dihe8ewfxt15y"]
+
+[ext_resource type="StyleBox" uid="uid://bkc61ibnl0kuu" path="res://Resources/smallRIM.tres" id="1_v6ipf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_152o0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cq7qc"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0, 0.94902, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0.905882, 0, 0, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_152o0")
+Button/styles/focus = SubResource("StyleBoxEmpty_cq7qc")
+Button/styles/hover = ExtResource("1_v6ipf")
+Button/styles/normal = ExtResource("1_v6ipf")
+Button/styles/pressed = ExtResource("1_v6ipf")

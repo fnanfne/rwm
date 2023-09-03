@@ -3,6 +3,9 @@ extends Node2D
 @export var world_speed = 300
 
 @onready var moving_environment = $"/root/BonusLevel/Environment/Static"
+@onready var start_in = %StartIn
+@onready var start_in_label = %StartInLabel
+@onready var animation_player = $AnimationPlayer
 
 var platform_1 = preload("res://Scenes/platform_1.tscn")
 var platform_2 = preload("res://Scenes/platform_2.tscn")
@@ -14,6 +17,10 @@ var next_spawn_time = 0
 
 func _ready():
 	rng.randomize()
+	get_tree().paused = true
+	animation_player.play("countdown")
+	await animation_player.animation_finished
+	get_tree().paused = false
 	$Timer.start()
 
 

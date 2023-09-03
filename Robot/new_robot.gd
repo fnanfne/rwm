@@ -284,6 +284,7 @@ func _physics_process(delta):
 			if Game.JUMP and is_alive == true:
 				if not has_double_jumped or coyote_jump_timer.time_left > 0.0:
 					if Input.is_action_just_pressed("jump"):
+						coyote_jump_timer.stop() ### This is to prevent jumping higher than normal
 						is_jumping = true
 						sound_jump.set_pitch_scale(1.0)
 						sound_jump.play()

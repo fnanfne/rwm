@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://ca4rsukx1vq23"]
+[gd_scene load_steps=52 format=3 uid="uid://ca4rsukx1vq23"]
 
 [ext_resource type="Texture2D" uid="uid://bx525i4xx5j5n" path="res://Assets/paint__TILESET/IMG_004.png" id="1_p6blk"]
 [ext_resource type="Texture2D" uid="uid://bjrofgh84bum" path="res://Assets/paint__TILESET/IMG_007.png" id="2_e67rv"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dwua7o4erlndu" path="res://Assets/paint__TILESET/IMG_003.png" id="4_8gn45"]
 [ext_resource type="PackedScene" uid="uid://yg103a66ifo2" path="res://Robot/new_robot.tscn" id="4_ntqmw"]
 [ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="5_jkr52"]
-[ext_resource type="PackedScene" uid="uid://cbjad5andxma8" path="res://Scenes/level_timer.tscn" id="6_h77eg"]
 [ext_resource type="PackedScene" uid="uid://clj6gqiog65n4" path="res://Scenes/Doors/YellowDoor/yellow_door_bottom.tscn" id="6_jndtp"]
 [ext_resource type="PackedScene" uid="uid://cveutdjpy1dwj" path="res://Scenes/Doors/RedDoor/red_door_bottom.tscn" id="7_4nns1"]
 [ext_resource type="PackedScene" uid="uid://fvtuuod3spmq" path="res://Scenes/hud.tscn" id="7_qkr6o"]
@@ -1641,8 +1640,6 @@ layer_0/tile_data = PackedInt32Array(196608, 2031617, 1, 262144, 2031617, 1, 327
 
 [node name="BG" parent="Level" instance=ExtResource("5_jkr52")]
 
-[node name="LevelTimer" parent="Level" instance=ExtResource("6_h77eg")]
-
 [node name="HUD" parent="Level" instance=ExtResource("7_qkr6o")]
 
 [node name="NewRobot" parent="." instance=ExtResource("4_ntqmw")]
@@ -1883,6 +1880,7 @@ position = Vector2(380, 500)
 [node name="DebugWindow" parent="." instance=ExtResource("7_upfth")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("48_jljgy")
 volume_db = -10.0
 autoplay = true

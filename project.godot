@@ -41,6 +41,11 @@ version_control/autoload_on_startup=true
 
 enabled=PackedStringArray("res://addons/sound_manager/plugin.cfg")
 
+[gui]
+
+theme/custom="res://Resources/default_rwk_theme.tres"
+theme/custom_font="res://Assets/Fonts/Commodore_Angled_v1-1.ttf"
+
 [input]
 
 ui_left={
