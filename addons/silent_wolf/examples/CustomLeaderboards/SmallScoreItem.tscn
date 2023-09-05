@@ -3,3 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2wy4d8d5av0l" path="res://addons/silent_wolf/Scores/ScoreItem.tscn" id="1"]
 
 [node name="ScoreItem" instance=ExtResource("1")]
+offset_right = 500.0
+offset_bottom = 50.0
+grow_horizontal = 1
+grow_vertical = 1

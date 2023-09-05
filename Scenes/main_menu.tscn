@@ -90,8 +90,6 @@ content_margin_right = 0.0
 content_margin_bottom = 0.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ipqjk"]
-content_margin_left = 5.0
-content_margin_top = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aojp5"]
 
@@ -1220,6 +1218,20 @@ offset_right = 20.0
 offset_bottom = 50.0
 grow_horizontal = 2
 
+[node name="LeaderboardsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Leaderboards"
+
 [connection signal="pressed" from="Options/VBoxContainer/Video" to="." method="_on_video_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer/Audio" to="." method="_on_audio_pressed"]
 [connection signal="pressed" from="Options/BackFromOptions" to="." method="_on_back_from_options_pressed"]
@@ -1259,3 +1271,4 @@ grow_horizontal = 2
 [connection signal="pressed" from="VBoxContainer/Menu2/Logout" to="." method="_on_logout_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu2/Music" to="." method="_on_music_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu2/Register" to="." method="_on_register_pressed"]
+[connection signal="pressed" from="LeaderboardsButton" to="." method="_on_leaderboards_button_pressed"]

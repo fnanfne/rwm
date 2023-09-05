@@ -1,5 +1,9 @@
 extends Node2D
 
+@onready var player_name = $ColorRect/PlayerName
+@onready var player_score = $ColorRect/PlayerScore
+
+
 
 func _ready():
 	#Utils.saveGame()
@@ -9,6 +13,8 @@ func _ready():
 func _physics_process(_delta):
 	# SILENTWOLF --> ONLINE LEADERBOARD
 	score()
+	#print(player_name.text)
+	#print(player_score.text)
 
 
 func _on_quit_pressed():
@@ -36,9 +42,12 @@ func _on_decrease_pressed():
 func _on_submit_pressed():
 	#$Player_Name.show()
 	print(Game.score)
-	if Game.close_menu == true:
-		var sw_result: Dictionary = await SilentWolf.Scores.save_score(Game.player_name, Game.score).sw_save_score_complete
-		print("Score persisted successfully: " + str(sw_result.score_id))
+	#if Game.close_menu == true:
+	if Game.score == 0:
+		#var sw_result: Dictionary = await SilentWolf.Scores.save_score(Game.player_name, Game.score).sw_save_score_complete
+		var sw_result: Dictionary = await SilentWolf.Scores.save_score(player_name.text, String(player_score.text), "level1").sw_save_score_complete
+		print("Score saved successfully: " + str(sw_result.score_id))
+		#SilentWolf.Scores.save_score(player_name.text, player_score.text).sw_save_score_complete
 
 
 # SILENTWOLF --> ONLINE LEADERBOARD

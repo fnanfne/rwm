@@ -119,6 +119,7 @@ func _on_back_button_pressed():
 	#get_tree().change_scene_to_file(SilentWolf.auth_config.redirect_to_scene)
 	#get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	show_and_hide(menu, register)
+	$LeaderboardsButton.visible = true
 
 
 func show_processing_label() -> void:
@@ -208,6 +209,7 @@ func _on_login_back_button_pressed():
 	#get_tree().change_scene_to_file(SilentWolf.auth_config.redirect_to_scene)
 	#get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	show_and_hide(menu, login)
+	$LeaderboardsButton.visible = true
 ####### PLAYER LOGIN SCENE ABOVE #######
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -235,10 +237,12 @@ func _on_start_pressed():
 	#toggle()
 	#get_tree().change_scene_to_file("res://Levels/maze_runner_-_godot.tscn")
 	show_and_hide(levels, menu)
+	$LeaderboardsButton.visible = false
 
 
 func _on_options_pressed():
 	show_and_hide(options, menu) # Show options, and hide menu...
+	$LeaderboardsButton.visible = false
 
 
 func show_and_hide(first, second): # ...With this function
@@ -252,6 +256,7 @@ func _on_exit_pressed():
 
 func _on_video_pressed():
 	show_and_hide(video, options)
+	$LeaderboardsButton.visible = false
 
 
 func _on_audio_pressed():
@@ -260,6 +265,7 @@ func _on_audio_pressed():
 
 func _on_back_from_options_pressed():
 	show_and_hide(menu, options)
+	$LeaderboardsButton.visible = true
 
 
 func _on_full_screen_toggled(button_pressed):
@@ -303,9 +309,11 @@ func _on_back_from_audio_pressed():
 
 func _on_music_pressed():
 	show_and_hide(music, menu)
+	$LeaderboardsButton.visible = false
 	
 func _on_back_from_music_pressed():
 	show_and_hide(menu, music)
+	$LeaderboardsButton.visible = true
 
 
 func _on_abcdef_pressed():
@@ -330,6 +338,7 @@ func _on_back_from_abcdef_pressed():
 
 func _on_back_from_levels_pressed():
 	show_and_hide(menu, levels)
+	$LeaderboardsButton.visible = true
 
 
 func _on_mazerunner__godot_pressed():
@@ -368,9 +377,11 @@ func _on_music_volume_up_pressed():
 func _on_login_pressed():
 	#get_tree().change_scene_to_file("res://Scenes/login.tscn")
 	show_and_hide(login, menu)
+	$LeaderboardsButton.visible = false
 
 func _on_register_pressed():
 	show_and_hide(register, menu)
+	$LeaderboardsButton.visible = false
 	#get_tree().change_scene_to_file("res://Scenes/player_register.tscn")
 	#res://Scenes/player_register.tscn
 	#pass
@@ -388,3 +399,8 @@ func _on_login_button_pressed():
 func _on_logout_pressed():
 	SilentWolf.Auth.logout_player()
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+
+
+func _on_leaderboards_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Leaderboards/Leaderboard_main.tscn")

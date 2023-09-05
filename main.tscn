@@ -1,12 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl3agjki6riws"]
+[gd_scene load_steps=6 format=3 uid="uid://dl3agjki6riws"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_0utcd"]
 [ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="2_huy54"]
 [ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="2_werql"]
 [ext_resource type="AudioStream" uid="uid://bfbb04e1fn4gl" path="res://Assets/Audio/Sounds/music_title__STREAM.ogg" id="3_hyhs7"]
-[ext_resource type="Texture2D" uid="uid://cy1svfkrfmif5" path="res://Assets/UI/play.png" id="5_yvspc"]
-[ext_resource type="Texture2D" uid="uid://7uve831i3rda" path="res://Assets/UI/setup.png" id="6_0ipfd"]
-[ext_resource type="Texture2D" uid="uid://bg7ewo3h6376e" path="res://Assets/UI/MakerMall.png" id="7_bv8oq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_me8cf"]
 shader = ExtResource("2_werql")
@@ -25,6 +22,38 @@ material = SubResource("ShaderMaterial_me8cf")
 offset_right = 1547.0
 offset_bottom = 1034.0
 size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 314.0
+offset_right = 211.0
+offset_bottom = 331.0
+text = "Player Name"
+
+[node name="PlayerName" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 352.0
+offset_right = 309.0
+offset_bottom = 372.0
+text = "annonymous"
+
+[node name="PlayerScore" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 352.0
+offset_right = 507.0
+offset_bottom = 372.0
+text = "7465"
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 314.0
+offset_right = 507.0
+offset_bottom = 334.0
+text = "Score"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hyhs7")
@@ -67,22 +96,23 @@ text = "Music"
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer2" type="HBoxContainer" parent="."]
-offset_left = 941.0
-offset_top = 239.0
-offset_right = 1236.0
-offset_bottom = 446.0
+offset_left = 140.0
+offset_top = 434.0
+offset_right = 544.0
+offset_bottom = 531.0
 
 [node name="Increase" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
-icon = ExtResource("5_yvspc")
+text = "INCREASE
+"
 
 [node name="Decrease" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
-icon = ExtResource("6_0ipfd")
+text = "DECREASE"
 
 [node name="Submit" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
-icon = ExtResource("7_bv8oq")
+text = "SUBMIT"
 
 [node name="Leaderboard" type="Button" parent="."]
 offset_left = 702.0

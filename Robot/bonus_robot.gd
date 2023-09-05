@@ -1,7 +1,10 @@
 extends CharacterBody2D
 
+signal robot_died
+
 @export var gravity = 1600
 @export var jump_power = -450
+@export var robot_death_effect : PackedScene
 
 @onready var anim = get_node("AnimationPlayer")
 @onready var wheel = $AllSprites/Wheel
@@ -28,7 +31,8 @@ func _ready():
 	#Input.action_press("jump")
 #	
 	#Input.action_release("jump")
-	
+
+
 func _physics_process(delta):
 	#print(velocity.y)
 	#print(jumps_remaining)
@@ -76,8 +80,33 @@ func _physics_process(delta):
 		hide_all_sprites()
 		fall.visible = true
 
+	if velocity.y > 1500:
+		taking_damage()
+		velocity.y = 0
+
+
 func hide_all_sprites():
 	wheel.visible = false
 	body.visible = false
 	jump.visible = false
 	fall.visible = false
+
+
+func taking_damage():
+	if active:
+		velocity.y = 0
+		gravity = 600
+		$Die.play()
+		active = false
+		get_node("CollisionShape2D").set_deferred("disabled", true)
+		emit_signal("robot_died")
+		#await get_tree().create_timer(0.5).timeout
+		$AllSprites.hide()
+		var effect_instance : CPUParticles2D = robot_death_effect.instantiate()
+		effect_instance.position = position
+		effect_instance.emitting = true
+		get_parent().add_child(effect_instance)
+		#await get_tree().create_timer(0.5).timeout
+		#get_tree().paused = true
+	else:
+		pass

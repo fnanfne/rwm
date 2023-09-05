@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5ybtxrts24eq"]
+
+[ext_resource type="Texture2D" uid="uid://cbb7m540oki2i" path="res://Resources/MMbar.tres" id="1_xshrw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bbruk"]
+texture = ExtResource("1_xshrw")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+
+[node name="ScoreItem" type="Panel"]
+custom_minimum_size = Vector2(500, 50)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_bbruk")
+
+[node name="PlayerName" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(100, 25)
+layout_mode = 0
+offset_top = 10.0
+offset_right = 351.0
+offset_bottom = 50.0
+theme_override_font_sizes/normal_font_size = 20
+text = "1. Godzilla"
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 10.0
+offset_right = 500.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 20
+text = "13"
+horizontal_alignment = 2

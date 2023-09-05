@@ -10,10 +10,10 @@
 script = ExtResource("5")
 
 [node name="Board" type="VBoxContainer" parent="."]
-offset_left = 722.0
-offset_top = 293.0
-offset_right = 1287.0
-offset_bottom = 669.0
+offset_left = 256.0
+offset_top = 165.0
+offset_right = 1069.0
+offset_bottom = 541.0
 theme = ExtResource("2_1tgjj")
 theme_override_constants/separation = 48
 

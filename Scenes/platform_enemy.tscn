@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdo7duq8olhuj"]
+
+[ext_resource type="Texture2D" uid="uid://bjrofgh84bum" path="res://Assets/paint__TILESET/IMG_007.png" id="1_iq5ex"]
+[ext_resource type="PackedScene" uid="uid://bm3g0a78ol6i" path="res://Redguy/Redguy.tscn" id="2_26q2d"]
+
+[node name="PlatformEnemy" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iq5ex")
+region_enabled = true
+region_rect = Rect2(400, 320, 200, 80)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-100, -40, 100, -40, 100, 0, 60, 0, 60, 40, -60, 40, -60, 0, -100, 0)
+
+[node name="Redguy" parent="." instance=ExtResource("2_26q2d")]
+position = Vector2(80, -60)

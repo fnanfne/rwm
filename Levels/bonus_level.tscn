@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://djxxn7ehdj2d5"]
+[gd_scene load_steps=13 format=3 uid="uid://djxxn7ehdj2d5"]
 
 [ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="1_26ay8"]
 [ext_resource type="Script" path="res://Levels/bonus_level.gd" id="1_r7c14"]
@@ -6,6 +6,9 @@
 [ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="2_hkbn0"]
 [ext_resource type="PackedScene" uid="uid://q2hh43814ksm" path="res://Scenes/platform_1.tscn" id="4_51ohh"]
 [ext_resource type="PackedScene" uid="uid://b3731u6lbim06" path="res://Robot/bonus_robot.tscn" id="6_aj58l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3htmr"]
+size = Vector2(2000, 20)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uc3ay"]
 shader = ExtResource("2_hkbn0")
@@ -21,6 +24,33 @@ shader_parameter/noiseQuality = 250.0
 shader_parameter/noiseIntensity = 0.0088
 shader_parameter/offsetIntensity = 0.03
 shader_parameter/colorOffsetIntensity = 1.3
+
+[sub_resource type="Animation" id="Animation_e8w5u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/StartIn/StartInLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Starts in: 3"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/StartIn:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_mtrn2"]
 resource_name = "countdown"
@@ -50,33 +80,6 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_e8w5u"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/StartIn/StartInLabel:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Starts in: 3"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/StartIn:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j8ncb"]
 _data = {
 "RESET": SubResource("Animation_e8w5u"),
@@ -91,6 +94,13 @@ script = ExtResource("1_r7c14")
 [node name="Static" type="Node2D" parent="Environment"]
 
 [node name="Platform1" parent="Environment/Static" instance=ExtResource("4_51ohh")]
+
+[node name="Ground" type="Area2D" parent="Environment/Static"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Static/Ground"]
+position = Vector2(0, 500)
+shape = SubResource("RectangleShape2D_3htmr")
 
 [node name="Moving" type="Node2D" parent="Environment"]
 

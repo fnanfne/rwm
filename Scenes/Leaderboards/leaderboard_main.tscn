@@ -1,0 +1,131 @@
+[gd_scene load_steps=10 format=3 uid="uid://sxqj0cts86hq"]
+
+[ext_resource type="Script" path="res://Scenes/Leaderboards/leaderboard_main.gd" id="1_ql3x8"]
+[ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="1_qpti6"]
+[ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="2_8ymvs"]
+[ext_resource type="AudioStream" uid="uid://bfbb04e1fn4gl" path="res://Assets/Audio/Sounds/music_title__STREAM.ogg" id="3_0bme4"]
+[ext_resource type="StyleBox" uid="uid://bkc61ibnl0kuu" path="res://Resources/smallRIM.tres" id="5_a38ey"]
+[ext_resource type="Texture2D" uid="uid://de5djss43eu5l" path="res://Assets/UI/scrollcaret_right.png" id="5_lh4ox"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_44i43"]
+shader = ExtResource("2_8ymvs")
+shader_parameter/speed = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/amplitude = 0.1
+shader_parameter/alpha = 0.1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7q6fo"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qld8r"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+
+[node name="LeaderboardMain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ql3x8")
+
+[node name="BG" parent="." instance=ExtResource("1_qpti6")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_44i43")
+layout_mode = 0
+offset_right = 1547.0
+offset_bottom = 1034.0
+size_flags_horizontal = 3
+
+[node name="MenuSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0bme4")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
+
+[node name="OldBoard" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HighScores" type="TextureRect" parent="OldBoard"]
+layout_mode = 2
+
+[node name="Board" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TitleContainer" type="CenterContainer" parent="Board"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Board/TitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Leaderboard"
+
+[node name="SubTitleContainer" type="CenterContainer" parent="Board"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Board/SubTitleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Bonus Level"
+
+[node name="MessageContainer" type="CenterContainer" parent="Board"]
+visible = false
+layout_mode = 2
+
+[node name="TextMessage" type="Label" parent="Board/MessageContainer"]
+layout_mode = 2
+text = "Loading scores..."
+
+[node name="HighScores" type="CenterContainer" parent="Board"]
+layout_mode = 2
+
+[node name="ScoreItemContainer" type="VBoxContainer" parent="Board/HighScores"]
+layout_mode = 2
+
+[node name="CloseButtonContainer" type="CenterContainer" parent="Board"]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="Board/CloseButtonContainer"]
+layout_mode = 2
+theme_override_styles/pressed = ExtResource("5_a38ey")
+text = "Close Leaderboard"
+
+[node name="RefreshContainer" type="CenterContainer" parent="Board"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Board/RefreshContainer"]
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7q6fo")
+text = "Refresh"
+
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qld8r")
+icon = ExtResource("5_lh4ox")
+icon_alignment = 1
+
+[connection signal="pressed" from="Board/CloseButtonContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Board/RefreshContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
