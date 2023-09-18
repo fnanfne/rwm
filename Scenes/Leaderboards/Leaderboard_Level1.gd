@@ -44,9 +44,11 @@ func render_board(scores: Array, local_scores: Array) -> void:
 	if all_scores.is_empty():
 		for score in scores:
 			add_item(score.player_name, str(int(score.score)))#, str(Array(score.metadata.email)))
+			#add_item(score.player_name, score.hours_value, score.minutes_value, score.seconds_value, score.milliseconds_value, str(int(score.score)))
 	else:
 		for score in all_scores:
 			add_item(score.player_name, str(int(score.score)))#, str(Array(score.metadata.email)))
+			#add_item(score.player_name, score.hours_value, score.minutes_value, score.seconds_value, score.milliseconds_value, str(int(score.score)))
 
 
 func is_default_leaderboard(ld_config: Dictionary) -> bool:
@@ -85,12 +87,16 @@ func score_in_score_array(scores: Array, new_score: Dictionary) -> bool:
 				in_score_array = true
 	return in_score_array
 
-
-func add_item(player_name: String, score_value: String) -> void:#, time_value: String) -> void:
+func add_item(player_name: String, score_value: String) -> void:
+#func add_item(player_name: String, score_value: String, hours_value: String, minutes_value: String, seconds_value: String, milliseconds_value: String) -> void:
 	var item = ScoreItemL1.instantiate()
 	list_index += 1
-	item.get_node("PlayerName").text = str(list_index) + str(". ") + player_name
-	item.get_node("Score").text = score_value
+	item.get_node("HBoxContainer/PlayerNameContainer/PlayerName").text = str(list_index) + str(".") + player_name
+	item.get_node("HBoxContainer/ScoreContainer/Score").text = score_value
+	#item.get_node("Time/Hours").text = hours_value
+	#item.get_node("Time/Minutes").text = minutes_value
+	#item.get_node("Time/Seconds").text = seconds_value
+	#item.get_node("Time/Milliseconds").text = milliseconds_value
 	#item.get_node("Score2").text = time_value
 	item.offset_top = list_index * 100
 	$"Board/HighScores/ScoreItemContainer".add_child(item)
@@ -139,29 +145,35 @@ func _on_button_pressed():
 
 
 func _on_test_adding_scores_pressed():
-	#var sw_result: Dictionary = await SilentWolf.Scores.save_score(player_name.text, player_score.text, "level1").sw_save_score_complete
-	var player_name = "Fousar34"
-	var score = 45145
-	var ldboard_name = "level1"
-	var metadata = {
-	"email": "yoinks@silentwolf.com",
-	"elapsed_time_ms": 231457,
-	"won_boss_fight": false,
-	"time2": "00:07:44:455"
+	if SilentWolf.Auth.logged_in_player == null:
+		print("NO USER LOGGED!!")
+	else:
+		
+		#var sw_result: Dictionary = await SilentWolf.Scores.save_score(player_name.text, player_score.text, "level1").sw_save_score_complete
+		var player_name = SilentWolf.Auth.logged_in_player
+		var score = 0
+		var ldboard_name = "level1"
+		var metadata = {
+			"score_txt": "00:36:42:445"
   }
-	SilentWolf.Scores.save_score(player_name, score, "level1", metadata)
-#	print("Score saved successfully: " + str(sw_result.score_id))
+		SilentWolf.Scores.save_score(player_name, score, "level1", metadata)
+		#print("Score saved successfully: " + str(sw_result.score_id))
 
 
 func _on_test_viewing_metadata_pressed():
-	var player_name = SilentWolf.Auth.logged_in_player
-	var sw_result = await SilentWolf.Scores.get_scores_by_player(player_name).sw_get_player_scores_complete
-	var scores = sw_result.scores
-	print("Got player scores: " + str(sw_result.scores))
-	print("Got: " + str(sw_result.scores.size()) + " scores for player: " + str(player_name))
-	print("Does player have scores? " + str(sw_result.scores.size() > 0))
-	for score in scores:
-		print("Player name: " + str(player_name) + ", score: " + str(score.score) + ", metadata: " + str(score.metadata))
+	
+	if SilentWolf.Auth.logged_in_user == null:
+		print("NO USER LOGGED IN!!!")
+	else:
+		var player_name = SilentWolf.Auth.logged_in_player
+		var sw_result = await SilentWolf.Scores.get_scores_by_player(player_name).sw_get_player_scores_complete
+		var scores = sw_result.scores
+		print("Got player scores: " + str(sw_result.scores))
+		print("Got: " + str(sw_result.scores.size()) + " scores for player: " + str(player_name))
+		print("Does player have scores? " + str(sw_result.scores.size() > 0))
+		print(player_name)
+		for score in scores:
+			print("Player name: " + str(player_name) + ", score: " + str(score.score) + ", metadata: " + str(score.metadata))
 
 
 func _on_close_button_pressed():

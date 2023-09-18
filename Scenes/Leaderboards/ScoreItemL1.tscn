@@ -14,31 +14,89 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_bbruk")
 
-[node name="PlayerName" type="RichTextLabel" parent="."]
-custom_minimum_size = Vector2(100, 25)
-layout_mode = 0
-offset_top = 10.0
-offset_right = 351.0
-offset_bottom = 50.0
+[node name="PlayerName_old" type="RichTextLabel" parent="."]
+visible = false
+custom_minimum_size = Vector2(200, 25)
+layout_mode = 2
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = -10.0
 theme_override_font_sizes/normal_font_size = 20
 text = "1. Godzilla"
 
-[node name="Score" type="Label" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 380.0
-offset_top = 10.0
 offset_right = 500.0
-offset_bottom = 50.0
+offset_bottom = 40.0
+
+[node name="PlayerNameContainer" type="HBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="HBoxContainer/PlayerNameContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "13"
+text = "1. Godzilla"
 horizontal_alignment = 2
 
-[node name="Score2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 240.0
-offset_top = 10.0
-offset_right = 365.0
-offset_bottom = 50.0
+[node name="TimeContainer" type="HBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Hours" type="Label" parent="HBoxContainer/TimeContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "00:00:00"
+text = "00"
+horizontal_alignment = 2
+
+[node name="Seperator" type="Label" parent="HBoxContainer/TimeContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.698039, 0.776471, 0.776471, 1)
+theme_override_font_sizes/font_size = 20
+text = ":"
+horizontal_alignment = 2
+
+[node name="Minutes" type="Label" parent="HBoxContainer/TimeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "00"
+horizontal_alignment = 2
+
+[node name="Seperator2" type="Label" parent="HBoxContainer/TimeContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.698039, 0.776471, 0.776471, 1)
+theme_override_font_sizes/font_size = 20
+text = ":"
+horizontal_alignment = 2
+
+[node name="Seconds" type="Label" parent="HBoxContainer/TimeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "00"
+horizontal_alignment = 2
+
+[node name="Seperator3" type="Label" parent="HBoxContainer/TimeContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.698039, 0.776471, 0.776471, 1)
+theme_override_font_sizes/font_size = 20
+text = ":"
+horizontal_alignment = 2
+
+[node name="Milliseconds" type="Label" parent="HBoxContainer/TimeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "000"
+horizontal_alignment = 2
+
+[node name="ScoreContainer" type="HBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+
+[node name="Score" type="Label" parent="HBoxContainer/ScoreContainer"]
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 20
+text = "13"
 horizontal_alignment = 2

@@ -60,3 +60,21 @@ func _on_leaderboard_pressed():
 	var sw_result: Dictionary = await SilentWolf.Scores.get_scores().sw_get_scores_complete
 	print("Scores: " + str(sw_result.scores))
 	get_tree().change_scene_to_file("res://leaderboard.tscn")
+
+
+
+
+func _on_test_pressed():
+	var player_name = SilentWolf.Auth.logged_in_player
+	var score = 451
+	var ldboard_name = "level1"
+	var metadata = {
+		"score_txt": "00:36:42:445",
+		"won_boss_fight": true
+		}
+
+	if SilentWolf.Auth.logged_in_player == null:
+		print("NO USER LOGGED!!")
+	else:
+		SilentWolf.Scores.save_score(player_name, score, ldboard_name, metadata)
+		print("Player email: " + str(score.metadata.score_txt))

@@ -843,7 +843,6 @@ script = ExtResource("1_h7mvx")
 robot_death_effect = ExtResource("2_4sk36")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 collision_mask = 8163
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

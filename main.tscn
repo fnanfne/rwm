@@ -121,6 +121,11 @@ offset_right = 825.0
 offset_bottom = 208.0
 text = "LEADERBOARD"
 
+[node name="Test" type="Button" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+text = "Add metadata"
+
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_quit_pressed"]
@@ -129,3 +134,4 @@ text = "LEADERBOARD"
 [connection signal="pressed" from="VBoxContainer2/Decrease" to="." method="_on_decrease_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="Leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="Test" to="." method="_on_test_pressed"]

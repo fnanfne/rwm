@@ -161,7 +161,6 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wf3w2")
 text = "METADATA"
-icon = ExtResource("5_rgxnd")
 flat = true
 icon_alignment = 1
 
