@@ -62,6 +62,8 @@ var being_gooped = false
 
 #@onready var all_sprites_nodes = $AllSprites.get_children() # I tried creating a function instead.
 
+# FUCK FUCK FUCK FUCK FUCK
+
 func _ready():
 	Game.Robot = self
 	#position.x = Game.xPos

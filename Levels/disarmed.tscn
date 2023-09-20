@@ -4616,6 +4616,7 @@ sources/6 = SubResource("TileSetAtlasSource_insja")
 sources/7 = SubResource("TileSetAtlasSource_sm3da")
 
 [node name="Disarmed" type="Node2D"]
+position = Vector2(-1, 0)
 
 [node name="Level" type="Node2D" parent="."]
 
