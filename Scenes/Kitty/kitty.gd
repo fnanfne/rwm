@@ -17,7 +17,7 @@ func _physics_process(delta):
 	
 	# LEVEL TIMER
 	level_time = Time.get_ticks_msec() - start_level_msec - 2000
-	print(level_time/1000.0)
+	#print(level_time/1000.0)
 	#print(corrected_level_time/1000.0)
 	#print($LevelTimer/LevelTimer/HBoxContainer/Seconds.text)
 

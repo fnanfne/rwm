@@ -151,10 +151,10 @@ func _on_test_adding_scores_pressed():
 		
 		#var sw_result: Dictionary = await SilentWolf.Scores.save_score(player_name.text, player_score.text, "level1").sw_save_score_complete
 		var player_name = SilentWolf.Auth.logged_in_player
-		var score = 0
+		var score = 5144
 		var ldboard_name = "level1"
 		var metadata = {
-			"score_txt": "00:36:42:445"
+			"score_txt": "00:12:08:175"
   }
 		SilentWolf.Scores.save_score(player_name, score, "level1", metadata)
 		#print("Score saved successfully: " + str(sw_result.score_id))

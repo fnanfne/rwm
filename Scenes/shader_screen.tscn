@@ -115,6 +115,7 @@ shader_parameter/keep_within_bounds = true
 shader_parameter/texture = ExtResource("17_76wxl")
 
 [node name="ShaderScreen" type="Node2D"]
+position = Vector2(-3, 3)
 
 [node name="Wave" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_vb13q")
@@ -141,7 +142,7 @@ texture = ExtResource("8_ng5f4")
 
 [node name="VHS" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_3s4n3")
-position = Vector2(245, 159)
+position = Vector2(851, 483)
 scale = Vector2(1.01563, 1.00313)
 texture = ExtResource("4_0wk0y")
 
@@ -159,25 +160,25 @@ texture = ExtResource("6_ndqho")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_vr377")
-offset_left = 1247.0
-offset_top = 377.0
-offset_right = 1447.0
-offset_bottom = 577.0
+offset_left = 1872.0
+offset_top = 267.0
+offset_right = 2469.0
+offset_bottom = 769.0
 color = Color(1, 1, 1, 0.505882)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_oulwi")
-offset_left = 779.0
-offset_top = 403.0
-offset_right = 956.0
-offset_bottom = 562.0
+offset_left = 2311.0
+offset_top = 745.0
+offset_right = 2955.0
+offset_bottom = 1243.0
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_0fxaq")
-offset_left = 838.0
-offset_top = 36.0
-offset_right = 1045.0
-offset_bottom = 243.0
+offset_left = 1443.0
+offset_top = 402.0
+offset_right = 1650.0
+offset_bottom = 609.0
 
 [node name="ColorRect4" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_5ish3")
@@ -188,14 +189,14 @@ offset_bottom = 323.0
 
 [node name="ColorRect5" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_up8w4")
-offset_left = 965.0
-offset_top = 32.0
-offset_right = 1189.0
-offset_bottom = 225.0
+offset_left = 1229.0
+offset_top = 655.0
+offset_right = 1799.0
+offset_bottom = 1137.0
 
 [node name="ColorRect6" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_0udfg")
-offset_left = 546.0
-offset_top = 415.0
-offset_right = 1051.0
-offset_bottom = 792.0
+offset_left = 415.0
+offset_top = 631.0
+offset_right = 920.0
+offset_bottom = 1008.0
