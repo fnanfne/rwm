@@ -738,7 +738,6 @@ text = "Falling Platforms"
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
-disabled = true
 text = "Gravity Blocks"
 
 [node name="R0C3T5" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
@@ -1251,6 +1250,7 @@ text = "Leaderboards"
 [connection signal="pressed" from="ABCDEF/BackFromABCDEF" to="." method="_on_back_from_abcdef_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Mazerunner - Godot" to="." method="_on_mazerunner__godot_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Robot Wants Music" to="." method="_on_robot_wants_music_pressed"]
+[connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Gravity Blocks" to="." method="_on_gravity_blocks_pressed"]
 [connection signal="pressed" from="Levels/BackFromLevels" to="." method="_on_back_from_levels_pressed"]
 [connection signal="text_changed" from="Register/VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName" to="." method="_on_player_name_text_changed"]
 [connection signal="mouse_entered" from="Register/VBoxContainer/HBoxContainer2/VBoxContainer3/UsernameInfoButton" to="." method="_on_username_info_button_mouse_entered"]

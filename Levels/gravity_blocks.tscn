@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvh8aw0vhadn5"]
+[gd_scene load_steps=17 format=3 uid="uid://dvh8aw0vhadn5"]
 
 [ext_resource type="TileSet" uid="uid://cerknt5tmrh7t" path="res://Resources/RwK_TILES.tres" id="1_bk10i"]
 [ext_resource type="PackedScene" uid="uid://co0s8j88lnd3v" path="res://Scenes/acid.tscn" id="2_2gsru"]
@@ -8,260 +8,321 @@
 [ext_resource type="PackedScene" uid="uid://yg103a66ifo2" path="res://Robot/new_robot.tscn" id="5_38khg"]
 [ext_resource type="PackedScene" uid="uid://d3yt0wrxansxj" path="res://Scenes/checkpoint.tscn" id="7_btc7b"]
 [ext_resource type="PackedScene" uid="uid://bicwqmhtso0jx" path="res://Scenes/Kitty/kitty.tscn" id="8_4vnfv"]
+[ext_resource type="PackedScene" uid="uid://brcwldjc05d0t" path="res://Apps/Gun.tscn" id="9_a8bbg"]
+[ext_resource type="PackedScene" uid="uid://c1d8oews520sh" path="res://Scenes/gun_target.tscn" id="10_glafo"]
+[ext_resource type="PackedScene" uid="uid://b2ckbklaeo8qs" path="res://Scenes/Pinkfly/pinkfly.tscn" id="11_o2arn"]
+[ext_resource type="PackedScene" uid="uid://enr0vi68ldaw" path="res://Scenes/Greenguy/green_guy.tscn" id="12_ucjp6"]
+[ext_resource type="PackedScene" uid="uid://ds02qr33layf5" path="res://Scenes/Redboss/Redboss.tscn" id="13_xh2kc"]
+[ext_resource type="PackedScene" uid="uid://8fo113v8l2bn" path="res://Scenes/computer.tscn" id="14_6m1tu"]
+[ext_resource type="PackedScene" uid="uid://ck0xsb7gqo0y7" path="res://Apps/Haxxor.tscn" id="15_ki0o3"]
+[ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="16_48o6j"]
 
 [node name="Gravity Blocks" type="Node2D"]
 
-[node name="Level" type="Node2D" parent="."]
-
-[node name="TileMap" type="TileMap" parent="Level"]
-position = Vector2(0, 40)
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, 280)
 tile_set = ExtResource("1_bk10i")
 cell_quadrant_size = 40
 format = 2
-layer_0/tile_data = PackedInt32Array(131072, 524288, 2, 196608, 524288, 3, 262144, 524288, 4, 327680, 524288, 5, 393216, 720896, 2, 196609, 589824, 3, 262145, 589824, 4, 327681, 786432, 1, 458752, 720896, 3, 524288, 720896, 4, 589824, 524288, 1, 393217, 786432, 2, 458753, 786432, 3, 524289, 786432, 4, 589825, 786432, 5, 655361, 589824, 2, 655360, 524288, 2, 720896, 524288, 3, 786432, 524288, 4, 851968, 524288, 5, 917504, 720896, 2, 720897, 589824, 3, 786433, 589824, 4, 851969, 786432, 1, 1179648, 524288, 2, 1245184, 524288, 3, 1310720, 524288, 4, 1376256, 524288, 5, 1245185, 589824, 3, 1310721, 589824, 4, 983040, 720896, 3, 1048576, 720896, 4, 1114112, 524288, 1, 917505, 786432, 2, 983041, 786432, 3, 1048577, 786432, 4, 1114113, 786432, 5, 1179649, 589824, 2, 65536, 524288, 1, 65537, 983040, 5, 131073, 589824, 2, 0, 983040, 5, 1, 720896, 9, 8, 1179648, 2, 28, 917504, 2, 35, 851968, 9, 65571, 983040, 5, 36, 983040, 5, 1376260, 655360, 8, 1376261, 720896, 8, 1441797, 720896, 9, 1376262, 786432, 8, 1441798, 786432, 9, 1376263, 851968, 8, 1441799, 851968, 9, 1376264, 917504, 8, 1441792, 917504, 2, 1376257, 983040, 1, 1441793, 983040, 2, 1376258, 1048576, 1, 1441794, 1048576, 2, 1376259, 1114112, 1, 1441795, 1114112, 2, 1441796, 1179648, 2, 1441800, 917504, 2, 1376265, 983040, 1, 1441801, 983040, 2, 1376266, 1048576, 1, 1441802, 1048576, 2, 1376267, 1114112, 1, 1441803, 1114112, 2, 1441804, 1179648, 2, 1441808, 917504, 2, 1376273, 983040, 1, 1441809, 983040, 2, 1376274, 1048576, 1, 1441810, 1048576, 2, 1376275, 1114112, 1, 1441811, 1114112, 2, 1441812, 1179648, 2, 1441816, 917504, 2, 1376281, 983040, 1, 1441817, 983040, 2, 1376282, 1048576, 1, 1441818, 1048576, 2, 1376283, 1114112, 1, 1441819, 1114112, 2, 1441820, 1179648, 2, 1441824, 917504, 2, 1376289, 983040, 1, 1441825, 983040, 2, 1376290, 1048576, 1, 1441826, 1048576, 2, 1376291, 1114112, 1, 1441827, 1114112, 2, 1441828, 1179648, 2, 65544, 65536, 0, 65564, 65536, 0, 1376268, 655360, 8, 1376269, 720896, 8, 1441805, 720896, 9, 1376270, 786432, 8, 1441806, 786432, 9, 1376271, 851968, 8, 1441807, 851968, 9, 1376272, 917504, 8, 1376276, 655360, 8, 1376277, 720896, 8, 1441813, 720896, 9, 1376278, 786432, 8, 1441814, 786432, 9, 1376279, 851968, 8, 1441815, 851968, 9, 1376280, 917504, 8, 1376284, 655360, 8, 1376285, 720896, 8, 1441821, 720896, 9, 1376286, 786432, 8, 1441822, 786432, 9, 1376287, 851968, 8, 1441823, 851968, 9, 1376288, 917504, 8, 1179683, 720896, 2, 1245219, 720896, 3, 1310755, 720896, 4, 1114148, 786432, 1, 1179684, 786432, 2, 1245220, 786432, 3, 1310756, 786432, 4, 1376292, 786432, 5, 655395, 720896, 2, 720931, 720896, 3, 786467, 720896, 4, 589860, 786432, 1, 655396, 786432, 2, 720932, 786432, 3, 786468, 786432, 4, 852004, 786432, 5, 131107, 720896, 2, 196643, 720896, 3, 262179, 720896, 4, 65572, 786432, 1, 131108, 786432, 2, 196644, 786432, 3, 262180, 786432, 4, 327716, 786432, 5, 852003, 524288, 1, 917539, 524288, 2, 983075, 524288, 3, 1048611, 524288, 4, 1114147, 524288, 5, 917540, 589824, 2, 983076, 589824, 3, 1048612, 589824, 4, 327715, 524288, 1, 393251, 524288, 2, 458787, 524288, 3, 524323, 524288, 4, 589859, 524288, 5, 393252, 589824, 2, 458788, 589824, 3, 524324, 589824, 4, 917520, 655361, 8, 917521, 720897, 8, 983057, 720897, 9, 917522, 786433, 8, 983058, 786433, 9, 917523, 851969, 8, 983059, 851969, 9, 917524, 917505, 8, 983055, 524289, 1, 1048591, 524289, 2, 1114127, 524289, 3, 1179663, 524289, 4, 1245199, 524289, 5, 1048592, 589825, 2, 1114128, 589825, 3, 1179664, 589825, 4, 1048596, 720897, 2, 1114132, 720897, 3, 1179668, 720897, 4, 983061, 786433, 1, 1048597, 786433, 2, 1114133, 786433, 3, 1179669, 786433, 4, 1245205, 786433, 5, 1310736, 917505, 2, 1245201, 983041, 1, 1310737, 983041, 2, 1245202, 1048577, 1, 1310738, 1048577, 2, 1245203, 1114113, 1, 1310739, 1114113, 2, 1310740, 1179649, 2, 1245204, 983040, 5, 1310741, 2228224, 9, 1245200, 983040, 5, 1310735, 1966080, 9, 917519, 1966080, 5, 983056, 983040, 5, 983060, 983040, 5, 917525, 2228224, 5, 393231, 524289, 1, 458767, 524289, 2, 524303, 524289, 3, 393232, 655361, 8, 458768, 589825, 2, 524304, 589825, 3, 458769, 720897, 9, 524305, 983042, 5, 458770, 786433, 9, 524306, 1048577, 2, 458771, 851969, 9, 524307, 983042, 5, 393236, 917505, 8, 458772, 720897, 2, 524308, 720897, 3, 393237, 786433, 1, 458773, 786433, 2, 524309, 786433, 3, 917506, 1966080, 5, 983042, 524289, 1, 1048578, 524289, 2, 1114114, 524289, 3, 1179650, 524289, 4, 1245186, 524289, 5, 1310722, 1966080, 9, 917507, 655361, 8, 983043, 983040, 5, 1048579, 589825, 2, 1114115, 589825, 3, 1179651, 589825, 4, 1245187, 983040, 5, 1310723, 917505, 2, 917508, 720897, 8, 983044, 720897, 9, 1245188, 983041, 1, 1310724, 983041, 2, 917509, 786433, 8, 983045, 786433, 9, 1245189, 1048577, 1, 1310725, 1048577, 2, 917510, 851969, 8, 983046, 851969, 9, 1245190, 1114113, 1, 1310726, 1114113, 2, 917511, 917505, 8, 983047, 983040, 5, 1048583, 720897, 2, 1114119, 720897, 3, 1179655, 720897, 4, 1245191, 983040, 5, 1310727, 1179649, 2, 917512, 2228224, 5, 983048, 786433, 1, 1048584, 786433, 2, 1114120, 786433, 3, 1179656, 786433, 4, 1245192, 786433, 5, 1310728, 2228224, 9, 917532, 1966080, 5, 983068, 524289, 1, 1048604, 524289, 2, 1114140, 524289, 3, 1179676, 524289, 4, 1245212, 524289, 5, 1310748, 1966080, 9, 917533, 655361, 8, 983069, 983040, 5, 1048605, 589825, 2, 1114141, 589825, 3, 1179677, 589825, 4, 1245213, 983040, 5, 1310749, 917505, 2, 917534, 720897, 8, 983070, 720897, 9, 1245214, 983041, 1, 1310750, 983041, 2, 917535, 786433, 8, 983071, 786433, 9, 1245215, 1048577, 1, 1310751, 1048577, 2, 917536, 851969, 8, 983072, 851969, 9, 1245216, 1114113, 1, 1310752, 1114113, 2, 917537, 917505, 8, 983073, 983040, 5, 1048609, 720897, 2, 1114145, 720897, 3, 1179681, 720897, 4, 1245217, 983040, 5, 1310753, 1179649, 2, 917538, 2228224, 5, 983074, 786433, 1, 1048610, 786433, 2, 1114146, 786433, 3, 1179682, 786433, 4, 1245218, 786433, 5, 1310754, 2228224, 9, 1048580, 1966080, 5, 1114116, 262144, 1, 1179652, 1966080, 9, 1048581, 327680, 0, 1179653, 327680, 2, 1048582, 2228224, 5, 1114118, 393216, 1, 1179654, 2228224, 9, 1048593, 1966080, 5, 1114129, 262144, 1, 1179665, 1966080, 9, 1048594, 327680, 0, 1179666, 327680, 2, 1048595, 2228224, 5, 1114131, 393216, 1, 1179667, 2228224, 9, 1048606, 1966080, 5, 1114142, 262144, 1, 1179678, 1966080, 9, 1048607, 327680, 0, 1179679, 327680, 2, 1048608, 2228224, 5, 1114144, 393216, 1, 1179680, 2228224, 9, 393224, 65536, 1, 458760, 65536, 0, 262152, 65536, 1, 327688, 65536, 0, 131080, 65536, 1, 196616, 65536, 0, 393244, 65536, 1, 458780, 65536, 0, 262172, 65536, 1, 327708, 65536, 0, 131100, 65536, 1, 196636, 65536, 0, 655388, 65538, 0, 720924, 65538, 1, 786460, 65538, 0, 655368, 65538, 0, 720904, 65538, 1, 786440, 65538, 0, 393233, 720897, 8, 393235, 851969, 8, -65536, 655360, 8, -65535, 720896, 8, -65534, 786432, 8, -65533, 851968, 8, -65532, 917504, 8, -65531, 983040, 1, -65530, 1048576, 1, -65529, 1114112, 1, -65528, 655360, 8, -65527, 720896, 8, -65526, 786432, 8, -65525, 851968, 8, -65524, 917504, 8, -65523, 983040, 1, -65522, 1048576, 1, -65521, 1114112, 1, -65520, 655360, 8, -65519, 720896, 8, -65518, 786432, 8, -65517, 851968, 8, -65516, 917504, 8, -65515, 983040, 1, -65514, 1048576, 1, -65513, 1114112, 1, -65512, 655360, 8, -65511, 720896, 8, -65510, 786432, 8, -65509, 851968, 8, -65508, 917504, 8, -65507, 983040, 1, -65506, 1048576, 1, -65505, 1114112, 1, -65504, 655360, 8, -65503, 720896, 8, -65502, 786432, 8, -65501, 851968, 8, -65500, 917504, 8, 589839, 524289, 4, 655375, 524289, 5, 589840, 589825, 4, 655376, 917505, 2, 589841, 983041, 1, 655377, 983041, 2, 393234, 786433, 8, 589842, 1048577, 1, 655378, 1048577, 2, 589843, 1114113, 1, 655379, 1114113, 2, 589844, 720897, 4, 655380, 1179649, 2, 589845, 786433, 4, 655381, 786433, 5, 589826, 65536, 3, 589827, 131072, 3, 589828, 65536, 3, 589829, 131072, 3, 589830, 65536, 3, 589831, 131072, 3, 851976, 65538, 1, 589833, 65536, 3, 589834, 131072, 3, 589835, 65536, 3, 589836, 131072, 3, 589837, 65536, 3, 589838, 131072, 3, 524296, 65536, 1, 524316, 65536, 1, 589846, 65536, 3, 589847, 131072, 3, 589848, 65536, 3, 589849, 131072, 3, 589850, 65536, 3, 589851, 131072, 3, 851996, 65538, 1, 589853, 65536, 3, 589854, 131072, 3, 589855, 65536, 3, 589856, 131072, 3, 589857, 65536, 3, 589858, 131072, 3, 2, 786432, 9, 3, 851968, 9, 4, 917504, 2, 5, 983040, 2, 6, 1048576, 2, 7, 1114112, 2, 9, 720896, 9, 10, 786432, 9, 11, 851968, 9, 12, 917504, 2, 13, 983040, 2, 14, 1048576, 2, 15, 1114112, 2, 16, 1179648, 2, 17, 720896, 9, 18, 786432, 9, 19, 851968, 9, 20, 917504, 2, 21, 983040, 2, 22, 1048576, 2, 23, 1114112, 2, 24, 1179648, 2, 25, 720896, 9, 26, 786432, 9, 27, 851968, 9, 29, 983040, 2, 30, 1048576, 2, 31, 1114112, 2, 32, 1179648, 2, 33, 720896, 9, 34, 786432, 9)
+layer_0/tile_data = PackedInt32Array(131072, 524288, 2, 196608, 524288, 3, 262144, 524288, 4, 327680, 524288, 5, 393216, 720896, 2, 196609, 589824, 3, 262145, 589824, 4, 327681, 786432, 1, 458752, 720896, 3, 524288, 720896, 4, 589824, 524288, 1, 393217, 786432, 2, 458753, 786432, 3, 524289, 786432, 4, 589825, 786432, 5, 655361, 589824, 2, 655360, 524288, 2, 720896, 524288, 3, 786432, 524288, 4, 851968, 524288, 5, 917504, 720896, 2, 720897, 589824, 3, 786433, 589824, 4, 851969, 786432, 1, 1179648, 524288, 2, 1245184, 524288, 3, 1310720, 524288, 4, 1376256, 524288, 5, 1245185, 589824, 3, 1310721, 589824, 4, 983040, 720896, 3, 1048576, 720896, 4, 1114112, 524288, 1, 917505, 786432, 2, 983041, 786432, 3, 1048577, 786432, 4, 1114113, 786432, 5, 1179649, 589824, 2, 65536, 983040, 5, 65537, 720896, 9, 131073, 589824, 2, 0, 655360, 8, 1, 720896, 8, 8, 720896, 4, 28, 589824, 4, 35, 851968, 8, 65571, 851968, 9, 36, 917504, 8, 1376260, 655360, 8, 1376261, 720896, 8, 1441797, 720896, 9, 1376262, 786432, 8, 1441798, 786432, 9, 1376263, 851968, 8, 1441799, 851968, 9, 1376264, 917504, 8, 1441792, 917504, 2, 1376257, 983040, 1, 1441793, 983040, 2, 1376258, 1048576, 1, 1441794, 1048576, 2, 1376259, 1114112, 1, 1441795, 1114112, 2, 1441796, 1179648, 2, 1441800, 917504, 2, 1376265, 983040, 1, 1441801, 983040, 2, 1376266, 1048576, 1, 1441802, 1048576, 2, 1376267, 1114112, 1, 1441803, 1114112, 2, 1441804, 1179648, 2, 1441808, 917504, 2, 1376273, 983040, 1, 1441809, 983040, 2, 1376274, 1048576, 1, 1441810, 1048576, 2, 1376275, 1114112, 1, 1441811, 1114112, 2, 1441812, 1179648, 2, 1441816, 917504, 2, 1376281, 983040, 1, 1441817, 983040, 2, 1376282, 1048576, 1, 1441818, 1048576, 2, 1376283, 1114112, 1, 1441819, 1114112, 2, 1441820, 1179648, 2, 1441824, 917504, 2, 1376289, 983040, 1, 1441825, 983040, 2, 1376290, 1048576, 1, 1441826, 1048576, 2, 1376291, 1114112, 1, 1441827, 1114112, 2, 1441828, 1179648, 2, 65544, 1179648, 2, 65564, 917504, 2, 1376268, 655360, 8, 1376269, 720896, 8, 1441805, 720896, 9, 1376270, 786432, 8, 1441806, 786432, 9, 1376271, 851968, 8, 1441807, 851968, 9, 1376272, 917504, 8, 1376276, 655360, 8, 1376277, 720896, 8, 1441813, 720896, 9, 1376278, 786432, 8, 1441814, 786432, 9, 1376279, 851968, 8, 1441815, 851968, 9, 1376280, 917504, 8, 1376284, 655360, 8, 1376285, 720896, 8, 1441821, 720896, 9, 1376286, 786432, 8, 1441822, 786432, 9, 1376287, 851968, 8, 1441823, 851968, 9, 1376288, 917504, 8, 1179683, 720896, 2, 1245219, 720896, 3, 1310755, 720896, 4, 1114148, 786432, 1, 1179684, 786432, 2, 1245220, 786432, 3, 1310756, 786432, 4, 1376292, 786432, 5, 655395, 720896, 2, 720931, 720896, 3, 786467, 720896, 4, 589860, 786432, 1, 655396, 786432, 2, 720932, 786432, 3, 786468, 786432, 4, 852004, 786432, 5, 131107, 720896, 2, 196643, 720896, 3, 262179, 720896, 4, 65572, 983040, 5, 131108, 786432, 2, 196644, 786432, 3, 262180, 786432, 4, 327716, 786432, 5, 852003, 524288, 1, 917539, 524288, 2, 983075, 524288, 3, 1048611, 524288, 4, 1114147, 524288, 5, 917540, 589824, 2, 983076, 589824, 3, 1048612, 589824, 4, 327715, 524288, 1, 393251, 524288, 2, 458787, 524288, 3, 524323, 524288, 4, 589859, 524288, 5, 393252, 589824, 2, 458788, 589824, 3, 524324, 589824, 4, 917520, 655361, 8, 917521, 720897, 8, 983057, 720897, 9, 917522, 786433, 8, 983058, 786433, 9, 917523, 851969, 8, 983059, 851969, 9, 917524, 917505, 8, 983055, 524289, 1, 1048591, 524289, 2, 1114127, 524289, 3, 1179663, 524289, 4, 1245199, 524289, 5, 1048592, 589825, 2, 1114128, 589825, 3, 1179664, 589825, 4, 1048596, 720897, 2, 1114132, 720897, 3, 1179668, 720897, 4, 983061, 786433, 1, 1048597, 786433, 2, 1114133, 786433, 3, 1179669, 786433, 4, 1245205, 786433, 5, 1310736, 917505, 2, 1245201, 983041, 1, 1310737, 983041, 2, 1245202, 1048577, 1, 1310738, 1048577, 2, 1245203, 1114113, 1, 1310739, 1114113, 2, 1310740, 1179649, 2, 1245204, 983040, 5, 1310741, 2228224, 9, 1245200, 983040, 5, 1310735, 1966080, 9, 917519, 1966080, 5, 983056, 983040, 5, 983060, 983040, 5, 917525, 2228224, 5, 393231, 524289, 1, 458767, 524289, 2, 524303, 524289, 3, 393232, 655361, 8, 458768, 589825, 2, 524304, 589825, 3, 458769, 720897, 9, 524305, 983042, 5, 458770, 786433, 9, 524306, 1048577, 2, 458771, 851969, 9, 524307, 983042, 5, 393236, 917505, 8, 458772, 720897, 2, 524308, 720897, 3, 393237, 786433, 1, 458773, 786433, 2, 524309, 786433, 3, 917506, 1966080, 5, 983042, 524289, 1, 1048578, 524289, 2, 1114114, 524289, 3, 1179650, 524289, 4, 1245186, 524289, 5, 1310722, 1966080, 9, 917507, 655361, 8, 983043, 983040, 5, 1048579, 589825, 2, 1114115, 589825, 3, 1179651, 589825, 4, 1245187, 983040, 5, 1310723, 917505, 2, 917508, 720897, 8, 983044, 720897, 9, 1245188, 983041, 1, 1310724, 983041, 2, 917509, 786433, 8, 983045, 786433, 9, 1245189, 1048577, 1, 1310725, 1048577, 2, 917510, 851969, 8, 983046, 851969, 9, 1245190, 1114113, 1, 1310726, 1114113, 2, 917511, 917505, 8, 983047, 983040, 5, 1048583, 720897, 2, 1114119, 720897, 3, 1179655, 720897, 4, 1245191, 983040, 5, 1310727, 1179649, 2, 917512, 2228224, 5, 983048, 786433, 1, 1048584, 786433, 2, 1114120, 786433, 3, 1179656, 786433, 4, 1245192, 786433, 5, 1310728, 2228224, 9, 917532, 1966080, 5, 983068, 524289, 1, 1048604, 524289, 2, 1114140, 524289, 3, 1179676, 524289, 4, 1245212, 524289, 5, 1310748, 1966080, 9, 917533, 655361, 8, 983069, 983040, 5, 1048605, 589825, 2, 1114141, 589825, 3, 1179677, 589825, 4, 1245213, 983040, 5, 1310749, 917505, 2, 917534, 720897, 8, 983070, 720897, 9, 1245214, 983041, 1, 1310750, 983041, 2, 917535, 786433, 8, 983071, 786433, 9, 1245215, 1048577, 1, 1310751, 1048577, 2, 917536, 851969, 8, 983072, 851969, 9, 1245216, 1114113, 1, 1310752, 1114113, 2, 917537, 917505, 8, 983073, 983040, 5, 1048609, 720897, 2, 1114145, 720897, 3, 1179681, 720897, 4, 1245217, 983040, 5, 1310753, 1179649, 2, 917538, 2228224, 5, 983074, 786433, 1, 1048610, 786433, 2, 1114146, 786433, 3, 1179682, 786433, 4, 1245218, 786433, 5, 1310754, 2228224, 9, 1048580, 1966080, 5, 1114116, 262144, 1, 1179652, 1966080, 9, 1048581, 327680, 0, 1179653, 327680, 2, 1048582, 2228224, 5, 1114118, 393216, 1, 1179654, 2228224, 9, 1048593, 1966080, 5, 1114129, 262144, 1, 1179665, 1966080, 9, 1048594, 327680, 0, 1179666, 327680, 2, 1048595, 2228224, 5, 1114131, 393216, 1, 1179667, 2228224, 9, 1048606, 1966080, 5, 1114142, 262144, 1, 1179678, 1966080, 9, 1048607, 327680, 0, 1179679, 327680, 2, 1048608, 2228224, 5, 1114144, 393216, 1, 1179680, 2228224, 9, 393224, 786433, 4, 458760, 786433, 5, 262152, 786433, 2, 327688, 786433, 3, 131080, 2228224, 5, 196616, 786433, 1, 393244, 524289, 4, 458780, 524289, 5, 262172, 524289, 2, 327708, 524289, 3, 131100, 1966080, 5, 196636, 524289, 1, 655388, 65538, 0, 720924, 65538, 1, 786460, 65538, 0, 655368, 65538, 0, 720904, 65538, 1, 786440, 65538, 0, 393233, 720897, 8, 393235, 851969, 8, 589839, 524289, 4, 655375, 524289, 5, 589840, 589825, 4, 655376, 917505, 2, 589841, 983041, 1, 655377, 983041, 2, 393234, 786433, 8, 589842, 1048577, 1, 655378, 1048577, 2, 589843, 1114113, 1, 655379, 1114113, 2, 589844, 720897, 4, 655380, 1179649, 2, 589845, 786433, 4, 655381, 786433, 5, 589826, 65536, 3, 589827, 131072, 3, 589828, 65536, 3, 589829, 131072, 3, 589830, 65536, 3, 589831, 131072, 3, 851976, 65538, 1, 589833, 65536, 3, 589834, 131072, 3, 589835, 65536, 3, 589836, 131072, 3, 589837, 65536, 3, 589838, 131072, 3, 524296, 2228224, 9, 524316, 1966080, 9, 851996, 65538, 1, 589853, 65536, 3, 589854, 131072, 3, 589855, 65536, 3, 589856, 131072, 3, 589857, 65536, 3, 589858, 131072, 3, 2, 786432, 8, 3, 851968, 8, 4, 917504, 8, 5, 983040, 1, 6, 1048576, 1, 7, 1114112, 1, 9, 786432, 4, 11, 851968, 8, 12, 917504, 8, 24, 655360, 8, 25, 720896, 8, 26, 786432, 8, 27, 524288, 4, 29, 983040, 1, 30, 1048576, 1, 31, 1114112, 1, 32, 655360, 8, 33, 720896, 8, 34, 786432, 8, 131074, 1966080, 5, 196610, 524289, 1, 262146, 524289, 2, 327682, 524289, 3, 393218, 524289, 4, 458754, 524289, 5, 524290, 1966080, 9, 131075, 655361, 8, 196611, 983040, 5, 262147, 589825, 2, 327683, 589825, 3, 393219, 589825, 4, 458755, 983040, 5, 524291, 917505, 2, 131076, 720897, 8, 196612, 720897, 9, 262148, 1966080, 5, 327684, 262144, 1, 393220, 1966080, 9, 458756, 983041, 1, 524292, 983041, 2, 131077, 786433, 8, 196613, 786433, 9, 262149, 327680, 0, 393221, 327680, 2, 458757, 1048577, 1, 524293, 1048577, 2, 131078, 851969, 8, 196614, 851969, 9, 262150, 2228224, 5, 327686, 393216, 1, 393222, 2228224, 9, 458758, 1114113, 1, 524294, 1114113, 2, 131079, 917505, 8, 196615, 983040, 5, 262151, 720897, 2, 327687, 720897, 3, 393223, 720897, 4, 458759, 983040, 5, 524295, 1179649, 2, 131101, 655361, 8, 196637, 983040, 5, 262173, 589825, 2, 327709, 589825, 3, 393245, 589825, 4, 458781, 983040, 5, 524317, 917505, 2, 131102, 720897, 8, 196638, 720897, 9, 262174, 1966080, 5, 327710, 262144, 1, 393246, 1966080, 9, 458782, 983041, 1, 524318, 983041, 2, 131103, 786433, 8, 196639, 786433, 9, 262175, 327680, 0, 393247, 327680, 2, 458783, 1048577, 1, 524319, 1048577, 2, 131104, 851969, 8, 196640, 851969, 9, 262176, 2228224, 5, 327712, 393216, 1, 393248, 2228224, 9, 458784, 1114113, 1, 524320, 1114113, 2, 131105, 917505, 8, 196641, 983040, 5, 262177, 720897, 2, 327713, 720897, 3, 393249, 720897, 4, 458785, 983040, 5, 524321, 1179649, 2, 131106, 2228224, 5, 196642, 786433, 1, 262178, 786433, 2, 327714, 786433, 3, 393250, 786433, 4, 458786, 786433, 5, 524322, 2228224, 9, 65538, 786432, 9, 65539, 851968, 9, 65540, 917504, 2, 65541, 983040, 2, 65542, 1048576, 2, 65543, 1114112, 2, 65545, 786432, 5, 65546, 786432, 9, 65547, 851968, 9, 65561, 720896, 9, 65562, 786432, 9, 65563, 524288, 5, 65565, 983040, 2, 65566, 1048576, 2, 65567, 1114112, 2, 65568, 1179648, 2, 65569, 720896, 9, 65570, 786432, 9, 327696, 2031616, 3, 262160, 2031616, 3, 196624, 2031616, 3, 327700, 2031616, 3, 262164, 2031616, 3, 196628, 2031616, 3, 262161, 2031616, 3, 262163, 65536, 1, 131089, 65536, 1, 131090, 2031616, 3, 131091, 2031616, 3, 196626, 131072, 3, 196627, 65536, 0, 262162, 2031616, 3, 786450, 983041, 5, -131064, 720896, 2, -65528, 720896, 3, -196599, 786432, 1, -131063, 786432, 2, -65527, 786432, 3, -196581, 524288, 1, -131045, 524288, 2, -65509, 524288, 3, -131044, 589824, 2, -65508, 589824, 3, -458744, 524288, 1, -393208, 524288, 2, -327672, 524288, 3, -262136, 524288, 4, -196600, 524288, 5, -393207, 589824, 2, -327671, 589824, 3, -262135, 589824, 4, -393189, 720896, 2, -327653, 720896, 3, -262117, 720896, 4, -458724, 786432, 1, -393188, 786432, 2, -327652, 786432, 3, -262116, 786432, 4, -196580, 786432, 5, -393203, 917504, 2, -458738, 983040, 1, -393202, 983040, 2, -458737, 1048576, 1, -393201, 1048576, 2, -458736, 1114112, 1, -393200, 1114112, 2, -393199, 1179648, 2, -458743, 655360, 8, -458742, 720896, 8, -393206, 720896, 9, -458741, 786432, 8, -393205, 786432, 9, -458740, 851968, 8, -393204, 851968, 9, -458739, 917504, 8, -458729, 655360, 8, -458728, 720896, 8, -393192, 720896, 9, -458727, 786432, 8, -393191, 786432, 9, -458726, 851968, 8, -393190, 851968, 9, -458725, 917504, 8, -393197, 917504, 2, -458732, 983040, 1, -393196, 983040, 2, -458731, 1048576, 1, -393195, 1048576, 2, -458730, 1114112, 1, -393194, 1114112, 2, -393193, 1179648, 2, -458735, 262144, 4, -458734, 327680, 4, -393198, 327680, 5, -458733, 393216, 4, 10, 786432, 8, 65548, 0, 9, 13, 65536, 8, 65549, 65536, 9, 65550, 131072, 9, 65558, 0, 9, 23, 65536, 8, 65559, 65536, 9, 65560, 131072, 9, -65523, 458752, 8, -131058, 524288, 7, -65522, 524288, 8, 14, 524288, 9, -196594, 262144, 4, -196593, 327680, 4, -131057, 327680, 5, -196592, 393216, 4, -196588, 262144, 4, -196587, 327680, 4, -131051, 327680, 5, -196586, 393216, 4, -196591, 262144, 4, -196590, 327680, 4, -131054, 327680, 5, -196589, 393216, 4, -131050, 262144, 7, -65514, 262144, 8, 22, 262144, 9, -65513, 327680, 8, -65521, 917504, 2, -65520, 983040, 2, -131056, 983040, 1, -131055, 1114112, 1, -65519, 1114112, 2, -65518, 327680, 2, -65517, 983040, 2, -131053, 983040, 1, -131052, 1114112, 1, -65516, 1114112, 2, -65515, 1179648, 2, 65553, 65536, 0, 196625, 65536, 3, 589846, 65536, 3, 589847, 131072, 3, 589848, 65536, 3, 589849, 131072, 3, 589850, 65536, 3, 589851, 131072, 3)
 
-[node name="Acid" parent="Level" instance=ExtResource("2_2gsru")]
-position = Vector2(940, 820)
+[node name="Items" type="Node2D" parent="TileMap"]
 
-[node name="Acid2" parent="Level" instance=ExtResource("2_2gsru")]
-position = Vector2(1060, 820)
-
-[node name="Acid3" parent="Level" instance=ExtResource("2_2gsru")]
-position = Vector2(420, 820)
-
-[node name="Acid4" parent="Level" instance=ExtResource("2_2gsru")]
-position = Vector2(540, 820)
-
-[node name="Items" type="Node2D" parent="Level"]
-
-[node name="PhysicsBoxes" type="Node2D" parent="Level"]
-position = Vector2(0, 80)
-
-[node name="physicsblock1" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(400, 300)
-
-[node name="physicsblock2" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(450, 300)
-
-[node name="physicsblock3" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(500, 300)
-
-[node name="physicsblock4" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(550, 300)
-
-[node name="physicsblock5" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(570, 260)
-
-[node name="physicsblock6" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(520, 260)
-
-[node name="physicsblock7" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(470, 260)
-
-[node name="physicsblock8" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(420, 260)
-
-[node name="physicsblock9" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(400, 220)
-
-[node name="physicsblock10" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(450, 220)
-
-[node name="physicsblock11" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(500, 220)
-
-[node name="physicsblock12" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(550, 220)
-
-[node name="physicsblock13" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(420, 180)
-
-[node name="physicsblock14" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(470, 180)
-
-[node name="physicsblock15" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(520, 180)
-
-[node name="physicsblock16" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(570, 180)
-
-[node name="physicsblock17" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(590, 140)
-
-[node name="physicsblock18" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(540, 140)
-
-[node name="physicsblock19" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(490, 140)
-
-[node name="physicsblock20" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(440, 140)
-
-[node name="physicsblock21" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(420, 100)
-
-[node name="physicsblock22" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(470, 100)
-
-[node name="physicsblock23" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(520, 100)
-
-[node name="physicsblock24" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(570, 100)
-
-[node name="physicsblock25" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(910, 300)
-
-[node name="physicsblock26" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(960, 300)
-
-[node name="physicsblock27" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1010, 300)
-
-[node name="physicsblock28" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1060, 300)
-
-[node name="physicsblock29" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1080, 260)
-
-[node name="physicsblock30" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1030, 260)
-
-[node name="physicsblock31" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(980, 260)
-
-[node name="physicsblock32" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(930, 260)
-
-[node name="physicsblock33" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(910, 220)
-
-[node name="physicsblock34" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(960, 220)
-
-[node name="physicsblock35" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1010, 220)
-
-[node name="physicsblock36" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1060, 220)
-
-[node name="physicsblock37" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(930, 180)
-
-[node name="physicsblock38" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(980, 180)
-
-[node name="physicsblock39" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1030, 180)
-
-[node name="physicsblock40" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1080, 180)
-
-[node name="physicsblock41" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1100, 140)
-
-[node name="physicsblock42" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1050, 140)
-
-[node name="physicsblock43" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1000, 140)
-
-[node name="physicsblock44" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(950, 140)
-
-[node name="physicsblock45" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(930, 100)
-
-[node name="physicsblock46" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(980, 100)
-
-[node name="physicsblock47" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1030, 100)
-
-[node name="physicsblock48" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1080, 100)
-
-[node name="physicsblock49" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(900, 140)
-
-[node name="physicsblock51" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1100, 60)
-
-[node name="physicsblock52" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1050, 60)
-
-[node name="physicsblock53" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1000, 60)
-
-[node name="physicsblock54" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(950, 60)
-
-[node name="physicsblock55" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(930, 20)
-
-[node name="physicsblock56" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(980, 20)
-
-[node name="physicsblock57" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1030, 20)
-
-[node name="physicsblock58" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(1080, 20)
-
-[node name="physicsblock59" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(900, 60)
-
-[node name="physicsblock50" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(390, 140)
-
-[node name="physicsblock60" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(590, 60)
-
-[node name="physicsblock61" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(540, 60)
-
-[node name="physicsblock62" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(490, 60)
-
-[node name="physicsblock63" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(440, 60)
-
-[node name="physicsblock64" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(420, 20)
-
-[node name="physicsblock65" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(470, 20)
-
-[node name="physicsblock66" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(520, 20)
-
-[node name="physicsblock67" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(570, 20)
-
-[node name="physicsblock68" parent="Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
-position = Vector2(390, 60)
-
-[node name="Launch" parent="Level" instance=ExtResource("3_ru27x")]
+[node name="Launch" parent="TileMap/Items" instance=ExtResource("3_ru27x")]
 position = Vector2(220, 540)
 
-[node name="Jump" parent="Level" instance=ExtResource("4_selhj")]
+[node name="Jump" parent="TileMap/Items" instance=ExtResource("4_selhj")]
 position = Vector2(1140, 540)
 
-[node name="NewRobot" parent="Level" instance=ExtResource("5_38khg")]
-position = Vector2(1370, 520)
+[node name="Haxxor" parent="TileMap/Items" instance=ExtResource("15_ki0o3")]
+position = Vector2(1140, 380)
 
-[node name="Checkpoint" parent="Level" instance=ExtResource("7_btc7b")]
-position = Vector2(1260, 530)
+[node name="Heart" parent="TileMap/Items" instance=ExtResource("16_48o6j")]
+position = Vector2(340, 380)
 
-[node name="Kitty" parent="Level" instance=ExtResource("8_4vnfv")]
-position = Vector2(730, 130)
+[node name="Level" type="Node2D" parent="TileMap"]
 
-[node name="Node2D4" type="Node2D" parent="Level"]
+[node name="Checkpoint" parent="TileMap/Level" instance=ExtResource("7_btc7b")]
+position = Vector2(1190, 430)
 
-[node name="Node2D5" type="Node2D" parent="Level"]
+[node name="Kitty" parent="TileMap/Level" instance=ExtResource("8_4vnfv")]
+position = Vector2(740, 210)
 
-[node name="Node2D6" type="Node2D" parent="Level"]
+[node name="NewRobot" parent="TileMap/Level" instance=ExtResource("5_38khg")]
+position = Vector2(1320, 530)
 
-[node name="Node2D7" type="Node2D" parent="Level"]
+[node name="PhysicsBoxes" type="Node2D" parent="TileMap/Level"]
+position = Vector2(0, -280)
 
-[node name="Node2D8" type="Node2D" parent="Level"]
+[node name="physicsblock1" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(390, 620)
+
+[node name="physicsblock2" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(440, 620)
+
+[node name="physicsblock3" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(490, 620)
+
+[node name="physicsblock4" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(540, 620)
+
+[node name="physicsblock5" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(560, 580)
+
+[node name="physicsblock6" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(510, 580)
+
+[node name="physicsblock7" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(460, 580)
+
+[node name="physicsblock8" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(410, 580)
+
+[node name="physicsblock9" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(380, 540)
+
+[node name="physicsblock10" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(430, 540)
+
+[node name="physicsblock11" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(480, 540)
+
+[node name="physicsblock12" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(530, 540)
+
+[node name="physicsblock13" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(410, 500)
+
+[node name="physicsblock14" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(460, 500)
+
+[node name="physicsblock15" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(510, 500)
+
+[node name="physicsblock16" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(560, 500)
+
+[node name="physicsblock17" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(580, 460)
+
+[node name="physicsblock18" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(530, 460)
+
+[node name="physicsblock19" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(480, 460)
+
+[node name="physicsblock20" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(430, 460)
+
+[node name="physicsblock21" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(400, 420)
+
+[node name="physicsblock22" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(450, 420)
+
+[node name="physicsblock23" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(500, 420)
+
+[node name="physicsblock24" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(550, 420)
+
+[node name="physicsblock25" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(910, 620)
+
+[node name="physicsblock26" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(960, 620)
+
+[node name="physicsblock27" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1010, 620)
+
+[node name="physicsblock28" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1060, 620)
+
+[node name="physicsblock29" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1080, 580)
+
+[node name="physicsblock30" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1030, 580)
+
+[node name="physicsblock31" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(980, 580)
+
+[node name="physicsblock32" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(930, 580)
+
+[node name="physicsblock33" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(910, 540)
+
+[node name="physicsblock34" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(960, 540)
+
+[node name="physicsblock35" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1010, 540)
+
+[node name="physicsblock36" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1060, 540)
+
+[node name="physicsblock37" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(920, 500)
+
+[node name="physicsblock38" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(970, 500)
+
+[node name="physicsblock39" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1020, 500)
+
+[node name="physicsblock40" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1070, 500)
+
+[node name="physicsblock41" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1100, 460)
+
+[node name="physicsblock42" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1050, 460)
+
+[node name="physicsblock43" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1000, 460)
+
+[node name="physicsblock44" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(950, 460)
+
+[node name="physicsblock45" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(930, 420)
+
+[node name="physicsblock46" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(980, 420)
+
+[node name="physicsblock47" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1030, 420)
+
+[node name="physicsblock48" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1080, 420)
+
+[node name="physicsblock49" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(900, 460)
+
+[node name="physicsblock51" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1100, 380)
+
+[node name="physicsblock52" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1050, 380)
+
+[node name="physicsblock53" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1000, 380)
+
+[node name="physicsblock54" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(950, 380)
+
+[node name="physicsblock55" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(580, 540)
+
+[node name="physicsblock56" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(580, 620)
+
+[node name="physicsblock57" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(960, 140)
+
+[node name="physicsblock58" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1100, 540)
+
+[node name="physicsblock69" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(490, 180)
+
+[node name="physicsblock70" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(990, 180)
+
+[node name="physicsblock59" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(900, 380)
+
+[node name="physicsblock50" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(380, 460)
+
+[node name="physicsblock60" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(580, 380)
+
+[node name="physicsblock61" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(530, 380)
+
+[node name="physicsblock62" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(480, 380)
+
+[node name="physicsblock63" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(430, 380)
+
+[node name="physicsblock64" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(500, 260)
+
+[node name="physicsblock65" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(1100, 620)
+
+[node name="physicsblock66" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(520, 140)
+
+[node name="physicsblock67" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(980, 260)
+
+[node name="physicsblock68" parent="TileMap/Level/PhysicsBoxes" instance=ExtResource("2_hpv0s")]
+position = Vector2(380, 380)
+
+[node name="Acid" parent="TileMap/Level" instance=ExtResource("2_2gsru")]
+position = Vector2(940, 820)
+
+[node name="Acid2" parent="TileMap/Level" instance=ExtResource("2_2gsru")]
+position = Vector2(1060, 820)
+
+[node name="Acid3" parent="TileMap/Level" instance=ExtResource("2_2gsru")]
+position = Vector2(420, 820)
+
+[node name="Acid4" parent="TileMap/Level" instance=ExtResource("2_2gsru")]
+position = Vector2(540, 820)
+
+[node name="Gun" parent="TileMap/Level" instance=ExtResource("9_a8bbg")]
+position = Vector2(1260, 460)
+
+[node name="Area2D" parent="TileMap/Level" instance=ExtResource("10_glafo")]
+position = Vector2(1380, 500)
+
+[node name="Area2D2" parent="TileMap/Level" instance=ExtResource("10_glafo")]
+position = Vector2(100, 500)
+
+[node name="Computer" parent="TileMap/Level" instance=ExtResource("14_6m1tu")]
+position = Vector2(820, 90)
+
+[node name="Computer2" parent="TileMap/Level" instance=ExtResource("14_6m1tu")]
+position = Vector2(660, 90)
+
+[node name="Enemies" type="Node2D" parent="TileMap"]
+position = Vector2(0, -280)
+
+[node name="Pinkfly" parent="TileMap/Enemies" instance=ExtResource("11_o2arn")]
+position = Vector2(1380, 747)
+
+[node name="Green Guy" parent="TileMap/Enemies" instance=ExtResource("12_ucjp6")]
+position = Vector2(740, 747)
+
+[node name="Green Guy2" parent="TileMap/Enemies" instance=ExtResource("12_ucjp6")]
+position = Vector2(740, 987)
+
+[node name="Green Guy3" parent="TileMap/Enemies" instance=ExtResource("12_ucjp6")]
+position = Vector2(1260, 987)
+
+[node name="Green Guy4" parent="TileMap/Enemies" instance=ExtResource("12_ucjp6")]
+position = Vector2(1260, 507)
+
+[node name="Green Guy5" parent="TileMap/Enemies" instance=ExtResource("12_ucjp6")]
+position = Vector2(220, 507)
+
+[node name="Green Guy6" parent="TileMap/Enemies" instance=ExtResource("12_ucjp6")]
+position = Vector2(220, 987)
+
+[node name="Redboss" parent="TileMap/Enemies" instance=ExtResource("13_xh2kc")]
+position = Vector2(739, 140)
+
+[node name="Node2D6" type="Node2D" parent="TileMap"]
+position = Vector2(0, -280)
+
+[node name="Node2D7" type="Node2D" parent="TileMap"]
+position = Vector2(0, -280)
+
+[node name="Node2D8" type="Node2D" parent="TileMap"]
+position = Vector2(0, -280)

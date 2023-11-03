@@ -415,3 +415,8 @@ func _on_leaderboards_button_pressed():
 func _on_robot_wants_music_pressed():
 	$MenuSong.stop()
 	get_tree().change_scene_to_file("res://Levels/robot_wants_music.tscn")
+
+
+func _on_gravity_blocks_pressed():
+	$MenuSong.stop()
+	get_tree().change_scene_to_file("res://Levels/gravity_blocks.tscn")
