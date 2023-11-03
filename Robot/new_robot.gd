@@ -42,6 +42,7 @@ var being_gooped = false
 @onready var damage_cooldown_timer = $Timers/DamageCooldownTimer
 @onready var camera = $Camera2D
 @onready var sound_jump = $Sounds/SoundJump
+@onready var push_speed = 125.0
 
 @onready var anim_wheel = get_node("AllSprites/Wheel")
 @onready var anim_idle = get_node("AllSprites/Idle")
@@ -209,6 +210,7 @@ func _physics_process(delta):
 
 			move_and_slide()
 
+
 		States.FLOOR:
 
 			# FLOOR VARIABLES
@@ -346,6 +348,10 @@ func _physics_process(delta):
 			if just_left_ledge:
 				coyote_jump_timer.start()
 				#print("just_left_ledge_from FLOOR")
+
+			# PHYSICS BOX
+			if get_slide_collision_count() > 0:
+				check_box_collision()
 
 		States.LAUNCH:
 			
@@ -737,3 +743,12 @@ func _unhandled_input(_event: InputEvent):
 	#if event.is_action_pressed("ui_cancel"):
 	#	$PauseScreen.pause()
 	pass
+	
+# PHYSICS BOX
+func check_box_collision():
+	#if abs(velocity.x) + abs(velocity.y) > 1:
+	if velocity.y > 1:
+		return
+	var box : = get_slide_collision(0).get_collider() as Box
+	if box:
+		box.push(push_speed * velocity)

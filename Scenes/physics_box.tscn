@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmcybtewi070x"]
+
+[ext_resource type="PackedScene" uid="uid://bpn6igsdv6v8p" path="res://Scenes/gravity_block.tscn" id="1_w3neq"]
+[ext_resource type="Script" path="res://Scenes/physics_box.gd" id="2_6vjbd"]
+
+[node name="Physics Box" instance=ExtResource("1_w3neq")]
+script = ExtResource("2_6vjbd")

@@ -671,10 +671,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -330.0
-offset_top = -258.0
-offset_right = 72.0
-offset_bottom = 258.0
+offset_left = -559.0
+offset_top = -354.0
+offset_right = -157.0
+offset_bottom = 357.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -697,67 +697,63 @@ text = "Mazerunner - Godot"
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+disabled = true
 text = "Moving Platforms"
 
 [node name="The Pushblock" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+disabled = true
 text = "The Pushblock"
 
 [node name="Kitty Possessed" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+disabled = true
 text = "Kitty Possessed"
 
-[node name="<<Level-06>>" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
+[node name="Robot Wants Music" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
-text = "<<Level-06>>"
+text = "Robot Wants Music"
 
-[node name="<<Level-07>>" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
+[node name="Autobot - Godot" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
-text = "<<Level-07>>"
+disabled = true
+text = "Autobot - Godot"
 
-[node name="<<Level-08>>" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
+[node name="Falling Platforms" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
-text = "<<Level-08>>"
+disabled = true
+text = "Falling Platforms"
 
-[node name="<<Level-09>>" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
+[node name="Gravity Blocks" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
-text = "<<Level-09>>"
+disabled = true
+text = "Gravity Blocks"
 
-[node name="<<Level-10>>" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
+[node name="R0C3T5" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
-text = "<<Level-10>>"
+disabled = true
+text = "R0C3T5"
 
-[node name="<<Level-11>>" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
+[node name="Springs & Tings" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
-text = "<<Level-11>>"
-
-[node name="<<Level-12>>" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
-text = "<<Level-12>>"
-
-[node name="<<Level-13>>" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
-text = "<<Level-13>>"
+disabled = true
+text = "Springs & Tings"
 
 [node name="VSeparator" type="VSeparator" parent="Levels/HBoxContainer"]
 layout_mode = 2
@@ -1254,6 +1250,7 @@ text = "Leaderboards"
 [connection signal="pressed" from="Music/BackFromMusic" to="." method="_on_back_from_music_pressed"]
 [connection signal="pressed" from="ABCDEF/BackFromABCDEF" to="." method="_on_back_from_abcdef_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Mazerunner - Godot" to="." method="_on_mazerunner__godot_pressed"]
+[connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Robot Wants Music" to="." method="_on_robot_wants_music_pressed"]
 [connection signal="pressed" from="Levels/BackFromLevels" to="." method="_on_back_from_levels_pressed"]
 [connection signal="text_changed" from="Register/VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName" to="." method="_on_player_name_text_changed"]
 [connection signal="mouse_entered" from="Register/VBoxContainer/HBoxContainer2/VBoxContainer3/UsernameInfoButton" to="." method="_on_username_info_button_mouse_entered"]

@@ -120,6 +120,7 @@ func _on_back_button_pressed():
 	#get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	show_and_hide(menu, register)
 	$LeaderboardsButton.visible = true
+	$Sprite2D.visible = true
 
 
 func show_processing_label() -> void:
@@ -210,6 +211,7 @@ func _on_login_back_button_pressed():
 	#get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	show_and_hide(menu, login)
 	$LeaderboardsButton.visible = true
+	$Sprite2D.visible = true
 ####### PLAYER LOGIN SCENE ABOVE #######
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -238,6 +240,7 @@ func _on_start_pressed():
 	#get_tree().change_scene_to_file("res://Levels/maze_runner_-_godot.tscn")
 	show_and_hide(levels, menu)
 	$LeaderboardsButton.visible = false
+	$Sprite2D.visible = false
 
 
 func _on_options_pressed():
@@ -266,6 +269,7 @@ func _on_audio_pressed():
 func _on_back_from_options_pressed():
 	show_and_hide(menu, options)
 	$LeaderboardsButton.visible = true
+	$Sprite2D.visible = true
 
 
 func _on_full_screen_toggled(button_pressed):
@@ -314,6 +318,7 @@ func _on_music_pressed():
 func _on_back_from_music_pressed():
 	show_and_hide(menu, music)
 	$LeaderboardsButton.visible = true
+	$Sprite2D.visible = true
 
 
 func _on_abcdef_pressed():
@@ -339,6 +344,7 @@ func _on_back_from_abcdef_pressed():
 func _on_back_from_levels_pressed():
 	show_and_hide(menu, levels)
 	$LeaderboardsButton.visible = true
+	$Sprite2D.visible = true
 
 
 func _on_mazerunner__godot_pressed():
@@ -404,3 +410,8 @@ func _on_logout_pressed():
 
 func _on_leaderboards_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Leaderboards/Leaderboard_main.tscn")
+
+
+func _on_robot_wants_music_pressed():
+	$MenuSong.stop()
+	get_tree().change_scene_to_file("res://Levels/robot_wants_music.tscn")

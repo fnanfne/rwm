@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpn6igsdv6v8p"]
+
+[ext_resource type="Texture2D" uid="uid://chmitt1l4mutf" path="res://Assets/paint__TILESET/IMG_002.png" id="1_8qoju"]
+[ext_resource type="Script" path="res://Scenes/gravity_block.gd" id="1_qarpy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fkeq"]
+size = Vector2(120, 120)
+
+[node name="Gravity Block" type="CharacterBody2D"]
+script = ExtResource("1_qarpy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8qoju")
+region_enabled = true
+region_rect = Rect2(160, 0, 120, 120)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8fkeq")

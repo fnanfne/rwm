@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bjp2h2gylbfjf"]
+[gd_scene load_steps=20 format=3 uid="uid://bjp2h2gylbfjf"]
 
 [ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="1_hnmaw"]
 [ext_resource type="PackedScene" uid="uid://yg103a66ifo2" path="res://Robot/new_robot.tscn" id="1_ombb7"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cim50jb658udj" path="res://Apps/radio.tscn" id="10_r7ewx"]
 [ext_resource type="PackedScene" uid="uid://cj3pq1aree5vn" path="res://Apps/Jump.tscn" id="10_twhid"]
 [ext_resource type="PackedScene" uid="uid://3dek8cpmjetb" path="res://Apps/DoubleJump.tscn" id="12_0bina"]
+[ext_resource type="PackedScene" uid="uid://darp77k02b3uw" path="res://Scenes/Physics_Block.tscn" id="14_r5hxq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tmku"]
 texture = ExtResource("1_tu146")
@@ -1260,3 +1261,6 @@ position = Vector2(3100, 340)
 [node name="User20" type="Node2D" parent="Beeps"]
 
 [node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="Beeps/User20"]
+
+[node name="physicsblock1" parent="." instance=ExtResource("14_r5hxq")]
+position = Vector2(2230, 1770)
