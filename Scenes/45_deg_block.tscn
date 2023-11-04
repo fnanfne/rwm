@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://djaojyoajvfit"]
+
+[ext_resource type="Texture2D" uid="uid://d1enpdxlpyqll" path="res://Assets/Pics/45degBlock_Aluminium.png" id="1_0emo8"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="45degBlock" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="45degBlock"]
+texture = ExtResource("1_0emo8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="45degBlock"]
+polygon = PackedVector2Array(-20, -20, 20, 20, -20, 20)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-20, -20, 20, 20, -20, 20)

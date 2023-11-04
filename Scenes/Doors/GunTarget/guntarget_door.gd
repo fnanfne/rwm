@@ -39,3 +39,13 @@ func _on_timer_timeout():
 #	TW2.tween_property(self, "position", position - Vector2(0,50), 0.3)
 #	TW1.tween_property(self, "modulate:a", 0, 1.0)
 #	TW1.tween_callback(queue_free)
+
+
+func _on_gun_target_2_body_entered(body):
+	if body.is_in_group("Lazor"):
+		$Timer.start()
+
+
+func _on_gun_target_3_body_entered(body):
+	if body.is_in_group("Lazor"):
+		$Timer.start()

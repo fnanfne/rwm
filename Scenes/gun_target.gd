@@ -13,3 +13,7 @@ func _on_body_entered(body):
 		emit_signal("activated", link_code)
 
 ####
+
+
+func _on_gun_target_2_body_entered(body):
+	pass # Replace with function body.

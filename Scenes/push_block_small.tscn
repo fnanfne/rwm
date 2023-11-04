@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca57ok0ax6n7o"]
+
+[ext_resource type="Texture2D" uid="uid://vate46deqewi" path="res://Assets/Pics/Other Tiles/tiles.png" id="1_kdgdr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y211c"]
+size = Vector2(40, 40)
+
+[node name="PushBlockSmall" type="RigidBody2D"]
+mass = 0.5
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1, 1)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_kdgdr")
+region_enabled = true
+region_rect = Rect2(180, 0, 20, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y211c")

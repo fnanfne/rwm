@@ -1,8 +1,10 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cerknt5tmrh7t"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://cerknt5tmrh7t"]
 
 [ext_resource type="Texture2D" uid="uid://b4hkaqaushw81" path="res://Assets/paint__TILESET/IMG_001.png" id="1_qatps"]
 [ext_resource type="Texture2D" uid="uid://chmitt1l4mutf" path="res://Assets/paint__TILESET/IMG_002.png" id="2_u3gf0"]
 [ext_resource type="Texture2D" uid="uid://bx525i4xx5j5n" path="res://Assets/paint__TILESET/IMG_004.png" id="3_ht6qa"]
+[ext_resource type="Texture2D" uid="uid://d1enpdxlpyqll" path="res://Assets/Pics/45degBlock_Aluminium.png" id="4_jxfgb"]
+[ext_resource type="Texture2D" uid="uid://c4h5fxp0js4ol" path="res://Assets/Pics/45degBlock_Aluminium2.png" id="5_ilc6f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_owbl8"]
 texture = ExtResource("1_qatps")
@@ -1810,6 +1812,22 @@ texture_region_size = Vector2i(40, 40)
 33:2/0/physics_layer_0/angular_velocity = 0.0
 33:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -20, 20, -20, 20, 20, -20, 20)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uccs7"]
+texture = ExtResource("4_jxfgb")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -20, 0, -0.5, 20, 20, -20, 20)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3v8m"]
+texture = ExtResource("5_ilc6f")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.5, 0, 20, -20, 20, 20, -20, 20)
+
 [resource]
 tile_size = Vector2i(40, 40)
 physics_layer_0/collision_layer = 1
@@ -1817,3 +1835,5 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_owbl8")
 sources/1 = SubResource("TileSetAtlasSource_pv7ai")
 sources/2 = SubResource("TileSetAtlasSource_1knup")
+sources/3 = SubResource("TileSetAtlasSource_uccs7")
+sources/4 = SubResource("TileSetAtlasSource_n3v8m")

@@ -19,6 +19,12 @@
 
 [node name="Gravity Blocks" type="Node2D"]
 
+[node name="Checkpoint" parent="." instance=ExtResource("7_btc7b")]
+position = Vector2(1260, 810)
+
+[node name="NewRobot" parent="." instance=ExtResource("5_38khg")]
+position = Vector2(1350, 810)
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 280)
 tile_set = ExtResource("1_bk10i")
@@ -42,14 +48,8 @@ position = Vector2(340, 380)
 
 [node name="Level" type="Node2D" parent="TileMap"]
 
-[node name="Checkpoint" parent="TileMap/Level" instance=ExtResource("7_btc7b")]
-position = Vector2(1190, 430)
-
 [node name="Kitty" parent="TileMap/Level" instance=ExtResource("8_4vnfv")]
 position = Vector2(740, 210)
-
-[node name="NewRobot" parent="TileMap/Level" instance=ExtResource("5_38khg")]
-position = Vector2(1320, 530)
 
 [node name="PhysicsBoxes" type="Node2D" parent="TileMap/Level"]
 position = Vector2(0, -280)

@@ -81,7 +81,7 @@ _data = {
 "Used": SubResource("Animation_s0mb5")
 }
 
-[node name="Area2D" type="Area2D"]
+[node name="Gun Target" type="Area2D"]
 collision_mask = 16
 script = ExtResource("1_7bt1x")
 

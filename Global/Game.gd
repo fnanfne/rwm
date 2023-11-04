@@ -20,6 +20,7 @@ var VELCRO = false
 var REDKEY = false
 var BLUEKEY = false
 var GREENKEY = false
+var PUSHBLOCK = false
 var current_checkpoint : Checkpoint
 var Robot : Robot
 var TestRobotReference : TestRobot

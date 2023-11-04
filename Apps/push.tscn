@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://b75d4thnllgan"]
+
+[ext_resource type="Script" path="res://Apps/push.gd" id="1_8toa5"]
+[ext_resource type="Texture2D" uid="uid://82gmb0wta172" path="res://Assets/Apps/Push/pushApp.png" id="1_cyura"]
+[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="3_wv8mc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ycgd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cyura")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tdel"]
+size = Vector2(40, 40)
+
+[node name="Push" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_8toa5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.53674e-07, -9.53674e-07)
+scale = Vector2(2.22222, 2.22222)
+sprite_frames = SubResource("SpriteFrames_6ycgd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3tdel")
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wv8mc")
+volume_db = -10.0
+bus = &"Sounds"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

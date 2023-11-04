@@ -704,7 +704,6 @@ text = "Moving Platforms"
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
-disabled = true
 text = "The Pushblock"
 
 [node name="Kitty Possessed" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
@@ -1249,6 +1248,7 @@ text = "Leaderboards"
 [connection signal="pressed" from="Music/BackFromMusic" to="." method="_on_back_from_music_pressed"]
 [connection signal="pressed" from="ABCDEF/BackFromABCDEF" to="." method="_on_back_from_abcdef_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Mazerunner - Godot" to="." method="_on_mazerunner__godot_pressed"]
+[connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/The Pushblock" to="." method="_on_the_pushblock_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Robot Wants Music" to="." method="_on_robot_wants_music_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Gravity Blocks" to="." method="_on_gravity_blocks_pressed"]
 [connection signal="pressed" from="Levels/BackFromLevels" to="." method="_on_back_from_levels_pressed"]
