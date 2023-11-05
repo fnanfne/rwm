@@ -147,6 +147,7 @@ menu_new={
 2d_physics/layer_12="Spikes"
 2d_physics/layer_13="LavaAcid"
 2d_physics/layer_14="Push_Block"
+2d_physics/layer_15="Physics_Block"
 
 [rendering]
 

@@ -47,5 +47,7 @@ bus = &"Sounds"
 wait_time = 0.5
 one_shot = true
 
+[node name="Timer2" type="Timer" parent="."]
+
 [connection signal="screen_exited" from="ScreenExit" to="." method="_on_screen_exit_screen_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

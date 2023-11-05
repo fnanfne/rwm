@@ -32,6 +32,7 @@ var score = 0
 var player_name = ""
 var player_email = ""
 var player_list = []
+var is_music_playing = false
 
 
 # SAVE SYSTEM

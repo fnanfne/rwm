@@ -31,6 +31,7 @@ var zoom_maximum = Vector2(2.5001, 2.5001)
 var zoom_speed = Vector2(0.1001, 0.1001)
 var orientation = 1
 var being_gooped = false
+var burning_up_timer_active = false
 
 @export var robot_death_effect : PackedScene
 #@export var starting_position : = Vector2 (20,50)
@@ -63,7 +64,6 @@ var being_gooped = false
 
 #@onready var all_sprites_nodes = $AllSprites.get_children() # I tried creating a function instead.
 
-# FUCK FUCK FUCK FUCK FUCK
 
 func _ready():
 	Game.Robot = self
@@ -85,6 +85,10 @@ func _physics_process(delta):
 	#print($".".get_z_index())
 	#print(jump_pitch)
 	#print(Game.camera.position_smoothing_enabled)
+	#print($Timers/BurningUpTimer.time_left)
+	#print(anim_fall.visible)
+	#print(state)
+	#print(velocity.y)
 
 	## Coyote Jump
 	#var was_on_floor = is_on_floor()
@@ -101,18 +105,36 @@ func _physics_process(delta):
 	else:
 		orientation = -1
 		#$AllSprites/ZoomFire.flip_h = false
+		
 
 	match state:
 		States.FALL:
+			
+			# BURNING UP
+			if velocity.y > 2000.0:
+				flashing_red()
+			if velocity.y > 2000.0:
+				if burning_up_timer_active == true:
+					pass
+				else:
+					if invincibility == true:
+						pass
+					else:
+						#print("Hey")
+						$Timers/BurningUpTimer.start()
+						burning_up_timer_active = true
+
 
 			# FALL STATE CHECKER
 			if is_on_floor():
 				if is_autobot:
 					state = States.AUTO
+
 				else:
 					$RobotLandPoofRight.emitting = true
 					$RobotLandPoofLeft.emitting = true
 					state = States.FLOOR
+
 
 			# FALLING FROM FALL
 			if velocity.y > 0:
@@ -134,6 +156,7 @@ func _physics_process(delta):
 				$RobotLandPoofLeft.emitting = false
 				$RobotPoof.emitting = false
 				$RobotSparks.emitting = false
+				
 
 			# JUMPING FROM FALL
 			if velocity.y < 0:
@@ -155,6 +178,7 @@ func _physics_process(delta):
 			# GRAVITY FROM FALL
 			if not is_on_floor():
 				velocity.y += gravity * delta
+				is_launching = false
 			else:
 				has_double_jumped = false
 				is_launching = false
@@ -228,6 +252,7 @@ func _physics_process(delta):
 				anim_fall.visible = false
 				anim_helmet_fall.visible = false
 				jump_pitch = 1.0
+
 
 			# STATE CHECKER FROM FLOOR
 			
@@ -493,35 +518,46 @@ func _physics_process(delta):
 ### FINITE STATE MACHINE ABOVE ###
 
 func taking_damage():
+	if invincibility == true:
+		pass
 	if Game.robotHP == 0:
-		#Game.respawn()
-		respawn()
+		if damage_cooldown_timer.time_left == 0:
+			#Game.respawn()
+			damage_cooldown_timer.start()
+			respawn()
+		else:
+			#print("I'm Invincible!!")
+			invincibility = true
 	else:
-		if $Timers/DamageCooldownTimer.is_stopped():
-			$Timers/DamageCooldownTimer.start()
+		if damage_cooldown_timer.is_stopped():
+			damage_cooldown_timer.start()
 			if invincibility == false:
+				#print("OOOOOOO")
 				invincibility = true
 				# Add losing a life/heart
 				Game.robotHP -= 1
 				$Sounds/TakingDamage.play()
 				var TW1 = get_tree().create_tween()
-				TW1.set_loops(10)
+				TW1.set_loops(15)
 				TW1.tween_property($AllSprites, "modulate", 
 				Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 				TW1.tween_property($AllSprites, "modulate", 
 				Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 		else:
 			if invincibility == false:
+				#return
+				#print("XXXXXXXX")
 				invincibility = true
 				# Add losing a life/heart
-				Game.robotHP -= 1
-				$Sounds/TakingDamage.play()
+				#Game.robotHP -= 1
+				#$Sounds/TakingDamage.play()
 				var TW1 = get_tree().create_tween()
-				TW1.set_loops(10)
+				TW1.set_loops(15)
 				TW1.tween_property($AllSprites, "modulate", 
 				Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 				TW1.tween_property($AllSprites, "modulate", 
 				Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
 
 func respawn():
 	Game.camera.position_smoothing_enabled = true
@@ -534,10 +570,12 @@ func respawn():
 	effect_instance.emitting = true
 	get_parent().add_child(effect_instance)
 	is_alive = false
+	invincibility = true
 	#set_physics_process(false)
 	#set_process_input(false)
 	$Timers/RespawnTimer.start()
 	$Sounds/Die.play()
+	flashing_red()
 
 func gooped(location):
 	if being_gooped == true:
@@ -564,6 +602,7 @@ func gooped(location):
 		#set_physics_process(false)
 		$".".hide()
 		$Timers/RespawnTimer.start()
+		flashing_red()
 		#await $Sounds/Gooped.finished
 
 func _on_respawn_timer_timeout():
@@ -584,6 +623,7 @@ func _on_respawn_timer_timeout():
 func _on_move_after_respawn_timer_timeout():
 	is_alive = true
 	$Timers/SmoothingCameraTimer.start()
+	invincibility = false
 
 func _on_smoothing_camera_timer_timeout():
 	Game.camera.position_smoothing_enabled = false
@@ -741,6 +781,7 @@ func _on_coyote_jump_timer_timeout():
 	#print("Coyote Timer is up!!!")
 	pass
 
+# STOP ZOOMING
 func _on_zoom_timer_timeout():
 	is_zooming = false
 	state = States.FALL
@@ -751,3 +792,16 @@ func _unhandled_input(_event: InputEvent):
 	#if event.is_action_pressed("ui_cancel"):
 	#	$PauseScreen.pause()
 	pass
+
+# BURNING UP
+func _on_burning_up_timer_timeout():
+	respawn()
+	burning_up_timer_active = false
+
+func flashing_red():
+	var TW6 = get_tree().create_tween()
+	TW6.set_loops(10)
+	TW6.tween_property($AllSprites, "modulate", 
+	Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	TW6.tween_property($AllSprites, "modulate", 
+	Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)

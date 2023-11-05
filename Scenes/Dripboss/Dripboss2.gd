@@ -101,7 +101,7 @@ func _on_timer_2_timeout():
 
 
 func _on_body_frame_change(frame: int):
-	print('frame: ', frame)
+	#print('frame: ', frame)
 	if frame == 0:
 		var f = ACID.instantiate()
 		get_parent().add_child(f)

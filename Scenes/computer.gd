@@ -15,7 +15,7 @@ func play_randomized(sad : String):
 func _on_body_entered(body):
 		if body.is_in_group("Robots"):
 			if Game.HAXXOR == true:
-				print("HAXXOR DOOR OPEN!!!")
+				#print("HAXXOR DOOR OPEN!!!")
 				$Case/Sad.hide()
 				$Case/SadBlink.hide()
 				$AnimationPlayer.play("happy")

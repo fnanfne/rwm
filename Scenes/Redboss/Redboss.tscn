@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ds02qr33layf5"]
+[gd_scene load_steps=30 format=3 uid="uid://ds02qr33layf5"]
 
 [ext_resource type="Script" path="res://Scenes/Redboss/Redboss.gd" id="1_3cvuy"]
 [ext_resource type="Texture2D" uid="uid://cvdcgheojey4y" path="res://Assets/Enemies/Redboss/From John/5.png" id="1_o66gy"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://blhn66mici827" path="res://Assets/Audio/Sounds/laserhit.ogg" id="9_fit3l"]
 [ext_resource type="AudioStream" uid="uid://dd33u5llxkov1" path="res://Assets/Audio/Sounds/critterscreech.ogg" id="10_n0ql1"]
 [ext_resource type="AudioStream" uid="uid://bm5iaqamy47dv" path="res://Assets/Audio/Sounds/killboss.ogg" id="11_lh7aa"]
+[ext_resource type="AudioStream" uid="uid://b61u4pkbw7hvl" path="res://Assets/Audio/Sounds/evaporate.ogg" id="13_qje3r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fyxm3"]
 size = Vector2(98, 84)
@@ -628,6 +629,9 @@ volume_db = -10.0
 stream = ExtResource("11_lh7aa")
 volume_db = -10.0
 
+[node name="OpenDoor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_qje3r")
+
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
@@ -639,8 +643,13 @@ one_shot = true
 wait_time = 1.8
 one_shot = true
 
+[node name="Timer4" type="Timer" parent="."]
+wait_time = 1.2
+one_shot = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Timer4" to="." method="_on_timer_4_timeout"]

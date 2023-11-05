@@ -1080,7 +1080,7 @@ wait_time = 0.8
 one_shot = true
 
 [node name="DamageCooldownTimer" type="Timer" parent="Timers"]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
 [node name="CoyoteJumpTimer" type="Timer" parent="Timers"]
@@ -1098,8 +1098,10 @@ one_shot = true
 [node name="SmoothingCameraTimer" type="Timer" parent="Timers"]
 one_shot = true
 
+[node name="BurningUpTimer" type="Timer" parent="Timers"]
+one_shot = true
+
 [node name="PauseScreen" parent="." instance=ExtResource("32_v5ngu")]
-visible = false
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
@@ -1112,3 +1114,4 @@ visible = false
 [connection signal="timeout" from="Timers/ZoomTimer" to="." method="_on_zoom_timer_timeout"]
 [connection signal="timeout" from="Timers/MoveAfterRespawnTimer" to="." method="_on_move_after_respawn_timer_timeout"]
 [connection signal="timeout" from="Timers/SmoothingCameraTimer" to="." method="_on_smoothing_camera_timer_timeout"]
+[connection signal="timeout" from="Timers/BurningUpTimer" to="." method="_on_burning_up_timer_timeout"]

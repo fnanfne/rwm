@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmtuek4db57r4"]
+
+[ext_resource type="Script" path="res://Scenes/Doors/BossDoor/boss_door.gd" id="1_nl8ud"]
+[ext_resource type="Texture2D" uid="uid://c2y0ekf8pecid" path="res://Assets/paint__TILESET/IMG_008.png" id="2_noueg"]
+[ext_resource type="AudioStream" uid="uid://b61u4pkbw7hvl" path="res://Assets/Audio/Sounds/evaporate.ogg" id="3_t5f56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1loih"]
+size = Vector2(120, 40)
+
+[node name="Boss Door" type="StaticBody2D" groups=["bossdoor"]]
+script = ExtResource("1_nl8ud")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_noueg")
+region_enabled = true
+region_rect = Rect2(1040, 360, 120, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1loih")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="OpenDoor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_t5f56")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

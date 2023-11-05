@@ -24,7 +24,7 @@ func _physics_process(_delta):
 		$Lazor.flip_h = false
 	$Glint.rotation_degrees += 5 * direction
 	$Explode.rotation_degrees += randf_range(0, 360) * direction
-	if is_on_wall():
+	if is_on_wall() or velocity.x == 0:
 		#print("On The Wall!")
 		set_physics_process(false)
 		$Lazor.hide()

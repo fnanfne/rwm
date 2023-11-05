@@ -34,5 +34,5 @@ func _on_timer_timeout():
 	#TW2.tween_callback(queue_free)
 
 func open_btc_door():
-	print("SIGNAL RECIEVED!!!!!!!!!!!")
+	#print("SIGNAL RECIEVED!!!!!!!!!!!")
 	$Timer.start()

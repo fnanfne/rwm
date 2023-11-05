@@ -30,4 +30,4 @@ func _physics_process(delta):
 	move_and_slide()
 
 func push(velocity: Vector2) -> void:
-	print("PUSH WAS NOT IMPLENENTED")
+	#print("PUSH WAS NOT IMPLENENTED")

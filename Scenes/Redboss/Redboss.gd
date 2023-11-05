@@ -6,6 +6,7 @@ var SPEED = 60
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = 1
 var spawning_a_baby = false
+@onready var boss_door = get_tree().get_nodes_in_group("bossdoor")
 
 @export var health :int
 @export var enemy_death_effect : PackedScene
@@ -166,8 +167,10 @@ func _on_timer_timeout():
 
 func _on_timer_2_timeout():
 	get_node("BodySprite").play("Idle")
-	queue_free()
 	#get_tree().call_group("Babies","queue_free")
+	$OpenDoor.play()
+	$Timer4.start()
+
 
 func spawn_a_projectile():
 	randomize()
@@ -181,7 +184,13 @@ func spawn_a_projectile():
 	f.position.y = position.y - 50
 	f.position.x = position.x
 	var group_members = get_tree().get_nodes_in_group("Robots")
-	print(group_members)
+	#print(group_members)
 
 func _on_timer_3_timeout():
 	spawning_a_baby = false
+
+
+func _on_timer_4_timeout():
+	for bosdoor in boss_door:
+		bosdoor.queue_free()
+	queue_free()

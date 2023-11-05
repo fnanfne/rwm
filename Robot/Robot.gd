@@ -85,7 +85,7 @@ func _physics_process(delta):
 	if Game.GUN:
 		if Input.is_action_pressed("shoot"):
 			#if is_on_floor():
-			print("SHOOTING!!!!")
+			#print("SHOOTING!!!!")
 			is_shooting = true
 			anim.play("Shoot")
 			#else:

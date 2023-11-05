@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/music_eraser__STREAM.ogg-6050e04ba3036a95b163
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

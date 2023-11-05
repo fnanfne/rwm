@@ -41,6 +41,7 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("Robots"):
 		#get_tree().paused = true
 		level_timer.stop_timer()
+		
 		body.set_physics_process(false)
 		$AnimationPlayer.stop()
 		#get_tree().set_physics_process(false) #not working
