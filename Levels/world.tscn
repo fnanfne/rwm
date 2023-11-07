@@ -106,7 +106,8 @@ position = Vector2(305, 300)
 target = NodePath("../Teleporter2_2")
 
 [node name="Teleporter2_2" parent="Teleporters" node_paths=PackedStringArray("target") instance=ExtResource("22_ltyl0")]
-position = Vector2(1735, 300)
+position = Vector2(1660, 300)
+rotation = 3.14159
 target = NodePath("../Teleporter1_1")
 
 [node name="physicsblock1" parent="." instance=ExtResource("23_jodu0")]

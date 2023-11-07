@@ -1,7 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7b2v8tvfd3s6"]
+[gd_scene load_steps=9 format=3 uid="uid://b7b2v8tvfd3s6"]
 
 [ext_resource type="Script" path="res://Scenes/music_block.gd" id="1_5ql05"]
-[ext_resource type="Texture2D" uid="uid://cm407wjk3rpba" path="res://Assets/Pics/godot.png" id="2_fu4fl"]
+[ext_resource type="Texture2D" uid="uid://dcmm04asqd2q5" path="res://Assets/Pics/Music Blocks/music_blocks1.png" id="2_2s5fq"]
+[ext_resource type="Shader" path="res://Scenes/voronio2.gdshader" id="3_e7wdl"]
+[ext_resource type="Texture2D" uid="uid://kwgt1l8ohfk0" path="res://Assets/Pics/Music Blocks/music_blocks2.png" id="3_slmiq"]
+[ext_resource type="Texture2D" uid="uid://fu8il7j4q3y1" path="res://Assets/Pics/Music Blocks/music_blocks3.png" id="4_bicmu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4r3sk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2s5fq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_slmiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bicmu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yoqs5"]
+shader = ExtResource("3_e7wdl")
+shader_parameter/max_blend = 0.5
+shader_parameter/rotation_offset = 0.0
+shader_parameter/intensity = 0.0
+shader_parameter/invert = false
+shader_parameter/rel_rect_size = Vector2(1024, 600)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iht0f"]
 size = Vector2(91, 77)
@@ -11,13 +39,28 @@ collision_mask = 2
 audio_bus_name = &"Music"
 script = ExtResource("1_5ql05")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_fu4fl")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.45707e-06, -1.96695e-06)
+scale = Vector2(0.75, 0.633333)
+sprite_frames = SubResource("SpriteFrames_4r3sk")
+autoplay = "default"
+frame_progress = 0.886777
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_yoqs5")
+offset_left = -41.0
+offset_top = -39.0
+offset_right = 40.0
+offset_bottom = 38.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_iht0f")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." groups=["music_blocks"]]
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

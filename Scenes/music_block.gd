@@ -18,20 +18,17 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("Robots"):
-		#if already_playing == true or Game.is_music_playing:
 		if Game.is_music_playing:
+			pass
+		else:
 			for muzak in music_blocks:
 				muzak.stop()
-				print("HIIIII")
-			print("SHOULD STOP!!")
-			#already_playing = false
+				print("ALL MUSIC SHOULD STOP!!!")
 			Game.is_music_playing = false
-		else:
-			print("PLAYING NOW!!")
-			$AudioStreamPlayer.stream = song_beep
-			$AudioStreamPlayer.play()
-			#already_playing = true
-			Game.is_music_playing = true
-		#print("ROBOT HERE")
-		#$AudioStreamPlayer.stream = song_beep
-		#$AudioStreamPlayer.play()
+			$Timer.start()
+
+
+func _on_timer_timeout():
+		$AudioStreamPlayer.stream = song_beep
+		$AudioStreamPlayer.play()
+		Game.is_music_playing = true
