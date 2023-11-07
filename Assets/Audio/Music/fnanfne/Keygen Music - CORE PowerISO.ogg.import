@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c0gmq7oxgohla"
+path="res://.godot/imported/Keygen Music - CORE PowerISO.ogg-2e5b309b0a1b75180d96610566b0cde2.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/fnanfne/Keygen Music - CORE PowerISO.ogg"
+dest_files=["res://.godot/imported/Keygen Music - CORE PowerISO.ogg-2e5b309b0a1b75180d96610566b0cde2.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

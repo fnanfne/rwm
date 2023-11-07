@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bjp2h2gylbfjf"]
+[gd_scene load_steps=45 format=3 uid="uid://bjp2h2gylbfjf"]
 
 [ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="1_hnmaw"]
 [ext_resource type="PackedScene" uid="uid://yg103a66ifo2" path="res://Robot/new_robot.tscn" id="1_ombb7"]
@@ -9,13 +9,33 @@
 [ext_resource type="Texture2D" uid="uid://c3v5r2he5rahy" path="res://Assets/paint__TILESET/IMG_005.png" id="3_v5bj7"]
 [ext_resource type="Texture2D" uid="uid://b4kv436lje1ux" path="res://Assets/paint__TILESET/IMG_006.png" id="4_yvmhm"]
 [ext_resource type="Texture2D" uid="uid://c2y0ekf8pecid" path="res://Assets/paint__TILESET/IMG_008.png" id="5_tpj2l"]
+[ext_resource type="Texture2D" uid="uid://i682pxljml5v" path="res://Assets/paint__TILESET/NEWpipes.png" id="7_s1h1r"]
 [ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="8_u0h0d"]
 [ext_resource type="PackedScene" uid="uid://cim50jb658udj" path="res://Apps/radio.tscn" id="10_r7ewx"]
 [ext_resource type="PackedScene" uid="uid://cj3pq1aree5vn" path="res://Apps/Jump.tscn" id="10_twhid"]
 [ext_resource type="PackedScene" uid="uid://3dek8cpmjetb" path="res://Apps/DoubleJump.tscn" id="12_0bina"]
-[ext_resource type="PackedScene" uid="uid://darp77k02b3uw" path="res://Scenes/Physics_Block.tscn" id="14_r5hxq"]
 [ext_resource type="PackedScene" uid="uid://b7b2v8tvfd3s6" path="res://Scenes/music_block.tscn" id="14_xuup8"]
-[ext_resource type="PackedScene" uid="uid://d0wrlwbpbvbjo" path="res://Scenes/Telematics/right_teleporter.tscn" id="15_j5xn7"]
+[ext_resource type="PackedScene" uid="uid://d0wrlwbpbvbjo" path="res://Scenes/Telematics/teleporter.tscn" id="15_2sjpn"]
+[ext_resource type="AudioStream" uid="uid://7t5lfjox4sm0" path="res://Assets/Audio/Music/fnanfne/Battletoads-Level-1.ogg" id="15_skj3r"]
+[ext_resource type="AudioStream" uid="uid://do4pdql1qagj" path="res://Assets/Audio/Music/fnanfne/Zombie Army.ogg" id="15_xj6gn"]
+[ext_resource type="AudioStream" uid="uid://cncfjtqfiqtmr" path="res://Assets/Audio/Music/fnanfne/Bobby Carrot.ogg" id="16_hkkkh"]
+[ext_resource type="AudioStream" uid="uid://c17p8e40s3x3s" path="res://Assets/Audio/Music/fnanfne/Coffin Dance.ogg" id="17_6cj4c"]
+[ext_resource type="AudioStream" uid="uid://cmenesix2ua1g" path="res://Assets/Audio/Music/fnanfne/Castlevania-II-Praying-Hands.ogg" id="17_v8t1v"]
+[ext_resource type="AudioStream" uid="uid://5b18xbttlj13" path="res://Assets/Audio/Music/fnanfne/Hallowed Be Thy Name (original by Iron Maiden), cover by Cradle of Filth.ogg" id="18_tr7of"]
+[ext_resource type="AudioStream" uid="uid://dwyp8iv3a4hpj" path="res://Assets/Audio/Music/fnanfne/Commando.ogg" id="19_f0520"]
+[ext_resource type="AudioStream" uid="uid://dk2hvgru5omi7" path="res://Assets/Audio/Music/fnanfne/Hysteria by Muse.ogg" id="19_k4rhb"]
+[ext_resource type="AudioStream" uid="uid://c0gmq7oxgohla" path="res://Assets/Audio/Music/fnanfne/Keygen Music - CORE PowerISO.ogg" id="20_ne7av"]
+[ext_resource type="AudioStream" uid="uid://qnsijrrjp82n" path="res://Assets/Audio/Music/fnanfne/DuckTales-Title-Song.ogg" id="20_ok60l"]
+[ext_resource type="AudioStream" uid="uid://hen51xrnef8t" path="res://Assets/Audio/Music/fnanfne/DuckTales-The-Moon.ogg" id="21_64qxo"]
+[ext_resource type="AudioStream" uid="uid://bi1hdsr7wqcgn" path="res://Assets/Audio/Music/fnanfne/Monty on the Run.ogg" id="21_fk4us"]
+[ext_resource type="AudioStream" uid="uid://ifh0kf8rbcvm" path="res://Assets/Audio/Music/fnanfne/Spooky Scary Skeletons.ogg" id="22_liwwt"]
+[ext_resource type="AudioStream" uid="uid://dhacnc5bntgj8" path="res://Assets/Audio/Music/fnanfne/SonicKnucklesBoss.ogg" id="23_5ueo6"]
+[ext_resource type="AudioStream" uid="uid://dqchmeilp50uj" path="res://Assets/Audio/Music/fnanfne/Hawkeye-Title-Screen.ogg" id="23_8phco"]
+[ext_resource type="AudioStream" uid="uid://teu1dj620hd6" path="res://Assets/Audio/Music/fnanfne/MegaMan2-DrWilysCastle.ogg" id="24_s8wwu"]
+[ext_resource type="AudioStream" uid="uid://codk8w84y6bxg" path="res://Assets/Audio/Music/fnanfne/INFERNO - 3DSOM Keygen music.ogg" id="25_m1b3v"]
+[ext_resource type="AudioStream" uid="uid://d4c4gi7na0b6l" path="res://Assets/Audio/Music/fnanfne/RESSURECTiON-Registry-Clean-Expert-keygen-music.ogg" id="27_880bg"]
+[ext_resource type="AudioStream" uid="uid://bkn6e6p3yx08c" path="res://Assets/Audio/Music/fnanfne/Winamp Sony Vega Unreal Super Hero 3 keygen.ogg" id="32_dxw6y"]
+[ext_resource type="AudioStream" uid="uid://cpchdsy60dlc8" path="res://Assets/Audio/Music/fnanfne/Zero Wing - New Day for Me.ogg" id="33_p8lt8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rqj1i"]
 shader = ExtResource("8_u0h0d")
@@ -436,6 +456,43 @@ texture_region_size = Vector2i(40, 40)
 6:1/0/physics_layer_0/angular_velocity = 0.0
 6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -20, 20, -20, 20, 20, -20, 20)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6pxe4"]
+texture = ExtResource("7_s1h1r")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_fsdnf"]
 tile_size = Vector2i(40, 40)
 physics_layer_0/collision_layer = 1
@@ -445,6 +502,7 @@ sources/1 = SubResource("TileSetAtlasSource_al41q")
 sources/2 = SubResource("TileSetAtlasSource_rm5qg")
 sources/3 = SubResource("TileSetAtlasSource_qawjq")
 sources/4 = SubResource("TileSetAtlasSource_4utga")
+sources/5 = SubResource("TileSetAtlasSource_6pxe4")
 
 [node name="Robot Wants Music" type="Node2D"]
 
@@ -453,9 +511,9 @@ position = Vector2(1680, 0)
 
 [node name="ColorRect" type="ColorRect" parent="Level"]
 material = SubResource("ShaderMaterial_rqj1i")
-offset_left = -560.0
-offset_top = -280.0
-offset_right = 5530.0
+offset_left = -2110.0
+offset_top = -380.0
+offset_right = 6990.0
 offset_bottom = 4620.0
 
 [node name="TileMap" type="TileMap" parent="Level"]
@@ -469,7 +527,7 @@ layer_0/tile_data = PackedInt32Array(2162688, 2031616, 1, 2228224, 2031616, 1, 2
 [node name="HUD" parent="Level" instance=ExtResource("2_4muco")]
 
 [node name="NewRobot" parent="." instance=ExtResource("1_ombb7")]
-position = Vector2(260, 2300)
+position = Vector2(3930, 1940)
 
 [node name="Kitty" parent="." instance=ExtResource("2_8vne1")]
 position = Vector2(2140, 390)
@@ -498,875 +556,1747 @@ position = Vector2(1680, 0)
 [node name="Bitcoins" type="Node2D" parent="."]
 position = Vector2(1680, 0)
 
+[node name="Music" type="Node2D" parent="."]
+position = Vector2(1680, 0)
+
+[node name="Default" type="Node2D" parent="Music"]
+
+[node name="NOT_USED_1" type="Node2D" parent="Music"]
+
+[node name="Music Block" parent="Music/NOT_USED_1" instance=ExtResource("14_xuup8")]
+position = Vector2(1640, 3840)
+
+[node name="Music Block2" parent="Music/NOT_USED_1" instance=ExtResource("14_xuup8")]
+position = Vector2(1480, 3840)
+
+[node name="Music Block3" parent="Music/NOT_USED_1" instance=ExtResource("14_xuup8")]
+position = Vector2(1320, 3840)
+
+[node name="Music Block4" parent="Music/NOT_USED_1" instance=ExtResource("14_xuup8")]
+position = Vector2(1160, 3840)
+
+[node name="Music Block5" parent="Music/NOT_USED_1" instance=ExtResource("14_xuup8")]
+position = Vector2(1000, 3840)
+
+[node name="Music Block6" parent="Music/NOT_USED_1" instance=ExtResource("14_xuup8")]
+position = Vector2(840, 3840)
+
+[node name="Music Block7" parent="Music/NOT_USED_1" instance=ExtResource("14_xuup8")]
+position = Vector2(680, 3840)
+
+[node name="Music Block8" parent="Music/NOT_USED_1" instance=ExtResource("14_xuup8")]
+position = Vector2(520, 3840)
+
+[node name="Music Block9" parent="Music/NOT_USED_1" instance=ExtResource("14_xuup8")]
+position = Vector2(360, 3840)
+
+[node name="Music Block10" parent="Music/NOT_USED_1" instance=ExtResource("14_xuup8")]
+position = Vector2(200, 3840)
+
+[node name="NOT_USED_2" type="Node2D" parent="Music"]
+
+[node name="Music Block11" parent="Music/NOT_USED_2" instance=ExtResource("14_xuup8")]
+position = Vector2(4680, 3840)
+
+[node name="Music Block12" parent="Music/NOT_USED_2" instance=ExtResource("14_xuup8")]
+position = Vector2(4520, 3840)
+
+[node name="Music Block13" parent="Music/NOT_USED_2" instance=ExtResource("14_xuup8")]
+position = Vector2(4360, 3840)
+
+[node name="Music Block14" parent="Music/NOT_USED_2" instance=ExtResource("14_xuup8")]
+position = Vector2(4200, 3840)
+
+[node name="Music Block15" parent="Music/NOT_USED_2" instance=ExtResource("14_xuup8")]
+position = Vector2(4040, 3840)
+
+[node name="Music Block16" parent="Music/NOT_USED_2" instance=ExtResource("14_xuup8")]
+position = Vector2(3880, 3840)
+
+[node name="Music Block17" parent="Music/NOT_USED_2" instance=ExtResource("14_xuup8")]
+position = Vector2(3720, 3840)
+
+[node name="Music Block18" parent="Music/NOT_USED_2" instance=ExtResource("14_xuup8")]
+position = Vector2(3560, 3840)
+
+[node name="Music Block19" parent="Music/NOT_USED_2" instance=ExtResource("14_xuup8")]
+position = Vector2(3400, 3840)
+
+[node name="Music Block20" parent="Music/NOT_USED_2" instance=ExtResource("14_xuup8")]
+position = Vector2(3240, 3840)
+
+[node name="various_users_1" type="Node2D" parent="Music"]
+
+[node name="Music Block21" parent="Music/various_users_1" instance=ExtResource("14_xuup8")]
+position = Vector2(1640, 3440)
+
+[node name="Music Block22" parent="Music/various_users_1" instance=ExtResource("14_xuup8")]
+position = Vector2(1480, 3440)
+
+[node name="Music Block23" parent="Music/various_users_1" instance=ExtResource("14_xuup8")]
+position = Vector2(1320, 3440)
+
+[node name="Music Block24" parent="Music/various_users_1" instance=ExtResource("14_xuup8")]
+position = Vector2(1160, 3440)
+
+[node name="Music Block25" parent="Music/various_users_1" instance=ExtResource("14_xuup8")]
+position = Vector2(1000, 3440)
+
+[node name="Music Block26" parent="Music/various_users_1" instance=ExtResource("14_xuup8")]
+position = Vector2(840, 3440)
+
+[node name="Music Block27" parent="Music/various_users_1" instance=ExtResource("14_xuup8")]
+position = Vector2(680, 3440)
+
+[node name="Music Block28" parent="Music/various_users_1" instance=ExtResource("14_xuup8")]
+position = Vector2(520, 3440)
+
+[node name="Music Block29" parent="Music/various_users_1" instance=ExtResource("14_xuup8")]
+position = Vector2(360, 3440)
+
+[node name="Music Block30" parent="Music/various_users_1" instance=ExtResource("14_xuup8")]
+position = Vector2(200, 3440)
+
+[node name="various_users_2" type="Node2D" parent="Music"]
+
+[node name="Music Block31" parent="Music/various_users_2" instance=ExtResource("14_xuup8")]
+position = Vector2(4680, 3440)
+
+[node name="Music Block32" parent="Music/various_users_2" instance=ExtResource("14_xuup8")]
+position = Vector2(4520, 3440)
+
+[node name="Music Block33" parent="Music/various_users_2" instance=ExtResource("14_xuup8")]
+position = Vector2(4360, 3440)
+
+[node name="Music Block34" parent="Music/various_users_2" instance=ExtResource("14_xuup8")]
+position = Vector2(4200, 3440)
+
+[node name="Music Block35" parent="Music/various_users_2" instance=ExtResource("14_xuup8")]
+position = Vector2(4040, 3440)
+
+[node name="Music Block36" parent="Music/various_users_2" instance=ExtResource("14_xuup8")]
+position = Vector2(3880, 3440)
+
+[node name="Music Block37" parent="Music/various_users_2" instance=ExtResource("14_xuup8")]
+position = Vector2(3720, 3440)
+
+[node name="Music Block38" parent="Music/various_users_2" instance=ExtResource("14_xuup8")]
+position = Vector2(3560, 3440)
+
+[node name="Music Block39" parent="Music/various_users_2" instance=ExtResource("14_xuup8")]
+position = Vector2(3400, 3440)
+
+[node name="Music Block40" parent="Music/various_users_2" instance=ExtResource("14_xuup8")]
+position = Vector2(3240, 3440)
+
+[node name="syncmaster" type="Node2D" parent="Music"]
+
+[node name="Music Block41" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
+position = Vector2(1640, 3040)
+
+[node name="Music Block42" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
+position = Vector2(1480, 3040)
+
+[node name="Music Block43" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
+position = Vector2(1320, 3040)
+
+[node name="Music Block44" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
+position = Vector2(1160, 3040)
+
+[node name="Music Block45" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
+position = Vector2(1000, 3040)
+
+[node name="Music Block46" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
+position = Vector2(840, 3040)
+
+[node name="Music Block47" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
+position = Vector2(680, 3040)
+
+[node name="Music Block48" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
+position = Vector2(520, 3040)
+
+[node name="Music Block49" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
+position = Vector2(360, 3040)
+
+[node name="Music Block50" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
+position = Vector2(200, 3040)
+
+[node name="jadeanubis" type="Node2D" parent="Music"]
+
+[node name="Music Block51" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
+position = Vector2(4680, 3040)
+
+[node name="Music Block52" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
+position = Vector2(4520, 3040)
+
+[node name="Music Block53" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
+position = Vector2(4360, 3040)
+
+[node name="Music Block54" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
+position = Vector2(4200, 3040)
+
+[node name="Music Block55" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
+position = Vector2(4040, 3040)
+
+[node name="Music Block56" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
+position = Vector2(3880, 3040)
+
+[node name="Music Block57" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
+position = Vector2(3720, 3040)
+
+[node name="Music Block58" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
+position = Vector2(3560, 3040)
+
+[node name="Music Block59" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
+position = Vector2(3400, 3040)
+
+[node name="Music Block60" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
+position = Vector2(3240, 3040)
+
+[node name="ian05" type="Node2D" parent="Music"]
+
+[node name="Music Block61" parent="Music/ian05" instance=ExtResource("14_xuup8")]
+position = Vector2(1640, 2640)
+
+[node name="Music Block62" parent="Music/ian05" instance=ExtResource("14_xuup8")]
+position = Vector2(1480, 2640)
+
+[node name="Music Block63" parent="Music/ian05" instance=ExtResource("14_xuup8")]
+position = Vector2(1320, 2640)
+
+[node name="Music Block64" parent="Music/ian05" instance=ExtResource("14_xuup8")]
+position = Vector2(1160, 2640)
+
+[node name="Music Block65" parent="Music/ian05" instance=ExtResource("14_xuup8")]
+position = Vector2(1000, 2640)
+
+[node name="Music Block66" parent="Music/ian05" instance=ExtResource("14_xuup8")]
+position = Vector2(840, 2640)
+
+[node name="Music Block67" parent="Music/ian05" instance=ExtResource("14_xuup8")]
+position = Vector2(680, 2640)
+
+[node name="Music Block68" parent="Music/ian05" instance=ExtResource("14_xuup8")]
+position = Vector2(520, 2640)
+
+[node name="Music Block69" parent="Music/ian05" instance=ExtResource("14_xuup8")]
+position = Vector2(360, 2640)
+
+[node name="Music Block70" parent="Music/ian05" instance=ExtResource("14_xuup8")]
+position = Vector2(200, 2640)
+
+[node name="linkandar" type="Node2D" parent="Music"]
+
+[node name="Music Block71" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
+position = Vector2(4680, 2640)
+
+[node name="Music Block72" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
+position = Vector2(4520, 2640)
+
+[node name="Music Block73" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
+position = Vector2(4360, 2640)
+
+[node name="Music Block74" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
+position = Vector2(4200, 2640)
+
+[node name="Music Block75" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
+position = Vector2(4040, 2640)
+
+[node name="Music Block76" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
+position = Vector2(3880, 2640)
+
+[node name="Music Block77" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
+position = Vector2(3720, 2640)
+
+[node name="Music Block78" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
+position = Vector2(3560, 2640)
+
+[node name="Music Block79" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
+position = Vector2(3400, 2640)
+
+[node name="Music Block80" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
+position = Vector2(3240, 2640)
+
+[node name="yourmoveboyo" type="Node2D" parent="Music"]
+
+[node name="Music Block81" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(1640, 2240)
+
+[node name="Music Block82" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(1480, 2240)
+
+[node name="Music Block83" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(1320, 2240)
+
+[node name="Music Block84" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(1160, 2240)
+
+[node name="Music Block85" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(1000, 2240)
+
+[node name="Music Block86" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(840, 2240)
+
+[node name="Music Block87" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(680, 2240)
+
+[node name="Music Block88" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(520, 2240)
+
+[node name="Music Block89" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(360, 2240)
+
+[node name="Music Block90" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(200, 2240)
+
+[node name="Music Block91" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(40, 2240)
+
+[node name="Music Block92" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(-120, 2240)
+
+[node name="Music Block93" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(-280, 2240)
+
+[node name="Music Block94" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(-440, 2240)
+
+[node name="Music Block95" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(-600, 2240)
+
+[node name="Music Block96" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(-760, 2240)
+
+[node name="Music Block97" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(-920, 2240)
+
+[node name="Music Block98" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(-1080, 2240)
+
+[node name="Music Block99" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(-1240, 2240)
+
+[node name="Music Block100" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
+position = Vector2(-1400, 2240)
+
+[node name="paisleypickle" type="Node2D" parent="Music"]
+
+[node name="Music Block91" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(4680, 2240)
+
+[node name="Music Block92" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(4520, 2240)
+
+[node name="Music Block93" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(4360, 2240)
+
+[node name="Music Block94" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(4200, 2240)
+
+[node name="Music Block95" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(4040, 2240)
+
+[node name="Music Block96" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(3880, 2240)
+
+[node name="Music Block97" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(3720, 2240)
+
+[node name="Music Block98" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(3560, 2240)
+
+[node name="Music Block99" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(3400, 2240)
+
+[node name="Music Block100" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(3240, 2240)
+
+[node name="Music Block101" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(6280, 2240)
+
+[node name="Music Block102" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(6120, 2240)
+
+[node name="Music Block103" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(5960, 2240)
+
+[node name="Music Block104" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(5800, 2240)
+
+[node name="Music Block105" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(5640, 2240)
+
+[node name="Music Block106" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(5480, 2240)
+
+[node name="Music Block107" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(5320, 2240)
+
+[node name="Music Block108" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(5160, 2240)
+
+[node name="Music Block109" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(5000, 2240)
+
+[node name="Music Block110" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
+position = Vector2(4840, 2240)
+
+[node name="fnanfne" type="Node2D" parent="Music"]
+
+[node name="Music Block101" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(1640, 1840)
+song_beep = ExtResource("15_skj3r")
+
+[node name="Music Block102" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(1480, 1840)
+song_beep = ExtResource("16_hkkkh")
+
+[node name="Music Block103" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(1320, 1840)
+song_beep = ExtResource("17_v8t1v")
+
+[node name="Music Block104" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(1160, 1840)
+song_beep = ExtResource("17_6cj4c")
+
+[node name="Music Block105" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(1000, 1840)
+song_beep = ExtResource("19_f0520")
+
+[node name="Music Block106" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(840, 1840)
+song_beep = ExtResource("20_ok60l")
+
+[node name="Music Block107" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(680, 1840)
+song_beep = ExtResource("21_64qxo")
+
+[node name="Music Block108" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(520, 1840)
+song_beep = ExtResource("18_tr7of")
+
+[node name="Music Block109" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(360, 1840)
+song_beep = ExtResource("23_8phco")
+
+[node name="Music Block110" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(200, 1840)
+song_beep = ExtResource("19_k4rhb")
+
+[node name="Music Block201" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(40, 1840)
+song_beep = ExtResource("25_m1b3v")
+
+[node name="Music Block202" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(-120, 1840)
+song_beep = ExtResource("20_ne7av")
+
+[node name="Music Block203" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(-280, 1840)
+song_beep = ExtResource("27_880bg")
+
+[node name="Music Block204" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(-440, 1840)
+song_beep = ExtResource("24_s8wwu")
+
+[node name="Music Block205" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(-600, 1840)
+song_beep = ExtResource("21_fk4us")
+
+[node name="Music Block206" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(-760, 1840)
+song_beep = ExtResource("23_5ueo6")
+
+[node name="Music Block207" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(-920, 1840)
+song_beep = ExtResource("22_liwwt")
+
+[node name="Music Block208" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(-1080, 1840)
+song_beep = ExtResource("32_dxw6y")
+
+[node name="Music Block209" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(-1240, 1840)
+song_beep = ExtResource("33_p8lt8")
+
+[node name="Music Block210" parent="Music/fnanfne" instance=ExtResource("14_xuup8")]
+position = Vector2(-1400, 1840)
+song_beep = ExtResource("15_xj6gn")
+
+[node name="gameworm" type="Node2D" parent="Music"]
+
+[node name="Music Block111" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(4680, 1840)
+
+[node name="Music Block112" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(4520, 1840)
+
+[node name="Music Block113" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(4360, 1840)
+
+[node name="Music Block114" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(4200, 1840)
+
+[node name="Music Block115" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(4040, 1840)
+
+[node name="Music Block116" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(3880, 1840)
+
+[node name="Music Block117" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(3720, 1840)
+
+[node name="Music Block118" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(3560, 1840)
+
+[node name="Music Block119" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(3400, 1840)
+
+[node name="Music Block120" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(3240, 1840)
+
+[node name="Music Block121" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(6280, 1840)
+
+[node name="Music Block122" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(6120, 1840)
+
+[node name="Music Block123" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(5960, 1840)
+
+[node name="Music Block124" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(5800, 1840)
+
+[node name="Music Block125" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(5640, 1840)
+
+[node name="Music Block126" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(5480, 1840)
+
+[node name="Music Block127" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(5320, 1840)
+
+[node name="Music Block128" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(5160, 1840)
+
+[node name="Music Block129" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(5000, 1840)
+
+[node name="Music Block130" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
+position = Vector2(4840, 1840)
+
+[node name="thetom" type="Node2D" parent="Music"]
+
+[node name="Music Block121" parent="Music/thetom" instance=ExtResource("14_xuup8")]
+position = Vector2(1640, 1440)
+
+[node name="Music Block122" parent="Music/thetom" instance=ExtResource("14_xuup8")]
+position = Vector2(1480, 1440)
+
+[node name="Music Block123" parent="Music/thetom" instance=ExtResource("14_xuup8")]
+position = Vector2(1320, 1440)
+
+[node name="Music Block124" parent="Music/thetom" instance=ExtResource("14_xuup8")]
+position = Vector2(1160, 1440)
+
+[node name="Music Block125" parent="Music/thetom" instance=ExtResource("14_xuup8")]
+position = Vector2(1000, 1440)
+
+[node name="Music Block126" parent="Music/thetom" instance=ExtResource("14_xuup8")]
+position = Vector2(840, 1440)
+
+[node name="Music Block127" parent="Music/thetom" instance=ExtResource("14_xuup8")]
+position = Vector2(680, 1440)
+
+[node name="Music Block128" parent="Music/thetom" instance=ExtResource("14_xuup8")]
+position = Vector2(520, 1440)
+
+[node name="Music Block129" parent="Music/thetom" instance=ExtResource("14_xuup8")]
+position = Vector2(360, 1440)
+
+[node name="Music Block130" parent="Music/thetom" instance=ExtResource("14_xuup8")]
+position = Vector2(200, 1440)
+
+[node name="dmd" type="Node2D" parent="Music"]
+
+[node name="Music Block131" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(4680, 1440)
+
+[node name="Music Block132" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(4520, 1440)
+
+[node name="Music Block133" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(4360, 1440)
+
+[node name="Music Block134" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(4200, 1440)
+
+[node name="Music Block135" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(4040, 1440)
+
+[node name="Music Block136" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(3880, 1440)
+
+[node name="Music Block137" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(3720, 1440)
+
+[node name="Music Block138" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(3560, 1440)
+
+[node name="Music Block139" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(3400, 1440)
+
+[node name="Music Block140" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(3240, 1440)
+
+[node name="Music Block141" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(6280, 1440)
+
+[node name="Music Block142" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(6120, 1440)
+
+[node name="Music Block143" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(5960, 1440)
+
+[node name="Music Block144" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(5800, 1440)
+
+[node name="Music Block145" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(5640, 1440)
+
+[node name="Music Block146" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(5480, 1440)
+
+[node name="Music Block147" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(5320, 1440)
+
+[node name="Music Block148" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(5160, 1440)
+
+[node name="Music Block149" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(5000, 1440)
+
+[node name="Music Block150" parent="Music/dmd" instance=ExtResource("14_xuup8")]
+position = Vector2(4840, 1440)
+
+[node name="aero" type="Node2D" parent="Music"]
+
+[node name="Music Block141" parent="Music/aero" instance=ExtResource("14_xuup8")]
+position = Vector2(1640, 1040)
+
+[node name="Music Block142" parent="Music/aero" instance=ExtResource("14_xuup8")]
+position = Vector2(1480, 1040)
+
+[node name="Music Block143" parent="Music/aero" instance=ExtResource("14_xuup8")]
+position = Vector2(1320, 1040)
+
+[node name="Music Block144" parent="Music/aero" instance=ExtResource("14_xuup8")]
+position = Vector2(1160, 1040)
+
+[node name="Music Block145" parent="Music/aero" instance=ExtResource("14_xuup8")]
+position = Vector2(1000, 1040)
+
+[node name="Music Block146" parent="Music/aero" instance=ExtResource("14_xuup8")]
+position = Vector2(840, 1040)
+
+[node name="Music Block147" parent="Music/aero" instance=ExtResource("14_xuup8")]
+position = Vector2(680, 1040)
+
+[node name="Music Block148" parent="Music/aero" instance=ExtResource("14_xuup8")]
+position = Vector2(520, 1040)
+
+[node name="Music Block149" parent="Music/aero" instance=ExtResource("14_xuup8")]
+position = Vector2(360, 1040)
+
+[node name="Music Block150" parent="Music/aero" instance=ExtResource("14_xuup8")]
+position = Vector2(200, 1040)
+
+[node name="bluedoggo" type="Node2D" parent="Music"]
+
+[node name="Music Block151" parent="Music/bluedoggo" instance=ExtResource("14_xuup8")]
+position = Vector2(4680, 1040)
+
+[node name="Music Block152" parent="Music/bluedoggo" instance=ExtResource("14_xuup8")]
+position = Vector2(4520, 1040)
+
+[node name="Music Block153" parent="Music/bluedoggo" instance=ExtResource("14_xuup8")]
+position = Vector2(4360, 1040)
+
+[node name="Music Block154" parent="Music/bluedoggo" instance=ExtResource("14_xuup8")]
+position = Vector2(4200, 1040)
+
+[node name="Music Block155" parent="Music/bluedoggo" instance=ExtResource("14_xuup8")]
+position = Vector2(4040, 1040)
+
+[node name="Music Block156" parent="Music/bluedoggo" instance=ExtResource("14_xuup8")]
+position = Vector2(3880, 1040)
+
+[node name="Music Block157" parent="Music/bluedoggo" instance=ExtResource("14_xuup8")]
+position = Vector2(3720, 1040)
+
+[node name="Music Block158" parent="Music/bluedoggo" instance=ExtResource("14_xuup8")]
+position = Vector2(3560, 1040)
+
+[node name="Music Block159" parent="Music/bluedoggo" instance=ExtResource("14_xuup8")]
+position = Vector2(3400, 1040)
+
+[node name="Music Block160" parent="Music/bluedoggo" instance=ExtResource("14_xuup8")]
+position = Vector2(3240, 1040)
+
+[node name="clonedrone" type="Node2D" parent="Music"]
+
+[node name="Music Block161" parent="Music/clonedrone" instance=ExtResource("14_xuup8")]
+position = Vector2(1640, 640)
+
+[node name="Music Block162" parent="Music/clonedrone" instance=ExtResource("14_xuup8")]
+position = Vector2(1480, 640)
+
+[node name="Music Block163" parent="Music/clonedrone" instance=ExtResource("14_xuup8")]
+position = Vector2(1320, 640)
+
+[node name="Music Block164" parent="Music/clonedrone" instance=ExtResource("14_xuup8")]
+position = Vector2(1160, 640)
+
+[node name="Music Block165" parent="Music/clonedrone" instance=ExtResource("14_xuup8")]
+position = Vector2(1000, 640)
+
+[node name="Music Block166" parent="Music/clonedrone" instance=ExtResource("14_xuup8")]
+position = Vector2(840, 640)
+
+[node name="Music Block167" parent="Music/clonedrone" instance=ExtResource("14_xuup8")]
+position = Vector2(680, 640)
+
+[node name="Music Block168" parent="Music/clonedrone" instance=ExtResource("14_xuup8")]
+position = Vector2(520, 640)
+
+[node name="Music Block169" parent="Music/clonedrone" instance=ExtResource("14_xuup8")]
+position = Vector2(360, 640)
+
+[node name="Music Block170" parent="Music/clonedrone" instance=ExtResource("14_xuup8")]
+position = Vector2(200, 640)
+
+[node name="gabriel_miel" type="Node2D" parent="Music"]
+
+[node name="Music Block171" parent="Music/gabriel_miel" instance=ExtResource("14_xuup8")]
+position = Vector2(4680, 640)
+
+[node name="Music Block172" parent="Music/gabriel_miel" instance=ExtResource("14_xuup8")]
+position = Vector2(4520, 640)
+
+[node name="Music Block173" parent="Music/gabriel_miel" instance=ExtResource("14_xuup8")]
+position = Vector2(4360, 640)
+
+[node name="Music Block174" parent="Music/gabriel_miel" instance=ExtResource("14_xuup8")]
+position = Vector2(4200, 640)
+
+[node name="Music Block175" parent="Music/gabriel_miel" instance=ExtResource("14_xuup8")]
+position = Vector2(4040, 640)
+
+[node name="Music Block176" parent="Music/gabriel_miel" instance=ExtResource("14_xuup8")]
+position = Vector2(3880, 640)
+
+[node name="Music Block177" parent="Music/gabriel_miel" instance=ExtResource("14_xuup8")]
+position = Vector2(3720, 640)
+
+[node name="Music Block178" parent="Music/gabriel_miel" instance=ExtResource("14_xuup8")]
+position = Vector2(3560, 640)
+
+[node name="Music Block179" parent="Music/gabriel_miel" instance=ExtResource("14_xuup8")]
+position = Vector2(3400, 640)
+
+[node name="Music Block180" parent="Music/gabriel_miel" instance=ExtResource("14_xuup8")]
+position = Vector2(3240, 640)
+
+[node name="NOT_USED_3" type="Node2D" parent="Music"]
+
+[node name="Music Block181" parent="Music/NOT_USED_3" instance=ExtResource("14_xuup8")]
+position = Vector2(1640, 240)
+
+[node name="Music Block182" parent="Music/NOT_USED_3" instance=ExtResource("14_xuup8")]
+position = Vector2(1480, 240)
+
+[node name="Music Block183" parent="Music/NOT_USED_3" instance=ExtResource("14_xuup8")]
+position = Vector2(1320, 240)
+
+[node name="Music Block184" parent="Music/NOT_USED_3" instance=ExtResource("14_xuup8")]
+position = Vector2(1160, 240)
+
+[node name="Music Block185" parent="Music/NOT_USED_3" instance=ExtResource("14_xuup8")]
+position = Vector2(1000, 240)
+
+[node name="Music Block186" parent="Music/NOT_USED_3" instance=ExtResource("14_xuup8")]
+position = Vector2(840, 240)
+
+[node name="Music Block187" parent="Music/NOT_USED_3" instance=ExtResource("14_xuup8")]
+position = Vector2(680, 240)
+
+[node name="Music Block188" parent="Music/NOT_USED_3" instance=ExtResource("14_xuup8")]
+position = Vector2(520, 240)
+
+[node name="Music Block189" parent="Music/NOT_USED_3" instance=ExtResource("14_xuup8")]
+position = Vector2(360, 240)
+
+[node name="Music Block190" parent="Music/NOT_USED_3" instance=ExtResource("14_xuup8")]
+position = Vector2(200, 240)
+
+[node name="NOT_USED_4" type="Node2D" parent="Music"]
+
+[node name="Music Block191" parent="Music/NOT_USED_4" instance=ExtResource("14_xuup8")]
+position = Vector2(4680, 240)
+
+[node name="Music Block192" parent="Music/NOT_USED_4" instance=ExtResource("14_xuup8")]
+position = Vector2(4520, 240)
+
+[node name="Music Block193" parent="Music/NOT_USED_4" instance=ExtResource("14_xuup8")]
+position = Vector2(4360, 240)
+
+[node name="Music Block194" parent="Music/NOT_USED_4" instance=ExtResource("14_xuup8")]
+position = Vector2(4200, 240)
+
+[node name="Music Block195" parent="Music/NOT_USED_4" instance=ExtResource("14_xuup8")]
+position = Vector2(4040, 240)
+
+[node name="Music Block196" parent="Music/NOT_USED_4" instance=ExtResource("14_xuup8")]
+position = Vector2(3880, 240)
+
+[node name="Music Block197" parent="Music/NOT_USED_4" instance=ExtResource("14_xuup8")]
+position = Vector2(3720, 240)
+
+[node name="Music Block198" parent="Music/NOT_USED_4" instance=ExtResource("14_xuup8")]
+position = Vector2(3560, 240)
+
+[node name="Music Block199" parent="Music/NOT_USED_4" instance=ExtResource("14_xuup8")]
+position = Vector2(3400, 240)
+
+[node name="Music Block200" parent="Music/NOT_USED_4" instance=ExtResource("14_xuup8")]
+position = Vector2(3240, 240)
+
 [node name="Radios" type="Node2D" parent="."]
 
-[node name="User1" type="Node2D" parent="Radios"]
+[node name="NOT_USED_1" type="Node2D" parent="Radios"]
 
-[node name="Radio" parent="Radios/User1" instance=ExtResource("10_r7ewx")]
+[node name="Radio" parent="Radios/NOT_USED_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(3460, 340)
 
-[node name="Radio2" parent="Radios/User1" instance=ExtResource("10_r7ewx")]
+[node name="Radio2" parent="Radios/NOT_USED_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 300)
 
-[node name="Radio3" parent="Radios/User1" instance=ExtResource("10_r7ewx")]
+[node name="Radio3" parent="Radios/NOT_USED_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 300)
 
-[node name="Radio4" parent="Radios/User1" instance=ExtResource("10_r7ewx")]
+[node name="Radio4" parent="Radios/NOT_USED_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 300)
 
-[node name="Radio5" parent="Radios/User1" instance=ExtResource("10_r7ewx")]
+[node name="Radio5" parent="Radios/NOT_USED_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 300)
 
-[node name="Radio6" parent="Radios/User1" instance=ExtResource("10_r7ewx")]
+[node name="Radio6" parent="Radios/NOT_USED_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 300)
 
-[node name="Radio7" parent="Radios/User1" instance=ExtResource("10_r7ewx")]
+[node name="Radio7" parent="Radios/NOT_USED_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 300)
 
-[node name="Radio8" parent="Radios/User1" instance=ExtResource("10_r7ewx")]
+[node name="Radio8" parent="Radios/NOT_USED_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 300)
 
-[node name="Radio9" parent="Radios/User1" instance=ExtResource("10_r7ewx")]
+[node name="Radio9" parent="Radios/NOT_USED_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 300)
 
-[node name="Radio10" parent="Radios/User1" instance=ExtResource("10_r7ewx")]
+[node name="Radio10" parent="Radios/NOT_USED_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 300)
 
-[node name="Radio11" parent="Radios/User1" instance=ExtResource("10_r7ewx")]
+[node name="Radio11" parent="Radios/NOT_USED_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 300)
 
-[node name="User2" type="Node2D" parent="Radios"]
+[node name="clonedrone" type="Node2D" parent="Radios"]
 
-[node name="Radio12" parent="Radios/User2" instance=ExtResource("10_r7ewx")]
+[node name="Radio12" parent="Radios/clonedrone" instance=ExtResource("10_r7ewx")]
 position = Vector2(3460, 740)
+text_field = "<-- beeps by clonedrone"
 
-[node name="Radio13" parent="Radios/User2" instance=ExtResource("10_r7ewx")]
+[node name="Radio13" parent="Radios/clonedrone" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 700)
 
-[node name="Radio14" parent="Radios/User2" instance=ExtResource("10_r7ewx")]
+[node name="Radio14" parent="Radios/clonedrone" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 700)
 
-[node name="Radio15" parent="Radios/User2" instance=ExtResource("10_r7ewx")]
+[node name="Radio15" parent="Radios/clonedrone" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 700)
 
-[node name="Radio16" parent="Radios/User2" instance=ExtResource("10_r7ewx")]
+[node name="Radio16" parent="Radios/clonedrone" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 700)
 
-[node name="Radio17" parent="Radios/User2" instance=ExtResource("10_r7ewx")]
+[node name="Radio17" parent="Radios/clonedrone" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 700)
 
-[node name="Radio18" parent="Radios/User2" instance=ExtResource("10_r7ewx")]
+[node name="Radio18" parent="Radios/clonedrone" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 700)
 
-[node name="Radio19" parent="Radios/User2" instance=ExtResource("10_r7ewx")]
+[node name="Radio19" parent="Radios/clonedrone" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 700)
 
-[node name="Radio20" parent="Radios/User2" instance=ExtResource("10_r7ewx")]
+[node name="Radio20" parent="Radios/clonedrone" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 700)
 
-[node name="Radio21" parent="Radios/User2" instance=ExtResource("10_r7ewx")]
+[node name="Radio21" parent="Radios/clonedrone" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 700)
 
-[node name="Radio22" parent="Radios/User2" instance=ExtResource("10_r7ewx")]
+[node name="Radio22" parent="Radios/clonedrone" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 700)
 
-[node name="User3" type="Node2D" parent="Radios"]
+[node name="aero" type="Node2D" parent="Radios"]
 
-[node name="Radio23" parent="Radios/User3" instance=ExtResource("10_r7ewx")]
+[node name="Radio23" parent="Radios/aero" instance=ExtResource("10_r7ewx")]
 position = Vector2(3460, 1140)
+text_field = "<-- beeps by aero"
 
-[node name="Radio24" parent="Radios/User3" instance=ExtResource("10_r7ewx")]
+[node name="Radio24" parent="Radios/aero" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 1100)
 
-[node name="Radio25" parent="Radios/User3" instance=ExtResource("10_r7ewx")]
+[node name="Radio25" parent="Radios/aero" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 1100)
 
-[node name="Radio26" parent="Radios/User3" instance=ExtResource("10_r7ewx")]
+[node name="Radio26" parent="Radios/aero" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 1100)
 
-[node name="Radio27" parent="Radios/User3" instance=ExtResource("10_r7ewx")]
+[node name="Radio27" parent="Radios/aero" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 1100)
 
-[node name="Radio28" parent="Radios/User3" instance=ExtResource("10_r7ewx")]
+[node name="Radio28" parent="Radios/aero" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 1100)
 
-[node name="Radio29" parent="Radios/User3" instance=ExtResource("10_r7ewx")]
+[node name="Radio29" parent="Radios/aero" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 1100)
 
-[node name="Radio30" parent="Radios/User3" instance=ExtResource("10_r7ewx")]
+[node name="Radio30" parent="Radios/aero" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 1100)
 
-[node name="Radio31" parent="Radios/User3" instance=ExtResource("10_r7ewx")]
+[node name="Radio31" parent="Radios/aero" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 1100)
 
-[node name="Radio32" parent="Radios/User3" instance=ExtResource("10_r7ewx")]
+[node name="Radio32" parent="Radios/aero" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 1100)
 
-[node name="Radio33" parent="Radios/User3" instance=ExtResource("10_r7ewx")]
+[node name="Radio33" parent="Radios/aero" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 1100)
 
-[node name="User4" type="Node2D" parent="Radios"]
+[node name="thetom" type="Node2D" parent="Radios"]
 
-[node name="Radio34" parent="Radios/User4" instance=ExtResource("10_r7ewx")]
+[node name="Radio34" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(3460, 1540)
+text_field = "<-- beeps by thetom"
 
-[node name="Radio35" parent="Radios/User4" instance=ExtResource("10_r7ewx")]
+[node name="Radio35" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 1500)
 
-[node name="Radio36" parent="Radios/User4" instance=ExtResource("10_r7ewx")]
+[node name="Radio36" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 1500)
 
-[node name="Radio37" parent="Radios/User4" instance=ExtResource("10_r7ewx")]
+[node name="Radio37" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 1500)
 
-[node name="Radio38" parent="Radios/User4" instance=ExtResource("10_r7ewx")]
+[node name="Radio38" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 1500)
 
-[node name="Radio39" parent="Radios/User4" instance=ExtResource("10_r7ewx")]
+[node name="Radio39" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 1500)
 
-[node name="Radio40" parent="Radios/User4" instance=ExtResource("10_r7ewx")]
+[node name="Radio40" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 1500)
 
-[node name="Radio41" parent="Radios/User4" instance=ExtResource("10_r7ewx")]
+[node name="Radio41" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 1500)
 
-[node name="Radio42" parent="Radios/User4" instance=ExtResource("10_r7ewx")]
+[node name="Radio42" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 1500)
 
-[node name="Radio43" parent="Radios/User4" instance=ExtResource("10_r7ewx")]
+[node name="Radio43" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 1500)
 
-[node name="Radio44" parent="Radios/User4" instance=ExtResource("10_r7ewx")]
+[node name="Radio44" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 1500)
 
-[node name="User5" type="Node2D" parent="Radios"]
+[node name="fnanfne" type="Node2D" parent="Radios"]
 
-[node name="Radio45" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
+[node name="Radio45" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
 position = Vector2(3460, 1940)
-text_field = "beeps by fnanfne"
+text_field = "<-- beeps by fnanfne"
 
-[node name="Radio46" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
+[node name="Radio46" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 1900)
-text_field = "Zombie Army"
+text_field = "Battletoads - Level 1"
 
-[node name="Radio47" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
+[node name="Radio47" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 1900)
+text_field = "Bobby Carrot"
 
-[node name="Radio48" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
+[node name="Radio48" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 1900)
+text_field = "Castlevania II - Praying-Hands"
 
-[node name="Radio49" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
+[node name="Radio49" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 1900)
+text_field = "Coffin Dance"
 
-[node name="Radio50" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
+[node name="Radio50" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 1900)
+text_field = "Commando"
 
-[node name="Radio51" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
+[node name="Radio51" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 1900)
+text_field = "DuckTales - Title"
 
-[node name="Radio52" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
+[node name="Radio52" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 1900)
+text_field = "DuckTales - The Moon"
 
-[node name="Radio53" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
+[node name="Radio53" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 1900)
+text_field = "Hallowed Be Thy Name (original by Iron Maiden), cover by Cradle of Filth"
 
-[node name="Radio54" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
+[node name="Radio54" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 1900)
+text_field = "Hawkeye - Title"
 
-[node name="Radio55" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
+[node name="Radio55" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 1900)
+text_field = "Hysteria by Muse"
 
-[node name="Radio56" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
+[node name="Radio56" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
 position = Vector2(1740, 1900)
+text_field = "INFERNO - Keygen Music"
+
+[node name="Radio57" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
+position = Vector2(1580, 1900)
+text_field = "CORE - Keygen Music"
+
+[node name="Radio58" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
+position = Vector2(1420, 1900)
+text_field = "RESSURECTiON - Keygen Music"
+
+[node name="Radio59" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
+position = Vector2(1260, 1900)
+text_field = "MegaMan 2 - Dr Wily's Castle"
+
+[node name="Radio60" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
+position = Vector2(1100, 1900)
+text_field = "Monty on the Run"
+
+[node name="Radio61" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
+position = Vector2(940, 1900)
+text_field = "Sonic Knucles Boss"
+
+[node name="Radio62" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
+position = Vector2(780, 1900)
+text_field = "Spooky Scary Skeletons"
+
+[node name="Radio63" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
+position = Vector2(620, 1900)
+text_field = "Unreal Superhero 3 - Keygen Music"
+
+[node name="Radio64" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
+position = Vector2(460, 1900)
+text_field = "Zero Wing - New Day For Me"
+
+[node name="Radio65" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
+position = Vector2(300, 1900)
 text_field = "Zombie Army"
 
-[node name="Radio57" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
-position = Vector2(1580, 1900)
-
-[node name="Radio58" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
-position = Vector2(1420, 1900)
-
-[node name="Radio59" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
-position = Vector2(1260, 1900)
-
-[node name="Radio60" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
-position = Vector2(1100, 1900)
-
-[node name="Radio61" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
-position = Vector2(940, 1900)
-
-[node name="Radio62" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
-position = Vector2(780, 1900)
-
-[node name="Radio63" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
-position = Vector2(620, 1900)
-
-[node name="Radio64" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
-position = Vector2(460, 1900)
-
-[node name="Radio65" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
-position = Vector2(300, 1900)
-
-[node name="Radio66" parent="Radios/User5" instance=ExtResource("10_r7ewx")]
+[node name="Radio66" parent="Radios/fnanfne" instance=ExtResource("10_r7ewx")]
 position = Vector2(220, 1900)
+text_field = "<-- Use this teleporter to go back"
 
-[node name="User6" type="Node2D" parent="Radios"]
+[node name="yourmoveboyo" type="Node2D" parent="Radios"]
 
-[node name="Radio56" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio56" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(3460, 2340)
+text_field = "<-- beeps by yourmoveboyo"
 
-[node name="Radio57" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio57" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 2300)
 
-[node name="Radio58" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio58" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 2300)
 
-[node name="Radio59" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio59" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 2300)
 
-[node name="Radio60" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio60" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 2300)
 
-[node name="Radio61" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio61" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 2300)
 
-[node name="Radio62" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio62" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 2300)
 
-[node name="Radio63" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio63" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 2300)
 
-[node name="Radio64" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio64" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 2300)
 
-[node name="Radio65" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio65" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 2300)
 
-[node name="Radio66" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio66" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 2300)
 
-[node name="Radio67" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio67" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(1740, 2300)
 
-[node name="Radio68" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio68" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(1580, 2300)
 
-[node name="Radio69" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio69" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(1420, 2300)
 
-[node name="Radio70" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio70" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(1260, 2300)
 
-[node name="Radio71" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio71" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(1100, 2300)
 
-[node name="Radio72" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio72" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(940, 2300)
 
-[node name="Radio73" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio73" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(780, 2300)
 
-[node name="Radio74" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio74" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(620, 2300)
 
-[node name="Radio75" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio75" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(460, 2300)
 
-[node name="Radio76" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio76" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(300, 2300)
 
-[node name="Radio77" parent="Radios/User6" instance=ExtResource("10_r7ewx")]
+[node name="Radio77" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(220, 2300)
-text_field = "<-- Use the teleporter to zip back to spawn"
+text_field = "<-- Use this teleporter to go back"
 
-[node name="User7" type="Node2D" parent="Radios"]
+[node name="ian05" type="Node2D" parent="Radios"]
 
-[node name="Radio67" parent="Radios/User7" instance=ExtResource("10_r7ewx")]
+[node name="Radio67" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(3460, 2740)
+text_field = "<-- beeps by ian05"
 
-[node name="Radio68" parent="Radios/User7" instance=ExtResource("10_r7ewx")]
+[node name="Radio68" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 2700)
 
-[node name="Radio69" parent="Radios/User7" instance=ExtResource("10_r7ewx")]
+[node name="Radio69" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 2700)
 
-[node name="Radio70" parent="Radios/User7" instance=ExtResource("10_r7ewx")]
+[node name="Radio70" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 2700)
 
-[node name="Radio71" parent="Radios/User7" instance=ExtResource("10_r7ewx")]
+[node name="Radio71" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 2700)
 
-[node name="Radio72" parent="Radios/User7" instance=ExtResource("10_r7ewx")]
+[node name="Radio72" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 2700)
 
-[node name="Radio73" parent="Radios/User7" instance=ExtResource("10_r7ewx")]
+[node name="Radio73" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 2700)
 
-[node name="Radio74" parent="Radios/User7" instance=ExtResource("10_r7ewx")]
+[node name="Radio74" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 2700)
 
-[node name="Radio75" parent="Radios/User7" instance=ExtResource("10_r7ewx")]
+[node name="Radio75" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 2700)
 
-[node name="Radio76" parent="Radios/User7" instance=ExtResource("10_r7ewx")]
+[node name="Radio76" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 2700)
 
-[node name="Radio77" parent="Radios/User7" instance=ExtResource("10_r7ewx")]
+[node name="Radio77" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 2700)
 
-[node name="User8" type="Node2D" parent="Radios"]
+[node name="syncmaster" type="Node2D" parent="Radios"]
 
-[node name="Radio78" parent="Radios/User8" instance=ExtResource("10_r7ewx")]
+[node name="Radio78" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(3460, 3140)
+text_field = "<-- beeps by syncmaster"
 
-[node name="Radio79" parent="Radios/User8" instance=ExtResource("10_r7ewx")]
+[node name="Radio79" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 3100)
 
-[node name="Radio80" parent="Radios/User8" instance=ExtResource("10_r7ewx")]
+[node name="Radio80" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 3100)
 
-[node name="Radio81" parent="Radios/User8" instance=ExtResource("10_r7ewx")]
+[node name="Radio81" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 3100)
 
-[node name="Radio82" parent="Radios/User8" instance=ExtResource("10_r7ewx")]
+[node name="Radio82" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 3100)
 
-[node name="Radio83" parent="Radios/User8" instance=ExtResource("10_r7ewx")]
+[node name="Radio83" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 3100)
 
-[node name="Radio84" parent="Radios/User8" instance=ExtResource("10_r7ewx")]
+[node name="Radio84" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 3100)
 
-[node name="Radio85" parent="Radios/User8" instance=ExtResource("10_r7ewx")]
+[node name="Radio85" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 3100)
 
-[node name="Radio86" parent="Radios/User8" instance=ExtResource("10_r7ewx")]
+[node name="Radio86" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 3100)
 
-[node name="Radio87" parent="Radios/User8" instance=ExtResource("10_r7ewx")]
+[node name="Radio87" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 3100)
 
-[node name="Radio88" parent="Radios/User8" instance=ExtResource("10_r7ewx")]
+[node name="Radio88" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 3100)
 
-[node name="User9" type="Node2D" parent="Radios"]
+[node name="various_users_1" type="Node2D" parent="Radios"]
 
-[node name="Radio89" parent="Radios/User9" instance=ExtResource("10_r7ewx")]
+[node name="Radio89" parent="Radios/various_users_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(3460, 3540)
+text_field = "<-- beeps by various users"
 
-[node name="Radio90" parent="Radios/User9" instance=ExtResource("10_r7ewx")]
+[node name="Radio90" parent="Radios/various_users_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 3500)
 
-[node name="Radio91" parent="Radios/User9" instance=ExtResource("10_r7ewx")]
+[node name="Radio91" parent="Radios/various_users_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 3500)
 
-[node name="Radio92" parent="Radios/User9" instance=ExtResource("10_r7ewx")]
+[node name="Radio92" parent="Radios/various_users_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 3500)
 
-[node name="Radio93" parent="Radios/User9" instance=ExtResource("10_r7ewx")]
+[node name="Radio93" parent="Radios/various_users_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 3500)
 
-[node name="Radio94" parent="Radios/User9" instance=ExtResource("10_r7ewx")]
+[node name="Radio94" parent="Radios/various_users_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 3500)
 
-[node name="Radio95" parent="Radios/User9" instance=ExtResource("10_r7ewx")]
+[node name="Radio95" parent="Radios/various_users_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 3500)
 
-[node name="Radio96" parent="Radios/User9" instance=ExtResource("10_r7ewx")]
+[node name="Radio96" parent="Radios/various_users_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 3500)
 
-[node name="Radio97" parent="Radios/User9" instance=ExtResource("10_r7ewx")]
+[node name="Radio97" parent="Radios/various_users_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 3500)
 
-[node name="Radio98" parent="Radios/User9" instance=ExtResource("10_r7ewx")]
+[node name="Radio98" parent="Radios/various_users_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 3500)
 
-[node name="Radio99" parent="Radios/User9" instance=ExtResource("10_r7ewx")]
+[node name="Radio99" parent="Radios/various_users_1" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 3500)
 
-[node name="User10" type="Node2D" parent="Radios"]
+[node name="NOT_USED_2" type="Node2D" parent="Radios"]
 
-[node name="Radio100" parent="Radios/User10" instance=ExtResource("10_r7ewx")]
+[node name="Radio100" parent="Radios/NOT_USED_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(3460, 3940)
 
-[node name="Radio101" parent="Radios/User10" instance=ExtResource("10_r7ewx")]
+[node name="Radio101" parent="Radios/NOT_USED_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 3900)
 
-[node name="Radio102" parent="Radios/User10" instance=ExtResource("10_r7ewx")]
+[node name="Radio102" parent="Radios/NOT_USED_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 3900)
 
-[node name="Radio103" parent="Radios/User10" instance=ExtResource("10_r7ewx")]
+[node name="Radio103" parent="Radios/NOT_USED_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 3900)
 
-[node name="Radio104" parent="Radios/User10" instance=ExtResource("10_r7ewx")]
+[node name="Radio104" parent="Radios/NOT_USED_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 3900)
 
-[node name="Radio105" parent="Radios/User10" instance=ExtResource("10_r7ewx")]
+[node name="Radio105" parent="Radios/NOT_USED_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 3900)
 
-[node name="Radio106" parent="Radios/User10" instance=ExtResource("10_r7ewx")]
+[node name="Radio106" parent="Radios/NOT_USED_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 3900)
 
-[node name="Radio107" parent="Radios/User10" instance=ExtResource("10_r7ewx")]
+[node name="Radio107" parent="Radios/NOT_USED_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 3900)
 
-[node name="Radio108" parent="Radios/User10" instance=ExtResource("10_r7ewx")]
+[node name="Radio108" parent="Radios/NOT_USED_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 3900)
 
-[node name="Radio109" parent="Radios/User10" instance=ExtResource("10_r7ewx")]
+[node name="Radio109" parent="Radios/NOT_USED_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 3900)
 
-[node name="Radio110" parent="Radios/User10" instance=ExtResource("10_r7ewx")]
+[node name="Radio110" parent="Radios/NOT_USED_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 3900)
 
-[node name="User11" type="Node2D" parent="Radios"]
+[node name="NOT_USED_3" type="Node2D" parent="Radios"]
 
-[node name="Radio111" parent="Radios/User11" instance=ExtResource("10_r7ewx")]
+[node name="Radio111" parent="Radios/NOT_USED_3" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 3900)
 
-[node name="Radio112" parent="Radios/User11" instance=ExtResource("10_r7ewx")]
+[node name="Radio112" parent="Radios/NOT_USED_3" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 3900)
 
-[node name="Radio113" parent="Radios/User11" instance=ExtResource("10_r7ewx")]
+[node name="Radio113" parent="Radios/NOT_USED_3" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 3900)
 
-[node name="Radio114" parent="Radios/User11" instance=ExtResource("10_r7ewx")]
+[node name="Radio114" parent="Radios/NOT_USED_3" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 3900)
 
-[node name="Radio115" parent="Radios/User11" instance=ExtResource("10_r7ewx")]
+[node name="Radio115" parent="Radios/NOT_USED_3" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 3900)
 
-[node name="Radio116" parent="Radios/User11" instance=ExtResource("10_r7ewx")]
+[node name="Radio116" parent="Radios/NOT_USED_3" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 3900)
 
-[node name="Radio117" parent="Radios/User11" instance=ExtResource("10_r7ewx")]
+[node name="Radio117" parent="Radios/NOT_USED_3" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 3900)
 
-[node name="Radio118" parent="Radios/User11" instance=ExtResource("10_r7ewx")]
+[node name="Radio118" parent="Radios/NOT_USED_3" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 3900)
 
-[node name="Radio119" parent="Radios/User11" instance=ExtResource("10_r7ewx")]
+[node name="Radio119" parent="Radios/NOT_USED_3" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 3900)
 
-[node name="Radio120" parent="Radios/User11" instance=ExtResource("10_r7ewx")]
+[node name="Radio120" parent="Radios/NOT_USED_3" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 3900)
 
-[node name="Radio121" parent="Radios/User11" instance=ExtResource("10_r7ewx")]
+[node name="Radio121" parent="Radios/NOT_USED_3" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 3940)
 
-[node name="User12" type="Node2D" parent="Radios"]
+[node name="various_users_2" type="Node2D" parent="Radios"]
 
-[node name="Radio122" parent="Radios/User12" instance=ExtResource("10_r7ewx")]
+[node name="Radio122" parent="Radios/various_users_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 3500)
 
-[node name="Radio123" parent="Radios/User12" instance=ExtResource("10_r7ewx")]
+[node name="Radio123" parent="Radios/various_users_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 3500)
 
-[node name="Radio124" parent="Radios/User12" instance=ExtResource("10_r7ewx")]
+[node name="Radio124" parent="Radios/various_users_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 3500)
 
-[node name="Radio125" parent="Radios/User12" instance=ExtResource("10_r7ewx")]
+[node name="Radio125" parent="Radios/various_users_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 3500)
 
-[node name="Radio126" parent="Radios/User12" instance=ExtResource("10_r7ewx")]
+[node name="Radio126" parent="Radios/various_users_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 3500)
 
-[node name="Radio127" parent="Radios/User12" instance=ExtResource("10_r7ewx")]
+[node name="Radio127" parent="Radios/various_users_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 3500)
 
-[node name="Radio128" parent="Radios/User12" instance=ExtResource("10_r7ewx")]
+[node name="Radio128" parent="Radios/various_users_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 3500)
 
-[node name="Radio129" parent="Radios/User12" instance=ExtResource("10_r7ewx")]
+[node name="Radio129" parent="Radios/various_users_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 3500)
 
-[node name="Radio130" parent="Radios/User12" instance=ExtResource("10_r7ewx")]
+[node name="Radio130" parent="Radios/various_users_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 3500)
 
-[node name="Radio131" parent="Radios/User12" instance=ExtResource("10_r7ewx")]
+[node name="Radio131" parent="Radios/various_users_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 3500)
 
-[node name="Radio132" parent="Radios/User12" instance=ExtResource("10_r7ewx")]
+[node name="Radio132" parent="Radios/various_users_2" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 3540)
+text_field = "beeps by various users -->"
 
-[node name="User13" type="Node2D" parent="Radios"]
+[node name="jadeanubis" type="Node2D" parent="Radios"]
 
-[node name="Radio133" parent="Radios/User13" instance=ExtResource("10_r7ewx")]
+[node name="Radio133" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 3100)
 
-[node name="Radio134" parent="Radios/User13" instance=ExtResource("10_r7ewx")]
+[node name="Radio134" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 3100)
 
-[node name="Radio135" parent="Radios/User13" instance=ExtResource("10_r7ewx")]
+[node name="Radio135" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 3100)
 
-[node name="Radio136" parent="Radios/User13" instance=ExtResource("10_r7ewx")]
+[node name="Radio136" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 3100)
 
-[node name="Radio137" parent="Radios/User13" instance=ExtResource("10_r7ewx")]
+[node name="Radio137" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 3100)
 
-[node name="Radio138" parent="Radios/User13" instance=ExtResource("10_r7ewx")]
+[node name="Radio138" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 3100)
 
-[node name="Radio139" parent="Radios/User13" instance=ExtResource("10_r7ewx")]
+[node name="Radio139" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 3100)
 
-[node name="Radio140" parent="Radios/User13" instance=ExtResource("10_r7ewx")]
+[node name="Radio140" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 3100)
 
-[node name="Radio141" parent="Radios/User13" instance=ExtResource("10_r7ewx")]
+[node name="Radio141" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 3100)
 
-[node name="Radio142" parent="Radios/User13" instance=ExtResource("10_r7ewx")]
+[node name="Radio142" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 3100)
 
-[node name="Radio143" parent="Radios/User13" instance=ExtResource("10_r7ewx")]
+[node name="Radio143" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 3140)
+text_field = "beeps by jadeanubis -->"
 
-[node name="User14" type="Node2D" parent="Radios"]
+[node name="linkandar" type="Node2D" parent="Radios"]
 
-[node name="Radio144" parent="Radios/User14" instance=ExtResource("10_r7ewx")]
+[node name="Radio144" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 2700)
 
-[node name="Radio145" parent="Radios/User14" instance=ExtResource("10_r7ewx")]
+[node name="Radio145" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 2700)
 
-[node name="Radio146" parent="Radios/User14" instance=ExtResource("10_r7ewx")]
+[node name="Radio146" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 2700)
 
-[node name="Radio147" parent="Radios/User14" instance=ExtResource("10_r7ewx")]
+[node name="Radio147" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 2700)
 
-[node name="Radio148" parent="Radios/User14" instance=ExtResource("10_r7ewx")]
+[node name="Radio148" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 2700)
 
-[node name="Radio149" parent="Radios/User14" instance=ExtResource("10_r7ewx")]
+[node name="Radio149" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 2700)
 
-[node name="Radio150" parent="Radios/User14" instance=ExtResource("10_r7ewx")]
+[node name="Radio150" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 2700)
 
-[node name="Radio151" parent="Radios/User14" instance=ExtResource("10_r7ewx")]
+[node name="Radio151" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 2700)
 
-[node name="Radio152" parent="Radios/User14" instance=ExtResource("10_r7ewx")]
+[node name="Radio152" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 2700)
 
-[node name="Radio153" parent="Radios/User14" instance=ExtResource("10_r7ewx")]
+[node name="Radio153" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 2700)
 
-[node name="Radio154" parent="Radios/User14" instance=ExtResource("10_r7ewx")]
+[node name="Radio154" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 2740)
+text_field = "beeps by linkandar -->"
 
-[node name="User15" type="Node2D" parent="Radios"]
+[node name="paisleypickle" type="Node2D" parent="Radios"]
 
-[node name="Radio155" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio155" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 2300)
 
-[node name="Radio156" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio156" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 2300)
 
-[node name="Radio157" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio157" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 2300)
 
-[node name="Radio158" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio158" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 2300)
 
-[node name="Radio159" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio159" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 2300)
 
-[node name="Radio160" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio160" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 2300)
 
-[node name="Radio161" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio161" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 2300)
 
-[node name="Radio162" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio162" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 2300)
 
-[node name="Radio163" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio163" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 2300)
 
-[node name="Radio164" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio164" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 2300)
 
-[node name="Radio166" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio166" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(7940, 2300)
 
-[node name="Radio176" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio176" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(8020, 2300)
+text_field = "Use this teleporter to go back -->"
 
-[node name="Radio167" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio167" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(7780, 2300)
 
-[node name="Radio168" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio168" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(7620, 2300)
 
-[node name="Radio169" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio169" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(7460, 2300)
 
-[node name="Radio170" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio170" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(7300, 2300)
 
-[node name="Radio171" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio171" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(7140, 2300)
 
-[node name="Radio172" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio172" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6980, 2300)
 
-[node name="Radio173" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio173" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6820, 2300)
 
-[node name="Radio174" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio174" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6660, 2300)
 
-[node name="Radio175" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio175" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6500, 2300)
 
-[node name="Radio165" parent="Radios/User15" instance=ExtResource("10_r7ewx")]
+[node name="Radio165" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 2340)
+text_field = "beeps by paisleypickle -->"
 
-[node name="User16" type="Node2D" parent="Radios"]
+[node name="gameworm" type="Node2D" parent="Radios"]
 
-[node name="Radio166" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio166" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 1900)
+text_field = "Kaizo"
 
-[node name="Radio167" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio167" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 1900)
+text_field = "Into chaos"
 
-[node name="Radio168" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio168" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 1900)
+text_field = "Inferno"
 
-[node name="Radio169" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio169" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 1900)
+text_field = "Great outdoors"
 
-[node name="Radio170" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio170" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 1900)
+text_field = "evil"
 
-[node name="Radio171" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio171" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 1900)
+text_field = "Dance party"
 
-[node name="Radio172" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio172" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 1900)
+text_field = "Cave masters"
 
-[node name="Radio173" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio173" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 1900)
+text_field = "Biolabs"
 
-[node name="Radio174" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio174" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 1900)
+text_field = "Beneath the waves"
 
-[node name="Radio175" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio175" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 1900)
+text_field = "Awakening"
 
-[node name="Radio177" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio177" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(7940, 1900)
+text_field = "Watcher"
 
-[node name="Radio187" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio187" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(8020, 1900)
+text_field = "Use this teleporter to go back -->"
 
-[node name="Radio178" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio178" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(7780, 1900)
+text_field = "trolled"
 
-[node name="Radio179" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio179" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(7620, 1900)
+text_field = "Temple guardian"
 
-[node name="Radio180" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio180" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(7460, 1900)
+text_field = "Technomare"
 
-[node name="Radio181" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio181" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(7300, 1900)
+text_field = "Spelunking"
 
-[node name="Radio182" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio182" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(7140, 1900)
+text_field = "Scrap"
 
-[node name="Radio183" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio183" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(6980, 1900)
+text_field = "Revival"
 
-[node name="Radio184" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio184" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(6820, 1900)
+text_field = "No pills allowed"
 
-[node name="Radio185" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio185" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(6660, 1900)
+text_field = "Legendary boss"
 
-[node name="Radio186" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio186" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(6500, 1900)
+text_field = "King of the abyss"
 
-[node name="Radio176" parent="Radios/User16" instance=ExtResource("10_r7ewx")]
+[node name="Radio176" parent="Radios/gameworm" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 1940)
+text_field = "beeps by gameworm -->"
 
-[node name="User17" type="Node2D" parent="Radios"]
+[node name="dmd" type="Node2D" parent="Radios"]
 
-[node name="Radio177" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio177" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 1500)
 
-[node name="Radio178" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio178" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 1500)
 
-[node name="Radio179" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio179" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 1500)
 
-[node name="Radio180" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio180" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 1500)
 
-[node name="Radio181" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio181" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 1500)
 
-[node name="Radio182" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio182" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 1500)
 
-[node name="Radio183" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio183" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 1500)
 
-[node name="Radio184" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio184" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 1500)
 
-[node name="Radio185" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio185" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 1500)
 
-[node name="Radio186" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio186" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 1500)
 
-[node name="Radio188" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio188" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(7940, 1500)
 
-[node name="Radio198" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio198" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(8020, 1500)
+text_field = "Use this teleporter to go back -->"
 
-[node name="Radio189" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio189" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(7780, 1500)
 
-[node name="Radio190" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio190" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(7620, 1500)
 
-[node name="Radio191" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio191" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(7460, 1500)
 
-[node name="Radio192" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio192" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(7300, 1500)
 
-[node name="Radio193" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio193" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(7140, 1500)
 
-[node name="Radio194" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio194" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6980, 1500)
 
-[node name="Radio195" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio195" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6820, 1500)
 
-[node name="Radio196" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio196" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6660, 1500)
 
-[node name="Radio197" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio197" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6500, 1500)
 
-[node name="Radio187" parent="Radios/User17" instance=ExtResource("10_r7ewx")]
+[node name="Radio187" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 1540)
+text_field = "beeps by dmd -->"
 
-[node name="User18" type="Node2D" parent="Radios"]
+[node name="bluedoggo123" type="Node2D" parent="Radios"]
 
-[node name="Radio188" parent="Radios/User18" instance=ExtResource("10_r7ewx")]
+[node name="Radio188" parent="Radios/bluedoggo123" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 1100)
 
-[node name="Radio189" parent="Radios/User18" instance=ExtResource("10_r7ewx")]
+[node name="Radio189" parent="Radios/bluedoggo123" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 1100)
 
-[node name="Radio190" parent="Radios/User18" instance=ExtResource("10_r7ewx")]
+[node name="Radio190" parent="Radios/bluedoggo123" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 1100)
 
-[node name="Radio191" parent="Radios/User18" instance=ExtResource("10_r7ewx")]
+[node name="Radio191" parent="Radios/bluedoggo123" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 1100)
 
-[node name="Radio192" parent="Radios/User18" instance=ExtResource("10_r7ewx")]
+[node name="Radio192" parent="Radios/bluedoggo123" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 1100)
 
-[node name="Radio193" parent="Radios/User18" instance=ExtResource("10_r7ewx")]
+[node name="Radio193" parent="Radios/bluedoggo123" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 1100)
 
-[node name="Radio194" parent="Radios/User18" instance=ExtResource("10_r7ewx")]
+[node name="Radio194" parent="Radios/bluedoggo123" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 1100)
 
-[node name="Radio195" parent="Radios/User18" instance=ExtResource("10_r7ewx")]
+[node name="Radio195" parent="Radios/bluedoggo123" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 1100)
 
-[node name="Radio196" parent="Radios/User18" instance=ExtResource("10_r7ewx")]
+[node name="Radio196" parent="Radios/bluedoggo123" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 1100)
 
-[node name="Radio197" parent="Radios/User18" instance=ExtResource("10_r7ewx")]
+[node name="Radio197" parent="Radios/bluedoggo123" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 1100)
 
-[node name="Radio198" parent="Radios/User18" instance=ExtResource("10_r7ewx")]
+[node name="Radio198" parent="Radios/bluedoggo123" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 1140)
+text_field = "beeps by bluedoggo123 -->"
 
-[node name="User19" type="Node2D" parent="Radios"]
+[node name="gabriel_miel" type="Node2D" parent="Radios"]
 
-[node name="Radio199" parent="Radios/User19" instance=ExtResource("10_r7ewx")]
+[node name="Radio199" parent="Radios/gabriel_miel" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 700)
 
-[node name="Radio200" parent="Radios/User19" instance=ExtResource("10_r7ewx")]
+[node name="Radio200" parent="Radios/gabriel_miel" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 700)
 
-[node name="Radio201" parent="Radios/User19" instance=ExtResource("10_r7ewx")]
+[node name="Radio201" parent="Radios/gabriel_miel" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 700)
 
-[node name="Radio202" parent="Radios/User19" instance=ExtResource("10_r7ewx")]
+[node name="Radio202" parent="Radios/gabriel_miel" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 700)
 
-[node name="Radio203" parent="Radios/User19" instance=ExtResource("10_r7ewx")]
+[node name="Radio203" parent="Radios/gabriel_miel" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 700)
 
-[node name="Radio204" parent="Radios/User19" instance=ExtResource("10_r7ewx")]
+[node name="Radio204" parent="Radios/gabriel_miel" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 700)
 
-[node name="Radio205" parent="Radios/User19" instance=ExtResource("10_r7ewx")]
+[node name="Radio205" parent="Radios/gabriel_miel" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 700)
 
-[node name="Radio206" parent="Radios/User19" instance=ExtResource("10_r7ewx")]
+[node name="Radio206" parent="Radios/gabriel_miel" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 700)
 
-[node name="Radio207" parent="Radios/User19" instance=ExtResource("10_r7ewx")]
+[node name="Radio207" parent="Radios/gabriel_miel" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 700)
 
-[node name="Radio208" parent="Radios/User19" instance=ExtResource("10_r7ewx")]
+[node name="Radio208" parent="Radios/gabriel_miel" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 700)
 
-[node name="Radio209" parent="Radios/User19" instance=ExtResource("10_r7ewx")]
+[node name="Radio209" parent="Radios/gabriel_miel" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 740)
+text_field = "beeps by gabriel_miel -->"
 
-[node name="User20" type="Node2D" parent="Radios"]
+[node name="NOT_USED_4" type="Node2D" parent="Radios"]
 
-[node name="Radio210" parent="Radios/User20" instance=ExtResource("10_r7ewx")]
+[node name="Radio210" parent="Radios/NOT_USED_4" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 300)
 
-[node name="Radio211" parent="Radios/User20" instance=ExtResource("10_r7ewx")]
+[node name="Radio211" parent="Radios/NOT_USED_4" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 300)
 
-[node name="Radio212" parent="Radios/User20" instance=ExtResource("10_r7ewx")]
+[node name="Radio212" parent="Radios/NOT_USED_4" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 300)
 
-[node name="Radio213" parent="Radios/User20" instance=ExtResource("10_r7ewx")]
+[node name="Radio213" parent="Radios/NOT_USED_4" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 300)
 
-[node name="Radio214" parent="Radios/User20" instance=ExtResource("10_r7ewx")]
+[node name="Radio214" parent="Radios/NOT_USED_4" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 300)
 
-[node name="Radio215" parent="Radios/User20" instance=ExtResource("10_r7ewx")]
+[node name="Radio215" parent="Radios/NOT_USED_4" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 300)
 
-[node name="Radio216" parent="Radios/User20" instance=ExtResource("10_r7ewx")]
+[node name="Radio216" parent="Radios/NOT_USED_4" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 300)
 
-[node name="Radio217" parent="Radios/User20" instance=ExtResource("10_r7ewx")]
+[node name="Radio217" parent="Radios/NOT_USED_4" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 300)
 
-[node name="Radio218" parent="Radios/User20" instance=ExtResource("10_r7ewx")]
+[node name="Radio218" parent="Radios/NOT_USED_4" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 300)
 
-[node name="Radio219" parent="Radios/User20" instance=ExtResource("10_r7ewx")]
+[node name="Radio219" parent="Radios/NOT_USED_4" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 300)
 
-[node name="Radio220" parent="Radios/User20" instance=ExtResource("10_r7ewx")]
+[node name="Radio220" parent="Radios/NOT_USED_4" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 340)
 
 [node name="UPRadio199" parent="Radios" instance=ExtResource("10_r7ewx")]
@@ -1374,882 +2304,62 @@ position = Vector2(4060, 780)
 text_field = "Use this teleporter to zip all the way to the bottom"
 
 [node name="DOWNRadio200" parent="Radios" instance=ExtResource("10_r7ewx")]
-position = Vector2(4060, 3980)
+position = Vector2(4100, 3500)
 text_field = "Use this teleporter to zip all the way to the top"
 
-[node name="physicsblock1" parent="." instance=ExtResource("14_r5hxq")]
-position = Vector2(3910, 1770)
-
-[node name="Music" type="Node2D" parent="."]
-position = Vector2(1680, 0)
-
-[node name="Default" type="Node2D" parent="Music"]
-
-[node name="User1" type="Node2D" parent="Music"]
-
-[node name="Music Block" parent="Music/User1" instance=ExtResource("14_xuup8")]
-position = Vector2(1640, 3840)
-
-[node name="Music Block2" parent="Music/User1" instance=ExtResource("14_xuup8")]
-position = Vector2(1480, 3840)
-
-[node name="Music Block3" parent="Music/User1" instance=ExtResource("14_xuup8")]
-position = Vector2(1320, 3840)
-
-[node name="Music Block4" parent="Music/User1" instance=ExtResource("14_xuup8")]
-position = Vector2(1160, 3840)
-
-[node name="Music Block5" parent="Music/User1" instance=ExtResource("14_xuup8")]
-position = Vector2(1000, 3840)
-
-[node name="Music Block6" parent="Music/User1" instance=ExtResource("14_xuup8")]
-position = Vector2(840, 3840)
-
-[node name="Music Block7" parent="Music/User1" instance=ExtResource("14_xuup8")]
-position = Vector2(680, 3840)
-
-[node name="Music Block8" parent="Music/User1" instance=ExtResource("14_xuup8")]
-position = Vector2(520, 3840)
-
-[node name="Music Block9" parent="Music/User1" instance=ExtResource("14_xuup8")]
-position = Vector2(360, 3840)
-
-[node name="Music Block10" parent="Music/User1" instance=ExtResource("14_xuup8")]
-position = Vector2(200, 3840)
-
-[node name="User2" type="Node2D" parent="Music"]
-
-[node name="Music Block11" parent="Music/User2" instance=ExtResource("14_xuup8")]
-position = Vector2(4680, 3840)
-
-[node name="Music Block12" parent="Music/User2" instance=ExtResource("14_xuup8")]
-position = Vector2(4520, 3840)
-
-[node name="Music Block13" parent="Music/User2" instance=ExtResource("14_xuup8")]
-position = Vector2(4360, 3840)
-
-[node name="Music Block14" parent="Music/User2" instance=ExtResource("14_xuup8")]
-position = Vector2(4200, 3840)
-
-[node name="Music Block15" parent="Music/User2" instance=ExtResource("14_xuup8")]
-position = Vector2(4040, 3840)
-
-[node name="Music Block16" parent="Music/User2" instance=ExtResource("14_xuup8")]
-position = Vector2(3880, 3840)
-
-[node name="Music Block17" parent="Music/User2" instance=ExtResource("14_xuup8")]
-position = Vector2(3720, 3840)
-
-[node name="Music Block18" parent="Music/User2" instance=ExtResource("14_xuup8")]
-position = Vector2(3560, 3840)
-
-[node name="Music Block19" parent="Music/User2" instance=ExtResource("14_xuup8")]
-position = Vector2(3400, 3840)
-
-[node name="Music Block20" parent="Music/User2" instance=ExtResource("14_xuup8")]
-position = Vector2(3240, 3840)
-
-[node name="smaller_users_1-3" type="Node2D" parent="Music"]
-
-[node name="Music Block21" parent="Music/smaller_users_1-3" instance=ExtResource("14_xuup8")]
-position = Vector2(1640, 3440)
-
-[node name="Music Block22" parent="Music/smaller_users_1-3" instance=ExtResource("14_xuup8")]
-position = Vector2(1480, 3440)
-
-[node name="Music Block23" parent="Music/smaller_users_1-3" instance=ExtResource("14_xuup8")]
-position = Vector2(1320, 3440)
-
-[node name="Music Block24" parent="Music/smaller_users_1-3" instance=ExtResource("14_xuup8")]
-position = Vector2(1160, 3440)
-
-[node name="Music Block25" parent="Music/smaller_users_1-3" instance=ExtResource("14_xuup8")]
-position = Vector2(1000, 3440)
-
-[node name="Music Block26" parent="Music/smaller_users_1-3" instance=ExtResource("14_xuup8")]
-position = Vector2(840, 3440)
-
-[node name="Music Block27" parent="Music/smaller_users_1-3" instance=ExtResource("14_xuup8")]
-position = Vector2(680, 3440)
-
-[node name="Music Block28" parent="Music/smaller_users_1-3" instance=ExtResource("14_xuup8")]
-position = Vector2(520, 3440)
-
-[node name="Music Block29" parent="Music/smaller_users_1-3" instance=ExtResource("14_xuup8")]
-position = Vector2(360, 3440)
-
-[node name="Music Block30" parent="Music/smaller_users_1-3" instance=ExtResource("14_xuup8")]
-position = Vector2(200, 3440)
-
-[node name="smaller_users_2-4" type="Node2D" parent="Music"]
-
-[node name="Music Block31" parent="Music/smaller_users_2-4" instance=ExtResource("14_xuup8")]
-position = Vector2(4680, 3440)
-
-[node name="Music Block32" parent="Music/smaller_users_2-4" instance=ExtResource("14_xuup8")]
-position = Vector2(4520, 3440)
-
-[node name="Music Block33" parent="Music/smaller_users_2-4" instance=ExtResource("14_xuup8")]
-position = Vector2(4360, 3440)
-
-[node name="Music Block34" parent="Music/smaller_users_2-4" instance=ExtResource("14_xuup8")]
-position = Vector2(4200, 3440)
-
-[node name="Music Block35" parent="Music/smaller_users_2-4" instance=ExtResource("14_xuup8")]
-position = Vector2(4040, 3440)
-
-[node name="Music Block36" parent="Music/smaller_users_2-4" instance=ExtResource("14_xuup8")]
-position = Vector2(3880, 3440)
-
-[node name="Music Block37" parent="Music/smaller_users_2-4" instance=ExtResource("14_xuup8")]
-position = Vector2(3720, 3440)
-
-[node name="Music Block38" parent="Music/smaller_users_2-4" instance=ExtResource("14_xuup8")]
-position = Vector2(3560, 3440)
-
-[node name="Music Block39" parent="Music/smaller_users_2-4" instance=ExtResource("14_xuup8")]
-position = Vector2(3400, 3440)
-
-[node name="Music Block40" parent="Music/smaller_users_2-4" instance=ExtResource("14_xuup8")]
-position = Vector2(3240, 3440)
-
-[node name="syncmaster-5" type="Node2D" parent="Music"]
-
-[node name="Music Block41" parent="Music/syncmaster-5" instance=ExtResource("14_xuup8")]
-position = Vector2(1640, 3040)
-
-[node name="Music Block42" parent="Music/syncmaster-5" instance=ExtResource("14_xuup8")]
-position = Vector2(1480, 3040)
-
-[node name="Music Block43" parent="Music/syncmaster-5" instance=ExtResource("14_xuup8")]
-position = Vector2(1320, 3040)
-
-[node name="Music Block44" parent="Music/syncmaster-5" instance=ExtResource("14_xuup8")]
-position = Vector2(1160, 3040)
-
-[node name="Music Block45" parent="Music/syncmaster-5" instance=ExtResource("14_xuup8")]
-position = Vector2(1000, 3040)
-
-[node name="Music Block46" parent="Music/syncmaster-5" instance=ExtResource("14_xuup8")]
-position = Vector2(840, 3040)
-
-[node name="Music Block47" parent="Music/syncmaster-5" instance=ExtResource("14_xuup8")]
-position = Vector2(680, 3040)
-
-[node name="Music Block48" parent="Music/syncmaster-5" instance=ExtResource("14_xuup8")]
-position = Vector2(520, 3040)
-
-[node name="Music Block49" parent="Music/syncmaster-5" instance=ExtResource("14_xuup8")]
-position = Vector2(360, 3040)
-
-[node name="Music Block50" parent="Music/syncmaster-5" instance=ExtResource("14_xuup8")]
-position = Vector2(200, 3040)
-
-[node name="jadeanubis-6" type="Node2D" parent="Music"]
-
-[node name="Music Block51" parent="Music/jadeanubis-6" instance=ExtResource("14_xuup8")]
-position = Vector2(4680, 3040)
-
-[node name="Music Block52" parent="Music/jadeanubis-6" instance=ExtResource("14_xuup8")]
-position = Vector2(4520, 3040)
-
-[node name="Music Block53" parent="Music/jadeanubis-6" instance=ExtResource("14_xuup8")]
-position = Vector2(4360, 3040)
-
-[node name="Music Block54" parent="Music/jadeanubis-6" instance=ExtResource("14_xuup8")]
-position = Vector2(4200, 3040)
-
-[node name="Music Block55" parent="Music/jadeanubis-6" instance=ExtResource("14_xuup8")]
-position = Vector2(4040, 3040)
-
-[node name="Music Block56" parent="Music/jadeanubis-6" instance=ExtResource("14_xuup8")]
-position = Vector2(3880, 3040)
-
-[node name="Music Block57" parent="Music/jadeanubis-6" instance=ExtResource("14_xuup8")]
-position = Vector2(3720, 3040)
-
-[node name="Music Block58" parent="Music/jadeanubis-6" instance=ExtResource("14_xuup8")]
-position = Vector2(3560, 3040)
-
-[node name="Music Block59" parent="Music/jadeanubis-6" instance=ExtResource("14_xuup8")]
-position = Vector2(3400, 3040)
-
-[node name="Music Block60" parent="Music/jadeanubis-6" instance=ExtResource("14_xuup8")]
-position = Vector2(3240, 3040)
-
-[node name="ian05-7" type="Node2D" parent="Music"]
-
-[node name="Music Block61" parent="Music/ian05-7" instance=ExtResource("14_xuup8")]
-position = Vector2(1640, 2640)
-
-[node name="Music Block62" parent="Music/ian05-7" instance=ExtResource("14_xuup8")]
-position = Vector2(1480, 2640)
-
-[node name="Music Block63" parent="Music/ian05-7" instance=ExtResource("14_xuup8")]
-position = Vector2(1320, 2640)
-
-[node name="Music Block64" parent="Music/ian05-7" instance=ExtResource("14_xuup8")]
-position = Vector2(1160, 2640)
-
-[node name="Music Block65" parent="Music/ian05-7" instance=ExtResource("14_xuup8")]
-position = Vector2(1000, 2640)
-
-[node name="Music Block66" parent="Music/ian05-7" instance=ExtResource("14_xuup8")]
-position = Vector2(840, 2640)
-
-[node name="Music Block67" parent="Music/ian05-7" instance=ExtResource("14_xuup8")]
-position = Vector2(680, 2640)
-
-[node name="Music Block68" parent="Music/ian05-7" instance=ExtResource("14_xuup8")]
-position = Vector2(520, 2640)
-
-[node name="Music Block69" parent="Music/ian05-7" instance=ExtResource("14_xuup8")]
-position = Vector2(360, 2640)
-
-[node name="Music Block70" parent="Music/ian05-7" instance=ExtResource("14_xuup8")]
-position = Vector2(200, 2640)
-
-[node name="linkandar-8" type="Node2D" parent="Music"]
-
-[node name="Music Block71" parent="Music/linkandar-8" instance=ExtResource("14_xuup8")]
-position = Vector2(4680, 2640)
-
-[node name="Music Block72" parent="Music/linkandar-8" instance=ExtResource("14_xuup8")]
-position = Vector2(4520, 2640)
-
-[node name="Music Block73" parent="Music/linkandar-8" instance=ExtResource("14_xuup8")]
-position = Vector2(4360, 2640)
-
-[node name="Music Block74" parent="Music/linkandar-8" instance=ExtResource("14_xuup8")]
-position = Vector2(4200, 2640)
-
-[node name="Music Block75" parent="Music/linkandar-8" instance=ExtResource("14_xuup8")]
-position = Vector2(4040, 2640)
-
-[node name="Music Block76" parent="Music/linkandar-8" instance=ExtResource("14_xuup8")]
-position = Vector2(3880, 2640)
-
-[node name="Music Block77" parent="Music/linkandar-8" instance=ExtResource("14_xuup8")]
-position = Vector2(3720, 2640)
-
-[node name="Music Block78" parent="Music/linkandar-8" instance=ExtResource("14_xuup8")]
-position = Vector2(3560, 2640)
-
-[node name="Music Block79" parent="Music/linkandar-8" instance=ExtResource("14_xuup8")]
-position = Vector2(3400, 2640)
-
-[node name="Music Block80" parent="Music/linkandar-8" instance=ExtResource("14_xuup8")]
-position = Vector2(3240, 2640)
-
-[node name="yourmoveboyo-9" type="Node2D" parent="Music"]
-
-[node name="Music Block81" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(1640, 2240)
-
-[node name="Music Block82" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(1480, 2240)
-
-[node name="Music Block83" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(1320, 2240)
-
-[node name="Music Block84" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(1160, 2240)
-
-[node name="Music Block85" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(1000, 2240)
-
-[node name="Music Block86" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(840, 2240)
-
-[node name="Music Block87" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(680, 2240)
-
-[node name="Music Block88" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(520, 2240)
-
-[node name="Music Block89" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(360, 2240)
-
-[node name="Music Block90" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(200, 2240)
-
-[node name="Music Block91" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(40, 2240)
-
-[node name="Music Block92" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(-120, 2240)
-
-[node name="Music Block93" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(-280, 2240)
-
-[node name="Music Block94" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(-440, 2240)
-
-[node name="Music Block95" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(-600, 2240)
-
-[node name="Music Block96" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(-760, 2240)
-
-[node name="Music Block97" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(-920, 2240)
-
-[node name="Music Block98" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(-1080, 2240)
-
-[node name="Music Block99" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(-1240, 2240)
-
-[node name="Music Block100" parent="Music/yourmoveboyo-9" instance=ExtResource("14_xuup8")]
-position = Vector2(-1400, 2240)
-
-[node name="paisleypickle-10" type="Node2D" parent="Music"]
-
-[node name="Music Block91" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(4680, 2240)
-
-[node name="Music Block92" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(4520, 2240)
-
-[node name="Music Block93" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(4360, 2240)
-
-[node name="Music Block94" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(4200, 2240)
-
-[node name="Music Block95" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(4040, 2240)
-
-[node name="Music Block96" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(3880, 2240)
-
-[node name="Music Block97" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(3720, 2240)
-
-[node name="Music Block98" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(3560, 2240)
-
-[node name="Music Block99" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(3400, 2240)
-
-[node name="Music Block100" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(3240, 2240)
-
-[node name="Music Block101" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(6280, 2240)
-
-[node name="Music Block102" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(6120, 2240)
-
-[node name="Music Block103" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(5960, 2240)
-
-[node name="Music Block104" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(5800, 2240)
-
-[node name="Music Block105" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(5640, 2240)
-
-[node name="Music Block106" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(5480, 2240)
-
-[node name="Music Block107" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(5320, 2240)
-
-[node name="Music Block108" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(5160, 2240)
-
-[node name="Music Block109" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(5000, 2240)
-
-[node name="Music Block110" parent="Music/paisleypickle-10" instance=ExtResource("14_xuup8")]
-position = Vector2(4840, 2240)
-
-[node name="fnanfne-11" type="Node2D" parent="Music"]
-
-[node name="Music Block101" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(1640, 1840)
-
-[node name="Music Block102" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(1480, 1840)
-
-[node name="Music Block103" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(1320, 1840)
-
-[node name="Music Block104" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(1160, 1840)
-
-[node name="Music Block105" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(1000, 1840)
-
-[node name="Music Block106" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(840, 1840)
-
-[node name="Music Block107" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(680, 1840)
-
-[node name="Music Block108" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(520, 1840)
-
-[node name="Music Block109" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(360, 1840)
-
-[node name="Music Block110" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(200, 1840)
-
-[node name="Music Block201" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(40, 1840)
-
-[node name="Music Block202" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(-120, 1840)
-
-[node name="Music Block203" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(-280, 1840)
-
-[node name="Music Block204" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(-440, 1840)
-
-[node name="Music Block205" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(-600, 1840)
-
-[node name="Music Block206" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(-760, 1840)
-
-[node name="Music Block207" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(-920, 1840)
-
-[node name="Music Block208" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(-1080, 1840)
-
-[node name="Music Block209" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(-1240, 1840)
-
-[node name="Music Block210" parent="Music/fnanfne-11" instance=ExtResource("14_xuup8")]
-position = Vector2(-1400, 1840)
-
-[node name="gameworm-12" type="Node2D" parent="Music"]
-
-[node name="Music Block111" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(4680, 1840)
-
-[node name="Music Block112" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(4520, 1840)
-
-[node name="Music Block113" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(4360, 1840)
-
-[node name="Music Block114" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(4200, 1840)
-
-[node name="Music Block115" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(4040, 1840)
-
-[node name="Music Block116" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(3880, 1840)
-
-[node name="Music Block117" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(3720, 1840)
-
-[node name="Music Block118" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(3560, 1840)
-
-[node name="Music Block119" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(3400, 1840)
-
-[node name="Music Block120" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(3240, 1840)
-
-[node name="Music Block121" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(6280, 1840)
-
-[node name="Music Block122" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(6120, 1840)
-
-[node name="Music Block123" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(5960, 1840)
-
-[node name="Music Block124" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(5800, 1840)
-
-[node name="Music Block125" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(5640, 1840)
-
-[node name="Music Block126" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(5480, 1840)
-
-[node name="Music Block127" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(5320, 1840)
-
-[node name="Music Block128" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(5160, 1840)
-
-[node name="Music Block129" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(5000, 1840)
-
-[node name="Music Block130" parent="Music/gameworm-12" instance=ExtResource("14_xuup8")]
-position = Vector2(4840, 1840)
-
-[node name="thetom-13" type="Node2D" parent="Music"]
-
-[node name="Music Block121" parent="Music/thetom-13" instance=ExtResource("14_xuup8")]
-position = Vector2(1640, 1440)
-
-[node name="Music Block122" parent="Music/thetom-13" instance=ExtResource("14_xuup8")]
-position = Vector2(1480, 1440)
-
-[node name="Music Block123" parent="Music/thetom-13" instance=ExtResource("14_xuup8")]
-position = Vector2(1320, 1440)
-
-[node name="Music Block124" parent="Music/thetom-13" instance=ExtResource("14_xuup8")]
-position = Vector2(1160, 1440)
-
-[node name="Music Block125" parent="Music/thetom-13" instance=ExtResource("14_xuup8")]
-position = Vector2(1000, 1440)
-
-[node name="Music Block126" parent="Music/thetom-13" instance=ExtResource("14_xuup8")]
-position = Vector2(840, 1440)
-
-[node name="Music Block127" parent="Music/thetom-13" instance=ExtResource("14_xuup8")]
-position = Vector2(680, 1440)
-
-[node name="Music Block128" parent="Music/thetom-13" instance=ExtResource("14_xuup8")]
-position = Vector2(520, 1440)
-
-[node name="Music Block129" parent="Music/thetom-13" instance=ExtResource("14_xuup8")]
-position = Vector2(360, 1440)
-
-[node name="Music Block130" parent="Music/thetom-13" instance=ExtResource("14_xuup8")]
-position = Vector2(200, 1440)
-
-[node name="dmd-14" type="Node2D" parent="Music"]
-
-[node name="Music Block131" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(4680, 1440)
-
-[node name="Music Block132" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(4520, 1440)
-
-[node name="Music Block133" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(4360, 1440)
-
-[node name="Music Block134" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(4200, 1440)
-
-[node name="Music Block135" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(4040, 1440)
-
-[node name="Music Block136" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(3880, 1440)
-
-[node name="Music Block137" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(3720, 1440)
-
-[node name="Music Block138" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(3560, 1440)
-
-[node name="Music Block139" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(3400, 1440)
-
-[node name="Music Block140" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(3240, 1440)
-
-[node name="Music Block141" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(6280, 1440)
-
-[node name="Music Block142" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(6120, 1440)
-
-[node name="Music Block143" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(5960, 1440)
-
-[node name="Music Block144" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(5800, 1440)
-
-[node name="Music Block145" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(5640, 1440)
-
-[node name="Music Block146" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(5480, 1440)
-
-[node name="Music Block147" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(5320, 1440)
-
-[node name="Music Block148" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(5160, 1440)
-
-[node name="Music Block149" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(5000, 1440)
-
-[node name="Music Block150" parent="Music/dmd-14" instance=ExtResource("14_xuup8")]
-position = Vector2(4840, 1440)
-
-[node name="aero-15" type="Node2D" parent="Music"]
-
-[node name="Music Block141" parent="Music/aero-15" instance=ExtResource("14_xuup8")]
-position = Vector2(1640, 1040)
-
-[node name="Music Block142" parent="Music/aero-15" instance=ExtResource("14_xuup8")]
-position = Vector2(1480, 1040)
-
-[node name="Music Block143" parent="Music/aero-15" instance=ExtResource("14_xuup8")]
-position = Vector2(1320, 1040)
-
-[node name="Music Block144" parent="Music/aero-15" instance=ExtResource("14_xuup8")]
-position = Vector2(1160, 1040)
-
-[node name="Music Block145" parent="Music/aero-15" instance=ExtResource("14_xuup8")]
-position = Vector2(1000, 1040)
-
-[node name="Music Block146" parent="Music/aero-15" instance=ExtResource("14_xuup8")]
-position = Vector2(840, 1040)
-
-[node name="Music Block147" parent="Music/aero-15" instance=ExtResource("14_xuup8")]
-position = Vector2(680, 1040)
-
-[node name="Music Block148" parent="Music/aero-15" instance=ExtResource("14_xuup8")]
-position = Vector2(520, 1040)
-
-[node name="Music Block149" parent="Music/aero-15" instance=ExtResource("14_xuup8")]
-position = Vector2(360, 1040)
-
-[node name="Music Block150" parent="Music/aero-15" instance=ExtResource("14_xuup8")]
-position = Vector2(200, 1040)
-
-[node name="bluedoggo-16" type="Node2D" parent="Music"]
-
-[node name="Music Block151" parent="Music/bluedoggo-16" instance=ExtResource("14_xuup8")]
-position = Vector2(4680, 1040)
-
-[node name="Music Block152" parent="Music/bluedoggo-16" instance=ExtResource("14_xuup8")]
-position = Vector2(4520, 1040)
-
-[node name="Music Block153" parent="Music/bluedoggo-16" instance=ExtResource("14_xuup8")]
-position = Vector2(4360, 1040)
-
-[node name="Music Block154" parent="Music/bluedoggo-16" instance=ExtResource("14_xuup8")]
-position = Vector2(4200, 1040)
-
-[node name="Music Block155" parent="Music/bluedoggo-16" instance=ExtResource("14_xuup8")]
-position = Vector2(4040, 1040)
-
-[node name="Music Block156" parent="Music/bluedoggo-16" instance=ExtResource("14_xuup8")]
-position = Vector2(3880, 1040)
-
-[node name="Music Block157" parent="Music/bluedoggo-16" instance=ExtResource("14_xuup8")]
-position = Vector2(3720, 1040)
-
-[node name="Music Block158" parent="Music/bluedoggo-16" instance=ExtResource("14_xuup8")]
-position = Vector2(3560, 1040)
-
-[node name="Music Block159" parent="Music/bluedoggo-16" instance=ExtResource("14_xuup8")]
-position = Vector2(3400, 1040)
-
-[node name="Music Block160" parent="Music/bluedoggo-16" instance=ExtResource("14_xuup8")]
-position = Vector2(3240, 1040)
-
-[node name="clonedrone-17" type="Node2D" parent="Music"]
-
-[node name="Music Block161" parent="Music/clonedrone-17" instance=ExtResource("14_xuup8")]
-position = Vector2(1640, 640)
-
-[node name="Music Block162" parent="Music/clonedrone-17" instance=ExtResource("14_xuup8")]
-position = Vector2(1480, 640)
-
-[node name="Music Block163" parent="Music/clonedrone-17" instance=ExtResource("14_xuup8")]
-position = Vector2(1320, 640)
-
-[node name="Music Block164" parent="Music/clonedrone-17" instance=ExtResource("14_xuup8")]
-position = Vector2(1160, 640)
-
-[node name="Music Block165" parent="Music/clonedrone-17" instance=ExtResource("14_xuup8")]
-position = Vector2(1000, 640)
-
-[node name="Music Block166" parent="Music/clonedrone-17" instance=ExtResource("14_xuup8")]
-position = Vector2(840, 640)
-
-[node name="Music Block167" parent="Music/clonedrone-17" instance=ExtResource("14_xuup8")]
-position = Vector2(680, 640)
-
-[node name="Music Block168" parent="Music/clonedrone-17" instance=ExtResource("14_xuup8")]
-position = Vector2(520, 640)
-
-[node name="Music Block169" parent="Music/clonedrone-17" instance=ExtResource("14_xuup8")]
-position = Vector2(360, 640)
-
-[node name="Music Block170" parent="Music/clonedrone-17" instance=ExtResource("14_xuup8")]
-position = Vector2(200, 640)
-
-[node name="gabriel_miel-18" type="Node2D" parent="Music"]
-
-[node name="Music Block171" parent="Music/gabriel_miel-18" instance=ExtResource("14_xuup8")]
-position = Vector2(4680, 640)
-
-[node name="Music Block172" parent="Music/gabriel_miel-18" instance=ExtResource("14_xuup8")]
-position = Vector2(4520, 640)
-
-[node name="Music Block173" parent="Music/gabriel_miel-18" instance=ExtResource("14_xuup8")]
-position = Vector2(4360, 640)
-
-[node name="Music Block174" parent="Music/gabriel_miel-18" instance=ExtResource("14_xuup8")]
-position = Vector2(4200, 640)
-
-[node name="Music Block175" parent="Music/gabriel_miel-18" instance=ExtResource("14_xuup8")]
-position = Vector2(4040, 640)
-
-[node name="Music Block176" parent="Music/gabriel_miel-18" instance=ExtResource("14_xuup8")]
-position = Vector2(3880, 640)
-
-[node name="Music Block177" parent="Music/gabriel_miel-18" instance=ExtResource("14_xuup8")]
-position = Vector2(3720, 640)
-
-[node name="Music Block178" parent="Music/gabriel_miel-18" instance=ExtResource("14_xuup8")]
-position = Vector2(3560, 640)
-
-[node name="Music Block179" parent="Music/gabriel_miel-18" instance=ExtResource("14_xuup8")]
-position = Vector2(3400, 640)
-
-[node name="Music Block180" parent="Music/gabriel_miel-18" instance=ExtResource("14_xuup8")]
-position = Vector2(3240, 640)
-
-[node name="User19" type="Node2D" parent="Music"]
-
-[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="Music/User19"]
-
-[node name="Music Block181" parent="Music/User19" instance=ExtResource("14_xuup8")]
-position = Vector2(1640, 240)
-
-[node name="Music Block182" parent="Music/User19" instance=ExtResource("14_xuup8")]
-position = Vector2(1480, 240)
-
-[node name="Music Block183" parent="Music/User19" instance=ExtResource("14_xuup8")]
-position = Vector2(1320, 240)
-
-[node name="Music Block184" parent="Music/User19" instance=ExtResource("14_xuup8")]
-position = Vector2(1160, 240)
-
-[node name="Music Block185" parent="Music/User19" instance=ExtResource("14_xuup8")]
-position = Vector2(1000, 240)
-
-[node name="Music Block186" parent="Music/User19" instance=ExtResource("14_xuup8")]
-position = Vector2(840, 240)
-
-[node name="Music Block187" parent="Music/User19" instance=ExtResource("14_xuup8")]
-position = Vector2(680, 240)
-
-[node name="Music Block188" parent="Music/User19" instance=ExtResource("14_xuup8")]
-position = Vector2(520, 240)
-
-[node name="Music Block189" parent="Music/User19" instance=ExtResource("14_xuup8")]
-position = Vector2(360, 240)
-
-[node name="Music Block190" parent="Music/User19" instance=ExtResource("14_xuup8")]
-position = Vector2(200, 240)
-
-[node name="User20" type="Node2D" parent="Music"]
-
-[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="Music/User20"]
-
-[node name="Music Block191" parent="Music/User20" instance=ExtResource("14_xuup8")]
-position = Vector2(4680, 240)
-
-[node name="Music Block192" parent="Music/User20" instance=ExtResource("14_xuup8")]
-position = Vector2(4520, 240)
-
-[node name="Music Block193" parent="Music/User20" instance=ExtResource("14_xuup8")]
-position = Vector2(4360, 240)
-
-[node name="Music Block194" parent="Music/User20" instance=ExtResource("14_xuup8")]
-position = Vector2(4200, 240)
-
-[node name="Music Block195" parent="Music/User20" instance=ExtResource("14_xuup8")]
-position = Vector2(4040, 240)
-
-[node name="Music Block196" parent="Music/User20" instance=ExtResource("14_xuup8")]
-position = Vector2(3880, 240)
-
-[node name="Music Block197" parent="Music/User20" instance=ExtResource("14_xuup8")]
-position = Vector2(3720, 240)
-
-[node name="Music Block198" parent="Music/User20" instance=ExtResource("14_xuup8")]
-position = Vector2(3560, 240)
-
-[node name="Music Block199" parent="Music/User20" instance=ExtResource("14_xuup8")]
-position = Vector2(3400, 240)
-
-[node name="Music Block200" parent="Music/User20" instance=ExtResource("14_xuup8")]
-position = Vector2(3240, 240)
-
-[node name="Teleporters" type="Node2D" parent="."]
-position = Vector2(1680, 0)
-
-[node name="fnanfne" type="Node2D" parent="Teleporters"]
-
-[node name="Teleporter1_1" parent="Teleporters/fnanfne" node_paths=PackedStringArray("target") instance=ExtResource("15_j5xn7")]
-position = Vector2(-1540, 1900)
+[node name="Teleporter1" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_2sjpn")]
+position = Vector2(140, 1900)
 rotation = -3.14159
-target = NodePath("../Teleporter2_2")
+target = NodePath("../Teleporter2")
 
-[node name="Teleporter2_2" parent="Teleporters/fnanfne" node_paths=PackedStringArray("target") instance=ExtResource("15_j5xn7")]
-position = Vector2(1775, 1900)
+[node name="Teleporter2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_2sjpn")]
+position = Vector2(3450, 1900)
 rotation = 3.14159
-target = NodePath("../Teleporter1_1")
+target = NodePath("../Teleporter1")
 
-[node name="gameworm" type="Node2D" parent="Teleporters"]
-
-[node name="Teleporter3_3" parent="Teleporters/gameworm" node_paths=PackedStringArray("target") instance=ExtResource("15_j5xn7")]
-position = Vector2(3180, 1900)
+[node name="Teleporter3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_2sjpn")]
+position = Vector2(140, 2300)
 rotation = -3.14159
-target = NodePath("../Teleporter4_4")
+target = NodePath("../Teleporter4")
 
-[node name="Teleporter4_4" parent="Teleporters/gameworm" node_paths=PackedStringArray("target") instance=ExtResource("15_j5xn7")]
-position = Vector2(6495, 1900)
+[node name="Teleporter4" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_2sjpn")]
+position = Vector2(3450, 2300)
 rotation = 3.14159
-target = NodePath("../Teleporter3_3")
+target = NodePath("../Teleporter3")
 
-[node name="dmd" type="Node2D" parent="Teleporters"]
+[node name="Teleporter5" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_2sjpn")]
+position = Vector2(4790, 2300)
+target = NodePath("../Teleporter6")
 
-[node name="Teleporter5_5" parent="Teleporters/dmd" node_paths=PackedStringArray("target") instance=ExtResource("15_j5xn7")]
-position = Vector2(3170, 1500)
-rotation = -3.14159
-target = NodePath("../Teleporter6_6")
+[node name="Teleporter6" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_2sjpn")]
+position = Vector2(8100, 2300)
+rotation = 6.28319
+target = NodePath("../Teleporter5")
 
-[node name="Teleporter6_6" parent="Teleporters/dmd" node_paths=PackedStringArray("target") instance=ExtResource("15_j5xn7")]
-position = Vector2(6485, 1500)
-rotation = 3.14159
-target = NodePath("../Teleporter5_5")
+[node name="Teleporter7" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_2sjpn")]
+position = Vector2(4790, 1900)
+target = NodePath("../Teleporter8")
 
-[node name="paisleypickle" type="Node2D" parent="Teleporters"]
+[node name="Teleporter8" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_2sjpn")]
+position = Vector2(8100, 1900)
+rotation = 6.28319
+target = NodePath("../Teleporter7")
 
-[node name="Teleporter7_7" parent="Teleporters/paisleypickle" node_paths=PackedStringArray("target") instance=ExtResource("15_j5xn7")]
-position = Vector2(3170, 2300)
-rotation = -3.14159
-target = NodePath(".")
+[node name="Teleporter9" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_2sjpn")]
+position = Vector2(4790, 1500)
+target = NodePath("../Teleporter10")
 
-[node name="Teleporter8_8" parent="Teleporters/paisleypickle" node_paths=PackedStringArray("target") instance=ExtResource("15_j5xn7")]
-position = Vector2(6485, 2300)
-rotation = 3.14159
-target = NodePath(".")
+[node name="Teleporter10" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_2sjpn")]
+position = Vector2(8100, 1500)
+rotation = 6.28319
+target = NodePath("../Teleporter9")
 
-[node name="yourmoveboyo" type="Node2D" parent="Teleporters"]
-
-[node name="Teleporter9_9" parent="Teleporters/yourmoveboyo" node_paths=PackedStringArray("target") instance=ExtResource("15_j5xn7")]
-position = Vector2(-1540, 2300)
-rotation = -3.14159
-target = NodePath("../Teleporter10_10")
-
-[node name="Teleporter10_10" parent="Teleporters/yourmoveboyo" node_paths=PackedStringArray("target") instance=ExtResource("15_j5xn7")]
-position = Vector2(1775, 2300)
-rotation = 3.14159
-target = NodePath("../Teleporter9_9")
-
-[node name="vertical" type="Node2D" parent="Teleporters"]
-
-[node name="Teleporter11_11" parent="Teleporters/vertical" node_paths=PackedStringArray("target") instance=ExtResource("15_j5xn7")]
-position = Vector2(2440, 3970)
+[node name="Teleporter11" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_2sjpn")]
+position = Vector2(4140, 770)
 rotation = -1.5708
-target = NodePath("../Teleporter12_12")
+target = NodePath("../Teleporter12")
 
-[node name="Teleporter12_12" parent="Teleporters/vertical" node_paths=PackedStringArray("target") instance=ExtResource("15_j5xn7")]
-position = Vector2(2440, 770)
-rotation = 4.71275
-target = NodePath("../Teleporter11_11")
+[node name="Teleporter12" parent="." node_paths=PackedStringArray("target") instance=ExtResource("15_2sjpn")]
+position = Vector2(4140, 3490)
+rotation = 4.71205
+target = NodePath("../Teleporter11")

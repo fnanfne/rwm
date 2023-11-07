@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://do4pdql1qagj"
+path="res://.godot/imported/Zombie Army.ogg-786066552c79a8a6356476887a43ccc1.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/fnanfne/Zombie Army.ogg"
+dest_files=["res://.godot/imported/Zombie Army.ogg-786066552c79a8a6356476887a43ccc1.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

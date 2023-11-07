@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://blqx4c5fgwn4u"
+path="res://.godot/imported/RWK remix of Happy Tuba 2.ogg-687269b6522df6a68af9032e327a57a1.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/dmd/RWK remix of Happy Tuba 2.ogg"
+dest_files=["res://.godot/imported/RWK remix of Happy Tuba 2.ogg-687269b6522df6a68af9032e327a57a1.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

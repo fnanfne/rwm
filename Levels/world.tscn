@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cch1ikcufljkw"]
+[gd_scene load_steps=23 format=3 uid="uid://cch1ikcufljkw"]
 
 [ext_resource type="TileSet" uid="uid://cerknt5tmrh7t" path="res://Resources/RwK_TILES.tres" id="1_dtdvp"]
 [ext_resource type="Script" path="res://Background/BG.gd" id="2_1sh2b"]
@@ -17,11 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://bfhrsaiuxhr78" path="res://Scenes/Eyeboss/Eyeboss.tscn" id="19_xy3h1"]
 [ext_resource type="PackedScene" uid="uid://bob7grqiomo4v" path="res://Scenes/Keys/RedKey/red_key.tscn" id="20_66xal"]
 [ext_resource type="PackedScene" uid="uid://b7b2v8tvfd3s6" path="res://Scenes/music_block.tscn" id="20_rywyx"]
+[ext_resource type="AudioStream" uid="uid://dhacnc5bntgj8" path="res://Assets/Audio/Music/fnanfne/SonicKnucklesBoss.ogg" id="21_icrfe"]
 [ext_resource type="AudioStream" uid="uid://dch100chxqt8g" path="res://Assets/Audio/Sounds/music_gameplay3__STREAM.ogg" id="21_tiqrb"]
-[ext_resource type="AudioStream" uid="uid://dhacnc5bntgj8" path="res://Assets/Audio/Music/SonicKnucklesBoss.ogg" id="22_36lpi"]
 [ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="22_eur8d"]
-[ext_resource type="PackedScene" uid="uid://d0wrlwbpbvbjo" path="res://Scenes/Telematics/right_teleporter.tscn" id="22_ltyl0"]
-[ext_resource type="AudioStream" uid="uid://teu1dj620hd6" path="res://Assets/Audio/Music/MegaMan2-DrWilysCastle.ogg" id="23_5s4xq"]
+[ext_resource type="AudioStream" uid="uid://teu1dj620hd6" path="res://Assets/Audio/Music/fnanfne/MegaMan2-DrWilysCastle.ogg" id="22_foilk"]
 [ext_resource type="PackedScene" uid="uid://darp77k02b3uw" path="res://Scenes/Physics_Block.tscn" id="23_jodu0"]
 
 [node name="World" type="Node2D"]
@@ -101,15 +100,6 @@ position = Vector2(760, 416)
 
 [node name="Teleporters" type="Node2D" parent="."]
 
-[node name="Teleporter1_1" parent="Teleporters" node_paths=PackedStringArray("target") instance=ExtResource("22_ltyl0")]
-position = Vector2(305, 300)
-target = NodePath("../Teleporter2_2")
-
-[node name="Teleporter2_2" parent="Teleporters" node_paths=PackedStringArray("target") instance=ExtResource("22_ltyl0")]
-position = Vector2(1660, 300)
-rotation = 3.14159
-target = NodePath("../Teleporter1_1")
-
 [node name="physicsblock1" parent="." instance=ExtResource("23_jodu0")]
 position = Vector2(330, 80)
 
@@ -138,8 +128,8 @@ song_beep = ExtResource("21_tiqrb")
 
 [node name="Music Block2" parent="." instance=ExtResource("20_rywyx")]
 position = Vector2(1090, -40)
-song_beep = ExtResource("22_36lpi")
+song_beep = ExtResource("21_icrfe")
 
 [node name="Music Block3" parent="." instance=ExtResource("20_rywyx")]
 position = Vector2(1270, -40)
-song_beep = ExtResource("23_5s4xq")
+song_beep = ExtResource("22_foilk")

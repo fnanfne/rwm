@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://psp0iq6hj1rn"
+path="res://.godot/imported/Glitch Skill School.ogg-49cc51d7f565e80593b3a184fca5ac8f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/dmd/Glitch Skill School.ogg"
+dest_files=["res://.godot/imported/Glitch Skill School.ogg-49cc51d7f565e80593b3a184fca5ac8f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

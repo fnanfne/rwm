@@ -10,7 +10,7 @@ func _ready():
 	$MarginContainer/Label.text = text_field
 
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 

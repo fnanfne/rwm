@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2i8bx5yest8c"
+path="res://.godot/imported/Invaders Infinity.ogg-deff93b6d5e81f31e6156781821bc49d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/dmd/Invaders Infinity.ogg"
+dest_files=["res://.godot/imported/Invaders Infinity.ogg-deff93b6d5e81f31e6156781821bc49d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dfrdnlcgfayt6"
+path="res://.godot/imported/Dance party.ogg-b2afd0052b7b6452de218c0545f6e746.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/gameworm/Dance party.ogg"
+dest_files=["res://.godot/imported/Dance party.ogg-b2afd0052b7b6452de218c0545f6e746.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

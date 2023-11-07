@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://codk8w84y6bxg"
+path="res://.godot/imported/INFERNO - 3DSOM Keygen music.ogg-7d814a45233b9250fe1077cd93569e7e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/fnanfne/INFERNO - 3DSOM Keygen music.ogg"
+dest_files=["res://.godot/imported/INFERNO - 3DSOM Keygen music.ogg-7d814a45233b9250fe1077cd93569e7e.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

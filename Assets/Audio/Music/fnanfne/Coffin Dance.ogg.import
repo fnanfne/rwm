@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c17p8e40s3x3s"
+path="res://.godot/imported/Coffin Dance.ogg-2eb533f87191bb2cac39a1cdc60b0967.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/fnanfne/Coffin Dance.ogg"
+dest_files=["res://.godot/imported/Coffin Dance.ogg-2eb533f87191bb2cac39a1cdc60b0967.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cym2k00vutu3"
+path="res://.godot/imported/Temple guardian.ogg-a9c09618f84f3b0a5c6d44f83be892fe.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/gameworm/Temple guardian.ogg"
+dest_files=["res://.godot/imported/Temple guardian.ogg-a9c09618f84f3b0a5c6d44f83be892fe.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ci7rgkadjde31"
+path="res://.godot/imported/Come Again Reloaded.ogg-5a24c71164c53317b7114f6a58ec0721.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/dmd/Come Again Reloaded.ogg"
+dest_files=["res://.godot/imported/Come Again Reloaded.ogg-5a24c71164c53317b7114f6a58ec0721.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
