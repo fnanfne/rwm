@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bjp2h2gylbfjf"]
+[gd_scene load_steps=174 format=3 uid="uid://bjp2h2gylbfjf"]
 
 [ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="1_hnmaw"]
 [ext_resource type="PackedScene" uid="uid://yg103a66ifo2" path="res://Robot/new_robot.tscn" id="1_ombb7"]
@@ -16,26 +16,155 @@
 [ext_resource type="PackedScene" uid="uid://3dek8cpmjetb" path="res://Apps/DoubleJump.tscn" id="12_0bina"]
 [ext_resource type="PackedScene" uid="uid://b7b2v8tvfd3s6" path="res://Scenes/music_block.tscn" id="14_xuup8"]
 [ext_resource type="PackedScene" uid="uid://d0wrlwbpbvbjo" path="res://Scenes/Telematics/teleporter.tscn" id="15_2sjpn"]
+[ext_resource type="AudioStream" uid="uid://bfprgc3sndrxo" path="res://Assets/Audio/Music/ian05/Angry Airship.ogg" id="15_17bqo"]
+[ext_resource type="AudioStream" uid="uid://80fg3vthba2k" path="res://Assets/Audio/Music/yourmoveboyo/10 Below.ogg" id="15_40h8k"]
+[ext_resource type="AudioStream" uid="uid://unps84cq6fis" path="res://Assets/Audio/Music/syncmaster/Adventure.ogg" id="15_cnawn"]
 [ext_resource type="AudioStream" uid="uid://7t5lfjox4sm0" path="res://Assets/Audio/Music/fnanfne/Battletoads-Level-1.ogg" id="15_skj3r"]
 [ext_resource type="AudioStream" uid="uid://do4pdql1qagj" path="res://Assets/Audio/Music/fnanfne/Zombie Army.ogg" id="15_xj6gn"]
+[ext_resource type="AudioStream" uid="uid://bf68qbgahkjy7" path="res://Assets/Audio/Music/yourmoveboyo/40oz by Polyphia.ogg" id="16_2x000"]
+[ext_resource type="AudioStream" uid="uid://bgwcm5rni2gqj" path="res://Assets/Audio/Music/syncmaster/Comic Bakery by Martin Galway.ogg" id="16_bssla"]
+[ext_resource type="AudioStream" uid="uid://bckry3htovris" path="res://Assets/Audio/Music/ian05/Azerbaijan Boss Battle.ogg" id="16_eafi8"]
 [ext_resource type="AudioStream" uid="uid://cncfjtqfiqtmr" path="res://Assets/Audio/Music/fnanfne/Bobby Carrot.ogg" id="16_hkkkh"]
+[ext_resource type="AudioStream" uid="uid://qlvghac48rta" path="res://Assets/Audio/Music/syncmaster/Dr Wily's Lab.ogg" id="17_6b07o"]
 [ext_resource type="AudioStream" uid="uid://c17p8e40s3x3s" path="res://Assets/Audio/Music/fnanfne/Coffin Dance.ogg" id="17_6cj4c"]
+[ext_resource type="AudioStream" uid="uid://61ymr05ewd5y" path="res://Assets/Audio/Music/ian05/Desolate peace.ogg" id="17_d248a"]
+[ext_resource type="AudioStream" uid="uid://ct3mn6js6p7i5" path="res://Assets/Audio/Music/yourmoveboyo/A Pointless Castle.ogg" id="17_nnj5j"]
 [ext_resource type="AudioStream" uid="uid://cmenesix2ua1g" path="res://Assets/Audio/Music/fnanfne/Castlevania-II-Praying-Hands.ogg" id="17_v8t1v"]
+[ext_resource type="AudioStream" uid="uid://hs70ehjfq0ra" path="res://Assets/Audio/Music/ian05/General chuzzle.ogg" id="18_lncgb"]
+[ext_resource type="AudioStream" uid="uid://ytielsbk7exb" path="res://Assets/Audio/Music/syncmaster/Groove.ogg" id="18_rw6rb"]
 [ext_resource type="AudioStream" uid="uid://5b18xbttlj13" path="res://Assets/Audio/Music/fnanfne/Hallowed Be Thy Name (original by Iron Maiden), cover by Cradle of Filth.ogg" id="18_tr7of"]
+[ext_resource type="AudioStream" uid="uid://5fldpos3kuq8" path="res://Assets/Audio/Music/yourmoveboyo/Becoming.ogg" id="18_tsapy"]
+[ext_resource type="AudioStream" uid="uid://bbp53vfo7yrrm" path="res://Assets/Audio/Music/syncmaster/Happy Birthday.ogg" id="19_bxth4"]
 [ext_resource type="AudioStream" uid="uid://dwyp8iv3a4hpj" path="res://Assets/Audio/Music/fnanfne/Commando.ogg" id="19_f0520"]
+[ext_resource type="AudioStream" uid="uid://eqmh1rmg4f3q" path="res://Assets/Audio/Music/ian05/Hysteria.ogg" id="19_ft1ug"]
 [ext_resource type="AudioStream" uid="uid://dk2hvgru5omi7" path="res://Assets/Audio/Music/fnanfne/Hysteria by Muse.ogg" id="19_k4rhb"]
+[ext_resource type="AudioStream" uid="uid://bf45ghn7vi6xi" path="res://Assets/Audio/Music/yourmoveboyo/Dire Dire Docks - Super Mario 64 by Koji Kondo.ogg" id="19_mdql2"]
+[ext_resource type="AudioStream" uid="uid://d2ayehkmcfxey" path="res://Assets/Audio/Music/syncmaster/Hollow.ogg" id="20_4vlab"]
+[ext_resource type="AudioStream" uid="uid://fyg6lxq5admk" path="res://Assets/Audio/Music/yourmoveboyo/Exodus.ogg" id="20_f1xan"]
 [ext_resource type="AudioStream" uid="uid://c0gmq7oxgohla" path="res://Assets/Audio/Music/fnanfne/Keygen Music - CORE PowerISO.ogg" id="20_ne7av"]
 [ext_resource type="AudioStream" uid="uid://qnsijrrjp82n" path="res://Assets/Audio/Music/fnanfne/DuckTales-Title-Song.ogg" id="20_ok60l"]
+[ext_resource type="AudioStream" uid="uid://iludt8i1h6mv" path="res://Assets/Audio/Music/ian05/Machine chuzzle.ogg" id="20_yhhw7"]
 [ext_resource type="AudioStream" uid="uid://hen51xrnef8t" path="res://Assets/Audio/Music/fnanfne/DuckTales-The-Moon.ogg" id="21_64qxo"]
+[ext_resource type="AudioStream" uid="uid://dikvpbfs0ih0r" path="res://Assets/Audio/Music/yourmoveboyo/Finding the Ancients.ogg" id="21_apejk"]
+[ext_resource type="AudioStream" uid="uid://cx4gwtx0ct2rd" path="res://Assets/Audio/Music/ian05/Red Sawyer Hall activated.ogg" id="21_eeff1"]
 [ext_resource type="AudioStream" uid="uid://bi1hdsr7wqcgn" path="res://Assets/Audio/Music/fnanfne/Monty on the Run.ogg" id="21_fk4us"]
+[ext_resource type="AudioStream" uid="uid://dxg3pb65nt328" path="res://Assets/Audio/Music/syncmaster/Jingle Bells.ogg" id="21_h853q"]
+[ext_resource type="AudioStream" uid="uid://byeeqsemicvuq" path="res://Assets/Audio/Music/syncmaster/Spooky.ogg" id="22_8xjjt"]
+[ext_resource type="AudioStream" uid="uid://cmdg2r8v0wf06" path="res://Assets/Audio/Music/ian05/Red Sawyer Hall.ogg" id="22_81exg"]
+[ext_resource type="AudioStream" uid="uid://gdld2qgj2c2g" path="res://Assets/Audio/Music/yourmoveboyo/Genesis.ogg" id="22_fvpqp"]
 [ext_resource type="AudioStream" uid="uid://ifh0kf8rbcvm" path="res://Assets/Audio/Music/fnanfne/Spooky Scary Skeletons.ogg" id="22_liwwt"]
+[ext_resource type="AudioStream" uid="uid://diwn4d2p2ndrj" path="res://Assets/Audio/Music/ian05/Short Tower.ogg" id="23_3q2ke"]
 [ext_resource type="AudioStream" uid="uid://dhacnc5bntgj8" path="res://Assets/Audio/Music/fnanfne/SonicKnucklesBoss.ogg" id="23_5ueo6"]
 [ext_resource type="AudioStream" uid="uid://dqchmeilp50uj" path="res://Assets/Audio/Music/fnanfne/Hawkeye-Title-Screen.ogg" id="23_8phco"]
+[ext_resource type="AudioStream" uid="uid://btfwm7r6vu4w" path="res://Assets/Audio/Music/yourmoveboyo/Hectic Train-Hopping.ogg" id="23_cqxom"]
+[ext_resource type="AudioStream" uid="uid://dcgn8y0fv6x0h" path="res://Assets/Audio/Music/syncmaster/The Mew.ogg" id="23_iaqw5"]
+[ext_resource type="AudioStream" uid="uid://kjdoyd1yq25i" path="res://Assets/Audio/Music/ian05/Space Sawyer.ogg" id="24_r16ll"]
 [ext_resource type="AudioStream" uid="uid://teu1dj620hd6" path="res://Assets/Audio/Music/fnanfne/MegaMan2-DrWilysCastle.ogg" id="24_s8wwu"]
+[ext_resource type="AudioStream" uid="uid://blbjxbjd0nx07" path="res://Assets/Audio/Music/syncmaster/Who You Gonna Call.ogg" id="24_s20o5"]
+[ext_resource type="AudioStream" uid="uid://dghgm3vglyq82" path="res://Assets/Audio/Music/yourmoveboyo/Ice by Ichika Nito.ogg" id="24_xf352"]
+[ext_resource type="AudioStream" uid="uid://cnl2kqj3cdqmx" path="res://Assets/Audio/Music/jadeanubis/The Strange Sewers.ogg" id="25_dnhu4"]
+[ext_resource type="AudioStream" uid="uid://w55s4blaag0q" path="res://Assets/Audio/Music/yourmoveboyo/Kaizo.ogg" id="25_iiflt"]
 [ext_resource type="AudioStream" uid="uid://codk8w84y6bxg" path="res://Assets/Audio/Music/fnanfne/INFERNO - 3DSOM Keygen music.ogg" id="25_m1b3v"]
+[ext_resource type="AudioStream" uid="uid://7mf6k0hrl2y5" path="res://Assets/Audio/Music/jadeanubis/The Last Coin Opponent.ogg" id="26_e4y3x"]
+[ext_resource type="AudioStream" uid="uid://dotrn0gwp0b13" path="res://Assets/Audio/Music/yourmoveboyo/Non-Sus Setup.ogg" id="26_o46oj"]
 [ext_resource type="AudioStream" uid="uid://d4c4gi7na0b6l" path="res://Assets/Audio/Music/fnanfne/RESSURECTiON-Registry-Clean-Expert-keygen-music.ogg" id="27_880bg"]
+[ext_resource type="AudioStream" uid="uid://7my57tprl8as" path="res://Assets/Audio/Music/yourmoveboyo/Pink Soldiers (Squid Games) - Jung Jae-il.ogg" id="27_e2vle"]
+[ext_resource type="AudioStream" uid="uid://bukqghv01o34b" path="res://Assets/Audio/Music/jadeanubis/Spikeslovakia.ogg" id="27_nktu5"]
+[ext_resource type="AudioStream" uid="uid://b1e1gbskdyepy" path="res://Assets/Audio/Music/jadeanubis/Slime Lair.ogg" id="28_g0yew"]
+[ext_resource type="AudioStream" uid="uid://coboxu3o0tskl" path="res://Assets/Audio/Music/yourmoveboyo/Playing God by Polyphia.ogg" id="28_hp3t8"]
+[ext_resource type="AudioStream" uid="uid://dlo23daq2w0gj" path="res://Assets/Audio/Music/yourmoveboyo/Shred Collab by Tim Henson.ogg" id="29_e55et"]
+[ext_resource type="AudioStream" uid="uid://bhgbc78kgqqah" path="res://Assets/Audio/Music/jadeanubis/Short And Sweet.ogg" id="29_m2wye"]
+[ext_resource type="AudioStream" uid="uid://wxrhbv4ld41y" path="res://Assets/Audio/Music/yourmoveboyo/Thankbot 4000 - Based on Still Waiting by Sum41.ogg" id="30_b2ali"]
+[ext_resource type="AudioStream" uid="uid://cwruhgdsvwuis" path="res://Assets/Audio/Music/jadeanubis/Shooting.ogg" id="30_h1p2p"]
+[ext_resource type="AudioStream" uid="uid://extehrvvygex" path="res://Assets/Audio/Music/jadeanubis/Random Song.ogg" id="31_ipods"]
+[ext_resource type="AudioStream" uid="uid://yrood62gdqq2" path="res://Assets/Audio/Music/yourmoveboyo/The Garden.ogg" id="31_x6q5g"]
+[ext_resource type="AudioStream" uid="uid://dl5iogpoegq7q" path="res://Assets/Audio/Music/yourmoveboyo/This is All.ogg" id="32_ddpma"]
 [ext_resource type="AudioStream" uid="uid://bkn6e6p3yx08c" path="res://Assets/Audio/Music/fnanfne/Winamp Sony Vega Unreal Super Hero 3 keygen.ogg" id="32_dxw6y"]
+[ext_resource type="AudioStream" uid="uid://dal2q3sa5o63w" path="res://Assets/Audio/Music/jadeanubis/Metallic Madness by Naofumi Hataya.ogg" id="32_onrwn"]
+[ext_resource type="AudioStream" uid="uid://cl8sciiacx35" path="res://Assets/Audio/Music/jadeanubis/Fanfare.ogg" id="33_5xvfj"]
+[ext_resource type="AudioStream" uid="uid://chhp1fw15ligo" path="res://Assets/Audio/Music/yourmoveboyo/Unnamed Song.ogg" id="33_hnelg"]
 [ext_resource type="AudioStream" uid="uid://cpchdsy60dlc8" path="res://Assets/Audio/Music/fnanfne/Zero Wing - New Day for Me.ogg" id="33_p8lt8"]
+[ext_resource type="AudioStream" uid="uid://bdbruox01rkfu" path="res://Assets/Audio/Music/jadeanubis/Dodge ’Em All.ogg" id="34_gpqth"]
+[ext_resource type="AudioStream" uid="uid://dl034v7f5ueoe" path="res://Assets/Audio/Music/yourmoveboyo/Updog - Based on Let You Down by NF.ogg" id="34_rpg2p"]
+[ext_resource type="AudioStream" uid="uid://drmxppay6yvws" path="res://Assets/Audio/Music/paisleypickle/Greek Gods Adventure.ogg" id="35_ybgfg"]
+[ext_resource type="AudioStream" uid="uid://17mmf0e3lpbe" path="res://Assets/Audio/Music/paisleypickle/Gold Miner.ogg" id="36_7se0l"]
+[ext_resource type="AudioStream" uid="uid://b4yna46rbx2mt" path="res://Assets/Audio/Music/paisleypickle/First Contact.ogg" id="37_5x6a2"]
+[ext_resource type="AudioStream" uid="uid://bdnutrnjmqk7c" path="res://Assets/Audio/Music/paisleypickle/Escape From Alcatraz!.ogg" id="38_kl8aa"]
+[ext_resource type="AudioStream" uid="uid://e7s6ic015kud" path="res://Assets/Audio/Music/paisleypickle/Costa Rica Adventure.ogg" id="39_s205a"]
+[ext_resource type="AudioStream" uid="uid://b0pohc0w2e51e" path="res://Assets/Audio/Music/paisleypickle/Chutes and Ladders.ogg" id="40_67iwg"]
+[ext_resource type="AudioStream" uid="uid://br50eufo5trk4" path="res://Assets/Audio/Music/paisleypickle/Christmas Adventure.ogg" id="41_xq782"]
+[ext_resource type="AudioStream" uid="uid://u8xxmp0eu4pm" path="res://Assets/Audio/Music/paisleypickle/Antarctica Mazes 5.ogg" id="42_jtpd4"]
+[ext_resource type="AudioStream" uid="uid://ddjudx2neisv8" path="res://Assets/Audio/Music/paisleypickle/Ancient Kitty Scrolls.ogg" id="43_qppqh"]
+[ext_resource type="AudioStream" uid="uid://bf4kcqodklie" path="res://Assets/Audio/Music/paisleypickle/Alien Hotel.ogg" id="44_cjled"]
+[ext_resource type="AudioStream" uid="uid://7i4j1xcflemd" path="res://Assets/Audio/Music/linkandar/Through the Fire and the Flames by Dragonforce.ogg" id="45_t5yr3"]
+[ext_resource type="AudioStream" uid="uid://c6216tb0m1g8a" path="res://Assets/Audio/Music/paisleypickle/Wisdom of the Kitty.ogg" id="45_xm4kx"]
+[ext_resource type="AudioStream" uid="uid://n0oi8xrol37g" path="res://Assets/Audio/Music/linkandar/The Unforgiven.ogg" id="46_deop7"]
+[ext_resource type="AudioStream" uid="uid://c7b1gj86dcwx4" path="res://Assets/Audio/Music/paisleypickle/Which Character Are You.ogg" id="46_p5nlf"]
+[ext_resource type="AudioStream" uid="uid://dx2e7aln5ai00" path="res://Assets/Audio/Music/paisleypickle/Voyager 100.ogg" id="47_lil8b"]
+[ext_resource type="AudioStream" uid="uid://bs4ghna6c24sv" path="res://Assets/Audio/Music/linkandar/Por una Cabeza by Carlos Gardel.ogg" id="47_t36ug"]
+[ext_resource type="AudioStream" uid="uid://cxkvycefxyxkt" path="res://Assets/Audio/Music/paisleypickle/Training session 8 Auto.ogg" id="48_7auu6"]
+[ext_resource type="AudioStream" uid="uid://dwkh8ollri83w" path="res://Assets/Audio/Music/linkandar/Never Gonna Give You Up.ogg" id="48_gsl54"]
+[ext_resource type="AudioStream" uid="uid://dpo0asqbt8gwf" path="res://Assets/Audio/Music/linkandar/James Bond Theme 2.ogg" id="49_681ci"]
+[ext_resource type="AudioStream" uid="uid://4v6anjdrbp46" path="res://Assets/Audio/Music/paisleypickle/Space Oddity.ogg" id="49_ndgo6"]
+[ext_resource type="AudioStream" uid="uid://cquv6ghg6jcog" path="res://Assets/Audio/Music/paisleypickle/Safe Cracker.ogg" id="50_1x01b"]
+[ext_resource type="AudioStream" uid="uid://c80mr6l5t5eoa" path="res://Assets/Audio/Music/linkandar/James Bond Theme.ogg" id="50_enlxv"]
+[ext_resource type="AudioStream" uid="uid://dfb57qpahy4gm" path="res://Assets/Audio/Music/linkandar/Hyrule Castle - Zelda.ogg" id="51_cv2ke"]
+[ext_resource type="AudioStream" uid="uid://bph3fcfc32pkx" path="res://Assets/Audio/Music/paisleypickle/Que' Onda Guero.ogg" id="51_lmojy"]
+[ext_resource type="AudioStream" uid="uid://bfwq4gb2e27hv" path="res://Assets/Audio/Music/linkandar/Halloween Themed Song.ogg" id="52_m68dt"]
+[ext_resource type="AudioStream" uid="uid://0t84hqippqvn" path="res://Assets/Audio/Music/paisleypickle/Planet Evolution.ogg" id="52_ng1b8"]
+[ext_resource type="AudioStream" uid="uid://ttobgcgcm7y4" path="res://Assets/Audio/Music/paisleypickle/Phage Rage.ogg" id="53_0l4qu"]
+[ext_resource type="AudioStream" uid="uid://dgg11w3j01tfi" path="res://Assets/Audio/Music/linkandar/Final Boss.ogg" id="53_3a5os"]
+[ext_resource type="AudioStream" uid="uid://cjbsfir1oso4h" path="res://Assets/Audio/Music/linkandar/Clubbed to Death.ogg" id="54_4wodd"]
+[ext_resource type="AudioStream" uid="uid://g4evw82al4q3" path="res://Assets/Audio/Music/paisleypickle/Kitty Skyland Adventure.ogg" id="54_gpwdl"]
+[ext_resource type="AudioStream" uid="uid://b4uayfiix02ik" path="res://Assets/Audio/Music/gameworm/Kaizo.ogg" id="55_q1p51"]
+[ext_resource type="AudioStream" uid="uid://cbfxi551i07me" path="res://Assets/Audio/Music/gameworm/Great outdoors.ogg" id="55_s44ds"]
+[ext_resource type="AudioStream" uid="uid://dmw0vxfobqpwd" path="res://Assets/Audio/Music/thetom/Marcha funebre by Chopin.ogg" id="55_yl60y"]
+[ext_resource type="AudioStream" uid="uid://b0e44bsfgf56h" path="res://Assets/Audio/Music/gameworm/Into chaos.ogg" id="56_3l6fi"]
+[ext_resource type="AudioStream" uid="uid://bpb6aclsemoh0" path="res://Assets/Audio/Music/gameworm/evil.ogg" id="56_6itre"]
+[ext_resource type="AudioStream" uid="uid://dc2774rhu3g0o" path="res://Assets/Audio/Music/thetom/Nightcall by Kavinsky.ogg" id="56_8ddvw"]
+[ext_resource type="AudioStream" uid="uid://dmxnwtq7lyee3" path="res://Assets/Audio/Music/gameworm/Inferno.ogg" id="57_mscjf"]
+[ext_resource type="AudioStream" uid="uid://dla0sbihn815q" path="res://Assets/Audio/Music/thetom/Opening from cyanide and happiness.ogg" id="57_ntw21"]
+[ext_resource type="AudioStream" uid="uid://dfrdnlcgfayt6" path="res://Assets/Audio/Music/gameworm/Dance party.ogg" id="57_y852b"]
+[ext_resource type="AudioStream" uid="uid://dbx0mtkgh8bhi" path="res://Assets/Audio/Music/gameworm/Cave masters.ogg" id="58_mm4kl"]
+[ext_resource type="AudioStream" uid="uid://d4gw211eeojm5" path="res://Assets/Audio/Music/thetom/Russian Winter.ogg" id="58_yca6d"]
+[ext_resource type="AudioStream" uid="uid://dotl73torv7e4" path="res://Assets/Audio/Music/gameworm/Biolabs.ogg" id="59_ntf2g"]
+[ext_resource type="AudioStream" uid="uid://dxxf6c2kfabst" path="res://Assets/Audio/Music/thetom/Sanaes Theme by Touhou.ogg" id="59_ugrmm"]
+[ext_resource type="AudioStream" uid="uid://c85r7gfieh4x5" path="res://Assets/Audio/Music/thetom/Sarabande by J. F. Haendel.ogg" id="60_c3y6y"]
+[ext_resource type="AudioStream" uid="uid://cadwq2ld4hf6f" path="res://Assets/Audio/Music/gameworm/Beneath the waves.ogg" id="60_dqu1w"]
+[ext_resource type="AudioStream" uid="uid://djli8f1eyn66m" path="res://Assets/Audio/Music/gameworm/Awakening.ogg" id="61_hf23x"]
+[ext_resource type="AudioStream" uid="uid://fw3vow60ff73" path="res://Assets/Audio/Music/thetom/Sinzō wo Sasageyo by Linked Horizon.ogg" id="61_yyvhy"]
+[ext_resource type="AudioStream" uid="uid://b6d5wfuqojcyh" path="res://Assets/Audio/Music/thetom/Temple Palace Theme in Zelda.ogg" id="62_3mrkd"]
+[ext_resource type="AudioStream" uid="uid://b2msmcb2pva04" path="res://Assets/Audio/Music/thetom/United We Stand, Divided We Fall by Two Step From Hell.ogg" id="63_ft8yp"]
+[ext_resource type="AudioStream" uid="uid://bir1ichr32wtw" path="res://Assets/Audio/Music/thetom/Vanar Battlemap theme, from the dead game Duelyst.ogg" id="64_s4dca"]
+[ext_resource type="AudioStream" uid="uid://1v7r4o1uov2" path="res://Assets/Audio/Music/gameworm/Watcher.ogg" id="65_es17p"]
+[ext_resource type="AudioStream" uid="uid://dlw4kdv72p703" path="res://Assets/Audio/Music/gameworm/trolled.ogg" id="66_m8a51"]
+[ext_resource type="AudioStream" uid="uid://cym2k00vutu3" path="res://Assets/Audio/Music/gameworm/Temple guardian.ogg" id="67_xxk0g"]
+[ext_resource type="AudioStream" uid="uid://f0jqysao8mto" path="res://Assets/Audio/Music/gameworm/Technomare.ogg" id="68_srhbe"]
+[ext_resource type="AudioStream" uid="uid://b667w2c2xw7dx" path="res://Assets/Audio/Music/gameworm/Spelunking.ogg" id="69_7yxd0"]
+[ext_resource type="AudioStream" uid="uid://bcipaspitiuiy" path="res://Assets/Audio/Music/gameworm/Scrap.ogg" id="70_012ph"]
+[ext_resource type="AudioStream" uid="uid://364fy278typy" path="res://Assets/Audio/Music/gameworm/Revival.ogg" id="71_xebnn"]
+[ext_resource type="AudioStream" uid="uid://0cdxeb2tdo4i" path="res://Assets/Audio/Music/gameworm/No pills allowed.ogg" id="72_kvusb"]
+[ext_resource type="AudioStream" uid="uid://bir8vs0apwt0g" path="res://Assets/Audio/Music/gameworm/Legendary boss.ogg" id="73_ufntg"]
+[ext_resource type="AudioStream" uid="uid://fmbf4x65fvf0" path="res://Assets/Audio/Music/gameworm/King of the abyss.ogg" id="74_vdmwd"]
+[ext_resource type="AudioStream" uid="uid://4fnsxopif748" path="res://Assets/Audio/Music/dmd/Red Herring.ogg" id="105_b8hab"]
+[ext_resource type="AudioStream" uid="uid://dx7aa6ndfpe04" path="res://Assets/Audio/Music/dmd/Offspring to the Rescue.ogg" id="106_54ftv"]
+[ext_resource type="AudioStream" uid="uid://b76d8p3qbiwj1" path="res://Assets/Audio/Music/dmd/Monster Beat.ogg" id="107_bj3oh"]
+[ext_resource type="AudioStream" uid="uid://d1ltm4xf7k1up" path="res://Assets/Audio/Music/dmd/Leverage.ogg" id="108_llo7i"]
+[ext_resource type="AudioStream" uid="uid://2i8bx5yest8c" path="res://Assets/Audio/Music/dmd/Invaders Infinity.ogg" id="109_icu6m"]
+[ext_resource type="AudioStream" uid="uid://ms68cnh6s23f" path="res://Assets/Audio/Music/dmd/Highway Chase.ogg" id="110_gvcaf"]
+[ext_resource type="AudioStream" uid="uid://psp0iq6hj1rn" path="res://Assets/Audio/Music/dmd/Glitch Skill School.ogg" id="111_xdkrc"]
+[ext_resource type="AudioStream" uid="uid://c2xt7i0mtvia4" path="res://Assets/Audio/Music/dmd/Death Trap.ogg" id="112_f6gob"]
+[ext_resource type="AudioStream" uid="uid://ci7rgkadjde31" path="res://Assets/Audio/Music/dmd/Come Again Reloaded.ogg" id="113_r3vgc"]
+[ext_resource type="AudioStream" uid="uid://boqqoh0gwqrwe" path="res://Assets/Audio/Music/dmd/A Guided Tour.ogg" id="114_e6sav"]
+[ext_resource type="AudioStream" uid="uid://l0c4hsuij3cq" path="res://Assets/Audio/Music/dmd/Up! Up! And Up!.ogg" id="115_whymv"]
+[ext_resource type="AudioStream" uid="uid://bx2tm6t1smas7" path="res://Assets/Audio/Music/dmd/Tetris (Music by Lui J).ogg" id="116_ggk6l"]
+[ext_resource type="AudioStream" uid="uid://15x1r3urspsq" path="res://Assets/Audio/Music/dmd/Telesport.ogg" id="117_0a74q"]
+[ext_resource type="AudioStream" uid="uid://co4ov62v8jyv" path="res://Assets/Audio/Music/dmd/Tale of the Lost Coins 3.ogg" id="118_0prxa"]
+[ext_resource type="AudioStream" uid="uid://by4eqkopap7nb" path="res://Assets/Audio/Music/dmd/Tale of the Lost Coins 2.ogg" id="119_ds1xb"]
+[ext_resource type="AudioStream" uid="uid://pmpk2o8lhn08" path="res://Assets/Audio/Music/dmd/Tale of the Lost Coins 1.ogg" id="120_g6p81"]
+[ext_resource type="AudioStream" uid="uid://blqx4c5fgwn4u" path="res://Assets/Audio/Music/dmd/RWK remix of Happy Tuba 2.ogg" id="121_kr6vq"]
+[ext_resource type="AudioStream" uid="uid://d2yjffgp8ier2" path="res://Assets/Audio/Music/dmd/RWK remix of Happy Tuba.ogg" id="122_flpe5"]
+[ext_resource type="AudioStream" uid="uid://be7prvt0omkdm" path="res://Assets/Audio/Music/dmd/Robot in Miracle World.ogg" id="123_dvcvo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rqj1i"]
 shader = ExtResource("8_u0h0d")
@@ -693,253 +822,333 @@ position = Vector2(3240, 3440)
 
 [node name="Music Block41" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
 position = Vector2(1640, 3040)
+song_beep = ExtResource("15_cnawn")
 
 [node name="Music Block42" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
 position = Vector2(1480, 3040)
+song_beep = ExtResource("16_bssla")
 
 [node name="Music Block43" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
 position = Vector2(1320, 3040)
+song_beep = ExtResource("17_6b07o")
 
 [node name="Music Block44" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
 position = Vector2(1160, 3040)
+song_beep = ExtResource("18_rw6rb")
 
 [node name="Music Block45" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
 position = Vector2(1000, 3040)
+song_beep = ExtResource("19_bxth4")
 
 [node name="Music Block46" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
 position = Vector2(840, 3040)
+song_beep = ExtResource("20_4vlab")
 
 [node name="Music Block47" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
 position = Vector2(680, 3040)
+song_beep = ExtResource("21_h853q")
 
 [node name="Music Block48" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
 position = Vector2(520, 3040)
+song_beep = ExtResource("22_8xjjt")
 
 [node name="Music Block49" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
 position = Vector2(360, 3040)
+song_beep = ExtResource("23_iaqw5")
 
 [node name="Music Block50" parent="Music/syncmaster" instance=ExtResource("14_xuup8")]
 position = Vector2(200, 3040)
+song_beep = ExtResource("24_s20o5")
 
 [node name="jadeanubis" type="Node2D" parent="Music"]
 
 [node name="Music Block51" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
 position = Vector2(4680, 3040)
+song_beep = ExtResource("25_dnhu4")
 
 [node name="Music Block52" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
 position = Vector2(4520, 3040)
+song_beep = ExtResource("26_e4y3x")
 
 [node name="Music Block53" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
 position = Vector2(4360, 3040)
+song_beep = ExtResource("27_nktu5")
 
 [node name="Music Block54" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
 position = Vector2(4200, 3040)
+song_beep = ExtResource("28_g0yew")
 
 [node name="Music Block55" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
 position = Vector2(4040, 3040)
+song_beep = ExtResource("29_m2wye")
 
 [node name="Music Block56" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
 position = Vector2(3880, 3040)
+song_beep = ExtResource("30_h1p2p")
 
 [node name="Music Block57" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
 position = Vector2(3720, 3040)
+song_beep = ExtResource("31_ipods")
 
 [node name="Music Block58" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
 position = Vector2(3560, 3040)
+song_beep = ExtResource("32_onrwn")
 
 [node name="Music Block59" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
 position = Vector2(3400, 3040)
+song_beep = ExtResource("33_5xvfj")
 
 [node name="Music Block60" parent="Music/jadeanubis" instance=ExtResource("14_xuup8")]
 position = Vector2(3240, 3040)
+song_beep = ExtResource("34_gpqth")
 
 [node name="ian05" type="Node2D" parent="Music"]
 
 [node name="Music Block61" parent="Music/ian05" instance=ExtResource("14_xuup8")]
 position = Vector2(1640, 2640)
+song_beep = ExtResource("15_17bqo")
 
 [node name="Music Block62" parent="Music/ian05" instance=ExtResource("14_xuup8")]
 position = Vector2(1480, 2640)
+song_beep = ExtResource("16_eafi8")
 
 [node name="Music Block63" parent="Music/ian05" instance=ExtResource("14_xuup8")]
 position = Vector2(1320, 2640)
+song_beep = ExtResource("17_d248a")
 
 [node name="Music Block64" parent="Music/ian05" instance=ExtResource("14_xuup8")]
 position = Vector2(1160, 2640)
+song_beep = ExtResource("18_lncgb")
 
 [node name="Music Block65" parent="Music/ian05" instance=ExtResource("14_xuup8")]
 position = Vector2(1000, 2640)
+song_beep = ExtResource("19_ft1ug")
 
 [node name="Music Block66" parent="Music/ian05" instance=ExtResource("14_xuup8")]
 position = Vector2(840, 2640)
+song_beep = ExtResource("20_yhhw7")
 
 [node name="Music Block67" parent="Music/ian05" instance=ExtResource("14_xuup8")]
 position = Vector2(680, 2640)
+song_beep = ExtResource("21_eeff1")
 
 [node name="Music Block68" parent="Music/ian05" instance=ExtResource("14_xuup8")]
 position = Vector2(520, 2640)
+song_beep = ExtResource("22_81exg")
 
 [node name="Music Block69" parent="Music/ian05" instance=ExtResource("14_xuup8")]
 position = Vector2(360, 2640)
+song_beep = ExtResource("23_3q2ke")
 
 [node name="Music Block70" parent="Music/ian05" instance=ExtResource("14_xuup8")]
 position = Vector2(200, 2640)
+song_beep = ExtResource("24_r16ll")
 
 [node name="linkandar" type="Node2D" parent="Music"]
 
 [node name="Music Block71" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
 position = Vector2(4680, 2640)
+song_beep = ExtResource("45_t5yr3")
 
 [node name="Music Block72" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
 position = Vector2(4520, 2640)
+song_beep = ExtResource("46_deop7")
 
 [node name="Music Block73" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
 position = Vector2(4360, 2640)
+song_beep = ExtResource("47_t36ug")
 
 [node name="Music Block74" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
 position = Vector2(4200, 2640)
+song_beep = ExtResource("48_gsl54")
 
 [node name="Music Block75" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
 position = Vector2(4040, 2640)
+song_beep = ExtResource("49_681ci")
 
 [node name="Music Block76" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
 position = Vector2(3880, 2640)
+song_beep = ExtResource("50_enlxv")
 
 [node name="Music Block77" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
 position = Vector2(3720, 2640)
+song_beep = ExtResource("51_cv2ke")
 
 [node name="Music Block78" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
 position = Vector2(3560, 2640)
+song_beep = ExtResource("52_m68dt")
 
 [node name="Music Block79" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
 position = Vector2(3400, 2640)
+song_beep = ExtResource("53_3a5os")
 
 [node name="Music Block80" parent="Music/linkandar" instance=ExtResource("14_xuup8")]
 position = Vector2(3240, 2640)
+song_beep = ExtResource("54_4wodd")
 
 [node name="yourmoveboyo" type="Node2D" parent="Music"]
 
 [node name="Music Block81" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(1640, 2240)
+song_beep = ExtResource("15_40h8k")
 
 [node name="Music Block82" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(1480, 2240)
+song_beep = ExtResource("16_2x000")
 
 [node name="Music Block83" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(1320, 2240)
+song_beep = ExtResource("17_nnj5j")
 
 [node name="Music Block84" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(1160, 2240)
+song_beep = ExtResource("18_tsapy")
 
 [node name="Music Block85" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(1000, 2240)
+song_beep = ExtResource("19_mdql2")
 
 [node name="Music Block86" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(840, 2240)
+song_beep = ExtResource("20_f1xan")
 
 [node name="Music Block87" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(680, 2240)
+song_beep = ExtResource("21_apejk")
 
 [node name="Music Block88" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(520, 2240)
+song_beep = ExtResource("22_fvpqp")
 
 [node name="Music Block89" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(360, 2240)
+song_beep = ExtResource("23_cqxom")
 
 [node name="Music Block90" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(200, 2240)
+song_beep = ExtResource("24_xf352")
 
 [node name="Music Block91" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(40, 2240)
+song_beep = ExtResource("25_iiflt")
 
 [node name="Music Block92" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(-120, 2240)
+song_beep = ExtResource("26_o46oj")
 
 [node name="Music Block93" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(-280, 2240)
+song_beep = ExtResource("27_e2vle")
 
 [node name="Music Block94" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(-440, 2240)
+song_beep = ExtResource("28_hp3t8")
 
 [node name="Music Block95" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(-600, 2240)
+song_beep = ExtResource("29_e55et")
 
 [node name="Music Block96" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(-760, 2240)
+song_beep = ExtResource("30_b2ali")
 
 [node name="Music Block97" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(-920, 2240)
+song_beep = ExtResource("31_x6q5g")
 
 [node name="Music Block98" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(-1080, 2240)
+song_beep = ExtResource("32_ddpma")
 
 [node name="Music Block99" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(-1240, 2240)
+song_beep = ExtResource("33_hnelg")
 
 [node name="Music Block100" parent="Music/yourmoveboyo" instance=ExtResource("14_xuup8")]
 position = Vector2(-1400, 2240)
+song_beep = ExtResource("34_rpg2p")
 
 [node name="paisleypickle" type="Node2D" parent="Music"]
 
 [node name="Music Block91" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(4680, 2240)
+song_beep = ExtResource("35_ybgfg")
 
 [node name="Music Block92" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(4520, 2240)
+song_beep = ExtResource("36_7se0l")
 
 [node name="Music Block93" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(4360, 2240)
+song_beep = ExtResource("37_5x6a2")
 
 [node name="Music Block94" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(4200, 2240)
+song_beep = ExtResource("38_kl8aa")
 
 [node name="Music Block95" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(4040, 2240)
+song_beep = ExtResource("39_s205a")
 
 [node name="Music Block96" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(3880, 2240)
+song_beep = ExtResource("40_67iwg")
 
 [node name="Music Block97" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(3720, 2240)
+song_beep = ExtResource("41_xq782")
 
 [node name="Music Block98" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(3560, 2240)
+song_beep = ExtResource("42_jtpd4")
 
 [node name="Music Block99" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(3400, 2240)
+song_beep = ExtResource("43_qppqh")
 
 [node name="Music Block100" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(3240, 2240)
+song_beep = ExtResource("44_cjled")
 
 [node name="Music Block101" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(6280, 2240)
+song_beep = ExtResource("45_xm4kx")
 
 [node name="Music Block102" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(6120, 2240)
+song_beep = ExtResource("46_p5nlf")
 
 [node name="Music Block103" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(5960, 2240)
+song_beep = ExtResource("47_lil8b")
 
 [node name="Music Block104" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(5800, 2240)
+song_beep = ExtResource("48_7auu6")
 
 [node name="Music Block105" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(5640, 2240)
+song_beep = ExtResource("49_ndgo6")
 
 [node name="Music Block106" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(5480, 2240)
+song_beep = ExtResource("50_1x01b")
 
 [node name="Music Block107" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(5320, 2240)
+song_beep = ExtResource("51_lmojy")
 
 [node name="Music Block108" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(5160, 2240)
+song_beep = ExtResource("52_ng1b8")
 
 [node name="Music Block109" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(5000, 2240)
+song_beep = ExtResource("53_0l4qu")
 
 [node name="Music Block110" parent="Music/paisleypickle" instance=ExtResource("14_xuup8")]
 position = Vector2(4840, 2240)
+song_beep = ExtResource("54_gpwdl")
 
 [node name="fnanfne" type="Node2D" parent="Music"]
 
@@ -1027,157 +1236,203 @@ song_beep = ExtResource("15_xj6gn")
 
 [node name="Music Block111" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(4680, 1840)
+song_beep = ExtResource("55_q1p51")
 
 [node name="Music Block112" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(4520, 1840)
+song_beep = ExtResource("56_3l6fi")
 
 [node name="Music Block113" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(4360, 1840)
+song_beep = ExtResource("57_mscjf")
 
 [node name="Music Block114" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(4200, 1840)
+song_beep = ExtResource("55_s44ds")
 
 [node name="Music Block115" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(4040, 1840)
+song_beep = ExtResource("56_6itre")
 
 [node name="Music Block116" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(3880, 1840)
+song_beep = ExtResource("57_y852b")
 
 [node name="Music Block117" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(3720, 1840)
+song_beep = ExtResource("58_mm4kl")
 
 [node name="Music Block118" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(3560, 1840)
+song_beep = ExtResource("59_ntf2g")
 
 [node name="Music Block119" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(3400, 1840)
+song_beep = ExtResource("60_dqu1w")
 
 [node name="Music Block120" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(3240, 1840)
+song_beep = ExtResource("61_hf23x")
 
 [node name="Music Block121" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(6280, 1840)
+song_beep = ExtResource("65_es17p")
 
 [node name="Music Block122" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(6120, 1840)
+song_beep = ExtResource("66_m8a51")
 
 [node name="Music Block123" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(5960, 1840)
+song_beep = ExtResource("67_xxk0g")
 
 [node name="Music Block124" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(5800, 1840)
+song_beep = ExtResource("68_srhbe")
 
 [node name="Music Block125" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(5640, 1840)
+song_beep = ExtResource("69_7yxd0")
 
 [node name="Music Block126" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(5480, 1840)
+song_beep = ExtResource("70_012ph")
 
 [node name="Music Block127" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(5320, 1840)
+song_beep = ExtResource("71_xebnn")
 
 [node name="Music Block128" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(5160, 1840)
+song_beep = ExtResource("72_kvusb")
 
 [node name="Music Block129" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(5000, 1840)
+song_beep = ExtResource("73_ufntg")
 
 [node name="Music Block130" parent="Music/gameworm" instance=ExtResource("14_xuup8")]
 position = Vector2(4840, 1840)
+song_beep = ExtResource("74_vdmwd")
 
 [node name="thetom" type="Node2D" parent="Music"]
 
 [node name="Music Block121" parent="Music/thetom" instance=ExtResource("14_xuup8")]
 position = Vector2(1640, 1440)
+song_beep = ExtResource("55_yl60y")
 
 [node name="Music Block122" parent="Music/thetom" instance=ExtResource("14_xuup8")]
 position = Vector2(1480, 1440)
+song_beep = ExtResource("56_8ddvw")
 
 [node name="Music Block123" parent="Music/thetom" instance=ExtResource("14_xuup8")]
 position = Vector2(1320, 1440)
+song_beep = ExtResource("57_ntw21")
 
 [node name="Music Block124" parent="Music/thetom" instance=ExtResource("14_xuup8")]
 position = Vector2(1160, 1440)
+song_beep = ExtResource("58_yca6d")
 
 [node name="Music Block125" parent="Music/thetom" instance=ExtResource("14_xuup8")]
 position = Vector2(1000, 1440)
+song_beep = ExtResource("59_ugrmm")
 
 [node name="Music Block126" parent="Music/thetom" instance=ExtResource("14_xuup8")]
 position = Vector2(840, 1440)
+song_beep = ExtResource("60_c3y6y")
 
 [node name="Music Block127" parent="Music/thetom" instance=ExtResource("14_xuup8")]
 position = Vector2(680, 1440)
+song_beep = ExtResource("61_yyvhy")
 
 [node name="Music Block128" parent="Music/thetom" instance=ExtResource("14_xuup8")]
 position = Vector2(520, 1440)
+song_beep = ExtResource("62_3mrkd")
 
 [node name="Music Block129" parent="Music/thetom" instance=ExtResource("14_xuup8")]
 position = Vector2(360, 1440)
+song_beep = ExtResource("63_ft8yp")
 
 [node name="Music Block130" parent="Music/thetom" instance=ExtResource("14_xuup8")]
 position = Vector2(200, 1440)
+song_beep = ExtResource("64_s4dca")
 
 [node name="dmd" type="Node2D" parent="Music"]
 
 [node name="Music Block131" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(4680, 1440)
+song_beep = ExtResource("105_b8hab")
 
 [node name="Music Block132" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(4520, 1440)
+song_beep = ExtResource("106_54ftv")
 
 [node name="Music Block133" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(4360, 1440)
+song_beep = ExtResource("107_bj3oh")
 
 [node name="Music Block134" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(4200, 1440)
+song_beep = ExtResource("108_llo7i")
 
 [node name="Music Block135" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(4040, 1440)
+song_beep = ExtResource("109_icu6m")
 
 [node name="Music Block136" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(3880, 1440)
+song_beep = ExtResource("110_gvcaf")
 
 [node name="Music Block137" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(3720, 1440)
+song_beep = ExtResource("111_xdkrc")
 
 [node name="Music Block138" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(3560, 1440)
+song_beep = ExtResource("112_f6gob")
 
 [node name="Music Block139" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(3400, 1440)
+song_beep = ExtResource("113_r3vgc")
 
 [node name="Music Block140" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(3240, 1440)
-
-[node name="Music Block141" parent="Music/dmd" instance=ExtResource("14_xuup8")]
-position = Vector2(6280, 1440)
+song_beep = ExtResource("114_e6sav")
 
 [node name="Music Block142" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(6120, 1440)
+song_beep = ExtResource("115_whymv")
 
 [node name="Music Block143" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(5960, 1440)
+song_beep = ExtResource("116_ggk6l")
 
 [node name="Music Block144" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(5800, 1440)
+song_beep = ExtResource("117_0a74q")
 
 [node name="Music Block145" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(5640, 1440)
+song_beep = ExtResource("118_0prxa")
 
 [node name="Music Block146" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(5480, 1440)
+song_beep = ExtResource("119_ds1xb")
 
 [node name="Music Block147" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(5320, 1440)
+song_beep = ExtResource("120_g6p81")
 
 [node name="Music Block148" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(5160, 1440)
+song_beep = ExtResource("121_kr6vq")
 
 [node name="Music Block149" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(5000, 1440)
+song_beep = ExtResource("122_flpe5")
 
 [node name="Music Block150" parent="Music/dmd" instance=ExtResource("14_xuup8")]
 position = Vector2(4840, 1440)
+song_beep = ExtResource("123_dvcvo")
 
 [node name="aero" type="Node2D" parent="Music"]
 
@@ -1488,33 +1743,43 @@ text_field = "<-- beeps by thetom"
 
 [node name="Radio35" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 1500)
+text_field = "Marcha funebre by Chopin"
 
 [node name="Radio36" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 1500)
+text_field = "Nightcall by Kavinsky"
 
 [node name="Radio37" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 1500)
+text_field = "Opening from cyanide and happiness"
 
 [node name="Radio38" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 1500)
+text_field = "Russian Winter"
 
 [node name="Radio39" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 1500)
+text_field = "Sanaes Theme by Touhou"
 
 [node name="Radio40" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 1500)
+text_field = "Sarabande by J. F. Haendel"
 
 [node name="Radio41" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 1500)
+text_field = "Sinzō wo Sasageyo by Linked Horizon"
 
 [node name="Radio42" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 1500)
+text_field = "Temple Palace Theme in Zelda"
 
 [node name="Radio43" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 1500)
+text_field = "United We Stand, Divided We Fall by Two Step From Hell"
 
 [node name="Radio44" parent="Radios/thetom" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 1500)
+text_field = "Vanar Battlemap theme, from the dead game Duelyst"
 
 [node name="fnanfne" type="Node2D" parent="Radios"]
 
@@ -1614,63 +1879,83 @@ text_field = "<-- beeps by yourmoveboyo"
 
 [node name="Radio57" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 2300)
+text_field = "10 Below"
 
 [node name="Radio58" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 2300)
+text_field = "40oz by Polyphia"
 
 [node name="Radio59" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 2300)
+text_field = "A Pointless Castle"
 
 [node name="Radio60" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 2300)
+text_field = "Becoming"
 
 [node name="Radio61" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 2300)
+text_field = "Dire Dire Docks - Super Mario 64 by Koji Kondo"
 
 [node name="Radio62" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 2300)
+text_field = "Exodus"
 
 [node name="Radio63" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 2300)
+text_field = "Finding the Ancients"
 
 [node name="Radio64" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 2300)
+text_field = "Genesis"
 
 [node name="Radio65" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 2300)
+text_field = "Hectic Train-Hopping"
 
 [node name="Radio66" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 2300)
+text_field = "Ice by Ichika Nito"
 
 [node name="Radio67" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(1740, 2300)
+text_field = "Kaizo"
 
 [node name="Radio68" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(1580, 2300)
+text_field = "Non-Sus Setup"
 
 [node name="Radio69" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(1420, 2300)
+text_field = "Pink Soldiers (Squid Games) by Jung Jae-il"
 
 [node name="Radio70" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(1260, 2300)
+text_field = "Playing God by Polyphia"
 
 [node name="Radio71" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(1100, 2300)
+text_field = "Shred Collab by Tim Henson"
 
 [node name="Radio72" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(940, 2300)
+text_field = "Thankbot 4000 - Based on Still Waiting by Sum41"
 
 [node name="Radio73" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(780, 2300)
+text_field = "The Garden"
 
 [node name="Radio74" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(620, 2300)
+text_field = "This is All"
 
 [node name="Radio75" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(460, 2300)
+text_field = "Unnamed Song"
 
 [node name="Radio76" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(300, 2300)
+text_field = "Updog - Based on Let You Down by NF"
 
 [node name="Radio77" parent="Radios/yourmoveboyo" instance=ExtResource("10_r7ewx")]
 position = Vector2(220, 2300)
@@ -1684,33 +1969,43 @@ text_field = "<-- beeps by ian05"
 
 [node name="Radio68" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 2700)
+text_field = "Angry Airship"
 
 [node name="Radio69" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 2700)
+text_field = "Azerbaijan Boss Battle"
 
 [node name="Radio70" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 2700)
+text_field = "Desolate peace"
 
 [node name="Radio71" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 2700)
+text_field = "General chuzzle"
 
 [node name="Radio72" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 2700)
+text_field = "Hysteria"
 
 [node name="Radio73" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 2700)
+text_field = "Machine chuzzle"
 
 [node name="Radio74" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 2700)
+text_field = "Red Sawyer Hall activated"
 
 [node name="Radio75" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 2700)
+text_field = "Red Sawyer Hall"
 
 [node name="Radio76" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 2700)
+text_field = "Short Tower"
 
 [node name="Radio77" parent="Radios/ian05" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 2700)
+text_field = "Space Sawyer"
 
 [node name="syncmaster" type="Node2D" parent="Radios"]
 
@@ -1720,33 +2015,43 @@ text_field = "<-- beeps by syncmaster"
 
 [node name="Radio79" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(3340, 3100)
+text_field = "Adventure"
 
 [node name="Radio80" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(3180, 3100)
+text_field = "Comic Bakery by Martin Galway"
 
 [node name="Radio81" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(3020, 3100)
+text_field = "Dr Wily's Lab"
 
 [node name="Radio82" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(2860, 3100)
+text_field = "Groove"
 
 [node name="Radio83" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(2700, 3100)
+text_field = "Happy Birthday"
 
 [node name="Radio84" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(2540, 3100)
+text_field = "Hollow"
 
 [node name="Radio85" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(2380, 3100)
+text_field = "Jingle Bells"
 
 [node name="Radio86" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(2220, 3100)
+text_field = "Spooky"
 
 [node name="Radio87" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(2060, 3100)
+text_field = "The Mew"
 
 [node name="Radio88" parent="Radios/syncmaster" instance=ExtResource("10_r7ewx")]
 position = Vector2(1900, 3100)
+text_field = "Who You Gonna Call"
 
 [node name="various_users_1" type="Node2D" parent="Radios"]
 
@@ -1894,33 +2199,43 @@ text_field = "beeps by various users -->"
 
 [node name="Radio133" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 3100)
+text_field = "The Strange Sewers"
 
 [node name="Radio134" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 3100)
+text_field = "The Last Coin Opponent"
 
 [node name="Radio135" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 3100)
+text_field = "Spikeslovakia"
 
 [node name="Radio136" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 3100)
+text_field = "Slime Lair"
 
 [node name="Radio137" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 3100)
+text_field = "Short and Sweet"
 
 [node name="Radio138" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 3100)
+text_field = "Shooting"
 
 [node name="Radio139" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 3100)
+text_field = "Random Song"
 
 [node name="Radio140" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 3100)
+text_field = "Metallic Madness by Naofumi Hataya"
 
 [node name="Radio141" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 3100)
+text_field = "Fanfare"
 
 [node name="Radio142" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 3100)
+text_field = "Dodge 'Em All"
 
 [node name="Radio143" parent="Radios/jadeanubis" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 3140)
@@ -1930,33 +2245,43 @@ text_field = "beeps by jadeanubis -->"
 
 [node name="Radio144" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 2700)
+text_field = "Through the Fire and the Flames by Dragonforce"
 
 [node name="Radio145" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 2700)
+text_field = "The Unforgiven"
 
 [node name="Radio146" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 2700)
+text_field = "Por una Cabeza by Carlos Gardel"
 
 [node name="Radio147" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 2700)
+text_field = "Never Gonna Give You Up"
 
 [node name="Radio148" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 2700)
+text_field = "James Bond Theme 2"
 
 [node name="Radio149" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 2700)
+text_field = "James Bond Theme"
 
 [node name="Radio150" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 2700)
+text_field = "Hyrule Castle - Zelda"
 
 [node name="Radio151" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 2700)
+text_field = "Halloween Themed Song"
 
 [node name="Radio152" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 2700)
+text_field = "Final Boss"
 
 [node name="Radio153" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 2700)
+text_field = "Clubbed to Death"
 
 [node name="Radio154" parent="Radios/linkandar" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 2740)
@@ -1966,36 +2291,47 @@ text_field = "beeps by linkandar -->"
 
 [node name="Radio155" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 2300)
+text_field = "Greek Gods Adventure"
 
 [node name="Radio156" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 2300)
+text_field = "Gold Miner"
 
 [node name="Radio157" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 2300)
+text_field = "First Contact"
 
 [node name="Radio158" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 2300)
+text_field = "Escape From Alcatraz!"
 
 [node name="Radio159" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 2300)
+text_field = "Costa Rica Adventure"
 
 [node name="Radio160" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 2300)
+text_field = "Chutes and Ladders"
 
 [node name="Radio161" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 2300)
+text_field = "Christmas Adventure"
 
 [node name="Radio162" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 2300)
+text_field = "Antarctica Mazes 5"
 
 [node name="Radio163" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 2300)
+text_field = "Ancient Kitty Scrolls"
 
 [node name="Radio164" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 2300)
+text_field = "Alien Hotel"
 
 [node name="Radio166" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(7940, 2300)
+text_field = "Wisdom of the Kitty"
 
 [node name="Radio176" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(8020, 2300)
@@ -2003,30 +2339,39 @@ text_field = "Use this teleporter to go back -->"
 
 [node name="Radio167" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(7780, 2300)
+text_field = "Which Character Are You?"
 
 [node name="Radio168" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(7620, 2300)
+text_field = "Voyager 100"
 
 [node name="Radio169" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(7460, 2300)
+text_field = "Training session 8 Auto"
 
 [node name="Radio170" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(7300, 2300)
+text_field = "Space Oddity"
 
 [node name="Radio171" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(7140, 2300)
+text_field = "Safe Cracker"
 
 [node name="Radio172" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6980, 2300)
+text_field = "Que' Onda Guero"
 
 [node name="Radio173" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6820, 2300)
+text_field = "Planet Evolution"
 
 [node name="Radio174" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6660, 2300)
+text_field = "Phage Rage"
 
 [node name="Radio175" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(6500, 2300)
+text_field = "Kitty Skyland Adventure"
 
 [node name="Radio165" parent="Radios/paisleypickle" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 2340)
@@ -2126,36 +2471,43 @@ text_field = "beeps by gameworm -->"
 
 [node name="Radio177" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6340, 1500)
+text_field = "Red Herring"
 
 [node name="Radio178" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6180, 1500)
+text_field = "Offspring to the Rescue"
 
 [node name="Radio179" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6020, 1500)
+text_field = "Monster Beat"
 
 [node name="Radio180" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(5860, 1500)
+text_field = "Leverage"
 
 [node name="Radio181" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(5700, 1500)
+text_field = "Invaders Infinity"
 
 [node name="Radio182" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(5540, 1500)
+text_field = "Highway Chase"
 
 [node name="Radio183" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(5380, 1500)
+text_field = "Glitch Skill School"
 
 [node name="Radio184" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(5220, 1500)
+text_field = "Death Trap"
 
 [node name="Radio185" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(5060, 1500)
+text_field = "Come Again Reloaded"
 
 [node name="Radio186" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(4900, 1500)
-
-[node name="Radio188" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
-position = Vector2(7940, 1500)
+text_field = "A Guided Tour"
 
 [node name="Radio198" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(8020, 1500)
@@ -2163,30 +2515,39 @@ text_field = "Use this teleporter to go back -->"
 
 [node name="Radio189" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(7780, 1500)
+text_field = "Up! Up! And Up!"
 
 [node name="Radio190" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(7620, 1500)
+text_field = "Tetris (Music by Lui J)"
 
 [node name="Radio191" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(7460, 1500)
+text_field = "Telesport"
 
 [node name="Radio192" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(7300, 1500)
+text_field = "Tale of the Lost Coins 3"
 
 [node name="Radio193" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(7140, 1500)
+text_field = "Tale of the Lost Coins 2"
 
 [node name="Radio194" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6980, 1500)
+text_field = "Tale of the Lost Coins 1"
 
 [node name="Radio195" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6820, 1500)
+text_field = "RWK remix of Happy Tuba 2"
 
 [node name="Radio196" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6660, 1500)
+text_field = "RWK remix of Happy Tuba"
 
 [node name="Radio197" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(6500, 1500)
+text_field = "Robot in Miracle World"
 
 [node name="Radio187" parent="Radios/dmd" instance=ExtResource("10_r7ewx")]
 position = Vector2(4780, 1540)

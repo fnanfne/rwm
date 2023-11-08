@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bph3fcfc32pkx"
+path="res://.godot/imported/Que' Onda Guero.ogg-4c78aa1294b92b3c379dc36f0b12e33c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/paisleypickle/Que' Onda Guero.ogg"
+dest_files=["res://.godot/imported/Que' Onda Guero.ogg-4c78aa1294b92b3c379dc36f0b12e33c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

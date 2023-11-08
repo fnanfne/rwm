@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c6216tb0m1g8a"
+path="res://.godot/imported/Wisdom of the Kitty.ogg-b10f7d0aceec523b0dae149d1003ff7f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/paisleypickle/Wisdom of the Kitty.ogg"
+dest_files=["res://.godot/imported/Wisdom of the Kitty.ogg-b10f7d0aceec523b0dae149d1003ff7f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

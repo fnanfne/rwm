@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cquv6ghg6jcog"
+path="res://.godot/imported/Safe Cracker.ogg-fc156b3930b7b02d79e68c65cfce0d58.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/paisleypickle/Safe Cracker.ogg"
+dest_files=["res://.godot/imported/Safe Cracker.ogg-fc156b3930b7b02d79e68c65cfce0d58.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dikvpbfs0ih0r"
+path="res://.godot/imported/Finding the Ancients.ogg-66014c7f6eb6a90e55278f3d3091b9a4.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/yourmoveboyo/Finding the Ancients.ogg"
+dest_files=["res://.godot/imported/Finding the Ancients.ogg-66014c7f6eb6a90e55278f3d3091b9a4.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

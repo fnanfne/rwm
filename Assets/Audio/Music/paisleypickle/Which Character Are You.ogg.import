@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c7b1gj86dcwx4"
+path="res://.godot/imported/Which Character Are You.ogg-7d22b4c1b55eedd1df8ae5c837b15779.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/paisleypickle/Which Character Are You.ogg"
+dest_files=["res://.godot/imported/Which Character Are You.ogg-7d22b4c1b55eedd1df8ae5c837b15779.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

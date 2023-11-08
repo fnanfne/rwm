@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bfwq4gb2e27hv"
+path="res://.godot/imported/Halloween Themed Song.ogg-ff756bd178049231dc5c2e1859e34777.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/linkandar/Halloween Themed Song.ogg"
+dest_files=["res://.godot/imported/Halloween Themed Song.ogg-ff756bd178049231dc5c2e1859e34777.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

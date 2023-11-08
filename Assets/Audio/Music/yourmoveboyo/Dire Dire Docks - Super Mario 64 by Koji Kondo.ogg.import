@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bf45ghn7vi6xi"
+path="res://.godot/imported/Dire Dire Docks - Super Mario 64 by Koji Kondo.ogg-4415b86f11c8f538cfae517627c6feaf.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/yourmoveboyo/Dire Dire Docks - Super Mario 64 by Koji Kondo.ogg"
+dest_files=["res://.godot/imported/Dire Dire Docks - Super Mario 64 by Koji Kondo.ogg-4415b86f11c8f538cfae517627c6feaf.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

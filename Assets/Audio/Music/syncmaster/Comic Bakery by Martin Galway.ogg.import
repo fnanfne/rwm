@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bgwcm5rni2gqj"
+path="res://.godot/imported/Comic Bakery by Martin Galway.ogg-09b152b5d0514493c5545b754c64017f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/syncmaster/Comic Bakery by Martin Galway.ogg"
+dest_files=["res://.godot/imported/Comic Bakery by Martin Galway.ogg-09b152b5d0514493c5545b754c64017f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

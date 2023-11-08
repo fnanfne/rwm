@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://0t84hqippqvn"
+path="res://.godot/imported/Planet Evolution.ogg-de9c9c01ea3d08bf0345e9a1b66ac6b8.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/paisleypickle/Planet Evolution.ogg"
+dest_files=["res://.godot/imported/Planet Evolution.ogg-de9c9c01ea3d08bf0345e9a1b66ac6b8.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

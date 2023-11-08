@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dl034v7f5ueoe"
+path="res://.godot/imported/Updog - Based on Let You Down by NF.ogg-f213eb6740b2141ebae383d894c8c496.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/yourmoveboyo/Updog - Based on Let You Down by NF.ogg"
+dest_files=["res://.godot/imported/Updog - Based on Let You Down by NF.ogg-f213eb6740b2141ebae383d894c8c496.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

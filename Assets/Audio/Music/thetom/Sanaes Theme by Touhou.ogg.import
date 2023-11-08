@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dxxf6c2kfabst"
+path="res://.godot/imported/Sanaes Theme by Touhou.ogg-c31b62df10d452e8287683c0793c084c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/thetom/Sanaes Theme by Touhou.ogg"
+dest_files=["res://.godot/imported/Sanaes Theme by Touhou.ogg-c31b62df10d452e8287683c0793c084c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

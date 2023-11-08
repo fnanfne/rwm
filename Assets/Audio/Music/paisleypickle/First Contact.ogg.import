@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b4yna46rbx2mt"
+path="res://.godot/imported/First Contact.ogg-0152ae164ec16a061d0c7cbf000f12dd.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/paisleypickle/First Contact.ogg"
+dest_files=["res://.godot/imported/First Contact.ogg-0152ae164ec16a061d0c7cbf000f12dd.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

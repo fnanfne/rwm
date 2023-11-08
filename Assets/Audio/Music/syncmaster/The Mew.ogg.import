@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dcgn8y0fv6x0h"
+path="res://.godot/imported/The Mew.ogg-7b6b5cadf67ef8ff159d642b249fec2f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/syncmaster/The Mew.ogg"
+dest_files=["res://.godot/imported/The Mew.ogg-7b6b5cadf67ef8ff159d642b249fec2f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

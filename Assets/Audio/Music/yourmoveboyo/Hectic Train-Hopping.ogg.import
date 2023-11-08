@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://btfwm7r6vu4w"
+path="res://.godot/imported/Hectic Train-Hopping.ogg-6bba7294a902bb9c18633fe0763d898c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/yourmoveboyo/Hectic Train-Hopping.ogg"
+dest_files=["res://.godot/imported/Hectic Train-Hopping.ogg-6bba7294a902bb9c18633fe0763d898c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dlo23daq2w0gj"
+path="res://.godot/imported/Shred Collab by Tim Henson.ogg-6f6c4d0c68f92bac37fc8d5c77e27eee.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/yourmoveboyo/Shred Collab by Tim Henson.ogg"
+dest_files=["res://.godot/imported/Shred Collab by Tim Henson.ogg-6f6c4d0c68f92bac37fc8d5c77e27eee.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

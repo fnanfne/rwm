@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://br50eufo5trk4"
+path="res://.godot/imported/Christmas Adventure.ogg-381b83a7f3a1254216f254b1a813d9ce.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/paisleypickle/Christmas Adventure.ogg"
+dest_files=["res://.godot/imported/Christmas Adventure.ogg-381b83a7f3a1254216f254b1a813d9ce.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

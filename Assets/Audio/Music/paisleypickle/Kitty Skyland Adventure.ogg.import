@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://g4evw82al4q3"
+path="res://.godot/imported/Kitty Skyland Adventure.ogg-b6be6be0f17fc49ef7d6455468616c7c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/paisleypickle/Kitty Skyland Adventure.ogg"
+dest_files=["res://.godot/imported/Kitty Skyland Adventure.ogg-b6be6be0f17fc49ef7d6455468616c7c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

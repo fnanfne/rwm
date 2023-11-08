@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cnl2kqj3cdqmx"
+path="res://.godot/imported/The Strange Sewers.ogg-c92c2336f87a1ac2ab636551b700fd21.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/jadeanubis/The Strange Sewers.ogg"
+dest_files=["res://.godot/imported/The Strange Sewers.ogg-c92c2336f87a1ac2ab636551b700fd21.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

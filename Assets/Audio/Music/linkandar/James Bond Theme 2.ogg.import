@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dpo0asqbt8gwf"
+path="res://.godot/imported/James Bond Theme 2.ogg-8c11bebc1fe006fc33fbff635abf8679.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/linkandar/James Bond Theme 2.ogg"
+dest_files=["res://.godot/imported/James Bond Theme 2.ogg-8c11bebc1fe006fc33fbff635abf8679.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

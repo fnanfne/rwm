@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bdbruox01rkfu"
+path="res://.godot/imported/Dodge ’Em All.ogg-374c94b20c9ec015d3f7521c9d760688.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/jadeanubis/Dodge ’Em All.ogg"
+dest_files=["res://.godot/imported/Dodge ’Em All.ogg-374c94b20c9ec015d3f7521c9d760688.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

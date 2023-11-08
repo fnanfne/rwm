@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ct3mn6js6p7i5"
+path="res://.godot/imported/A Pointless Castle.ogg-7fef2bd4448853dba18173db920b5d4c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/yourmoveboyo/A Pointless Castle.ogg"
+dest_files=["res://.godot/imported/A Pointless Castle.ogg-7fef2bd4448853dba18173db920b5d4c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

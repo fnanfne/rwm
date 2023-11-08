@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b0pohc0w2e51e"
+path="res://.godot/imported/Chutes and Ladders.ogg-e661fe3b1206f3f3a47e5bb8df4d88ee.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/paisleypickle/Chutes and Ladders.ogg"
+dest_files=["res://.godot/imported/Chutes and Ladders.ogg-e661fe3b1206f3f3a47e5bb8df4d88ee.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

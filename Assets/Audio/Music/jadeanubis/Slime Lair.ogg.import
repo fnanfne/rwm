@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b1e1gbskdyepy"
+path="res://.godot/imported/Slime Lair.ogg-5b0558c67613a8dceee9a3315ed89578.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/jadeanubis/Slime Lair.ogg"
+dest_files=["res://.godot/imported/Slime Lair.ogg-5b0558c67613a8dceee9a3315ed89578.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

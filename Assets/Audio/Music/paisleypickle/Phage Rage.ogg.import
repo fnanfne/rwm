@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ttobgcgcm7y4"
+path="res://.godot/imported/Phage Rage.ogg-15811672d9430fc994fcfa2e057f0d41.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/paisleypickle/Phage Rage.ogg"
+dest_files=["res://.godot/imported/Phage Rage.ogg-15811672d9430fc994fcfa2e057f0d41.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

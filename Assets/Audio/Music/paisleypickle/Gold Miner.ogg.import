@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://17mmf0e3lpbe"
+path="res://.godot/imported/Gold Miner.ogg-e45cda449daf6bea7d14e8966b136933.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/paisleypickle/Gold Miner.ogg"
+dest_files=["res://.godot/imported/Gold Miner.ogg-e45cda449daf6bea7d14e8966b136933.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

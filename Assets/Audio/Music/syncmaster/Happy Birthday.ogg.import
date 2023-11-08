@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bbp53vfo7yrrm"
+path="res://.godot/imported/Happy Birthday.ogg-6973c303925bf3fc4d00adeb3ab8814a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/syncmaster/Happy Birthday.ogg"
+dest_files=["res://.godot/imported/Happy Birthday.ogg-6973c303925bf3fc4d00adeb3ab8814a.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cjbsfir1oso4h"
+path="res://.godot/imported/Clubbed to Death.ogg-f77c96e98911697c38b49fc71426ef77.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/linkandar/Clubbed to Death.ogg"
+dest_files=["res://.godot/imported/Clubbed to Death.ogg-f77c96e98911697c38b49fc71426ef77.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

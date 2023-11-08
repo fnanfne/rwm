@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://wxrhbv4ld41y"
+path="res://.godot/imported/Thankbot 4000 - Based on Still Waiting by Sum41.ogg-ceae1fce67f96de196199b1961f82446.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/yourmoveboyo/Thankbot 4000 - Based on Still Waiting by Sum41.ogg"
+dest_files=["res://.godot/imported/Thankbot 4000 - Based on Still Waiting by Sum41.ogg-ceae1fce67f96de196199b1961f82446.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bfprgc3sndrxo"
+path="res://.godot/imported/Angry Airship.ogg-e560c8dc12b16b4672ffc143ff9fb5df.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/ian05/Angry Airship.ogg"
+dest_files=["res://.godot/imported/Angry Airship.ogg-e560c8dc12b16b4672ffc143ff9fb5df.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

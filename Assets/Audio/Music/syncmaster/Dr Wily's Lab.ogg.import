@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://qlvghac48rta"
+path="res://.godot/imported/Dr Wily's Lab.ogg-041facb462fe245cccfc72391ecd088f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/syncmaster/Dr Wily's Lab.ogg"
+dest_files=["res://.godot/imported/Dr Wily's Lab.ogg-041facb462fe245cccfc72391ecd088f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://coboxu3o0tskl"
+path="res://.godot/imported/Playing God by Polyphia.ogg-c032b5ab780530f8e88aae55c1a8ee5f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/yourmoveboyo/Playing God by Polyphia.ogg"
+dest_files=["res://.godot/imported/Playing God by Polyphia.ogg-c032b5ab780530f8e88aae55c1a8ee5f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

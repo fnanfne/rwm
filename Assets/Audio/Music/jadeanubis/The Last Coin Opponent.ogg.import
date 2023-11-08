@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://7mf6k0hrl2y5"
+path="res://.godot/imported/The Last Coin Opponent.ogg-24c642bad070b02e8a073eadb55caf4e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/jadeanubis/The Last Coin Opponent.ogg"
+dest_files=["res://.godot/imported/The Last Coin Opponent.ogg-24c642bad070b02e8a073eadb55caf4e.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
