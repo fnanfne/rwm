@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://sny3kr7kcfy4"]
+
+[ext_resource type="AudioStream" uid="uid://d3grf3xmhcdm4" path="res://Assets/Audio/Sounds/computerdoor.ogg" id="1_2kfq0"]
+[ext_resource type="Script" path="res://Scenes/Doors/Haxxor/haxxor_door_2x2.gd" id="1_72l10"]
+[ext_resource type="Texture2D" uid="uid://b4hkaqaushw81" path="res://Assets/paint__TILESET/IMG_001.png" id="2_fc8qr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mn3ur"]
+size = Vector2(80, 40)
+
+[node name="HaxxorDoor_2x2" type="StaticBody2D"]
+rotation = 1.5708
+script = ExtResource("1_72l10")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fc8qr")
+region_enabled = true
+region_rect = Rect2(40, 120, 80, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mn3ur")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="DoorOpen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_2kfq0")
+volume_db = -10.0
+bus = &"Sounds"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

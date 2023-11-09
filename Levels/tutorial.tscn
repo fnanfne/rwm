@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci0tb70cubxkx"]
+
+[ext_resource type="TileSet" uid="uid://cerknt5tmrh7t" path="res://Resources/RwK_TILES.tres" id="1_e2msn"]
+[ext_resource type="PackedScene" uid="uid://yg103a66ifo2" path="res://Robot/new_robot.tscn" id="3_47kxg"]
+[ext_resource type="PackedScene" uid="uid://cj3pq1aree5vn" path="res://Apps/Jump.tscn" id="4_pktml"]
+[ext_resource type="PackedScene" uid="uid://3dek8cpmjetb" path="res://Apps/DoubleJump.tscn" id="5_7ew6m"]
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_e2msn")
+format = 2
+layer_0/tile_data = PackedInt32Array(1048582, 655365, 8, 1048583, 720901, 8, 1114119, 720901, 9, 1048584, 786437, 8, 1114120, 786437, 9, 1048585, 851973, 8, 1114121, 851973, 9, 1048586, 917509, 8, 1048594, 655365, 8, 1048595, 720901, 8, 1114131, 720901, 9, 1048596, 786437, 8, 1114132, 786437, 9, 1048597, 851973, 8, 1114133, 851973, 9, 1048598, 917509, 8, 917507, 1966085, 5, 983043, 1966085, 7, 917508, 2031621, 5, 983044, 1638405, 5, 917509, 2490373, 6, 1048579, 1966085, 9, 1048580, 2031621, 9, 1048581, 2228229, 9, 983045, 2228229, 7, 917504, 1966085, 5, 983040, 1966085, 7, 1048576, 1966085, 9, 917505, 2031621, 5, 983041, 1638405, 5, 1048577, 2031621, 9, 917506, 2490373, 6, 983042, 2228229, 7, 1048578, 2228229, 9, 720897, 1966085, 5, 786433, 1966085, 7, 851969, 1966085, 9, 720898, 2031621, 5, 786434, 1638405, 5, 851970, 2031621, 9, 720899, 2490373, 6, 786435, 2228229, 7, 851971, 2228229, 9, 655360, 2359301, 2, 589824, 2359301, 2, 524288, 2359301, 2, 458752, 2359301, 2, 393216, 2359301, 2, 327680, 2359301, 2, 262144, 2359301, 2, 720896, 2359301, 2, 786432, 2359301, 2, 851968, 2359301, 2, 917518, 2359301, 2, 196608, 2359301, 2, 131072, 2359301, 2, 65536, 2359301, 2, 0, 2359301, 2)
+
+[node name="NewRobot" parent="." instance=ExtResource("3_47kxg")]
+position = Vector2(270, 610)
+
+[node name="Jump" parent="." instance=ExtResource("4_pktml")]
+position = Vector2(820, 620)
+
+[node name="DoubleJump" parent="." instance=ExtResource("5_7ew6m")]
+position = Vector2(180, 540)

@@ -25,7 +25,7 @@ size = Vector2(60, 20)
 offsets = PackedFloat32Array(0, 0.381974, 0.776824)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_yvw8t"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_effab"]
 gradient = SubResource("Gradient_hbr7v")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ha7gn"]
@@ -40,7 +40,7 @@ orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 scale_min = 0.3
 scale_max = 0.8
-color_ramp = SubResource("GradientTexture1D_yvw8t")
+color_ramp = SubResource("GradientTexture1D_effab")
 
 [node name="Acid" type="StaticBody2D"]
 script = ExtResource("1_l3r52")

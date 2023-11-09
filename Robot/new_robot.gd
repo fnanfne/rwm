@@ -89,6 +89,7 @@ func _physics_process(delta):
 	#print(anim_fall.visible)
 	#print(state)
 	#print(velocity.y)
+	#print(Game.HAXXOR)
 
 	## Coyote Jump
 	#var was_on_floor = is_on_floor()
@@ -560,10 +561,11 @@ func taking_damage():
 
 
 func respawn():
+	get_node("Area2D/CollisionShape2D").set_deferred("disabled", true)
+	get_node("Area2D2/CollisionShape2D").set_deferred("disabled", true)
 	Game.camera.position_smoothing_enabled = true
 	Game.camera.position_smoothing_speed = 5
 	Game.camera.shake(0.5, 10)
-	get_node("Area2D/CollisionShape2D").set_deferred("disabled", true)
 	$".".hide()
 	var effect_instance : CPUParticles2D = robot_death_effect.instantiate()
 	effect_instance.position = position
@@ -617,6 +619,7 @@ func _on_respawn_timer_timeout():
 	#set_physics_process(true)
 	$".".show()
 	get_node("Area2D/CollisionShape2D").set_deferred("disabled", false)
+	get_node("Area2D2/CollisionShape2D").set_deferred("disabled", false)
 	modulate = Color(Color.WHITE)
 
 

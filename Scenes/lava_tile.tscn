@@ -1,0 +1,117 @@
+[gd_scene load_steps=13 format=3 uid="uid://bo4de7uohdnv0"]
+
+[ext_resource type="AudioStream" uid="uid://dvou5sgnx7i43" path="res://Assets/Audio/Sounds/bubble1.ogg" id="1_2stfq"]
+[ext_resource type="Script" path="res://Scenes/lava_tile.gd" id="1_cw2mx"]
+[ext_resource type="AudioStream" uid="uid://gthh8g60hls6" path="res://Assets/Audio/Sounds/bubble2.ogg" id="2_tlyp1"]
+[ext_resource type="Texture2D" uid="uid://dhvv7niuilbh6" path="res://Assets/Pics/AcidLavaBubbles/0.png" id="3_68scc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkans"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6vp1"]
+size = Vector2(21, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkngh"]
+size = Vector2(21, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sns63"]
+size = Vector2(21, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yv6pn"]
+size = Vector2(21, 21)
+
+[sub_resource type="Gradient" id="Gradient_t0pcu"]
+offsets = PackedFloat32Array(0, 0.381974, 0.776824)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yvw8t"]
+gradient = SubResource("Gradient_t0pcu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_05q5n"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 180.0
+gravity = Vector3(0, -70, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.3
+scale_max = 0.8
+color_ramp = SubResource("GradientTexture1D_yvw8t")
+
+[node name="Lava Tile" type="StaticBody2D"]
+script = ExtResource("1_cw2mx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jkans")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4097
+collision_mask = 2
+
+[node name="TopLeft" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-10.5, -10.5)
+shape = SubResource("RectangleShape2D_i6vp1")
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 4097
+collision_mask = 2
+
+[node name="BottomLeft" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-10.5, 10.5)
+shape = SubResource("RectangleShape2D_rkngh")
+
+[node name="Area2D3" type="Area2D" parent="."]
+collision_layer = 4097
+collision_mask = 2
+
+[node name="TopRight" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(10.5, -10.5)
+shape = SubResource("RectangleShape2D_sns63")
+
+[node name="Area2D4" type="Area2D" parent="."]
+collision_layer = 4097
+collision_mask = 2
+
+[node name="BottomRight" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(10.5, 10.5)
+shape = SubResource("RectangleShape2D_yv6pn")
+
+[node name="Bubbling1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_2stfq")
+volume_db = -10.0
+
+[node name="Bubbling2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tlyp1")
+volume_db = -10.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 15)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_05q5n")
+texture = ExtResource("3_68scc")
+speed_scale = 0.8
+randomness = 1.0
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+position = Vector2(15, 15)
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_05q5n")
+texture = ExtResource("3_68scc")
+speed_scale = 0.8
+randomness = 1.0
+
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="."]
+position = Vector2(-15, 15)
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_05q5n")
+texture = ExtResource("3_68scc")
+speed_scale = 0.8
+randomness = 1.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_3_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="." method="_on_area_2d_4_body_entered"]
