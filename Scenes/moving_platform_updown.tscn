@@ -1,12 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv0rwrtygmveu"]
+[gd_scene load_steps=9 format=3 uid="uid://cv0rwrtygmveu"]
 
+[ext_resource type="Script" path="res://Scenes/moving_platform_updown.gd" id="1_4jw0t"]
 [ext_resource type="Texture2D" uid="uid://dwua7o4erlndu" path="res://Assets/paint__TILESET/IMG_003.png" id="1_c0xco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijg6w"]
 size = Vector2(40, 40)
 
+[sub_resource type="Animation" id="Animation_gmygc"]
+resource_name = "move_loop_2"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -5), Vector2(300, -5), Vector2(0, -5)]
+}
+
 [sub_resource type="Animation" id="Animation_ojyxm"]
-resource_name = "move_loop"
+resource_name = "move_loop_1"
 length = 8.0
 loop_mode = 1
 tracks/0/type = "value"
@@ -22,27 +40,40 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -200), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_8x627"]
+resource_name = "move_loop_3"
+
+[sub_resource type="Animation" id="Animation_thhcd"]
+resource_name = "move_loop_4"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cg1b6"]
 _data = {
-"move_loop": SubResource("Animation_ojyxm")
+"move_loop_1": SubResource("Animation_ojyxm"),
+"move_loop_2": SubResource("Animation_gmygc"),
+"move_loop_3": SubResource("Animation_8x627"),
+"move_loop_4": SubResource("Animation_thhcd")
 }
 
 [node name="MovingPlatformUPDOWN" type="Node2D"]
+script = ExtResource("1_4jw0t")
 
 [node name="Platform" type="AnimatableBody2D" parent="."]
+position = Vector2(106.667, -5)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform"]
+position = Vector2(0, 5)
 texture = ExtResource("1_c0xco")
 region_enabled = true
 region_rect = Rect2(1240, 120, 40, 40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_ijg6w")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
 root_node = NodePath("../..")
-autoplay = "move_loop"
+autoplay = "move_loop_1"
 libraries = {
 "": SubResource("AnimationLibrary_cg1b6")
 }
