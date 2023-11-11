@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://djfu5dknmiv3"]
+[gd_scene load_steps=52 format=3 uid="uid://djfu5dknmiv3"]
 
 [ext_resource type="Script" path="res://Levels/disarmed.gd" id="1_5kivv"]
 [ext_resource type="Texture2D" uid="uid://b4hkaqaushw81" path="res://Assets/paint__TILESET/IMG_001.png" id="1_m7pmc"]
@@ -19,7 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://b2eimcy00uq7d" path="res://Eyeguy/Eyeguy.tscn" id="10_btdcg"]
 [ext_resource type="PackedScene" uid="uid://bm3g0a78ol6i" path="res://Redguy/Redguy.tscn" id="10_jn81m"]
 [ext_resource type="PackedScene" uid="uid://yjplcdclq4bf" path="res://Scenes/Doors/GreenDoor/green_door_bottom.tscn" id="10_v5ter"]
+[ext_resource type="PackedScene" uid="uid://bo4de7uohdnv0" path="res://Scenes/lava_tile.tscn" id="12_lvgda"]
+[ext_resource type="PackedScene" uid="uid://b4x8vfqagy3ue" path="res://Scenes/acid_tile.tscn" id="13_td2xh"]
+[ext_resource type="Script" path="res://Background/BG.gd" id="14_n44f7"]
 [ext_resource type="PackedScene" uid="uid://dm6wvis73ta13" path="res://Scenes/Doors/RedDoor/red_door_top.tscn" id="15_b7aa2"]
+[ext_resource type="Texture2D" uid="uid://bmsjdtjji8375" path="res://Assets/Background/0.png" id="15_ia55s"]
 [ext_resource type="PackedScene" uid="uid://vk53keegc14f" path="res://Scenes/brick.tscn" id="15_ju0t1"]
 [ext_resource type="PackedScene" uid="uid://cveutdjpy1dwj" path="res://Scenes/Doors/RedDoor/red_door_bottom.tscn" id="16_sxea1"]
 [ext_resource type="PackedScene" uid="uid://bs4bu72yee28t" path="res://Scenes/Doors/BlueDoor/blue_door_top.tscn" id="18_3xdl6"]
@@ -4909,8 +4913,3269 @@ layer_0/tile_data = PackedInt32Array(2883653, 1769472, 9, 2883654, 1769472, 9, 2
 
 [node name="HUD" parent="Level" instance=ExtResource("2_0ao1w")]
 
+[node name="LavaAcid" type="Node2D" parent="Level"]
+
+[node name="Lava Tile" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1259, 1780)
+
+[node name="Lava Tile2" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1299, 1780)
+
+[node name="Lava Tile3" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1339, 1780)
+
+[node name="Lava Tile4" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1379, 1780)
+
+[node name="Lava Tile5" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1419, 1780)
+
+[node name="Lava Tile6" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1459, 1780)
+
+[node name="Lava Tile7" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1499, 1780)
+
+[node name="Lava Tile8" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1539, 1780)
+
+[node name="Lava Tile9" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1579, 1780)
+
+[node name="Lava Tile10" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1619, 1780)
+
+[node name="Lava Tile11" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1659, 1780)
+
+[node name="Lava Tile12" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1699, 1780)
+
+[node name="Lava Tile13" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2459, 2220)
+
+[node name="Lava Tile14" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2499, 2220)
+
+[node name="Lava Tile15" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2539, 2220)
+
+[node name="Lava Tile16" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2579, 2220)
+
+[node name="Lava Tile17" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2619, 2220)
+
+[node name="Lava Tile18" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2659, 2220)
+
+[node name="Lava Tile19" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2699, 2220)
+
+[node name="Lava Tile20" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2739, 2220)
+
+[node name="Lava Tile21" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2979, 2220)
+
+[node name="Lava Tile22" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3019, 2220)
+
+[node name="Lava Tile23" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3059, 2220)
+
+[node name="Lava Tile24" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3099, 2220)
+
+[node name="Lava Tile111" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3139, 2220)
+
+[node name="Lava Tile112" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3179, 2220)
+
+[node name="Lava Tile113" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3219, 2220)
+
+[node name="Lava Tile114" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3259, 2220)
+
+[node name="Lava Tile115" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3259, 2180)
+
+[node name="Lava Tile116" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3259, 2140)
+
+[node name="Lava Tile117" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2459, 2140)
+
+[node name="Lava Tile118" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2459, 2180)
+
+[node name="Lava Tile25" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1379, 2660)
+
+[node name="Lava Tile26" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1419, 2660)
+
+[node name="Lava Tile27" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1459, 2660)
+
+[node name="Lava Tile28" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1499, 2660)
+
+[node name="Lava Tile29" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1539, 2660)
+
+[node name="Lava Tile30" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1579, 2660)
+
+[node name="Lava Tile31" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1619, 2660)
+
+[node name="Lava Tile32" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1659, 2660)
+
+[node name="Lava Tile33" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1699, 2660)
+
+[node name="Lava Tile34" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1739, 2660)
+
+[node name="Lava Tile35" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1779, 2660)
+
+[node name="Lava Tile119" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3099, 3500)
+
+[node name="Lava Tile120" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3139, 3500)
+
+[node name="Lava Tile121" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3179, 3500)
+
+[node name="Lava Tile122" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3219, 3500)
+
+[node name="Lava Tile123" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3259, 3500)
+
+[node name="Lava Tile124" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3299, 3500)
+
+[node name="Lava Tile125" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3339, 3500)
+
+[node name="Lava Tile126" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3379, 3500)
+
+[node name="Lava Tile127" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3419, 3500)
+
+[node name="Lava Tile128" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3459, 3500)
+
+[node name="Lava Tile129" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3499, 3500)
+
+[node name="Lava Tile130" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3099, 3540)
+
+[node name="Lava Tile131" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3139, 3540)
+
+[node name="Lava Tile132" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3179, 3540)
+
+[node name="Lava Tile133" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3219, 3540)
+
+[node name="Lava Tile134" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3259, 3540)
+
+[node name="Lava Tile135" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3299, 3540)
+
+[node name="Lava Tile136" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3339, 3540)
+
+[node name="Lava Tile137" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3379, 3540)
+
+[node name="Lava Tile138" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3419, 3540)
+
+[node name="Lava Tile139" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3459, 3540)
+
+[node name="Lava Tile140" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3499, 3540)
+
+[node name="Lava Tile141" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3099, 3580)
+
+[node name="Lava Tile142" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3139, 3580)
+
+[node name="Lava Tile143" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3179, 3580)
+
+[node name="Lava Tile144" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3219, 3580)
+
+[node name="Lava Tile145" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3259, 3580)
+
+[node name="Lava Tile146" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3299, 3580)
+
+[node name="Lava Tile147" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3339, 3580)
+
+[node name="Lava Tile148" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3379, 3580)
+
+[node name="Lava Tile149" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3419, 3580)
+
+[node name="Lava Tile150" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3459, 3580)
+
+[node name="Lava Tile151" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3499, 3580)
+
+[node name="Lava Tile152" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3099, 3620)
+
+[node name="Lava Tile153" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3139, 3620)
+
+[node name="Lava Tile154" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3179, 3620)
+
+[node name="Lava Tile155" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3219, 3620)
+
+[node name="Lava Tile156" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3259, 3620)
+
+[node name="Lava Tile157" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3299, 3620)
+
+[node name="Lava Tile158" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3339, 3620)
+
+[node name="Lava Tile159" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3379, 3620)
+
+[node name="Lava Tile160" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3419, 3620)
+
+[node name="Lava Tile161" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3459, 3620)
+
+[node name="Lava Tile162" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3499, 3620)
+
+[node name="Lava Tile163" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3099, 3660)
+
+[node name="Lava Tile164" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3139, 3660)
+
+[node name="Lava Tile165" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3179, 3660)
+
+[node name="Lava Tile166" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3219, 3660)
+
+[node name="Lava Tile167" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3259, 3660)
+
+[node name="Lava Tile168" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3299, 3660)
+
+[node name="Lava Tile169" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3339, 3660)
+
+[node name="Lava Tile170" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3379, 3660)
+
+[node name="Lava Tile171" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3419, 3660)
+
+[node name="Lava Tile172" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3459, 3660)
+
+[node name="Lava Tile173" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3499, 3660)
+
+[node name="Lava Tile174" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3099, 3700)
+
+[node name="Lava Tile175" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3139, 3700)
+
+[node name="Lava Tile176" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3179, 3700)
+
+[node name="Lava Tile177" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3219, 3700)
+
+[node name="Lava Tile178" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3259, 3700)
+
+[node name="Lava Tile179" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3299, 3700)
+
+[node name="Lava Tile180" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3339, 3700)
+
+[node name="Lava Tile181" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3379, 3700)
+
+[node name="Lava Tile182" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3419, 3700)
+
+[node name="Lava Tile183" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3459, 3700)
+
+[node name="Lava Tile184" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3499, 3700)
+
+[node name="Lava Tile185" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2659, 3580)
+
+[node name="Lava Tile186" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2699, 3580)
+
+[node name="Lava Tile187" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2739, 3580)
+
+[node name="Lava Tile188" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2779, 3580)
+
+[node name="Lava Tile189" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2819, 3580)
+
+[node name="Lava Tile190" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2659, 3620)
+
+[node name="Lava Tile191" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2699, 3620)
+
+[node name="Lava Tile192" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2739, 3620)
+
+[node name="Lava Tile193" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2779, 3620)
+
+[node name="Lava Tile194" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2819, 3620)
+
+[node name="Lava Tile195" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2659, 3660)
+
+[node name="Lava Tile196" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2699, 3660)
+
+[node name="Lava Tile197" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2739, 3660)
+
+[node name="Lava Tile198" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2779, 3660)
+
+[node name="Lava Tile199" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2819, 3660)
+
+[node name="Lava Tile200" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2659, 3700)
+
+[node name="Lava Tile201" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2699, 3700)
+
+[node name="Lava Tile202" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2739, 3700)
+
+[node name="Lava Tile203" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2779, 3700)
+
+[node name="Lava Tile204" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2819, 3700)
+
+[node name="Lava Tile345" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2859, 3580)
+
+[node name="Lava Tile346" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2859, 3620)
+
+[node name="Lava Tile347" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2859, 3660)
+
+[node name="Lava Tile348" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2859, 3700)
+
+[node name="Lava Tile349" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2899, 3580)
+
+[node name="Lava Tile350" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2899, 3620)
+
+[node name="Lava Tile351" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2899, 3660)
+
+[node name="Lava Tile352" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2899, 3700)
+
+[node name="Lava Tile205" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2819, 3420)
+
+[node name="Lava Tile206" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2859, 3420)
+
+[node name="Lava Tile207" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2899, 3420)
+
+[node name="Lava Tile208" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3339, 3420)
+
+[node name="Lava Tile209" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3499, 3460)
+
+[node name="Lava Tile210" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3179, 3380)
+
+[node name="Lava Tile211" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3219, 3380)
+
+[node name="Lava Tile212" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3339, 3460)
+
+[node name="Lava Tile213" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3299, 3420)
+
+[node name="Lava Tile214" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3299, 3460)
+
+[node name="Lava Tile215" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3219, 3340)
+
+[node name="Lava Tile216" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3259, 3340)
+
+[node name="Lava Tile217" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3459, 3460)
+
+[node name="Lava Tile218" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3379, 3460)
+
+[node name="Lava Tile219" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3339, 3260)
+
+[node name="Lava Tile220" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3259, 3300)
+
+[node name="Lava Tile221" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3299, 3300)
+
+[node name="Lava Tile222" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3419, 3460)
+
+[node name="Lava Tile223" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3259, 3460)
+
+[node name="Lava Tile224" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3299, 3260)
+
+[node name="Lava Tile225" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3979, 3340)
+
+[node name="Lava Tile226" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4019, 3340)
+
+[node name="Lava Tile227" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4059, 3340)
+
+[node name="Lava Tile228" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4099, 3340)
+
+[node name="Lava Tile229" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4139, 3340)
+
+[node name="Lava Tile230" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3979, 3380)
+
+[node name="Lava Tile231" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4019, 3380)
+
+[node name="Lava Tile232" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4059, 3380)
+
+[node name="Lava Tile233" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4099, 3380)
+
+[node name="Lava Tile234" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4139, 3380)
+
+[node name="Lava Tile235" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3979, 3420)
+
+[node name="Lava Tile236" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4019, 3420)
+
+[node name="Lava Tile237" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4059, 3420)
+
+[node name="Lava Tile238" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4099, 3420)
+
+[node name="Lava Tile239" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4139, 3420)
+
+[node name="Lava Tile240" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3979, 3460)
+
+[node name="Lava Tile241" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4019, 3460)
+
+[node name="Lava Tile242" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4059, 3460)
+
+[node name="Lava Tile243" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4099, 3460)
+
+[node name="Lava Tile244" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4139, 3460)
+
+[node name="Lava Tile245" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3979, 3500)
+
+[node name="Lava Tile246" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4019, 3500)
+
+[node name="Lava Tile247" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4059, 3500)
+
+[node name="Lava Tile248" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4099, 3500)
+
+[node name="Lava Tile249" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4139, 3500)
+
+[node name="Lava Tile250" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3979, 3540)
+
+[node name="Lava Tile251" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4019, 3540)
+
+[node name="Lava Tile252" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4059, 3540)
+
+[node name="Lava Tile253" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4099, 3540)
+
+[node name="Lava Tile254" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4139, 3540)
+
+[node name="Lava Tile255" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3699, 3220)
+
+[node name="Lava Tile256" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3739, 3220)
+
+[node name="Lava Tile257" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3779, 3220)
+
+[node name="Lava Tile258" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3819, 3220)
+
+[node name="Lava Tile259" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3739, 3180)
+
+[node name="Lava Tile260" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3739, 3020)
+
+[node name="Lava Tile261" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3779, 3020)
+
+[node name="Lava Tile262" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3379, 3420)
+
+[node name="Lava Tile263" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3339, 3380)
+
+[node name="Lava Tile264" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3779, 3180)
+
+[node name="Lava Tile265" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3699, 2980)
+
+[node name="Lava Tile401" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3059, 2580)
+
+[node name="Lava Tile402" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3099, 2580)
+
+[node name="Lava Tile403" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3139, 2580)
+
+[node name="Lava Tile404" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3179, 2580)
+
+[node name="Lava Tile405" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3059, 2620)
+
+[node name="Lava Tile406" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3099, 2620)
+
+[node name="Lava Tile407" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3139, 2620)
+
+[node name="Lava Tile408" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3179, 2620)
+
+[node name="Lava Tile409" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3219, 2620)
+
+[node name="Lava Tile411" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3099, 2660)
+
+[node name="Lava Tile412" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3139, 2660)
+
+[node name="Lava Tile413" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3179, 2660)
+
+[node name="Lava Tile414" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3219, 2660)
+
+[node name="Lava Tile415" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3259, 2660)
+
+[node name="Lava Tile416" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3299, 2660)
+
+[node name="Lava Tile417" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3339, 2660)
+
+[node name="Lava Tile418" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3379, 2660)
+
+[node name="Lava Tile410" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3059, 2660)
+
+[node name="Lava Tile266" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3739, 2980)
+
+[node name="Lava Tile267" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3779, 2980)
+
+[node name="Lava Tile268" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3819, 2980)
+
+[node name="Lava Tile269" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3379, 3380)
+
+[node name="Lava Tile353" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3419, 3420)
+
+[node name="Lava Tile354" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3419, 3380)
+
+[node name="Lava Tile355" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3459, 3420)
+
+[node name="Lava Tile356" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3459, 3380)
+
+[node name="Lava Tile357" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3499, 3420)
+
+[node name="Lava Tile358" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3499, 3380)
+
+[node name="Lava Tile359" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3539, 3420)
+
+[node name="Lava Tile360" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3539, 3380)
+
+[node name="Lava Tile361" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3579, 3420)
+
+[node name="Lava Tile362" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3579, 3380)
+
+[node name="Lava Tile363" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3619, 3420)
+
+[node name="Lava Tile364" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3619, 3380)
+
+[node name="Lava Tile365" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3539, 3500)
+
+[node name="Lava Tile366" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3539, 3460)
+
+[node name="Lava Tile367" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3579, 3500)
+
+[node name="Lava Tile368" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3579, 3460)
+
+[node name="Lava Tile369" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3619, 3500)
+
+[node name="Lava Tile370" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3619, 3460)
+
+[node name="Lava Tile371" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3539, 3580)
+
+[node name="Lava Tile372" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3539, 3540)
+
+[node name="Lava Tile373" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3579, 3580)
+
+[node name="Lava Tile374" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3579, 3540)
+
+[node name="Lava Tile375" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3619, 3580)
+
+[node name="Lava Tile376" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3619, 3540)
+
+[node name="Lava Tile377" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3539, 3660)
+
+[node name="Lava Tile378" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3539, 3620)
+
+[node name="Lava Tile379" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3579, 3660)
+
+[node name="Lava Tile380" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3579, 3620)
+
+[node name="Lava Tile381" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3619, 3660)
+
+[node name="Lava Tile382" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(3619, 3620)
+
+[node name="Lava Tile383" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4179, 3380)
+
+[node name="Lava Tile384" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4179, 3340)
+
+[node name="Lava Tile385" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4219, 3340)
+
+[node name="Lava Tile386" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4259, 3340)
+
+[node name="Lava Tile645" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 3420)
+
+[node name="Lava Tile646" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 3460)
+
+[node name="Lava Tile647" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 3500)
+
+[node name="Lava Tile648" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 3420)
+
+[node name="Lava Tile649" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 3460)
+
+[node name="Lava Tile650" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 3500)
+
+[node name="Lava Tile651" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4579, 3420)
+
+[node name="Lava Tile652" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4579, 3460)
+
+[node name="Lava Tile653" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4579, 3500)
+
+[node name="Lava Tile654" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4619, 3420)
+
+[node name="Lava Tile655" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4619, 3460)
+
+[node name="Lava Tile656" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4619, 3500)
+
+[node name="Lava Tile657" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4659, 3420)
+
+[node name="Lava Tile658" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4659, 3460)
+
+[node name="Lava Tile659" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4659, 3500)
+
+[node name="Lava Tile660" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4699, 3420)
+
+[node name="Lava Tile661" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4699, 3460)
+
+[node name="Lava Tile662" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4699, 3500)
+
+[node name="Lava Tile663" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4739, 3420)
+
+[node name="Lava Tile664" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4739, 3460)
+
+[node name="Lava Tile665" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4739, 3500)
+
+[node name="Lava Tile666" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 3420)
+
+[node name="Lava Tile667" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 3460)
+
+[node name="Lava Tile668" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 3500)
+
+[node name="Lava Tile669" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 3300)
+
+[node name="Lava Tile670" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 3340)
+
+[node name="Lava Tile671" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 3380)
+
+[node name="Lava Tile672" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 3180)
+
+[node name="Lava Tile673" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 3220)
+
+[node name="Lava Tile674" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 3260)
+
+[node name="Lava Tile675" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 3060)
+
+[node name="Lava Tile676" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 3100)
+
+[node name="Lava Tile677" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 3140)
+
+[node name="Lava Tile678" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 2940)
+
+[node name="Lava Tile679" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 2980)
+
+[node name="Lava Tile680" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 3020)
+
+[node name="Lava Tile681" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 2820)
+
+[node name="Lava Tile682" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 2860)
+
+[node name="Lava Tile683" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 2900)
+
+[node name="Lava Tile684" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 2820)
+
+[node name="Lava Tile685" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 2860)
+
+[node name="Lava Tile686" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 2900)
+
+[node name="Lava Tile687" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 2820)
+
+[node name="Lava Tile688" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 2860)
+
+[node name="Lava Tile689" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 2900)
+
+[node name="Lava Tile690" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4579, 2820)
+
+[node name="Lava Tile691" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4579, 2860)
+
+[node name="Lava Tile692" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4579, 2900)
+
+[node name="Lava Tile693" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4619, 2820)
+
+[node name="Lava Tile694" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4619, 2860)
+
+[node name="Lava Tile695" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4619, 2900)
+
+[node name="Lava Tile696" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4659, 2820)
+
+[node name="Lava Tile697" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4659, 2860)
+
+[node name="Lava Tile698" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4659, 2900)
+
+[node name="Lava Tile699" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4659, 2940)
+
+[node name="Lava Tile700" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4659, 2980)
+
+[node name="Lava Tile701" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4659, 3020)
+
+[node name="Lava Tile702" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4619, 2940)
+
+[node name="Lava Tile703" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4619, 2980)
+
+[node name="Lava Tile704" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4619, 3020)
+
+[node name="Lava Tile705" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4579, 2940)
+
+[node name="Lava Tile706" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 2940)
+
+[node name="Lava Tile707" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4579, 2980)
+
+[node name="Lava Tile708" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4659, 3060)
+
+[node name="Lava Tile709" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4459, 2820)
+
+[node name="Lava Tile710" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4459, 2860)
+
+[node name="Lava Tile711" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4419, 2860)
+
+[node name="Lava Tile712" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4419, 2820)
+
+[node name="Lava Tile713" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4379, 2820)
+
+[node name="Lava Tile714" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4379, 2860)
+
+[node name="Lava Tile387" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4259, 3380)
+
+[node name="Lava Tile388" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4219, 3380)
+
+[node name="Lava Tile389" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4179, 3460)
+
+[node name="Lava Tile390" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4179, 3420)
+
+[node name="Lava Tile391" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4219, 3420)
+
+[node name="Lava Tile392" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4259, 3420)
+
+[node name="Lava Tile393" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4259, 3460)
+
+[node name="Lava Tile394" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4219, 3460)
+
+[node name="Lava Tile395" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4179, 3540)
+
+[node name="Lava Tile396" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4179, 3500)
+
+[node name="Lava Tile397" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4219, 3500)
+
+[node name="Lava Tile398" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4259, 3500)
+
+[node name="Lava Tile399" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4259, 3540)
+
+[node name="Lava Tile400" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4219, 3540)
+
+[node name="Lava Tile270" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 2620)
+
+[node name="Lava Tile271" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4339, 2620)
+
+[node name="Lava Tile272" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4379, 2620)
+
+[node name="Lava Tile273" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4419, 2620)
+
+[node name="Lava Tile274" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4459, 2620)
+
+[node name="Lava Tile275" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 2620)
+
+[node name="Lava Tile276" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 2620)
+
+[node name="Lava Tile277" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4579, 2620)
+
+[node name="Lava Tile278" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4619, 2620)
+
+[node name="Lava Tile279" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4659, 2620)
+
+[node name="Lava Tile280" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4699, 2620)
+
+[node name="Lava Tile281" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4739, 2620)
+
+[node name="Lava Tile282" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 2620)
+
+[node name="Lava Tile283" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4819, 2620)
+
+[node name="Lava Tile284" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4859, 2620)
+
+[node name="Lava Tile285" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4899, 2620)
+
+[node name="Lava Tile286" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4939, 2620)
+
+[node name="Lava Tile287" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4379, 2780)
+
+[node name="Lava Tile288" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 2740)
+
+[node name="Lava Tile289" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 2740)
+
+[node name="Lava Tile290" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 2660)
+
+[node name="Lava Tile291" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 2660)
+
+[node name="Lava Tile292" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 2780)
+
+[node name="Lava Tile293" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4579, 2780)
+
+[node name="Lava Tile294" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4619, 2780)
+
+[node name="Lava Tile477" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4659, 2780)
+
+[node name="Lava Tile295" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 2700)
+
+[node name="Lava Tile296" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 2700)
+
+[node name="Lava Tile297" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 2780)
+
+[node name="Lava Tile298" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4459, 2780)
+
+[node name="Lava Tile299" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4419, 2780)
+
+[node name="Lava Tile478" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 2780)
+
+[node name="Lava Tile479" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4939, 2780)
+
+[node name="Lava Tile480" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4979, 2780)
+
+[node name="Lava Tile481" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5019, 2780)
+
+[node name="Lava Tile482" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5059, 2780)
+
+[node name="Lava Tile483" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4899, 2780)
+
+[node name="Lava Tile484" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4859, 2780)
+
+[node name="Lava Tile485" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4819, 2780)
+
+[node name="Lava Tile486" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5099, 2780)
+
+[node name="Lava Tile487" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5259, 2780)
+
+[node name="Lava Tile488" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5299, 2780)
+
+[node name="Lava Tile489" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2780)
+
+[node name="Lava Tile490" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2780)
+
+[node name="Lava Tile491" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5219, 2780)
+
+[node name="Lava Tile492" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5179, 2780)
+
+[node name="Lava Tile493" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5139, 2780)
+
+[node name="Lava Tile494" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5419, 2780)
+
+[node name="Lava Tile495" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2780)
+
+[node name="Lava Tile496" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2740)
+
+[node name="Lava Tile497" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2740)
+
+[node name="Lava Tile498" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2740)
+
+[node name="Lava Tile499" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2780)
+
+[node name="Lava Tile500" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2780)
+
+[node name="Lava Tile502" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2700)
+
+[node name="Lava Tile503" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2660)
+
+[node name="Lava Tile504" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2660)
+
+[node name="Lava Tile505" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2660)
+
+[node name="Lava Tile506" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2700)
+
+[node name="Lava Tile507" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2700)
+
+[node name="Lava Tile508" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2540)
+
+[node name="Lava Tile509" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2540)
+
+[node name="Lava Tile510" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2580)
+
+[node name="Lava Tile511" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2580)
+
+[node name="Lava Tile512" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2460)
+
+[node name="Lava Tile513" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2460)
+
+[node name="Lava Tile514" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2500)
+
+[node name="Lava Tile515" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2500)
+
+[node name="Lava Tile516" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2380)
+
+[node name="Lava Tile517" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2380)
+
+[node name="Lava Tile518" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2420)
+
+[node name="Lava Tile519" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2420)
+
+[node name="Lava Tile520" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2300)
+
+[node name="Lava Tile521" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2300)
+
+[node name="Lava Tile522" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2340)
+
+[node name="Lava Tile523" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2340)
+
+[node name="Lava Tile524" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2220)
+
+[node name="Lava Tile525" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2220)
+
+[node name="Lava Tile526" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2260)
+
+[node name="Lava Tile527" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2260)
+
+[node name="Lava Tile528" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2140)
+
+[node name="Lava Tile529" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2140)
+
+[node name="Lava Tile530" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2180)
+
+[node name="Lava Tile531" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2180)
+
+[node name="Lava Tile532" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2060)
+
+[node name="Lava Tile533" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2060)
+
+[node name="Lava Tile534" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2100)
+
+[node name="Lava Tile535" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2100)
+
+[node name="Lava Tile536" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 1980)
+
+[node name="Lava Tile537" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 1980)
+
+[node name="Lava Tile540" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 1940)
+
+[node name="Lava Tile541" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 1940)
+
+[node name="Lava Tile538" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 2020)
+
+[node name="Lava Tile539" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 2020)
+
+[node name="Lava Tile542" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2540)
+
+[node name="Lava Tile543" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2540)
+
+[node name="Lava Tile544" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2580)
+
+[node name="Lava Tile545" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2580)
+
+[node name="Lava Tile546" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2460)
+
+[node name="Lava Tile547" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2460)
+
+[node name="Lava Tile548" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2500)
+
+[node name="Lava Tile549" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2500)
+
+[node name="Lava Tile550" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2380)
+
+[node name="Lava Tile551" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2380)
+
+[node name="Lava Tile552" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2420)
+
+[node name="Lava Tile553" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2420)
+
+[node name="Lava Tile554" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2300)
+
+[node name="Lava Tile555" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2300)
+
+[node name="Lava Tile556" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2340)
+
+[node name="Lava Tile557" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2340)
+
+[node name="Lava Tile558" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2220)
+
+[node name="Lava Tile559" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2220)
+
+[node name="Lava Tile560" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2260)
+
+[node name="Lava Tile561" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2260)
+
+[node name="Lava Tile562" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2140)
+
+[node name="Lava Tile563" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2140)
+
+[node name="Lava Tile564" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2180)
+
+[node name="Lava Tile565" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2180)
+
+[node name="Lava Tile566" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2060)
+
+[node name="Lava Tile567" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2060)
+
+[node name="Lava Tile568" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2100)
+
+[node name="Lava Tile569" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2100)
+
+[node name="Lava Tile570" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 1980)
+
+[node name="Lava Tile571" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 1980)
+
+[node name="Lava Tile572" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 1940)
+
+[node name="Lava Tile573" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 1940)
+
+[node name="Lava Tile574" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 2020)
+
+[node name="Lava Tile575" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2020)
+
+[node name="Lava Tile576" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2540)
+
+[node name="Lava Tile577" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2540)
+
+[node name="Lava Tile578" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2580)
+
+[node name="Lava Tile579" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2580)
+
+[node name="Lava Tile580" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2460)
+
+[node name="Lava Tile581" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2460)
+
+[node name="Lava Tile582" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2500)
+
+[node name="Lava Tile583" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2500)
+
+[node name="Lava Tile584" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2380)
+
+[node name="Lava Tile585" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2380)
+
+[node name="Lava Tile586" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2420)
+
+[node name="Lava Tile587" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2420)
+
+[node name="Lava Tile588" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2300)
+
+[node name="Lava Tile589" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2300)
+
+[node name="Lava Tile590" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2340)
+
+[node name="Lava Tile591" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2340)
+
+[node name="Lava Tile592" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2220)
+
+[node name="Lava Tile593" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2220)
+
+[node name="Lava Tile594" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2260)
+
+[node name="Lava Tile595" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2260)
+
+[node name="Lava Tile596" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2140)
+
+[node name="Lava Tile597" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2140)
+
+[node name="Lava Tile598" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2180)
+
+[node name="Lava Tile599" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2180)
+
+[node name="Lava Tile600" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2060)
+
+[node name="Lava Tile601" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2060)
+
+[node name="Lava Tile602" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2100)
+
+[node name="Lava Tile603" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2100)
+
+[node name="Lava Tile604" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 1980)
+
+[node name="Lava Tile605" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 1980)
+
+[node name="Lava Tile606" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 1940)
+
+[node name="Lava Tile607" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 1940)
+
+[node name="Lava Tile608" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 2020)
+
+[node name="Lava Tile609" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 2020)
+
+[node name="Lava Tile501" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 2780)
+
+[node name="Lava Tile300" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 2460)
+
+[node name="Lava Tile301" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 2420)
+
+[node name="Lava Tile302" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 2380)
+
+[node name="Lava Tile303" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 2340)
+
+[node name="Lava Tile304" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 2300)
+
+[node name="Lava Tile305" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 2260)
+
+[node name="Lava Tile306" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 2220)
+
+[node name="Lava Tile307" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 2180)
+
+[node name="Lava Tile308" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 2140)
+
+[node name="Lava Tile309" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 2100)
+
+[node name="Lava Tile310" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 2060)
+
+[node name="Lava Tile311" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 2020)
+
+[node name="Lava Tile312" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1980)
+
+[node name="Lava Tile313" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1940)
+
+[node name="Lava Tile314" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1900)
+
+[node name="Lava Tile315" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1860)
+
+[node name="Lava Tile316" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1820)
+
+[node name="Lava Tile317" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1780)
+
+[node name="Lava Tile318" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1740)
+
+[node name="Lava Tile319" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1700)
+
+[node name="Lava Tile320" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4339, 2020)
+
+[node name="Lava Tile321" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4339, 1980)
+
+[node name="Lava Tile322" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4339, 1940)
+
+[node name="Lava Tile323" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4339, 1900)
+
+[node name="Lava Tile324" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 1980)
+
+[node name="Lava Tile325" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4379, 2020)
+
+[node name="Lava Tile326" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4379, 1980)
+
+[node name="Lava Tile327" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4379, 1940)
+
+[node name="Lava Tile328" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4379, 1900)
+
+[node name="Lava Tile329" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4539, 1940)
+
+[node name="Lava Tile330" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 2020)
+
+[node name="Lava Tile331" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 1980)
+
+[node name="Lava Tile332" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 1940)
+
+[node name="Lava Tile333" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4499, 1900)
+
+[node name="Lava Tile334" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4859, 2020)
+
+[node name="Lava Tile335" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1660)
+
+[node name="Lava Tile336" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1620)
+
+[node name="Lava Tile337" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1580)
+
+[node name="Lava Tile338" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1540)
+
+[node name="Lava Tile339" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1500)
+
+[node name="Lava Tile340" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1460)
+
+[node name="Lava Tile341" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4299, 1420)
+
+[node name="Lava Tile342" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 1580)
+
+[node name="Lava Tile343" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4739, 1580)
+
+[node name="Lava Tile344" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4699, 1580)
+
+[node name="Lava Tile419" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 1620)
+
+[node name="Lava Tile420" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4739, 1620)
+
+[node name="Lava Tile421" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4699, 1620)
+
+[node name="Lava Tile422" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 1660)
+
+[node name="Lava Tile423" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4739, 1660)
+
+[node name="Lava Tile424" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4699, 1660)
+
+[node name="Lava Tile425" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4779, 1700)
+
+[node name="Lava Tile426" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4739, 1700)
+
+[node name="Lava Tile427" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4699, 1700)
+
+[node name="Lava Tile428" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4979, 1820)
+
+[node name="Lava Tile429" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4739, 1740)
+
+[node name="Lava Tile430" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4859, 1820)
+
+[node name="Lava Tile431" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4979, 1860)
+
+[node name="Lava Tile432" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4859, 1860)
+
+[node name="Lava Tile433" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4979, 1900)
+
+[node name="Lava Tile434" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4859, 1900)
+
+[node name="Lava Tile435" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4979, 1940)
+
+[node name="Lava Tile436" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4859, 1940)
+
+[node name="Lava Tile437" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4979, 1980)
+
+[node name="Lava Tile438" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4859, 1980)
+
+[node name="Lava Tile439" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4979, 2020)
+
+[node name="Lava Tile465" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5099, 1380)
+
+[node name="Lava Tile466" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5099, 1420)
+
+[node name="Lava Tile467" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5099, 1460)
+
+[node name="Lava Tile468" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5099, 1500)
+
+[node name="Lava Tile469" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5099, 1540)
+
+[node name="Lava Tile470" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5099, 1580)
+
+[node name="Lava Tile471" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5179, 1380)
+
+[node name="Lava Tile472" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5179, 1420)
+
+[node name="Lava Tile473" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5179, 1460)
+
+[node name="Lava Tile474" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5179, 1500)
+
+[node name="Lava Tile475" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5179, 1540)
+
+[node name="Lava Tile476" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5179, 1580)
+
+[node name="Lava Tile610" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 1420)
+
+[node name="Lava Tile611" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 1460)
+
+[node name="Lava Tile612" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 1500)
+
+[node name="Lava Tile613" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 1540)
+
+[node name="Lava Tile614" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5339, 1580)
+
+[node name="Lava Tile615" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 1420)
+
+[node name="Lava Tile616" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 1460)
+
+[node name="Lava Tile617" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 1500)
+
+[node name="Lava Tile618" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 1540)
+
+[node name="Lava Tile619" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5379, 1580)
+
+[node name="Lava Tile620" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5419, 1420)
+
+[node name="Lava Tile621" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5419, 1460)
+
+[node name="Lava Tile622" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5419, 1500)
+
+[node name="Lava Tile623" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5419, 1540)
+
+[node name="Lava Tile624" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5419, 1580)
+
+[node name="Lava Tile625" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 1420)
+
+[node name="Lava Tile626" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 1460)
+
+[node name="Lava Tile627" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 1500)
+
+[node name="Lava Tile628" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 1540)
+
+[node name="Lava Tile629" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5459, 1580)
+
+[node name="Lava Tile630" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 1420)
+
+[node name="Lava Tile631" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 1460)
+
+[node name="Lava Tile632" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 1500)
+
+[node name="Lava Tile633" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 1540)
+
+[node name="Lava Tile634" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5499, 1580)
+
+[node name="Lava Tile635" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 1420)
+
+[node name="Lava Tile636" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 1460)
+
+[node name="Lava Tile637" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 1500)
+
+[node name="Lava Tile638" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 1540)
+
+[node name="Lava Tile639" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5539, 1580)
+
+[node name="Lava Tile640" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 1420)
+
+[node name="Lava Tile641" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 1460)
+
+[node name="Lava Tile642" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 1500)
+
+[node name="Lava Tile643" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 1540)
+
+[node name="Lava Tile644" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5579, 1580)
+
+[node name="Lava Tile440" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4979, 2220)
+
+[node name="Lava Tile441" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5019, 2220)
+
+[node name="Lava Tile442" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5059, 2220)
+
+[node name="Lava Tile443" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4939, 2260)
+
+[node name="Lava Tile444" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4899, 2300)
+
+[node name="Lava Tile445" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4939, 2300)
+
+[node name="Lava Tile446" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4939, 2340)
+
+[node name="Lava Tile447" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4979, 2260)
+
+[node name="Lava Tile448" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4979, 2300)
+
+[node name="Lava Tile449" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4979, 2340)
+
+[node name="Lava Tile450" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5019, 2260)
+
+[node name="Lava Tile451" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5019, 2300)
+
+[node name="Lava Tile452" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5019, 2340)
+
+[node name="Lava Tile453" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5059, 2260)
+
+[node name="Lava Tile454" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5059, 2300)
+
+[node name="Lava Tile455" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5059, 2340)
+
+[node name="Lava Tile456" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5099, 2260)
+
+[node name="Lava Tile457" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5099, 2300)
+
+[node name="Lava Tile458" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5099, 2340)
+
+[node name="Lava Tile459" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5019, 2380)
+
+[node name="Lava Tile460" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5019, 2420)
+
+[node name="Lava Tile461" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(4979, 2380)
+
+[node name="Lava Tile462" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5059, 2380)
+
+[node name="Lava Tile463" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5139, 2300)
+
+[node name="Lava Tile464" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(5139, 2300)
+
+[node name="Lava Tile36" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1819, 2660)
+
+[node name="Lava Tile37" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1379, 2700)
+
+[node name="Lava Tile38" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1419, 2700)
+
+[node name="Lava Tile39" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1459, 2700)
+
+[node name="Lava Tile40" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1499, 2700)
+
+[node name="Lava Tile41" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1539, 2700)
+
+[node name="Lava Tile42" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1579, 2700)
+
+[node name="Lava Tile43" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1619, 2700)
+
+[node name="Lava Tile44" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1659, 2700)
+
+[node name="Lava Tile45" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1699, 2700)
+
+[node name="Lava Tile46" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1739, 2700)
+
+[node name="Lava Tile47" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1779, 2700)
+
+[node name="Lava Tile48" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1819, 2700)
+
+[node name="Lava Tile49" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1379, 2740)
+
+[node name="Lava Tile50" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1419, 2740)
+
+[node name="Lava Tile51" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1459, 2740)
+
+[node name="Lava Tile52" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1499, 2740)
+
+[node name="Lava Tile53" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1539, 2740)
+
+[node name="Lava Tile54" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1579, 2740)
+
+[node name="Lava Tile55" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1619, 2740)
+
+[node name="Lava Tile56" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1659, 2740)
+
+[node name="Lava Tile57" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1699, 2740)
+
+[node name="Lava Tile58" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1739, 2740)
+
+[node name="Lava Tile59" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1779, 2740)
+
+[node name="Lava Tile60" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1819, 2740)
+
+[node name="Lava Tile61" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1419, 2780)
+
+[node name="Lava Tile62" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1459, 2780)
+
+[node name="Lava Tile63" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1499, 2780)
+
+[node name="Lava Tile64" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1539, 2780)
+
+[node name="Lava Tile65" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1579, 2780)
+
+[node name="Lava Tile66" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1619, 2780)
+
+[node name="Lava Tile67" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1659, 2780)
+
+[node name="Lava Tile68" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1699, 2780)
+
+[node name="Lava Tile69" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1739, 2780)
+
+[node name="Lava Tile70" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1779, 2780)
+
+[node name="Lava Tile71" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1819, 2780)
+
+[node name="Lava Tile72" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1859, 2780)
+
+[node name="Lava Tile73" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1859, 2660)
+
+[node name="Lava Tile74" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1899, 2660)
+
+[node name="Lava Tile75" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1939, 2660)
+
+[node name="Lava Tile76" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1979, 2660)
+
+[node name="Lava Tile77" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2019, 2660)
+
+[node name="Lava Tile78" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2059, 2660)
+
+[node name="Lava Tile79" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2099, 2660)
+
+[node name="Lava Tile80" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2139, 2660)
+
+[node name="Lava Tile81" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2179, 2660)
+
+[node name="Lava Tile82" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2219, 2660)
+
+[node name="Lava Tile83" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2099, 2780)
+
+[node name="Lava Tile84" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2059, 2780)
+
+[node name="Lava Tile85" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1859, 2700)
+
+[node name="Lava Tile86" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1899, 2700)
+
+[node name="Lava Tile87" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1939, 2700)
+
+[node name="Lava Tile88" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1979, 2700)
+
+[node name="Lava Tile89" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2019, 2700)
+
+[node name="Lava Tile90" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2059, 2700)
+
+[node name="Lava Tile91" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2099, 2700)
+
+[node name="Lava Tile92" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2139, 2700)
+
+[node name="Lava Tile93" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2179, 2700)
+
+[node name="Lava Tile94" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2219, 2700)
+
+[node name="Lava Tile95" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2019, 2780)
+
+[node name="Lava Tile96" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1979, 2779)
+
+[node name="Lava Tile97" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1859, 2740)
+
+[node name="Lava Tile98" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1899, 2740)
+
+[node name="Lava Tile99" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1939, 2740)
+
+[node name="Lava Tile100" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1979, 2740)
+
+[node name="Lava Tile101" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2019, 2740)
+
+[node name="Lava Tile102" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2059, 2740)
+
+[node name="Lava Tile103" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2099, 2740)
+
+[node name="Lava Tile104" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2139, 2740)
+
+[node name="Lava Tile105" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2179, 2740)
+
+[node name="Lava Tile106" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2219, 2740)
+
+[node name="Lava Tile107" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1939, 2780)
+
+[node name="Lava Tile108" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(1899, 2780)
+
+[node name="Lava Tile109" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2139, 2780)
+
+[node name="Lava Tile110" parent="Level/LavaAcid" instance=ExtResource("12_lvgda")]
+position = Vector2(2179, 2780)
+
+[node name="Acid Tile" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3339, 1020)
+
+[node name="Acid Tile2" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3339, 980)
+
+[node name="Acid Tile3" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3299, 980)
+
+[node name="Acid Tile4" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3299, 1020)
+
+[node name="Acid Tile5" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3299, 1060)
+
+[node name="Acid Tile6" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3259, 980)
+
+[node name="Acid Tile7" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3259, 1020)
+
+[node name="Acid Tile8" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3219, 1020)
+
+[node name="Acid Tile9" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3219, 980)
+
+[node name="Acid Tile10" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3219, 1060)
+
+[node name="Acid Tile11" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3219, 1100)
+
+[node name="Acid Tile12" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3179, 1100)
+
+[node name="Acid Tile13" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3179, 1140)
+
+[node name="Acid Tile14" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3179, 1060)
+
+[node name="Acid Tile15" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3179, 1020)
+
+[node name="Acid Tile16" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3179, 980)
+
+[node name="Acid Tile17" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3139, 980)
+
+[node name="Acid Tile18" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3139, 1020)
+
+[node name="Acid Tile19" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3099, 1020)
+
+[node name="Acid Tile20" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3099, 1060)
+
+[node name="Acid Tile21" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3099, 1100)
+
+[node name="Acid Tile22" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3099, 980)
+
+[node name="Acid Tile23" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3059, 980)
+
+[node name="Acid Tile24" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3019, 980)
+
+[node name="Acid Tile25" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3019, 1020)
+
+[node name="Acid Tile26" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3019, 1060)
+
+[node name="Acid Tile27" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3019, 1060)
+
+[node name="Acid Tile28" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3019, 1100)
+
+[node name="Acid Tile29" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3019, 1140)
+
+[node name="Acid Tile30" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3019, 1180)
+
+[node name="Acid Tile31" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3019, 1220)
+
+[node name="Acid Tile32" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3019, 1260)
+
+[node name="Acid Tile33" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3059, 1260)
+
+[node name="Acid Tile34" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3099, 1260)
+
+[node name="Acid Tile35" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3139, 1260)
+
+[node name="Acid Tile36" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3179, 1260)
+
+[node name="Acid Tile37" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3219, 1260)
+
+[node name="Acid Tile38" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3259, 1260)
+
+[node name="Acid Tile39" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3299, 1260)
+
+[node name="Acid Tile40" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3339, 1260)
+
+[node name="Acid Tile41" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3499, 1260)
+
+[node name="Acid Tile42" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3499, 1260)
+
+[node name="Acid Tile43" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3539, 1260)
+
+[node name="Acid Tile44" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3579, 1260)
+
+[node name="Acid Tile45" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3619, 1260)
+
+[node name="Acid Tile46" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3659, 1260)
+
+[node name="Acid Tile47" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3699, 1260)
+
+[node name="Acid Tile48" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3739, 1260)
+
+[node name="Acid Tile49" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3779, 1260)
+
+[node name="Acid Tile50" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3819, 1260)
+
+[node name="Acid Tile51" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3859, 1260)
+
+[node name="Acid Tile52" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3899, 1260)
+
+[node name="Acid Tile53" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(3939, 1260)
+
+[node name="Acid Tile54" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2939, 1260)
+
+[node name="Acid Tile55" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2899, 1260)
+
+[node name="Acid Tile56" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2859, 1260)
+
+[node name="Acid Tile57" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2819, 1260)
+
+[node name="Acid Tile58" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2779, 1260)
+
+[node name="Acid Tile59" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2739, 1260)
+
+[node name="Acid Tile60" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2699, 1260)
+
+[node name="Acid Tile61" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2659, 1260)
+
+[node name="Acid Tile62" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2619, 1260)
+
+[node name="Acid Tile63" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2579, 1260)
+
+[node name="Acid Tile64" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2539, 1260)
+
+[node name="Acid Tile65" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2499, 1260)
+
+[node name="Acid Tile66" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2459, 1260)
+
+[node name="Acid Tile67" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2419, 1260)
+
+[node name="Acid Tile68" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2379, 1260)
+
+[node name="Acid Tile69" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(2339, 1260)
+
+[node name="Acid Tile70" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(979, 3060)
+
+[node name="Acid Tile71" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(939, 3060)
+
+[node name="Acid Tile72" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(899, 3060)
+
+[node name="Acid Tile73" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(859, 3060)
+
+[node name="Acid Tile74" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(819, 3060)
+
+[node name="Acid Tile75" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(779, 3060)
+
+[node name="Acid Tile76" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(779, 3100)
+
+[node name="Acid Tile77" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(819, 3100)
+
+[node name="Acid Tile78" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(859, 3100)
+
+[node name="Acid Tile79" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(899, 3100)
+
+[node name="Acid Tile80" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(939, 3100)
+
+[node name="Acid Tile81" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(979, 3100)
+
+[node name="Acid Tile82" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(899, 3260)
+
+[node name="Acid Tile83" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(859, 3260)
+
+[node name="Acid Tile84" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(819, 3260)
+
+[node name="Acid Tile85" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(779, 3260)
+
+[node name="Acid Tile86" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(739, 3260)
+
+[node name="Acid Tile87" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(699, 3260)
+
+[node name="Acid Tile88" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(699, 3300)
+
+[node name="Acid Tile89" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(739, 3300)
+
+[node name="Acid Tile90" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(779, 3300)
+
+[node name="Acid Tile91" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(819, 3300)
+
+[node name="Acid Tile92" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(859, 3300)
+
+[node name="Acid Tile93" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(899, 3300)
+
+[node name="Acid Tile94" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1059, 3540)
+
+[node name="Acid Tile95" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1059, 3580)
+
+[node name="Acid Tile96" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1059, 3620)
+
+[node name="Acid Tile97" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1019, 3620)
+
+[node name="Acid Tile98" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1019, 3580)
+
+[node name="Acid Tile99" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1019, 3540)
+
+[node name="Acid Tile100" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(979, 3540)
+
+[node name="Acid Tile101" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(979, 3580)
+
+[node name="Acid Tile102" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(979, 3620)
+
+[node name="Acid Tile103" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(939, 3620)
+
+[node name="Acid Tile104" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(939, 3580)
+
+[node name="Acid Tile105" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(939, 3540)
+
+[node name="Acid Tile106" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(739, 3580)
+
+[node name="Acid Tile107" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(899, 3540)
+
+[node name="Acid Tile108" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(899, 3580)
+
+[node name="Acid Tile109" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(899, 3620)
+
+[node name="Acid Tile110" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(859, 3620)
+
+[node name="Acid Tile111" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(859, 3580)
+
+[node name="Acid Tile112" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(859, 3540)
+
+[node name="Acid Tile113" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(819, 3540)
+
+[node name="Acid Tile114" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(819, 3580)
+
+[node name="Acid Tile115" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(819, 3620)
+
+[node name="Acid Tile116" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(779, 3620)
+
+[node name="Acid Tile117" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(779, 3580)
+
+[node name="Acid Tile118" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(779, 3540)
+
+[node name="Acid Tile119" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(739, 3540)
+
+[node name="Acid Tile120" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(739, 3620)
+
+[node name="Acid Tile121" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(699, 3620)
+
+[node name="Acid Tile122" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(699, 3580)
+
+[node name="Acid Tile123" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(699, 3540)
+
+[node name="Acid Tile124" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(739, 3820)
+
+[node name="Acid Tile125" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(739, 3860)
+
+[node name="Acid Tile126" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(779, 3820)
+
+[node name="Acid Tile127" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(779, 3860)
+
+[node name="Acid Tile128" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(819, 3820)
+
+[node name="Acid Tile129" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(819, 3860)
+
+[node name="Acid Tile130" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(859, 3820)
+
+[node name="Acid Tile131" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(859, 3860)
+
+[node name="Acid Tile132" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(899, 3820)
+
+[node name="Acid Tile133" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(899, 3860)
+
+[node name="Acid Tile134" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(939, 3820)
+
+[node name="Acid Tile135" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(939, 3860)
+
+[node name="Acid Tile136" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(979, 3820)
+
+[node name="Acid Tile137" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(979, 3860)
+
+[node name="Acid Tile138" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1019, 3820)
+
+[node name="Acid Tile139" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1019, 3860)
+
+[node name="Acid Tile140" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1059, 3820)
+
+[node name="Acid Tile141" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1059, 3860)
+
+[node name="Acid Tile142" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1099, 3820)
+
+[node name="Acid Tile143" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1099, 3860)
+
+[node name="Acid Tile144" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1139, 3820)
+
+[node name="Acid Tile145" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1139, 3860)
+
+[node name="Acid Tile146" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(739, 3980)
+
+[node name="Acid Tile147" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(739, 4020)
+
+[node name="Acid Tile148" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(779, 3980)
+
+[node name="Acid Tile149" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(779, 4020)
+
+[node name="Acid Tile150" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(819, 3980)
+
+[node name="Acid Tile151" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(819, 4020)
+
+[node name="Acid Tile152" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(859, 3980)
+
+[node name="Acid Tile153" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(859, 4020)
+
+[node name="Acid Tile154" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(899, 3980)
+
+[node name="Acid Tile155" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(899, 4020)
+
+[node name="Acid Tile156" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(939, 3980)
+
+[node name="Acid Tile157" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(939, 4020)
+
+[node name="Acid Tile158" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(979, 3980)
+
+[node name="Acid Tile159" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(979, 4020)
+
+[node name="Acid Tile160" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1019, 3980)
+
+[node name="Acid Tile161" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1019, 4020)
+
+[node name="Acid Tile162" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1059, 3980)
+
+[node name="Acid Tile163" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1059, 4020)
+
+[node name="Acid Tile164" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1099, 3980)
+
+[node name="Acid Tile165" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1099, 4020)
+
+[node name="Acid Tile166" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1139, 3980)
+
+[node name="Acid Tile167" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1139, 4020)
+
+[node name="Acid Tile168" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(739, 4060)
+
+[node name="Acid Tile169" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(739, 4100)
+
+[node name="Acid Tile170" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(779, 4060)
+
+[node name="Acid Tile171" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(779, 4100)
+
+[node name="Acid Tile172" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(819, 4060)
+
+[node name="Acid Tile173" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(819, 4100)
+
+[node name="Acid Tile174" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(859, 4060)
+
+[node name="Acid Tile175" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(859, 4100)
+
+[node name="Acid Tile176" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(899, 4060)
+
+[node name="Acid Tile177" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(899, 4100)
+
+[node name="Acid Tile178" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(939, 4060)
+
+[node name="Acid Tile179" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(939, 4100)
+
+[node name="Acid Tile180" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(979, 4060)
+
+[node name="Acid Tile181" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(979, 4100)
+
+[node name="Acid Tile182" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1019, 4060)
+
+[node name="Acid Tile183" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1019, 4100)
+
+[node name="Acid Tile184" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1059, 4060)
+
+[node name="Acid Tile185" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1059, 4100)
+
+[node name="Acid Tile186" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1099, 4060)
+
+[node name="Acid Tile187" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1099, 4100)
+
+[node name="Acid Tile188" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1139, 4060)
+
+[node name="Acid Tile189" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(1139, 4100)
+
+[node name="Acid Tile190" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(699, 3980)
+
+[node name="Acid Tile191" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(699, 4020)
+
+[node name="Acid Tile192" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(699, 4060)
+
+[node name="Acid Tile193" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(699, 4100)
+
+[node name="Acid Tile194" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(659, 4100)
+
+[node name="Acid Tile195" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(659, 4060)
+
+[node name="Acid Tile196" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(619, 4060)
+
+[node name="Acid Tile197" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(619, 4100)
+
+[node name="Acid Tile198" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(579, 4100)
+
+[node name="Acid Tile199" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(539, 4100)
+
+[node name="Acid Tile200" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(539, 4060)
+
+[node name="Acid Tile201" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(579, 4060)
+
+[node name="Acid Tile202" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(579, 4060)
+
+[node name="Acid Tile203" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 3940)
+
+[node name="Acid Tile204" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 3940)
+
+[node name="Acid Tile205" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 3940)
+
+[node name="Acid Tile206" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 3940)
+
+[node name="Acid Tile207" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 3940)
+
+[node name="Acid Tile208" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 3940)
+
+[node name="Acid Tile209" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 3940)
+
+[node name="Acid Tile210" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 3940)
+
+[node name="Acid Tile211" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 3780)
+
+[node name="Acid Tile212" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 3780)
+
+[node name="Acid Tile213" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 3780)
+
+[node name="Acid Tile214" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 3780)
+
+[node name="Acid Tile215" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 3780)
+
+[node name="Acid Tile216" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 3780)
+
+[node name="Acid Tile217" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 3780)
+
+[node name="Acid Tile218" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 3780)
+
+[node name="Acid Tile219" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 3660)
+
+[node name="Acid Tile220" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 3660)
+
+[node name="Acid Tile221" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 3660)
+
+[node name="Acid Tile222" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 3660)
+
+[node name="Acid Tile223" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 3660)
+
+[node name="Acid Tile224" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 3660)
+
+[node name="Acid Tile225" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 3660)
+
+[node name="Acid Tile226" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 3660)
+
+[node name="Acid Tile227" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 3460)
+
+[node name="Acid Tile228" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 3460)
+
+[node name="Acid Tile229" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 3460)
+
+[node name="Acid Tile230" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 3460)
+
+[node name="Acid Tile231" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 3460)
+
+[node name="Acid Tile232" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 3460)
+
+[node name="Acid Tile233" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 3460)
+
+[node name="Acid Tile234" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 3460)
+
+[node name="Acid Tile235" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 3500)
+
+[node name="Acid Tile236" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 3500)
+
+[node name="Acid Tile237" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 3500)
+
+[node name="Acid Tile238" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 3500)
+
+[node name="Acid Tile239" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 3500)
+
+[node name="Acid Tile240" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 3500)
+
+[node name="Acid Tile241" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 3500)
+
+[node name="Acid Tile242" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 3500)
+
+[node name="Acid Tile243" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 3340)
+
+[node name="Acid Tile244" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 3340)
+
+[node name="Acid Tile245" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 3340)
+
+[node name="Acid Tile246" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 3340)
+
+[node name="Acid Tile247" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 3340)
+
+[node name="Acid Tile248" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 3340)
+
+[node name="Acid Tile249" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 3340)
+
+[node name="Acid Tile250" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 3340)
+
+[node name="Acid Tile251" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 3220)
+
+[node name="Acid Tile252" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 3220)
+
+[node name="Acid Tile253" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 3220)
+
+[node name="Acid Tile254" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 3220)
+
+[node name="Acid Tile255" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 3220)
+
+[node name="Acid Tile256" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 3220)
+
+[node name="Acid Tile257" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 3220)
+
+[node name="Acid Tile258" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 3220)
+
+[node name="Acid Tile259" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 3180)
+
+[node name="Acid Tile260" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 3180)
+
+[node name="Acid Tile261" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 3180)
+
+[node name="Acid Tile262" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 3180)
+
+[node name="Acid Tile263" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 3180)
+
+[node name="Acid Tile264" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 3180)
+
+[node name="Acid Tile265" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 3180)
+
+[node name="Acid Tile266" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 3180)
+
+[node name="Acid Tile267" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 3020)
+
+[node name="Acid Tile268" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 3020)
+
+[node name="Acid Tile269" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 3020)
+
+[node name="Acid Tile270" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 3020)
+
+[node name="Acid Tile271" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 3020)
+
+[node name="Acid Tile272" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 3020)
+
+[node name="Acid Tile273" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 3020)
+
+[node name="Acid Tile274" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 3020)
+
+[node name="Acid Tile275" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 2980)
+
+[node name="Acid Tile276" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 2980)
+
+[node name="Acid Tile277" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 2980)
+
+[node name="Acid Tile278" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 2980)
+
+[node name="Acid Tile279" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 2980)
+
+[node name="Acid Tile280" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 2980)
+
+[node name="Acid Tile281" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 2980)
+
+[node name="Acid Tile282" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 2980)
+
+[node name="Acid Tile283" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 2820)
+
+[node name="Acid Tile284" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 2820)
+
+[node name="Acid Tile285" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 2820)
+
+[node name="Acid Tile286" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 2820)
+
+[node name="Acid Tile287" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 2820)
+
+[node name="Acid Tile288" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 2820)
+
+[node name="Acid Tile289" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 2820)
+
+[node name="Acid Tile290" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 2820)
+
+[node name="Acid Tile291" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 2780)
+
+[node name="Acid Tile292" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 2780)
+
+[node name="Acid Tile293" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 2780)
+
+[node name="Acid Tile294" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 2780)
+
+[node name="Acid Tile295" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 2780)
+
+[node name="Acid Tile296" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 2780)
+
+[node name="Acid Tile297" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 2780)
+
+[node name="Acid Tile298" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 2780)
+
+[node name="Acid Tile299" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 2740)
+
+[node name="Acid Tile300" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 2740)
+
+[node name="Acid Tile301" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 2740)
+
+[node name="Acid Tile302" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 2740)
+
+[node name="Acid Tile303" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 2740)
+
+[node name="Acid Tile304" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 2740)
+
+[node name="Acid Tile305" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 2740)
+
+[node name="Acid Tile306" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 2740)
+
+[node name="Acid Tile307" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(539, 2540)
+
+[node name="Acid Tile308" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(499, 2540)
+
+[node name="Acid Tile309" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 2540)
+
+[node name="Acid Tile310" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 2540)
+
+[node name="Acid Tile311" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 2540)
+
+[node name="Acid Tile312" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 2540)
+
+[node name="Acid Tile313" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 2540)
+
+[node name="Acid Tile314" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 2540)
+
+[node name="Acid Tile315" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(459, 2500)
+
+[node name="Acid Tile316" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 2500)
+
+[node name="Acid Tile317" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 2500)
+
+[node name="Acid Tile318" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 2500)
+
+[node name="Acid Tile319" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 2500)
+
+[node name="Acid Tile320" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 2500)
+
+[node name="Acid Tile321" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 2500)
+
+[node name="Acid Tile322" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 2500)
+
+[node name="Acid Tile323" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(419, 2460)
+
+[node name="Acid Tile324" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(379, 2460)
+
+[node name="Acid Tile325" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 2460)
+
+[node name="Acid Tile326" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 2460)
+
+[node name="Acid Tile327" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 2460)
+
+[node name="Acid Tile328" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 2460)
+
+[node name="Acid Tile329" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 2460)
+
+[node name="Acid Tile330" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(139, 2460)
+
+[node name="Acid Tile331" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(339, 2420)
+
+[node name="Acid Tile332" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 2420)
+
+[node name="Acid Tile333" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 2420)
+
+[node name="Acid Tile334" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 2420)
+
+[node name="Acid Tile335" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 2420)
+
+[node name="Acid Tile336" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(139, 2420)
+
+[node name="Acid Tile337" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(99, 2420)
+
+[node name="Acid Tile338" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(59, 2420)
+
+[node name="Acid Tile339" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 2380)
+
+[node name="Acid Tile340" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 2380)
+
+[node name="Acid Tile341" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 2380)
+
+[node name="Acid Tile342" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 2380)
+
+[node name="Acid Tile343" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(139, 2380)
+
+[node name="Acid Tile344" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(99, 2380)
+
+[node name="Acid Tile345" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(59, 2380)
+
+[node name="Acid Tile346" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(19, 2380)
+
+[node name="Acid Tile347" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(299, 2340)
+
+[node name="Acid Tile348" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(259, 2340)
+
+[node name="Acid Tile349" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 2340)
+
+[node name="Acid Tile350" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 2340)
+
+[node name="Acid Tile351" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(139, 2340)
+
+[node name="Acid Tile352" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(99, 2340)
+
+[node name="Acid Tile353" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(59, 2340)
+
+[node name="Acid Tile354" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(19, 2340)
+
+[node name="Acid Tile355" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(219, 2540)
+
+[node name="Acid Tile356" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(179, 2540)
+
+[node name="Acid Tile357" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(139, 2540)
+
+[node name="Acid Tile358" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(99, 2540)
+
+[node name="Acid Tile359" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(59, 2540)
+
+[node name="Acid Tile360" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(19, 2540)
+
+[node name="Acid Tile361" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(99, 2500)
+
+[node name="Acid Tile362" parent="Level/LavaAcid" instance=ExtResource("13_td2xh")]
+position = Vector2(139, 2500)
+
+[node name="BG" type="ParallaxBackground" parent="."]
+script = ExtResource("14_n44f7")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
+motion_scale = Vector2(1.3, 1)
+motion_mirroring = Vector2(256, 256)
+
+[node name="0" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(128, 128)
+texture = ExtResource("15_ia55s")
+
+[node name="1" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(640, 128)
+texture = ExtResource("15_ia55s")
+
+[node name="2" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(1152, 128)
+texture = ExtResource("15_ia55s")
+
+[node name="3" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(128, 640)
+texture = ExtResource("15_ia55s")
+
+[node name="4" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(640, 640)
+texture = ExtResource("15_ia55s")
+
+[node name="5" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(1152, 640)
+texture = ExtResource("15_ia55s")
+
 [node name="NewRobot" parent="." instance=ExtResource("3_qydcb")]
-position = Vector2(2860, 1730)
+position = Vector2(2859, 1700)
 
 [node name="Kitty" parent="." instance=ExtResource("4_0kjqn")]
 position = Vector2(2858, 1813)
@@ -5120,16 +8385,16 @@ position = Vector2(1058, 1780)
 position = Vector2(1018, 1900)
 
 [node name="Eyeguy43" parent="Enemies" instance=ExtResource("10_btdcg")]
-position = Vector2(738, 1700)
+position = Vector2(739, 1820)
 
 [node name="Eyeguy44" parent="Enemies" instance=ExtResource("10_btdcg")]
 position = Vector2(658, 1460)
 
 [node name="Eyeguy45" parent="Enemies" instance=ExtResource("10_btdcg")]
-position = Vector2(698, 1460)
+position = Vector2(699, 1460)
 
 [node name="Eyeguy46" parent="Enemies" instance=ExtResource("10_btdcg")]
-position = Vector2(738, 1180)
+position = Vector2(819, 1300)
 
 [node name="Redguy" parent="Enemies" instance=ExtResource("10_jn81m")]
 position = Vector2(2738, 1860)
@@ -5409,6 +8674,9 @@ position = Vector2(4138, 3220)
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("23_f3v8j")]
 position = Vector2(3058, 2492)
 
+[node name="Checkpoint14" parent="Checkpoints" instance=ExtResource("23_f3v8j")]
+position = Vector2(2859, 1731)
+
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("23_f3v8j")]
 position = Vector2(2658, 2492)
 
@@ -5431,7 +8699,7 @@ position = Vector2(2258, 3052)
 position = Vector2(2298, 3172)
 
 [node name="Checkpoint9" parent="Checkpoints" instance=ExtResource("23_f3v8j")]
-position = Vector2(4298, 1332)
+position = Vector2(4299, 1340)
 
 [node name="Checkpoint10" parent="Checkpoints" instance=ExtResource("23_f3v8j")]
 position = Vector2(3538, 2892)

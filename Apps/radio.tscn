@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cim50jb658udj"]
+[gd_scene load_steps=12 format=3 uid="uid://cim50jb658udj"]
 
 [ext_resource type="Script" path="res://Apps/radio.gd" id="1_c8rqr"]
 [ext_resource type="Texture2D" uid="uid://ci0pvyvcloe7h" path="res://Assets/Apps/Radio/wireless.png" id="1_k0qi5"]
 [ext_resource type="Texture2D" uid="uid://8ddh8tcb7fs4" path="res://Assets/Apps/Radio/radio.png" id="2_gu740"]
 [ext_resource type="AudioStream" uid="uid://cri2a100of34l" path="res://Assets/Audio/Sounds/radio.ogg" id="3_lt3m3"]
 [ext_resource type="Theme" uid="uid://dihe8ewfxt15y" path="res://Resources/default_rwk_theme.tres" id="4_bwco0"]
-[ext_resource type="Shader" path="res://Scenes/voronoi.gdshader" id="4_dnc0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvsuc"]
 size = Vector2(20, 120)
@@ -21,14 +20,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8q5b2"]
-shader = ExtResource("4_dnc0x")
-shader_parameter/pixel_size = Vector2(0.001, 0.001)
-shader_parameter/voronoi_scale = 20.0
-shader_parameter/voronoi_seed = 0.0
-shader_parameter/electric_scale = 20.0
-shader_parameter/electric_speed = 1.0
-shader_parameter/electric_power = 3.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrao0"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_w3lfj"]
 length = 0.001
@@ -97,13 +90,14 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
-material = SubResource("ShaderMaterial_8q5b2")
 layout_mode = 2
 theme = ExtResource("4_bwco0")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wrao0")
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.419608, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.784314, 1, 1)
+theme_override_constants/outline_size = 3
 text = "sample text"
 horizontal_alignment = 1
 autowrap_mode = 3

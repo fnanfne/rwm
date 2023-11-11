@@ -25,7 +25,7 @@ var current_checkpoint : Checkpoint
 var Robot : Robot
 var TestRobotReference : TestRobot
 var PLATFORMDIRECTION : int = 1
-var starting_position : = Vector2 (460,710)
+var starting_position : = Vector2 (4060,1890)
 var camera : Camera2D
 var close_menu = false
 var score = 0

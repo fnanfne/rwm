@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 signal robot_died
 
-@export var gravity = 1600
-@export var jump_power = -450
+const PLASMABALL = preload("res://Scenes/plasmaball.tscn")
+
+@export var gravity = 1400 #1600
+@export var jump_power = -500 #-450
 @export var robot_death_effect : PackedScene
 
 @onready var anim = get_node("AnimationPlayer")
@@ -11,11 +13,17 @@ signal robot_died
 @onready var body = $AllSprites/Body
 @onready var jump = $AllSprites/Jump
 @onready var fall = $AllSprites/Fall
+@onready var shooting_cooldown_timer = $ShootingCooldownTimer
+@onready var anim_shoot = get_node("AllSprites/Shoot")
 
 #@onready var sprite = $AnimatedSprite2D
 @onready var jump_sound = $SoundJump
 @onready var camera = $/root/BonusLevel/Camera2D
 #@onready var camera = $/root/TestLevel/Camera2D
+
+@onready var top_note = $NotesMessages/Areas/TopMarginContainer/Label
+@onready var bottom_note = $NotesMessages/Areas/BottomMarginContainer/Label
+@onready var app_anim = get_node("NotesMessages/AppAnimationPlayer")
 
 var active = true
 var jumps_remaining = 2
@@ -23,7 +31,7 @@ var was_jumping = false
 var jump_pitch = 1.0
 
 func _ready():
-	pass
+	Game.GUN == true
 	#anim.play("run")
 	#hide_all_sprites()
 	#wheel.visible = true
@@ -34,11 +42,11 @@ func _ready():
 
 
 func _physics_process(delta):
-	#print(velocity.y)
-	#print(jumps_remaining)
+
 	velocity.y += gravity * delta
 	
 	if active:
+
 		# Update the camera position
 		camera.position = position
 		
@@ -84,6 +92,7 @@ func _physics_process(delta):
 		taking_damage()
 		velocity.y = 0
 
+	shoot_lazor()
 
 func hide_all_sprites():
 	wheel.visible = false
@@ -110,3 +119,47 @@ func taking_damage():
 		#get_tree().paused = true
 	else:
 		pass
+
+
+func shoot_lazor():
+	#if LAZOR:
+	if Game.GUN:
+		if Input.is_action_pressed("shoot") and shooting_cooldown_timer.is_stopped() and not is_on_wall():
+			var direction = -1
+			var f = PLASMABALL.instantiate()
+			f.direction = direction * -1
+			get_parent().add_child(f)
+			f.position.y = position.y - 5
+			f.position.x = position.x - 30 * direction
+			fire_logic()
+
+
+func fire_logic():
+	$GunFire.play()
+	shooting_cooldown_timer.start()
+
+
+func app_pickup(app):
+	match app:
+		0: #JUMP
+			$NotesMessages/Areas.visible = true
+			top_note.text = "JUMP APP"
+			bottom_note.text = "YOU CAN JUMP!"
+			app_anim.play("jump_note")
+			$AppNoteTimer.start()
+		1: #DOUBLE JUMP
+			$NotesMessages/Areas.visible = true
+			top_note.text = "JUMP ADDON"
+			bottom_note.text = "YOU CAN DOUBLE JUMP!"
+			app_anim.play("double_jump_note")
+			$AppNoteTimer.start()
+		2: #GUN
+			$NotesMessages/Areas.visible = true
+			top_note.text = "DEFENSE APP"
+			bottom_note.text = "YOU CAN FIRE DEADLY LAZORZ!"
+			app_anim.play("gun_note")
+			$AppNoteTimer.start()
+
+
+func _on_app_note_timer_timeout():
+	$NotesMessages/Areas.visible = false

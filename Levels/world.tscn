@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cch1ikcufljkw"]
+[gd_scene load_steps=37 format=3 uid="uid://cch1ikcufljkw"]
 
 [ext_resource type="TileSet" uid="uid://cerknt5tmrh7t" path="res://Resources/RwK_TILES.tres" id="1_dtdvp"]
 [ext_resource type="Script" path="res://Background/BG.gd" id="2_1sh2b"]
@@ -22,6 +22,20 @@
 [ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="22_eur8d"]
 [ext_resource type="AudioStream" uid="uid://teu1dj620hd6" path="res://Assets/Audio/Music/fnanfne/MegaMan2-DrWilysCastle.ogg" id="22_foilk"]
 [ext_resource type="PackedScene" uid="uid://darp77k02b3uw" path="res://Scenes/Physics_Block.tscn" id="23_jodu0"]
+[ext_resource type="PackedScene" uid="uid://bpy6be58hevdo" path="res://Apps/annihilator.tscn" id="23_m5ryr"]
+[ext_resource type="PackedScene" uid="uid://chjddn28u1r6g" path="res://Apps/Crystal.tscn" id="24_ycalm"]
+[ext_resource type="PackedScene" uid="uid://3dek8cpmjetb" path="res://Apps/DoubleJump.tscn" id="25_hbx08"]
+[ext_resource type="PackedScene" uid="uid://brcwldjc05d0t" path="res://Apps/Gun.tscn" id="26_o72t8"]
+[ext_resource type="PackedScene" uid="uid://ck0xsb7gqo0y7" path="res://Apps/Haxxor.tscn" id="27_j3l2i"]
+[ext_resource type="PackedScene" uid="uid://bsq672nsgt2pf" path="res://Apps/Helmet.tscn" id="28_wk3d8"]
+[ext_resource type="PackedScene" uid="uid://cj3pq1aree5vn" path="res://Apps/Jump.tscn" id="29_v6rck"]
+[ext_resource type="PackedScene" uid="uid://c21qrbylx8yd" path="res://Apps/Launch.tscn" id="30_13sfw"]
+[ext_resource type="PackedScene" uid="uid://b75d4thnllgan" path="res://Apps/push.tscn" id="31_j8ydw"]
+[ext_resource type="PackedScene" uid="uid://c0fbmlre2d4bl" path="res://Apps/Velcro.tscn" id="32_jae1w"]
+[ext_resource type="PackedScene" uid="uid://ekj64q2nham8" path="res://Apps/Zoom.tscn" id="33_ebdsd"]
+[ext_resource type="PackedScene" uid="uid://b4blpvdc0f68l" path="res://Scenes/Keys/BlueKey/blue_key.tscn" id="34_dxh68"]
+[ext_resource type="PackedScene" uid="uid://clr2efv5fbggb" path="res://Scenes/Keys/GreenKey/green_key.tscn" id="35_hypsk"]
+[ext_resource type="PackedScene" uid="uid://dgos4d0dj3wwx" path="res://Scenes/Keys/YellowKey/yellow_key.tscn" id="36_o3cgc"]
 
 [node name="World" type="Node2D"]
 
@@ -113,7 +127,7 @@ position = Vector2(330, 230)
 position = Vector2(220, 220)
 
 [node name="NewRobot" parent="." instance=ExtResource("17_f5jjv")]
-position = Vector2(1178, -40)
+position = Vector2(710, -29)
 
 [node name="Checkpoint" parent="." instance=ExtResource("18_oid5f")]
 position = Vector2(760, 350)
@@ -123,13 +137,61 @@ position = Vector2(780, -20)
 text_field = "Don't try to drop that push-block down that hole, you will get softlocked!"
 
 [node name="Music Block" parent="." instance=ExtResource("20_rywyx")]
-position = Vector2(900, -40)
+position = Vector2(901, -130)
 song_beep = ExtResource("21_tiqrb")
 
 [node name="Music Block2" parent="." instance=ExtResource("20_rywyx")]
-position = Vector2(1090, -40)
+position = Vector2(1090, -130)
 song_beep = ExtResource("21_icrfe")
 
 [node name="Music Block3" parent="." instance=ExtResource("20_rywyx")]
-position = Vector2(1270, -40)
+position = Vector2(1269, -130)
 song_beep = ExtResource("22_foilk")
+
+[node name="Annihilator" parent="." instance=ExtResource("23_m5ryr")]
+position = Vector2(860, -20)
+
+[node name="Crystal" parent="." instance=ExtResource("24_ycalm")]
+position = Vector2(900, -20)
+
+[node name="DoubleJump" parent="." instance=ExtResource("25_hbx08")]
+position = Vector2(940, -20)
+
+[node name="Gun" parent="." instance=ExtResource("26_o72t8")]
+position = Vector2(980, -20)
+
+[node name="Haxxor" parent="." instance=ExtResource("27_j3l2i")]
+position = Vector2(1020, -20)
+
+[node name="Heart2" parent="." instance=ExtResource("22_eur8d")]
+position = Vector2(1066, -20)
+
+[node name="Hemlet" parent="." instance=ExtResource("28_wk3d8")]
+position = Vector2(1100, -20)
+
+[node name="Jump" parent="." instance=ExtResource("29_v6rck")]
+position = Vector2(1140, -20)
+
+[node name="Launch" parent="." instance=ExtResource("30_13sfw")]
+position = Vector2(1180, -20)
+
+[node name="Push" parent="." instance=ExtResource("31_j8ydw")]
+position = Vector2(1220, -20)
+
+[node name="Velcro" parent="." instance=ExtResource("32_jae1w")]
+position = Vector2(1260, -20)
+
+[node name="Zoom" parent="." instance=ExtResource("33_ebdsd")]
+position = Vector2(1300, -20)
+
+[node name="BlueKey" parent="." instance=ExtResource("34_dxh68")]
+position = Vector2(1330, -20)
+
+[node name="GreenKey" parent="." instance=ExtResource("35_hypsk")]
+position = Vector2(1370, -20)
+
+[node name="RedKey2" parent="." instance=ExtResource("20_66xal")]
+position = Vector2(1410, -30)
+
+[node name="YellowKey" parent="." instance=ExtResource("36_o3cgc")]
+position = Vector2(1450, -30)

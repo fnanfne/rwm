@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://be558k6cwido4"]
+
+[ext_resource type="Script" path="res://Background/rwm_bg.gd" id="1_u2v8e"]
+[ext_resource type="Texture2D" uid="uid://dkwsug4lrr5kt" path="res://Assets/UI/RWM.png" id="2_nrfe3"]
+
+[node name="RwM bg" type="ParallaxBackground"]
+script = ExtResource("1_u2v8e")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(256, 256)
+
+[node name="0" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(252, 168)
+texture = ExtResource("2_nrfe3")
+
+[node name="1" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(756, 168)
+texture = ExtResource("2_nrfe3")
+
+[node name="2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1260, 168)
+texture = ExtResource("2_nrfe3")
+
+[node name="3" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(252, 672)
+texture = ExtResource("2_nrfe3")
+
+[node name="4" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(756, 672)
+texture = ExtResource("2_nrfe3")
+
+[node name="5" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1260, 672)
+texture = ExtResource("2_nrfe3")

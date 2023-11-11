@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b3731u6lbim06"]
+[gd_scene load_steps=24 format=3 uid="uid://b3731u6lbim06"]
 
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_42jar"]
 [ext_resource type="Script" path="res://Robot/bonus_robot.gd" id="1_rrpd0"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://dtgbj6cf5nk5c" path="res://Assets/Robot/From John/robot_rocket.png" id="5_ewx7d"]
 [ext_resource type="Texture2D" uid="uid://dbv1f4lhbt8hr" path="res://Assets/Robot/Without helmet/Fall/robot_fall.png" id="5_glipk"]
 [ext_resource type="AudioStream" uid="uid://d0m7u6460aana" path="res://Assets/Audio/Sounds/die.ogg" id="7_nkhbv"]
+[ext_resource type="PackedScene" uid="uid://gye3o6c7msib" path="res://Scenes/pause_screen.tscn" id="9_gy3kf"]
+[ext_resource type="AudioStream" uid="uid://bfeemk4p127p0" path="res://Assets/Audio/Sounds/laser.ogg" id="9_nmsa5"]
+[ext_resource type="FontFile" uid="uid://xs5oaxoro5f0" path="res://Assets/Fonts/Commodore_Angled_v1-1.ttf" id="11_xhgwa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_no3yc"]
 
@@ -32,6 +35,8 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i8ftv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n4tq"]
 size = Vector2(20, 35)
@@ -127,6 +132,30 @@ _data = {
 "run": SubResource("Animation_53mq8")
 }
 
+[sub_resource type="Animation" id="Animation_wfa8m"]
+resource_name = "jump_note"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NotesMessages/Areas/BottomMarginContainer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_rxd2f"]
+resource_name = "jump_app"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3q5u8"]
+_data = {
+"jump_app": SubResource("Animation_rxd2f"),
+"jump_note": SubResource("Animation_wfa8m")
+}
+
 [node name="BonusRobot" type="CharacterBody2D" groups=["Robots"]]
 collision_layer = 2
 script = ExtResource("1_rrpd0")
@@ -152,6 +181,9 @@ flip_h = true
 visible = false
 texture = ExtResource("5_glipk")
 
+[node name="Shoot" type="AnimatedSprite2D" parent="AllSprites"]
+sprite_frames = SubResource("SpriteFrames_i8ftv")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_1n4tq")
@@ -165,8 +197,88 @@ stream = ExtResource("7_nkhbv")
 volume_db = -10.0
 bus = &"Sounds"
 
+[node name="GunFire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_nmsa5")
+bus = &"Sounds"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "run"
 libraries = {
 "": SubResource("AnimationLibrary_1iw84")
 }
+
+[node name="PauseScreen" parent="." instance=ExtResource("9_gy3kf")]
+
+[node name="ShootingCooldownTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="AppNoteTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="NotesMessages" type="Node2D" parent="."]
+
+[node name="Areas" type="Node2D" parent="NotesMessages"]
+
+[node name="TopMarginContainer" type="MarginContainer" parent="NotesMessages/Areas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -115.0
+offset_right = 130.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="NotesMessages/Areas/TopMarginContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NotesMessages/Areas/TopMarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.784314, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("11_xhgwa")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BottomMarginContainer" type="MarginContainer" parent="NotesMessages/Areas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = 27.0
+offset_right = 130.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="NotesMessages/Areas/BottomMarginContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NotesMessages/Areas/BottomMarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.784314, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("11_xhgwa")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="AppAnimationPlayer" type="AnimationPlayer" parent="NotesMessages"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_3q5u8")
+}
+
+[connection signal="timeout" from="AppNoteTimer" to="." method="_on_app_note_timer_timeout"]

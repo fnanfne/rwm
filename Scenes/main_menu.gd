@@ -347,11 +347,6 @@ func _on_back_from_levels_pressed():
 	$Sprite2D.visible = true
 
 
-func _on_mazerunner__godot_pressed():
-	$MenuSong.stop()
-	get_tree().change_scene_to_file("res://Levels/maze_runner_-_godot.tscn")
-
-
 func _on_volume_down_pressed():
 	var next_volume: float = clamp(SoundManager.get_sound_volume() - 0.1, 0, 1)
 	SoundManager.set_sound_volume(next_volume)
@@ -407,21 +402,75 @@ func _on_logout_pressed():
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 
-
 func _on_leaderboards_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Leaderboards/Leaderboard_main.tscn")
 
 
+func _on_mazerunner__godot_pressed():
+	$MenuSong.stop()
+	_begin_level_variables()
+	get_tree().change_scene_to_file("res://Levels/maze_runner_-_godot.tscn")
+
+
 func _on_robot_wants_music_pressed():
 	$MenuSong.stop()
+	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/robot_wants_music.tscn")
 
 
 func _on_gravity_blocks_pressed():
 	$MenuSong.stop()
+	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/gravity_blocks.tscn")
 
 
 func _on_the_pushblock_pressed():
 	$MenuSong.stop()
+	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/the_pushblock.tscn")
+
+
+func _on_moving_platforms_pressed():
+	$MenuSong.stop()
+	_begin_level_variables()
+	get_tree().change_scene_to_file("res://Levels/moving_platforms.tscn")
+
+
+func _on_tutorial_pressed():
+	$MenuSong.stop()
+	_begin_level_variables()
+	get_tree().change_scene_to_file("res://Levels/tutorial.tscn")
+
+
+func _on_disarmed_pressed():
+	$MenuSong.stop()
+	_begin_level_variables()
+	get_tree().change_scene_to_file("res://Levels/disarmed.tscn")
+
+
+func _on_bonus_level_pressed():
+	$MenuSong.stop()
+	_begin_level_variables()
+	get_tree().change_scene_to_file("res://Levels/bonus_level.tscn")
+
+
+func _begin_level_variables():
+	Game.healthContainers = 0
+	Game.BTC = 0
+	Game.YELLOWKEYS = 0
+	Game.CRYSTALS = 0
+	Game.JUMP = false
+	Game.DOUBLEJUMP = false
+	Game.HAXXOR = false
+	Game.HEMLET = false
+	Game.GUN = false
+	Game.LAUNCH = false
+	Game.ZOOM = false
+	Game.ANNIHILATE = false
+	Game.EXPLOZORZ = false
+	Game.VELCRO = false
+	Game.REDKEY = false
+	Game.GREENKEY = false
+	Game.BLUEKEY = false
+	Game.PUSHBLOCK = false
+

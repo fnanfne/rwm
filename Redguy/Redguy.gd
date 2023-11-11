@@ -40,8 +40,24 @@ func _on_area_2d_body_entered(body):
 		#Game.lose_life()
 	#elif body.get_collision_layer_value(16): Not fucking working!!
 	
-	
-	elif body.is_in_group("Lazor") or body.is_in_group("Plasmaball"):
+	elif body.is_in_group("Plasmaball"):
+		set_physics_process(false)
+		$AnimationPlayer.pause()
+		$Area2D/CollisionShape2D.queue_free()
+		$Screetch.play()
+			
+		# NEW SHADER METHOD BELOW
+		var TW5 = get_tree().create_tween()
+		TW5.tween_property($BodySprite.material, "shader_parameter/flashState", 
+		1.0, 1.0) #.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+		# NEW SHADER METHOD ABOVE
+
+		# 	DEATH STARS
+		body.queue_free()
+		$Timer.start()
+
+
+	elif body.is_in_group("Lazor"):
 		if health > 0:
 			health -= 1
 			$ProjectileHit.play()

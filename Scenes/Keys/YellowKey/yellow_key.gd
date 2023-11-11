@@ -38,6 +38,7 @@ func _on_body_entered(body):
 		#Game.YELLOWKEY = true
 		Game.YELLOWKEYS += 1
 		$SoundPickup.play()
+		body.app_pickup(16)
 		var tween1 = get_tree().create_tween()
 		var tween2 = get_tree().create_tween()
 		tween1.tween_property(self, "position", position - Vector2(0,42), 0.5)

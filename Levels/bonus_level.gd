@@ -2,7 +2,7 @@ extends Node2D
 
 signal game_over
 
-@export var world_speed = 300
+@export var world_speed = 222 #300
 
 @onready var moving_environment = $"/root/BonusLevel/Environment/Static"
 @onready var start_in = %StartIn
@@ -10,6 +10,7 @@ signal game_over
 @onready var animation_player = $AnimationPlayer
 @onready var bonus_robot = $"/root/BonusLevel/BonusRobot"
 @onready var ground = $"/root/BonusLevel/Environment/Static/Ground"
+#@onready var pause_screen = 
 
 var platform_1 = preload("res://Scenes/platform_1.tscn")
 var platform_2 = preload("res://Scenes/platform_2.tscn")
@@ -122,12 +123,19 @@ func _physics_process(delta):
 
 func _on_timer_timeout():
 	$Camera2D/ColorRect2.visible = true
+	$Timer2.start()
 
 
 func _on_robot_died():
 	emit_signal("game_over")
+	$LevelTimer.hide()
+	#bonus_robot.get_node("PauseScreen").visible = true # NOT WORKING
 
 
 #func _on_ground_body_entered(body):
 #	if body.is_in_group("Robots"):
 #		bonus_robot.taking_damage()
+
+
+func _on_timer_2_timeout():
+	$Environment/Static/ColorRect2.visible = true

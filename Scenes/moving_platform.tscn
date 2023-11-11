@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://q1vm4pmd387y"]
+[gd_scene load_steps=12 format=3 uid="uid://q1vm4pmd387y"]
 
 [ext_resource type="Texture2D" uid="uid://dwua7o4erlndu" path="res://Assets/paint__TILESET/IMG_003.png" id="1_25atf"]
 [ext_resource type="Script" path="res://Scenes/moving_platform.gd" id="1_pxl5m"]
@@ -56,13 +56,77 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_b0u8d"]
 resource_name = "move_loop_3"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(240, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gly2o"]
+resource_name = "move_loop_4"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(400, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h04tm"]
+resource_name = "move_loop_5"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -280), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h8fnr"]
+resource_name = "move_loop_6"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15, 30),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1040, 0), Vector2(0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dcfu8"]
 _data = {
 "RESET": SubResource("Animation_ctk56"),
 "move_loop_1": SubResource("Animation_2lh2c"),
 "move_loop_2": SubResource("Animation_bwnrk"),
-"move_loop_3": SubResource("Animation_b0u8d")
+"move_loop_3": SubResource("Animation_b0u8d"),
+"move_loop_4": SubResource("Animation_gly2o"),
+"move_loop_5": SubResource("Animation_h04tm"),
+"move_loop_6": SubResource("Animation_h8fnr")
 }
 
 [node name="MovingPlatform" type="Node2D"]
@@ -81,7 +145,6 @@ scale = Vector2(6.04, 1.96)
 shape = SubResource("RectangleShape2D_07to0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
-autoplay = "move_loop_1"
 speed_scale = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_dcfu8")

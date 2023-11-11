@@ -34,10 +34,12 @@ var being_gooped = false
 var burning_up_timer_active = false
 
 @export var robot_death_effect : PackedScene
+@export var btc_required_in_level : int = 0
 #@export var starting_position : = Vector2 (20,50)
 #@export var starting_position : = Vector2 Game.starting_position
 
 @onready var anim = get_node("AnimationPlayer")
+@onready var app_anim = get_node("NotesMessages/AppAnimationPlayer")
 @onready var coyote_jump_timer = $Timers/CoyoteJumpTimer
 @onready var shooting_cooldown_timer = $Timers/ShootingCooldownTimer
 @onready var damage_cooldown_timer = $Timers/DamageCooldownTimer
@@ -61,12 +63,15 @@ var burning_up_timer_active = false
 @onready var anim_helmet_idle_shoot = get_node("AllSprites/HelmetIdleShoot")
 @onready var anim_helmet_fall = get_node("AllSprites/HelmetFall")
 @onready var anim_zoomfire = get_node("AllSprites/ZoomFire")
-
+@onready var top_note = $NotesMessages/Areas/TopMarginContainer/Label
+@onready var bottom_note = $NotesMessages/Areas/BottomMarginContainer/Label
 #@onready var all_sprites_nodes = $AllSprites.get_children() # I tried creating a function instead.
 
 
 func _ready():
 	Game.Robot = self
+	#$MarginContainer.visible = false
+	$NotesMessages/Areas.visible = false
 	#position.x = Game.xPos
 	#position.y = Game.yPos
 
@@ -808,3 +813,156 @@ func flashing_red():
 	Color.RED, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	TW6.tween_property($AllSprites, "modulate", 
 	Color.WHITE, 0.1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+func app_pickup(app):
+	match app:
+		0: #JUMP
+			$NotesMessages/Areas.visible = true
+			top_note.text = "JUMP APP"
+			bottom_note.text = "YOU CAN JUMP!"
+			app_anim.play("jump_note")
+			$Timers/AppNoteTimer.start()
+		1: #DOUBLE JUMP
+			$NotesMessages/Areas.visible = true
+			top_note.text = "JUMP ADDON"
+			bottom_note.text = "YOU CAN DOUBLE JUMP!"
+			app_anim.play("double_jump_note")
+			$Timers/AppNoteTimer.start()
+		2: #GUN
+			$NotesMessages/Areas.visible = true
+			top_note.text = "DEFENSE APP"
+			bottom_note.text = "YOU CAN FIRE DEADLY LAZORZ!"
+			app_anim.play("gun_note")
+			$Timers/AppNoteTimer.start()
+		3: #ZOOM
+			$NotesMessages/Areas.visible = true
+			top_note.text = "ZOOM APP"
+			bottom_note.text = "YOU CAN ZOOM AT LUDICROUS SPEED!"
+			app_anim.play("zoom_note")
+			$Timers/AppNoteTimer.start()
+		4: #LAUNCH
+			$NotesMessages/Areas.visible = true
+			top_note.text = "LAUNCH APP"
+			bottom_note.text = "YOU CAN ROCKET SKYWARD!"
+			app_anim.play("launch_note")
+			$Timers/AppNoteTimer.start()
+		5: #ANNIHILATE
+			$NotesMessages/Areas.visible = true
+			top_note.text = "DEFENSE ADDON"
+			bottom_note.text = "YOU CAN ANNIHILATE!"
+			app_anim.play("annihilate_note")
+			$Timers/AppNoteTimer.start()
+		6: #HELMET
+			$NotesMessages/Areas.visible = true
+			top_note.text = "HELMET APP"
+			bottom_note.text = "YOU CAN SMASH BRICKS ABOVE YOU!"
+			app_anim.play("helmet_note")
+			$Timers/AppNoteTimer.start()
+		7: #HEART
+			$NotesMessages/Areas.visible = true
+			top_note.text = "HEART APP"
+			bottom_note.text = "ADDS A ROBOHEART"
+			app_anim.play("heart_note")
+			$Timers/AppNoteTimer.start()
+		8: #GUN UPGRADE
+			$NotesMessages/Areas.visible = true
+			top_note.text = "DEFENSE ADDON"
+			bottom_note.text = "LAZOR POWER UPGRADED!"
+			app_anim.play("gun_addon_note")
+			$Timers/AppNoteTimer.start()
+		9: #EXPLOZORS
+			$NotesMessages/Areas.visible = true
+			top_note.text = "DEFENSE ADDON"
+			bottom_note.text = "YOU LAZORZ ARE EXPLOZORS!"
+			app_anim.play("explozors_note")
+			$Timers/AppNoteTimer.start()
+		10: #HAXXOR
+			$NotesMessages/Areas.visible = true
+			top_note.text = "HAXXOR APP"
+			bottom_note.text = "MAKES SAD COMPUTERS HAPPY!"
+			app_anim.play("haxxor_note")
+			$Timers/AppNoteTimer.start()
+		11: #TIME SAVER
+			$NotesMessages/Areas.visible = true
+			top_note.text = "TIMESAVER APP"
+			bottom_note.text = "SAVES TEN SECONDS ON THE IGT TIMER!"
+			app_anim.play("timesaver_note")
+			$Timers/AppNoteTimer.start()
+		12: #VELCRO
+			$NotesMessages/Areas.visible = true
+			top_note.text = "ELECTRIC VELCRO APP"
+			bottom_note.text = "YOU CAN STICK TO SOME WALLS!"
+			app_anim.play("velcro_note")
+			$Timers/AppNoteTimer.start()
+		13: #RED KEY
+			$NotesMessages/Areas.visible = true
+			top_note.text = "RED KEYCARD"
+			bottom_note.text = "YOU CAN OPEN RED GATES NOW!"
+			app_anim.play("red_key_note")
+			$Timers/AppNoteTimer.start()
+		14: #GREEN KEY
+			$NotesMessages/Areas.visible = true
+			top_note.text = "GREEN KEYCARD"
+			bottom_note.text = "YOU CAN OPEN GREEN GATES!"
+			app_anim.play("green_key_note")
+			$Timers/AppNoteTimer.start()
+		15: #BLUE KEY
+			$NotesMessages/Areas.visible = true
+			top_note.text = "BLUE KEYCARD"
+			bottom_note.text = "BLUE GATES CAN'T STOP YOU!"
+			app_anim.play("blue_key_note")
+			$Timers/AppNoteTimer.start()
+		16: #GOLD KEY
+			$NotesMessages/Areas.visible = true
+			top_note.text = "GOLD KEYCARD"
+			bottom_note.text = "OPENS ONE GOLDEN GATE!"
+			app_anim.play("gold_key_note")
+			$Timers/AppNoteTimer.start()
+		17: #DELETE GUN
+			$NotesMessages/Areas.visible = true
+			top_note.text = "DEFENSE APP"
+			bottom_note.text = "DELETED"
+			app_anim.play("delete_gun_note")
+			$Timers/AppNoteTimer.start()
+		18: #DELETE LAUNCH
+			$NotesMessages/Areas.visible = true
+			top_note.text = "LAUNCH APP"
+			bottom_note.text = "DELETED"
+			app_anim.play("delete_launch_note")
+			$Timers/AppNoteTimer.start()
+		19: #DELETE HELMET
+			$NotesMessages/Areas.visible = true
+			top_note.text = "HELMET APP"
+			bottom_note.text = "DELETED"
+			app_anim.play("delete_helmet_note")
+			$Timers/AppNoteTimer.start()
+		20: #BITCOINS
+			$NotesMessages/Areas.visible = true
+			top_note.text = "BITCOIN!"
+			bottom_note.text = "% VARIABLE HERE % eg. 1/4"
+			app_anim.play("bitcoin_note")
+			$Timers/AppNoteTimer.start()
+		21: #CRYSTALS
+			$NotesMessages/Areas.visible = true
+			top_note.text = "QUANTUM CRYSTAL"
+			bottom_note.text = "POWERS A TELEMATIC"
+			app_anim.play("crystal_note")
+			$Timers/AppNoteTimer.start()
+		22: #PUSH
+			$NotesMessages/Areas.visible = true
+			top_note.text = "PUSH APP"
+			bottom_note.text = "YOU CAN PUSH SOME BLOCKS!"
+			app_anim.play("push_note")
+			$Timers/AppNoteTimer.start()
+		23: #FUTURE USE 3
+			pass
+		24: #FUTURE USE 4
+			pass
+		25: #FUTURE USE 5
+			pass
+
+
+func _on_app_note_timer_timeout():
+	app_anim.stop()
+	#$MarginContainer.visible = false
+	$NotesMessages/Areas.visible = false

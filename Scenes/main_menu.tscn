@@ -697,7 +697,6 @@ text = "Mazerunner - Godot"
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
-disabled = true
 text = "Moving Platforms"
 
 [node name="The Pushblock" type="Button" parent="Levels/HBoxContainer/VBoxContainer"]
@@ -755,6 +754,112 @@ text = "Springs & Tings"
 
 [node name="VSeparator" type="VSeparator" parent="Levels/HBoxContainer"]
 layout_mode = 2
+
+[node name="Bonus Level" type="Button" parent="Levels"]
+layout_mode = 2
+offset_left = 495.0
+offset_top = 3.0
+offset_right = 785.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+text = "Bonus Level"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Levels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 231.0
+offset_top = -354.0
+offset_right = 633.0
+offset_bottom = 357.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="Levels/HBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Levels/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Novice Level" type="Button" parent="Levels/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+disabled = true
+text = "Novice Level"
+
+[node name="Expert Level" type="Button" parent="Levels/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+disabled = true
+text = "Expert Level"
+
+[node name="Moving Platforms" type="Button" parent="Levels/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+disabled = true
+text = "Moving Platforms"
+
+[node name="Short & Bossy" type="Button" parent="Levels/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+disabled = true
+text = "Short & Bossy"
+
+[node name="Electric Mayhem" type="Button" parent="Levels/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+disabled = true
+text = "Electric Mayhem"
+
+[node name="Master Level" type="Button" parent="Levels/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+disabled = true
+text = "Master Level"
+
+[node name="Classic Flash Game" type="Button" parent="Levels/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+disabled = true
+text = "Classic Flash Game"
+
+[node name="Disarmed" type="Button" parent="Levels/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+text = "Disarmed"
+
+[node name="Girder Land" type="Button" parent="Levels/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+disabled = true
+text = "Girder Land"
+
+[node name="Love n\' Rockets" type="Button" parent="Levels/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+disabled = true
+text = "Love n' Rockets"
+
+[node name="Telefort" type="Button" parent="Levels/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_408a1")
+disabled = true
+text = "Telefort"
 
 [node name="BackFromLevels" type="Button" parent="Levels"]
 layout_mode = 1
@@ -1247,10 +1352,14 @@ text = "Leaderboards"
 [connection signal="pressed" from="Music/VBoxContainer/tuvwxyz" to="." method="_on_tuvwxyz_pressed"]
 [connection signal="pressed" from="Music/BackFromMusic" to="." method="_on_back_from_music_pressed"]
 [connection signal="pressed" from="ABCDEF/BackFromABCDEF" to="." method="_on_back_from_abcdef_pressed"]
+[connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Mazerunner - Godot" to="." method="_on_mazerunner__godot_pressed"]
+[connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Moving Platforms" to="." method="_on_moving_platforms_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/The Pushblock" to="." method="_on_the_pushblock_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Robot Wants Music" to="." method="_on_robot_wants_music_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Gravity Blocks" to="." method="_on_gravity_blocks_pressed"]
+[connection signal="pressed" from="Levels/Bonus Level" to="." method="_on_bonus_level_pressed"]
+[connection signal="pressed" from="Levels/HBoxContainer2/VBoxContainer/Disarmed" to="." method="_on_disarmed_pressed"]
 [connection signal="pressed" from="Levels/BackFromLevels" to="." method="_on_back_from_levels_pressed"]
 [connection signal="text_changed" from="Register/VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName" to="." method="_on_player_name_text_changed"]
 [connection signal="mouse_entered" from="Register/VBoxContainer/HBoxContainer2/VBoxContainer3/UsernameInfoButton" to="." method="_on_username_info_button_mouse_entered"]

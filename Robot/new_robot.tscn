@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://yg103a66ifo2"]
+[gd_scene load_steps=77 format=3 uid="uid://yg103a66ifo2"]
 
 [ext_resource type="Script" path="res://Robot/new_robot.gd" id="1_h7mvx"]
 [ext_resource type="Texture2D" uid="uid://cnr6r1pwxjiw6" path="res://Assets/Robot/From John/robot_runwheel.png" id="1_u5udj"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://cm7p0qujtx3ip" path="res://Assets/Robot/From John/landpoof.png" id="22_5bqy6"]
 [ext_resource type="Texture2D" uid="uid://biaijlkqubpix" path="res://Assets/Robot/From John/landpoof_left.png" id="23_yi3i8"]
 [ext_resource type="PackedScene" uid="uid://gye3o6c7msib" path="res://Scenes/pause_screen.tscn" id="32_v5ngu"]
+[ext_resource type="FontFile" uid="uid://xs5oaxoro5f0" path="res://Assets/Fonts/Commodore_Angled_v1-1.ttf" id="35_gtcn0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_86lg5"]
 height = 44.0
@@ -836,6 +837,30 @@ scale_max = 1.5
 scale_curve = SubResource("CurveTexture_43tff")
 color_ramp = SubResource("GradientTexture1D_lra5s")
 
+[sub_resource type="Animation" id="Animation_wfa8m"]
+resource_name = "jump_note"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NotesMessages/Areas/BottomMarginContainer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_rxd2f"]
+resource_name = "jump_app"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3q5u8"]
+_data = {
+"jump_app": SubResource("Animation_rxd2f"),
+"jump_note": SubResource("Animation_wfa8m")
+}
+
 [node name="NewRobot" type="CharacterBody2D" groups=["Robots"]]
 z_index = 4
 collision_layer = 2
@@ -1101,8 +1126,74 @@ one_shot = true
 [node name="BurningUpTimer" type="Timer" parent="Timers"]
 one_shot = true
 
+[node name="AppNoteTimer" type="Timer" parent="Timers"]
+one_shot = true
+
 [node name="PauseScreen" parent="." instance=ExtResource("32_v5ngu")]
-visible = false
+
+[node name="NotesMessages" type="Node2D" parent="."]
+
+[node name="Areas" type="Node2D" parent="NotesMessages"]
+
+[node name="TopMarginContainer" type="MarginContainer" parent="NotesMessages/Areas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -115.0
+offset_right = 130.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="NotesMessages/Areas/TopMarginContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NotesMessages/Areas/TopMarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.784314, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("35_gtcn0")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BottomMarginContainer" type="MarginContainer" parent="NotesMessages/Areas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = 27.0
+offset_right = 130.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="NotesMessages/Areas/BottomMarginContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NotesMessages/Areas/BottomMarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.784314, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("35_gtcn0")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="AppAnimationPlayer" type="AnimationPlayer" parent="NotesMessages"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_3q5u8")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
@@ -1116,3 +1207,4 @@ visible = false
 [connection signal="timeout" from="Timers/MoveAfterRespawnTimer" to="." method="_on_move_after_respawn_timer_timeout"]
 [connection signal="timeout" from="Timers/SmoothingCameraTimer" to="." method="_on_smoothing_camera_timer_timeout"]
 [connection signal="timeout" from="Timers/BurningUpTimer" to="." method="_on_burning_up_timer_timeout"]
+[connection signal="timeout" from="Timers/AppNoteTimer" to="." method="_on_app_note_timer_timeout"]

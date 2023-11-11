@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2kujgkm5mic1"]
+
+[ext_resource type="Script" path="res://Apps/rwm_radio.gd" id="1_xpmu1"]
+[ext_resource type="Texture2D" uid="uid://dkwsug4lrr5kt" path="res://Assets/UI/RWM.png" id="1_y2wh1"]
+[ext_resource type="AudioStream" uid="uid://cri2a100of34l" path="res://Assets/Audio/Sounds/radio.ogg" id="2_27krh"]
+[ext_resource type="Texture2D" uid="uid://ci0pvyvcloe7h" path="res://Assets/Apps/Radio/wireless.png" id="3_eqlnr"]
+[ext_resource type="Texture2D" uid="uid://8ddh8tcb7fs4" path="res://Assets/Apps/Radio/radio.png" id="4_wuoav"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8x8cw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jiv76"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_eqlnr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RwM Radio" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_xpmu1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8x8cw")
+
+[node name="RwM" type="Sprite2D" parent="."]
+position = Vector2(0, -147)
+texture = ExtResource("1_y2wh1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -1)
+sprite_frames = SubResource("SpriteFrames_jiv76")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_wuoav")
+
+[node name="RadioSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_27krh")
+volume_db = -20.0
+bus = &"Sounds"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

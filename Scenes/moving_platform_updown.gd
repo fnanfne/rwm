@@ -21,3 +21,13 @@ func _process(delta):
 			anim.play("move_loop_3")
 		4:
 			anim.play("move_loop_4")
+		5:
+			anim.play("move_loop_5")
+		6:
+			anim.play("move_loop_6")
+		7:
+			anim.play("move_loop_7")
+		8:
+			anim.play("move_loop_8")
+		9:
+			anim.play("move_loop_9")

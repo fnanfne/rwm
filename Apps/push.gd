@@ -38,6 +38,7 @@ func _on_body_entered(body):
 		set_collision_mask_value(2,false)
 		Game.PUSHBLOCK = true
 		$SoundPickup.play()
+		body.app_pickup(22)
 		var tween1 = get_tree().create_tween()
 		var tween2 = get_tree().create_tween()
 		tween1.tween_property(self, "position", position - Vector2(0,42), 0.5)

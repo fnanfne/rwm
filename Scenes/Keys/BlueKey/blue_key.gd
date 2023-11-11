@@ -38,6 +38,7 @@ func _on_body_entered(body):
 		#$CollisionShape2D.queue_free()
 		Game.BLUEKEY = true
 		$SoundPickup.play()
+		body.app_pickup(15)
 		var tween1 = get_tree().create_tween()
 		var tween2 = get_tree().create_tween()
 		tween1.tween_property(self, "position", position - Vector2(0,42), 0.5)
