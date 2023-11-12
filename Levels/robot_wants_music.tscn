@@ -1,4 +1,4 @@
-[gd_scene load_steps=181 format=3 uid="uid://bjp2h2gylbfjf"]
+[gd_scene load_steps=182 format=3 uid="uid://bjp2h2gylbfjf"]
 
 [ext_resource type="Script" path="res://Background/BG.gd" id="1_8ax2x"]
 [ext_resource type="PackedScene" uid="uid://yg103a66ifo2" path="res://Robot/new_robot.tscn" id="1_ombb7"]
@@ -172,6 +172,7 @@
 [ext_resource type="AudioStream" uid="uid://be7prvt0omkdm" path="res://Assets/Audio/Music/dmd/Robot in Miracle World.ogg" id="123_dvcvo"]
 [ext_resource type="Texture2D" uid="uid://dkwsug4lrr5kt" path="res://Assets/UI/RWM.png" id="171_hjhig"]
 [ext_resource type="PackedScene" uid="uid://b2kujgkm5mic1" path="res://Apps/rwm_radio.tscn" id="172_tg01g"]
+[ext_resource type="PackedScene" uid="uid://b75d4thnllgan" path="res://Apps/push.tscn" id="173_qurta"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rqj1i"]
 shader = ExtResource("8_u0h0d")
@@ -2788,3 +2789,6 @@ target = NodePath("../Teleporter11")
 
 [node name="RwM Radio" parent="." instance=ExtResource("172_tg01g")]
 position = Vector2(3940, 1980)
+
+[node name="Push" parent="." instance=ExtResource("173_qurta")]
+position = Vector2(3830, 1980)

@@ -837,6 +837,9 @@ scale_max = 1.5
 scale_curve = SubResource("CurveTexture_43tff")
 color_ramp = SubResource("GradientTexture1D_lra5s")
 
+[sub_resource type="Animation" id="Animation_rxd2f"]
+resource_name = "jump_app"
+
 [sub_resource type="Animation" id="Animation_wfa8m"]
 resource_name = "jump_note"
 tracks/0/type = "value"
@@ -851,9 +854,6 @@ tracks/0/keys = {
 "update": 0,
 "values": []
 }
-
-[sub_resource type="Animation" id="Animation_rxd2f"]
-resource_name = "jump_app"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3q5u8"]
 _data = {
@@ -1127,6 +1127,7 @@ one_shot = true
 one_shot = true
 
 [node name="AppNoteTimer" type="Timer" parent="Timers"]
+wait_time = 2.5
 one_shot = true
 
 [node name="PauseScreen" parent="." instance=ExtResource("32_v5ngu")]

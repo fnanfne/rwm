@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dvf0l115r2hm"]
+[gd_scene load_steps=40 format=3 uid="uid://dvf0l115r2hm"]
 
 [ext_resource type="Texture2D" uid="uid://i682pxljml5v" path="res://Assets/paint__TILESET/NEWpipes.png" id="1_43i84"]
 [ext_resource type="Script" path="res://Background/BG.gd" id="1_ntpyp"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://q1vm4pmd387y" path="res://Scenes/moving_platform.tscn" id="2_iin0r"]
 [ext_resource type="Texture2D" uid="uid://bkqlde52srhx7" path="res://Assets/Pics/moving_boxes_tracks_v2_horizontal.png" id="2_qy3xr"]
 [ext_resource type="PackedScene" uid="uid://cv0rwrtygmveu" path="res://Scenes/moving_platform_updown.tscn" id="3_0ae3j"]
+[ext_resource type="PackedScene" uid="uid://fvtuuod3spmq" path="res://Scenes/hud.tscn" id="3_8f52m"]
 [ext_resource type="PackedScene" uid="uid://yg103a66ifo2" path="res://Robot/new_robot.tscn" id="3_enj32"]
 [ext_resource type="PackedScene" uid="uid://cj3pq1aree5vn" path="res://Apps/Jump.tscn" id="5_4jqw5"]
 [ext_resource type="PackedScene" uid="uid://wfxdico6anc" path="res://Scenes/spikes_bottom.tscn" id="5_6rivg"]
@@ -23,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://enr0vi68ldaw" path="res://Scenes/Greenguy/green_guy.tscn" id="15_apyfl"]
 [ext_resource type="PackedScene" uid="uid://bo4de7uohdnv0" path="res://Scenes/lava_tile.tscn" id="16_xlld4"]
 [ext_resource type="PackedScene" uid="uid://cj13fi0jbnlf5" path="res://Scenes/Dripguy/Dripguy.tscn" id="17_y0nm4"]
+[ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="18_1bcti"]
 [ext_resource type="PackedScene" uid="uid://d0wrlwbpbvbjo" path="res://Scenes/Telematics/teleporter.tscn" id="18_uen23"]
 [ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="22_c2wuk"]
 [ext_resource type="PackedScene" uid="uid://b4blpvdc0f68l" path="res://Scenes/Keys/BlueKey/blue_key.tscn" id="23_vd5tv"]
@@ -53,6 +55,13 @@ texture_region_size = Vector2i(40, 40)
 [sub_resource type="TileSet" id="TileSet_3gkte"]
 tile_size = Vector2i(40, 40)
 sources/0 = SubResource("TileSetAtlasSource_daurd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qbrwt"]
+shader = ExtResource("18_1bcti")
+shader_parameter/speed = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/amplitude = 0.1
+shader_parameter/alpha = 0.1
 
 [node name="Moving Platforms" type="Node2D"]
 
@@ -86,6 +95,8 @@ texture = ExtResource("2_5fxce")
 [node name="5" type="Sprite2D" parent="BG/ParallaxLayer"]
 position = Vector2(1152, 640)
 texture = ExtResource("2_5fxce")
+
+[node name="HUD" parent="." instance=ExtResource("3_8f52m")]
 
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3gkte")
@@ -718,6 +729,13 @@ position = Vector2(100, -60)
 position = Vector2(140, -1180)
 rotation = 1.57336
 btc_required = 21
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_qbrwt")
+offset_left = -2110.0
+offset_top = -380.0
+offset_right = 6990.0
+offset_bottom = 4620.0
 
 [node name="Radio" parent="." instance=ExtResource("29_v2xsi")]
 z_index = 10

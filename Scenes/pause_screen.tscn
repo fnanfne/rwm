@@ -1,15 +1,29 @@
-[gd_scene load_steps=13 format=3 uid="uid://gye3o6c7msib"]
+[gd_scene load_steps=31 format=3 uid="uid://gye3o6c7msib"]
 
 [ext_resource type="Shader" path="res://Scenes/blur.gdshader" id="1_1ftfp"]
 [ext_resource type="Script" path="res://Scenes/pause_screen.gd" id="1_q1sty"]
 [ext_resource type="FontFile" uid="uid://xs5oaxoro5f0" path="res://Assets/Fonts/Commodore_Angled_v1-1.ttf" id="2_6fqid"]
 [ext_resource type="AudioStream" uid="uid://bfeemk4p127p0" path="res://Assets/Audio/Sounds/laser.ogg" id="2_8ln38"]
 [ext_resource type="AudioStream" uid="uid://whv1wpcdsdik" path="res://Assets/Audio/Sounds/youcanlevelup__STREAM.ogg" id="3_l4kw0"]
+[ext_resource type="PackedScene" uid="uid://chjddn28u1r6g" path="res://Apps/Crystal.tscn" id="7_lpxbd"]
+[ext_resource type="PackedScene" uid="uid://3dek8cpmjetb" path="res://Apps/DoubleJump.tscn" id="8_4w85h"]
+[ext_resource type="PackedScene" uid="uid://ccr2x1uxo2d0w" path="res://Apps/E-pill.tscn" id="9_w0bsv"]
+[ext_resource type="PackedScene" uid="uid://brcwldjc05d0t" path="res://Apps/Gun.tscn" id="10_6ypgs"]
+[ext_resource type="PackedScene" uid="uid://dx3sfu2vncedd" path="res://Apps/Bitcoin.tscn" id="10_xcc0n"]
+[ext_resource type="PackedScene" uid="uid://bpy6be58hevdo" path="res://Apps/annihilator.tscn" id="11_187ee"]
+[ext_resource type="PackedScene" uid="uid://ck0xsb7gqo0y7" path="res://Apps/Haxxor.tscn" id="11_t8xfl"]
+[ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="12_h4x1x"]
+[ext_resource type="PackedScene" uid="uid://bsq672nsgt2pf" path="res://Apps/Helmet.tscn" id="13_cy3ek"]
+[ext_resource type="PackedScene" uid="uid://cj3pq1aree5vn" path="res://Apps/Jump.tscn" id="14_iflic"]
+[ext_resource type="PackedScene" uid="uid://c21qrbylx8yd" path="res://Apps/Launch.tscn" id="15_gd4ws"]
+[ext_resource type="PackedScene" uid="uid://b75d4thnllgan" path="res://Apps/push.tscn" id="16_07cfh"]
+[ext_resource type="PackedScene" uid="uid://c0fbmlre2d4bl" path="res://Apps/Velcro.tscn" id="17_u7dy8"]
+[ext_resource type="PackedScene" uid="uid://ekj64q2nham8" path="res://Apps/Zoom.tscn" id="18_hhpkv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1su2"]
 shader = ExtResource("1_1ftfp")
 shader_parameter/blur = 0.8
-shader_parameter/brightness = 0.8
+shader_parameter/brightness = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ej5rf"]
 font = ExtResource("2_6fqid")
@@ -23,6 +37,14 @@ content_margin_top = 10.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14g3r"]
 content_margin_left = 20.0
 content_margin_top = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jcmm6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3yy27"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wn77p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_86fcx"]
 
 [sub_resource type="Animation" id="Animation_y3y40"]
 resource_name = "Pause"
@@ -128,6 +150,7 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0.12549)
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -471,6 +494,188 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 15
 text = "Back"
+
+[node name="PanelContainer2" type="PanelContainer" parent="ColorRect"]
+visible = false
+custom_minimum_size = Vector2(1200, 700)
+layout_mode = 2
+offset_left = 42.0
+offset_top = 12.0
+offset_right = 1242.0
+offset_bottom = 712.0
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/PanelContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jcmm6")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "HELP and INFO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_3yy27")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_wn77p")
+
+[node name="Button" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "SECTION 1"
+
+[node name="Button2" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "SECTION 2"
+
+[node name="Button3" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "SECTION 3"
+
+[node name="Button4" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "SECTION 4"
+
+[node name="HSeparator3" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_3yy27")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_86fcx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Jump" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "JUMP APP"
+
+[node name="Double_Jump" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "JUMP ADDON"
+
+[node name="Gun" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "DEFENSE APP"
+
+[node name="Zoom" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "ZOOM APP"
+
+[node name="Launch" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "LAUNCH APP"
+
+[node name="Annihilate" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "DEFENSE ADDON"
+
+[node name="Helmet" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "HELMET APP"
+
+[node name="Heart" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "HEART APP"
+
+[node name="Gun_Upgrade" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "DEFENSE ADDON"
+
+[node name="Explozors" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "DEFENSE ADDON"
+
+[node name="Haxxor" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "HAXXOR APP"
+
+[node name="Time_Saver" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "TIMESAVER APP"
+
+[node name="Velcro" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "VELCRO APP"
+
+[node name="Jump2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("14_iflic")]
+position = Vector2(-56, 14)
+
+[node name="DoubleJump" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("8_4w85h")]
+position = Vector2(-56, 54)
+
+[node name="Gun2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("10_6ypgs")]
+position = Vector2(-56, 94)
+
+[node name="Zoom2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("18_hhpkv")]
+position = Vector2(-56, 134)
+
+[node name="Launch2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("15_gd4ws")]
+position = Vector2(-56, 174)
+
+[node name="Annihilator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("11_187ee")]
+position = Vector2(-56, 214)
+
+[node name="Hemlet" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("13_cy3ek")]
+position = Vector2(-56, 254)
+
+[node name="Heart2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("12_h4x1x")]
+position = Vector2(-56, 294)
+
+[node name="Bitcoin" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("10_xcc0n")]
+position = Vector2(194, 94)
+
+[node name="Crystal" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("7_lpxbd")]
+position = Vector2(204, 154)
+
+[node name="E-pill" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("9_w0bsv")]
+position = Vector2(274, 384)
+
+[node name="Haxxor2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("11_t8xfl")]
+position = Vector2(-56, 424)
+
+[node name="Push" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("16_07cfh")]
+position = Vector2(-56, 334)
+
+[node name="Velcro2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("17_u7dy8")]
+position = Vector2(-56, 504)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Unpause"

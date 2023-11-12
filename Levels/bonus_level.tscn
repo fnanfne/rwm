@@ -160,30 +160,30 @@ position = Vector2(-310, -60)
 [node name="Gun" parent="Environment/Static" instance=ExtResource("11_k4kh5")]
 position = Vector2(-470, -60)
 
-[node name="ColorRect2" type="ColorRect" parent="Environment/Static"]
+[node name="Moving" type="Node2D" parent="Environment"]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_o5ejo")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -120.0
-offset_top = -50.0
+offset_left = -1050.0
+offset_top = -360.0
 offset_right = 230.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Moving" type="Node2D" parent="Environment"]
-
 [node name="BonusRobot" parent="." instance=ExtResource("6_aj58l")]
 position = Vector2(-630, -110)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 one_shot = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

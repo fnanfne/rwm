@@ -138,4 +138,5 @@ func _on_robot_died():
 
 
 func _on_timer_2_timeout():
-	$Environment/Static/ColorRect2.visible = true
+	$Camera2D/ColorRect2.visible = false
+	$ColorRect2.visible = true
