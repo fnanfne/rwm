@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://t4kaweg0jyj"]
+
+[ext_resource type="Texture2D" uid="uid://cq5ympfndwcn0" path="res://Assets/Apps/DeleteApps/delete_jump0.png" id="1_2xuje"]
+[ext_resource type="Script" path="res://Apps/delete_jump.gd" id="1_k37k4"]
+[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="2_nqfnl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2282k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcski"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2xuje")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Delete Jump" type="Area2D"]
+script = ExtResource("1_k37k4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2282k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dcski")
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nqfnl")
+volume_db = -10.0
+bus = &"Sounds"

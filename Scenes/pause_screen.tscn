@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://gye3o6c7msib"]
+[gd_scene load_steps=53 format=3 uid="uid://gye3o6c7msib"]
 
 [ext_resource type="Shader" path="res://Scenes/blur.gdshader" id="1_1ftfp"]
 [ext_resource type="Script" path="res://Scenes/pause_screen.gd" id="1_q1sty"]
@@ -14,16 +14,30 @@
 [ext_resource type="PackedScene" uid="uid://ck0xsb7gqo0y7" path="res://Apps/Haxxor.tscn" id="11_t8xfl"]
 [ext_resource type="PackedScene" uid="uid://p28ukhe7vdw1" path="res://Apps/Heart.tscn" id="12_h4x1x"]
 [ext_resource type="PackedScene" uid="uid://bsq672nsgt2pf" path="res://Apps/Helmet.tscn" id="13_cy3ek"]
+[ext_resource type="PackedScene" uid="uid://dushkcjm3ltud" path="res://Apps/gun_upgrade.tscn" id="14_bae0m"]
 [ext_resource type="PackedScene" uid="uid://cj3pq1aree5vn" path="res://Apps/Jump.tscn" id="14_iflic"]
+[ext_resource type="PackedScene" uid="uid://8vmqhh50uro6" path="res://Apps/explozors.tscn" id="15_3ga64"]
 [ext_resource type="PackedScene" uid="uid://c21qrbylx8yd" path="res://Apps/Launch.tscn" id="15_gd4ws"]
 [ext_resource type="PackedScene" uid="uid://b75d4thnllgan" path="res://Apps/push.tscn" id="16_07cfh"]
+[ext_resource type="PackedScene" uid="uid://mpdgepvauq2e" path="res://Apps/time_saver.tscn" id="17_mk5xk"]
 [ext_resource type="PackedScene" uid="uid://c0fbmlre2d4bl" path="res://Apps/Velcro.tscn" id="17_u7dy8"]
 [ext_resource type="PackedScene" uid="uid://ekj64q2nham8" path="res://Apps/Zoom.tscn" id="18_hhpkv"]
+[ext_resource type="PackedScene" uid="uid://t4kaweg0jyj" path="res://Apps/delete_jump.tscn" id="23_uo6xo"]
+[ext_resource type="PackedScene" uid="uid://cf7v0sub1gm1l" path="res://Apps/delete_gun.tscn" id="24_fyggr"]
+[ext_resource type="PackedScene" uid="uid://bmy3gsprg5qwq" path="res://Apps/delete_launch.tscn" id="25_bqfb4"]
+[ext_resource type="PackedScene" uid="uid://bob7grqiomo4v" path="res://Scenes/Keys/RedKey/red_key.tscn" id="26_45yvk"]
+[ext_resource type="PackedScene" uid="uid://dlkiyqx5kxwye" path="res://Apps/delete_zoom.tscn" id="26_wkfgq"]
+[ext_resource type="PackedScene" uid="uid://b42su2x6hqp2y" path="res://Apps/delete_helmet.tscn" id="27_754hh"]
+[ext_resource type="PackedScene" uid="uid://clr2efv5fbggb" path="res://Scenes/Keys/GreenKey/green_key.tscn" id="27_q0dws"]
+[ext_resource type="PackedScene" uid="uid://b4blpvdc0f68l" path="res://Scenes/Keys/BlueKey/blue_key.tscn" id="28_aajhq"]
+[ext_resource type="PackedScene" uid="uid://dgos4d0dj3wwx" path="res://Scenes/Keys/YellowKey/yellow_key.tscn" id="29_14c0n"]
+[ext_resource type="PackedScene" uid="uid://o0h0wgvoast0" path="res://Apps/wall_jump.tscn" id="31_wcwyg"]
+[ext_resource type="PackedScene" uid="uid://dcrbrdinvgom7" path="res://Apps/fire_boots.tscn" id="32_q411h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1su2"]
 shader = ExtResource("1_1ftfp")
 shader_parameter/blur = 0.8
-shader_parameter/brightness = 1.0
+shader_parameter/brightness = 0.8
 
 [sub_resource type="LabelSettings" id="LabelSettings_ej5rf"]
 font = ExtResource("2_6fqid")
@@ -43,6 +57,22 @@ content_margin_top = 10.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3yy27"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wn77p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xp8rx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dt7yo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dr2en"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_drs5u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ydvp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w3byw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8fn31"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_24ev8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_86fcx"]
 
@@ -150,7 +180,6 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0.12549)
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -200,6 +229,11 @@ text = "options"
 layout_mode = 2
 size_flags_vertical = 3
 text = "main menu"
+
+[node name="HelpButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "help"
 
 [node name="LevelRestart" type="VBoxContainer" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer"]
 visible = false
@@ -498,11 +532,14 @@ text = "Back"
 [node name="PanelContainer2" type="PanelContainer" parent="ColorRect"]
 visible = false
 custom_minimum_size = Vector2(1200, 700)
-layout_mode = 2
+layout_mode = 0
 offset_left = 42.0
 offset_top = 12.0
 offset_right = 1242.0
-offset_bottom = 712.0
+offset_bottom = 731.0
+
+[node name="Button" type="Button" parent="ColorRect/PanelContainer2"]
+layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/PanelContainer2"]
 layout_mode = 2
@@ -528,36 +565,884 @@ custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_3yy27")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+[node name="SectionButtons" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/SectionButtons"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_wn77p")
 
-[node name="Button" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Section1" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/SectionButtons"]
 layout_mode = 2
 text = "SECTION 1"
 
-[node name="Button2" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Section2" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/SectionButtons"]
 layout_mode = 2
 text = "SECTION 2"
 
-[node name="Button3" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Section3" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/SectionButtons"]
 layout_mode = 2
 text = "SECTION 3"
 
-[node name="Button4" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Section4" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/SectionButtons"]
 layout_mode = 2
 text = "SECTION 4"
+
+[node name="Section5" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/SectionButtons"]
+layout_mode = 2
+text = "SECTION 5"
+
+[node name="Section6" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/SectionButtons"]
+layout_mode = 2
+text = "SECTION 6"
 
 [node name="HSeparator3" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_3yy27")
 
+[node name="Section1" type="Node2D" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+
+[node name="Jump" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Jump"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xp8rx")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Jump"]
+layout_mode = 2
+text = "JUMP APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Jump"]
+layout_mode = 2
+theme_override_constants/separation = 87
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xp8rx")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Jump"]
+layout_mode = 2
+text = "This app makes robot jump. 
+On a keyboard, press the spacebar, or the enter keys, 
+or the up arrow key. On a controller, press the  'A' button."
+
+[node name="Jump2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Jump" instance=ExtResource("14_iflic")]
+position = Vector2(88, 29)
+
+[node name="HSeparator4" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dt7yo")
+
+[node name="Double_Jump" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Double_Jump"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dr2en")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Double_Jump"]
+layout_mode = 2
+text = "JUMP ADDON"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Double_Jump"]
+layout_mode = 2
+theme_override_constants/separation = 62
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dr2en")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Double_Jump"]
+layout_mode = 2
+text = "This addon compliments the jump app.
+Gives robot the ability to double-jump in the air to jump 
+higher and further."
+
+[node name="DoubleJump" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Double_Jump" instance=ExtResource("8_4w85h")]
+position = Vector2(88, 31)
+
+[node name="HSeparator5" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_drs5u")
+
+[node name="Gun" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Gun"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1ydvp")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Gun"]
+layout_mode = 2
+text = "DEFENSE APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Gun"]
+layout_mode = 2
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1ydvp")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Gun"]
+layout_mode = 2
+text = "This app grants robot a weapon. Gives robot the ability 
+to shoot deadly lazors at enemies. On keyboard, press the 
+'X' key, on controller, press the 'B' button."
+
+[node name="Gun2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Gun" instance=ExtResource("10_6ypgs")]
+position = Vector2(88, 30)
+
+[node name="HSeparator6" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="Zoom" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Zoom"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8fn31")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Zoom"]
+layout_mode = 2
+text = "ZOOM APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Zoom"]
+layout_mode = 2
+theme_override_constants/separation = 88
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8fn31")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Zoom"]
+layout_mode = 2
+text = "This allows robot to rocket, or zoom horizontally. Can 
+also zoom across lava or acid. On keyboard press the 'C'
+key, on controllers, press the 'X' button."
+
+[node name="Zoom2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Zoom" instance=ExtResource("18_hhpkv")]
+position = Vector2(88, 29)
+
+[node name="HSeparator7" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="Launch" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Launch"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_24ev8")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Launch"]
+layout_mode = 2
+text = "LAUNCH APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Launch"]
+layout_mode = 2
+theme_override_constants/separation = 63
+theme_override_styles/separator = SubResource("StyleBoxEmpty_24ev8")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Launch"]
+layout_mode = 2
+text = "This allows robot to rocket, or launch vertically. Can also 
+break bricks with a helmet on. On keyboard press the 'V' key, 
+on controllers, press the 'Y' button."
+
+[node name="Launch2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Launch" instance=ExtResource("15_gd4ws")]
+position = Vector2(88, 32)
+
+[node name="HSeparator8" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="Section2" type="Node2D" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+
+[node name="Annihilate" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Annihilate"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xp8rx")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Annihilate"]
+layout_mode = 2
+text = "ANNIHILATOR APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Annihilate"]
+layout_mode = 2
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xp8rx")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Annihilate"]
+layout_mode = 2
+text = "This app increases the speed of robot's lazor bullets 
+tremendously. Press and hold the fire button to 
+annihilate enemies!"
+
+[node name="Annihilator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Annihilate" instance=ExtResource("11_187ee")]
+position = Vector2(88, 30)
+
+[node name="HSeparator9" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dt7yo")
+
+[node name="Helmet" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Helmet"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dr2en")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Helmet"]
+layout_mode = 2
+text = "HELMET APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Helmet"]
+layout_mode = 2
+theme_override_constants/separation = 112
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dr2en")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Helmet"]
+layout_mode = 2
+text = "This app gives robot a helmet. Wearing a helmet protects 
+robot from dripping acid and breaks bricks by jumping 
+or launching into them."
+
+[node name="Hemlet" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Helmet" instance=ExtResource("13_cy3ek")]
+position = Vector2(88, 31)
+
+[node name="HSeparator10" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_drs5u")
+
+[node name="Heart" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Heart"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1ydvp")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Heart"]
+layout_mode = 2
+text = "HEART APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Heart"]
+layout_mode = 2
+theme_override_constants/separation = 125
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1ydvp")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Heart"]
+layout_mode = 2
+text = "This app adds a roboheart.
+Gives robot an extra chance before respawning if it's 
+hit by monsters or falling acid."
+
+[node name="Heart2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Heart" instance=ExtResource("12_h4x1x")]
+position = Vector2(88, 28)
+
+[node name="HSeparator11" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="Gun_Upgrade" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Gun_Upgrade"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8fn31")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Gun_Upgrade"]
+layout_mode = 2
+text = "DEFENSE ADDON"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Gun_Upgrade"]
+layout_mode = 2
+theme_override_constants/separation = 75
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8fn31")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Gun_Upgrade"]
+layout_mode = 2
+text = "This addon makes robot's gun more powerful.
+Stack these addons to make robot's gun more 
+and more powerful!"
+
+[node name="Gun Upgrade" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Gun_Upgrade" instance=ExtResource("14_bae0m")]
+position = Vector2(88, 29)
+
+[node name="HSeparator12" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="Explozors" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Explozors"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_24ev8")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Explozors"]
+layout_mode = 2
+text = "EXPLOZORS APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Explozors"]
+layout_mode = 2
+theme_override_constants/separation = 75
+theme_override_styles/separator = SubResource("StyleBoxEmpty_24ev8")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Explozors"]
+layout_mode = 2
+text = "This app upgrades robot's lazors.
+Makes robot's projectiles more powerful, and can 
+explode Red Nukes and melt Green Acid Blocks."
+
+[node name="Explozors" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Explozors" instance=ExtResource("15_3ga64")]
+position = Vector2(88, 30)
+
+[node name="HSeparator13" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="Section3" type="Node2D" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+
+[node name="Haxxor" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Haxxor"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xp8rx")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Haxxor"]
+layout_mode = 2
+text = "HAXXOR APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Haxxor"]
+layout_mode = 2
+theme_override_constants/separation = 115
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xp8rx")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Haxxor"]
+layout_mode = 2
+text = "This app is a hacking tool. Acquiring this app allows 
+robot to make sad computers happy. Making a computer
+happy opens remote doors."
+
+[node name="Haxxor" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Haxxor" instance=ExtResource("11_t8xfl")]
+position = Vector2(88, 28)
+
+[node name="HSeparator14" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dt7yo")
+
+[node name="TimeSaver" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/TimeSaver"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dr2en")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/TimeSaver"]
+layout_mode = 2
+text = "TIMESAVER APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/TimeSaver"]
+layout_mode = 2
+theme_override_constants/separation = 77
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dr2en")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/TimeSaver"]
+layout_mode = 2
+text = "Time saver app.
+Picking up this app pauses the in-game timer.
+This app pauses the in-game timer for ten seconds."
+
+[node name="Time Saver" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/TimeSaver" instance=ExtResource("17_mk5xk")]
+position = Vector2(88, 31)
+
+[node name="HSeparator15" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_drs5u")
+
+[node name="Velcro" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Velcro"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1ydvp")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Velcro"]
+layout_mode = 2
+text = "VELCRO APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Velcro"]
+layout_mode = 2
+theme_override_constants/separation = 115
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1ydvp")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Velcro"]
+layout_mode = 2
+text = "Electric Velcro app.
+This app allows robot to stick to purple walls. 
+Most useful for climbing walls with a steep incline."
+
+[node name="Velcro" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Velcro" instance=ExtResource("17_u7dy8")]
+position = Vector2(88, 28)
+
+[node name="HSeparator16" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="Crystal" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Crystal"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8fn31")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Crystal"]
+layout_mode = 2
+text = "QUANTUM CRYSTAL"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Crystal"]
+layout_mode = 2
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8fn31")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Crystal"]
+layout_mode = 2
+text = "Precious quantum crystal.
+This gem can power a Telematic for teleporting to a remote 
+destination. Insert this gem in to a Crystal Slot."
+
+[node name="Crystal" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Crystal" instance=ExtResource("7_lpxbd")]
+position = Vector2(88, 29)
+
+[node name="HSeparator17" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="Bitcoin" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Bitcoin"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_24ev8")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Bitcoin"]
+layout_mode = 2
+text = "BITCOIN"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Bitcoin"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_24ev8")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Bitcoin"]
+layout_mode = 2
+text = "Not Ethereum.
+Bitcoins are a collectible for robot. Collecting 
+all bitcoins can also open remote doors."
+
+[node name="Bitcoin" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Bitcoin" instance=ExtResource("10_xcc0n")]
+position = Vector2(88, 29)
+
+[node name="HSeparator18" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="Section4" type="Node2D" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+
+[node name="Delete_Jump" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Jump"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xp8rx")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Jump"]
+layout_mode = 2
+text = "DELETE JUMP APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Jump"]
+layout_mode = 2
+theme_override_constants/separation = 88
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xp8rx")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Jump"]
+layout_mode = 2
+text = "  
+This app deletes the Jump App.
+ "
+
+[node name="Delete Jump" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Jump" instance=ExtResource("23_uo6xo")]
+position = Vector2(88, 34)
+
+[node name="HSeparator19" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dt7yo")
+
+[node name="Delete_Gun" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Gun"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dr2en")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Gun"]
+layout_mode = 2
+text = "DELETE DEFENSE APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Gun"]
+layout_mode = 2
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dr2en")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Gun"]
+layout_mode = 2
+text = "  
+This app deletes the Defense App.
+ "
+
+[node name="Delete Gun" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Gun" instance=ExtResource("24_fyggr")]
+position = Vector2(88, 30)
+
+[node name="HSeparator20" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_drs5u")
+
+[node name="Delete_Launch" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Launch"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1ydvp")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Launch"]
+layout_mode = 2
+text = "DELETE LAUNCH APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Launch"]
+layout_mode = 2
+theme_override_constants/separation = 62
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1ydvp")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Launch"]
+layout_mode = 2
+text = "  
+This app deletes the Launch App.
+ "
+
+[node name="Delete Launch" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Launch" instance=ExtResource("25_bqfb4")]
+position = Vector2(88, 26)
+
+[node name="HSeparator21" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="Delete_Zoom" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Zoom"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8fn31")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Zoom"]
+layout_mode = 2
+text = "DELETE ZOOM APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Zoom"]
+layout_mode = 2
+theme_override_constants/separation = 87
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8fn31")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Zoom"]
+layout_mode = 2
+text = "  
+This app deletes the Zoom App.
+ "
+
+[node name="Delete Zoom" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Zoom" instance=ExtResource("26_wkfgq")]
+position = Vector2(88, 22)
+
+[node name="HSeparator22" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="Delete_Helmet" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Helmet"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_24ev8")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Helmet"]
+layout_mode = 2
+text = "DELETE HELMET APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Helmet"]
+layout_mode = 2
+theme_override_constants/separation = 62
+theme_override_styles/separator = SubResource("StyleBoxEmpty_24ev8")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Helmet"]
+layout_mode = 2
+text = "  
+This app deletes the Helmet App.
+ "
+
+[node name="Delete Helmet" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Helmet" instance=ExtResource("27_754hh")]
+position = Vector2(88, 18)
+
+[node name="HSeparator23" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="Section5" type="Node2D" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+
+[node name="RGB_Keys" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/RGB_Keys"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xp8rx")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/RGB_Keys"]
+layout_mode = 2
+text = "RGB KEYS"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/RGB_Keys"]
+layout_mode = 2
+theme_override_constants/separation = 114
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xp8rx")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/RGB_Keys"]
+layout_mode = 2
+text = "These are coloured keys.
+Possessing a coloured key opens all corresponding 
+coloured doors"
+
+[node name="RedKey" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/RGB_Keys" instance=ExtResource("26_45yvk")]
+position = Vector2(58, 28)
+
+[node name="GreenKey" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/RGB_Keys" instance=ExtResource("27_q0dws")]
+position = Vector2(88, 28)
+
+[node name="BlueKey" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/RGB_Keys" instance=ExtResource("28_aajhq")]
+position = Vector2(118, 28)
+
+[node name="HSeparator24" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dt7yo")
+
+[node name="GoldKey" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/GoldKey"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dr2en")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/GoldKey"]
+layout_mode = 2
+text = "GOLD KEY"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/GoldKey"]
+layout_mode = 2
+theme_override_constants/separation = 114
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dr2en")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/GoldKey"]
+layout_mode = 2
+text = "This is a Golden Key.
+Used to open Golden Doors but only one Golden Door can be 
+opened with a Golden Key."
+
+[node name="YellowKey" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/GoldKey" instance=ExtResource("29_14c0n")]
+position = Vector2(88, 31)
+
+[node name="HSeparator25" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_drs5u")
+
+[node name="Push" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Push"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1ydvp")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Push"]
+layout_mode = 2
+text = "PUSH APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Push"]
+layout_mode = 2
+theme_override_constants/separation = 113
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1ydvp")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Push"]
+layout_mode = 2
+text = "The Push App.
+Acquiring this app grants robot the ability to push 
+certain blocks around"
+
+[node name="Push" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Push" instance=ExtResource("16_07cfh")]
+position = Vector2(88, 28)
+
+[node name="HSeparator26" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="WallJump" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/WallJump"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8fn31")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/WallJump"]
+layout_mode = 2
+text = "WALL JUMP APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/WallJump"]
+layout_mode = 2
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8fn31")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/WallJump"]
+layout_mode = 2
+text = "Wall Jump App.
+With this app, robot gains the ability to jump 
+off certain walls"
+
+[node name="WallJump" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/WallJump" instance=ExtResource("31_wcwyg")]
+position = Vector2(88, 27)
+
+[node name="HSeparator27" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="FireWalk" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/FireWalk"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_24ev8")
+
+[node name="Label" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/FireWalk"]
+layout_mode = 2
+text = "FIRE WALK APP"
+
+[node name="VSeparator2" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/FireWalk"]
+layout_mode = 2
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_24ev8")
+
+[node name="Label2" type="Label" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/FireWalk"]
+layout_mode = 2
+text = "Fire Boots App.
+With this app, robot is able to walk across lava 
+or acid without burning but only while invincible."
+
+[node name="FireBoots" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/FireWalk" instance=ExtResource("32_q411h")]
+position = Vector2(88, 28)
+
+[node name="HSeparator28" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w3byw")
+
+[node name="BackButton" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BackfromHelp" type="Button" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/BackButton"]
+layout_mode = 2
+text = "BACK"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="VSeparator" type="VSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -635,30 +1520,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "VELCRO APP"
 
-[node name="Jump2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("14_iflic")]
-position = Vector2(-56, 14)
-
-[node name="DoubleJump" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("8_4w85h")]
-position = Vector2(-56, 54)
-
-[node name="Gun2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("10_6ypgs")]
-position = Vector2(-56, 94)
-
-[node name="Zoom2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("18_hhpkv")]
-position = Vector2(-56, 134)
-
-[node name="Launch2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("15_gd4ws")]
-position = Vector2(-56, 174)
-
-[node name="Annihilator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("11_187ee")]
-position = Vector2(-56, 214)
-
-[node name="Hemlet" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("13_cy3ek")]
-position = Vector2(-56, 254)
-
-[node name="Heart2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("12_h4x1x")]
-position = Vector2(-56, 294)
-
 [node name="Bitcoin" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("10_xcc0n")]
 position = Vector2(194, 94)
 
@@ -686,6 +1547,7 @@ libraries = {
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/HelpButton" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/LevelRestart/CancelButton" to="." method="_on_cancel_button_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/LevelRestart/ConfirmRestartButton" to="." method="_on_confirm_restart_button_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Options/VideoButton" to="." method="_on_video_button_pressed"]
@@ -700,3 +1562,9 @@ libraries = {
 [connection signal="toggled" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Video/HBoxContainer/Checks/Borderless" to="." method="_on_borderless_toggled"]
 [connection signal="toggled" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Video/HBoxContainer/Checks/Vsync" to="." method="_on_vsync_toggled"]
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Video/BackFromVideo" to="." method="_on_back_from_video_pressed"]
+[connection signal="pressed" from="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/SectionButtons/Section1" to="." method="_on_section_1_pressed"]
+[connection signal="pressed" from="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/SectionButtons/Section2" to="." method="_on_section_2_pressed"]
+[connection signal="pressed" from="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/SectionButtons/Section3" to="." method="_on_section_3_pressed"]
+[connection signal="pressed" from="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/SectionButtons/Section4" to="." method="_on_section_4_pressed"]
+[connection signal="pressed" from="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/SectionButtons/Section5" to="." method="_on_section_5_pressed"]
+[connection signal="pressed" from="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/BackButton/BackfromHelp" to="." method="_on_backfrom_help_pressed"]

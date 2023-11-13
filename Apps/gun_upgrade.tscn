@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dushkcjm3ltud"]
+
+[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="1_gqa5m"]
+[ext_resource type="Script" path="res://Apps/gun_upgrade.gd" id="1_jf75y"]
+[ext_resource type="Texture2D" uid="uid://cj01i6aj1pwns" path="res://Assets/Apps/GunUpgrade/gun_upgrade0.png" id="1_sv5lv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_deyfe"]
+size = Vector2(32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ui7o6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sv5lv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Gun Upgrade" type="Area2D"]
+script = ExtResource("1_jf75y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_deyfe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ui7o6")
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_gqa5m")
+volume_db = -10.0
+bus = &"Sounds"

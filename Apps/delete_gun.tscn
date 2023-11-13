@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf7v0sub1gm1l"]
+
+[ext_resource type="Texture2D" uid="uid://cknto25brdwu4" path="res://Assets/Apps/DeleteApps/delete_gun0.png" id="1_chdyj"]
+[ext_resource type="Script" path="res://Apps/delete_gun.gd" id="1_nb7yk"]
+[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="2_h8iif"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2282k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vib2f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_chdyj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Delete Gun" type="Area2D"]
+script = ExtResource("1_nb7yk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2282k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vib2f")
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_h8iif")
+volume_db = -10.0
+bus = &"Sounds"

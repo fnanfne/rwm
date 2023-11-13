@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b42su2x6hqp2y"]
+
+[ext_resource type="Texture2D" uid="uid://bppqejmfpru8" path="res://Assets/Apps/DeleteApps/delete_helmet0.png" id="1_5b3sp"]
+[ext_resource type="Script" path="res://Apps/delete_helmet.gd" id="1_52uis"]
+[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="2_vlasf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2282k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qbwvl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5b3sp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Delete Helmet" type="Area2D"]
+script = ExtResource("1_52uis")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2282k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qbwvl")
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vlasf")
+volume_db = -10.0
+bus = &"Sounds"

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://mpdgepvauq2e"]
+
+[ext_resource type="Texture2D" uid="uid://j1b5t1hgv4xw" path="res://Assets/Apps/TimeSaver/timesaver0.png" id="1_7x5oh"]
+[ext_resource type="Script" path="res://Apps/time_saver.gd" id="1_a4dj1"]
+[ext_resource type="AudioStream" uid="uid://bv8oxoawr22sy" path="res://Assets/Audio/Sounds/powerup.ogg" id="2_lyfqq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icfwh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i5gh6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7x5oh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Time Saver" type="Area2D"]
+script = ExtResource("1_a4dj1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_icfwh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i5gh6")
+
+[node name="SoundPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_lyfqq")
+volume_db = -10.0
+bus = &"Sounds"

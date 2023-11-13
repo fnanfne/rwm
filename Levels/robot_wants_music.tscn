@@ -2790,5 +2790,20 @@ target = NodePath("../Teleporter11")
 [node name="RwM Radio" parent="." instance=ExtResource("172_tg01g")]
 position = Vector2(3940, 1980)
 
+[node name="RwM Radio2" parent="." instance=ExtResource("172_tg01g")]
+position = Vector2(4300, 2780)
+
+[node name="RwM Radio3" parent="." instance=ExtResource("172_tg01g")]
+position = Vector2(3940, 3180)
+
+[node name="RwM Radio4" parent="." instance=ExtResource("172_tg01g")]
+position = Vector2(4300, 3580)
+
+[node name="RwM Radio5" parent="." instance=ExtResource("172_tg01g")]
+position = Vector2(4300, 1180)
+
+[node name="RwM Radio6" parent="." instance=ExtResource("172_tg01g")]
+position = Vector2(3940, 780)
+
 [node name="Push" parent="." instance=ExtResource("173_qurta")]
 position = Vector2(3830, 1980)
