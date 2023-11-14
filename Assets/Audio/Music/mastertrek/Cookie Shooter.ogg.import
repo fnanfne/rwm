@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c8cx4712e1otf"
+path="res://.godot/imported/Cookie Shooter.ogg-38962df1df4fc4323729402506c60c96.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/mastertrek/Cookie Shooter.ogg"
+dest_files=["res://.godot/imported/Cookie Shooter.ogg-38962df1df4fc4323729402506c60c96.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

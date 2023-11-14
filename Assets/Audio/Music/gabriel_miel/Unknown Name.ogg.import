@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cogbcdgibc62r"
+path="res://.godot/imported/Unknown Name.ogg-96212053d9d95ca2915cebe1dcef7789.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/gabriel_miel/Unknown Name.ogg"
+dest_files=["res://.godot/imported/Unknown Name.ogg-96212053d9d95ca2915cebe1dcef7789.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

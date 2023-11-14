@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bgjm8b0rh5m0m"
+path="res://.godot/imported/Cellular Mayhem.ogg-e3bf4de7ab5d6deecdf58badfb1b3dd3.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/clorpdoop/Cellular Mayhem.ogg"
+dest_files=["res://.godot/imported/Cellular Mayhem.ogg-e3bf4de7ab5d6deecdf58badfb1b3dd3.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

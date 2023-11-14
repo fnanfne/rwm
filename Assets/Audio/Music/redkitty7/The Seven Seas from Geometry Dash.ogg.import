@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ch47l5bs3ooj6"
+path="res://.godot/imported/The Seven Seas from Geometry Dash.ogg-c86751025ede7fdaa46ef7829f258c20.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/redkitty7/The Seven Seas from Geometry Dash.ogg"
+dest_files=["res://.godot/imported/The Seven Seas from Geometry Dash.ogg-c86751025ede7fdaa46ef7829f258c20.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

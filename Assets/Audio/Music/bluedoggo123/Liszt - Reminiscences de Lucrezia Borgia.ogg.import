@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c8hm5lupqyjch"
+path="res://.godot/imported/Liszt - Reminiscences de Lucrezia Borgia.ogg-4e621b10843a2855aab12c9910d136e6.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/bluedoggo123/Liszt - Reminiscences de Lucrezia Borgia.ogg"
+dest_files=["res://.godot/imported/Liszt - Reminiscences de Lucrezia Borgia.ogg-4e621b10843a2855aab12c9910d136e6.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

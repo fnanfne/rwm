@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bpeiltrxearkm"
+path="res://.godot/imported/Fleeing the complex.ogg-f0ea016093b37f03bcf76eb84230c04d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/berrytheeveeboi/Fleeing the complex.ogg"
+dest_files=["res://.godot/imported/Fleeing the complex.ogg-f0ea016093b37f03bcf76eb84230c04d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://f0rbw4cyruoa"
+path="res://.godot/imported/Unnamed Song 2.ogg-7160fb1161e0e89ccde6eab5207a1ef0.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/aero/Unnamed Song 2.ogg"
+dest_files=["res://.godot/imported/Unnamed Song 2.ogg-7160fb1161e0e89ccde6eab5207a1ef0.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

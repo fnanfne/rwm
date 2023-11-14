@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwhp83krbdpn2"
+path="res://.godot/imported/Hall of the dark fortress.ogg-12db923bc9f9a35f756eaf12505351e1.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/clonedrone/Hall of the dark fortress.ogg"
+dest_files=["res://.godot/imported/Hall of the dark fortress.ogg-12db923bc9f9a35f756eaf12505351e1.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

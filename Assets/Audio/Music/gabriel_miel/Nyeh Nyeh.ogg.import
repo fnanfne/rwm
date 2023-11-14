@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dgguftw6pcwfk"
+path="res://.godot/imported/Nyeh Nyeh.ogg-e6a6f3a0079adbb8502912bdfdda81b8.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/gabriel_miel/Nyeh Nyeh.ogg"
+dest_files=["res://.godot/imported/Nyeh Nyeh.ogg-e6a6f3a0079adbb8502912bdfdda81b8.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cfltnvcvlu1i4"
+path="res://.godot/imported/Schumann - Kinderszenen.ogg-46c4987051093b4412a395c536bfaf92.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/bluedoggo123/Schumann - Kinderszenen.ogg"
+dest_files=["res://.godot/imported/Schumann - Kinderszenen.ogg-46c4987051093b4412a395c536bfaf92.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

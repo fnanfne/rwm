@@ -149,16 +149,20 @@ func _on_options_button_pressed():
 func _on_audio_button_pressed():
 	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Options.hide()
 	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Audio.show()
+	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu.hide()
 
 
 func _on_video_button_pressed():
 	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Options.hide()
 	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Video.show()
+	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu.hide()
 
 
 func _on_back_from_audio_pressed():
 	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Audio.hide()
-	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Options.show()
+	#$ColorRect/CenterContainer/PanelContainer/MarginContainer/Options.show()
+	#$ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/OptionsNEW.show()
+	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu.show()
 
 
 func _on_back_from_options_pressed():
@@ -168,7 +172,9 @@ func _on_back_from_options_pressed():
 
 func _on_back_from_video_pressed():
 	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Video.hide()
-	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Options.show()
+	#$ColorRect/CenterContainer/PanelContainer/MarginContainer/Options.show()
+	#$ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/OptionsNEW.show()
+	$ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu.show()
 
 
 func _on_volume_down_pressed():

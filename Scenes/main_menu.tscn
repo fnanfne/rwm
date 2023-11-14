@@ -1,8 +1,10 @@
-[gd_scene load_steps=50 format=3 uid="uid://chu1sp74s581v"]
+[gd_scene load_steps=54 format=3 uid="uid://chu1sp74s581v"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_a53xw"]
 [ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="2_0bbfi"]
+[ext_resource type="AudioStream" uid="uid://bfeemk4p127p0" path="res://Assets/Audio/Sounds/laser.ogg" id="2_ptd81"]
 [ext_resource type="PackedScene" uid="uid://cgpqxtljbacjd" path="res://Background/bg.tscn" id="3_1ihxo"]
+[ext_resource type="AudioStream" uid="uid://3tquv6ft8g04" path="res://Assets/Audio/Sounds/crystal.ogg" id="3_w03cw"]
 [ext_resource type="AudioStream" uid="uid://bfbb04e1fn4gl" path="res://Assets/Audio/Sounds/music_title__STREAM.ogg" id="4_sy0sf"]
 [ext_resource type="Texture2D" uid="uid://dft3g5vd51ef2" path="res://Assets/UI/back.png" id="5_0m4to"]
 [ext_resource type="Texture2D" uid="uid://cy1svfkrfmif5" path="res://Assets/UI/play.png" id="5_lydwu"]
@@ -20,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://dn6phcsxwrmlo" path="res://Assets/Pics/checkbox_unchecked.png" id="11_f1tiw"]
 [ext_resource type="Texture2D" uid="uid://c5rwxfait420k" path="res://Assets/UI/logout_txt.png" id="16_mpkj7"]
 [ext_resource type="Texture2D" uid="uid://cw5fibhn0rglg" path="res://Assets/UI/signup2.png" id="17_osfi7"]
+[ext_resource type="AudioStream" uid="uid://ha6l8gtrw06v" path="res://Assets/Audio/Sounds/click.ogg" id="21_mphgt"]
+[ext_resource type="AudioStream" uid="uid://whv1wpcdsdik" path="res://Assets/Audio/Sounds/youcanlevelup__STREAM.ogg" id="22_cmjvj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cfbch"]
 shader = ExtResource("2_0bbfi")
@@ -114,6 +118,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a53xw")
+sound_sample = ExtResource("2_ptd81")
+music_sample = ExtResource("3_w03cw")
 
 [node name="BG" parent="." instance=ExtResource("3_1ihxo")]
 
@@ -1330,6 +1336,14 @@ offset_right = 95.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Leaderboards"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_mphgt")
+volume_db = -10.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_cmjvj")
+volume_db = -10.0
 
 [connection signal="pressed" from="Options/VBoxContainer/Video" to="." method="_on_video_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer/Audio" to="." method="_on_audio_pressed"]

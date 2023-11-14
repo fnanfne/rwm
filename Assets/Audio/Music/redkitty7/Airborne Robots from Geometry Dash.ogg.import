@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ohmb6vi4vbvm"
+path="res://.godot/imported/Airborne Robots from Geometry Dash.ogg-ab88bba1ecd0e44c8e13429c8a6d9821.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/redkitty7/Airborne Robots from Geometry Dash.ogg"
+dest_files=["res://.godot/imported/Airborne Robots from Geometry Dash.ogg-ab88bba1ecd0e44c8e13429c8a6d9821.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b1dmap3l6mngc"
+path="res://.godot/imported/Wind On the Cliffs.ogg-2bf3cb8d201c97c07e8fddc0e95c63fe.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/rodentracer/Wind On the Cliffs.ogg"
+dest_files=["res://.godot/imported/Wind On the Cliffs.ogg-2bf3cb8d201c97c07e8fddc0e95c63fe.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

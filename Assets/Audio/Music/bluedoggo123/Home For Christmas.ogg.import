@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c0mfxfa5es0l4"
+path="res://.godot/imported/Home For Christmas.ogg-9dd77e428498a2a81107bc7e7890cc83.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/bluedoggo123/Home For Christmas.ogg"
+dest_files=["res://.godot/imported/Home For Christmas.ogg-9dd77e428498a2a81107bc7e7890cc83.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

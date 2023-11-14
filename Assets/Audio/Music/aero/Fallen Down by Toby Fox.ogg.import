@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bk5xwydvviyis"
+path="res://.godot/imported/Fallen Down by Toby Fox.ogg-4f803694431ef2791686ee6effd25e24.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/aero/Fallen Down by Toby Fox.ogg"
+dest_files=["res://.godot/imported/Fallen Down by Toby Fox.ogg-4f803694431ef2791686ee6effd25e24.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

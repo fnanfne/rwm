@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/pause_screen.gd" id="1_q1sty"]
 [ext_resource type="FontFile" uid="uid://xs5oaxoro5f0" path="res://Assets/Fonts/Commodore_Angled_v1-1.ttf" id="2_6fqid"]
 [ext_resource type="AudioStream" uid="uid://bfeemk4p127p0" path="res://Assets/Audio/Sounds/laser.ogg" id="2_8ln38"]
-[ext_resource type="AudioStream" uid="uid://whv1wpcdsdik" path="res://Assets/Audio/Sounds/youcanlevelup__STREAM.ogg" id="3_l4kw0"]
+[ext_resource type="AudioStream" uid="uid://3tquv6ft8g04" path="res://Assets/Audio/Sounds/crystal.ogg" id="3_hqa5p"]
 [ext_resource type="PackedScene" uid="uid://chjddn28u1r6g" path="res://Apps/Crystal.tscn" id="7_lpxbd"]
 [ext_resource type="PackedScene" uid="uid://3dek8cpmjetb" path="res://Apps/DoubleJump.tscn" id="8_4w85h"]
 [ext_resource type="PackedScene" uid="uid://ccr2x1uxo2d0w" path="res://Apps/E-pill.tscn" id="9_w0bsv"]
@@ -166,7 +166,7 @@ _data = {
 process_mode = 3
 script = ExtResource("1_q1sty")
 sound_sample = ExtResource("2_8ln38")
-music_sample = ExtResource("3_l4kw0")
+music_sample = ExtResource("3_hqa5p")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_m1su2")
@@ -220,7 +220,20 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "restart level"
 
+[node name="OptionsNEW" type="HBoxContainer" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu"]
+layout_mode = 2
+alignment = 1
+
+[node name="AudioButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/OptionsNEW"]
+layout_mode = 2
+text = "audio"
+
+[node name="VideoButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/OptionsNEW"]
+layout_mode = 2
+text = "video"
+
 [node name="OptionsButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 text = "options"
@@ -1572,6 +1585,8 @@ libraries = {
 }
 
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/OptionsNEW/AudioButton" to="." method="_on_audio_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/OptionsNEW/VideoButton" to="." method="_on_video_button_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/Menu/HelpButton" to="." method="_on_help_button_pressed"]

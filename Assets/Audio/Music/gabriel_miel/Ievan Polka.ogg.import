@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://baj504xnr1w1s"
+path="res://.godot/imported/Ievan Polka.ogg-9ba14521cc92f655e378573fd5def6e9.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/gabriel_miel/Ievan Polka.ogg"
+dest_files=["res://.godot/imported/Ievan Polka.ogg-9ba14521cc92f655e378573fd5def6e9.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

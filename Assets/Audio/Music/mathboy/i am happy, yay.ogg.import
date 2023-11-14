@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://csbj2w37dkqrq"
+path="res://.godot/imported/i am happy, yay.ogg-9014712bab0af753f52134949bc70b8d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/mathboy/i am happy, yay.ogg"
+dest_files=["res://.godot/imported/i am happy, yay.ogg-9014712bab0af753f52134949bc70b8d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

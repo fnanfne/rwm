@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8dgint573aek"
+path="res://.godot/imported/Tchaikovsky - 1812 Overture.ogg-537b2f48590aa5be586010cb379044b2.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/bluedoggo123/Tchaikovsky - 1812 Overture.ogg"
+dest_files=["res://.godot/imported/Tchaikovsky - 1812 Overture.ogg-537b2f48590aa5be586010cb379044b2.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

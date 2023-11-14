@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dkxy8hn0jmjlu"
+path="res://.godot/imported/cave system.ogg-c595d81e3b22194f7d547922722288f0.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/choxolate/cave system.ogg"
+dest_files=["res://.godot/imported/cave system.ogg-c595d81e3b22194f7d547922722288f0.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

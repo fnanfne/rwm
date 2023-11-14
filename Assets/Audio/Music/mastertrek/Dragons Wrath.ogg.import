@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://me45e4umv5gc"
+path="res://.godot/imported/Dragons Wrath.ogg-6467d5e664145936e7957f2a5fd0b537.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/mastertrek/Dragons Wrath.ogg"
+dest_files=["res://.godot/imported/Dragons Wrath.ogg-6467d5e664145936e7957f2a5fd0b537.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

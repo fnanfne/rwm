@@ -28,7 +28,7 @@ func _init(possible_busses: PackedStringArray = default_busses, pool_size: int =
 		increase_pool()
 
 
-func prepare(resource: AudioStream, override_bus: String = "") -> AudioStreamPlayer:
+func prepare(resource: AudioStream, override_bus: String = "Music") -> AudioStreamPlayer:
 	var player := get_available_player()
 	player.stream = resource
 	player.bus = override_bus if override_bus != "" else bus

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cahaps5c4gfxq"
+path="res://.godot/imported/swing-style thing.ogg-992e254e6279783560d813f3332c381f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/ysqys/swing-style thing.ogg"
+dest_files=["res://.godot/imported/swing-style thing.ogg-992e254e6279783560d813f3332c381f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

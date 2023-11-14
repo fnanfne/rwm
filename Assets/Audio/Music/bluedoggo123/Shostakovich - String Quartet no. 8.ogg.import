@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bw41kmxjhpoxm"
+path="res://.godot/imported/Shostakovich - String Quartet no. 8.ogg-25c34dfb587ad4c499c24a579a72f684.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/bluedoggo123/Shostakovich - String Quartet no. 8.ogg"
+dest_files=["res://.godot/imported/Shostakovich - String Quartet no. 8.ogg-25c34dfb587ad4c499c24a579a72f684.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

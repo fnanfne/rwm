@@ -74,6 +74,7 @@ func _on_RegisterUPButton_pressed() -> void:
 	var confirm_password = $"FormContainer/MainFormContainer/FormInputFields/ConfirmPassword".text
 	SilentWolf.Auth.register_player_user_password(player_name, password, confirm_password)
 	show_processing_label()
+	$AudioStreamPlayer.play()
 
 
 func _on_registration_complete(sw_result: Dictionary) -> void:
@@ -121,6 +122,7 @@ func _on_back_button_pressed():
 	show_and_hide(menu, register)
 	$LeaderboardsButton.visible = true
 	$Sprite2D.visible = true
+	$AudioStreamPlayer.play()
 
 
 func show_processing_label() -> void:
@@ -160,6 +162,7 @@ func _on_submit_button_pressed() -> void:
 	var confirm_password = $"Register/VBoxContainer/HBoxContainer2/VBoxContainer2/PasswordConfirmBox/ConfirmPassword".text
 	SilentWolf.Auth.register_player(player_name, email, password, confirm_password)
 	show_processing_label()
+	$AudioStreamPlayer.play()
 ####### PLAYER REGISTER SCENE ABOVE #######
 
 ####### PLAYER LOGIN SCENE BELOW #######
@@ -170,6 +173,7 @@ func _on_LoginButton_pressed() -> void:
 	SWLogger.debug("Login form submitted, remember_me: " + str(remember_me))
 	SilentWolf.Auth.login_player(username, password, remember_me)
 	show_processing_label()
+	$AudioStreamPlayer.play()
 
 
 func _on_login_complete(sw_result: Dictionary) -> void:
@@ -183,6 +187,7 @@ func login_success() -> void:
 	var scene_name = SilentWolf.auth_config.redirect_to_scene
 	SWLogger.info("logged in as: " + str(SilentWolf.Auth.logged_in_player))
 	get_tree().change_scene_to_file(scene_name)
+	$AudioStreamPlayer2.play()
 
 
 func login_failure(error: String) -> void:
@@ -203,6 +208,7 @@ func login_failure(error: String) -> void:
 
 func _on_LinkButton_pressed() -> void:
 	get_tree().change_scene_to_file(SilentWolf.auth_config.reset_password_scene)
+	$AudioStreamPlayer.play()
 
 
 func _on_login_back_button_pressed():
@@ -212,6 +218,7 @@ func _on_login_back_button_pressed():
 	show_and_hide(menu, login)
 	$LeaderboardsButton.visible = true
 	$Sprite2D.visible = true
+	$AudioStreamPlayer.play()
 ####### PLAYER LOGIN SCENE ABOVE #######
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -241,11 +248,13 @@ func _on_start_pressed():
 	show_and_hide(levels, menu)
 	$LeaderboardsButton.visible = false
 	$Sprite2D.visible = false
+	$AudioStreamPlayer.play()
 
 
 func _on_options_pressed():
 	show_and_hide(options, menu) # Show options, and hide menu...
 	$LeaderboardsButton.visible = false
+	$AudioStreamPlayer.play()
 
 
 func show_and_hide(first, second): # ...With this function
@@ -255,21 +264,25 @@ func show_and_hide(first, second): # ...With this function
 
 func _on_exit_pressed():
 	get_tree().quit()
+	$AudioStreamPlayer.play()
 
 
 func _on_video_pressed():
 	show_and_hide(video, options)
 	$LeaderboardsButton.visible = false
+	$AudioStreamPlayer.play()
 
 
 func _on_audio_pressed():
 	show_and_hide(audio, options)
+	$AudioStreamPlayer.play()
 
 
 func _on_back_from_options_pressed():
 	show_and_hide(menu, options)
 	$LeaderboardsButton.visible = true
 	$Sprite2D.visible = true
+	$AudioStreamPlayer.play()
 
 
 func _on_full_screen_toggled(button_pressed):
@@ -295,6 +308,7 @@ func _on_vsync_toggled(button_pressed):
 
 func _on_back_from_video_pressed():
 	show_and_hide(options, video)
+	$AudioStreamPlayer.play()
 
 
 func _on_sound_value_changed(value):
@@ -309,42 +323,52 @@ func _on_music_value_changed(value):
 
 func _on_back_from_audio_pressed():
 	show_and_hide(options, audio)
+	$AudioStreamPlayer.play()
 
 
 func _on_music_pressed():
 	show_and_hide(music, menu)
 	$LeaderboardsButton.visible = false
-	
+	$AudioStreamPlayer.play()
+
+
 func _on_back_from_music_pressed():
 	show_and_hide(menu, music)
 	$LeaderboardsButton.visible = true
 	$Sprite2D.visible = true
+	$AudioStreamPlayer.play()
 
 
 func _on_abcdef_pressed():
 	show_and_hide(abcdef, music)
+	$AudioStreamPlayer.play()
 
 
 func _on_ghijkl_pressed():
 	show_and_hide(options, music)
+	$AudioStreamPlayer.play()
 
 
 func _on_mnopqrs_pressed():
 	show_and_hide(options, music)
+	$AudioStreamPlayer.play()
 
 
 func _on_tuvwxyz_pressed():
 	show_and_hide(options, music)
+	$AudioStreamPlayer.play()
 
 
 func _on_back_from_abcdef_pressed():
 	show_and_hide(music, abcdef)
+	$AudioStreamPlayer.play()
 
 
 func _on_back_from_levels_pressed():
 	show_and_hide(menu, levels)
 	$LeaderboardsButton.visible = true
 	$Sprite2D.visible = true
+	$AudioStreamPlayer.play()
 
 
 func _on_volume_down_pressed():
@@ -379,10 +403,12 @@ func _on_login_pressed():
 	#get_tree().change_scene_to_file("res://Scenes/login.tscn")
 	show_and_hide(login, menu)
 	$LeaderboardsButton.visible = false
+	$AudioStreamPlayer.play()
 
 func _on_register_pressed():
 	show_and_hide(register, menu)
 	$LeaderboardsButton.visible = false
+	$AudioStreamPlayer.play()
 	#get_tree().change_scene_to_file("res://Scenes/player_register.tscn")
 	#res://Scenes/player_register.tscn
 	#pass
@@ -395,63 +421,74 @@ func _on_login_button_pressed():
 	SWLogger.debug("Login form submitted, remember_me: " + str(remember_me))
 	SilentWolf.Auth.login_player(username, password, remember_me)
 	show_processing_label()
+	$AudioStreamPlayer.play()
 
 
 func _on_logout_pressed():
 	SilentWolf.Auth.logout_player()
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	$AudioStreamPlayer.play()
 
 
 func _on_leaderboards_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Leaderboards/Leaderboard_main.tscn")
+	$AudioStreamPlayer.play()
 
 
 func _on_mazerunner__godot_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/maze_runner_-_godot.tscn")
+	$AudioStreamPlayer.play()
 
 
 func _on_robot_wants_music_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/robot_wants_music.tscn")
+	$AudioStreamPlayer.play()
 
 
 func _on_gravity_blocks_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/gravity_blocks.tscn")
+	$AudioStreamPlayer.play()
 
 
 func _on_the_pushblock_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/the_pushblock.tscn")
+	$AudioStreamPlayer.play()
 
 
 func _on_moving_platforms_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/moving_platforms.tscn")
+	$AudioStreamPlayer.play()
 
 
 func _on_tutorial_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/tutorial.tscn")
+	$AudioStreamPlayer.play()
 
 
 func _on_disarmed_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/disarmed.tscn")
+	$AudioStreamPlayer.play()
 
 
 func _on_bonus_level_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/bonus_level.tscn")
+	$AudioStreamPlayer.play()
 
 
 func _begin_level_variables():

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1oqhivw58mlk"
+path="res://.godot/imported/Remix of clorpdoops Corrupted Depths.ogg-96caee967989c6d0e9298a066cebc3c8.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/koopaluigi/Remix of clorpdoops Corrupted Depths.ogg"
+dest_files=["res://.godot/imported/Remix of clorpdoops Corrupted Depths.ogg-96caee967989c6d0e9298a066cebc3c8.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
