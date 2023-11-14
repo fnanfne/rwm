@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://chu1sp74s581v"]
+[gd_scene load_steps=58 format=3 uid="uid://chu1sp74s581v"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_a53xw"]
 [ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="2_0bbfi"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cw5fibhn0rglg" path="res://Assets/UI/signup2.png" id="17_osfi7"]
 [ext_resource type="AudioStream" uid="uid://ha6l8gtrw06v" path="res://Assets/Audio/Sounds/click.ogg" id="21_mphgt"]
 [ext_resource type="AudioStream" uid="uid://whv1wpcdsdik" path="res://Assets/Audio/Sounds/youcanlevelup__STREAM.ogg" id="22_cmjvj"]
+[ext_resource type="Texture2D" uid="uid://dkwsug4lrr5kt" path="res://Assets/UI/RWM.png" id="23_yu5w2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cfbch"]
 shader = ExtResource("2_0bbfi")
@@ -51,7 +52,13 @@ font_color = Color(0, 1, 0, 0.662745)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pb8u4"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_do6ot"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dbno"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qlas4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_odu43"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_appkb"]
 
@@ -373,8 +380,9 @@ grow_vertical = 2
 
 [node name="Sound" type="Control" parent="Audio"]
 anchors_preset = 0
+offset_top = -37.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 3.0
 
 [node name="VolumeDown" type="Button" parent="Audio/Sound"]
 layout_mode = 0
@@ -412,8 +420,9 @@ horizontal_alignment = 1
 
 [node name="Music" type="Control" parent="Audio"]
 anchors_preset = 0
+offset_top = -37.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 3.0
 
 [node name="MusicVolumeDown" type="Button" parent="Audio/Music"]
 layout_mode = 0
@@ -450,6 +459,7 @@ text = "50%"
 horizontal_alignment = 1
 
 [node name="AudioLabel" type="Label" parent="Audio"]
+visible = false
 layout_mode = 0
 offset_left = 142.0
 offset_top = -2.0
@@ -496,39 +506,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -77.5
-offset_top = -94.0
-offset_right = 77.5
-offset_bottom = 94.0
+offset_left = -90.0
+offset_top = -37.0
+offset_right = 90.0
+offset_bottom = 239.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="abcdef" type="Button" parent="Music/VBoxContainer"]
+[node name="abcdeffghijkl" type="Button" parent="Music/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pb8u4")
-text = "abcdef"
+text = "abcdef
+fghijkl"
 
-[node name="ghijkl" type="Button" parent="Music/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Music/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_do6ot")
+
+[node name="mnopqrstuvwxyz" type="Button" parent="Music/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pb8u4")
-text = "ghijkl"
-
-[node name="mnopqrs" type="Button" parent="Music/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxEmpty_pb8u4")
-text = "mnopqrs"
-
-[node name="tuvwxyz" type="Button" parent="Music/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxEmpty_pb8u4")
-text = "tuvwxyz"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Music/VBoxContainer"]
-layout_mode = 2
+text = "mnopqrs
+tuvwxyz"
 
 [node name="BackFromMusic" type="Button" parent="Music"]
 layout_mode = 1
@@ -549,7 +551,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_3dbno")
 icon = ExtResource("5_0m4to")
 flat = true
 
-[node name="ABCDEF" type="Control" parent="."]
+[node name="ABCDEFFGHIJKL" type="Control" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -558,92 +560,330 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ABCDEF"]
+[node name="ABCDEF" type="HBoxContainer" parent="ABCDEFFGHIJKL"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -330.0
-offset_top = -258.0
-offset_right = 72.0
-offset_bottom = 258.0
+offset_left = -505.0
+offset_top = -286.0
+offset_right = -103.0
+offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEF/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/ABCDEF"]
 layout_mode = 2
 
-[node name="fnanfne" type="Button" parent="ABCDEF/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "fnanfne"
-
-[node name="paisleypickle" type="Button" parent="ABCDEF/HBoxContainer/VBoxContainer"]
+[node name="aero" type="Button" parent="ABCDEFFGHIJKL/ABCDEF/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "paisleypickle"
+text = "aero"
 
-[node name="linkandar" type="Button" parent="ABCDEF/HBoxContainer/VBoxContainer"]
+[node name="berrytheeveeboi" type="Button" parent="ABCDEFFGHIJKL/ABCDEF/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "linkandar"
+text = "berrytheeveeboi"
 
-[node name="thetom" type="Button" parent="ABCDEF/HBoxContainer/VBoxContainer"]
+[node name="bluedoggo123" type="Button" parent="ABCDEFFGHIJKL/ABCDEF/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "thetom"
+text = "bluedoggo123"
 
-[node name="mastertrek" type="Button" parent="ABCDEF/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "mastertrek"
-
-[node name="clonedrone" type="Button" parent="ABCDEF/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "clonedrone"
-
-[node name="bluedoggo" type="Button" parent="ABCDEF/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "bluedoggo"
-
-[node name="keaton42" type="Button" parent="ABCDEF/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "keaton42"
-
-[node name="redkitty7" type="Button" parent="ABCDEF/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "redkitty7"
-
-[node name="choxolate" type="Button" parent="ABCDEF/HBoxContainer/VBoxContainer"]
+[node name="choxolate" type="Button" parent="ABCDEFFGHIJKL/ABCDEF/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "choxolate"
 
-[node name="aerodynamic" type="Button" parent="ABCDEF/HBoxContainer/VBoxContainer"]
+[node name="clonedrone" type="Button" parent="ABCDEFFGHIJKL/ABCDEF/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "aerodynamic"
+text = "clonedrone"
 
-[node name="gameworm" type="Button" parent="ABCDEF/HBoxContainer/VBoxContainer"]
+[node name="clorpdoop" type="Button" parent="ABCDEFFGHIJKL/ABCDEF/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "aerodynamic"
+text = "clorpdoop"
 
-[node name="yourmoveboyo" type="Button" parent="ABCDEF/HBoxContainer/VBoxContainer"]
+[node name="dmd" type="Button" parent="ABCDEFFGHIJKL/ABCDEF/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "aerodynamic"
+text = "dmd"
 
-[node name="VSeparator" type="VSeparator" parent="ABCDEF/HBoxContainer"]
+[node name="donutmaster56" type="Button" parent="ABCDEFFGHIJKL/ABCDEF/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "donutmaster56"
+
+[node name="draworigami" type="Button" parent="ABCDEFFGHIJKL/ABCDEF/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "draworigami"
+
+[node name="fomb" type="Button" parent="ABCDEFFGHIJKL/ABCDEF/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "fomb"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/ABCDEF"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qlas4")
+
+[node name="FGHIJKL" type="HBoxContainer" parent="ABCDEFFGHIJKL"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 240.0
+offset_top = -318.0
+offset_right = 642.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/FGHIJKL"]
 layout_mode = 2
 
-[node name="BackFromABCDEF" type="Button" parent="ABCDEF"]
+[node name="fnanfne" type="Button" parent="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "fnanfne"
+
+[node name="gameworm" type="Button" parent="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "bluedoggo123"
+
+[node name="gabriel_miel" type="Button" parent="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "gabriel_miel"
+
+[node name="ian05" type="Button" parent="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "ian05"
+
+[node name="jadeanubis" type="Button" parent="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "jadeanubis"
+
+[node name="joachim_s" type="Button" parent="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "joachim_s"
+
+[node name="koopaluigi" type="Button" parent="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "koopaluigi"
+
+[node name="linkandar" type="Button" parent="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "linkandar"
+
+[node name="mastertrek" type="Button" parent="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "mastertrek"
+
+[node name="mathboy" type="Button" parent="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "mathboy"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/FGHIJKL"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromABCDEF" type="Button" parent="ABCDEFFGHIJKL"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="MNOPQRSTUVWXYZ" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MNOPQR" type="HBoxContainer" parent="MNOPQRSTUVWXYZ"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -505.0
+offset_top = -286.0
+offset_right = -103.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MNOPQRSTUVWXYZ/MNOPQR"]
+layout_mode = 2
+
+[node name="paisleypickle" type="Button" parent="MNOPQRSTUVWXYZ/MNOPQR/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "paisleypickle"
+
+[node name="syncmaster" type="Button" parent="MNOPQRSTUVWXYZ/MNOPQR/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "syncmaster"
+
+[node name="profile0182983" type="Button" parent="MNOPQRSTUVWXYZ/MNOPQR/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "profile0182983"
+
+[node name="redkitty7" type="Button" parent="MNOPQRSTUVWXYZ/MNOPQR/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "redkitty7"
+
+[node name="EMPTY" type="Button" parent="MNOPQRSTUVWXYZ/MNOPQR/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "empty"
+
+[node name="EMPTY2" type="Button" parent="MNOPQRSTUVWXYZ/MNOPQR/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "empty"
+
+[node name="EMPTY3" type="Button" parent="MNOPQRSTUVWXYZ/MNOPQR/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "empty"
+
+[node name="EMPTY4" type="Button" parent="MNOPQRSTUVWXYZ/MNOPQR/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "empty"
+
+[node name="EMPTY5" type="Button" parent="MNOPQRSTUVWXYZ/MNOPQR/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "empty"
+
+[node name="EMPTY6" type="Button" parent="MNOPQRSTUVWXYZ/MNOPQR/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "empty"
+
+[node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/MNOPQR"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qlas4")
+
+[node name="STUVWXYZ" type="HBoxContainer" parent="MNOPQRSTUVWXYZ"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 240.0
+offset_top = -318.0
+offset_right = 642.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MNOPQRSTUVWXYZ/STUVWXYZ"]
+layout_mode = 2
+
+[node name="rodentracer" type="Button" parent="MNOPQRSTUVWXYZ/STUVWXYZ/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "rodentracer"
+
+[node name="thetom" type="Button" parent="MNOPQRSTUVWXYZ/STUVWXYZ/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "thetom"
+
+[node name="yourmoveboyo" type="Button" parent="MNOPQRSTUVWXYZ/STUVWXYZ/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "yourmoveboyo"
+
+[node name="ysqys" type="Button" parent="MNOPQRSTUVWXYZ/STUVWXYZ/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "ysqys"
+
+[node name="EMPTY" type="Button" parent="MNOPQRSTUVWXYZ/STUVWXYZ/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "empty"
+
+[node name="EMPTY2" type="Button" parent="MNOPQRSTUVWXYZ/STUVWXYZ/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "empty"
+
+[node name="EMPTY3" type="Button" parent="MNOPQRSTUVWXYZ/STUVWXYZ/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "empty"
+
+[node name="EMPTY4" type="Button" parent="MNOPQRSTUVWXYZ/STUVWXYZ/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "empty"
+
+[node name="EMPTY5" type="Button" parent="MNOPQRSTUVWXYZ/STUVWXYZ/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "empty"
+
+[node name="EMPTY6" type="Button" parent="MNOPQRSTUVWXYZ/STUVWXYZ/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "empty"
+
+[node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/STUVWXYZ"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromMNOPQR" type="Button" parent="MNOPQRSTUVWXYZ"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1311,6 +1551,11 @@ flat = true
 position = Vector2(640, 177)
 texture = ExtResource("10_4clif")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(640, 177)
+texture = ExtResource("23_yu5w2")
+
 [node name="Greeting" type="Label" parent="."]
 modulate = Color(0, 1, 0, 1)
 layout_mode = 1
@@ -1360,12 +1605,11 @@ volume_db = -10.0
 [connection signal="pressed" from="Audio/Music/MusicVolumeDown" to="." method="_on_music_volume_down_pressed"]
 [connection signal="pressed" from="Audio/Music/MusicVolumeUp" to="." method="_on_music_volume_up_pressed"]
 [connection signal="pressed" from="Audio/BackFromAudio" to="." method="_on_back_from_audio_pressed"]
-[connection signal="pressed" from="Music/VBoxContainer/abcdef" to="." method="_on_abcdef_pressed"]
-[connection signal="pressed" from="Music/VBoxContainer/ghijkl" to="." method="_on_ghijkl_pressed"]
-[connection signal="pressed" from="Music/VBoxContainer/mnopqrs" to="." method="_on_mnopqrs_pressed"]
-[connection signal="pressed" from="Music/VBoxContainer/tuvwxyz" to="." method="_on_tuvwxyz_pressed"]
+[connection signal="pressed" from="Music/VBoxContainer/abcdeffghijkl" to="." method="_on_abcdeffghijkl_pressed"]
+[connection signal="pressed" from="Music/VBoxContainer/mnopqrstuvwxyz" to="." method="_on_mnopqrstuvwxyz_pressed"]
 [connection signal="pressed" from="Music/BackFromMusic" to="." method="_on_back_from_music_pressed"]
-[connection signal="pressed" from="ABCDEF/BackFromABCDEF" to="." method="_on_back_from_abcdef_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/BackFromABCDEF" to="." method="_on_back_from_abcdef_pressed"]
+[connection signal="pressed" from="MNOPQRSTUVWXYZ/BackFromMNOPQR" to="." method="_on_back_from_mnopqr_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Mazerunner - Godot" to="." method="_on_mazerunner__godot_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Moving Platforms" to="." method="_on_moving_platforms_pressed"]

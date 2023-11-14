@@ -5,7 +5,8 @@ extends Control
 @onready var video = $Video
 @onready var audio = $Audio
 @onready var music = $Music
-@onready var abcdef = $ABCDEF
+@onready var abcdeffghijkl = $ABCDEFFGHIJKL
+@onready var mnopqrstuvwxyz = $MNOPQRSTUVWXYZ
 @onready var levels = $Levels
 @onready var sound_volume_label: Label = $Audio/Sound/SoundVolume
 @onready var music_volume_label: Label = $Audio/Music/MusicVolume
@@ -330,6 +331,8 @@ func _on_music_pressed():
 	show_and_hide(music, menu)
 	$LeaderboardsButton.visible = false
 	$AudioStreamPlayer.play()
+	$Sprite2D.visible = false
+	$Sprite2D2.visible = true
 
 
 func _on_back_from_music_pressed():
@@ -337,30 +340,27 @@ func _on_back_from_music_pressed():
 	$LeaderboardsButton.visible = true
 	$Sprite2D.visible = true
 	$AudioStreamPlayer.play()
+	$Sprite2D.visible = true
+	$Sprite2D2.visible = false
 
 
-func _on_abcdef_pressed():
-	show_and_hide(abcdef, music)
+func _on_abcdeffghijkl_pressed():
+	show_and_hide(abcdeffghijkl, music)
 	$AudioStreamPlayer.play()
 
 
-func _on_ghijkl_pressed():
-	show_and_hide(options, music)
-	$AudioStreamPlayer.play()
-
-
-func _on_mnopqrs_pressed():
-	show_and_hide(options, music)
-	$AudioStreamPlayer.play()
-
-
-func _on_tuvwxyz_pressed():
-	show_and_hide(options, music)
+func _on_mnopqrstuvwxyz_pressed():
+	show_and_hide(mnopqrstuvwxyz, music)
 	$AudioStreamPlayer.play()
 
 
 func _on_back_from_abcdef_pressed():
-	show_and_hide(music, abcdef)
+	show_and_hide(music, abcdeffghijkl)
+	$AudioStreamPlayer.play()
+
+
+func _on_back_from_mnopqr_pressed():
+	show_and_hide(music, mnopqrstuvwxyz)
 	$AudioStreamPlayer.play()
 
 

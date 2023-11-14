@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://gye3o6c7msib"]
+[gd_scene load_steps=51 format=3 uid="uid://gye3o6c7msib"]
 
 [ext_resource type="Shader" path="res://Scenes/blur.gdshader" id="1_1ftfp"]
 [ext_resource type="Script" path="res://Scenes/pause_screen.gd" id="1_q1sty"]
@@ -43,14 +43,6 @@ shader_parameter/brightness = 0.8
 font = ExtResource("2_6fqid")
 font_size = 30
 font_color = Color(0, 1, 0, 0.662745)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8pi81"]
-content_margin_left = 20.0
-content_margin_top = 10.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14g3r"]
-content_margin_left = 20.0
-content_margin_top = 10.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jcmm6"]
 
@@ -347,8 +339,9 @@ layout_mode = 2
 
 [node name="Sound" type="Control" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Audio"]
 anchors_preset = 0
+offset_top = -41.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = -1.0
 
 [node name="VolumeDown" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Audio/Sound"]
 layout_mode = 0
@@ -386,8 +379,9 @@ horizontal_alignment = 1
 
 [node name="Music" type="Control" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Audio"]
 anchors_preset = 0
+offset_top = -41.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = -1.0
 
 [node name="MusicVolumeDown" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Audio/Music"]
 layout_mode = 0
@@ -424,6 +418,7 @@ text = "50%"
 horizontal_alignment = 1
 
 [node name="AudioLabel" type="Label" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Audio"]
+visible = false
 layout_mode = 0
 offset_left = 142.0
 offset_top = -2.0
@@ -499,22 +494,20 @@ layout_mode = 2
 [node name="FullScreen" type="CheckBox" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Video/HBoxContainer/Checks"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxEmpty_8pi81")
 text = "  "
 
 [node name="Borderless" type="CheckBox" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Video/HBoxContainer/Checks"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxEmpty_14g3r")
 text = "  "
 
 [node name="Vsync" type="CheckBox" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Video/HBoxContainer/Checks"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxEmpty_14g3r")
 text = "  "
 
 [node name="VideoLabel" type="Label" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/Video"]
+visible = false
 layout_mode = 0
 offset_left = 142.0
 offset_top = -2.0
