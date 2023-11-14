@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cch1ikcufljkw"]
+[gd_scene load_steps=40 format=3 uid="uid://cch1ikcufljkw"]
 
 [ext_resource type="TileSet" uid="uid://cerknt5tmrh7t" path="res://Resources/RwK_TILES.tres" id="1_dtdvp"]
 [ext_resource type="Script" path="res://Background/BG.gd" id="2_1sh2b"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://b4blpvdc0f68l" path="res://Scenes/Keys/BlueKey/blue_key.tscn" id="34_dxh68"]
 [ext_resource type="PackedScene" uid="uid://clr2efv5fbggb" path="res://Scenes/Keys/GreenKey/green_key.tscn" id="35_hypsk"]
 [ext_resource type="PackedScene" uid="uid://dgos4d0dj3wwx" path="res://Scenes/Keys/YellowKey/yellow_key.tscn" id="36_o3cgc"]
+[ext_resource type="PackedScene" uid="uid://cimlob7scg7f7" path="res://spring.tscn" id="38_fnoyh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wo3ok"]
 shader = ExtResource("4_sdvbr")
@@ -185,7 +186,11 @@ position = Vector2(1066, -20)
 position = Vector2(1100, -20)
 
 [node name="Jump" parent="." instance=ExtResource("29_v6rck")]
-position = Vector2(1140, -20)
+position = Vector2(743, -20)
+
+[node name="Jump2" parent="." instance=ExtResource("29_v6rck")]
+position = Vector2(660, -23)
+collision_mask = 0
 
 [node name="Launch" parent="." instance=ExtResource("30_13sfw")]
 position = Vector2(1180, -20)
@@ -210,3 +215,6 @@ position = Vector2(1410, -30)
 
 [node name="YellowKey" parent="." instance=ExtResource("36_o3cgc")]
 position = Vector2(1450, -30)
+
+[node name="Spring" parent="." instance=ExtResource("38_fnoyh")]
+position = Vector2(820, -20)

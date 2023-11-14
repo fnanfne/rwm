@@ -711,6 +711,7 @@ func _on_area_2d_2_body_exited(body):
 			Game.GUN = true
 			neuter_shooting = false
 
+
 func _on_launch_timer_timeout():
 	state = States.FALL
 	has_double_jumped = true

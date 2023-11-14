@@ -137,7 +137,8 @@ func _on_restart_button_pressed():
 
 
 func _on_confirm_restart_button_pressed():
-	pass # Replace with function body.
+#	pass # Replace with function body.
+	_begin_level_variables()
 
 
 func _on_options_button_pressed():
@@ -227,6 +228,27 @@ func _on_help_button_pressed():
 func _on_backfrom_help_pressed():
 	$ColorRect/PanelContainer2.visible = false
 	$ColorRect/CenterContainer.visible = true
+
+
+func _begin_level_variables():
+	Game.healthContainers = 0
+	Game.BTC = 0
+	Game.YELLOWKEYS = 0
+	Game.CRYSTALS = 0
+	Game.JUMP = false
+	Game.DOUBLEJUMP = false
+	Game.HAXXOR = false
+	Game.HEMLET = false
+	Game.GUN = false
+	Game.LAUNCH = false
+	Game.ZOOM = false
+	Game.ANNIHILATE = false
+	Game.EXPLOZORZ = false
+	Game.VELCRO = false
+	Game.REDKEY = false
+	Game.GREENKEY = false
+	Game.BLUEKEY = false
+	Game.PUSHBLOCK = false
 
 
 func _on_section_1_pressed():
@@ -394,3 +416,4 @@ func _section_6_visible():
 
 func _section_6_hide():
 	pass
+

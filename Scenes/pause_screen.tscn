@@ -629,6 +629,7 @@ or the up arrow key. On a controller, press the  'A' button."
 
 [node name="Jump2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Jump" instance=ExtResource("14_iflic")]
 position = Vector2(88, 29)
+collision_mask = 0
 
 [node name="HSeparator4" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -660,6 +661,7 @@ higher and further."
 
 [node name="DoubleJump" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Double_Jump" instance=ExtResource("8_4w85h")]
 position = Vector2(88, 31)
+collision_mask = 0
 
 [node name="HSeparator5" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -691,6 +693,7 @@ to shoot deadly lazors at enemies. On keyboard, press the
 
 [node name="Gun2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Gun" instance=ExtResource("10_6ypgs")]
 position = Vector2(88, 30)
+collision_mask = 0
 
 [node name="HSeparator6" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -722,6 +725,7 @@ key, on controllers, press the 'X' button."
 
 [node name="Zoom2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Zoom" instance=ExtResource("18_hhpkv")]
 position = Vector2(88, 29)
+collision_mask = 0
 
 [node name="HSeparator7" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -753,6 +757,7 @@ on controllers, press the 'Y' button."
 
 [node name="Launch2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Launch" instance=ExtResource("15_gd4ws")]
 position = Vector2(88, 32)
+collision_mask = 0
 
 [node name="HSeparator8" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -787,6 +792,7 @@ annihilate enemies!"
 
 [node name="Annihilator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Annihilate" instance=ExtResource("11_187ee")]
 position = Vector2(88, 30)
+collision_mask = 0
 
 [node name="HSeparator9" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -820,6 +826,7 @@ or launching into them."
 
 [node name="Hemlet" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Helmet" instance=ExtResource("13_cy3ek")]
 position = Vector2(88, 31)
+collision_mask = 0
 
 [node name="HSeparator10" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -853,6 +860,7 @@ hit by monsters or falling acid."
 
 [node name="Heart2" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Heart" instance=ExtResource("12_h4x1x")]
 position = Vector2(88, 28)
+collision_mask = 0
 
 [node name="HSeparator11" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -886,6 +894,7 @@ and more powerful!"
 
 [node name="Gun Upgrade" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Gun_Upgrade" instance=ExtResource("14_bae0m")]
 position = Vector2(88, 29)
+collision_mask = 0
 
 [node name="HSeparator12" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -919,6 +928,7 @@ explode Red Nukes and melt Green Acid Blocks."
 
 [node name="Explozors" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Explozors" instance=ExtResource("15_3ga64")]
 position = Vector2(88, 30)
+collision_mask = 0
 
 [node name="HSeparator13" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -954,6 +964,7 @@ happy opens remote doors."
 
 [node name="Haxxor" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Haxxor" instance=ExtResource("11_t8xfl")]
 position = Vector2(88, 28)
+collision_mask = 0
 
 [node name="HSeparator14" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -987,6 +998,7 @@ This app pauses the in-game timer for ten seconds."
 
 [node name="Time Saver" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/TimeSaver" instance=ExtResource("17_mk5xk")]
 position = Vector2(88, 31)
+collision_mask = 0
 
 [node name="HSeparator15" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -1020,6 +1032,7 @@ Most useful for climbing walls with a steep incline."
 
 [node name="Velcro" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Velcro" instance=ExtResource("17_u7dy8")]
 position = Vector2(88, 28)
+collision_mask = 0
 
 [node name="HSeparator16" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -1053,6 +1066,7 @@ destination. Insert this gem in to a Crystal Slot."
 
 [node name="Crystal" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Crystal" instance=ExtResource("7_lpxbd")]
 position = Vector2(88, 29)
+collision_mask = 0
 
 [node name="HSeparator17" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -1086,6 +1100,7 @@ all bitcoins can also open remote doors."
 
 [node name="Bitcoin" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Bitcoin" instance=ExtResource("10_xcc0n")]
 position = Vector2(88, 29)
+collision_mask = 0
 
 [node name="HSeparator18" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -1121,6 +1136,7 @@ This app deletes the Jump App.
 
 [node name="Delete Jump" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Jump" instance=ExtResource("23_uo6xo")]
 position = Vector2(88, 34)
+collision_mask = 0
 
 [node name="HSeparator19" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -1154,6 +1170,7 @@ This app deletes the Defense App.
 
 [node name="Delete Gun" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Gun" instance=ExtResource("24_fyggr")]
 position = Vector2(88, 30)
+collision_mask = 0
 
 [node name="HSeparator20" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -1187,6 +1204,7 @@ This app deletes the Launch App.
 
 [node name="Delete Launch" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Launch" instance=ExtResource("25_bqfb4")]
 position = Vector2(88, 26)
+collision_mask = 0
 
 [node name="HSeparator21" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -1220,6 +1238,7 @@ This app deletes the Zoom App.
 
 [node name="Delete Zoom" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Zoom" instance=ExtResource("26_wkfgq")]
 position = Vector2(88, 22)
+collision_mask = 0
 
 [node name="HSeparator22" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -1253,6 +1272,7 @@ This app deletes the Helmet App.
 
 [node name="Delete Helmet" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Delete_Helmet" instance=ExtResource("27_754hh")]
 position = Vector2(88, 18)
+collision_mask = 0
 
 [node name="HSeparator23" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -1288,12 +1308,15 @@ coloured doors"
 
 [node name="RedKey" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/RGB_Keys" instance=ExtResource("26_45yvk")]
 position = Vector2(58, 28)
+collision_mask = 0
 
 [node name="GreenKey" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/RGB_Keys" instance=ExtResource("27_q0dws")]
 position = Vector2(88, 28)
+collision_mask = 0
 
 [node name="BlueKey" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/RGB_Keys" instance=ExtResource("28_aajhq")]
 position = Vector2(118, 28)
+collision_mask = 0
 
 [node name="HSeparator24" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -1327,6 +1350,7 @@ opened with a Golden Key."
 
 [node name="YellowKey" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/GoldKey" instance=ExtResource("29_14c0n")]
 position = Vector2(88, 31)
+collision_mask = 0
 
 [node name="HSeparator25" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -1360,6 +1384,7 @@ certain blocks around"
 
 [node name="Push" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/Push" instance=ExtResource("16_07cfh")]
 position = Vector2(88, 28)
+collision_mask = 0
 
 [node name="HSeparator26" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -1393,6 +1418,7 @@ off certain walls"
 
 [node name="WallJump" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/WallJump" instance=ExtResource("31_wcwyg")]
 position = Vector2(88, 27)
+collision_mask = 0
 
 [node name="HSeparator27" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false
@@ -1426,6 +1452,7 @@ or acid without burning but only while invincible."
 
 [node name="FireBoots" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer/FireWalk" instance=ExtResource("32_q411h")]
 position = Vector2(88, 28)
+collision_mask = 0
 
 [node name="HSeparator28" type="HSeparator" parent="ColorRect/PanelContainer2/MarginContainer/VBoxContainer"]
 visible = false

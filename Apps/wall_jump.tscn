@@ -18,6 +18,8 @@ animations = [{
 }]
 
 [node name="WallJump" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_xv16y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

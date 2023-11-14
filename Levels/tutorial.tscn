@@ -73,13 +73,13 @@ offset_bottom = 4620.0
 [node name="NewRobot" parent="." instance=ExtResource("3_47kxg")]
 position = Vector2(60, 450)
 
-[node name="Spring" parent="." instance=ExtResource("5_asx33")]
+[node name="Spring4" parent="." instance=ExtResource("5_asx33")]
 position = Vector2(1220, 700)
 
-[node name="Spring2" parent="." instance=ExtResource("5_asx33")]
+[node name="Spring5" parent="." instance=ExtResource("5_asx33")]
 position = Vector2(1340, 700)
 
-[node name="Spring3" parent="." instance=ExtResource("5_asx33")]
+[node name="Spring6" parent="." instance=ExtResource("5_asx33")]
 position = Vector2(1460, 700)
 
 [node name="Apps" type="Node2D" parent="."]
@@ -121,7 +121,7 @@ text_field = "On keyboard, press Spacebar/Enter/Up Arrow. On controllers, press 
 
 [node name="Radio6" parent="Radios" instance=ExtResource("6_dcltj")]
 position = Vector2(1340, 820)
-text_field = "This is a green key to open any green door that my block your way."
+text_field = "This is a green key to open any green door that may block your way."
 
 [node name="Radio7" parent="Radios" instance=ExtResource("6_dcltj")]
 position = Vector2(1100, 660)
@@ -129,7 +129,7 @@ text_field = "This is a green key to open any green door that my block your way.
 
 [node name="Radio8" parent="Radios" instance=ExtResource("6_dcltj")]
 position = Vector2(1620, 820)
-text_field = "Yellow keys are ephemeral, and can only be used on one door, use them wisely!"
+text_field = "Yellow keys are disposable, and can only be used on one door, use them wisely!"
 
 [node name="GreenDoorBottom" parent="." instance=ExtResource("8_4q141")]
 position = Vector2(1060, 740)

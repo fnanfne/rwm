@@ -6,9 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://b681l24qfasc1" path="res://Assets/Audio/Sounds/zoing.ogg" id="4_tfjyo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dgr8h"]
-size = Vector2(20, 1.66667)
+size = Vector2(19.6078, 1.96078)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_504wd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ym7qt"]
 size = Vector2(40, 40)
 
 [node name="Spring" type="Area2D"]
@@ -17,12 +17,9 @@ collision_mask = 2
 script = ExtResource("1_n3cbr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -18.7)
+position = Vector2(0, -22)
 scale = Vector2(2.04, 2.04)
 shape = SubResource("RectangleShape2D_dgr8h")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_504wd")
 
 [node name="SpringBottom" type="Sprite2D" parent="."]
 texture = ExtResource("1_dkmdb")
@@ -33,5 +30,11 @@ texture = ExtResource("2_tessw")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_tfjyo")
 volume_db = -15.0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_ym7qt")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
