@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://bevsxhq1afo6m"]
 
 [ext_resource type="Shader" path="res://Scenes/water.gdshader" id="1_he6se"]
-[ext_resource type="Texture2D" uid="uid://c4lg1c1i7e1ls" path="res://Assets/Pics/OBSKGL0.png" id="2_7ddeq"]
+[ext_resource type="Texture2D" uid="uid://b1myfyef7musb" path="res://Assets/Apps/Doors/door_green_b.png" id="2_atfyd"]
 [ext_resource type="Shader" path="res://Scenes/colors.gdshader" id="3_o2los"]
 [ext_resource type="Texture2D" uid="uid://cxes5p5ihbmb0" path="res://Assets/Pics/Win.png" id="4_0wk0y"]
 [ext_resource type="Shader" path="res://Scenes/flashing.gdshader" id="5_yai0r"]
@@ -119,9 +119,9 @@ position = Vector2(-3, 3)
 
 [node name="Wave" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_vb13q")
-position = Vector2(578, 326)
-scale = Vector2(0.895385, 0.509231)
-texture = ExtResource("2_7ddeq")
+position = Vector2(766.546, 477.408)
+scale = Vector2(10.3227, 8.07961)
+texture = ExtResource("2_atfyd")
 
 [node name="Colors" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_n1aj6")
@@ -142,7 +142,7 @@ texture = ExtResource("8_ng5f4")
 
 [node name="VHS" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_3s4n3")
-position = Vector2(851, 483)
+position = Vector2(614, 441)
 scale = Vector2(1.01563, 1.00313)
 texture = ExtResource("4_0wk0y")
 
