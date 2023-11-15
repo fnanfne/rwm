@@ -26,8 +26,8 @@ extends Control
 @onready var fomb_beeps = $ABCDEFFGHIJKL
 @onready var fnanfne_beeps_1 = $ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer
 @onready var fnanfne_beeps_2 = $ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer
-@onready var gameworm_beeps_1 = $ABCDEFFGHIJKL
-@onready var gameworm_beeps_2 = $ABCDEFFGHIJKL
+@onready var gameworm_beeps_1 = $ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer
+@onready var gameworm_beeps_2 = $ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer
 @onready var gabriel_miel_beeps = $ABCDEFFGHIJKL
 @onready var ian05_beeps = $ABCDEFFGHIJKL
 @onready var jadeanubis_beeps = $ABCDEFFGHIJKL
@@ -154,6 +154,16 @@ func _ready():
 		for beeps2 in fnanfne_beeps_2.get_children():
 			beeps2.disabled = true
 
+	if Music.gameworm == true:
+		for beeps1 in gameworm_beeps_1.get_children():
+			beeps1.disabled = false
+		for beeps2 in gameworm_beeps_2.get_children():
+			beeps2.disabled = false
+	else:
+		for beeps1 in gameworm_beeps_1.get_children():
+			beeps1.disabled = true
+		for beeps2 in gameworm_beeps_2.get_children():
+			beeps2.disabled = true
 
 ####### PLAYER REGISTER SCENE BELOW #######
 	SilentWolf.check_auth_ready()
@@ -627,17 +637,36 @@ func _begin_level_variables():
 	Game.PUSHBLOCK = false
 
 ######### AERO ##########
-######### BERRYTHEEVEEBOI ##########
-######### BLUEDOGGO123 ##########
-######### CLONEDRONE ##########
-######### DMD ##########
-######### CHOXOLATE ##########
-######### CLORPDOOP ##########
-######### DONUTMASTER56 ##########
-######### DRAWORIGAMI ##########
-######### FOMB ##########
-######### FNANFNE ##########
 
+
+######### BERRYTHEEVEEBOI ##########
+
+
+######### BLUEDOGGO123 ##########
+
+
+######### CLONEDRONE ##########
+
+
+######### DMD ##########
+
+
+######### CHOXOLATE ##########
+
+
+######### CLORPDOOP ##########
+
+
+######### DONUTMASTER56 ##########
+
+
+######### DRAWORIGAMI ##########
+
+
+######### FOMB ##########
+
+
+######### FNANFNE ##########
 func _on_fnanfne_pressed():
 	$ClickSound.play()
 	$MenuSong.stop()
@@ -780,19 +809,191 @@ func _on_zombie_army_pressed():
 
 
 ######### GAMEWORM ##########
+func _on_gameworm_pressed():
+	$ClickSound.play()
+	$MenuSong.stop()
+	#show_and_hide(fnanfne, abcdeffghijkl)
+	$ABCDEFFGHIJKL/gameworm.visible = true
+	$ABCDEFFGHIJKL/ABCDEF.visible = false
+	$ABCDEFFGHIJKL/FGHIJKL.visible = false
+	$ABCDEFFGHIJKL/BackFromABCDEF.visible = false
+
+
+func _on_back_from_gameworm_pressed():
+	$ClickSound.play()
+	$MenuSong.play()
+	#show_and_hide(fnanfne, abcdeffghijkl)
+	$ABCDEFFGHIJKL/gameworm.visible = false
+	$ABCDEFFGHIJKL/ABCDEF.visible = true
+	$ABCDEFFGHIJKL/FGHIJKL.visible = true
+	$ABCDEFFGHIJKL/BackFromABCDEF.visible = true
+
+
+func _on_awakening_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm1
+	$BeepSong.play()
+
+
+func _on_beneath_the_waves_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm2
+	$BeepSong.play()
+
+
+func _on_biolabs_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm3
+	$BeepSong.play()
+
+
+func _on_cave_masters_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm4
+	$BeepSong.play()
+
+
+func _on_dance_party_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm5
+	$BeepSong.play()
+
+
+func _on_evil_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm6
+	$BeepSong.play()
+
+
+func _on_great_outdoors_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm7
+	$BeepSong.play()
+
+
+func _on_inferno_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm8
+	$BeepSong.play()
+
+
+func _on_into_chaos_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm9
+	$BeepSong.play()
+
+
+func _on_kaizo_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm10
+	$BeepSong.play()
+
+
+func _on_king_of_the_abyss_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm11
+	$BeepSong.play()
+
+
+func _on_legendary_boss_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm12
+	$BeepSong.play()
+
+
+func _on_no_pills_allowed_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm13
+	$BeepSong.play()
+
+
+func _on_revival_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm14
+	$BeepSong.play()
+
+
+func _on_scrap_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm15
+	$BeepSong.play()
+
+
+func _on_spelunking_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm16
+	$BeepSong.play()
+
+
+func _on_technomare_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm17
+	$BeepSong.play()
+
+
+func _on_temple_guardian_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm18
+	$BeepSong.play()
+
+
+func _on_trolled_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm19
+	$BeepSong.play()
+
+
+func _on_watcher_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = gameworm20
+	$BeepSong.play()
+
+
 ######### GABRIEL_MIEL ##########
+
+
 ######### IAN05 ##########
+
+
 ######### JADEANUBIS ##########
+
+
 ######### LINKANDAR ##########
+
+
 ######### JOACHIM_S ##########
+
+
 ######### KOOPALUIGI ##########
+
+
 ######### MASTERTREK ##########
+
+
 ######### MATHBOY ##########
+
+
 ######### PAISLEYPICKLE ##########
+
+
 ######### SYNCMASTER ##########
+
+
 ######### PROFILE0182983 ##########
+
+
 ######### REDKITTY7 ##########
+
+
 ######### RODENTRACER ##########
+
+
 ######### THETOM ##########
+
+
 ######### YOURMOVEBOYO ##########
+
+
 ######### YSQYS ##########
+
+

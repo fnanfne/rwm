@@ -987,7 +987,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("10_yoll5")
 theme_override_font_sizes/font_size = 50
-text = "fnanfne"
+text = "gameworm"
 horizontal_alignment = 1
 
 [node name="HSeparator2" type="HSeparator" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer"]
@@ -1005,75 +1005,75 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left"]
 layout_mode = 2
 
-[node name="Song_1" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+[node name="Awakening" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_1"
+text = "Awakening"
 
-[node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+[node name="Beneath the waves" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_2"
+text = "Beneath the waves"
 
-[node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+[node name="Biolabs" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_3"
+text = "Biolabs"
 
-[node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+[node name="Cave masters" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_4"
+text = "Cave masters"
 
-[node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+[node name="Dance party" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_5"
+text = "Dance party"
 
-[node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+[node name="evil" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_6"
+text = "evil"
 
-[node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+[node name="Great outdoors" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_7"
+text = "Great outdoors"
 
-[node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+[node name="Inferno" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_8"
+text = "Inferno"
 
-[node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+[node name="Into chaos" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_9"
+text = "Into chaos"
 
-[node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+[node name="Kaizo" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_10"
+text = "Kaizo"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left"]
 layout_mode = 2
@@ -1090,81 +1090,81 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right"]
 layout_mode = 2
 
-[node name="Song_11" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+[node name="King of the abyss" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_11"
+text = "King of the abyss"
 
-[node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+[node name="Legendary boss" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_12"
+text = "Legendary boss"
 
-[node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+[node name="No pills allowed" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_13"
+text = "No pills allowed"
 
-[node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+[node name="Revival" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_14"
+text = "Revival"
 
-[node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+[node name="Scrap" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_15"
+text = "Scrap"
 
-[node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+[node name="Spelunking" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_16"
+text = "Spelunking"
 
-[node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+[node name="Technomare" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_17"
+text = "Technomare"
 
-[node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+[node name="Temple guardian" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_18"
+text = "Temple guardian"
 
-[node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+[node name="trolled" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_19"
+text = "trolled"
 
-[node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+[node name="Watcher" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
 button_group = ExtResource("13_gjlml")
-text = "Song_20"
+text = "Watcher"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right"]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
 
-[node name="BackFromFnanfne" type="Button" parent="ABCDEFFGHIJKL/gameworm"]
+[node name="BackFromGameworm" type="Button" parent="ABCDEFFGHIJKL/gameworm"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -4715,6 +4715,7 @@ text = "Leaderboards"
 [connection signal="pressed" from="Music/VBoxContainer/mnopqrstuvwxyz" to="." method="_on_mnopqrstuvwxyz_pressed"]
 [connection signal="pressed" from="Music/BackFromMusic" to="." method="_on_back_from_music_pressed"]
 [connection signal="pressed" from="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer/fnanfne" to="." method="_on_fnanfne_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer/gameworm" to="." method="_on_gameworm_pressed"]
 [connection signal="pressed" from="ABCDEFFGHIJKL/BackFromABCDEF" to="." method="_on_back_from_abcdef_pressed"]
 [connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Battletoads Level 1" to="." method="_on_battletoads_level_1_pressed"]
 [connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Bobby Carrot" to="." method="_on_bobby_carrot_pressed"]
@@ -4737,6 +4738,27 @@ text = "Leaderboards"
 [connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Zero Wing - New Day for Me" to="." method="_on_zero_wing__new_day_for_me_pressed"]
 [connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Zombie Army" to="." method="_on_zombie_army_pressed"]
 [connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/BackFromFnanfne" to="." method="_on_back_from_fnanfne_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Awakening" to="." method="_on_awakening_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Beneath the waves" to="." method="_on_beneath_the_waves_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Biolabs" to="." method="_on_biolabs_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Cave masters" to="." method="_on_cave_masters_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Dance party" to="." method="_on_dance_party_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/evil" to="." method="_on_evil_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Great outdoors" to="." method="_on_great_outdoors_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Inferno" to="." method="_on_inferno_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Into chaos" to="." method="_on_into_chaos_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Kaizo" to="." method="_on_kaizo_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/King of the abyss" to="." method="_on_king_of_the_abyss_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Legendary boss" to="." method="_on_legendary_boss_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/No pills allowed" to="." method="_on_no_pills_allowed_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Revival" to="." method="_on_revival_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Scrap" to="." method="_on_scrap_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Spelunking" to="." method="_on_spelunking_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Technomare" to="." method="_on_technomare_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Temple guardian" to="." method="_on_temple_guardian_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/trolled" to="." method="_on_trolled_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Watcher" to="." method="_on_watcher_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/gameworm/BackFromGameworm" to="." method="_on_back_from_gameworm_pressed"]
 [connection signal="pressed" from="MNOPQRSTUVWXYZ/BackFromMNOPQR" to="." method="_on_back_from_mnopqr_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Mazerunner - Godot" to="." method="_on_mazerunner__godot_pressed"]
