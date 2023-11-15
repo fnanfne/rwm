@@ -7,13 +7,116 @@ extends Control
 @onready var music = $Music
 @onready var abcdeffghijkl = $ABCDEFFGHIJKL
 @onready var mnopqrstuvwxyz = $MNOPQRSTUVWXYZ
+@onready var fnanfne = $ABCDEFFGHIJKL/fnanfne
 @onready var levels = $Levels
 @onready var sound_volume_label: Label = $Audio/Sound/SoundVolume
 @onready var music_volume_label: Label = $Audio/Music/MusicVolume
 @onready var greeting = $Greeting
 
+@onready var aero_beeps = $ABCDEFFGHIJKL
+@onready var berrytheeveeboi_beeps = $ABCDEFFGHIJKL
+@onready var bluedoggo123_beeps = $ABCDEFFGHIJKL
+@onready var clonedrone_beeps = $ABCDEFFGHIJKL
+@onready var dmd_beeps_1 = $ABCDEFFGHIJKL
+@onready var dmd_beeps_2 = $ABCDEFFGHIJKL
+@onready var choxolate_beeps = $ABCDEFFGHIJKL
+@onready var clorpdoop_beeps = $ABCDEFFGHIJKL
+@onready var donutmaster56_beeps = $ABCDEFFGHIJKL
+@onready var draworigami_beeps = $ABCDEFFGHIJKL
+@onready var fomb_beeps = $ABCDEFFGHIJKL
+@onready var fnanfne_beeps_1 = $ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer
+@onready var fnanfne_beeps_2 = $ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer
+@onready var gameworm_beeps_1 = $ABCDEFFGHIJKL
+@onready var gameworm_beeps_2 = $ABCDEFFGHIJKL
+@onready var gabriel_miel_beeps = $ABCDEFFGHIJKL
+@onready var ian05_beeps = $ABCDEFFGHIJKL
+@onready var jadeanubis_beeps = $ABCDEFFGHIJKL
+@onready var linkandar_beeps = $ABCDEFFGHIJKL
+@onready var joachim_s_beeps = $ABCDEFFGHIJKL
+@onready var koopaluigi_beeps = $ABCDEFFGHIJKL
+@onready var mastertrek_beeps = $ABCDEFFGHIJKL
+@onready var mathboy_beeps = $ABCDEFFGHIJKL
+@onready var paisleypickle_beeps_1 = $ABCDEFFGHIJKL
+@onready var paisleypickle_beeps_2 = $ABCDEFFGHIJKL
+@onready var syncmaster_beeps = $ABCDEFFGHIJKL
+@onready var profile0182983_beeps = $ABCDEFFGHIJKL
+@onready var redkitty7_beeps = $ABCDEFFGHIJKL
+@onready var rodentracer_beeps = $ABCDEFFGHIJKL
+@onready var thetom_beeps = $ABCDEFFGHIJKL
+@onready var yourmoveboyo_beeps_1 = $ABCDEFFGHIJKL
+@onready var yourmoveboyo_beeps_2 = $ABCDEFFGHIJKL
+@onready var ysqys_beeps = $ABCDEFFGHIJKL
+
 @export var sound_sample: AudioStream
 @export var music_sample: AudioStream
+
+#### AERO ####
+#### BERRYTHEEVEEBOI ####
+#### BLUEDOGGO123 ####
+#### CLONEDRONE ####
+#### DONUTMASTER56 ####
+#### DRAWORIGAMI ####
+#### FOMB ####
+#### FNANFNE ####
+var fnanfne1 = preload("res://Assets/Audio/Music/fnanfne/Battletoads-Level-1.ogg")
+var fnanfne2 = preload("res://Assets/Audio/Music/fnanfne/Bobby Carrot.ogg")
+var fnanfne3 = preload("res://Assets/Audio/Music/fnanfne/Castlevania-II-Praying-Hands.ogg")
+var fnanfne4 = preload("res://Assets/Audio/Music/fnanfne/Coffin Dance.ogg")
+var fnanfne5 = preload("res://Assets/Audio/Music/fnanfne/Commando.ogg")
+var fnanfne6 = preload("res://Assets/Audio/Music/fnanfne/DuckTales-The-Moon.ogg")
+var fnanfne7 = preload("res://Assets/Audio/Music/fnanfne/DuckTales-Title-Song.ogg")
+var fnanfne8 = preload("res://Assets/Audio/Music/fnanfne/Hallowed Be Thy Name (original by Iron Maiden), cover by Cradle of Filth.ogg")
+var fnanfne9 = preload("res://Assets/Audio/Music/fnanfne/Hawkeye-Title-Screen.ogg")
+var fnanfne10 = preload("res://Assets/Audio/Music/fnanfne/Hysteria by Muse.ogg")
+var fnanfne11 = preload("res://Assets/Audio/Music/fnanfne/INFERNO - 3DSOM Keygen music.ogg")
+var fnanfne12 = preload("res://Assets/Audio/Music/fnanfne/Keygen Music - CORE PowerISO.ogg")
+var fnanfne13 = preload("res://Assets/Audio/Music/fnanfne/MegaMan2-DrWilysCastle.ogg")
+var fnanfne14 = preload("res://Assets/Audio/Music/fnanfne/Monty on the Run.ogg")
+var fnanfne15 = preload("res://Assets/Audio/Music/fnanfne/RESSURECTiON-Registry-Clean-Expert-keygen-music.ogg")
+var fnanfne16 = preload("res://Assets/Audio/Music/fnanfne/SonicKnucklesBoss.ogg")
+var fnanfne17 = preload("res://Assets/Audio/Music/fnanfne/Spooky Scary Skeletons.ogg")
+var fnanfne18 = preload("res://Assets/Audio/Music/fnanfne/Winamp Sony Vega Unreal Super Hero 3 keygen.ogg")
+var fnanfne19 = preload("res://Assets/Audio/Music/fnanfne/Zero Wing - New Day for Me.ogg")
+var fnanfne20 = preload("res://Assets/Audio/Music/fnanfne/Zombie Army.ogg")
+#### GAMEWORM ####
+var gameworm1 = preload("res://Assets/Audio/Music/gameworm/Awakening.ogg")
+var gameworm2 = preload("res://Assets/Audio/Music/gameworm/Beneath the waves.ogg")
+var gameworm3 = preload("res://Assets/Audio/Music/gameworm/Biolabs.ogg")
+var gameworm4 = preload("res://Assets/Audio/Music/gameworm/Cave masters.ogg")
+var gameworm5 = preload("res://Assets/Audio/Music/gameworm/Dance party.ogg")
+var gameworm6 = preload("res://Assets/Audio/Music/gameworm/evil.ogg")
+var gameworm7 = preload("res://Assets/Audio/Music/gameworm/Great outdoors.ogg")
+var gameworm8 = preload("res://Assets/Audio/Music/gameworm/Inferno.ogg")
+var gameworm9 = preload("res://Assets/Audio/Music/gameworm/Into chaos.ogg")
+var gameworm10 = preload("res://Assets/Audio/Music/gameworm/Kaizo.ogg")
+var gameworm11 = preload("res://Assets/Audio/Music/gameworm/King of the abyss.ogg")
+var gameworm12 = preload("res://Assets/Audio/Music/gameworm/Legendary boss.ogg")
+var gameworm13 = preload("res://Assets/Audio/Music/gameworm/No pills allowed.ogg")
+var gameworm14 = preload("res://Assets/Audio/Music/gameworm/Revival.ogg")
+var gameworm15 = preload("res://Assets/Audio/Music/gameworm/Scrap.ogg")
+var gameworm16 = preload("res://Assets/Audio/Music/gameworm/Spelunking.ogg")
+var gameworm17 = preload("res://Assets/Audio/Music/gameworm/Technomare.ogg")
+var gameworm18 = preload("res://Assets/Audio/Music/gameworm/Temple guardian.ogg")
+var gameworm19 = preload("res://Assets/Audio/Music/gameworm/trolled.ogg")
+var gameworm20 = preload("res://Assets/Audio/Music/gameworm/Watcher.ogg")
+
+#### GABRIEL_MIEL ####
+#### IAN05 ####
+#### JADEANUBIS ####
+#### LINKANDAR ####
+#### JOACHIM_S ####
+#### KOOPALUIGI ####
+#### MASTERTREK ####
+#### MATHBOY ####
+#### PAISLEYPICKLE ####
+#### SYNCMASTER ####
+#### PROFILE0182983 ####
+#### REDKITTY7 ####
+#### RODENTRACER ####
+#### THETOM ####
+#### YOURMOVEBOYO ####
+#### YSQYS ####
+
 
 # PLAYER REGISTER SCENE BELOW
 @onready var register = $Register
@@ -39,6 +142,18 @@ func _ready():
 	sound_volume_label.text = "50%"
 	SoundManager.set_music_volume(0.5)
 	music_volume_label.text = "50%"
+
+	if Music.fnanfne == true:
+		for beeps1 in fnanfne_beeps_1.get_children():
+			beeps1.disabled = false
+		for beeps2 in fnanfne_beeps_2.get_children():
+			beeps2.disabled = false
+	else:
+		for beeps1 in fnanfne_beeps_1.get_children():
+			beeps1.disabled = true
+		for beeps2 in fnanfne_beeps_2.get_children():
+			beeps2.disabled = true
+
 
 ####### PLAYER REGISTER SCENE BELOW #######
 	SilentWolf.check_auth_ready()
@@ -75,7 +190,7 @@ func _on_RegisterUPButton_pressed() -> void:
 	var confirm_password = $"FormContainer/MainFormContainer/FormInputFields/ConfirmPassword".text
 	SilentWolf.Auth.register_player_user_password(player_name, password, confirm_password)
 	show_processing_label()
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_registration_complete(sw_result: Dictionary) -> void:
@@ -123,7 +238,7 @@ func _on_back_button_pressed():
 	show_and_hide(menu, register)
 	$LeaderboardsButton.visible = true
 	$Sprite2D.visible = true
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func show_processing_label() -> void:
@@ -163,7 +278,7 @@ func _on_submit_button_pressed() -> void:
 	var confirm_password = $"Register/VBoxContainer/HBoxContainer2/VBoxContainer2/PasswordConfirmBox/ConfirmPassword".text
 	SilentWolf.Auth.register_player(player_name, email, password, confirm_password)
 	show_processing_label()
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 ####### PLAYER REGISTER SCENE ABOVE #######
 
 ####### PLAYER LOGIN SCENE BELOW #######
@@ -174,7 +289,7 @@ func _on_LoginButton_pressed() -> void:
 	SWLogger.debug("Login form submitted, remember_me: " + str(remember_me))
 	SilentWolf.Auth.login_player(username, password, remember_me)
 	show_processing_label()
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_login_complete(sw_result: Dictionary) -> void:
@@ -188,7 +303,7 @@ func login_success() -> void:
 	var scene_name = SilentWolf.auth_config.redirect_to_scene
 	SWLogger.info("logged in as: " + str(SilentWolf.Auth.logged_in_player))
 	get_tree().change_scene_to_file(scene_name)
-	$AudioStreamPlayer2.play()
+	$LoginSound.play()
 
 
 func login_failure(error: String) -> void:
@@ -209,7 +324,7 @@ func login_failure(error: String) -> void:
 
 func _on_LinkButton_pressed() -> void:
 	get_tree().change_scene_to_file(SilentWolf.auth_config.reset_password_scene)
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_login_back_button_pressed():
@@ -219,7 +334,7 @@ func _on_login_back_button_pressed():
 	show_and_hide(menu, login)
 	$LeaderboardsButton.visible = true
 	$Sprite2D.visible = true
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 ####### PLAYER LOGIN SCENE ABOVE #######
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -249,13 +364,13 @@ func _on_start_pressed():
 	show_and_hide(levels, menu)
 	$LeaderboardsButton.visible = false
 	$Sprite2D.visible = false
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_options_pressed():
 	show_and_hide(options, menu) # Show options, and hide menu...
 	$LeaderboardsButton.visible = false
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func show_and_hide(first, second): # ...With this function
@@ -265,25 +380,25 @@ func show_and_hide(first, second): # ...With this function
 
 func _on_exit_pressed():
 	get_tree().quit()
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_video_pressed():
 	show_and_hide(video, options)
 	$LeaderboardsButton.visible = false
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_audio_pressed():
 	show_and_hide(audio, options)
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_back_from_options_pressed():
 	show_and_hide(menu, options)
 	$LeaderboardsButton.visible = true
 	$Sprite2D.visible = true
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_full_screen_toggled(button_pressed):
@@ -309,7 +424,7 @@ func _on_vsync_toggled(button_pressed):
 
 func _on_back_from_video_pressed():
 	show_and_hide(options, video)
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_sound_value_changed(value):
@@ -324,13 +439,13 @@ func _on_music_value_changed(value):
 
 func _on_back_from_audio_pressed():
 	show_and_hide(options, audio)
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_music_pressed():
 	show_and_hide(music, menu)
 	$LeaderboardsButton.visible = false
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 	$Sprite2D.visible = false
 	$Sprite2D2.visible = true
 
@@ -339,36 +454,36 @@ func _on_back_from_music_pressed():
 	show_and_hide(menu, music)
 	$LeaderboardsButton.visible = true
 	$Sprite2D.visible = true
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 	$Sprite2D.visible = true
 	$Sprite2D2.visible = false
 
 
 func _on_abcdeffghijkl_pressed():
 	show_and_hide(abcdeffghijkl, music)
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_mnopqrstuvwxyz_pressed():
 	show_and_hide(mnopqrstuvwxyz, music)
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_back_from_abcdef_pressed():
 	show_and_hide(music, abcdeffghijkl)
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_back_from_mnopqr_pressed():
 	show_and_hide(music, mnopqrstuvwxyz)
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_back_from_levels_pressed():
 	show_and_hide(menu, levels)
 	$LeaderboardsButton.visible = true
 	$Sprite2D.visible = true
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_volume_down_pressed():
@@ -403,12 +518,12 @@ func _on_login_pressed():
 	#get_tree().change_scene_to_file("res://Scenes/login.tscn")
 	show_and_hide(login, menu)
 	$LeaderboardsButton.visible = false
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 func _on_register_pressed():
 	show_and_hide(register, menu)
 	$LeaderboardsButton.visible = false
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 	#get_tree().change_scene_to_file("res://Scenes/player_register.tscn")
 	#res://Scenes/player_register.tscn
 	#pass
@@ -421,74 +536,74 @@ func _on_login_button_pressed():
 	SWLogger.debug("Login form submitted, remember_me: " + str(remember_me))
 	SilentWolf.Auth.login_player(username, password, remember_me)
 	show_processing_label()
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_logout_pressed():
 	SilentWolf.Auth.logout_player()
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_leaderboards_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Leaderboards/Leaderboard_main.tscn")
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_mazerunner__godot_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/maze_runner_-_godot.tscn")
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_robot_wants_music_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/robot_wants_music.tscn")
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_gravity_blocks_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/gravity_blocks.tscn")
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_the_pushblock_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/the_pushblock.tscn")
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_moving_platforms_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/moving_platforms.tscn")
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_tutorial_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/tutorial.tscn")
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_disarmed_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/disarmed.tscn")
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _on_bonus_level_pressed():
 	$MenuSong.stop()
 	_begin_level_variables()
 	get_tree().change_scene_to_file("res://Levels/bonus_level.tscn")
-	$AudioStreamPlayer.play()
+	$ClickSound.play()
 
 
 func _begin_level_variables():
@@ -511,3 +626,173 @@ func _begin_level_variables():
 	Game.BLUEKEY = false
 	Game.PUSHBLOCK = false
 
+######### AERO ##########
+######### BERRYTHEEVEEBOI ##########
+######### BLUEDOGGO123 ##########
+######### CLONEDRONE ##########
+######### DMD ##########
+######### CHOXOLATE ##########
+######### CLORPDOOP ##########
+######### DONUTMASTER56 ##########
+######### DRAWORIGAMI ##########
+######### FOMB ##########
+######### FNANFNE ##########
+
+func _on_fnanfne_pressed():
+	$ClickSound.play()
+	$MenuSong.stop()
+	#show_and_hide(fnanfne, abcdeffghijkl)
+	$ABCDEFFGHIJKL/fnanfne.visible = true
+	$ABCDEFFGHIJKL/ABCDEF.visible = false
+	$ABCDEFFGHIJKL/FGHIJKL.visible = false
+	$ABCDEFFGHIJKL/BackFromABCDEF.visible = false
+
+
+func _on_back_from_fnanfne_pressed():
+	$ClickSound.play()
+	$BeepSong.stop()
+	$MenuSong.play()
+	#show_and_hide(fnanfne, abcdeffghijkl)
+	$ABCDEFFGHIJKL/fnanfne.visible = false
+	$ABCDEFFGHIJKL/ABCDEF.visible = true
+	$ABCDEFFGHIJKL/FGHIJKL.visible = true
+	$ABCDEFFGHIJKL/BackFromABCDEF.visible = true
+
+
+func _on_battletoads_level_1_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne1
+	$BeepSong.play()
+
+
+func _on_bobby_carrot_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne2
+	$BeepSong.play()
+
+
+func _on_castlevania_ii_praying_hands_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne3
+	$BeepSong.play()
+
+
+func _on_coffin_dance_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne4
+	$BeepSong.play()
+
+
+func _on_commando_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne5
+	$BeepSong.play()
+
+
+func _on_duck_tales_the_moon_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne6
+	$BeepSong.play()
+
+
+func _on_duck_tales_title_song_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne7
+	$BeepSong.play()
+
+
+func _on_hallowed_be_thy_name_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne8
+	$BeepSong.play()
+
+
+func _on_hawkeye_title_screen_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne9
+	$BeepSong.play()
+
+
+func _on_hysteria_by_muse_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne10
+	$BeepSong.play()
+
+
+func _on_inferno__3dsom_keygen_music_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne11
+	$BeepSong.play()
+
+
+func _on_core_power_iso_keygen_music_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne12
+	$BeepSong.play()
+
+
+func _on_mega_man_2__dr_wilys_castle_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne13
+	$BeepSong.play()
+
+
+func _on_monty_on_the_run_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne14
+	$BeepSong.play()
+
+
+func _on_ressurec_ti_on_registry_keygen_music_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne15
+	$BeepSong.play()
+
+
+func _on_sonic_knuckles_boss_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne16
+	$BeepSong.play()
+
+
+func _on_spooky_scary_skeletons_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne17
+	$BeepSong.play()
+
+
+func _on_unreal_super_hero_3_keygen_music_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne18
+	$BeepSong.play()
+
+
+func _on_zero_wing__new_day_for_me_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne19
+	$BeepSong.play()
+
+
+func _on_zombie_army_pressed():
+	$BeepSong.stop()
+	$BeepSong.stream = fnanfne20
+	$BeepSong.play()
+
+
+######### GAMEWORM ##########
+######### GABRIEL_MIEL ##########
+######### IAN05 ##########
+######### JADEANUBIS ##########
+######### LINKANDAR ##########
+######### JOACHIM_S ##########
+######### KOOPALUIGI ##########
+######### MASTERTREK ##########
+######### MATHBOY ##########
+######### PAISLEYPICKLE ##########
+######### SYNCMASTER ##########
+######### PROFILE0182983 ##########
+######### REDKITTY7 ##########
+######### RODENTRACER ##########
+######### THETOM ##########
+######### YOURMOVEBOYO ##########
+######### YSQYS ##########

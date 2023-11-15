@@ -9,8 +9,9 @@
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_focus_color = Color(1, 1, 1, 1)
-Button/colors/font_hover_color = Color(0, 0.94902, 0, 1)
+Button/colors/font_hover_color = Color(0, 0.662745, 1, 1)
 Button/colors/font_hover_pressed_color = Color(0.905882, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 1, 0, 1)
 Button/styles/disabled = SubResource("StyleBoxEmpty_152o0")
 Button/styles/focus = SubResource("StyleBoxEmpty_cq7qc")
 Button/styles/hover = ExtResource("1_v6ipf")

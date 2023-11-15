@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://chu1sp74s581v"]
+[gd_scene load_steps=62 format=3 uid="uid://chu1sp74s581v"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_a53xw"]
 [ext_resource type="Shader" path="res://Scenes/colors_trans.gdshader" id="2_0bbfi"]
@@ -19,7 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://dmchrsbveq1as" path="res://Assets/UI/RWK.png" id="10_4clif"]
 [ext_resource type="Texture2D" uid="uid://dyjsw2kutwjcq" path="res://Assets/UI/login_txt.png" id="10_c4bvg"]
 [ext_resource type="Texture2D" uid="uid://dbx6lj6vwpjid" path="res://Assets/Pics/checkbox_checked.png" id="10_gb6fc"]
+[ext_resource type="FontFile" uid="uid://csnu0jugbrqf6" path="res://Assets/Fonts/DIGITEK.ttf" id="10_yoll5"]
 [ext_resource type="Texture2D" uid="uid://dn6phcsxwrmlo" path="res://Assets/Pics/checkbox_unchecked.png" id="11_f1tiw"]
+[ext_resource type="ButtonGroup" uid="uid://b0eomlytk87mi" path="res://Resources/fnanfne_button_group.tres" id="13_gjlml"]
 [ext_resource type="Texture2D" uid="uid://c5rwxfait420k" path="res://Assets/UI/logout_txt.png" id="16_mpkj7"]
 [ext_resource type="Texture2D" uid="uid://cw5fibhn0rglg" path="res://Assets/UI/signup2.png" id="17_osfi7"]
 [ext_resource type="AudioStream" uid="uid://ha6l8gtrw06v" path="res://Assets/Audio/Sounds/click.ogg" id="21_mphgt"]
@@ -61,6 +63,10 @@ font_color = Color(0, 1, 0, 0.662745)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_odu43"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_appkb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_absui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qq562"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_408a1"]
 
@@ -139,7 +145,21 @@ size_flags_horizontal = 3
 
 [node name="MenuSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_sy0sf")
-volume_db = -5.0
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_mphgt")
+volume_db = -10.0
+bus = &"Sounds"
+
+[node name="LoginSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_cmjvj")
+volume_db = -10.0
+bus = &"Sounds"
+
+[node name="BeepSong" type="AudioStreamPlayer" parent="."]
 autoplay = true
 bus = &"Music"
 
@@ -656,7 +676,7 @@ text = "fnanfne"
 [node name="gameworm" type="Button" parent="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "bluedoggo123"
+text = "gameworm"
 
 [node name="gabriel_miel" type="Button" parent="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer"]
 layout_mode = 2
@@ -703,6 +723,2437 @@ layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
 
 [node name="BackFromABCDEF" type="Button" parent="ABCDEFFGHIJKL"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="fnanfne" type="Control" parent="ABCDEFFGHIJKL"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/fnanfne"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Battletoads Level 1" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Battletoads - Level 1"
+
+[node name="Bobby Carrot" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Bobby Carrot"
+
+[node name="Castlevania II Praying Hands" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Castlevania II Praying Hands"
+
+[node name="Coffin Dance" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Coffin Dance"
+
+[node name="Commando" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Commando"
+
+[node name="DuckTales The Moon" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "DuckTales - The Moon"
+
+[node name="DuckTales Title Song" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "DuckTales - Title Song"
+
+[node name="Hallowed Be Thy Name" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Hallowed Be Thy Name"
+
+[node name="Hawkeye Title Screen" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Hawkeye - Title Screen"
+
+[node name="Hysteria by Muse" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Hysteria by Muse"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="INFERNO - 3DSOM keygen music" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "INFERNO - 3DSOM"
+
+[node name="CORE PowerISO keygen music" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "CORE - PowerISO"
+
+[node name="MegaMan 2 - Dr Wilys Castle" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "MegaMan 2 - Dr Wilys Castle"
+
+[node name="Monty on the Run" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Monty on the Run"
+
+[node name="RESSURECTiON Registry keygen music" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "RESSURECTiON - Registry"
+
+[node name="Sonic Knuckles Boss" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Sonic Knuckles Boss"
+
+[node name="Spooky Scary Skeletons" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Spooky Scary Skeletons"
+
+[node name="Unreal Super Hero 3 keygen music" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Unreal Super Hero 3"
+
+[node name="Zero Wing - New Day for Me" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Zero Wing - New Day for Me"
+
+[node name="Zombie Army" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Zombie Army"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="ABCDEFFGHIJKL/fnanfne"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="gameworm" type="Control" parent="ABCDEFFGHIJKL"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/gameworm"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Song_1" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_1"
+
+[node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_2"
+
+[node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_3"
+
+[node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_4"
+
+[node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_5"
+
+[node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_6"
+
+[node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_7"
+
+[node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_8"
+
+[node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_9"
+
+[node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_10"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="Song_11" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_11"
+
+[node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_12"
+
+[node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_13"
+
+[node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_14"
+
+[node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_15"
+
+[node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_16"
+
+[node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_17"
+
+[node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_18"
+
+[node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_19"
+
+[node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_20"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="ABCDEFFGHIJKL/gameworm"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="paisleypickle" type="Control" parent="ABCDEFFGHIJKL"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/paisleypickle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Song_1" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_1"
+
+[node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_2"
+
+[node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_3"
+
+[node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_4"
+
+[node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_5"
+
+[node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_6"
+
+[node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_7"
+
+[node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_8"
+
+[node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_9"
+
+[node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_10"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="Song_11" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_11"
+
+[node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_12"
+
+[node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_13"
+
+[node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_14"
+
+[node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_15"
+
+[node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_16"
+
+[node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_17"
+
+[node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_18"
+
+[node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_19"
+
+[node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_20"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="ABCDEFFGHIJKL/paisleypickle"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="dmd" type="Control" parent="ABCDEFFGHIJKL"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/dmd"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="ABCDEFFGHIJKL/dmd/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="ABCDEFFGHIJKL/dmd/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ABCDEFFGHIJKL/dmd/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ABCDEFFGHIJKL/dmd/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Song_1" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_1"
+
+[node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_2"
+
+[node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_3"
+
+[node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_4"
+
+[node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_5"
+
+[node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_6"
+
+[node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_7"
+
+[node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_8"
+
+[node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_9"
+
+[node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_10"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="Song_11" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_11"
+
+[node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_12"
+
+[node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_13"
+
+[node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_14"
+
+[node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_15"
+
+[node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_16"
+
+[node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_17"
+
+[node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_18"
+
+[node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_19"
+
+[node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_20"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="ABCDEFFGHIJKL/dmd"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="gabriel_miel" type="Control" parent="ABCDEFFGHIJKL"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/gabriel_miel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Song_1" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_1"
+
+[node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_2"
+
+[node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_3"
+
+[node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_4"
+
+[node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_5"
+
+[node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_6"
+
+[node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_7"
+
+[node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_8"
+
+[node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_9"
+
+[node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_10"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="Song_11" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_11"
+
+[node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_12"
+
+[node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_13"
+
+[node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_14"
+
+[node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_15"
+
+[node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_16"
+
+[node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_17"
+
+[node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_18"
+
+[node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_19"
+
+[node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_20"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="aero" type="Control" parent="ABCDEFFGHIJKL"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/aero"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="ABCDEFFGHIJKL/aero/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="ABCDEFFGHIJKL/aero/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ABCDEFFGHIJKL/aero/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ABCDEFFGHIJKL/aero/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Song_1" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_1"
+
+[node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_2"
+
+[node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_3"
+
+[node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_4"
+
+[node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_5"
+
+[node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_6"
+
+[node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_7"
+
+[node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_8"
+
+[node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_9"
+
+[node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_10"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="Song_11" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_11"
+
+[node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_12"
+
+[node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_13"
+
+[node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_14"
+
+[node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_15"
+
+[node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_16"
+
+[node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_17"
+
+[node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_18"
+
+[node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_19"
+
+[node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_20"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="ABCDEFFGHIJKL/aero"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="bluedoggo123" type="Control" parent="ABCDEFFGHIJKL"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/bluedoggo123"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Song_1" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_1"
+
+[node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_2"
+
+[node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_3"
+
+[node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_4"
+
+[node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_5"
+
+[node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_6"
+
+[node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_7"
+
+[node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_8"
+
+[node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_9"
+
+[node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_10"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="Song_11" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_11"
+
+[node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_12"
+
+[node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_13"
+
+[node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_14"
+
+[node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_15"
+
+[node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_16"
+
+[node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_17"
+
+[node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_18"
+
+[node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_19"
+
+[node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_20"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="clonedrone" type="Control" parent="ABCDEFFGHIJKL"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/clonedrone"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Song_1" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_1"
+
+[node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_2"
+
+[node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_3"
+
+[node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_4"
+
+[node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_5"
+
+[node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_6"
+
+[node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_7"
+
+[node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_8"
+
+[node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_9"
+
+[node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_10"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="Song_11" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_11"
+
+[node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_12"
+
+[node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_13"
+
+[node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_14"
+
+[node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_15"
+
+[node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_16"
+
+[node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_17"
+
+[node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_18"
+
+[node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_19"
+
+[node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_20"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="ABCDEFFGHIJKL/clonedrone"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="ian05" type="Control" parent="ABCDEFFGHIJKL"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/ian05"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="ABCDEFFGHIJKL/ian05/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="ABCDEFFGHIJKL/ian05/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ABCDEFFGHIJKL/ian05/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ABCDEFFGHIJKL/ian05/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Song_1" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_1"
+
+[node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_2"
+
+[node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_3"
+
+[node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_4"
+
+[node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_5"
+
+[node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_6"
+
+[node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_7"
+
+[node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_8"
+
+[node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_9"
+
+[node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_10"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="Song_11" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_11"
+
+[node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_12"
+
+[node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_13"
+
+[node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_14"
+
+[node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_15"
+
+[node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_16"
+
+[node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_17"
+
+[node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_18"
+
+[node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_19"
+
+[node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_20"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="ABCDEFFGHIJKL/ian05"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="linkandar" type="Control" parent="ABCDEFFGHIJKL"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/linkandar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Song_1" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_1"
+
+[node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_2"
+
+[node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_3"
+
+[node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_4"
+
+[node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_5"
+
+[node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_6"
+
+[node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_7"
+
+[node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_8"
+
+[node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_9"
+
+[node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_10"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="Song_11" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_11"
+
+[node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_12"
+
+[node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_13"
+
+[node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_14"
+
+[node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_15"
+
+[node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_16"
+
+[node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_17"
+
+[node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_18"
+
+[node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_19"
+
+[node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_20"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="ABCDEFFGHIJKL/linkandar"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="jadeanubis" type="Control" parent="ABCDEFFGHIJKL"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/jadeanubis"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Song_1" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_1"
+
+[node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_2"
+
+[node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_3"
+
+[node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_4"
+
+[node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_5"
+
+[node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_6"
+
+[node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_7"
+
+[node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_8"
+
+[node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_9"
+
+[node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_10"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="Song_11" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_11"
+
+[node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_12"
+
+[node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_13"
+
+[node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_14"
+
+[node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_15"
+
+[node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_16"
+
+[node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_17"
+
+[node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_18"
+
+[node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_19"
+
+[node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_20"
+
+[node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="ABCDEFFGHIJKL/jadeanubis"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -884,6 +3335,669 @@ layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
 
 [node name="BackFromMNOPQR" type="Button" parent="MNOPQRSTUVWXYZ"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="yourmoveboyo" type="Control" parent="MNOPQRSTUVWXYZ"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MNOPQRSTUVWXYZ/yourmoveboyo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Song_1" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_1"
+
+[node name="Song_2" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_2"
+
+[node name="Song_3" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_3"
+
+[node name="Song_4" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_4"
+
+[node name="Song_5" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_5"
+
+[node name="Song_6" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_6"
+
+[node name="Song_7" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_7"
+
+[node name="Song_8" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_8"
+
+[node name="Song_9" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_9"
+
+[node name="Song_10" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_10"
+
+[node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="Song_11" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_11"
+
+[node name="Song_12" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_12"
+
+[node name="Song_13" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_13"
+
+[node name="Song_14" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_14"
+
+[node name="Song_15" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_15"
+
+[node name="Song_16" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_16"
+
+[node name="Song_17" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_17"
+
+[node name="Song_18" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_18"
+
+[node name="Song_19" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_19"
+
+[node name="Song_20" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_20"
+
+[node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="thetom" type="Control" parent="MNOPQRSTUVWXYZ"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MNOPQRSTUVWXYZ/thetom"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Song_1" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_1"
+
+[node name="Song_2" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_2"
+
+[node name="Song_3" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_3"
+
+[node name="Song_4" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_4"
+
+[node name="Song_5" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_5"
+
+[node name="Song_6" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_6"
+
+[node name="Song_7" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_7"
+
+[node name="Song_8" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_8"
+
+[node name="Song_9" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_9"
+
+[node name="Song_10" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_10"
+
+[node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="Song_11" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_11"
+
+[node name="Song_12" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_12"
+
+[node name="Song_13" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_13"
+
+[node name="Song_14" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_14"
+
+[node name="Song_15" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_15"
+
+[node name="Song_16" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_16"
+
+[node name="Song_17" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_17"
+
+[node name="Song_18" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_18"
+
+[node name="Song_19" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_19"
+
+[node name="Song_20" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_20"
+
+[node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="MNOPQRSTUVWXYZ/thetom"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -31.0
+offset_right = 22.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fdn56")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_appkb")
+keep_pressed_outside = true
+icon = ExtResource("5_0m4to")
+
+[node name="syncmaster" type="Control" parent="MNOPQRSTUVWXYZ"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MNOPQRSTUVWXYZ/syncmaster"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="Label" type="Label" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_yoll5")
+theme_override_font_sizes/font_size = 50
+text = "fnanfne"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_absui")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Beeps_Left" type="HBoxContainer" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+
+[node name="Song_1" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_1"
+
+[node name="Song_2" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_2"
+
+[node name="Song_3" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_3"
+
+[node name="Song_4" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_4"
+
+[node name="Song_5" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_5"
+
+[node name="Song_6" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_6"
+
+[node name="Song_7" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_7"
+
+[node name="Song_8" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_8"
+
+[node name="Song_9" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_9"
+
+[node name="Song_10" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_10"
+
+[node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+theme_override_styles/separator = SubResource("StyleBoxEmpty_qq562")
+
+[node name="Beeps_Right" type="HBoxContainer" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+
+[node name="Song_11" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_11"
+
+[node name="Song_12" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_12"
+
+[node name="Song_13" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_13"
+
+[node name="Song_14" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_14"
+
+[node name="Song_15" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_15"
+
+[node name="Song_16" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_16"
+
+[node name="Song_17" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_17"
+
+[node name="Song_18" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_18"
+
+[node name="Song_19" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_19"
+
+[node name="Song_20" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+toggle_mode = true
+button_group = ExtResource("13_gjlml")
+text = "Song_20"
+
+[node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_odu43")
+
+[node name="BackFromFnanfne" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1582,14 +4696,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Leaderboards"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_mphgt")
-volume_db = -10.0
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_cmjvj")
-volume_db = -10.0
-
 [connection signal="pressed" from="Options/VBoxContainer/Video" to="." method="_on_video_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer/Audio" to="." method="_on_audio_pressed"]
 [connection signal="pressed" from="Options/BackFromOptions" to="." method="_on_back_from_options_pressed"]
@@ -1608,7 +4714,29 @@ volume_db = -10.0
 [connection signal="pressed" from="Music/VBoxContainer/abcdeffghijkl" to="." method="_on_abcdeffghijkl_pressed"]
 [connection signal="pressed" from="Music/VBoxContainer/mnopqrstuvwxyz" to="." method="_on_mnopqrstuvwxyz_pressed"]
 [connection signal="pressed" from="Music/BackFromMusic" to="." method="_on_back_from_music_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/FGHIJKL/VBoxContainer/fnanfne" to="." method="_on_fnanfne_pressed"]
 [connection signal="pressed" from="ABCDEFFGHIJKL/BackFromABCDEF" to="." method="_on_back_from_abcdef_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Battletoads Level 1" to="." method="_on_battletoads_level_1_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Bobby Carrot" to="." method="_on_bobby_carrot_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Castlevania II Praying Hands" to="." method="_on_castlevania_ii_praying_hands_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Coffin Dance" to="." method="_on_coffin_dance_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Commando" to="." method="_on_commando_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/DuckTales The Moon" to="." method="_on_duck_tales_the_moon_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/DuckTales Title Song" to="." method="_on_duck_tales_title_song_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Hallowed Be Thy Name" to="." method="_on_hallowed_be_thy_name_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Hawkeye Title Screen" to="." method="_on_hawkeye_title_screen_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer/Hysteria by Muse" to="." method="_on_hysteria_by_muse_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/INFERNO - 3DSOM keygen music" to="." method="_on_inferno__3dsom_keygen_music_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/CORE PowerISO keygen music" to="." method="_on_core_power_iso_keygen_music_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/MegaMan 2 - Dr Wilys Castle" to="." method="_on_mega_man_2__dr_wilys_castle_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Monty on the Run" to="." method="_on_monty_on_the_run_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/RESSURECTiON Registry keygen music" to="." method="_on_ressurec_ti_on_registry_keygen_music_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Sonic Knuckles Boss" to="." method="_on_sonic_knuckles_boss_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Spooky Scary Skeletons" to="." method="_on_spooky_scary_skeletons_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Unreal Super Hero 3 keygen music" to="." method="_on_unreal_super_hero_3_keygen_music_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Zero Wing - New Day for Me" to="." method="_on_zero_wing__new_day_for_me_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer/Zombie Army" to="." method="_on_zombie_army_pressed"]
+[connection signal="pressed" from="ABCDEFFGHIJKL/fnanfne/BackFromFnanfne" to="." method="_on_back_from_fnanfne_pressed"]
 [connection signal="pressed" from="MNOPQRSTUVWXYZ/BackFromMNOPQR" to="." method="_on_back_from_mnopqr_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Levels/HBoxContainer/VBoxContainer/Mazerunner - Godot" to="." method="_on_mazerunner__godot_pressed"]
