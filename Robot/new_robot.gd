@@ -821,139 +821,139 @@ func app_pickup(app):
 			$NotesMessages/Areas.visible = true
 			top_note.text = "JUMP APP"
 			bottom_note.text = "YOU CAN JUMP!"
-			app_anim.play("jump_note")
+			#app_anim.play("jump_note")
 			$Timers/AppNoteTimer.start()
 		1: #DOUBLE JUMP
 			$NotesMessages/Areas.visible = true
 			top_note.text = "JUMP ADDON"
 			bottom_note.text = "YOU CAN DOUBLE JUMP!"
-			app_anim.play("double_jump_note")
+			#app_anim.play("double_jump_note")
 			$Timers/AppNoteTimer.start()
 		2: #GUN
 			$NotesMessages/Areas.visible = true
 			top_note.text = "DEFENSE APP"
 			bottom_note.text = "YOU CAN FIRE DEADLY LAZORZ!"
-			app_anim.play("gun_note")
+			#app_anim.play("gun_note")
 			$Timers/AppNoteTimer.start()
 		3: #ZOOM
 			$NotesMessages/Areas.visible = true
 			top_note.text = "ZOOM APP"
 			bottom_note.text = "YOU CAN ZOOM AT LUDICROUS SPEED!"
-			app_anim.play("zoom_note")
+			#app_anim.play("zoom_note")
 			$Timers/AppNoteTimer.start()
 		4: #LAUNCH
 			$NotesMessages/Areas.visible = true
 			top_note.text = "LAUNCH APP"
 			bottom_note.text = "YOU CAN ROCKET SKYWARD!"
-			app_anim.play("launch_note")
+			#app_anim.play("launch_note")
 			$Timers/AppNoteTimer.start()
 		5: #ANNIHILATE
 			$NotesMessages/Areas.visible = true
 			top_note.text = "DEFENSE ADDON"
 			bottom_note.text = "YOU CAN ANNIHILATE!"
-			app_anim.play("annihilate_note")
+			#app_anim.play("annihilate_note")
 			$Timers/AppNoteTimer.start()
 		6: #HELMET
 			$NotesMessages/Areas.visible = true
 			top_note.text = "HELMET APP"
 			bottom_note.text = "YOU CAN SMASH BRICKS ABOVE YOU!"
-			app_anim.play("helmet_note")
+			#app_anim.play("helmet_note")
 			$Timers/AppNoteTimer.start()
 		7: #HEART
 			$NotesMessages/Areas.visible = true
 			top_note.text = "HEART APP"
 			bottom_note.text = "ADDS A ROBOHEART"
-			app_anim.play("heart_note")
+			#app_anim.play("heart_note")
 			$Timers/AppNoteTimer.start()
 		8: #GUN UPGRADE
 			$NotesMessages/Areas.visible = true
 			top_note.text = "DEFENSE ADDON"
 			bottom_note.text = "LAZOR POWER UPGRADED!"
-			app_anim.play("gun_addon_note")
+			#app_anim.play("gun_addon_note")
 			$Timers/AppNoteTimer.start()
 		9: #EXPLOZORS
 			$NotesMessages/Areas.visible = true
 			top_note.text = "DEFENSE ADDON"
 			bottom_note.text = "YOU LAZORZ ARE EXPLOZORS!"
-			app_anim.play("explozors_note")
+			#app_anim.play("explozors_note")
 			$Timers/AppNoteTimer.start()
 		10: #HAXXOR
 			$NotesMessages/Areas.visible = true
 			top_note.text = "HAXXOR APP"
 			bottom_note.text = "MAKES SAD COMPUTERS HAPPY!"
-			app_anim.play("haxxor_note")
+			#app_anim.play("haxxor_note")
 			$Timers/AppNoteTimer.start()
 		11: #TIME SAVER
 			$NotesMessages/Areas.visible = true
 			top_note.text = "TIMESAVER APP"
 			bottom_note.text = "SAVES TEN SECONDS ON THE IGT TIMER!"
-			app_anim.play("timesaver_note")
+			#app_anim.play("timesaver_note")
 			$Timers/AppNoteTimer.start()
 		12: #VELCRO
 			$NotesMessages/Areas.visible = true
 			top_note.text = "ELECTRIC VELCRO APP"
 			bottom_note.text = "YOU CAN STICK TO SOME WALLS!"
-			app_anim.play("velcro_note")
+			#app_anim.play("velcro_note")
 			$Timers/AppNoteTimer.start()
 		13: #RED KEY
 			$NotesMessages/Areas.visible = true
 			top_note.text = "RED KEYCARD"
 			bottom_note.text = "YOU CAN OPEN RED GATES NOW!"
-			app_anim.play("red_key_note")
+			#app_anim.play("red_key_note")
 			$Timers/AppNoteTimer.start()
 		14: #GREEN KEY
 			$NotesMessages/Areas.visible = true
 			top_note.text = "GREEN KEYCARD"
 			bottom_note.text = "YOU CAN OPEN GREEN GATES!"
-			app_anim.play("green_key_note")
+			#app_anim.play("green_key_note")
 			$Timers/AppNoteTimer.start()
 		15: #BLUE KEY
 			$NotesMessages/Areas.visible = true
 			top_note.text = "BLUE KEYCARD"
 			bottom_note.text = "BLUE GATES CAN'T STOP YOU!"
-			app_anim.play("blue_key_note")
+			#app_anim.play("blue_key_note")
 			$Timers/AppNoteTimer.start()
 		16: #GOLD KEY
 			$NotesMessages/Areas.visible = true
 			top_note.text = "GOLD KEYCARD"
 			bottom_note.text = "OPENS ONE GOLDEN GATE!"
-			app_anim.play("gold_key_note")
+			#app_anim.play("gold_key_note")
 			$Timers/AppNoteTimer.start()
 		17: #DELETE GUN
 			$NotesMessages/Areas.visible = true
 			top_note.text = "DEFENSE APP"
 			bottom_note.text = "DELETED"
-			app_anim.play("delete_gun_note")
+			#app_anim.play("delete_gun_note")
 			$Timers/AppNoteTimer.start()
 		18: #DELETE LAUNCH
 			$NotesMessages/Areas.visible = true
 			top_note.text = "LAUNCH APP"
 			bottom_note.text = "DELETED"
-			app_anim.play("delete_launch_note")
+			#app_anim.play("delete_launch_note")
 			$Timers/AppNoteTimer.start()
 		19: #DELETE HELMET
 			$NotesMessages/Areas.visible = true
 			top_note.text = "HELMET APP"
 			bottom_note.text = "DELETED"
-			app_anim.play("delete_helmet_note")
+			#app_anim.play("delete_helmet_note")
 			$Timers/AppNoteTimer.start()
 		20: #BITCOINS
 			$NotesMessages/Areas.visible = true
 			top_note.text = "BITCOIN!"
 			bottom_note.text = "% VARIABLE HERE % eg. 1/4"
-			app_anim.play("bitcoin_note")
+			#app_anim.play("bitcoin_note")
 			$Timers/AppNoteTimer.start()
 		21: #CRYSTALS
 			$NotesMessages/Areas.visible = true
 			top_note.text = "QUANTUM CRYSTAL"
 			bottom_note.text = "POWERS A TELEMATIC"
-			app_anim.play("crystal_note")
+			#app_anim.play("crystal_note")
 			$Timers/AppNoteTimer.start()
 		22: #PUSH
 			$NotesMessages/Areas.visible = true
 			top_note.text = "PUSH APP"
 			bottom_note.text = "YOU CAN PUSH SOME BLOCKS!"
-			app_anim.play("push_note")
+			#app_anim.play("push_note")
 			$Timers/AppNoteTimer.start()
 		23: #FUTURE USE 3
 			pass

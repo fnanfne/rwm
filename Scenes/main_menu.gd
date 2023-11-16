@@ -59,15 +59,15 @@ extends Control
 #### FOMB ####
 #### FNANFNE ####
 var fnanfne1 = preload("res://Assets/Audio/Music/fnanfne/Battletoads-Level-1.ogg")
-var fnanfne2 = preload("res://Assets/Audio/Music/fnanfne/Bobby Carrot.ogg")
-var fnanfne3 = preload("res://Assets/Audio/Music/fnanfne/Castlevania-II-Praying-Hands.ogg")
+var fnanfne2 = preload("res://Assets/Audio/Music/fnanfne/Bobby+Carrot_out.ogg")
+var fnanfne3 = preload("res://Assets/Audio/Music/fnanfne/Castlevania-II-Praying-Hands_out.ogg")
 var fnanfne4 = preload("res://Assets/Audio/Music/fnanfne/Coffin Dance.ogg")
 var fnanfne5 = preload("res://Assets/Audio/Music/fnanfne/Commando.ogg")
 var fnanfne6 = preload("res://Assets/Audio/Music/fnanfne/DuckTales-The-Moon.ogg")
 var fnanfne7 = preload("res://Assets/Audio/Music/fnanfne/DuckTales-Title-Song.ogg")
-var fnanfne8 = preload("res://Assets/Audio/Music/fnanfne/Hallowed Be Thy Name (original by Iron Maiden), cover by Cradle of Filth.ogg")
-var fnanfne9 = preload("res://Assets/Audio/Music/fnanfne/Hawkeye-Title-Screen.ogg")
-var fnanfne10 = preload("res://Assets/Audio/Music/fnanfne/Hysteria by Muse.ogg")
+var fnanfne8 = preload("res://Assets/Audio/Music/fnanfne/Hallowed+Be+Thy+Name_out.ogg")
+var fnanfne9 = preload("res://Assets/Audio/Music/fnanfne/Hawkeye-Title-Screen_out.ogg")
+var fnanfne10 = preload("res://Assets/Audio/Music/fnanfne/Hysteria+by+Muse_out.ogg")
 var fnanfne11 = preload("res://Assets/Audio/Music/fnanfne/INFERNO - 3DSOM Keygen music.ogg")
 var fnanfne12 = preload("res://Assets/Audio/Music/fnanfne/Keygen Music - CORE PowerISO.ogg")
 var fnanfne13 = preload("res://Assets/Audio/Music/fnanfne/MegaMan2-DrWilysCastle.ogg")
@@ -76,29 +76,29 @@ var fnanfne15 = preload("res://Assets/Audio/Music/fnanfne/RESSURECTiON-Registry-
 var fnanfne16 = preload("res://Assets/Audio/Music/fnanfne/SonicKnucklesBoss.ogg")
 var fnanfne17 = preload("res://Assets/Audio/Music/fnanfne/Spooky Scary Skeletons.ogg")
 var fnanfne18 = preload("res://Assets/Audio/Music/fnanfne/Winamp Sony Vega Unreal Super Hero 3 keygen.ogg")
-var fnanfne19 = preload("res://Assets/Audio/Music/fnanfne/Zero Wing - New Day for Me.ogg")
+var fnanfne19 = preload("res://Assets/Audio/Music/fnanfne/Zero+Wing+-+New+Day+for+Me_out.ogg")
 var fnanfne20 = preload("res://Assets/Audio/Music/fnanfne/Zombie Army.ogg")
 #### GAMEWORM ####
-var gameworm1 = preload("res://Assets/Audio/Music/gameworm/Awakening.ogg")
-var gameworm2 = preload("res://Assets/Audio/Music/gameworm/Beneath the waves.ogg")
-var gameworm3 = preload("res://Assets/Audio/Music/gameworm/Biolabs.ogg")
-var gameworm4 = preload("res://Assets/Audio/Music/gameworm/Cave masters.ogg")
+var gameworm1 = preload("res://Assets/Audio/Music/gameworm/Awakening_out.ogg")
+var gameworm2 = preload("res://Assets/Audio/Music/gameworm/Beneath+the+waves_out.ogg")
+var gameworm3 = preload("res://Assets/Audio/Music/gameworm/Biolabs_out.ogg")
+var gameworm4 = preload("res://Assets/Audio/Music/gameworm/Cave+masters_NEW_out.ogg")
 var gameworm5 = preload("res://Assets/Audio/Music/gameworm/Dance party.ogg")
-var gameworm6 = preload("res://Assets/Audio/Music/gameworm/evil.ogg")
-var gameworm7 = preload("res://Assets/Audio/Music/gameworm/Great outdoors.ogg")
-var gameworm8 = preload("res://Assets/Audio/Music/gameworm/Inferno.ogg")
-var gameworm9 = preload("res://Assets/Audio/Music/gameworm/Into chaos.ogg")
-var gameworm10 = preload("res://Assets/Audio/Music/gameworm/Kaizo.ogg")
-var gameworm11 = preload("res://Assets/Audio/Music/gameworm/King of the abyss.ogg")
+var gameworm6 = preload("res://Assets/Audio/Music/gameworm/evil_out.ogg")
+var gameworm7 = preload("res://Assets/Audio/Music/gameworm/Great+outdoors_NEW_out.ogg")
+var gameworm8 = preload("res://Assets/Audio/Music/gameworm/Inferno_out.ogg")
+var gameworm9 = preload("res://Assets/Audio/Music/gameworm/Into+chaos_NEW_out.ogg")
+var gameworm10 = preload("res://Assets/Audio/Music/gameworm/Kaizo_out.ogg")
+var gameworm11 = preload("res://Assets/Audio/Music/gameworm/King+of+the+abyss_out.ogg")
 var gameworm12 = preload("res://Assets/Audio/Music/gameworm/Legendary boss.ogg")
 var gameworm13 = preload("res://Assets/Audio/Music/gameworm/No pills allowed.ogg")
-var gameworm14 = preload("res://Assets/Audio/Music/gameworm/Revival.ogg")
-var gameworm15 = preload("res://Assets/Audio/Music/gameworm/Scrap.ogg")
-var gameworm16 = preload("res://Assets/Audio/Music/gameworm/Spelunking.ogg")
+var gameworm14 = preload("res://Assets/Audio/Music/gameworm/Revival_NEW_out.ogg")
+var gameworm15 = preload("res://Assets/Audio/Music/gameworm/Scrap_out.ogg")
+var gameworm16 = preload("res://Assets/Audio/Music/gameworm/Spelunking_NEW_out.ogg")
 var gameworm17 = preload("res://Assets/Audio/Music/gameworm/Technomare.ogg")
-var gameworm18 = preload("res://Assets/Audio/Music/gameworm/Temple guardian.ogg")
+var gameworm18 = preload("res://Assets/Audio/Music/gameworm/Temple+guardian_out.ogg")
 var gameworm19 = preload("res://Assets/Audio/Music/gameworm/trolled.ogg")
-var gameworm20 = preload("res://Assets/Audio/Music/gameworm/Watcher.ogg")
+var gameworm20 = preload("res://Assets/Audio/Music/gameworm/Watcher_out.ogg")
 
 #### GABRIEL_MIEL ####
 #### IAN05 ####
@@ -127,7 +127,8 @@ const EXCEPTIONS = [" ", "!",'"',"£","$","%","^","&","*","(",")",
 "`","¬","[","]","{","}","-","+","=",";",":","'","@","#","~",",","<",".",
 ">","/","?","_","|"]
 
-var username : LineEdit
+# Changed to username2 as there were some console errors, line 296
+var username2 : LineEdit
 var submit_button : Button
 @onready var username_length_check = $Register/VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName.text
 # PLAYER REGISTER SCENE ABOVE
@@ -169,7 +170,8 @@ func _ready():
 	SilentWolf.check_auth_ready()
 	SilentWolf.Auth.sw_registration_complete.connect(_on_registration_complete)
 	SilentWolf.Auth.sw_registration_user_pwd_complete.connect(_on_registration_user_pwd_complete)
-	username = $"Register/VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName"
+	# Changed to username2 as there were some console errors, line 296
+	username2 = $"Register/VBoxContainer/HBoxContainer2/VBoxContainer2/UsernameBox/PlayerName"
 	submit_button = $"Register/HBoxContainer/SubmitButton"
 	submit_button.disabled = true
 ####### PLAYER REGISTER SCENE ABOVE #######
@@ -821,6 +823,7 @@ func _on_gameworm_pressed():
 
 func _on_back_from_gameworm_pressed():
 	$ClickSound.play()
+	$BeepSong.stop()
 	$MenuSong.play()
 	#show_and_hide(fnanfne, abcdeffghijkl)
 	$ABCDEFFGHIJKL/gameworm.visible = false
