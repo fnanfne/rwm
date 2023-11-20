@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dbx6lj6vwpjid" path="res://Assets/Pics/checkbox_checked.png" id="10_gb6fc"]
 [ext_resource type="FontFile" uid="uid://csnu0jugbrqf6" path="res://Assets/Fonts/DIGITEK.ttf" id="10_yoll5"]
 [ext_resource type="Texture2D" uid="uid://dn6phcsxwrmlo" path="res://Assets/Pics/checkbox_unchecked.png" id="11_f1tiw"]
-[ext_resource type="ButtonGroup" uid="uid://b0eomlytk87mi" path="res://Resources/fnanfne_button_group.tres" id="13_gjlml"]
+[ext_resource type="ButtonGroup" uid="uid://b0eomlytk87mi" path="res://Resources/beepbox_artists_button_group.tres" id="13_yv1wr"]
 [ext_resource type="Texture2D" uid="uid://c5rwxfait420k" path="res://Assets/UI/logout_txt.png" id="16_mpkj7"]
 [ext_resource type="Texture2D" uid="uid://cw5fibhn0rglg" path="res://Assets/UI/signup2.png" id="17_osfi7"]
 [ext_resource type="AudioStream" uid="uid://ha6l8gtrw06v" path="res://Assets/Audio/Sounds/click.ogg" id="21_mphgt"]
@@ -788,70 +788,70 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Battletoads - Level 1"
 
 [node name="Bobby Carrot" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Bobby Carrot"
 
 [node name="Castlevania II Praying Hands" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Castlevania II Praying Hands"
 
 [node name="Coffin Dance" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Coffin Dance"
 
 [node name="Commando" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Commando"
 
 [node name="DuckTales The Moon" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "DuckTales - The Moon"
 
 [node name="DuckTales Title Song" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "DuckTales - Title Song"
 
 [node name="Hallowed Be Thy Name" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Hallowed Be Thy Name"
 
 [node name="Hawkeye Title Screen" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Hawkeye - Title Screen"
 
 [node name="Hysteria by Muse" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer" groups=["fnanfne_beeps"]]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Hysteria by Muse"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -873,70 +873,70 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "INFERNO - 3DSOM"
 
 [node name="CORE PowerISO keygen music" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "CORE - PowerISO"
 
 [node name="MegaMan 2 - Dr Wilys Castle" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "MegaMan 2 - Dr Wilys Castle"
 
 [node name="Monty on the Run" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Monty on the Run"
 
 [node name="RESSURECTiON Registry keygen music" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "RESSURECTiON - Registry"
 
 [node name="Sonic Knuckles Boss" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Sonic Knuckles Boss"
 
 [node name="Spooky Scary Skeletons" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Spooky Scary Skeletons"
 
 [node name="Unreal Super Hero 3 keygen music" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Unreal Super Hero 3"
 
 [node name="Zero Wing - New Day for Me" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Zero Wing - New Day for Me"
 
 [node name="Zombie Army" type="Button" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Zombie Army"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/fnanfne/VBoxContainer/HBoxContainer/Beeps_Right"]
@@ -1009,70 +1009,70 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Awakening"
 
 [node name="Beneath the waves" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Beneath the waves"
 
 [node name="Biolabs" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Biolabs"
 
 [node name="Cave masters" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Cave masters"
 
 [node name="Dance party" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Dance party"
 
 [node name="evil" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "evil"
 
 [node name="Great outdoors" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Great outdoors"
 
 [node name="Inferno" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Inferno"
 
 [node name="Into chaos" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Into chaos"
 
 [node name="Kaizo" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Kaizo"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -1094,70 +1094,70 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "King of the abyss"
 
 [node name="Legendary boss" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Legendary boss"
 
 [node name="No pills allowed" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "No pills allowed"
 
 [node name="Revival" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Revival"
 
 [node name="Scrap" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Scrap"
 
 [node name="Spelunking" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Spelunking"
 
 [node name="Technomare" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Technomare"
 
 [node name="Temple guardian" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Temple guardian"
 
 [node name="trolled" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "trolled"
 
 [node name="Watcher" type="Button" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
+button_group = ExtResource("13_yv1wr")
 text = "Watcher"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/gameworm/VBoxContainer/HBoxContainer/Beeps_Right"]
@@ -1230,70 +1230,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_1"
 
 [node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_2"
 
 [node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_3"
 
 [node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_4"
 
 [node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_5"
 
 [node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_6"
 
 [node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_7"
 
 [node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_8"
 
 [node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_9"
 
 [node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_10"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -1315,70 +1305,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_11"
 
 [node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_12"
 
 [node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_13"
 
 [node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_14"
 
 [node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_15"
 
 [node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_16"
 
 [node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_17"
 
 [node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_18"
 
 [node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_19"
 
 [node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_20"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/paisleypickle/VBoxContainer/HBoxContainer/Beeps_Right"]
@@ -1451,70 +1431,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_1"
 
 [node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_2"
 
 [node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_3"
 
 [node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_4"
 
 [node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_5"
 
 [node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_6"
 
 [node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_7"
 
 [node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_8"
 
 [node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_9"
 
 [node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_10"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -1536,70 +1506,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_11"
 
 [node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_12"
 
 [node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_13"
 
 [node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_14"
 
 [node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_15"
 
 [node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_16"
 
 [node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_17"
 
 [node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_18"
 
 [node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_19"
 
 [node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_20"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/dmd/VBoxContainer/HBoxContainer/Beeps_Right"]
@@ -1672,70 +1632,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_1"
 
 [node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_2"
 
 [node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_3"
 
 [node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_4"
 
 [node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_5"
 
 [node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_6"
 
 [node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_7"
 
 [node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_8"
 
 [node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_9"
 
 [node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_10"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -1757,70 +1707,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_11"
 
 [node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_12"
 
 [node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_13"
 
 [node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_14"
 
 [node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_15"
 
 [node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_16"
 
 [node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_17"
 
 [node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_18"
 
 [node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_19"
 
 [node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_20"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/gabriel_miel/VBoxContainer/HBoxContainer/Beeps_Right"]
@@ -1893,70 +1833,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_1"
 
 [node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_2"
 
 [node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_3"
 
 [node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_4"
 
 [node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_5"
 
 [node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_6"
 
 [node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_7"
 
 [node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_8"
 
 [node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_9"
 
 [node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_10"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -1978,70 +1908,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_11"
 
 [node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_12"
 
 [node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_13"
 
 [node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_14"
 
 [node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_15"
 
 [node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_16"
 
 [node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_17"
 
 [node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_18"
 
 [node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_19"
 
 [node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_20"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/aero/VBoxContainer/HBoxContainer/Beeps_Right"]
@@ -2114,70 +2034,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_1"
 
 [node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_2"
 
 [node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_3"
 
 [node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_4"
 
 [node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_5"
 
 [node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_6"
 
 [node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_7"
 
 [node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_8"
 
 [node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_9"
 
 [node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_10"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -2199,70 +2109,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_11"
 
 [node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_12"
 
 [node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_13"
 
 [node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_14"
 
 [node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_15"
 
 [node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_16"
 
 [node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_17"
 
 [node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_18"
 
 [node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_19"
 
 [node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_20"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/bluedoggo123/VBoxContainer/HBoxContainer/Beeps_Right"]
@@ -2335,70 +2235,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_1"
 
 [node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_2"
 
 [node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_3"
 
 [node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_4"
 
 [node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_5"
 
 [node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_6"
 
 [node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_7"
 
 [node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_8"
 
 [node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_9"
 
 [node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_10"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -2420,70 +2310,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_11"
 
 [node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_12"
 
 [node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_13"
 
 [node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_14"
 
 [node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_15"
 
 [node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_16"
 
 [node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_17"
 
 [node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_18"
 
 [node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_19"
 
 [node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_20"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/clonedrone/VBoxContainer/HBoxContainer/Beeps_Right"]
@@ -2556,70 +2436,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_1"
 
 [node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_2"
 
 [node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_3"
 
 [node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_4"
 
 [node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_5"
 
 [node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_6"
 
 [node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_7"
 
 [node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_8"
 
 [node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_9"
 
 [node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_10"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -2641,70 +2511,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_11"
 
 [node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_12"
 
 [node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_13"
 
 [node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_14"
 
 [node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_15"
 
 [node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_16"
 
 [node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_17"
 
 [node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_18"
 
 [node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_19"
 
 [node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_20"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/ian05/VBoxContainer/HBoxContainer/Beeps_Right"]
@@ -2777,70 +2637,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_1"
 
 [node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_2"
 
 [node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_3"
 
 [node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_4"
 
 [node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_5"
 
 [node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_6"
 
 [node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_7"
 
 [node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_8"
 
 [node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_9"
 
 [node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_10"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -2862,70 +2712,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_11"
 
 [node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_12"
 
 [node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_13"
 
 [node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_14"
 
 [node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_15"
 
 [node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_16"
 
 [node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_17"
 
 [node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_18"
 
 [node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_19"
 
 [node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_20"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/linkandar/VBoxContainer/HBoxContainer/Beeps_Right"]
@@ -2998,70 +2838,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_1"
 
 [node name="Song_2" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_2"
 
 [node name="Song_3" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_3"
 
 [node name="Song_4" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_4"
 
 [node name="Song_5" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_5"
 
 [node name="Song_6" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_6"
 
 [node name="Song_7" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_7"
 
 [node name="Song_8" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_8"
 
 [node name="Song_9" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_9"
 
 [node name="Song_10" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_10"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -3083,70 +2913,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_11"
 
 [node name="Song_12" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_12"
 
 [node name="Song_13" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_13"
 
 [node name="Song_14" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_14"
 
 [node name="Song_15" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_15"
 
 [node name="Song_16" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_16"
 
 [node name="Song_17" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_17"
 
 [node name="Song_18" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_18"
 
 [node name="Song_19" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_19"
 
 [node name="Song_20" type="Button" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_20"
 
 [node name="VSeparator" type="VSeparator" parent="ABCDEFFGHIJKL/jadeanubis/VBoxContainer/HBoxContainer/Beeps_Right"]
@@ -3400,70 +3220,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_1"
 
 [node name="Song_2" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_2"
 
 [node name="Song_3" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_3"
 
 [node name="Song_4" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_4"
 
 [node name="Song_5" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_5"
 
 [node name="Song_6" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_6"
 
 [node name="Song_7" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_7"
 
 [node name="Song_8" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_8"
 
 [node name="Song_9" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_9"
 
 [node name="Song_10" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_10"
 
 [node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -3485,70 +3295,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_11"
 
 [node name="Song_12" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_12"
 
 [node name="Song_13" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_13"
 
 [node name="Song_14" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_14"
 
 [node name="Song_15" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_15"
 
 [node name="Song_16" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_16"
 
 [node name="Song_17" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_17"
 
 [node name="Song_18" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_18"
 
 [node name="Song_19" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_19"
 
 [node name="Song_20" type="Button" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_20"
 
 [node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/yourmoveboyo/VBoxContainer/HBoxContainer/Beeps_Right"]
@@ -3621,70 +3421,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_1"
 
 [node name="Song_2" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_2"
 
 [node name="Song_3" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_3"
 
 [node name="Song_4" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_4"
 
 [node name="Song_5" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_5"
 
 [node name="Song_6" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_6"
 
 [node name="Song_7" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_7"
 
 [node name="Song_8" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_8"
 
 [node name="Song_9" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_9"
 
 [node name="Song_10" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_10"
 
 [node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -3706,70 +3496,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_11"
 
 [node name="Song_12" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_12"
 
 [node name="Song_13" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_13"
 
 [node name="Song_14" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_14"
 
 [node name="Song_15" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_15"
 
 [node name="Song_16" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_16"
 
 [node name="Song_17" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_17"
 
 [node name="Song_18" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_18"
 
 [node name="Song_19" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_19"
 
 [node name="Song_20" type="Button" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_20"
 
 [node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/thetom/VBoxContainer/HBoxContainer/Beeps_Right"]
@@ -3842,70 +3622,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_1"
 
 [node name="Song_2" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_2"
 
 [node name="Song_3" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_3"
 
 [node name="Song_4" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_4"
 
 [node name="Song_5" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_5"
 
 [node name="Song_6" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_6"
 
 [node name="Song_7" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_7"
 
 [node name="Song_8" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_8"
 
 [node name="Song_9" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_9"
 
 [node name="Song_10" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_10"
 
 [node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Left"]
@@ -3927,70 +3697,60 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_11"
 
 [node name="Song_12" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_12"
 
 [node name="Song_13" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_13"
 
 [node name="Song_14" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_14"
 
 [node name="Song_15" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_15"
 
 [node name="Song_16" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_16"
 
 [node name="Song_17" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_17"
 
 [node name="Song_18" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_18"
 
 [node name="Song_19" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_19"
 
 [node name="Song_20" type="Button" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 toggle_mode = true
-button_group = ExtResource("13_gjlml")
 text = "Song_20"
 
 [node name="VSeparator" type="VSeparator" parent="MNOPQRSTUVWXYZ/syncmaster/VBoxContainer/HBoxContainer/Beeps_Right"]

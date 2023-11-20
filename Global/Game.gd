@@ -107,5 +107,6 @@ func _physics_process(_delta):
 
 # SILENTWOLF --> ONLINE LEADERBOARD
 func leaderboard():
-	for score in Game.score:
+	# Changed to score5 due to a console error, line 31
+	for scores in Game.score:
 		Game.player_list.append(Game.player_name)

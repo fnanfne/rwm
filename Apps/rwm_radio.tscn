@@ -30,6 +30,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_6ksla"]
+resource_name = "RESET"
+
 [sub_resource type="Animation" id="Animation_btkh3"]
 resource_name = "fade_away"
 length = 5.0
@@ -45,9 +48,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_6ksla"]
-resource_name = "RESET"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mma2r"]
 _data = {
