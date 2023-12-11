@@ -82,3 +82,78 @@
 - Timer
 - Level Save/Load
 - Unlocks
+
+PLAYTESTING...
+
+Tutorial:
+DONE-Fix the firewheel pickup note, it says powerup
+-Fix the boss door not making a sound.
+-Make Red boss to shoot in an arc, not just down.
+-The lava boots not working okay. It should kill robot if not invincible
+-Add times on win screen
+-Add a 1up flare
+-Add a cake found bonus
+
+MazeRunner:
+-Change note - Or play this level in your browser using this link...
+-Remove the head-butt sound. Should only be when robot has a helmet on
+-Fix moving platform not making a sound.
+-Enemies deal no damage!
+-Jumping twice breaks a brick twice, thought this was fixed!
+
+Moving Platforms:
+-Large moving platforms are not making any sound!
+-Doors also double sound when openeing them fast.
+-Fix double doors making double sound. Need to disable one
+-Enemies not dealing any damage
+-Fix lava gooped direction
+-Add lava bubble to all lava/acid??
+-Win screen song not playing
+
+The Pushblock:
+-Make the BTC door move down, instead of to the left
+-Win screen song not playing
+
+Robot Wants Music:
+-On the user unlocked message, remove the black background.
+-Maybe add Kitty Boss in this level?
+-If so, add the spawnpoint and some checkpoints
+[16:26]
+Falling Platforms:
+-Add lava bubbles to all lava/acid
+
+Gravity Blocks:
+-Remove boss, or make it so it doesn't count for bonus?
+
+Lava Run:
+-Make two lava's at the bottom similar to the blocks it inhabits
+-Change test block texture back, or make a mix>?
+-Fix green worms to move up and down?
+-Remove test app and add a checkpoint there.
+-Add a gun!
+-Add music
+
+Short and Bossy:
+-Add music
+-Add lava bubbles to all lava/acid? Level runs ok atm
+-Fix double doors making double sound. Need to disable one.
+-Fix first boss doors, no space to jump up!
+
+Disarmed:
+-Remove more lava bubbles? Level is a bit laggy atm, but playable.
+-Fix double doors making double sound. Need to disable one.
+-Fix haxxor door.
+-Check why background keeps moving/jittering around.
+-Fix robot falling when dying. Disable gravity?
+-Fix checkpoint position
+-Fix enemies being able to walk across acid.
+-Protect robot from slime if it has a helmet on
+-Add timesaver apps
+-Fix that one dripper being inaccesible
+-Add blue boss door and the missing hearts
+
+-Try changing the "shadow" of the names in the music section to be the same as the default.
+
+-Send mrt the graphic for RwK
+
+-Add aero's new beep
